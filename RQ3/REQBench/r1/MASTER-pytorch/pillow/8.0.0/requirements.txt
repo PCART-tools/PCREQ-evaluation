@@ -9,6 +9,6 @@ Pillow==8.0.0
 python-dateutil==2.9.0.post0
 pytz==2024.1
 six==1.16.0
-torch==1.5.1
-torchvision==0.6.1
+torch==1.6.0
+torchvision==0.7.0
 tqdm==4.47.0

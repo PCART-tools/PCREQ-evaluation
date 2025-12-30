@@ -19,8 +19,8 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting numpy==1.21.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
-Collecting Pillow==8.4.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a7/f3/c81e9c41c6ee4c99ad7436b7a1509f5bce5de4ccf4b83138cf88760d96ff/Pillow-8.4.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+Collecting Pillow==9.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/95/48565d6beb34deaacda1543b515dab9479b8fa8b9046703fd08ad447ddfe/Pillow-9.5.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
 Collecting protobuf==3.20.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/26/cf27940ece6bb8890a67f741eb9da5359b72749f816edf210a28fe01a247/protobuf-3.20.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting six==1.16.0
@@ -41,6 +41,6 @@ Collecting Werkzeug==2.2.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/f8/9da63c1617ae2a1dec2fbf6412f3a0cfe9d4ce029eccbda6e1e4258ca45f/Werkzeug-2.2.3-py3-none-any.whl (233 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from tensorboard==1.13.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/pt.darts-torchvision-0.10.0.txt (line 15)) (0.38.4)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from tensorboard==1.13.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/pt.darts-torchvision-0.10.0.txt (line 15)) (0.38.4)
 Installing collected packages: mpmath, zipp, typing_extensions, sympy, six, protobuf, Pillow, numpy, MarkupSafe, humanfriendly, grpcio, graphviz, absl-py, Werkzeug, torch, tensorboardX, importlib-metadata, coloredlogs, torchvision, Markdown, tensorboard
-Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-8.4.0 Werkzeug-2.2.3 absl-py-2.1.0 coloredlogs-15.0.1 graphviz-0.8.4 grpcio-1.62.2 humanfriendly-10.0 importlib-metadata-6.7.0 mpmath-1.2.1 numpy-1.21.6 protobuf-3.20.0 six-1.16.0 sympy-1.10.1 tensorboard-1.13.0 tensorboardX-1.6 torch-1.9.0 torchvision-0.10.0 typing_extensions-4.7.1 zipp-3.15.0
+Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-9.5.0 Werkzeug-2.2.3 absl-py-2.1.0 coloredlogs-15.0.1 graphviz-0.8.4 grpcio-1.62.2 humanfriendly-10.0 importlib-metadata-6.7.0 mpmath-1.2.1 numpy-1.21.6 protobuf-3.20.0 six-1.16.0 sympy-1.10.1 tensorboard-1.13.0 tensorboardX-1.6 torch-1.9.0 torchvision-0.10.0 typing_extensions-4.7.1 zipp-3.15.0

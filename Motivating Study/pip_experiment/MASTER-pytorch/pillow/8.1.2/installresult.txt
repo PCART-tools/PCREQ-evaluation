@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pillow==8.1.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bb/25/04759b5c6262a4b76998fe79ced2c9b5602c6abe12d5c44ba057946f39ee/Pillow-8.1.2-cp36-cp36m-manylinux1_x86_64.whl (2.2 MB)
+Installing collected packages: pillow
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 7.2.0
+    Uninstalling Pillow-7.2.0:
+      Successfully uninstalled Pillow-7.2.0
+Successfully installed pillow-8.1.2

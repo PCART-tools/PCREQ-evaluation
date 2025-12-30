@@ -7,6 +7,8 @@ Save directory: save/ENet_CamVid
 Number of classes to predict: 12
 Train dataset size: 367
 Validation dataset size: 101
+/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torchvision/transforms/transforms.py:258: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  "Argument interpolation should be of type InterpolationMode instead of int. "
 Image size: torch.Size([10, 3, 360, 480])
 Label size: torch.Size([10, 360, 480])
 Class-color encoding: OrderedDict([('sky', (128, 128, 128)), ('building', (128, 0, 0)), ('pole', (192, 192, 128)), ('road', (128, 64, 128)), ('pavement', (60, 40, 222)), ('tree', (128, 128, 0)), ('sign_symbol', (192, 128, 128)), ('fence', (64, 64, 128)), ('car', (64, 0, 128)), ('pedestrian', (64, 64, 0)), ('bicyclist', (0, 128, 192)), ('unlabeled', (0, 0, 0))])

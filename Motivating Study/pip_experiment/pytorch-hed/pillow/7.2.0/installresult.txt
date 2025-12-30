@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pillow==7.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e8/f2/6722dd0c22e3a143ac792ccb2424924ac72af4adea756b1165b4cad50da7/Pillow-7.2.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
+Installing collected packages: pillow
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 5.0.0
+    Uninstalling Pillow-5.0.0:
+      Successfully uninstalled Pillow-5.0.0
+Successfully installed pillow-7.2.0

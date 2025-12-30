@@ -1,0 +1,640 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: transformers==3.5.1
+torch==1.10.1
+tokenizers==0.9.3
+sentencepiece==0.1.91
+sacremoses==0.0.53
+regex==2022.7.9
+tqdm==4.64.1
+numpy==1.21.6
+scipy==1.7.3
+scikit-learn==1.0.2
+pandas==1.3.5
+matplotlib==3.5.3
+Pillow==9.2.0
+protobuf==3.20.3
+pyparsing==3.0.9
+python-dateutil==2.8.2
+pytz==2022.7
+Click==8.1.3
+filelock==3.8.0
+joblib==1.2.0
+kiwisolver==1.4.4
+cycler==0.11.0
+six==1.16.0
+certifi==2022.12.7
+chardet==4.0.0
+idna==3.4
+urllib3==1.26.14
+requests==2.28.2
+boto3==1.26.86
+botocore==1.29.86
+docutils==0.19
+jmespath==1.0.1
+s3transfer==0.6.1
+
+                        - Python version: 3.7
+                        - Project source code: import csv
+import torch
+import numpy as np
+from ..common.tools import load_pickle
+from ..common.tools import logger
+from ..callback.progressbar import ProgressBar
+from torch.utils.data import TensorDataset
+from transformers import BertTokenizer
+
+class InputExample(object):
+    def __init__(self, guid, text_a, text_b=None, label=None):
+        """Constructs a InputExample.
+        Args:
+            guid: Unique id for the example.
+            text_a: string. The untokenized text of the first sequence. For single
+            sequence tasks, only this sequence must be specified.
+            text_b: (Optional) string. The untokenized text of the second sequence.
+            Only must be specified for sequence pair tasks.
+            label: (Optional) string. The label of the example. This should be
+            specified for train and dev examples, but not for test examples.
+        """
+        self.guid   = guid
+        self.text_a = text_a
+        self.text_b = text_b
+        self.label  = label
+
+class InputFeature(object):
+    '''
+    A single set of features of data.
+    '''
+    def __init__(self,input_ids,input_mask,segment_ids,label_id,input_len):
+        self.input_ids   = input_ids
+        self.input_mask  = input_mask
+        self.segment_ids = segment_ids
+        self.label_id    = label_id
+        self.input_len = input_len
+
+class BertProcessor(object):
+    """Base class for data converters for sequence classification data sets."""
+
+    def __init__(self,vocab_path,do_lower_case):
+        self.tokenizer = BertTokenizer(vocab_path,do_lower_case)
+
+    def get_train(self, data_file):
+        """Gets a collection of `InputExample`s for the train set."""
+        return self.read_data(data_file)
+
+    def get_dev(self, data_file):
+        """Gets a collection of `InputExample`s for the dev set."""
+        return self.read_data(data_file)
+
+    def get_test(self,lines):
+        return lines
+
+    def get_labels(self):
+        """Gets the list of labels for this data set."""
+        return ["toxic","severe_toxic","obscene","threat","insult","identity_hate"]
+
+    @classmethod
+    def read_data(cls, input_file,quotechar = None):
+        """Reads a tab separated value file."""
+        if 'pkl' in str(input_file):
+            lines = load_pickle(input_file)
+        else:
+            lines = input_file
+        return lines
+
+    def truncate_seq_pair(self,tokens_a,tokens_b,max_length):
+        # This is a simple heuristic which will always truncate the longer sequence
+        # one token at a time. This makes more sense than truncating an equal percent
+        # of tokens from each, since if one sequence is very short then each token
+        # that's truncated likely contains more information than a longer sequence.
+        while True:
+            total_length = len(tokens_a) + len(tokens_b)
+            if total_length <= max_length:
+                break
+            if len(tokens_a) > len(tokens_b):
+                tokens_a.pop()
+            else:
+                tokens_b.pop()
+
+    def create_examples(self,lines,example_type,cached_examples_file):
+        '''
+        Creates examples for data
+        '''
+        pbar = ProgressBar(n_total = len(lines),desc='create examples')
+        if cached_examples_file.exists():
+            logger.info("Loading examples from cached file %s", cached_examples_file)
+            examples = torch.load(cached_examples_file)
+        else:
+            examples = []
+            for i,line in enumerate(lines):
+                guid = '%s-%d'%(example_type,i)
+                text_a = line[0]
+                label = line[1]
+                if isinstance(label,str):
+                    label = [np.float(x) for x in label.split(",")]
+                else:
+                    label = [np.float(x) for x in list(label)]
+                text_b = None
+                example = InputExample(guid = guid,text_a = text_a,text_b=text_b,label= label)
+                examples.append(example)
+                pbar(step=i)
+            logger.info("Saving examples into cached file %s", cached_examples_file)
+            torch.save(examples, cached_examples_file)
+        return examples
+
+    def create_features(self,examples,max_seq_len,cached_features_file):
+        '''
+        # The convention in BERT is:
+        # (a) For sequence pairs:
+        #  tokens:   [CLS] is this jack ##son ##ville ? [SEP] no it is not . [SEP]
+        #  type_ids:   0   0  0    0    0     0       0   0   1  1  1  1   1   1
+        # (b) For single sequences:
+        #  tokens:   [CLS] the dog is hairy . [SEP]
+        #  type_ids:   0   0   0   0  0     0   0
+        '''
+        pbar = ProgressBar(n_total=len(examples),desc='create features')
+        if cached_features_file.exists():
+            logger.info("Loading features from cached file %s", cached_features_file)
+            features = torch.load(cached_features_file)
+        else:
+            features = []
+            for ex_id,example in enumerate(examples):
+                tokens_a = self.tokenizer.tokenize(example.text_a)
+                tokens_b = None
+                label_id = example.label
+
+                if example.text_b:
+                    tokens_b = self.tokenizer.tokenize(example.text_b)
+                    # Modifies `tokens_a` and `tokens_b` in place so that the total
+                    # length is less than the specified length.
+                    # Account for [CLS], [SEP], [SEP] with "- 3"
+                    self.truncate_seq_pair(tokens_a,tokens_b,max_length = max_seq_len - 3)
+                else:
+                    # Account for [CLS] and [SEP] with '-2'
+                    if len(tokens_a) > max_seq_len - 2:
+                        tokens_a = tokens_a[:max_seq_len - 2]
+                tokens = ['[CLS]'] + tokens_a + ['[SEP]']
+                segment_ids = [0] * len(tokens)
+                if tokens_b:
+                    tokens += tokens_b + ['[SEP]']
+                    segment_ids += [1] * (len(tokens_b) + 1)
+
+                input_ids = self.tokenizer.convert_tokens_to_ids(tokens)
+                input_mask = [1] * len(input_ids)
+                padding = [0] * (max_seq_len - len(input_ids))
+                input_len = len(input_ids)
+
+                input_ids   += padding
+                input_mask  += padding
+                segment_ids += padding
+
+                assert len(input_ids) == max_seq_len
+                assert len(input_mask) == max_seq_len
+                assert len(segment_ids) == max_seq_len
+
+                if ex_id < 2:
+                    logger.info("*** Example ***")
+                    logger.info(f"guid: {example.guid}" % ())
+                    logger.info(f"tokens: {' '.join([str(x) for x in tokens])}")
+                    logger.info(f"input_ids: {' '.join([str(x) for x in input_ids])}")
+                    logger.info(f"input_mask: {' '.join([str(x) for x in input_mask])}")
+                    logger.info(f"segment_ids: {' '.join([str(x) for x in segment_ids])}")
+
+                feature = InputFeature(input_ids = input_ids,
+                                       input_mask = input_mask,
+                                       segment_ids = segment_ids,
+                                       label_id = label_id,
+                                       input_len = input_len)
+                features.append(feature)
+                pbar(step=ex_id)
+            logger.info("Saving features into cached file %s", cached_features_file)
+            torch.save(features, cached_features_file)
+        return features
+
+    def create_dataset(self,features,is_sorted = False):
+        # Convert to Tensors and build dataset
+        if is_sorted:
+            logger.info("sorted data by th length of input")
+            features = sorted(features,key=lambda x:x.input_len,reverse=True)
+        all_input_ids = torch.tensor([f.input_ids for f in features], dtype=torch.long)
+        all_input_mask = torch.tensor([f.input_mask for f in features], dtype=torch.long)
+        all_segment_ids = torch.tensor([f.segment_ids for f in features], dtype=torch.long)
+        all_label_ids = torch.tensor([f.label_id for f in features],dtype=torch.long)
+        all_input_lens = torch.tensor([f.input_len for f in features], dtype=torch.long)
+        dataset = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids,all_input_lens)
+        return dataset
+
+
+                        - library source code: # coding=utf-8
+# Copyright 2020-present the HuggingFace Inc. team.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+"""
+Torch utilities for the Trainer class.
+"""
+
+import math
+import warnings
+from contextlib import contextmanager
+from typing import List, Optional, Union
+
+import numpy as np
+import torch
+from packaging import version
+from torch.utils.data.distributed import DistributedSampler
+from torch.utils.data.sampler import RandomSampler, Sampler
+
+from .file_utils import is_torch_tpu_available
+from .utils import logging
+
+
+if is_torch_tpu_available():
+    import torch_xla.core.xla_model as xm
+
+if version.parse(torch.__version__) <= version.parse("1.4.1"):
+    SAVE_STATE_WARNING = ""
+else:
+    from torch.optim.lr_scheduler import SAVE_STATE_WARNING
+
+logger = logging.get_logger(__name__)
+
+
+def torch_pad_and_concatenate(tensor1, tensor2, padding_index=-100):
+    """Concatenates `tensor1` and `tensor2` on first axis, applying padding on the second if necessary."""
+    if len(tensor1.shape) == 1 or tensor1.shape[1] == tensor2.shape[1]:
+        return torch.cat((tensor1, tensor2), dim=0)
+
+    # Let's figure out the new shape
+    new_shape = (tensor1.shape[0] + tensor2.shape[0], max(tensor1.shape[1], tensor2.shape[1])) + tensor1.shape[2:]
+
+    # Now let's fill the result tensor
+    result = tensor1.new_full(new_shape, padding_index)
+    result[: tensor1.shape[0], : tensor1.shape[1]] = tensor1
+    result[tensor1.shape[0] :, : tensor2.shape[1]] = tensor2
+    return result
+
+
+def numpy_pad_and_concatenate(array1, array2, padding_index=-100):
+    """Concatenates `array1` and `array2` on first axis, applying padding on the second if necessary."""
+    if len(array1.shape) == 1 or array1.shape[1] == array2.shape[1]:
+        return np.concatenate((array1, array2), dim=0)
+
+    # Let's figure out the new shape
+    new_shape = (array1.shape[0] + array2.shape[0], max(array1.shape[1], array2.shape[1])) + array1.shape[2:]
+
+    # Now let's fill the result tensor
+    result = np.full_like(array1, padding_index, shape=new_shape)
+    result[: array1.shape[0], : array1.shape[1]] = array1
+    result[array1.shape[0] :, : array2.shape[1]] = array2
+    return result
+
+
+def nested_concat(tensors, new_tensors, padding_index=-100):
+    """
+    Concat the `new_tensors` to `tensors` on the first dim and pad them on the second if needed. Works for tensors or
+    nested list/tuples of tensors.
+    """
+    assert type(tensors) == type(
+        new_tensors
+    ), f"Expected `tensors` and `new_tensors` to have the same type but found {type(tensors)} and {type(new_tensors)}."
+    if isinstance(tensors, (list, tuple)):
+        return type(tensors)(nested_concat(t, n, padding_index=padding_index) for t, n in zip(tensors, new_tensors))
+    elif isinstance(tensors, torch.Tensor):
+        return torch_pad_and_concatenate(tensors, new_tensors, padding_index=padding_index)
+    elif isinstance(tensors, np.ndarray):
+        return numpy_pad_and_concatenate(tensors, new_tensors, padding_index=padding_index)
+    else:
+        raise TypeError(f"Unsupported type for concatenation: got {type(tensors)}")
+
+
+def nested_numpify(tensors):
+    "Numpify `tensors` (even if it's a nested list/tuple of tensors)."
+    if isinstance(tensors, (list, tuple)):
+        return type(tensors)(nested_numpify(t) for t in tensors)
+    return tensors.cpu().numpy()
+
+
+def nested_detach(tensors):
+    "Detach `tensors` (even if it's a nested list/tuple of tensors)."
+    if isinstance(tensors, (list, tuple)):
+        return type(tensors)(nested_detach(t) for t in tensors)
+    return tensors.detach()
+
+
+def nested_xla_mesh_reduce(tensors, name):
+    if is_torch_tpu_available():
+        import torch_xla.core.xla_model as xm
+
+        if isinstance(tensors, (list, tuple)):
+            return type(tensors)(nested_xla_mesh_reduce(t, f"{name}_{i}") for i, t in enumerate(tensors))
+        return xm.mesh_reduce(name, tensors, torch.cat)
+    else:
+        raise ImportError("Torch xla must be installed to use `nested_xla_mesh_reduce`")
+
+
+def distributed_concat(tensor: "torch.Tensor", num_total_examples: Optional[int] = None) -> torch.Tensor:
+    try:
+        if isinstance(tensor, (tuple, list)):
+            return type(tensor)(distributed_concat(t, num_total_examples) for t in tensor)
+        output_tensors = [tensor.clone() for _ in range(torch.distributed.get_world_size())]
+        torch.distributed.all_gather(output_tensors, tensor)
+        concat = torch.cat(output_tensors, dim=0)
+
+        # truncate the dummy elements added by SequentialDistributedSampler
+        if num_total_examples is not None:
+            concat = concat[:num_total_examples]
+        return concat
+    except AssertionError:
+        raise AssertionError("Not currently using distributed training")
+
+
+def distributed_broadcast_scalars(
+    scalars: List[Union[int, float]], num_total_examples: Optional[int] = None
+) -> torch.Tensor:
+    try:
+        tensorized_scalar = torch.tensor(scalars).cuda()
+        output_tensors = [tensorized_scalar.clone() for _ in range(torch.distributed.get_world_size())]
+        torch.distributed.all_gather(output_tensors, tensorized_scalar)
+        concat = torch.cat(output_tensors, dim=0)
+
+        # truncate the dummy elements added by SequentialDistributedSampler
+        if num_total_examples is not None:
+            concat = concat[:num_total_examples]
+        return concat
+    except AssertionError:
+        raise AssertionError("Not currently using distributed training")
+
+
+def reissue_pt_warnings(caught_warnings):
+    # Reissue warnings that are not the SAVE_STATE_WARNING
+    if len(caught_warnings) > 1:
+        for w in caught_warnings:
+            if w.category != UserWarning or w.message != SAVE_STATE_WARNING:
+                warnings.warn(w.message, w.category)
+
+
+@contextmanager
+def torch_distributed_zero_first(local_rank: int):
+    """
+    Decorator to make all processes in distributed training wait for each local_master to do something.
+
+    Args:
+        local_rank (:obj:`int`): The rank of the local process.
+    """
+    if local_rank not in [-1, 0]:
+        torch.distributed.barrier()
+    yield
+    if local_rank == 0:
+        torch.distributed.barrier()
+
+
+class SequentialDistributedSampler(Sampler):
+    """
+    Distributed Sampler that subsamples indices sequentially, making it easier to collate all results at the end.
+
+    Even though we only use this sampler for eval and predict (no training), which means that the model params won't
+    have to be synced (i.e. will not hang for synchronization even if varied number of forward passes), we still add
+    extra samples to the sampler to make it evenly divisible (like in `DistributedSampler`) to make it easy to `gather`
+    or `reduce` resulting tensors at the end of the loop.
+    """
+
+    def __init__(self, dataset, num_replicas=None, rank=None):
+        if num_replicas is None:
+            if not torch.distributed.is_available():
+                raise RuntimeError("Requires distributed package to be available")
+            num_replicas = torch.distributed.get_world_size()
+        if rank is None:
+            if not torch.distributed.is_available():
+                raise RuntimeError("Requires distributed package to be available")
+            rank = torch.distributed.get_rank()
+        self.dataset = dataset
+        self.num_replicas = num_replicas
+        self.rank = rank
+        self.num_samples = int(math.ceil(len(self.dataset) * 1.0 / self.num_replicas))
+        self.total_size = self.num_samples * self.num_replicas
+
+    def __iter__(self):
+        indices = list(range(len(self.dataset)))
+
+        # add extra samples to make it evenly divisible
+        indices += indices[: (self.total_size - len(indices))]
+        assert (
+            len(indices) == self.total_size
+        ), f"Indices length {len(indices)} and total size {self.total_size} mismatched"
+
+        # subsample
+        indices = indices[self.rank * self.num_samples : (self.rank + 1) * self.num_samples]
+        assert (
+            len(indices) == self.num_samples
+        ), f"Indices length {len(indices)} and sample number {self.num_samples} mismatched"
+
+        return iter(indices)
+
+    def __len__(self):
+        return self.num_samples
+
+
+def get_tpu_sampler(dataset: torch.utils.data.dataset.Dataset):
+    if xm.xrt_world_size() <= 1:
+        return RandomSampler(dataset)
+    return DistributedSampler(dataset, num_replicas=xm.xrt_world_size(), rank=xm.get_ordinal())
+
+
+def nested_new_like(arrays, num_samples, padding_index=-100):
+    """ Create the same nested structure as `arrays` with a first dimension always at `num_samples`."""
+    if isinstance(arrays, (list, tuple)):
+        return type(arrays)(nested_new_like(x, num_samples) for x in arrays)
+    return np.full_like(arrays, padding_index, shape=(num_samples, *arrays.shape[1:]))
+
+
+def nested_expand_like(arrays, new_seq_length, padding_index=-100):
+    """ Expand the `arrays` so that the second dimension grows to `new_seq_length`. Uses `padding_index` for padding."""
+    if isinstance(arrays, (list, tuple)):
+        return type(arrays)(nested_expand_like(x, new_seq_length, padding_index=padding_index) for x in arrays)
+
+    result = np.full_like(arrays, padding_index, shape=(arrays.shape[0], new_seq_length) + arrays.shape[2:])
+    result[:, : arrays.shape[1]] = arrays
+    return result
+
+
+def nested_truncate(tensors, limit):
+    "Truncate `tensors` at `limit` (even if it's a nested list/tuple of tensors)."
+    if isinstance(tensors, (list, tuple)):
+        return type(tensors)(nested_truncate(t, limit) for t in tensors)
+    return tensors[:limit]
+
+
+def _get_first_shape(arrays):
+    """Return the shape of the first array found in the nested struct `arrays`."""
+    if isinstance(arrays, (list, tuple)):
+        return _get_first_shape(arrays[0])
+    return arrays.shape
+
+
+class DistributedTensorGatherer:
+    """
+    A class responsible for properly gathering tensors (or nested list/tuple of tensors) on the CPU by chunks.
+
+    If our dataset has 16 samples with a batch size of 2 on 3 processes and we gather then transfer on CPU at every
+    step, our sampler will generate the following indices:
+
+        :obj:`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 1]`
+
+    to get something of size a multiple of 3 (so that each process gets the same dataset length). Then process 0, 1 and
+    2 will be responsible of making predictions for the following samples:
+
+        - P0: :obj:`[0, 1, 2, 3, 4, 5]`
+        - P1: :obj:`[6, 7, 8, 9, 10, 11]`
+        - P2: :obj:`[12, 13, 14, 15, 0, 1]`
+
+    The first batch treated on each process will be
+
+        - P0: :obj:`[0, 1]`
+        - P1: :obj:`[6, 7]`
+        - P2: :obj:`[12, 13]`
+
+    So if we gather at the end of the first batch, we will get a tensor (nested list/tuple of tensor) corresponding to
+    the following indices:
+
+        :obj:`[0, 1, 6, 7, 12, 13]`
+
+    If we directly concatenate our results without taking any precautions, the user will then get the predictions for
+    the indices in this order at the end of the prediction loop:
+
+        :obj:`[0, 1, 6, 7, 12, 13, 2, 3, 8, 9, 14, 15, 4, 5, 10, 11, 0, 1]`
+
+    For some reason, that's not going to roll their boat. This class is there to solve that problem.
+
+    Args:
+
+        world_size (:obj:`int`):
+            The number of processes used in the distributed training.
+        num_samples (:obj:`int`):
+            The number of samples in our dataset.
+        make_multiple_of (:obj:`int`, `optional`):
+            If passed, the class assumes the datasets passed to each process are made to be a multiple of this argument
+            (by adding samples).
+        padding_index (:obj:`int`, `optional`, defaults to -100):
+            The padding index to use if the arrays don't all have the same sequence length.
+    """
+
+    def __init__(self, world_size, num_samples, make_multiple_of=None, padding_index=-100):
+        self.world_size = world_size
+        self.num_samples = num_samples
+        total_size = world_size if make_multiple_of is None else world_size * make_multiple_of
+        self.total_samples = int(np.ceil(num_samples / total_size)) * total_size
+        self.process_length = self.total_samples // world_size
+        self._storage = None
+        self._offsets = None
+        self.padding_index = padding_index
+
+    def add_arrays(self, arrays):
+        """
+        Add :obj:`arrays` to the internal storage, Will initialize the storage to the full size at the first arrays
+        passed so that if we're bound to get an OOM, it happens at the beginning.
+        """
+        if arrays is None:
+            return
+        if self._storage is None:
+            self._storage = nested_new_like(arrays, self.total_samples, padding_index=self.padding_index)
+            self._offsets = list(range(0, self.total_samples, self.process_length))
+        else:
+            storage_shape = _get_first_shape(self._storage)
+            arrays_shape = _get_first_shape(arrays)
+            if len(storage_shape) > 1 and storage_shape[1] < arrays_shape[1]:
+                # If we get new arrays that are too big too fit, we expand the shape fo the storage
+                self._storage = nested_expand_like(self._storage, arrays_shape[1], padding_index=self.padding_index)
+        slice_len = self._nested_set_tensors(self._storage, arrays)
+        for i in range(self.world_size):
+            self._offsets[i] += slice_len
+
+    def _nested_set_tensors(self, storage, arrays):
+        if isinstance(arrays, (list, tuple)):
+            for x, y in zip(storage, arrays):
+                slice_len = self._nested_set_tensors(x, y)
+            return slice_len
+        assert (
+            arrays.shape[0] % self.world_size == 0
+        ), f"Arrays passed should all have a first dimension multiple of {self.world_size}, found {arrays.shape[0]}."
+
+        slice_len = arrays.shape[0] // self.world_size
+        for i in range(self.world_size):
+            if len(arrays.shape) == 1:
+                storage[self._offsets[i] : self._offsets[i] + slice_len] = arrays[i * slice_len : (i + 1) * slice_len]
+            else:
+                storage[self._offsets[i] : self._offsets[i] + slice_len, : arrays.shape[1]] = arrays[
+                    i * slice_len : (i + 1) * slice_len
+                ]
+        return slice_len
+
+    def finalize(self):
+        """
+        Return the properly gathered arrays and truncate to the number of samples (since the sampler added some extras
+        to get each process a dataset of the same length).
+        """
+        if self._storage is None:
+            return
+        if self._offsets[0] != self.process_length:
+            logger.warn("Not all data has been set. Are you sure you passed all values?")
+        return nested_truncate(self._storage, self.num_samples)
+
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
+                        - Crash traceback: Traceback (most recent call last):
+  File "run_bert.py", line 10, in <module>
+    from pybert.io.bert_processor import BertProcessor
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/io/bert_processor.py", line 8, in <module>
+    from transformers import BertTokenizer
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/__init__.py", line 626, in <module>
+    from .trainer import Trainer
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/trainer.py", line 69, in <module>
+    from .trainer_pt_utils import (
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/trainer_pt_utils.py", line 40, in <module>
+    from torch.optim.lr_scheduler import SAVE_STATE_WARNING
+ImportError: cannot import name 'SAVE_STATE_WARNING' from 'torch.optim.lr_scheduler' (/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/optim/lr_scheduler.py)
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in torch v1.10.1 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in torch
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain torch==1.10.1
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

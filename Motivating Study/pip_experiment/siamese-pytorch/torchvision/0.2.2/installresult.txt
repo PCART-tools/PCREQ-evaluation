@@ -1,0 +1,7 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: torchvision==0.2.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (0.2.2)
+Requirement already satisfied: pillow>=4.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.2.2) (5.4.1)
+Requirement already satisfied: tqdm==4.19.9 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.2.2) (4.19.9)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.2.2) (1.16.1)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.2.2) (1.12.0)
+Requirement already satisfied: torch in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.2.2) (1.0.1)

@@ -3,7 +3,6 @@ catalogue==2.0.10
 charset-normalizer==3.3.2
 click==7.1.2
 coloredlogs==15.0.1
-correlation-cuda==0.0.0
 cymem==2.0.8
 filelock==3.12.2
 humanfriendly==10.0
@@ -22,10 +21,9 @@ protobuf==3.20.0
 pydantic==1.7.4
 regex==2024.4.16
 requests==2.31.0
-resample2d-cuda==0.0.0
 sacremoses==0.0.53
 scikit-learn==0.24.0
-scipy==1.5.3
+scipy==1.5.4
 sentencepiece==0.1.91
 six==1.16.0
 smart-open==6.4.0
@@ -34,7 +32,7 @@ spacy-legacy==3.0.12
 srsly==2.4.8
 sympy==1.10.1
 tensorboardX==1.6
-thinc==8.0.2
+thinc==8.0.1
 threadpoolctl==3.1.0
 tokenizers==0.9.4
 torch==1.4.0

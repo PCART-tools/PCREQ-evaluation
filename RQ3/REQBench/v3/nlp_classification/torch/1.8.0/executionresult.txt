@@ -1,4 +1,23 @@
+epochs:   0%|          | 0/1 [00:00<?, ?it/s]
+steps:   0%|          | 0/468 [00:00<?, ?it/s][Asteps:   0%|          | 0/468 [00:00<?, ?it/s]
+epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 Traceback (most recent call last):
-  File "train.py", line 3, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+  File "train.py", line 145, in <module>
+    main(args)
+  File "train.py", line 79, in main
+    y_hat_mb = model(x_mb)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.5/nlp_classification/Character-level_Convolutional_Networks_for_Text_Classification/model/net.py", line 47, in forward
+    feature = self._extractor(x)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
+    input = module(input)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 263, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 260, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: cuDNN error: CUDNN_STATUS_NOT_INITIALIZED

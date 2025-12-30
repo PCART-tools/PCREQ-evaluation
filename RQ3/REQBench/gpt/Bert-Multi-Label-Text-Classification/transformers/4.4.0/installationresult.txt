@@ -13,8 +13,8 @@ Collecting cycler==0.10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl (6.5 kB)
 Collecting docutils==0.15.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/22/cd/a6aa959dca619918ccb55023b4cb151949c64d4d5d55b3f4ffd7eee0c6e8/docutils-0.15.2-py3-none-any.whl (547 kB)
-Collecting filelock==3.0.12
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/93/83/71a2ee6158bb9f39a90c0dea1637f81d5eef866e188e1971a1b1ab01a35a/filelock-3.0.12-py3-none-any.whl (7.6 kB)
+Collecting filelock==3.12.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/00/45/ec3407adf6f6b5bf867a4462b2b0af27597a26bd3cd6e2534cb6ab029938/filelock-3.12.2-py3-none-any.whl (10 kB)
 Collecting idna==2.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58 kB)
 Collecting jmespath==0.9.4
@@ -51,21 +51,21 @@ Collecting scikit-learn==0.21.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/c5/e5267eb84994e9a92a2c6a6ee768514f255d036f3c8378acfa694e9f2c99/scikit_learn-0.21.3-cp37-cp37m-manylinux1_x86_64.whl (6.7 MB)
 Collecting scipy==1.3.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/7f/b535ec711cbcc3246abea4385d17e1b325d4c3404dd86f15fc4f3dba1dbb/scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
-Collecting sentencepiece==0.1.85
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/11/e0/1264990c559fb945cfb6664742001608e1ed8359eeec6722830ae085062b/sentencepiece-0.1.85-cp37-cp37m-manylinux1_x86_64.whl (1.0 MB)
+Collecting sentencepiece==0.1.91
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/e2/813dff3d72df2f49554204e7e5f73a3dc0f0eb1e3958a4cad3ef3fb278b7/sentencepiece-0.1.91-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
 Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
 Collecting tokenizers==0.10.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/e2/df3543e8ffdab68f5acc73f613de9c2b155ac47f162e725dcac87c521c11/tokenizers-0.10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3 MB)
 Collecting torch==1.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/5d/095ddddc91c8a769a68c791c019c5793f9c4456a688ddd235d6670924ecb/torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl (776.8 MB)
-Collecting tqdm==4.49.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/d5/f220e0c69b2f346b5649b66abebb391df1a00a59997a7ccf823325bd7a3e/tqdm-4.49.0-py2.py3-none-any.whl (69 kB)
+Collecting tqdm==4.50.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/cf/f91813073e4135c1183cadf968256764a6fe4e35c351d596d527c0540461/tqdm-4.50.2-py2.py3-none-any.whl (70 kB)
 Collecting transformers==4.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/51/bb/52c052a01bfd62d4f8038a29c15612eb144b99c11d1f082a7adb5510c22b/transformers-4.4.0-py3-none-any.whl (2.1 MB)
 Collecting urllib3==1.25.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/60/247f23a7121ae632d62811ba7f273d0e58972d75e58a94d329d51550a47d/urllib3-1.25.3-py2.py3-none-any.whl (150 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/Bert-Multi-Label-Text-Classification-transformers-4.4.0.txt (line 12)) (65.6.3)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/Bert-Multi-Label-Text-Classification-transformers-4.4.0.txt (line 12)) (65.6.3)
 Collecting typing-extensions
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Collecting packaging
@@ -74,5 +74,5 @@ Collecting importlib-metadata
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
 Collecting zipp>=0.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Installing collected packages: tokenizers, sentencepiece, regex, pytz, joblib, jmespath, filelock, chardet, certifi, zipp, urllib3, typing-extensions, tqdm, six, pyparsing, Pillow, packaging, numpy, kiwisolver, idna, docutils, Click, torch, scipy, sacremoses, requests, python-dateutil, importlib-metadata, cycler, transformers, scikit-learn, pandas, matplotlib, botocore, s3transfer, boto3, pytorch-transformers
-Successfully installed Click-7.0 Pillow-6.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.0.12 idna-2.8 importlib-metadata-6.7.0 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.1 numpy-1.17.2 packaging-24.0 pandas-0.25.1 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2020.11.13 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.43 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.85 six-1.12.0 tokenizers-0.10.3 torch-1.7.1 tqdm-4.49.0 transformers-4.4.0 typing-extensions-4.7.1 urllib3-1.25.3 zipp-3.15.0
+Installing collected packages: tokenizers, sentencepiece, regex, pytz, joblib, jmespath, chardet, certifi, zipp, urllib3, typing-extensions, tqdm, six, pyparsing, Pillow, packaging, numpy, kiwisolver, idna, filelock, docutils, Click, torch, scipy, sacremoses, requests, python-dateutil, importlib-metadata, cycler, transformers, scikit-learn, pandas, matplotlib, botocore, s3transfer, boto3, pytorch-transformers
+Successfully installed Click-7.0 Pillow-6.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 importlib-metadata-6.7.0 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.1 numpy-1.17.2 packaging-24.0 pandas-0.25.1 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2020.11.13 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.43 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.91 six-1.12.0 tokenizers-0.10.3 torch-1.7.1 tqdm-4.50.2 transformers-4.4.0 typing-extensions-4.7.1 urllib3-1.25.3 zipp-3.15.0

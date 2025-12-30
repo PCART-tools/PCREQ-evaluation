@@ -1,5 +1,9 @@
 Initializing Training Process..
 Batch size per GPU : 5
+Loading 'cp_hifigan/g_00000030'
+Complete.
+Loading 'cp_hifigan/do_00000030'
+Complete.
 Generator(
   (conv_pre): Conv1d(80, 512, kernel_size=(7,), stride=(1,), padding=(3,))
   (ups): ModuleList(
@@ -166,10 +170,6 @@ Loading 'cp_hifigan/g_00000030'
 Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
-Loading 'cp_hifigan/g_00000030'
-Complete.
-Loading 'cp_hifigan/do_00000030'
-Complete.
 /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/functional.py:633: UserWarning: stft will soon require the return_complex parameter be given for real inputs, and will further require that return_complex=True in a future PyTorch release. (Triggered internally at ../aten/src/ATen/native/SpectralOps.cpp:801.)
   normalized, onesided, return_complex)
 /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/functional.py:633: UserWarning: stft will soon require the return_complex parameter be given for real inputs, and will further require that return_complex=True in a future PyTorch release. (Triggered internally at ../aten/src/ATen/native/SpectralOps.cpp:801.)
@@ -195,7 +195,7 @@ Traceback (most recent call last):
     raise ProcessRaisedException(msg, error_index, failed_process.pid)
 torch.multiprocessing.spawn.ProcessRaisedException: 
 
--- Process 1 terminated with the following error:
+-- Process 2 terminated with the following error:
 Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
     fn(i, *args)

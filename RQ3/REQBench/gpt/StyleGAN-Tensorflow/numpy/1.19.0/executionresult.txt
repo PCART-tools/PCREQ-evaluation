@@ -1,7 +1,7 @@
-2025-05-28 03:01:21.575582: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2025-05-28 03:01:21.607297: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
-2025-05-28 03:01:21.614982: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5578a9015d10 executing computations on platform Host. Devices:
-2025-05-28 03:01:21.615031: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2025-12-15 11:38:11.522731: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2025-12-15 11:38:11.554053: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2025-12-15 11:38:11.561663: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x563e82b72490 executing computations on platform Host. Devices:
+2025-12-15 11:38:11.561696: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
 /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:526: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
 /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:527: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.

@@ -6,7 +6,7 @@ matplotlib==3.0.1
 mpmath==1.2.1
 numpy==1.15.4
 Pillow==6.2.2
-protobuf==3.20.3
+protobuf==4.24.4
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 six==1.16.0

@@ -3,9 +3,27 @@ Collecting absl-py==0.7.0
   Using cached absl_py-0.7.0-py3-none-any.whl
 Collecting bleach==1.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/70/86c5fec937ea4964184d4d6c4f0b9551564f821e1c3575907639036d9b90/bleach-1.5.0-py2.py3-none-any.whl (17 kB)
-Collecting certifi==2020.12.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+Collecting certifi==2021.5.30
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
 Collecting dataclasses==0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
-ERROR: Could not find a version that satisfies the requirement html5lib==1.0 (from versions: 1.0-reupload, 0.2, 0.9, 0.10, 0.11, 0.11.1, 0.90, 0.95, 0.99, 0.999, 0.9999, 0.99999, 0.999999, 0.9999999, 0.99999999, 0.999999999, 1.0b1, 1.0b2, 1.0b3, 1.0b5, 1.0b6, 1.0b7, 1.0b8, 1.0b9, 1.0b10, 1.0.1, 1.1)
-ERROR: No matching distribution found for html5lib==1.0
+Collecting html5lib==0.9999999
+  Using cached html5lib-0.9999999-py3-none-any.whl
+Collecting importlib-metadata==2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/6d/f4bb28424bc677bce1210bc19f69a43efe823e294325606ead595211f93e/importlib_metadata-2.0.0-py2.py3-none-any.whl (31 kB)
+Collecting Markdown==3.3.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f3/df/ca72f352e15b6f8ce32b74af029f1189abffb906f7c137501ffe69c98a65/Markdown-3.3.7-py3-none-any.whl (97 kB)
+Collecting numpy==1.13.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/57/a7/e3e6bd9d595125e1abbe162e323fd2d06f6f6683185294b79cd2cdb190d5/numpy-1.13.3-cp36-cp36m-manylinux1_x86_64.whl (17.0 MB)
+Collecting protobuf==3.6.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/f9/28787754923612ca9bfdffc588daa05580ed70698add063a5629d1a4209d/protobuf-3.6.1-cp36-cp36m-manylinux1_x86_64.whl (1.1 MB)
+Collecting scikit-learn==0.20.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/82/c0de5839d613b82bddd088599ac0bbfbbbcbd8ca470680658352d2c435bd/scikit_learn-0.20.3-cp36-cp36m-manylinux1_x86_64.whl (5.4 MB)
+Collecting scipy==1.2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/69/20c8f3b7efe362093dff891239551ff90d4c463b5f52676e2694fea09442/scipy-1.2.2-cp36-cp36m-manylinux1_x86_64.whl (24.8 MB)
+Collecting six==1.16.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting tensorflow==1.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/22/cc/ca70b78087015d21c5f3f93694107f34ebccb3be9624385a911d4b52ecef/tensorflow-1.12.0-cp36-cp36m-manylinux1_x86_64.whl (83.1 MB)
+ERROR: Could not find a version that satisfies the requirement tensorflow-tensorboard==1.12.0 (from versions: 0.1.1, 0.1.2, 0.1.4, 0.1.5, 0.1.6, 0.1.7, 0.1.8, 0.4.0rc1, 0.4.0rc2, 0.4.0rc3, 0.4.0, 1.5.0, 1.5.1)
+ERROR: No matching distribution found for tensorflow-tensorboard==1.12.0

@@ -29,8 +29,8 @@ Collecting python-dateutil==2.9.0.post0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Collecting PyWavelets==1.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/62/bd/592c7242fdd1218a96431512e77265c50812315ef72570ace85e1cfae298/PyWavelets-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (4.4 MB)
-Collecting scikit-image==0.15.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2e/21/ea56c8bb2e8112837dd71aebeb2ac67913e784911c0d7f493a593fa1a207/scikit_image-0.15.0-cp37-cp37m-manylinux1_x86_64.whl (26.3 MB)
+Collecting scikit-image==0.17.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/ee/753ea56fda5bc2a5516a1becb631bf5ada593a2dd44f21971a13a762d4db/scikit_image-0.17.2-cp37-cp37m-manylinux1_x86_64.whl (12.5 MB)
 Collecting scipy==1.5.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/7e/8f6a79b102ca1ea928bae8998b05bf5dc24a90571db13cd119f275ba6252/scipy-1.5.4-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
 Collecting six==1.16.0
@@ -49,5 +49,7 @@ Collecting tqdm==4.32.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/af/685bf3ce889ea191f3b916557f5677cc95a5e87b2fa120d74b5dd6d049d0/tqdm-4.32.1-py2.py3-none-any.whl (49 kB)
 Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
-Installing collected packages: terminaltables, mpmath, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, cycler, torch, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
-Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.19.2 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-1.8 terminaltables-3.1.0 torch-1.1.0 torchvision-0.3.0 tqdm-4.32.1 typing_extensions-4.7.1
+Collecting tifffile>=2019.7.26
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d8/38/85ae5ed77598ca90558c17a2f79ddaba33173b31cf8d8f545d34d9134f0d/tifffile-2021.11.2-py3-none-any.whl (178 kB)
+Installing collected packages: terminaltables, mpmath, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, cycler, torch, tifffile, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
+Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.19.2 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.17.2 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-1.8 terminaltables-3.1.0 tifffile-2021.11.2 torch-1.1.0 torchvision-0.3.0 tqdm-4.32.1 typing_extensions-4.7.1

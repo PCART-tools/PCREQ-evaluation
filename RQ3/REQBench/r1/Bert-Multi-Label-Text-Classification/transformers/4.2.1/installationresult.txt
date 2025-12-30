@@ -65,11 +65,11 @@ Collecting transformers==4.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/40/866cbfac4601e0f74c7303d533a9c5d4a53858bd402e08e3e294dd271f25/transformers-4.2.1-py3-none-any.whl (1.8 MB)
 Collecting urllib3==1.25.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/60/247f23a7121ae632d62811ba7f273d0e58972d75e58a94d329d51550a47d/urllib3-1.25.3-py2.py3-none-any.whl (150 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/Bert-Multi-Label-Text-Classification-transformers-4.2.1.txt (line 12)) (65.6.3)
-Collecting importlib-metadata
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/Bert-Multi-Label-Text-Classification-transformers-4.2.1.txt (line 12)) (65.6.3)
 Collecting packaging
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Collecting importlib-metadata
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
 Collecting typing-extensions>=3.6.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Collecting zipp>=0.5

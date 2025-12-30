@@ -1,0 +1,121 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: torch==1.13.1
+transformers==4.3.3
+tokenizers==0.10.3
+sentencepiece==0.1.91
+filelock==3.12.2
+numpy==1.21.6
+packaging==20.9
+regex==2019.8.19
+requests==2.31.0
+sacremoses==0.0.33
+tqdm==4.66.1
+boto3==1.9.227
+botocore==1.12.227
+certifi==2019.9.11
+chardet==3.0.4
+Click==7.0
+cycler==0.10.0
+docutils==0.15.2
+idna==2.8
+jmespath==0.9.4
+joblib==0.13.2
+kiwisolver==1.1.0
+matplotlib==3.1.1
+pandas==0.25.1
+Pillow==6.2.0
+pyparsing==2.4.2
+python-dateutil==2.8.0
+pytz==2019.2
+scikit-learn==0.21.3
+scipy==1.3.1
+six==1.12.0
+s3transfer==0.2.1
+urllib3==1.25.3
+
+                        - Python version: 3.7
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
+
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['filelock', 'numpy (>=1.17)', 'packaging', 'regex (!=2019.12.17)', 'requests', 'sacremoses', 'tokenizers (<0.11,>=0.10.1)', 'tqdm (>=4.27)', 'dataclasses ; python_version < "3.7"', 'importlib-metadata ; python_version < "3.8"', "tensorflow (>=2.3) ; extra == 'all'", "onnxconverter-common ; extra == 'all'", "keras2onnx ; extra == 'all'", "torch (>=1.0) ; extra == 'all'", "jax (>=0.2.8) ; extra == 'all'", "jaxlib (>=0.1.59) ; extra == 'all'", "flax (>=0.2.2) ; extra == 'all'", "sentencepiece (==0.1.91) ; extra == 'all'", "protobuf ; extra == 'all'", "tokenizers (<0.11,>=0.10.1) ; extra == 'all'", "tensorflow (>=2.3) ; extra == 'dev'", "onnxconverter-common ; extra == 'dev'", "keras2onnx ; extra == 'dev'", "torch (>=1.0) ; extra == 'dev'", "jax (>=0.2.8) ; extra == 'dev'", "jaxlib (>=0.1.59) ; extra == 'dev'", "flax (>=0.2.2) ; extra == 'dev'", "sentencepiece (==0.1.91) ; extra == 'dev'", "protobuf ; extra == 'dev'", "tokenizers (<0.11,>=0.10.1) ; extra == 'dev'", "pytest ; extra == 'dev'", "pytest-xdist ; extra == 'dev'", "timeout-decorator ; extra == 'dev'", "parameterized ; extra == 'dev'", "psutil ; extra == 'dev'", "datasets ; extra == 'dev'", "faiss-cpu ; extra == 'dev'", "cookiecutter (==1.7.2) ; extra == 'dev'", "soundfile ; extra == 'dev'", "black (>=20.8b1) ; extra == 'dev'", "isort (>=5.5.4) ; extra == 'dev'", "flake8 (>=3.8.3) ; extra == 'dev'", "fugashi (>=1.0) ; extra == 'dev'", "ipadic (<2.0,>=1.0.0) ; extra == 'dev'", "unidic-lite (>=1.0.7) ; extra == 'dev'", "unidic (>=1.0.2) ; extra == 'dev'", "recommonmark ; extra == 'dev'", "sphinx (==3.2.1) ; extra == 'dev'", "sphinx-markdown-tables ; extra == 'dev'", "sphinx-rtd-theme (==0.4.3) ; extra == 'dev'", "sphinx-copybutton ; extra == 'dev'", "scikit-learn ; extra == 'dev'", "recommonmark ; extra == 'docs'", "sphinx (==3.2.1) ; extra == 'docs'", "sphinx-markdown-tables ; extra == 'docs'", "sphinx-rtd-theme (==0.4.3) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "jax (>=0.2.8) ; extra == 'flax'", "jaxlib (>=0.1.59) ; extra == 'flax'", "flax (>=0.2.2) ; extra == 'flax'", "fugashi (>=1.0) ; extra == 'ja'", "ipadic (<2.0,>=1.0.0) ; extra == 'ja'", "unidic-lite (>=1.0.7) ; extra == 'ja'", "unidic (>=1.0.2) ; extra == 'ja'", "cookiecutter (==1.7.2) ; extra == 'modelcreation'", "onnxruntime (>=1.4.0) ; extra == 'onnxruntime'", "onnxruntime-tools (>=1.4.2) ; extra == 'onnxruntime'", "black (>=20.8b1) ; extra == 'quality'", "isort (>=5.5.4) ; extra == 'quality'", "flake8 (>=3.8.3) ; extra == 'quality'", "faiss-cpu ; extra == 'retrieval'", "datasets ; extra == 'retrieval'", "sentencepiece (==0.1.91) ; extra == 'sentencepiece'", "protobuf ; extra == 'sentencepiece'", "pydantic ; extra == 'serving'", "uvicorn ; extra == 'serving'", "fastapi ; extra == 'serving'", "starlette ; extra == 'serving'", "scikit-learn ; extra == 'sklearn'", "soundfile ; extra == 'speech'", "pytest ; extra == 'testing'", "pytest-xdist ; extra == 'testing'", "timeout-decorator ; extra == 'testing'", "parameterized ; extra == 'testing'", "psutil ; extra == 'testing'", "datasets ; extra == 'testing'", "faiss-cpu ; extra == 'testing'", "cookiecutter (==1.7.2) ; extra == 'testing'", "soundfile ; extra == 'testing'", "tensorflow (>=2.3) ; extra == 'tf'", "onnxconverter-common ; extra == 'tf'", "keras2onnx ; extra == 'tf'", "tensorflow-cpu (>=2.3) ; extra == 'tf-cpu'", "onnxconverter-common ; extra == 'tf-cpu'", "keras2onnx ; extra == 'tf-cpu'", "tokenizers (<0.11,>=0.10.1) ; extra == 'tokenizers'", "torch (>=1.0) ; extra == 'torch'", "filelock ; extra == 'torchhub'", "importlib-metadata ; extra == 'torchhub'", "numpy (>=1.17) ; extra == 'torchhub'", "packaging ; extra == 'torchhub'", "protobuf ; extra == 'torchhub'", "regex (!=2019.12.17) ; extra == 'torchhub'", "requests ; extra == 'torchhub'", "sacremoses ; extra == 'torchhub'", "sentencepiece (==0.1.91) ; extra == 'torchhub'", "torch (>=1.0) ; extra == 'torchhub'", "tokenizers (<0.11,>=0.10.1) ; extra == 'torchhub'", "tqdm (>=4.27) ; extra == 'torchhub'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "run_bert.py", line 14, in <module>
+    from pybert.model.bert_for_multi_label import BertForMultiLable
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/model/bert_for_multi_label.py", line 2, in <module>
+    from transformers.modeling_bert import BertPreTrainedModel, BertModel
+ModuleNotFoundError: No module named 'transformers.modeling_bert'
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in transformers v4.3.3 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in transformers
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain transformers==4.3.3
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

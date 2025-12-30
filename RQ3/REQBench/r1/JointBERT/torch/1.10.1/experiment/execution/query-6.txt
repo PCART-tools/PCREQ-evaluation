@@ -10,45 +10,105 @@ dataclasses==0.8
 filelock==3.4.1
 future==1.0.0
 idna==3.7
-importlib-metadata==4.5.0
-importlib-resources==5.1.0
+importlib-metadata==4.8.3
+importlib-resources==5.4.0
 joblib==1.1.1
 keras==2.10.0
 numpy==1.19.5
 packaging==21.3
 pyparsing==3.1.2
 pytorch-crf==0.7.2
-regex==2021.11.10
+regex==2023.8.8
 requests==2.27.1
 sacremoses==0.0.53
 sentencepiece==0.1.91
 seqeval==0.0.12
 six==1.16.0
-tokenizers==0.9.4
+tokenizers==0.10.1
 torch==1.10.1
-tqdm==4.62.0
-transformers==4.0.0
+tqdm==4.64.1
+transformers==4.10.0
 typing_extensions==4.1.1
 urllib3==1.26.19
 zipp==3.6.0
 
                         - Python version: 3.6
+                        - Project source code: import torch
+import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel, BertConfig
+from torchcrf import CRF
+from .module import IntentClassifier, SlotClassifier
+
+
+class JointBERT(BertPreTrainedModel):
+    def __init__(self, config, args, intent_label_lst, slot_label_lst):
+        super(JointBERT, self).__init__(config)
+        self.args = args
+        self.num_intent_labels = len(intent_label_lst)
+        self.num_slot_labels = len(slot_label_lst)
+        self.bert = BertModel(config=config)  # Load pretrained bert
+
+        self.intent_classifier = IntentClassifier(config.hidden_size, self.num_intent_labels, args.dropout_rate)
+        self.slot_classifier = SlotClassifier(config.hidden_size, self.num_slot_labels, args.dropout_rate)
+
+        if args.use_crf:
+            self.crf = CRF(num_tags=self.num_slot_labels, batch_first=True)
+
+    def forward(self, input_ids, attention_mask, token_type_ids, intent_label_ids, slot_labels_ids):
+        outputs = self.bert(input_ids, attention_mask=attention_mask,
+                            token_type_ids=token_type_ids)  # sequence_output, pooled_output, (hidden_states), (attentions)
+        sequence_output = outputs[0]
+        pooled_output = outputs[1]  # [CLS]
+
+        intent_logits = self.intent_classifier(pooled_output)
+        slot_logits = self.slot_classifier(sequence_output)
+
+        total_loss = 0
+        # 1. Intent Softmax
+        if intent_label_ids is not None:
+            if self.num_intent_labels == 1:
+                intent_loss_fct = nn.MSELoss()
+                intent_loss = intent_loss_fct(intent_logits.view(-1), intent_label_ids.view(-1))
+            else:
+                intent_loss_fct = nn.CrossEntropyLoss()
+                intent_loss = intent_loss_fct(intent_logits.view(-1, self.num_intent_labels), intent_label_ids.view(-1))
+            total_loss += intent_loss
+
+        # 2. Slot Softmax
+        if slot_labels_ids is not None:
+            if self.args.use_crf:
+                slot_loss = self.crf(slot_logits, slot_labels_ids, mask=attention_mask.byte(), reduction='mean')
+                slot_loss = -1 * slot_loss  # negative log-likelihood
+            else:
+                slot_loss_fct = nn.CrossEntropyLoss(ignore_index=self.args.ignore_index)
+                # Only keep active parts of the loss
+                if attention_mask is not None:
+                    active_loss = attention_mask.view(-1) == 1
+                    active_logits = slot_logits.view(-1, self.num_slot_labels)[active_loss]
+                    active_labels = slot_labels_ids.view(-1)[active_loss]
+                    slot_loss = slot_loss_fct(active_logits, active_labels)
+                else:
+                    slot_loss = slot_loss_fct(slot_logits.view(-1, self.num_slot_labels), slot_labels_ids.view(-1))
+            total_loss += self.args.slot_loss_coef * slot_loss
+
+        outputs = ((intent_logits, slot_logits),) + outputs[2:]  # add hidden states and attention if they are here
+
+        outputs = (total_loss,) + outputs
+
+        return outputs  # (loss), logits, (hidden_states), (attentions) # Logits is a tuple of intent and slot logits
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
                         - Crash traceback: Traceback (most recent call last):
   File "predict.py", line 10, in <module>
     from utils import init_logger, load_tokenizer, get_intent_labels, get_slot_labels, MODEL_CLASSES
-  File "/home/lei/compatibility_analysis/pytorch/1.6/JointBERT/utils.py", line 9, in <module>
-    from transformers import BertConfig, DistilBertConfig, AlbertConfig
-  File "/home/lei/anaconda3/envs/py36-3/lib/python3.6/site-packages/transformers/__init__.py", line 22, in <module>
-    from .integrations import (  # isort:skip
-  File "/home/lei/anaconda3/envs/py36-3/lib/python3.6/site-packages/transformers/integrations.py", line 5, in <module>
-    from .trainer_utils import EvaluationStrategy
-  File "/home/lei/anaconda3/envs/py36-3/lib/python3.6/site-packages/transformers/trainer_utils.py", line 25, in <module>
-    from .file_utils import is_tf_available, is_torch_available, is_torch_tpu_available
-  File "/home/lei/anaconda3/envs/py36-3/lib/python3.6/site-packages/transformers/file_utils.py", line 227, in <module>
-    shutil.move(old_default_cache_path, default_cache_path)
-  File "/home/lei/anaconda3/envs/py36-3/lib/python3.6/shutil.py", line 548, in move
-    raise Error("Destination path '%s' already exists" % real_dst)
-shutil.Error: Destination path '/home/lei/.cache/huggingface/transformers/transformers' already exists
+  File "/home/lei/compatibility_analysis/pytorch/1.6/JointBERT/utils.py", line 12, in <module>
+    from model import JointBERT, JointDistilBERT, JointAlbert
+  File "/home/lei/compatibility_analysis/pytorch/1.6/JointBERT/model/__init__.py", line 1, in <module>
+    from .modeling_jointbert import JointBERT
+  File "/home/lei/compatibility_analysis/pytorch/1.6/JointBERT/model/modeling_jointbert.py", line 3, in <module>
+    from transformers.modeling_bert import BertPreTrainedModel, BertModel, BertConfig
+ModuleNotFoundError: No module named 'transformers.modeling_bert'
 
 
                         **Analysis Protocol**

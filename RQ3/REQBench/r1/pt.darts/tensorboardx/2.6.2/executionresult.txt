@@ -1,16 +1,33 @@
+12/16 03:24:28 PM | 
+12/16 03:24:28 PM | Parameters:
+12/16 03:24:28 PM | AUX_WEIGHT=0.4
+12/16 03:24:28 PM | BATCH_SIZE=256
+12/16 03:24:28 PM | CUTOUT_LENGTH=16
+12/16 03:24:28 PM | DATA_PATH=./data/
+12/16 03:24:28 PM | DATASET=cifar10
+12/16 03:24:28 PM | DROP_PATH_PROB=0.2
+12/16 03:24:28 PM | EPOCHS=1
+12/16 03:24:28 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 03:24:28 PM | GPUS=[0, 1, 2]
+12/16 03:24:28 PM | GRAD_CLIP=5.0
+12/16 03:24:28 PM | INIT_CHANNELS=36
+12/16 03:24:28 PM | LAYERS=20
+12/16 03:24:28 PM | LR=0.025
+12/16 03:24:28 PM | MOMENTUM=0.9
+12/16 03:24:28 PM | NAME=cifar10
+12/16 03:24:28 PM | PATH=augments/cifar10
+12/16 03:24:28 PM | PRINT_FREQ=200
+12/16 03:24:28 PM | SEED=2
+12/16 03:24:28 PM | WEIGHT_DECAY=0.0003
+12/16 03:24:28 PM | WORKERS=4
+12/16 03:24:28 PM | 
+12/16 03:24:28 PM | Logger is set - training start
+Files already downloaded and verified
 Traceback (most recent call last):
-  File "augment.py", line 6, in <module>
-    from tensorboardX import SummaryWriter
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/__init__.py", line 5, in <module>
-    from .torchvis import TorchVis
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/torchvis.py", line 10, in <module>
-    from .writer import SummaryWriter
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/writer.py", line 16, in <module>
-    from .comet_utils import CometLogger
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/comet_utils.py", line 7, in <module>
-    from .summary import _clean_tag
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/summary.py", line 12, in <module>
-    from .proto.summary_pb2 import Summary
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/proto/summary_pb2.py", line 5, in <module>
-    from google.protobuf.internal import builder as _builder
-ImportError: cannot import name 'builder' from 'google.protobuf.internal' (/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/google/protobuf/internal/__init__.py)
+  File "augment.py", line 177, in <module>
+    main()
+  File "augment.py", line 39, in main
+    config.dataset, config.data_path, config.cutout_length, validation=True)
+  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
+    shape = trn_data.train_data.shape
+AttributeError: 'CIFAR10' object has no attribute 'train_data'

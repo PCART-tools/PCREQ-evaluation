@@ -1,0 +1,8 @@
+click==8.1.6
+torch==1.12.1
+numpy==1.21.6
+typing-extensions==4.3.0
+matplotlib==3.3.4
+torchvision==0.13.1
+scipy==1.7.3
+sklearn==0.24.2

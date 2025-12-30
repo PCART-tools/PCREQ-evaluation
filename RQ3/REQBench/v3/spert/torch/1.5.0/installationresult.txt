@@ -89,8 +89,8 @@ Collecting wasabi==0.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/74/bd566f876c2de097e75d525c2696fb9829009987a0d93a4fb3576778a0a8/wasabi-0.10.1-py3-none-any.whl (26 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/spert-torch-1.5.0.txt (line 23)) (2022.12.7)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/spert-torch-1.5.0.txt (line 30)) (65.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/spert-torch-1.5.0.txt (line 23)) (2022.12.7)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/spert-torch-1.5.0.txt (line 30)) (65.6.3)
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Installing collected packages: wasabi, tokenizers, sentencepiece, mpmath, cymem, zipp, urllib3, typing_extensions, tqdm, threadpoolctl, sympy, spacy-legacy, smart-open, six, regex, pydantic, protobuf, packaging, numpy, murmurhash, MarkupSafe, joblib, idna, humanfriendly, future, filelock, click, charset-normalizer, typer, torch, tensorboardX, scipy, sacremoses, requests, preshed, Jinja2, importlib-metadata, coloredlogs, catalogue, blis, transformers, srsly, scikit-learn, pathy, thinc, spacy

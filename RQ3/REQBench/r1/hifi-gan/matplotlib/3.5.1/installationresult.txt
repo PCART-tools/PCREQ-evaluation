@@ -19,16 +19,16 @@ Collecting kiwisolver==1.4.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/77/e3046bf19720b22e3e0b7c12e28f6f2c0c18a213fb91a56cea640862270f/kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
 Collecting librosa==0.7.2
   Using cached librosa-0.7.2-py3-none-any.whl
-Collecting llvmlite==0.29.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/30/ae/a33eb9a94734889c189ba4b05170ac0ede05904db5d3dd31158cb33ac16e/llvmlite-0.29.0-1-cp37-cp37m-manylinux1_x86_64.whl (20.2 MB)
+Collecting llvmlite==0.31.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/10/d02c0ac683fc47ecda3426249509cf771d748b6a2c0e9d5ebbee76a7b80a/llvmlite-0.31.0-cp37-cp37m-manylinux1_x86_64.whl (20.2 MB)
 Collecting Markdown==3.4.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/b5/228c1cdcfe138f1a8e01ab1b54284c8b83735476cb22b6ba251656ed13ad/Markdown-3.4.4-py3-none-any.whl (94 kB)
 Collecting MarkupSafe==2.1.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/1d/c4f5016f87ced614eacc7d5fb85b25bcc0ff53e8f058d069fc8cbfdc3c7a/MarkupSafe-2.1.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
 Collecting matplotlib==3.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bb/eb/fb97c7c75755edf10128ae3f06ba15ffb97b852740ef9311f20113f018eb/matplotlib-3.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
-Collecting numba==0.45.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b5/9b/7ad0a181b66d58334a2233f18fc8345e3ff17ea6f8db0eb59dc31182b6a9/numba-0.45.1-cp37-cp37m-manylinux1_x86_64.whl (3.5 MB)
+Collecting numba==0.48.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/39/dc/5ce4a94d98e8a31cab21b150e23ca2f09a7dd354c06a69f71801ecd890db/numba-0.48.0-1-cp37-cp37m-manylinux2014_x86_64.whl (3.5 MB)
 Collecting numpy==1.17.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/af/4fc72f9d38e43b092e91e5b8cb9956d25b2e3ff8c75aed95df5569e4734e/numpy-1.17.4-cp37-cp37m-manylinux1_x86_64.whl (20.0 MB)
 Collecting Pillow==9.3.0
@@ -67,7 +67,7 @@ Collecting fonttools>=4.22.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/d9/e9bae85e84737e76ebbcbea13607236da0c0699baed0ae4f1151b728a608/fonttools-4.38.0-py3-none-any.whl (965 kB)
 Collecting packaging>=20.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.1.txt (line 27)) (0.38.4)
-Requirement already satisfied: setuptools>=41.0.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.1.txt (line 27)) (59.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from numba==0.48.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.1.txt (line 15)) (59.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.1.txt (line 27)) (0.38.4)
 Installing collected packages: llvmlite, zipp, typing_extensions, torch, threadpoolctl, six, pyparsing, pycparser, protobuf, Pillow, packaging, numpy, MarkupSafe, joblib, grpcio, fonttools, decorator, cycler, audioread, absl-py, Werkzeug, scipy, python-dateutil, numba, kiwisolver, importlib-metadata, cffi, SoundFile, scikit-learn, resampy, matplotlib, Markdown, tensorboard, librosa
-Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-9.3.0 SoundFile-0.10.3.post1 Werkzeug-2.2.3 absl-py-2.1.0 audioread-3.0.1 cffi-1.15.1 cycler-0.11.0 decorator-5.1.1 fonttools-4.38.0 grpcio-1.62.2 importlib-metadata-6.7.0 joblib-1.3.2 kiwisolver-1.4.5 librosa-0.7.2 llvmlite-0.29.0 matplotlib-3.5.1 numba-0.45.1 numpy-1.17.4 packaging-24.0 protobuf-3.20.0 pycparser-2.21 pyparsing-3.1.2 python-dateutil-2.9.0.post0 resampy-0.2.2 scikit-learn-1.0.2 scipy-1.4.1 six-1.16.0 tensorboard-2.0.0 threadpoolctl-3.1.0 torch-1.4.0 typing_extensions-4.7.1 zipp-3.15.0
+Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-9.3.0 SoundFile-0.10.3.post1 Werkzeug-2.2.3 absl-py-2.1.0 audioread-3.0.1 cffi-1.15.1 cycler-0.11.0 decorator-5.1.1 fonttools-4.38.0 grpcio-1.62.2 importlib-metadata-6.7.0 joblib-1.3.2 kiwisolver-1.4.5 librosa-0.7.2 llvmlite-0.31.0 matplotlib-3.5.1 numba-0.48.0 numpy-1.17.4 packaging-24.0 protobuf-3.20.0 pycparser-2.21 pyparsing-3.1.2 python-dateutil-2.9.0.post0 resampy-0.2.2 scikit-learn-1.0.2 scipy-1.4.1 six-1.16.0 tensorboard-2.0.0 threadpoolctl-3.1.0 torch-1.4.0 typing_extensions-4.7.1 zipp-3.15.0

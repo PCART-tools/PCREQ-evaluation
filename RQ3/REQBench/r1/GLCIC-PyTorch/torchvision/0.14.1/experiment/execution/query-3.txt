@@ -10,17 +10,525 @@ numpy==1.21.6
 opencv-python==4.5.2.54
 Pillow==8.2.0
 sympy==1.10.1
-torch==1.13.1+cu117
-torchvision==0.14.1+cu117
+torch==1.13.1
+torchvision==0.14.1
 tqdm==4.61.1
 typing_extensions==4.7.1
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "train.py", line 4, in <module>
-    from torch.utils.data import DataLoader
-ModuleNotFoundError: No module named 'torch'
+                        - Project source code: import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from layers import Flatten, Concatenate
 
+
+class CompletionNetwork(nn.Module):
+    def __init__(self):
+        super(CompletionNetwork, self).__init__()
+        # input_shape: (None, 4, img_h, img_w)
+        self.conv1 = nn.Conv2d(4, 64, kernel_size=5, stride=1, padding=2)
+        self.bn1 = nn.BatchNorm2d(64)
+        self.act1 = nn.ReLU()
+        # input_shape: (None, 64, img_h, img_w)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, stride=2, padding=1)
+        self.bn2 = nn.BatchNorm2d(128)
+        self.act2 = nn.ReLU()
+        # input_shape: (None, 128, img_h//2, img_w//2)
+        self.conv3 = nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1)
+        self.bn3 = nn.BatchNorm2d(128)
+        self.act3 = nn.ReLU()
+        # input_shape: (None, 128, img_h//2, img_w//2)
+        self.conv4 = nn.Conv2d(128, 256, kernel_size=3, stride=2, padding=1)
+        self.bn4 = nn.BatchNorm2d(256)
+        self.act4 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv5 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
+        self.bn5 = nn.BatchNorm2d(256)
+        self.act5 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv6 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
+        self.bn6 = nn.BatchNorm2d(256)
+        self.act6 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv7 = nn.Conv2d(256, 256, kernel_size=3, stride=1, dilation=2, padding=2)
+        self.bn7 = nn.BatchNorm2d(256)
+        self.act7 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv8 = nn.Conv2d(256, 256, kernel_size=3, stride=1, dilation=4, padding=4)
+        self.bn8 = nn.BatchNorm2d(256)
+        self.act8 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv9 = nn.Conv2d(256, 256, kernel_size=3, stride=1, dilation=8, padding=8)
+        self.bn9 = nn.BatchNorm2d(256)
+        self.act9 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv10 = nn.Conv2d(256, 256, kernel_size=3, stride=1, dilation=16, padding=16)
+        self.bn10 = nn.BatchNorm2d(256)
+        self.act10 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv11 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
+        self.bn11 = nn.BatchNorm2d(256)
+        self.act11 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.conv12 = nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1)
+        self.bn12 = nn.BatchNorm2d(256)
+        self.act12 = nn.ReLU()
+        # input_shape: (None, 256, img_h//4, img_w//4)
+        self.deconv13 = nn.ConvTranspose2d(256, 128, kernel_size=4, stride=2, padding=1)
+        self.bn13 = nn.BatchNorm2d(128)
+        self.act13 = nn.ReLU()
+        # input_shape: (None, 128, img_h//2, img_w//2)
+        self.conv14 = nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1)
+        self.bn14 = nn.BatchNorm2d(128)
+        self.act14 = nn.ReLU()
+        # input_shape: (None, 128, img_h//2, img_w//2)
+        self.deconv15 = nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1)
+        self.bn15 = nn.BatchNorm2d(64)
+        self.act15 = nn.ReLU()
+        # input_shape: (None, 64, img_h, img_w)
+        self.conv16 = nn.Conv2d(64, 32, kernel_size=3, stride=1, padding=1)
+        self.bn16 = nn.BatchNorm2d(32)
+        self.act16 = nn.ReLU()
+        # input_shape: (None, 32, img_h, img_w)
+        self.conv17 = nn.Conv2d(32, 3, kernel_size=3, stride=1, padding=1)
+        self.act17 = nn.Sigmoid()
+        # output_shape: (None, 3, img_h. img_w)
+
+    def forward(self, x):
+        x = self.bn1(self.act1(self.conv1(x)))
+        x = self.bn2(self.act2(self.conv2(x)))
+        x = self.bn3(self.act3(self.conv3(x)))
+        x = self.bn4(self.act4(self.conv4(x)))
+        x = self.bn5(self.act5(self.conv5(x)))
+        x = self.bn6(self.act6(self.conv6(x)))
+        x = self.bn7(self.act7(self.conv7(x)))
+        x = self.bn8(self.act8(self.conv8(x)))
+        x = self.bn9(self.act9(self.conv9(x)))
+        x = self.bn10(self.act10(self.conv10(x)))
+        x = self.bn11(self.act11(self.conv11(x)))
+        x = self.bn12(self.act12(self.conv12(x)))
+        x = self.bn13(self.act13(self.deconv13(x)))
+        x = self.bn14(self.act14(self.conv14(x)))
+        x = self.bn15(self.act15(self.deconv15(x)))
+        x = self.bn16(self.act16(self.conv16(x)))
+        x = self.act17(self.conv17(x))
+        return x
+
+
+class LocalDiscriminator(nn.Module):
+    def __init__(self, input_shape):
+        super(LocalDiscriminator, self).__init__()
+        self.input_shape = input_shape
+        self.output_shape = (1024,)
+        self.img_c = input_shape[0]
+        self.img_h = input_shape[1]
+        self.img_w = input_shape[2]
+        # input_shape: (None, img_c, img_h, img_w)
+        self.conv1 = nn.Conv2d(self.img_c, 64, kernel_size=5, stride=2, padding=2)
+        self.bn1 = nn.BatchNorm2d(64)
+        self.act1 = nn.ReLU()
+        # input_shape: (None, 64, img_h//2, img_w//2)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=5, stride=2, padding=2)
+        self.bn2 = nn.BatchNorm2d(128)
+        self.act2 = nn.ReLU()
+        # input_shape: (None, 128, img_h//4, img_w//4)
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=5, stride=2, padding=2)
+        self.bn3 = nn.BatchNorm2d(256)
+        self.act3 = nn.ReLU()
+        # input_shape: (None, 256, img_h//8, img_w//8)
+        self.conv4 = nn.Conv2d(256, 512, kernel_size=5, stride=2, padding=2)
+        self.bn4 = nn.BatchNorm2d(512)
+        self.act4 = nn.ReLU()
+        # input_shape: (None, 512, img_h//16, img_w//16)
+        self.conv5 = nn.Conv2d(512, 512, kernel_size=5, stride=2, padding=2)
+        self.bn5 = nn.BatchNorm2d(512)
+        self.act5 = nn.ReLU()
+        # input_shape: (None, 512, img_h//32, img_w//32)
+        in_features = 512 * (self.img_h//32) * (self.img_w//32)
+        self.flatten6 = Flatten()
+        # input_shape: (None, 512 * img_h//32 * img_w//32)
+        self.linear6 = nn.Linear(in_features, 1024)
+        self.act6 = nn.ReLU()
+        # output_shape: (None, 1024)
+
+    def forward(self, x):
+        x = self.bn1(self.act1(self.conv1(x)))
+        x = self.bn2(self.act2(self.conv2(x)))
+        x = self.bn3(self.act3(self.conv3(x)))
+        x = self.bn4(self.act4(self.conv4(x)))
+        x = self.bn5(self.act5(self.conv5(x)))
+        x = self.act6(self.linear6(self.flatten6(x)))
+        return x
+
+
+class GlobalDiscriminator(nn.Module):
+    def __init__(self, input_shape, arc='celeba'):
+        super(GlobalDiscriminator, self).__init__()
+        self.arc = arc
+        self.input_shape = input_shape
+        self.output_shape = (1024,)
+        self.img_c = input_shape[0]
+        self.img_h = input_shape[1]
+        self.img_w = input_shape[2]
+
+        # input_shape: (None, img_c, img_h, img_w)
+        self.conv1 = nn.Conv2d(self.img_c, 64, kernel_size=5, stride=2, padding=2)
+        self.bn1 = nn.BatchNorm2d(64)
+        self.act1 = nn.ReLU()
+        # input_shape: (None, 64, img_h//2, img_w//2)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=5, stride=2, padding=2)
+        self.bn2 = nn.BatchNorm2d(128)
+        self.act2 = nn.ReLU()
+        # input_shape: (None, 128, img_h//4, img_w//4)
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=5, stride=2, padding=2)
+        self.bn3 = nn.BatchNorm2d(256)
+        self.act3 = nn.ReLU()
+        # input_shape: (None, 256, img_h//8, img_w//8)
+        self.conv4 = nn.Conv2d(256, 512, kernel_size=5, stride=2, padding=2)
+        self.bn4 = nn.BatchNorm2d(512)
+        self.act4 = nn.ReLU()
+        # input_shape: (None, 512, img_h//16, img_w//16)
+        self.conv5 = nn.Conv2d(512, 512, kernel_size=5, stride=2, padding=2)
+        self.bn5 = nn.BatchNorm2d(512)
+        self.act5 = nn.ReLU()
+        # input_shape: (None, 512, img_h//32, img_w//32)
+        if arc == 'celeba':
+            in_features = 512 * (self.img_h//32) * (self.img_w//32)
+            self.flatten6 = Flatten()
+            self.linear6 = nn.Linear(in_features, 1024)
+            self.act6 = nn.ReLU()
+        elif arc == 'places2':
+            self.conv6 = nn.Conv2d(512, 512, kernel_size=5, stride=2, padding=2)
+            self.bn6 = nn.BatchNorm2d(512)
+            self.act6 = nn.ReLU()
+            # input_shape (None, 512, img_h//64, img_w//64)
+            in_features = 512 * (self.img_h//64) * (self.img_w//64)
+            self.flatten7 = Flatten()
+            self.linear7 = nn.Linear(in_features, 1024)
+            self.act7 = nn.ReLU()
+        else:
+            raise ValueError('Unsupported architecture \'%s\'.' % self.arc)
+        # output_shape: (None, 1024)
+
+    def forward(self, x):
+        x = self.bn1(self.act1(self.conv1(x)))
+        x = self.bn2(self.act2(self.conv2(x)))
+        x = self.bn3(self.act3(self.conv3(x)))
+        x = self.bn4(self.act4(self.conv4(x)))
+        x = self.bn5(self.act5(self.conv5(x)))
+        if self.arc == 'celeba':
+            x = self.act6(self.linear6(self.flatten6(x)))
+        elif self.arc == 'places2':
+            x = self.bn6(self.act6(self.conv6(x)))
+            x = self.act7(self.linear7(self.flatten7(x)))
+        return x
+
+
+class ContextDiscriminator(nn.Module):
+    def __init__(self, local_input_shape, global_input_shape, arc='celeba'):
+        super(ContextDiscriminator, self).__init__()
+        self.arc = arc
+        self.input_shape = [local_input_shape, global_input_shape]
+        self.output_shape = (1,)
+        self.model_ld = LocalDiscriminator(local_input_shape)
+        self.model_gd = GlobalDiscriminator(global_input_shape, arc=arc)
+        # input_shape: [(None, 1024), (None, 1024)]
+        in_features = self.model_ld.output_shape[-1] + self.model_gd.output_shape[-1]
+        self.concat1 = Concatenate(dim=-1)
+        # input_shape: (None, 2048)
+        self.linear1 = nn.Linear(in_features, 1)
+        self.act1 = nn.Sigmoid()
+        # output_shape: (None, 1)
+
+    def forward(self, x):
+        x_ld, x_gd = x
+        x_ld = self.model_ld(x_ld)
+        x_gd = self.model_gd(x_gd)
+        out = self.act1(self.linear1(self.concat1([x_ld, x_gd])))
+        return out
+
+                        - library source code: import math
+from typing import Any
+
+import torch
+from torch import Tensor
+from torch.nn.parameter import Parameter, UninitializedParameter
+from .. import functional as F
+from .. import init
+from .module import Module
+from .lazy import LazyModuleMixin
+
+
+__all__ = [
+    'Bilinear',
+    'Identity',
+    'LazyLinear',
+    'Linear',
+]
+
+
+class Identity(Module):
+    r"""A placeholder identity operator that is argument-insensitive.
+
+    Args:
+        args: any argument (unused)
+        kwargs: any keyword argument (unused)
+
+    Shape:
+        - Input: :math:`(*)`, where :math:`*` means any number of dimensions.
+        - Output: :math:`(*)`, same shape as the input.
+
+    Examples::
+
+        >>> m = nn.Identity(54, unused_argument1=0.1, unused_argument2=False)
+        >>> input = torch.randn(128, 20)
+        >>> output = m(input)
+        >>> print(output.size())
+        torch.Size([128, 20])
+
+    """
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super(Identity, self).__init__()
+
+    def forward(self, input: Tensor) -> Tensor:
+        return input
+
+
+class Linear(Module):
+    r"""Applies a linear transformation to the incoming data: :math:`y = xA^T + b`
+
+    This module supports :ref:`TensorFloat32<tf32_on_ampere>`.
+
+    On certain ROCm devices, when using float16 inputs this module will use :ref:`different precision<fp16_on_mi200>` for backward.
+
+    Args:
+        in_features: size of each input sample
+        out_features: size of each output sample
+        bias: If set to ``False``, the layer will not learn an additive bias.
+            Default: ``True``
+
+    Shape:
+        - Input: :math:`(*, H_{in})` where :math:`*` means any number of
+          dimensions including none and :math:`H_{in} = \text{in\_features}`.
+        - Output: :math:`(*, H_{out})` where all but the last dimension
+          are the same shape as the input and :math:`H_{out} = \text{out\_features}`.
+
+    Attributes:
+        weight: the learnable weights of the module of shape
+            :math:`(\text{out\_features}, \text{in\_features})`. The values are
+            initialized from :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})`, where
+            :math:`k = \frac{1}{\text{in\_features}}`
+        bias:   the learnable bias of the module of shape :math:`(\text{out\_features})`.
+                If :attr:`bias` is ``True``, the values are initialized from
+                :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})` where
+                :math:`k = \frac{1}{\text{in\_features}}`
+
+    Examples::
+
+        >>> m = nn.Linear(20, 30)
+        >>> input = torch.randn(128, 20)
+        >>> output = m(input)
+        >>> print(output.size())
+        torch.Size([128, 30])
+    """
+    __constants__ = ['in_features', 'out_features']
+    in_features: int
+    out_features: int
+    weight: Tensor
+
+    def __init__(self, in_features: int, out_features: int, bias: bool = True,
+                 device=None, dtype=None) -> None:
+        factory_kwargs = {'device': device, 'dtype': dtype}
+        super(Linear, self).__init__()
+        self.in_features = in_features
+        self.out_features = out_features
+        self.weight = Parameter(torch.empty((out_features, in_features), **factory_kwargs))
+        if bias:
+            self.bias = Parameter(torch.empty(out_features, **factory_kwargs))
+        else:
+            self.register_parameter('bias', None)
+        self.reset_parameters()
+
+    def reset_parameters(self) -> None:
+        # Setting a=sqrt(5) in kaiming_uniform is the same as initializing with
+        # uniform(-1/sqrt(in_features), 1/sqrt(in_features)). For details, see
+        # https://github.com/pytorch/pytorch/issues/57109
+        init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+        if self.bias is not None:
+            fan_in, _ = init._calculate_fan_in_and_fan_out(self.weight)
+            bound = 1 / math.sqrt(fan_in) if fan_in > 0 else 0
+            init.uniform_(self.bias, -bound, bound)
+
+    def forward(self, input: Tensor) -> Tensor:
+        return F.linear(input, self.weight, self.bias)
+
+    def extra_repr(self) -> str:
+        return 'in_features={}, out_features={}, bias={}'.format(
+            self.in_features, self.out_features, self.bias is not None
+        )
+
+
+# This class exists solely to avoid triggering an obscure error when scripting
+# an improperly quantized attention layer. See this issue for details:
+# https://github.com/pytorch/pytorch/issues/58969
+# TODO: fail fast on quantization API usage error, then remove this class
+# and replace uses of it with plain Linear
+class NonDynamicallyQuantizableLinear(Linear):
+    def __init__(self, in_features: int, out_features: int, bias: bool = True,
+                 device=None, dtype=None) -> None:
+        super().__init__(in_features, out_features, bias=bias,
+                         device=device, dtype=dtype)
+
+
+class Bilinear(Module):
+    r"""Applies a bilinear transformation to the incoming data:
+    :math:`y = x_1^T A x_2 + b`
+
+    Args:
+        in1_features: size of each first input sample
+        in2_features: size of each second input sample
+        out_features: size of each output sample
+        bias: If set to False, the layer will not learn an additive bias.
+            Default: ``True``
+
+    Shape:
+        - Input1: :math:`(*, H_{in1})` where :math:`H_{in1}=\text{in1\_features}` and
+          :math:`*` means any number of additional dimensions including none. All but the last dimension
+          of the inputs should be the same.
+        - Input2: :math:`(*, H_{in2})` where :math:`H_{in2}=\text{in2\_features}`.
+        - Output: :math:`(*, H_{out})` where :math:`H_{out}=\text{out\_features}`
+          and all but the last dimension are the same shape as the input.
+
+    Attributes:
+        weight: the learnable weights of the module of shape
+            :math:`(\text{out\_features}, \text{in1\_features}, \text{in2\_features})`.
+            The values are initialized from :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})`, where
+            :math:`k = \frac{1}{\text{in1\_features}}`
+        bias:   the learnable bias of the module of shape :math:`(\text{out\_features})`.
+                If :attr:`bias` is ``True``, the values are initialized from
+                :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})`, where
+                :math:`k = \frac{1}{\text{in1\_features}}`
+
+    Examples::
+
+        >>> m = nn.Bilinear(20, 30, 40)
+        >>> input1 = torch.randn(128, 20)
+        >>> input2 = torch.randn(128, 30)
+        >>> output = m(input1, input2)
+        >>> print(output.size())
+        torch.Size([128, 40])
+    """
+    __constants__ = ['in1_features', 'in2_features', 'out_features']
+    in1_features: int
+    in2_features: int
+    out_features: int
+    weight: Tensor
+
+    def __init__(self, in1_features: int, in2_features: int, out_features: int, bias: bool = True,
+                 device=None, dtype=None) -> None:
+        factory_kwargs = {'device': device, 'dtype': dtype}
+        super(Bilinear, self).__init__()
+        self.in1_features = in1_features
+        self.in2_features = in2_features
+        self.out_features = out_features
+        self.weight = Parameter(torch.empty((out_features, in1_features, in2_features), **factory_kwargs))
+
+        if bias:
+            self.bias = Parameter(torch.empty(out_features, **factory_kwargs))
+        else:
+            self.register_parameter('bias', None)
+        self.reset_parameters()
+
+    def reset_parameters(self) -> None:
+        bound = 1 / math.sqrt(self.weight.size(1))
+        init.uniform_(self.weight, -bound, bound)
+        if self.bias is not None:
+            init.uniform_(self.bias, -bound, bound)
+
+    def forward(self, input1: Tensor, input2: Tensor) -> Tensor:
+        return F.bilinear(input1, input2, self.weight, self.bias)
+
+    def extra_repr(self) -> str:
+        return 'in1_features={}, in2_features={}, out_features={}, bias={}'.format(
+            self.in1_features, self.in2_features, self.out_features, self.bias is not None
+        )
+
+
+class LazyLinear(LazyModuleMixin, Linear):
+    r"""A :class:`torch.nn.Linear` module where `in_features` is inferred.
+
+    In this module, the `weight` and `bias` are of :class:`torch.nn.UninitializedParameter`
+    class. They will be initialized after the first call to ``forward`` is done and the
+    module will become a regular :class:`torch.nn.Linear` module. The ``in_features`` argument
+    of the :class:`Linear` is inferred from the ``input.shape[-1]``.
+
+    Check the :class:`torch.nn.modules.lazy.LazyModuleMixin` for further documentation
+    on lazy modules and their limitations.
+
+    Args:
+        out_features: size of each output sample
+        bias: If set to ``False``, the layer will not learn an additive bias.
+            Default: ``True``
+
+    Attributes:
+        weight: the learnable weights of the module of shape
+            :math:`(\text{out\_features}, \text{in\_features})`. The values are
+            initialized from :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})`, where
+            :math:`k = \frac{1}{\text{in\_features}}`
+        bias:   the learnable bias of the module of shape :math:`(\text{out\_features})`.
+                If :attr:`bias` is ``True``, the values are initialized from
+                :math:`\mathcal{U}(-\sqrt{k}, \sqrt{k})` where
+                :math:`k = \frac{1}{\text{in\_features}}`
+
+
+    """
+
+    cls_to_become = Linear  # type: ignore[assignment]
+    weight: UninitializedParameter
+    bias: UninitializedParameter  # type: ignore[assignment]
+
+    def __init__(self, out_features: int, bias: bool = True,
+                 device=None, dtype=None) -> None:
+        factory_kwargs = {'device': device, 'dtype': dtype}
+        # bias is hardcoded to False to avoid creating tensor
+        # that will soon be overwritten.
+        super().__init__(0, 0, False)
+        self.weight = UninitializedParameter(**factory_kwargs)
+        self.out_features = out_features
+        if bias:
+            self.bias = UninitializedParameter(**factory_kwargs)
+
+    def reset_parameters(self) -> None:
+        if not self.has_uninitialized_params() and self.in_features != 0:
+            super().reset_parameters()
+
+    def initialize_parameters(self, input) -> None:  # type: ignore[override]
+        if self.has_uninitialized_params():
+            with torch.no_grad():
+                self.in_features = input.shape[-1]
+                self.weight.materialize((self.out_features, self.in_features))
+                if self.bias is not None:
+                    self.bias.materialize((self.out_features,))
+                self.reset_parameters()
+# TODO: PartialLinear - maybe in sparse?
+
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'numpy', 'requests', 'torch (==1.13.1)', 'pillow (!=8.3.*,>=5.3.0)', "scipy ; extra == 'scipy'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "train.py", line 473, in <module>
+    main(args)
+  File "train.py", line 259, in main
+    input_gd_fake.to(gpu)))
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.9/GLCIC-PyTorch/models.py", line 229, in forward
+    out = self.act1(self.linear1(self.concat1([x_ld, x_gd])))
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: CUDA error: CUBLAS_STATUS_INVALID_VALUE when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`
+
+  0%|          | 0/1 [00:00<?, ?it/s]
 
                         **Analysis Protocol**
                         1. Traceback Pattern Matching：

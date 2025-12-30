@@ -15,12 +15,12 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting networkx==2.6.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e9/93/aa6613aa70d6eb4868e667068b5a11feca9645498fd31b954b6c4bb82fa5/networkx-2.6.3-py3-none-any.whl (1.9 MB)
-Collecting numpy==1.19.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
+Collecting numpy==1.21.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
 Collecting opencv-python==4.1.0.25
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/52/61b9619a7a95a8d809515f68f1441224a07ce1873fd3af5e662851014a55/opencv_python-4.1.0.25-cp37-cp37m-manylinux1_x86_64.whl (26.6 MB)
-Collecting Pillow==8.4.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a7/f3/c81e9c41c6ee4c99ad7436b7a1509f5bce5de4ccf4b83138cf88760d96ff/Pillow-8.4.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+Collecting Pillow==6.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a4/da/2bd281c875686230eabc13d20ab590ea617563b0e746abfb0698c4d5b645/Pillow-6.1.0-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
 Collecting protobuf==3.20.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/26/cf27940ece6bb8890a67f741eb9da5359b72749f816edf210a28fe01a247/protobuf-3.20.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting pyparsing==3.1.2
@@ -54,4 +54,4 @@ Collecting future
 Collecting dataclasses
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/26/2f/1095cdc2868052dd1e64520f7c0d5c8c550ad297e944e641dbf1ffbb9a5d/dataclasses-0.6-py3-none-any.whl (14 kB)
 Installing collected packages: terminaltables, mpmath, dataclasses, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, future, cycler, torch, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
-Successfully installed Pillow-8.4.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.19.5 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-1.8 terminaltables-3.1.0 torch-1.7.0 torchvision-0.8.0 tqdm-4.32.1 typing_extensions-4.7.1
+Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.21.6 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-1.8 terminaltables-3.1.0 torch-1.7.0 torchvision-0.8.0 tqdm-4.32.1 typing_extensions-4.7.1

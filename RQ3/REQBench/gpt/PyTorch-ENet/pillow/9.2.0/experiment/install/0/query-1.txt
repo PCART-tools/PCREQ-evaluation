@@ -20,6 +20,7 @@ torch==1.1.0
 torchvision==0.4.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

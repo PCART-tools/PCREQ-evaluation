@@ -21,16 +21,16 @@ Collecting jmespath==0.9.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/94/7179c3832a6d45b266ddb2aac329e101367fbdb11f425f13771d27f225bb/jmespath-0.9.4-py2.py3-none-any.whl (24 kB)
 Collecting joblib==0.13.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/c1/50a758e8247561e58cb87305b1e90b171b8c767b15b12a1734001f41d356/joblib-0.13.2-py2.py3-none-any.whl (278 kB)
-Collecting kiwisolver==1.3.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/46/231de802ade4225b76b96cffe419cf3ce52bbe92e3b092cf12db7d11c207/kiwisolver-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
+Collecting kiwisolver==1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/93/f8/518fb0bb89860eea6ff1b96483fbd9236d5ee991485d0f3eceff1770f654/kiwisolver-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (90 kB)
 Collecting matplotlib==3.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/ee/8d7e0149ecf95fae7e744c5a93f51a8c9f7a96c63691d10aed6d2c1d8735/matplotlib-3.4.0-cp37-cp37m-manylinux1_x86_64.whl (10.3 MB)
 Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
-Collecting pandas==0.25.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7e/ab/ea76361f9d3e732e114adcd801d2820d5319c23d0ac5482fa3b412db217e/pandas-0.25.1-cp37-cp37m-manylinux1_x86_64.whl (10.4 MB)
-Collecting Pillow==8.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/34/542152297dcc6c47a9dcb0685eac6d652d878ed3cea83bf2b23cb988e857/Pillow-8.2.0-cp37-cp37m-manylinux1_x86_64.whl (3.0 MB)
+Collecting pandas==1.1.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fd/70/e8eee0cbddf926bf51958c7d6a86bc69167c300fa2ba8e592330a2377d1b/pandas-1.1.5-cp37-cp37m-manylinux1_x86_64.whl (9.5 MB)
+Collecting Pillow==8.1.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1f/6d/b719ae8e21660a6a962636896dc4b7d657ef451a3ab941516401846ac5cb/Pillow-8.1.2-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
 Collecting pyparsing==2.4.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/11/fa/0160cd525c62d7abd076a070ff02b2b94de589f1a9789774f17d7c54058e/pyparsing-2.4.2-py2.py3-none-any.whl (65 kB)
 Collecting python-dateutil==2.8.0
@@ -65,5 +65,6 @@ Collecting transformers==2.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/13/33/ffb67897a6985a7b7d8e5e7878c3628678f553634bd3836404fef06ef19b/transformers-2.5.1-py3-none-any.whl (499 kB)
 Collecting urllib3==1.25.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/60/247f23a7121ae632d62811ba7f273d0e58972d75e58a94d329d51550a47d/urllib3-1.25.3-py2.py3-none-any.whl (150 kB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/Bert-Multi-Label-Text-Classification-matplotlib-3.4.0.txt (line 12)) (65.6.3)
 Installing collected packages: tokenizers, sentencepiece, regex, pytz, joblib, jmespath, chardet, certifi, urllib3, tqdm, six, pyparsing, Pillow, numpy, kiwisolver, idna, filelock, docutils, Click, torch, scipy, sacremoses, requests, python-dateutil, cycler, scikit-learn, pandas, matplotlib, botocore, s3transfer, boto3, transformers, pytorch-transformers
-Successfully installed Click-7.0 Pillow-8.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.3.1 matplotlib-3.4.0 numpy-1.19.5 pandas-0.25.1 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2019.8.19 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.33 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.83 six-1.12.0 tokenizers-0.5.2 torch-1.3.0 tqdm-4.35.0 transformers-2.5.1 urllib3-1.25.3
+Successfully installed Click-7.0 Pillow-8.1.2 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.4.0 numpy-1.19.5 pandas-1.1.5 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2019.8.19 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.33 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.83 six-1.12.0 tokenizers-0.5.2 torch-1.3.0 tqdm-4.35.0 transformers-2.5.1 urllib3-1.25.3

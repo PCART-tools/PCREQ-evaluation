@@ -19,8 +19,8 @@ Collecting sklearn==0.0
   Using cached sklearn-0.0-py2.py3-none-any.whl
 Collecting torch==1.7.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/80/2a/58f8078744e0408619c63148f7a2e8e48cf007e4146b74d4bb67c56d161b/torch-1.7.0-cp36-cp36m-manylinux1_x86_64.whl (776.7 MB)
-Collecting torchvision==0.8.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e7/43/aaa740c406b1832adc6ff9d5e71c23fd2af2ebd436c42d76d85809ec8be9/torchvision-0.8.1-cp36-cp36m-manylinux1_x86_64.whl (12.8 MB)
+Collecting torchvision==0.8.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f5/f9/c290ab410544f16d51cdc291afd2ee1f74c7578133a07c4863c6a574b272/torchvision-0.8.0-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
 Collecting tqdm==4.19.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/c4/b67cf1ab472b770e08e94105a0c7ca7032cd070627c435f5998c9cf6e64f/tqdm-4.19.9-py2.py3-none-any.whl (52 kB)
 Collecting typing-extensions
@@ -30,4 +30,4 @@ Collecting dataclasses
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Installing collected packages: numpy, typing-extensions, scipy, future, dataclasses, torch, scikit-learn, pyparsing, Pillow, tqdm, torchvision, sklearn, six, pyhocon, certifi
-Successfully installed Pillow-8.3.2 certifi-2021.5.30 dataclasses-0.8 future-1.0.0 numpy-1.16.2 pyhocon-0.3.51 pyparsing-2.3.1 scikit-learn-0.20.3 scipy-1.2.1 six-1.12.0 sklearn-0.0 torch-1.7.0 torchvision-0.8.1 tqdm-4.19.9 typing-extensions-4.1.1
+Successfully installed Pillow-8.3.2 certifi-2021.5.30 dataclasses-0.8 future-1.0.0 numpy-1.16.2 pyhocon-0.3.51 pyparsing-2.3.1 scikit-learn-0.20.3 scipy-1.2.1 six-1.12.0 sklearn-0.0 torch-1.7.0 torchvision-0.8.0 tqdm-4.19.9 typing-extensions-4.1.1

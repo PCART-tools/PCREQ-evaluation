@@ -1,0 +1,17 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting seqeval==1.2.2
+  Using cached seqeval-1.2.2-py3-none-any.whl
+Collecting scikit-learn>=0.21.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d3/eb/d0e658465c029feb7083139d9ead51000742e88b1fb7f1504e19e1b4ce6e/scikit_learn-0.24.2-cp36-cp36m-manylinux2010_x86_64.whl (22.2 MB)
+Requirement already satisfied: numpy>=1.14.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from seqeval==1.2.2) (1.19.5)
+Requirement already satisfied: joblib>=0.11 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from scikit-learn>=0.21.3->seqeval==1.2.2) (1.1.1)
+Collecting threadpoolctl>=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+Collecting scipy>=0.19.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/89/63171228d5ced148f5ced50305c89e8576ffc695a90b58fe5bb602b910c2/scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
+Installing collected packages: threadpoolctl, scipy, scikit-learn, seqeval
+  Attempting uninstall: seqeval
+    Found existing installation: seqeval 0.0.12
+    Uninstalling seqeval-0.0.12:
+      Successfully uninstalled seqeval-0.0.12
+Successfully installed scikit-learn-0.24.2 scipy-1.5.4 seqeval-1.2.2 threadpoolctl-3.1.0

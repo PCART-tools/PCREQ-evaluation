@@ -1,0 +1,66 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pytorch-lightning==1.8.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ed/29/3ff2f0e4fcf79309f319ac1f8b3d729959b051007e6fe30b3d21b77b54a0/pytorch_lightning-1.8.3-py3-none-any.whl (798 kB)
+Collecting lightning-utilities==0.3.*
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/fc/1f4ff2bcba4e6162276cabe831a431ef14681a7158e693a5cf828dd6fa1b/lightning_utilities-0.3.0-py3-none-any.whl (15 kB)
+Requirement already satisfied: fsspec[http]>2021.06.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pytorch-lightning==1.8.3) (2023.1.0)
+Collecting torch>=1.9.*
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/00/86/77a9eddbf46f1bca2468d16a401911f58917f95b63402d6a7a4522521e5d/torch-1.13.1-cp37-cp37m-manylinux1_x86_64.whl (887.5 MB)
+Requirement already satisfied: tqdm>=4.57.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pytorch-lightning==1.8.3) (4.66.4)
+Collecting tensorboardX>=2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/44/71/f3e7c9b2ab67e28c572ab4e9d5fa3499e0d252650f96d8a3a03e26677f53/tensorboardX-2.6.2.2-py2.py3-none-any.whl (101 kB)
+Collecting torchmetrics>=0.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/47/6e9f9b41c48750a45ad07cc6d43a2979bfc09e6989656aece97cc59cbef1/torchmetrics-0.11.4-py3-none-any.whl (519 kB)
+Requirement already satisfied: PyYAML>=5.4 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pytorch-lightning==1.8.3) (6.0.1)
+Collecting packaging>=17.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: numpy>=1.17.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pytorch-lightning==1.8.3) (1.19.4)
+Requirement already satisfied: typing-extensions>=4.0.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pytorch-lightning==1.8.3) (4.7.1)
+Collecting fire
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e5/4c/93d0f85318da65923e4b91c1c2ff03d8a458cbefebe3bc612a6693c7906d/fire-0.7.1-py3-none-any.whl (115 kB)
+Collecting aiohttp!=4.0.0a0,!=4.0.0a1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a5/e7/af237a28203958d885f7f57731cb4f9c510597a35c593c5c20224dd72072/aiohttp-3.8.6-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (987 kB)
+Requirement already satisfied: requests in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (2.31.0)
+Requirement already satisfied: protobuf>=3.20 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboardX>=2.2->pytorch-lightning==1.8.3) (3.20.3)
+Collecting nvidia-cublas-cu11==11.10.3.66
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
+Collecting nvidia-cuda-runtime-cu11==11.7.99
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/92/89cf558b514125d2ebd8344dd2f0533404b416486ff681d5434a5832a019/nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)
+Collecting nvidia-cudnn-cu11==8.5.0.96
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
+Collecting nvidia-cuda-nvrtc-cu11==11.7.99
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/25/922c5996aada6611b79b53985af7999fc629aee1d5d001b6a22431e18fec/nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
+Requirement already satisfied: wheel in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=1.9.*->pytorch-lightning==1.8.3) (0.38.4)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=1.9.*->pytorch-lightning==1.8.3) (59.5.0)
+Collecting async-timeout<5.0,>=4.0.0a3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a7/fa/e01228c2938de91d47b307831c62ab9e4001e747789d0b05baf779a6488c/async_timeout-4.0.3-py3-none-any.whl (5.7 kB)
+Collecting asynctest==0.13.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e8/b6/8d17e169d577ca7678b11cd0d3ceebb0a6089a7f4a2de4b945fe4b1c86db/asynctest-0.13.0-py3-none-any.whl (26 kB)
+Collecting attrs>=17.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl (63 kB)
+Collecting multidict<7.0,>=4.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0a/f0/b256648385dfda067688570b10e7b90eacd3711c26635763560cbad0a447/multidict-6.0.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (99 kB)
+Collecting frozenlist>=1.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b2/18/3b0eb2690b3bf4d340a221d0e76b6c5f4cac9d5dd37fb8c7b6ec25c2f510/frozenlist-1.3.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (148 kB)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (3.3.2)
+Collecting yarl<2.0,>=1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/33/d958b3f31420ccc99075e9355d9cb27b0c39d712dbcb0a6cda408c1aa6c4/yarl-1.9.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (289 kB)
+Collecting aiosignal>=1.1.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/76/ac/a7305707cb852b7e16ff80eaf5692309bde30e2b1100a1fcacdc8f731d97/aiosignal-1.3.1-py3-none-any.whl (7.6 kB)
+Collecting termcolor
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/67/e1/434566ffce04448192369c1a282931cf4ae593e91907558eaecd2e9f2801/termcolor-2.3.0-py3-none-any.whl (6.9 kB)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (2.0.7)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (2025.11.12)
+Requirement already satisfied: idna<4,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (3.7)
+Requirement already satisfied: importlib-metadata in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from attrs>=17.3.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (6.7.0)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from importlib-metadata->attrs>=17.3.0->aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]>2021.06.0->pytorch-lightning==1.8.3) (3.15.0)
+Installing collected packages: termcolor, packaging, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cublas-cu11, multidict, frozenlist, asynctest, async-timeout, yarl, tensorboardX, nvidia-cudnn-cu11, fire, attrs, aiosignal, torch, lightning-utilities, aiohttp, torchmetrics, pytorch-lightning
+  Attempting uninstall: torch
+    Found existing installation: torch 1.7.0
+    Uninstalling torch-1.7.0:
+      Successfully uninstalled torch-1.7.0
+  Attempting uninstall: pytorch-lightning
+    Found existing installation: pytorch-lightning 1.1.0
+    Uninstalling pytorch-lightning-1.1.0:
+      Successfully uninstalled pytorch-lightning-1.1.0
+Successfully installed aiohttp-3.8.6 aiosignal-1.3.1 async-timeout-4.0.3 asynctest-0.13.0 attrs-24.2.0 fire-0.7.1 frozenlist-1.3.3 lightning-utilities-0.3.0 multidict-6.0.5 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 packaging-24.0 pytorch-lightning-1.8.3 tensorboardX-2.6.2.2 termcolor-2.3.0 torch-1.13.1 torchmetrics-0.11.4 yarl-1.9.4

@@ -1,4 +1,69 @@
+Start to train.
+/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and may be removed in the future, "
+/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+---- [Epoch 0/1, Batch 0/805] ----
++----------------+-----------------------+
+| loss name      | value                 |
++----------------+-----------------------+
+| total_loss     | 1.401298464324817e-45 |
+| classification | 1.401298464324817e-45 |
+| bbox           | 1.401298464324817e-45 |
+| landmarks      | 1.401298464324817e-45 |
++----------------+-----------------------+
 Traceback (most recent call last):
-  File "train.py", line 2, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+  File "train.py", line 152, in <module>
+    main()
+  File "train.py", line 101, in main
+    classification_loss, bbox_regression_loss,ldm_regression_loss = retinaface([data['img'].cuda().float(), data['annot']])
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 171, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 181, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py", line 89, in parallel_apply
+    output.reraise()
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/_utils.py", line 543, in reraise
+    raise exception
+RuntimeError: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py", line 64, in _worker
+    output = module(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.1/RetinaFace_Pytorch/torchvision_model.py", line 204, in forward
+    out = self.body(img_batch)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torchvision/models/_utils.py", line 69, in forward
+    x = module(x)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 460, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: cuDNN error: CUDNN_STATUS_INTERNAL_ERROR
+
+terminate called after throwing an instance of 'c10::Error'
+  what():  CUDA error: an illegal memory access was encountered
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.
+Exception raised from c10_cuda_check_implementation at ../c10/cuda/CUDAException.cpp:31 (most recent call first):
+frame #0: c10::Error::Error(c10::SourceLocation, std::string) + 0x3e (0x7f6e73e9986e in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #1: c10::detail::torchCheckFail(char const*, char const*, unsigned int, std::string const&) + 0x5c (0x7f6e73e643a8 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #2: c10::cuda::c10_cuda_check_implementation(std::string const&, std::string const&, int, bool) + 0xb4 (0x7f6e73f55584 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10_cuda.so)
+frame #3: <unknown function> + 0x1eb0a (0x7f6e73f2db0a in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10_cuda.so)
+frame #4: c10::cuda::CUDACachingAllocator::raw_delete(void*) + 0x265 (0x7f6e73f300b5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10_cuda.so)
+frame #5: <unknown function> + 0x4f8413 (0x7f6e7c574413 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #6: <unknown function> + 0x4082f (0x7f6e73e8182f in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #7: c10::TensorImpl::~TensorImpl() + 0x2ca (0x7f6e73e7abba in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #8: c10::TensorImpl::~TensorImpl() + 0x9 (0x7f6e73e7ad09 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libc10.so)
+frame #9: <unknown function> + 0x753bf8 (0x7f6e7c7cfbf8 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+frame #10: THPVariable_subclass_dealloc(_object*) + 0x2f8 (0x7f6e7c7d0048 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/lib/libtorch_python.so)
+<omitting python frames>
+frame #26: __libc_start_main + 0xe7 (0x7f6e813ebc87 in /lib/x86_64-linux-gnu/libc.so.6)
+

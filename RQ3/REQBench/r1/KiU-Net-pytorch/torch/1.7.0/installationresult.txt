@@ -39,13 +39,13 @@ Collecting tifffile==2020.9.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/42/6b/93a8ee61c6fbe20fa9c17928bd3b80484902b7fd454cecaffba42f5052cb/tifffile-2020.9.3-py3-none-any.whl (148 kB)
 Collecting torch==1.7.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/80/2a/58f8078744e0408619c63148f7a2e8e48cf007e4146b74d4bb67c56d161b/torch-1.7.0-cp36-cp36m-manylinux1_x86_64.whl (776.7 MB)
-Collecting torchvision==0.8.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e7/43/aaa740c406b1832adc6ff9d5e71c23fd2af2ebd436c42d76d85809ec8be9/torchvision-0.8.1-cp36-cp36m-manylinux1_x86_64.whl (12.8 MB)
-Collecting typing-extensions
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+Collecting torchvision==0.8.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f5/f9/c290ab410544f16d51cdc291afd2ee1f74c7578133a07c4863c6a574b272/torchvision-0.8.0-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
 Collecting dataclasses
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
 Installing collected packages: six, typing-extensions, python-dateutil, pyparsing, Pillow, numpy, kiwisolver, future, decorator, dataclasses, cycler, torch, tifffile, scipy, PyWavelets, pytz, networkx, matplotlib, imageio, torchvision, scikit-image, pandas, opencv-python, certifi
-Successfully installed Pillow-8.4.0 PyWavelets-1.1.1 certifi-2021.5.30 cycler-0.11.0 dataclasses-0.8 decorator-4.4.2 future-1.0.0 imageio-2.15.0 kiwisolver-1.3.1 matplotlib-3.3.4 networkx-2.5.1 numpy-1.19.5 opencv-python-4.6.0.66 pandas-1.1.5 pyparsing-3.1.2 python-dateutil-2.9.0.post0 pytz-2024.1 scikit-image-0.17.2 scipy-1.5.4 six-1.16.0 tifffile-2020.9.3 torch-1.7.0 torchvision-0.8.1 typing-extensions-4.1.1
+Successfully installed Pillow-8.4.0 PyWavelets-1.1.1 certifi-2021.5.30 cycler-0.11.0 dataclasses-0.8 decorator-4.4.2 future-1.0.0 imageio-2.15.0 kiwisolver-1.3.1 matplotlib-3.3.4 networkx-2.5.1 numpy-1.19.5 opencv-python-4.6.0.66 pandas-1.1.5 pyparsing-3.1.2 python-dateutil-2.9.0.post0 pytz-2024.1 scikit-image-0.17.2 scipy-1.5.4 six-1.16.0 tifffile-2020.9.3 torch-1.7.0 torchvision-0.8.0 typing-extensions-4.1.1

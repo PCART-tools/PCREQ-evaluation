@@ -1,0 +1,31 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==3.0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/27/3c/91ed8f5c4e7ef3227b4119200fc0ed4b4fd965b1f0172021c25701087825/transformers-3.0.2-py3-none-any.whl (769 kB)
+Requirement already satisfied: requests in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (2.22.0)
+Requirement already satisfied: regex!=2019.12.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (2019.8.19)
+Collecting tokenizers==0.8.1.rc1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/02/59/68c7e3833f535615fb97d33ffcb7b30bbf62bc7477a9c59cd19ad8535d72/tokenizers-0.8.1rc1-cp37-cp37m-manylinux1_x86_64.whl (3.0 MB)
+Collecting packaging
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: tqdm>=4.27 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (4.35.0)
+Requirement already satisfied: sacremoses in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (0.0.33)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (1.17.2)
+Requirement already satisfied: filelock in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (3.12.2)
+Requirement already satisfied: sentencepiece!=0.1.92 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==3.0.2) (0.1.83)
+Requirement already satisfied: idna<2.9,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==3.0.2) (2.8)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==3.0.2) (3.0.4)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==3.0.2) (1.25.3)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==3.0.2) (2019.9.11)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==3.0.2) (1.12.0)
+Requirement already satisfied: joblib in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==3.0.2) (0.13.2)
+Requirement already satisfied: click in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==3.0.2) (7.0)
+Installing collected packages: tokenizers, packaging, transformers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.5.2
+    Uninstalling tokenizers-0.5.2:
+      Successfully uninstalled tokenizers-0.5.2
+  Attempting uninstall: transformers
+    Found existing installation: transformers 2.5.1
+    Uninstalling transformers-2.5.1:
+      Successfully uninstalled transformers-2.5.1
+Successfully installed packaging-24.0 tokenizers-0.8.1rc1 transformers-3.0.2

@@ -1,0 +1,22 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-image==0.16.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/48/454bf836d302465475e02bc0468b879302145b07a005174c409a5b5869c7/scikit_image-0.16.2-cp37-cp37m-manylinux1_x86_64.whl (26.5 MB)
+Requirement already satisfied: scipy>=0.19.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (1.5.4)
+Requirement already satisfied: networkx>=2.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (2.6.3)
+Requirement already satisfied: pillow>=4.3.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (6.1.0)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (3.2.2)
+Requirement already satisfied: imageio>=2.3.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (2.9.0)
+Requirement already satisfied: PyWavelets>=0.4.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.16.2) (1.1.1)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from imageio>=2.3.0->scikit-image==0.16.2) (1.16.4)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (1.4.5)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (3.1.2)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (0.11.0)
+Requirement already satisfied: python-dateutil>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (2.9.0.post0)
+Requirement already satisfied: typing-extensions in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (4.7.1)
+Requirement already satisfied: six>=1.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from python-dateutil>=2.1->matplotlib!=3.0.0,>=2.0.0->scikit-image==0.16.2) (1.16.0)
+Installing collected packages: scikit-image
+  Attempting uninstall: scikit-image
+    Found existing installation: scikit-image 0.15.0
+    Uninstalling scikit-image-0.15.0:
+      Successfully uninstalled scikit-image-0.15.0
+Successfully installed scikit-image-0.16.2

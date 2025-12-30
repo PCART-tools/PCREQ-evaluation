@@ -47,7 +47,7 @@ Collecting torchvision==0.8.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/df/969e69a94cff1c8911acb0688117f95e1915becc1e01c73e7960a2c76ec8/torchvision-0.8.2-cp37-cp37m-manylinux1_x86_64.whl (12.8 MB)
 Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
-Requirement already satisfied: certifi>=2020.06.20 in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from matplotlib==3.3.2->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/DeepMosaics-opencv-python-4.5.5.62.txt (line 6)) (2022.12.7)
+Requirement already satisfied: certifi>=2020.06.20 in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from matplotlib==3.3.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/DeepMosaics-opencv-python-4.5.5.62.txt (line 6)) (2022.12.7)
 WARNING: The candidate selected for download or install is a yanked version: 'opencv-python' candidate (version 4.5.5.62 at https://pypi.tuna.tsinghua.edu.cn/packages/9d/98/36bfcbff30da27dd6922ed73ca7802c37d87f77daf4c569da3dcb87b4296/opencv_python-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/) (requires-python:>=3.6))
 Reason for being yanked: <none given>
 Installing collected packages: mpmath, typing_extensions, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, cycler, torch, tifffile, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image

@@ -24,20 +24,21 @@ sacremoses==0.0.53
 sentencepiece==0.2.0
 seqeval==0.0.12
 six==1.16.0
-tokenizers==0.9.4
+tokenizers==0.9.3
 torch==1.10.2
 tqdm==4.64.1
-transformers==3.5.1
+transformers==4.0.0
 typing_extensions==4.1.1
 urllib3==1.26.19
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested sentencepiece==0.2.0
-    transformers 3.5.1 depends on sentencepiece==0.1.91
+    The user requested tokenizers==0.9.3
+    transformers 4.0.0 depends on tokenizers==0.9.4
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

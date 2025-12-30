@@ -1,11 +1,38 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-Collecting absl-py==0.7.1
-  Using cached absl_py-0.7.1-py3-none-any.whl
-Collecting bleach==3.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ab/05/27e1466475e816d3001efb6e0a85a819be17411420494a1e602c36f8299d/bleach-3.1.0-py2.py3-none-any.whl (157 kB)
+Collecting absl-py==0.6.1
+  Using cached absl_py-0.6.1-py3-none-any.whl
+Collecting astor==0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/69/32/e8a3285c0be9ce7ef42bfa302b995109036994713344b6baeed88bb12146/astor-0.6-py2.py3-none-any.whl (26 kB)
+Collecting bleach==1.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/70/86c5fec937ea4964184d4d6c4f0b9551564f821e1c3575907639036d9b90/bleach-1.5.0-py2.py3-none-any.whl (17 kB)
 Collecting certifi==2021.5.30
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
 Collecting dataclasses==0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
-ERROR: Could not find a version that satisfies the requirement html5lib==1.0 (from versions: 1.0-reupload, 0.2, 0.9, 0.10, 0.11, 0.11.1, 0.90, 0.95, 0.99, 0.999, 0.9999, 0.99999, 0.999999, 0.9999999, 0.99999999, 0.999999999, 1.0b1, 1.0b2, 1.0b3, 1.0b5, 1.0b6, 1.0b7, 1.0b8, 1.0b9, 1.0b10, 1.0.1, 1.1)
-ERROR: No matching distribution found for html5lib==1.0
+Collecting gast==0.2.0
+  Using cached gast-0.2.0-py3-none-any.whl
+Collecting grpcio==1.8.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/b3/c1744b5a8d7a4f2ebefc488b05bf2f0c634d2d57647cca95de5cf44ce710/grpcio-1.8.6-cp36-cp36m-manylinux1_x86_64.whl (6.0 MB)
+Collecting html5lib==0.9999999
+  Using cached html5lib-0.9999999-py3-none-any.whl
+Collecting importlib-metadata==2.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/98/b8/8ec57a8ef46fbe7f185318c7ff7df9a06c9df451d9a59a067bfa851bb828/importlib_metadata-2.1.1-py2.py3-none-any.whl (10 kB)
+Collecting Markdown==3.0.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7a/6b/5600647404ba15545ec37d2f7f58844d690baf2f81f3a60b862e48f29287/Markdown-3.0.1-py2.py3-none-any.whl (89 kB)
+Collecting numpy==1.13.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/57/a7/e3e6bd9d595125e1abbe162e323fd2d06f6f6683185294b79cd2cdb190d5/numpy-1.13.3-cp36-cp36m-manylinux1_x86_64.whl (17.0 MB)
+Collecting protobuf==3.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fc/f0/db040681187496d10ac50ad167a8fd5f953d115b16a7085e19193a6abfd2/protobuf-3.6.0-cp36-cp36m-manylinux1_x86_64.whl (7.1 MB)
+Collecting scikit-learn==0.20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0c/b2/05be9b6da9ae4a4c54f537be22e95833f722742a02b1e355fdc09363877c/scikit_learn-0.20.0-cp36-cp36m-manylinux1_x86_64.whl (5.3 MB)
+Collecting scipy==1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a8/0b/f163da98d3a01b3e0ef1cab8dd2123c34aee2bafbb1c5bffa354cc8a1730/scipy-1.1.0-cp36-cp36m-manylinux1_x86_64.whl (31.2 MB)
+Requirement already satisfied: setuptools==39.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from -r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/deep-belief-network-tensorflow-1.11.0.txt (line 15)) (39.1.0)
+Collecting six==1.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/0a/b6723e1bc4c516cb687841499455a8505b44607ab535be01091c0f24f079/six-1.10.0-py2.py3-none-any.whl (10 kB)
+Collecting tensorboard==1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/2f/4d788919b1feef04624d63ed6ea45a49d1d1c834199ec50716edb5d310f4/tensorboard-1.11.0-py3-none-any.whl (3.0 MB)
+Collecting tensorflow==1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/d5/38cd4543401708e64c9ee6afa664b936860f4630dd93a49ab863f9998cd2/tensorflow-1.11.0-cp36-cp36m-manylinux1_x86_64.whl (63.0 MB)
+ERROR: Could not find a version that satisfies the requirement tensorflow-tensorboard==1.11.0 (from versions: 0.1.1, 0.1.2, 0.1.4, 0.1.5, 0.1.6, 0.1.7, 0.1.8, 0.4.0rc1, 0.4.0rc2, 0.4.0rc3, 0.4.0, 1.5.0, 1.5.1)
+ERROR: No matching distribution found for tensorflow-tensorboard==1.11.0

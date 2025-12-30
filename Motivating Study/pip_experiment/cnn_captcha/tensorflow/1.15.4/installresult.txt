@@ -1,0 +1,48 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==1.15.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8e/64/7a19837dd54d3f53b1ce5ae346ab401dde9678e8f233220317000bfdb3e2/tensorflow-1.15.4-cp36-cp36m-manylinux2010_x86_64.whl (110.5 MB)
+Requirement already satisfied: six>=1.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (1.12.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (0.37.1)
+Collecting keras-preprocessing>=1.0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Collecting tensorflow-estimator==1.15.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/62/2ee9cd74c9fa2fa450877847ba560b260f5d0fb70ee0595203082dafcc9d/tensorflow_estimator-1.15.1-py2.py3-none-any.whl (503 kB)
+Requirement already satisfied: numpy<1.19.0,>=1.16.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (1.16.2)
+Requirement already satisfied: grpcio>=1.8.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (1.19.0)
+Collecting wrapt>=1.11.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/66/50/1c5ccb23dd63f8f3d312dc2d5e0e64c681faf7c2388fa1ab2553713cef11/wrapt-1.16.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
+Collecting protobuf>=3.6.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/8e/06fc0df62dd80a32739b51bb3256f1417349eb5c3899f6ccab3796937458/protobuf-3.19.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+Requirement already satisfied: absl-py>=0.7.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (0.7.1)
+Collecting keras-applications>=1.0.8
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Requirement already satisfied: gast==0.2.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (0.2.2)
+Collecting opt-einsum>=2.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Requirement already satisfied: termcolor>=1.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (1.1.0)
+Collecting google-pasta>=0.1.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting tensorboard<1.16.0,>=1.15.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1e/e9/d3d747a97f7188f48aa5eda486907f3b345cd409f0a0850468ba867db246/tensorboard-1.15.0-py3-none-any.whl (3.8 MB)
+Requirement already satisfied: astor>=0.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.15.4) (0.7.1)
+Collecting h5py
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7a/e53e500335afb6b1aade11227cdf107fca54106a1dca5c9d13242a043f3b/h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Requirement already satisfied: setuptools>=41.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.4) (59.6.0)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.4) (3.1)
+Requirement already satisfied: werkzeug>=0.11.15 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.16.0,>=1.15.0->tensorflow==1.15.4) (0.15.2)
+Collecting cached-property
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Installing collected packages: cached-property, protobuf, h5py, wrapt, tensorflow-estimator, tensorboard, opt-einsum, keras-preprocessing, keras-applications, google-pasta, tensorflow
+  Attempting uninstall: protobuf
+    Found existing installation: protobuf 3.6.0
+    Uninstalling protobuf-3.6.0:
+      Successfully uninstalled protobuf-3.6.0
+  Attempting uninstall: tensorboard
+    Found existing installation: tensorboard 1.7.0
+    Uninstalling tensorboard-1.7.0:
+      Successfully uninstalled tensorboard-1.7.0
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 1.7.0
+    Uninstalling tensorflow-1.7.0:
+      Successfully uninstalled tensorflow-1.7.0
+Successfully installed cached-property-1.5.2 google-pasta-0.2.0 h5py-3.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 opt-einsum-3.3.0 protobuf-3.19.6 tensorboard-1.15.0 tensorflow-1.15.4 tensorflow-estimator-1.15.1 wrapt-1.16.0

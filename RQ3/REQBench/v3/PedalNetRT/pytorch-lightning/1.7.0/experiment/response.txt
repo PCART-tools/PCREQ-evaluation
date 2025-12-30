@@ -14,7 +14,7 @@ kiwisolver==1.4.5
 Markdown==3.4.4
 MarkupSafe==2.1.5
 matplotlib==3.3.3
-numpy==1.19.4
+numpy==1.21.6
 oauthlib==3.2.2
 Pillow==9.5.0
 protobuf==3.20.3
@@ -27,12 +27,12 @@ PyYAML==6.0.1
 requests==2.31.0
 requests-oauthlib==2.0.0
 rsa==4.9
-scipy==1.5.4
+scipy==1.7.3
 six==1.16.0
 tensorboard==2.11.2
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-torch==1.7.0
+torch==1.13.1
 tqdm==4.66.4
 typing_extensions==4.7.1
 urllib3==2.0.7

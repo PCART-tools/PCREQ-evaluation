@@ -1,0 +1,11 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a1/1f/a372f2e9f0a54fc479fcee3ac072f8cd5091054e9d7293dd4372338e5277/torch-1.9.0-cp36-cp36m-manylinux1_x86_64.whl (831.4 MB)
+Requirement already satisfied: typing-extensions in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torch==1.9.0) (4.1.1)
+Requirement already satisfied: dataclasses in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torch==1.9.0) (0.8)
+Installing collected packages: torch
+  Attempting uninstall: torch
+    Found existing installation: torch 1.6.0
+    Uninstalling torch-1.6.0:
+      Successfully uninstalled torch-1.6.0
+Successfully installed torch-1.9.0

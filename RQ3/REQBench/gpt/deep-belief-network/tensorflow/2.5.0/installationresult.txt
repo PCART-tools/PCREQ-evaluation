@@ -1,6 +1,6 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-Collecting absl-py==0.13.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/23/47/835652c7e19530973c73c65e652fc53bd05725d5a7cf9bb8706777869c1e/absl_py-0.13.0-py3-none-any.whl (132 kB)
+Collecting absl-py==0.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b9/07/f69dd3367368ad69f174bfe426a973651412ec11d48ec05c000f19fe0561/absl_py-0.10.0-py3-none-any.whl (127 kB)
 Collecting bleach==3.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f0/46/2bbd92086a4c6f051214cb48df6d9132b5f32c5e881d3f4991b16ec7e499/bleach-3.3.0-py2.py3-none-any.whl (283 kB)
 Collecting certifi==2021.5.30
@@ -13,10 +13,10 @@ Collecting importlib-metadata==4.8.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/a1/b153a0a4caf7a7e3f15c2cd56c7702e2cf3d89b1b359d1f1c5e59d68f4ce/importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
 Collecting Markdown==3.3.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6e/33/1ae0f71395e618d6140fbbc9587cc3156591f748226075e0f7d6f9176522/Markdown-3.3.4-py3-none-any.whl (97 kB)
-Collecting numpy==1.19.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/32/d3fa649ad7ec0b82737b92fefd3c4dd376b0bb23730715124569f38f3a08/numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
-Collecting protobuf==3.17.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/53/4e/e2db88d0bb0bda6a879eea62fddbaf813719ce3770d458bc5580512d9c95/protobuf-3.17.3-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
+Collecting numpy==1.19.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/63/97/af8a92864a04bfa48f1b5c9b1f8bf2ccb2847f24530026f26dd223de4ca0/numpy-1.19.2-cp36-cp36m-manylinux2010_x86_64.whl (14.5 MB)
+Collecting protobuf==3.14.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/fd/247ef25f5ec5f9acecfbc98ca3c6aaf66716cf52509aca9a93583d410493/protobuf-3.14.0-cp36-cp36m-manylinux1_x86_64.whl (1.0 MB)
 Collecting scikit-learn==0.24.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d3/eb/d0e658465c029feb7083139d9ead51000742e88b1fb7f1504e19e1b4ce6e/scikit_learn-0.24.2-cp36-cp36m-manylinux2010_x86_64.whl (22.2 MB)
 Collecting scipy==1.5.4

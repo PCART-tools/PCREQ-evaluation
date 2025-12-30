@@ -1,0 +1,10 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scipy==1.5.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/65/f9/f7a7e5009711579c72da2725174825e5056741bf4001815d097eef1b2e17/scipy-1.5.2-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
+Requirement already satisfied: numpy>=1.14.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scipy==1.5.2) (1.17.4)
+Installing collected packages: scipy
+  Attempting uninstall: scipy
+    Found existing installation: scipy 1.4.1
+    Uninstalling scipy-1.4.1:
+      Successfully uninstalled scipy-1.4.1
+Successfully installed scipy-1.5.2

@@ -1,11 +1,20 @@
-Traceback (most recent call last):
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/home/lei/compatibility_analysis/pytorch/1.6/svoice/svoice/evaluate.py", line 16, in <module>
-    from pesq import pesq
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/pesq/__init__.py", line 6, in <module>
-    from .cypesq import cypesq
-  File "pesq/cypesq.pyx", line 1, in init cypesq
-ImportError: numpy.core.multiarray failed to import (auto-generated because you didn't call 'numpy.import_array()' after cimporting numpy; use '<void>numpy._import_array' to disable if you are certain you don't need it).
+/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torchaudio/backend/utils.py:54: UserWarning: "sox" backend is being deprecated. The default backend will be changed to "sox_io" backend in 0.8.0 and "sox" backend will be removed in 0.9.0. Please migrate to "sox_io" backend. Please refer to https://github.com/pytorch/audio/issues/903 for the detail.
+  '"sox" backend is being deprecated. '
+INFO:__main__:Eval estimates | 1/8 | 2.6 it/sec
+INFO:__main__:Eval estimates | 2/8 | 3.3 it/sec
+INFO:__main__:Eval estimates | 3/8 | 3.9 it/sec
+INFO:__main__:Eval estimates | 4/8 | 4.4 it/sec
+INFO:__main__:Eval estimates | 5/8 | 4.9 it/sec
+INFO:__main__:Eval estimates | 6/8 | 5.3 it/sec
+INFO:__main__:Eval estimates | 7/8 | 5.8 it/sec
+INFO:__main__:Eval estimates | 8/8 | 6.0 it/sec
+INFO:__main__:Eval metrics | 1/8 | 26379.3 it/sec
+INFO:__main__:Eval metrics | 2/8 | 9518.1 it/sec
+INFO:__main__:Eval metrics | 3/8 | 7906.3 it/sec
+INFO:__main__:Eval metrics | 4/8 | 7904.8 it/sec
+INFO:__main__:Eval metrics | 5/8 | 8160.1 it/sec
+INFO:__main__:Eval metrics | 6/8 | 8597.4 it/sec
+INFO:__main__:Eval metrics | 7/8 | 8979.0 it/sec
+INFO:__main__:Eval metrics | 8/8 | 9272.6 it/sec
+INFO:__main__:[1mTest set performance: SISNRi=-1.68 PESQ=0.0, STOI=0.0.[0m
+{"sisnr": -1.6803838312625885, "pesq": 0.0, "stoi": 0.0}

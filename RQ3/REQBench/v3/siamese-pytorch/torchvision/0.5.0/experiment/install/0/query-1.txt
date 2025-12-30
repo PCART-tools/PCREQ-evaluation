@@ -21,6 +21,7 @@ torchvision==0.5.0
 tqdm==4.19.9
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['numpy', 'six', 'torch (==1.4.0)', 'pillow (>=4.1.1)', "scipy ; extra == 'scipy'"]
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

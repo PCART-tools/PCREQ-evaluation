@@ -1,0 +1,35 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/d5/38cd4543401708e64c9ee6afa664b936860f4630dd93a49ab863f9998cd2/tensorflow-1.11.0-cp36-cp36m-manylinux1_x86_64.whl (63.0 MB)
+Requirement already satisfied: grpcio>=1.8.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (1.19.0)
+Requirement already satisfied: absl-py>=0.1.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (0.7.1)
+Requirement already satisfied: protobuf>=3.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (3.6.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (0.37.1)
+Collecting keras-applications>=1.0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Requirement already satisfied: astor>=0.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (0.7.1)
+Collecting tensorboard<1.12.0,>=1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/2f/4d788919b1feef04624d63ed6ea45a49d1d1c834199ec50716edb5d310f4/tensorboard-1.11.0-py3-none-any.whl (3.0 MB)
+Collecting keras-preprocessing>=1.0.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Requirement already satisfied: termcolor>=1.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (1.1.0)
+Requirement already satisfied: numpy>=1.13.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (1.16.2)
+Requirement already satisfied: setuptools<=39.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (39.1.0)
+Requirement already satisfied: six>=1.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (1.12.0)
+Requirement already satisfied: gast>=0.2.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.11.0) (0.2.2)
+Collecting h5py
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7a/e53e500335afb6b1aade11227cdf107fca54106a1dca5c9d13242a043f3b/h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.12.0,>=1.11.0->tensorflow==1.11.0) (3.1)
+Requirement already satisfied: werkzeug>=0.11.10 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.12.0,>=1.11.0->tensorflow==1.11.0) (0.15.2)
+Collecting cached-property
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Installing collected packages: cached-property, h5py, tensorboard, keras-preprocessing, keras-applications, tensorflow
+  Attempting uninstall: tensorboard
+    Found existing installation: tensorboard 1.7.0
+    Uninstalling tensorboard-1.7.0:
+      Successfully uninstalled tensorboard-1.7.0
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 1.7.0
+    Uninstalling tensorflow-1.7.0:
+      Successfully uninstalled tensorflow-1.7.0
+Successfully installed cached-property-1.5.2 h5py-3.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 tensorboard-1.11.0 tensorflow-1.11.0

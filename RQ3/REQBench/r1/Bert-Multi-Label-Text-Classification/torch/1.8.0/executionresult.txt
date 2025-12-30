@@ -1,4 +1,12 @@
 Traceback (most recent call last):
-  File "run_bert.py", line 1, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+  File "run_bert.py", line 10, in <module>
+    from pybert.io.bert_processor import BertProcessor
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/io/bert_processor.py", line 8, in <module>
+    from transformers import BertTokenizer
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/__init__.py", line 626, in <module>
+    from .trainer import Trainer
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/trainer.py", line 69, in <module>
+    from .trainer_pt_utils import (
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/trainer_pt_utils.py", line 40, in <module>
+    from torch.optim.lr_scheduler import SAVE_STATE_WARNING
+ImportError: cannot import name 'SAVE_STATE_WARNING' from 'torch.optim.lr_scheduler' (/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/optim/lr_scheduler.py)

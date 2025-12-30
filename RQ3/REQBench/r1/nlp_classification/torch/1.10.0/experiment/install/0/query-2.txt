@@ -94,7 +94,7 @@ testpath==0.4.4
 threadpoolctl==2.0.0
 tokenizers==0.7.0
 torch==1.10.0
-torchvision==0.10.1
+torchvision==0.10.0
 tornado==6.0.4
 tqdm==4.46.0
 traitlets==4.3.3
@@ -108,11 +108,12 @@ widgetsnbextension==3.5.1
 zipp==3.1.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
     The user requested torch==1.10.0
-    torchvision 0.10.1 depends on torch==1.9.1
+    torchvision 0.10.0 depends on torch==1.9.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

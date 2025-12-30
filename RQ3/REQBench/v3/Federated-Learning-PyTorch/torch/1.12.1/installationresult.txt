@@ -13,10 +13,10 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting numpy==1.21.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
-Collecting Pillow==9.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/86/d2/ca178ad71dcd1dcddbe2a3f7983639d2f8a20e723d9a978ab978ed08c874/Pillow-9.2.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
-Collecting protobuf==4.24.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/2c/03046cac73f46bfe98fc846ef629cf4f84c2f59258216aa2cc0d22bfca8f/protobuf-4.24.4-cp37-abi3-manylinux2014_x86_64.whl (311 kB)
+Collecting Pillow==9.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/95/48565d6beb34deaacda1543b515dab9479b8fa8b9046703fd08ad447ddfe/Pillow-9.5.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Collecting protobuf==3.20.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4c/12/62e1d5505c172e1a7f803d83b0b1693f7952c3c271eb2f155703012ae67a/protobuf-3.20.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting pyparsing==3.1.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/ea/6d76df31432a0e6fdf81681a895f009a4bb47b3c39036db3e1b528191d52/pyparsing-3.1.2-py3-none-any.whl (103 kB)
 Collecting python-dateutil==2.9.0.post0
@@ -25,8 +25,8 @@ Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tensorboardX==1.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/d2/e08fe62f3554fbba081e80f6b23128df53b2f74ed4dcde73ec4a84dc53fb/tensorboardX-1.4-py2.py3-none-any.whl (67 kB)
+Collecting tensorboardX==2.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/9f/d532d37f10ac7af136d4c2ba71e1fe7af0f3cc0cc076dfc05826171e9737/tensorboardX-2.6-py2.py3-none-any.whl (114 kB)
 Collecting torch==1.12.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b9/af/23c13cd340cd333f42de225ba3da3b64e1a70425546d1a59bfa42d465a5d/torch-1.12.1-cp37-cp37m-manylinux1_x86_64.whl (776.3 MB)
 Collecting torchvision==0.13.1
@@ -43,11 +43,11 @@ Collecting requests
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
 Collecting idna<4,>=2.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl (70 kB)
-Collecting charset-normalizer<4,>=2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/38/84/cec08586c7c294e2c5e984de797c15b3efb30d42a0dd0132a62d2dfe3a27/charset_normalizer-3.4.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (141 kB)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
 Collecting urllib3<3,>=1.21.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
+Collecting charset-normalizer<4,>=2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0a/4c/925909008ed5a988ccbb72dcc897407e5d6d3bd72410d69e051fc0c14647/charset_normalizer-3.4.4-py3-none-any.whl (53 kB)
 Installing collected packages: mpmath, urllib3, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, packaging, numpy, idna, humanfriendly, fonttools, cycler, charset-normalizer, certifi, torch, tensorboardX, requests, python-dateutil, kiwisolver, coloredlogs, torchvision, matplotlib
-Successfully installed Pillow-9.2.0 certifi-2025.4.26 charset-normalizer-3.4.2 coloredlogs-15.0.1 cycler-0.11.0 fonttools-4.38.0 humanfriendly-10.0 idna-3.10 kiwisolver-1.4.5 matplotlib-3.5.3 mpmath-1.2.1 numpy-1.21.6 packaging-24.0 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 requests-2.31.0 six-1.16.0 sympy-1.10.1 tensorboardX-1.4 torch-1.12.1 torchvision-0.13.1 tqdm-4.66.4 typing_extensions-4.7.1 urllib3-2.0.7
+Successfully installed Pillow-9.5.0 certifi-2025.11.12 charset-normalizer-3.4.4 coloredlogs-15.0.1 cycler-0.11.0 fonttools-4.38.0 humanfriendly-10.0 idna-3.10 kiwisolver-1.4.5 matplotlib-3.5.3 mpmath-1.2.1 numpy-1.21.6 packaging-24.0 protobuf-3.20.3 pyparsing-3.1.2 python-dateutil-2.9.0.post0 requests-2.31.0 six-1.16.0 sympy-1.10.1 tensorboardX-2.6 torch-1.12.1 torchvision-0.13.1 tqdm-4.66.4 typing_extensions-4.7.1 urllib3-2.0.7

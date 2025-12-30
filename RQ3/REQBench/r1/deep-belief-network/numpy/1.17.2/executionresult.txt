@@ -1,4 +1,4 @@
 Traceback (most recent call last):
-  File "example_classification.py", line 4, in <module>
-    from sklearn.datasets import load_digits
-ModuleNotFoundError: No module named 'sklearn'
+  File "example_classification.py", line 1, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'

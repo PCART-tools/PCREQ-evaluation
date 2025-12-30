@@ -12,7 +12,7 @@ Pillow==6.2.2
 protobuf==3.20.0
 six==1.16.0
 sympy==1.10.1
-tensorboard==2.0.0
+tensorboard==1.13.0
 tensorboardX==1.7
 torch==1.0.0
 torchvision==0.2.1

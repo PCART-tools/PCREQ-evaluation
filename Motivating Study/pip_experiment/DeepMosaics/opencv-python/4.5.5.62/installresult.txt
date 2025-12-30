@@ -1,0 +1,12 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting opencv-python==4.5.5.62
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/98/36bfcbff30da27dd6922ed73ca7802c37d87f77daf4c569da3dcb87b4296/opencv_python-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.4 MB)
+Requirement already satisfied: numpy>=1.14.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from opencv-python==4.5.5.62) (1.19.3)
+WARNING: The candidate selected for download or install is a yanked version: 'opencv-python' candidate (version 4.5.5.62 at https://pypi.tuna.tsinghua.edu.cn/packages/9d/98/36bfcbff30da27dd6922ed73ca7802c37d87f77daf4c569da3dcb87b4296/opencv_python-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/) (requires-python:>=3.6))
+Reason for being yanked: <none given>
+Installing collected packages: opencv-python
+  Attempting uninstall: opencv-python
+    Found existing installation: opencv-python 4.5.1.48
+    Uninstalling opencv-python-4.5.1.48:
+      Successfully uninstalled opencv-python-4.5.1.48
+Successfully installed opencv-python-4.5.5.62

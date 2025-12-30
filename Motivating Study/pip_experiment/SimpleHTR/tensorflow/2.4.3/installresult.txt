@@ -1,0 +1,48 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==2.4.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/1a/ee279cafc900b559df58a91e0921f461c4b3517d3bea66ebf25f1334c57f/tensorflow-2.4.3-cp36-cp36m-manylinux2010_x86_64.whl (394.5 MB)
+Requirement already satisfied: numpy~=1.19.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.19.5)
+Requirement already satisfied: gast==0.3.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (0.3.3)
+Requirement already satisfied: wrapt~=1.12.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.12.1)
+Requirement already satisfied: google-pasta~=0.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (0.2.0)
+Requirement already satisfied: termcolor~=1.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.1.0)
+Requirement already satisfied: absl-py~=0.10 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (0.15.0)
+Requirement already satisfied: flatbuffers~=1.12.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.12)
+Requirement already satisfied: tensorboard~=2.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (2.10.1)
+Requirement already satisfied: protobuf>=3.9.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (3.19.6)
+Requirement already satisfied: keras-preprocessing~=1.1.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.1.2)
+Requirement already satisfied: h5py~=2.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (2.10.0)
+Requirement already satisfied: six~=1.15.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.15.0)
+Requirement already satisfied: grpcio~=1.32.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.32.0)
+Requirement already satisfied: typing-extensions~=3.7.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (3.7.4.3)
+Requirement already satisfied: tensorflow-estimator<2.5.0,>=2.4.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (2.4.0)
+Requirement already satisfied: wheel~=0.35 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (0.37.1)
+Requirement already satisfied: astunparse~=1.6.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (1.6.3)
+Requirement already satisfied: opt-einsum~=3.3.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==2.4.3) (3.3.0)
+Requirement already satisfied: google-auth<3,>=1.6.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (2.22.0)
+Requirement already satisfied: setuptools>=41.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (59.6.0)
+Requirement already satisfied: werkzeug>=1.0.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (2.0.3)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (3.3.7)
+Requirement already satisfied: tensorboard-plugin-wit>=1.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (1.8.1)
+Requirement already satisfied: requests<3,>=2.21.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (2.27.1)
+Requirement already satisfied: tensorboard-data-server<0.7.0,>=0.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (0.6.1)
+Requirement already satisfied: google-auth-oauthlib<0.5,>=0.4.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard~=2.4->tensorflow==2.4.3) (0.4.6)
+Requirement already satisfied: urllib3<2.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.4->tensorflow==2.4.3) (1.26.19)
+Requirement already satisfied: pyasn1-modules>=0.2.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.4->tensorflow==2.4.3) (0.3.0)
+Requirement already satisfied: rsa<5,>=3.1.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.4->tensorflow==2.4.3) (4.9)
+Requirement already satisfied: cachetools<6.0,>=2.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth<3,>=1.6.3->tensorboard~=2.4->tensorflow==2.4.3) (4.2.4)
+Requirement already satisfied: requests-oauthlib>=0.7.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.4->tensorflow==2.4.3) (2.0.0)
+Requirement already satisfied: importlib-metadata>=4.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from markdown>=2.6.8->tensorboard~=2.4->tensorflow==2.4.3) (4.8.3)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard~=2.4->tensorflow==2.4.3) (3.6.0)
+Requirement already satisfied: pyasn1<0.6.0,>=0.4.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from pyasn1-modules>=0.2.1->google-auth<3,>=1.6.3->tensorboard~=2.4->tensorflow==2.4.3) (0.5.1)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from requests<3,>=2.21.0->tensorboard~=2.4->tensorflow==2.4.3) (2021.5.30)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from requests<3,>=2.21.0->tensorboard~=2.4->tensorflow==2.4.3) (2.0.12)
+Requirement already satisfied: idna<4,>=2.5 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from requests<3,>=2.21.0->tensorboard~=2.4->tensorflow==2.4.3) (3.7)
+Requirement already satisfied: oauthlib>=3.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from requests-oauthlib>=0.7.0->google-auth-oauthlib<0.5,>=0.4.1->tensorboard~=2.4->tensorflow==2.4.3) (3.2.2)
+Requirement already satisfied: dataclasses in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from werkzeug>=1.0.1->tensorboard~=2.4->tensorflow==2.4.3) (0.8)
+Installing collected packages: tensorflow
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 2.4.0
+    Uninstalling tensorflow-2.4.0:
+      Successfully uninstalled tensorflow-2.4.0
+Successfully installed tensorflow-2.4.3

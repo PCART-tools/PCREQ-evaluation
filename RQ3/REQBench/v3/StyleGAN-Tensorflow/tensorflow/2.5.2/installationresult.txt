@@ -53,18 +53,24 @@ Collecting Werkzeug==2.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/f3/22afbdb20cc4654b10c98043414a14057cd27fdba9d4ae61cea596000ba2/Werkzeug-2.0.3-py3-none-any.whl (289 kB)
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Collecting google-auth<2,>=1.6.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/7a/1b3eb54caee1b8c73c2c3645f78a382eca4805a301a30c64a078e736e446/google_auth-1.35.0-py2.py3-none-any.whl (152 kB)
-Collecting google-auth-oauthlib<0.5,>=0.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/0e/0636cc1448a7abc444fb1b3a63655e294e0d2d49092dc3de05241be6d43c/google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
-Requirement already satisfied: setuptools>=41.0.0 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==2.5.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/StyleGAN-Tensorflow-tensorflow-2.5.2.txt (line 20)) (59.6.0)
-Collecting tensorboard-plugin-wit>=1.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==2.5.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/StyleGAN-Tensorflow-tensorflow-2.5.2.txt (line 20)) (0.35.0)
 Collecting requests<3,>=2.21.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2d/61/08076519c80041bc0ffa1a8af0cbd3bf3e2b62af10435d269a9d0f40564d/requests-2.27.1-py2.py3-none-any.whl (63 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==2.5.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/StyleGAN-Tensorflow-tensorflow-2.5.2.txt (line 20)) (0.37.1)
 Collecting tensorboard-data-server<0.7.0,>=0.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/f9/802efd84988bffd9f644c03b6e66fde8e76c3aa33db4279ddd11c5d61f4b/tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/0e/0636cc1448a7abc444fb1b3a63655e294e0d2d49092dc3de05241be6d43c/google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
+Collecting google-auth<2,>=1.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/7a/1b3eb54caee1b8c73c2c3645f78a382eca4805a301a30c64a078e736e446/google_auth-1.35.0-py2.py3-none-any.whl (152 kB)
+Collecting tensorboard-plugin-wit>=1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
+Requirement already satisfied: setuptools>=41.0.0 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==2.5.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/StyleGAN-Tensorflow-tensorflow-2.5.2.txt (line 20)) (59.6.0)
+Collecting astunparse~=1.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Collecting flatbuffers~=1.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/eb/26/712e578c5f14e26ae3314c39a1bdc4eb2ec2f4ddc89b708cf8e0a0d20423/flatbuffers-1.12-py2.py3-none-any.whl (15 kB)
+Collecting google-pasta~=0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
 INFO: pip is looking at multiple versions of tensorboard to determine which version is compatible with other requirements. This could take a while.
 INFO: pip is looking at multiple versions of six to determine which version is compatible with other requirements. This could take a while.
 INFO: pip is looking at multiple versions of scipy to determine which version is compatible with other requirements. This could take a while.

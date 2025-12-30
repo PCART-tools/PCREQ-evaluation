@@ -1,9 +1,9 @@
-Based on the error analysis and maintaining torch==1.5.0 as the primary constraint while resolving the CUDA out of memory and multiprocessing issues, here's the compatible requirements.txt:
 absl-py==2.1.0
 audioread==3.0.1
 cffi==1.15.1
 cycler==0.11.0
 decorator==5.1.1
+future==0.18.3
 grpcio==1.62.2
 importlib-metadata==6.7.0
 joblib==1.3.2

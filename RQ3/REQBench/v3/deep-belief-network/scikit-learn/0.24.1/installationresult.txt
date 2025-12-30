@@ -17,8 +17,8 @@ Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/32/d3fa649ad7ec0b82737b92fefd3c4dd376b0bb23730715124569f38f3a08/numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting protobuf==3.19.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/8e/06fc0df62dd80a32739b51bb3256f1417349eb5c3899f6ccab3796937458/protobuf-3.19.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
-Collecting scikit-learn==0.24.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d3/eb/d0e658465c029feb7083139d9ead51000742e88b1fb7f1504e19e1b4ce6e/scikit_learn-0.24.2-cp36-cp36m-manylinux2010_x86_64.whl (22.2 MB)
+Collecting scikit-learn==0.24.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e2/4c/6111b9a325f29527d7f262e2ee8c730d354b47a728d955e186dacad57a0d/scikit_learn-0.24.1-cp36-cp36m-manylinux2010_x86_64.whl (22.2 MB)
 Collecting scipy==1.5.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/89/63171228d5ced148f5ced50305c89e8576ffc695a90b58fe5bb602b910c2/scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
 Collecting six==1.16.0
@@ -37,6 +37,10 @@ Collecting threadpoolctl>=2.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Collecting joblib>=0.11
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7c/91/d3ba0401e62d7e42816bc7d97b82d19c95c164b3e149a87c0a1c026a735e/joblib-1.1.1-py2.py3-none-any.whl (309 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/deep-belief-network-scikit-learn-0.24.1.txt (line 13)) (0.37.1)
-Installing collected packages: zipp, typing-extensions, six, importlib-metadata, html5lib, dataclasses, Werkzeug, protobuf, numpy, Markdown, bleach, threadpoolctl, tensorflow-tensorboard, scipy, joblib, absl-py, tensorflow, scikit-learn, certifi
-Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 joblib-1.1.1 numpy-1.19.5 protobuf-3.19.6 scikit-learn-0.24.2 scipy-1.5.4 six-1.16.0 tensorflow-1.5.0 tensorflow-tensorboard-1.5.1 threadpoolctl-3.1.0 typing-extensions-4.1.1 zipp-3.6.0
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/deep-belief-network-scikit-learn-0.24.1.txt (line 13)) (0.35.0)
+Collecting packaging>=20.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl (40 kB)
+Collecting pyparsing!=3.0.5,>=2.0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl (104 kB)
+Installing collected packages: zipp, typing-extensions, six, pyparsing, packaging, importlib-metadata, html5lib, dataclasses, Werkzeug, protobuf, numpy, Markdown, bleach, threadpoolctl, tensorflow-tensorboard, scipy, joblib, absl-py, tensorflow, scikit-learn, certifi
+Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 joblib-1.1.1 numpy-1.19.5 packaging-21.3 protobuf-3.19.6 pyparsing-3.1.4 scikit-learn-0.24.1 scipy-1.5.4 six-1.16.0 tensorflow-1.5.0 tensorflow-tensorboard-1.5.1 threadpoolctl-3.1.0 typing-extensions-4.1.1 zipp-3.6.0

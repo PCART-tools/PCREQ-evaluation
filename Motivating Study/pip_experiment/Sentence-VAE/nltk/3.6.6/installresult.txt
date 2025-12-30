@@ -1,0 +1,16 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting nltk==3.6.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/35/8848a41a983a923aa2496fbe4ee4df796c6b32b2a59f04c2b2047aafd3c3/nltk-3.6.6-py3-none-any.whl (1.5 MB)
+Requirement already satisfied: tqdm in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nltk==3.6.6) (4.66.4)
+Requirement already satisfied: joblib in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nltk==3.6.6) (1.3.2)
+Requirement already satisfied: regex>=2021.8.3 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nltk==3.6.6) (2024.4.16)
+Requirement already satisfied: click in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from nltk==3.6.6) (8.1.7)
+Requirement already satisfied: importlib-metadata in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from click->nltk==3.6.6) (6.7.0)
+Requirement already satisfied: typing-extensions>=3.6.4 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from importlib-metadata->click->nltk==3.6.6) (4.7.1)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from importlib-metadata->click->nltk==3.6.6) (3.15.0)
+Installing collected packages: nltk
+  Attempting uninstall: nltk
+    Found existing installation: nltk 3.6.5
+    Uninstalling nltk-3.6.5:
+      Successfully uninstalled nltk-3.6.5
+Successfully installed nltk-3.6.6

@@ -9,9 +9,9 @@ cycler==0.10.0
 joblib==0.13.2
 kiwisolver==1.1.0
 matplotlib==3.5.3
-numpy==1.21.6
-pandas==1.3.5
-Pillow==6.0.0
+numpy==1.16.4
+pandas==0.24.2
+Pillow==6.2.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
@@ -23,11 +23,12 @@ torch==1.1.0
 torchvision==0.3.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['pillow>=6.2.0']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested Pillow==6.0.0
-    matplotlib 3.5.3 depends on pillow>=6.2.0
+    The user requested numpy==1.16.4
+    matplotlib 3.5.3 depends on numpy>=1.17
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

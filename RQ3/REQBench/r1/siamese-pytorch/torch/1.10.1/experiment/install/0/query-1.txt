@@ -21,6 +21,7 @@ torchvision==0.11.1
 tqdm==4.19.9
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

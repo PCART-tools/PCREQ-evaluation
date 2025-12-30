@@ -3,7 +3,7 @@
             Resolve pip install conflict in requirements.txt while preserving library integrity.
 
             **Input Context**
-            - Current requirements.txt: absl-py==0.11.0
+            - Current requirements.txt: absl-py==0.9.0
 astor==0.8.1
 bleach==3.1.5
 captcha==0.3
@@ -12,37 +12,41 @@ chardet==3.0.4
 Click==7.0
 cycler==0.10.0
 easydict==1.8
-Flask==1.0.2
+Flask==1.1.2
 gast==0.3.3
-grpcio==1.28.1
-html5lib==0.9999999
+grpcio==1.27.2
+html5lib==1.0.1
 idna==2.7
 itsdangerous==1.1.0
-Jinja2==2.10.1
-Markdown==3.2.2
+Jinja2==2.11.3
+Markdown==3.1
 MarkupSafe==1.1.1
-matplotlib==3.0.3
-numpy==1.18.2
+matplotlib==3.3.4
+numpy==1.18.5
 olefile==0.46
 Pillow==6.2.2
 protobuf==3.11.3
-pyparsing==2.4.0
-python-dateutil==2.8.0
+pyparsing==2.4.7
+python-dateutil==2.8.1
 pytz==2018.9
-requests==2.21.0
-six==1.14.0
-tensorboard==2.1.1
+requests==2.24.0
+six==1.12.0
+tensorboard==2.1.0
 tensorflow==2.1.4
+tensorflow-estimator==2.1.0
 termcolor==1.1.0
-urllib3==1.25.9
+urllib3==1.25.8
 Werkzeug==0.15.6
+wrapt==1.12.1
+h5py==2.10.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested urllib3==1.25.9
-    requests 2.21.0 depends on urllib3<1.25 and >=1.21.1
+    The user requested gast==0.3.3
+    tensorflow 2.1.4 depends on gast==0.2.2
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

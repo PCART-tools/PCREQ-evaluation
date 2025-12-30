@@ -1,5 +1,5 @@
 antlr4-python3-runtime==4.8
-audioread==2.1.9
+audioread==3.0.1
 cffi==1.15.1
 coloredlogs==15.0.1
 colorlog==6.8.2

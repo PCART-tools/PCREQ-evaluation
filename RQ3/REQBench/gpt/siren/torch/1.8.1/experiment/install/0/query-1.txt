@@ -28,17 +28,17 @@ docopt==0.6.2
 entrypoints==0.3
 fastparquet==0.3.2
 future==0.18.0
-gast==0.2.2
+gast==0.3.3
 git-pylint-commit-hook==2.5.1
 gitdb2==2.0.5
 GitPython==3.0.2
 google-auth==1.10.0
 google-auth-oauthlib==0.4.1
-google-pasta==0.1.8
+google-pasta==0.2.0
 gpustat==0.6.0
 gql==0.1.0
 graphql-core==2.2.1
-grpcio==1.26.0
+grpcio==1.32.0
 h5py==2.10.0
 humanfriendly==10.0
 idna==2.8
@@ -70,7 +70,7 @@ Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.2
 lesscpy==0.13.0
-llvmlite==0.29.0
+llvmlite==0.32.1
 Markdown==3.1.1
 MarkupSafe==1.1.1
 matplotlib==3.0.3
@@ -83,26 +83,26 @@ nbconvert==5.6.0
 nbformat==4.4.0
 networkx==2.3
 notebook==6.0.1
-numba==0.45.1
+numba==0.48.0
 numpy==1.19.5
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
 opencv-python==4.1.0.25
 opencv-python-headless==4.1.1.26
-opt-einsum==3.1.0
+opt-einsum==3.3.0
 pandas==0.24.2
 pandocfilters==1.4.2
 parso==0.5.1
 pathtools==0.1.2
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==6.2.2
+Pillow==8.2.0
 plotly==4.1.0
 ply==3.11
 prometheus-client==0.7.1
 promise==2.2.1
 prompt-toolkit==2.0.9
-protobuf==3.9.2
+protobuf==3.15.6
 psutil==5.6.6
 ptyprocess==0.6.0
 pyasn1==0.4.8
@@ -113,7 +113,7 @@ pylint==2.4.2
 pyparsing==2.4.2
 pyrsistent==0.15.4
 python-dateutil==2.8.0
-pytorch-ignite==0.4.7
+pytorch-ignite==0.4.10
 pytz==2019.2
 PyWavelets==1.0.3
 PyYAML==5.1.2
@@ -126,7 +126,7 @@ rsa==4.0
 Rx==1.6.1
 scikit-image==0.15.0
 scikit-learn==0.21.3
-scipy==1.4.1
+scipy==1.5.4
 seaborn==0.9.0
 Send2Trash==1.5.0
 sentry-sdk==0.11.1
@@ -137,9 +137,9 @@ six==1.12.0
 smmap2==2.0.5
 subprocess32==3.5.4
 sympy==1.10.1
-tensorboard==2.0.2
-tensorboardX==2.4
-tensorflow-estimator==2.0.1
+tensorboard==2.5.0
+tensorboardX==2.1
+tensorflow-estimator==2.5.0
 termcolor==1.1.0
 terminado==0.8.2
 testpath==0.4.2
@@ -154,7 +154,7 @@ traitlets==4.3.2
 typed-ast==1.4.0
 urllib3==1.25.3
 visdom==0.1.8.8
-wandb==0.9.7
+wandb==0.8.19
 watchdog==0.9.0
 wcwidth==0.1.7
 webencodings==0.5.1
@@ -165,11 +165,12 @@ wrapt==1.11.2
 zipp==0.6.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested gql==0.1.0
-    wandb 0.9.7 depends on gql==0.2.0
+    The user requested llvmlite==0.32.1
+    numba 0.48.0 depends on llvmlite<0.32.0 and >=0.31.0dev0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

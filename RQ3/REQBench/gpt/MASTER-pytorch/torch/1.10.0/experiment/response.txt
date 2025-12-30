@@ -6,9 +6,11 @@ numpy==1.19.5
 opencv-python==4.6.0.66
 pandas==1.1.5
 Pillow==7.2.0
-python-dateutil==2.9.0.post0
+python-dateutil==2.8.1
 pytz==2024.1
 six==1.16.0
 torch==1.10.0
-torchvision==0.11.1
+torchvision==0.11.0
 tqdm==4.47.0
+typing-extensions==3.10.0.2
+dataclasses==0.8

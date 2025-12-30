@@ -39,14 +39,14 @@ Collecting pytorch-transformers==1.2.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/b7/d3d18008a67e0b968d1ab93ad444fc05699403fa662f634b2f2c318a508b/pytorch_transformers-1.2.0-py3-none-any.whl (176 kB)
 Collecting pytz==2019.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/87/76/46d697698a143e05f77bec5a526bf4e56a0be61d63425b68f4ba553b51f2/pytz-2019.2-py2.py3-none-any.whl (508 kB)
-Collecting regex==2020.7.14
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c7/10/a5f40a296a199dda90432ba0af4dc4221aa5cde31c62b6088c88df971e9e/regex-2020.7.14-cp37-cp37m-manylinux2010_x86_64.whl (660 kB)
+Collecting regex==2019.8.19
+  Using cached regex-2019.8.19-cp37-cp37m-linux_x86_64.whl
 Collecting requests==2.22.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57 kB)
 Collecting s3transfer==0.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/16/8a/1fc3dba0c4923c2a76e1ff0d52b305c44606da63f718d14d3231e21c51b0/s3transfer-0.2.1-py2.py3-none-any.whl (70 kB)
-Collecting sacremoses==0.0.41
-  Using cached sacremoses-0.0.41-py3-none-any.whl
+Collecting sacremoses==0.0.33
+  Using cached sacremoses-0.0.33-py3-none-any.whl
 Collecting scikit-learn==0.21.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/c5/e5267eb84994e9a92a2c6a6ee768514f255d036f3c8378acfa694e9f2c99/scikit_learn-0.21.3-cp37-cp37m-manylinux1_x86_64.whl (6.7 MB)
 Collecting scipy==1.3.1
@@ -65,8 +65,8 @@ Collecting transformers==3.2.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d8/f4/9f93f06dd2c57c7cd7aa515ffbf9fcfd8a084b92285732289f4a5696dd91/transformers-3.2.0-py3-none-any.whl (1.0 MB)
 Collecting urllib3==1.25.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/60/247f23a7121ae632d62811ba7f273d0e58972d75e58a94d329d51550a47d/urllib3-1.25.3-py2.py3-none-any.whl (150 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/Bert-Multi-Label-Text-Classification-transformers-3.2.0.txt (line 12)) (65.6.3)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/Bert-Multi-Label-Text-Classification-transformers-3.2.0.txt (line 12)) (65.6.3)
 Collecting packaging
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Installing collected packages: tokenizers, sentencepiece, regex, pytz, joblib, jmespath, chardet, certifi, urllib3, tqdm, six, pyparsing, Pillow, packaging, numpy, kiwisolver, idna, filelock, docutils, Click, torch, scipy, sacremoses, requests, python-dateutil, cycler, transformers, scikit-learn, pandas, matplotlib, botocore, s3transfer, boto3, pytorch-transformers
-Successfully installed Click-7.0 Pillow-6.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.1 numpy-1.17.2 packaging-24.0 pandas-0.25.1 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2020.7.14 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.41 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.83 six-1.12.0 tokenizers-0.8.1rc2 torch-1.3.0 tqdm-4.35.0 transformers-3.2.0 urllib3-1.25.3
+Successfully installed Click-7.0 Pillow-6.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.1 numpy-1.17.2 packaging-24.0 pandas-0.25.1 pyparsing-2.4.2 python-dateutil-2.8.0 pytorch-transformers-1.2.0 pytz-2019.2 regex-2019.8.19 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.33 scikit-learn-0.21.3 scipy-1.3.1 sentencepiece-0.1.83 six-1.12.0 tokenizers-0.8.1rc2 torch-1.3.0 tqdm-4.35.0 transformers-3.2.0 urllib3-1.25.3

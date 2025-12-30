@@ -8,10 +8,10 @@ astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
 dataclasses==0.8
-gast==0.3.2
+gast==0.6.0
 grpcio==1.48.2
 h5py==3.1.0
-importlib-metadata==4.8.3
+importlib-metadata==3.10.1
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 Markdown==3.3.7
@@ -22,9 +22,9 @@ Pillow==6.1.0
 protobuf==3.19.6
 scipy==1.2.0
 six==1.16.0
-tensorboard==1.15.0
-tensorflow==1.15.0
-tensorflow-estimator==1.15.1
+tensorboard==1.13.1
+tensorflow==1.13.1
+tensorflow-estimator==1.13.0
 termcolor==1.1.0
 tqdm==4.32.1
 typing_extensions==4.1.1
@@ -32,11 +32,12 @@ Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): None
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested gast==0.3.2
-    tensorflow 1.15.0 depends on gast==0.2.2
+    The user requested importlib-metadata==3.10.1
+    markdown 3.3.7 depends on importlib-metadata>=4.4; python_version < "3.10"
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

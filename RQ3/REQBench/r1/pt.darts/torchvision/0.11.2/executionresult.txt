@@ -1,27 +1,27 @@
-05/31 01:43:57 PM | 
-05/31 01:43:57 PM | Parameters:
-05/31 01:43:57 PM | AUX_WEIGHT=0.4
-05/31 01:43:57 PM | BATCH_SIZE=256
-05/31 01:43:57 PM | CUTOUT_LENGTH=16
-05/31 01:43:57 PM | DATA_PATH=./data/
-05/31 01:43:57 PM | DATASET=cifar10
-05/31 01:43:57 PM | DROP_PATH_PROB=0.2
-05/31 01:43:57 PM | EPOCHS=1
-05/31 01:43:57 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
-05/31 01:43:57 PM | GPUS=[0, 1, 2]
-05/31 01:43:57 PM | GRAD_CLIP=5.0
-05/31 01:43:57 PM | INIT_CHANNELS=36
-05/31 01:43:57 PM | LAYERS=20
-05/31 01:43:57 PM | LR=0.025
-05/31 01:43:57 PM | MOMENTUM=0.9
-05/31 01:43:57 PM | NAME=cifar10
-05/31 01:43:57 PM | PATH=augments/cifar10
-05/31 01:43:57 PM | PRINT_FREQ=200
-05/31 01:43:57 PM | SEED=2
-05/31 01:43:57 PM | WEIGHT_DECAY=0.0003
-05/31 01:43:57 PM | WORKERS=4
-05/31 01:43:57 PM | 
-05/31 01:43:57 PM | Logger is set - training start
+12/16 09:56:27 AM | 
+12/16 09:56:27 AM | Parameters:
+12/16 09:56:27 AM | AUX_WEIGHT=0.4
+12/16 09:56:27 AM | BATCH_SIZE=256
+12/16 09:56:27 AM | CUTOUT_LENGTH=16
+12/16 09:56:27 AM | DATA_PATH=./data/
+12/16 09:56:27 AM | DATASET=cifar10
+12/16 09:56:27 AM | DROP_PATH_PROB=0.2
+12/16 09:56:27 AM | EPOCHS=1
+12/16 09:56:27 AM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 09:56:27 AM | GPUS=[0, 1, 2]
+12/16 09:56:27 AM | GRAD_CLIP=5.0
+12/16 09:56:27 AM | INIT_CHANNELS=36
+12/16 09:56:27 AM | LAYERS=20
+12/16 09:56:27 AM | LR=0.025
+12/16 09:56:27 AM | MOMENTUM=0.9
+12/16 09:56:27 AM | NAME=cifar10
+12/16 09:56:27 AM | PATH=augments/cifar10
+12/16 09:56:27 AM | PRINT_FREQ=200
+12/16 09:56:27 AM | SEED=2
+12/16 09:56:27 AM | WEIGHT_DECAY=0.0003
+12/16 09:56:27 AM | WORKERS=4
+12/16 09:56:27 AM | 
+12/16 09:56:27 AM | Logger is set - training start
 Files already downloaded and verified
 Traceback (most recent call last):
   File "augment.py", line 177, in <module>
@@ -30,4 +30,6 @@ Traceback (most recent call last):
     config.dataset, config.data_path, config.cutout_length, validation=True)
   File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
     shape = trn_data.train_data.shape
-AttributeError: 'CIFAR10' object has no attribute 'train_data'
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/utils/data/dataset.py", line 83, in __getattr__
+    raise AttributeError
+AttributeError

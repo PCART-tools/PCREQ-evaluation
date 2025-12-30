@@ -13,8 +13,8 @@ Markdown==3.4.4
 MarkupSafe==2.1.5
 matplotlib==3.2.2
 numba==0.48.0
-numpy==1.16.6
-Pillow==6.2.2
+numpy==1.17.4
+Pillow==9.3.0
 protobuf==3.20.0
 pycparser==2.21
 pyparsing==2.4.7
@@ -22,7 +22,7 @@ python-dateutil==2.8.2
 resampy==0.2.2
 scikit-learn==1.0.2
 scipy==1.4.1
-six==1.14.0
+six==1.16.0
 SoundFile==0.10.3.post1
 tensorboard==2.0.0
 threadpoolctl==3.1.0

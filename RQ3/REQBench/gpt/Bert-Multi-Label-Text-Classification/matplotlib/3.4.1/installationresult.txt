@@ -25,12 +25,12 @@ Collecting kiwisolver==1.3.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/46/231de802ade4225b76b96cffe419cf3ce52bbe92e3b092cf12db7d11c207/kiwisolver-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
 Collecting matplotlib==3.4.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/63/74c0b6184b6b169b121bb72458818ee60a7d7c436d7b1907bd5874188c55/matplotlib-3.4.1-cp37-cp37m-manylinux1_x86_64.whl (10.3 MB)
-Collecting numpy==1.20.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a5/42/560d269f604d3e186a57c21a363e77e199358d054884e61b73e405dd217c/numpy-1.20.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.3 MB)
+Collecting numpy==1.19.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting pandas==1.1.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fd/70/e8eee0cbddf926bf51958c7d6a86bc69167c300fa2ba8e592330a2377d1b/pandas-1.1.5-cp37-cp37m-manylinux1_x86_64.whl (9.5 MB)
-Collecting Pillow==6.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/b7/fb24ad352b747340ec1975c84c30cca37bb93a0079e037d1f0930afd65ad/Pillow-6.2.0-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
+Collecting Pillow==8.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/b7/4b3304e5fd986e2ad8a0157adba88c01dcefc111deaf84a37175af5f5e43/Pillow-8.0.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
 Collecting pyparsing==2.4.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
 Collecting python-dateutil==2.8.1
@@ -68,4 +68,4 @@ Collecting urllib3==1.25.3
 Collecting threadpoolctl>=2.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Installing collected packages: tokenizers, sentencepiece, regex, pytz, joblib, jmespath, chardet, certifi, urllib3, tqdm, threadpoolctl, six, pyparsing, Pillow, numpy, kiwisolver, idna, filelock, docutils, Click, torch, scipy, sacremoses, requests, python-dateutil, cycler, scikit-learn, pandas, matplotlib, botocore, s3transfer, boto3, transformers, pytorch-transformers
-Successfully installed Click-7.0 Pillow-6.2.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.3.1 matplotlib-3.4.1 numpy-1.20.3 pandas-1.1.5 pyparsing-2.4.7 python-dateutil-2.8.1 pytorch-transformers-1.2.0 pytz-2019.2 regex-2019.8.19 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.33 scikit-learn-0.24.2 scipy-1.5.4 sentencepiece-0.1.83 six-1.12.0 threadpoolctl-3.1.0 tokenizers-0.5.2 torch-1.3.0 tqdm-4.35.0 transformers-2.5.1 urllib3-1.25.3
+Successfully installed Click-7.0 Pillow-8.0.0 boto3-1.9.227 botocore-1.12.227 certifi-2019.9.11 chardet-3.0.4 cycler-0.10.0 docutils-0.15.2 filelock-3.12.2 idna-2.8 jmespath-0.9.4 joblib-0.13.2 kiwisolver-1.3.1 matplotlib-3.4.1 numpy-1.19.5 pandas-1.1.5 pyparsing-2.4.7 python-dateutil-2.8.1 pytorch-transformers-1.2.0 pytz-2019.2 regex-2019.8.19 requests-2.22.0 s3transfer-0.2.1 sacremoses-0.0.33 scikit-learn-0.24.2 scipy-1.5.4 sentencepiece-0.1.83 six-1.12.0 threadpoolctl-3.1.0 tokenizers-0.5.2 torch-1.3.0 tqdm-4.35.0 transformers-2.5.1 urllib3-1.25.3

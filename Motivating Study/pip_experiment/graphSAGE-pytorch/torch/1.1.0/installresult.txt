@@ -1,0 +1,10 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/69/60/f685fb2cfb3088736bafbc9bdbb455327bdc8906b606da9c9a81bae1c81e/torch-1.1.0-cp36-cp36m-manylinux1_x86_64.whl (676.9 MB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torch==1.1.0) (1.16.2)
+Installing collected packages: torch
+  Attempting uninstall: torch
+    Found existing installation: torch 1.0.1
+    Uninstalling torch-1.0.1:
+      Successfully uninstalled torch-1.0.1
+Successfully installed torch-1.1.0

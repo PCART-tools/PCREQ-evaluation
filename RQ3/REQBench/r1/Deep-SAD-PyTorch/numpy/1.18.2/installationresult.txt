@@ -9,12 +9,12 @@ Collecting joblib==0.13.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/c1/50a758e8247561e58cb87305b1e90b171b8c767b15b12a1734001f41d356/joblib-0.13.2-py2.py3-none-any.whl (278 kB)
 Collecting kiwisolver==1.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/93/f8/518fb0bb89860eea6ff1b96483fbd9236d5ee991485d0f3eceff1770f654/kiwisolver-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (90 kB)
-Collecting matplotlib==3.1.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/19/7a/60bd79c5d79559150f8bba866dd7d434f0a170312e4d15e8aefa5faba294/matplotlib-3.1.1-cp37-cp37m-manylinux1_x86_64.whl (13.1 MB)
+Collecting matplotlib==3.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/cb/a34046e75c9a4ecaf426ae0d0eada97078c8ce4bbe3250940b1a312a1385/matplotlib-3.1.0-cp37-cp37m-manylinux1_x86_64.whl (13.1 MB)
 Collecting numpy==1.18.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b7/ce/d0b92f0283faa4da76ea82587ff9da70104e81f59ba14f76c87e4196254e/numpy-1.18.2-cp37-cp37m-manylinux1_x86_64.whl (20.2 MB)
-Collecting pandas==0.25.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3b/42/dc1f4820b95fbdbc9352ec9ad0f0c40db2122e1f2440ea53c7f9fbccf2b8/pandas-0.25.0-cp37-cp37m-manylinux1_x86_64.whl (10.4 MB)
+Collecting pandas==1.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/16/cf/5d4614610a6be006ea5715f76e261cb8bc0031a97e43f9915bddb404a3f5/pandas-1.0.0-cp37-cp37m-manylinux1_x86_64.whl (10.0 MB)
 Collecting Pillow==6.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c1/e6/ce127fa0ac17775bc7887c432ffe945c49ae141f01b477b7cd5e63b16bb5/Pillow-6.0.0-cp37-cp37m-manylinux1_x86_64.whl (2.0 MB)
 Collecting pyparsing==2.4.0
@@ -25,16 +25,16 @@ Collecting pytz==2019.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl (510 kB)
 Collecting scikit-learn==0.21.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/21/a4/a48bd4b0d15395362b561df7e7247de87291105eb736a3b2aaffebf437b9/scikit_learn-0.21.2-cp37-cp37m-manylinux1_x86_64.whl (6.7 MB)
-Collecting scipy==1.4.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/9d/a606dc7b17ef0b7326afd128e132b7a483d5611da603334842df75d92d3c/scipy-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (26.1 MB)
+Collecting scipy==1.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5d/bd/c0feba81fb60e231cf40fc8a322ed5873c90ef7711795508692b1481a4ae/scipy-1.3.0-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
 Collecting seaborn==0.9.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a8/76/220ba4420459d9c4c9c9587c6ce607bf56c25b3d3d2de62056efe482dadc/seaborn-0.9.0-py3-none-any.whl (208 kB)
 Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
-Collecting torch==1.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ac/23/a4b5c189dd624411ec84613b717594a00480282b949e3448d189c4aa4e47/torch-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (676.9 MB)
-Collecting torchvision==0.3.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cc/9b/208f48d5a5013bdb0c27a84a02df4fcf5fd24ab5902667c11e554a12b681/torchvision-0.3.0-cp37-cp37m-manylinux1_x86_64.whl (2.6 MB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/Deep-SAD-PyTorch-numpy-1.18.2.txt (line 5)) (65.6.3)
-Installing collected packages: pytz, joblib, cvxopt, six, pyparsing, Pillow, numpy, kiwisolver, Click, torch, scipy, python-dateutil, cycler, torchvision, scikit-learn, pandas, matplotlib, seaborn
-Successfully installed Click-7.0 Pillow-6.0.0 cvxopt-1.2.3 cycler-0.10.0 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.1 numpy-1.18.2 pandas-0.25.0 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2019.1 scikit-learn-0.21.2 scipy-1.4.0 seaborn-0.9.0 six-1.12.0 torch-1.1.0 torchvision-0.3.0
+Collecting torch==1.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/3b/fa92ece1e58a6a48ec598bab327f39d69808133e5b2fb33002ca754e381e/torch-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (753.4 MB)
+Collecting torchvision==0.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1c/32/cb0e4c43cd717da50258887b088471568990b5a749784c465a8a1962e021/torchvision-0.5.0-cp37-cp37m-manylinux1_x86_64.whl (4.0 MB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.1.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/Deep-SAD-PyTorch-numpy-1.18.2.txt (line 5)) (65.6.3)
+Installing collected packages: pytz, joblib, cvxopt, torch, six, pyparsing, Pillow, numpy, kiwisolver, Click, torchvision, scipy, python-dateutil, cycler, scikit-learn, pandas, matplotlib, seaborn
+Successfully installed Click-7.0 Pillow-6.0.0 cvxopt-1.2.3 cycler-0.10.0 joblib-0.13.2 kiwisolver-1.1.0 matplotlib-3.1.0 numpy-1.18.2 pandas-1.0.0 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2019.1 scikit-learn-0.21.2 scipy-1.3.0 seaborn-0.9.0 six-1.12.0 torch-1.4.0 torchvision-0.5.0

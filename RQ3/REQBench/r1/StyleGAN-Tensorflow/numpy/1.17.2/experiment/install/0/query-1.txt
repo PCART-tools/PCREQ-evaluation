@@ -8,12 +8,12 @@ astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
 dataclasses==0.8
-gast==0.2.2
+gast==0.6.0
 grpcio==1.48.2
 h5py==3.1.0
 importlib-metadata==4.8.3
 Keras-Applications==1.0.8
-Keras-Preprocessing==1.1.0
+Keras-Preprocessing==1.1.2
 Markdown==3.3.7
 mock==5.1.0
 numpy==1.17.2
@@ -22,22 +22,23 @@ Pillow==6.1.0
 protobuf==3.19.6
 scipy==1.5.4
 six==1.16.0
-tensorboard==1.15.0
-tensorflow==1.15.5
-tensorflow-estimator==1.15.1
+tensorboard==2.2.0
+tensorflow==2.2.0
+tensorflow-estimator==2.2.0
 termcolor==1.1.0
 tqdm==4.32.1
 typing_extensions==4.1.1
-Werkzeug==0.16.1
+Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): None
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
     The user requested h5py==3.1.0
     keras-applications 1.0.8 depends on h5py
-    tensorflow 1.15.5 depends on h5py<=2.10.0
+    tensorflow 2.2.0 depends on h5py<2.11.0 and >=2.10.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

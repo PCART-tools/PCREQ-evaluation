@@ -1,10 +1,10 @@
-2025-05-30 13:29:50.867064: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2025-12-13 20:07:21.002186: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
 [START] Pre-training step:
->> Epoch 1 finished 	RBM Reconstruction error 3.224766
->> Epoch 1 finished 	RBM Reconstruction error 0.767369
+>> Epoch 1 finished 	RBM Reconstruction error 3.233493
+>> Epoch 1 finished 	RBM Reconstruction error 0.766846
 [END] Pre-training step
 [START] Fine tuning step:
->> Epoch 0 finished 	ANN training loss 2.297412
+>> Epoch 0 finished 	ANN training loss 2.298980
 [END] Fine tuning step
 Done.
-Accuracy: 0.080556
+Accuracy: 0.075000

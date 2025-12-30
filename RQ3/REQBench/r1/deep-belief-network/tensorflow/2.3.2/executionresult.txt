@@ -1,4 +1,12 @@
+2025-12-15 02:40:51.601775: W tensorflow/stream_executor/platform/default/dso_loader.cc:59] Could not load dynamic library 'libcudart.so.10.1'; dlerror: libcudart.so.10.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 02:40:51.601827: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/sklearn/utils/deprecation.py:144: FutureWarning: The sklearn.metrics.classification module is  deprecated in version 0.22 and will be removed in version 0.24. The corresponding classes / functions should instead be imported from sklearn.metrics. Anything that cannot be imported from sklearn.metrics is now part of the private API.
+  warnings.warn(message, FutureWarning)
 Traceback (most recent call last):
-  File "example_classification.py", line 1, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+  File "example_classification.py", line 8, in <module>
+    from dbn.tensorflow import SupervisedDBNClassification
+  File "/home/lei/compatibility_analysis/tensorflow/1.5/deep-belief-network/dbn/tensorflow/__init__.py", line 1, in <module>
+    from .models import BinaryRBM, UnsupervisedDBN, SupervisedDBNRegression, SupervisedDBNClassification
+  File "/home/lei/compatibility_analysis/tensorflow/1.5/deep-belief-network/dbn/tensorflow/models.py", line 19, in <module>
+    sess = tf.Session()
+AttributeError: module 'tensorflow' has no attribute 'Session'

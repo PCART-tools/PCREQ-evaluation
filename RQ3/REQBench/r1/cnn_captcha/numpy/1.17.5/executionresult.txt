@@ -1,33 +1,9 @@
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  np_resource = np.dtype([("resource", np.ubyte, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
-/home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
-  np_resource = np.dtype([("resource", np.ubyte, 1)])
 WARNING: Logging before flag parsing goes to stderr.
-W0529 17:31:15.184139 140442201666112 deprecation_wrapper.py:119] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:22: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+W1215 07:24:28.407524 139939888759360 module_wrapper.py:139] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:22: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
 
-W0529 17:31:15.222437 140442201666112 deprecation_wrapper.py:119] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:62: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+W1215 07:24:28.443602 139939888759360 module_wrapper.py:139] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:62: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
 
-W0529 17:31:15.584283 140442201666112 lazy_loader.py:50] 
+W1215 07:24:28.443740 139939888759360 lazy_loader.py:50] 
 The TensorFlow contrib module will not be included in TensorFlow 2.0.
 For more information, please see:
   * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
@@ -35,33 +11,54 @@ For more information, please see:
   * https://github.com/tensorflow/io (for I/O related ops)
 If you depend on functionality not listed there, please file an issue.
 
-W0529 17:31:15.590519 140442201666112 deprecation_wrapper.py:119] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:64: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+W1215 07:24:28.754429 139939888759360 module_wrapper.py:139] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:64: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
 
-W0529 17:31:15.596647 140442201666112 deprecation_wrapper.py:119] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:66: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
+W1215 07:24:28.760430 139939888759360 module_wrapper.py:139] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:66: The name tf.nn.max_pool is deprecated. Please use tf.nn.max_pool2d instead.
 
-W0529 17:31:15.597397 140442201666112 deprecation.py:506] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:67: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+W1215 07:24:28.761243 139939888759360 deprecation.py:506] From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:67: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-W0529 17:31:15.668507 140442201666112 deprecation.py:323] From /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/ops/nn_impl.py:180: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+W1215 07:24:28.825341 139939888759360 deprecation.py:323] From /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow_core/python/ops/nn_impl.py:183: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use tf.where in 2.0, which has the same broadcast rule as np.where
-W0529 17:31:15.672352 140442201666112 deprecation_wrapper.py:119] From train_model.py:144: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+W1215 07:24:28.829305 139939888759360 module_wrapper.py:139] From train_model.py:144: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
 
-W0529 17:31:15.864404 140442201666112 deprecation_wrapper.py:119] From train_model.py:156: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+W1215 07:24:29.008445 139939888759360 module_wrapper.py:139] From train_model.py:156: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
 
-W0529 17:31:15.886960 140442201666112 deprecation_wrapper.py:119] From train_model.py:157: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+W1215 07:24:29.029901 139939888759360 module_wrapper.py:139] From train_model.py:157: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
 
-2025-05-29 17:31:15.887284: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2025-05-29 17:31:15.919264: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
-2025-05-29 17:31:15.925130: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x563436e4ff60 executing computations on platform Host. Devices:
-2025-05-29 17:31:15.925165: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
-W0529 17:31:15.931967 140442201666112 deprecation_wrapper.py:119] From train_model.py:158: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+2025-12-15 07:24:29.030989: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2025-12-15 07:24:29.112382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: NVIDIA GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:17:00.0
+2025-12-15 07:24:29.112607: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 1 with properties: 
+name: NVIDIA GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:73:00.0
+2025-12-15 07:24:29.112794: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 2 with properties: 
+name: NVIDIA GeForce RTX 2080 Ti major: 7 minor: 5 memoryClockRate(GHz): 1.545
+pciBusID: 0000:a6:00.0
+2025-12-15 07:24:29.112916: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcudart.so.10.0'; dlerror: libcudart.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.112977: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcublas.so.10.0'; dlerror: libcublas.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113027: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcufft.so.10.0'; dlerror: libcufft.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113088: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcurand.so.10.0'; dlerror: libcurand.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113138: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusolver.so.10.0'; dlerror: libcusolver.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113197: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcusparse.so.10.0'; dlerror: libcusparse.so.10.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113244: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcudnn.so.7'; dlerror: libcudnn.so.7: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-11.4/lib64:/usr/local/cuda-11.4/lib64:
+2025-12-15 07:24:29.113250: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1641] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2025-12-15 07:24:29.113593: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2025-12-15 07:24:29.128726: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2025-12-15 07:24:29.134997: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5559faa579f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-12-15 07:24:29.135057: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2025-12-15 07:24:29.686371: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5559fa411690 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-12-15 07:24:29.686445: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2080 Ti, Compute Capability 7.5
+2025-12-15 07:24:29.686462: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (1): NVIDIA GeForce RTX 2080 Ti, Compute Capability 7.5
+2025-12-15 07:24:29.686475: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (2): NVIDIA GeForce RTX 2080 Ti, Compute Capability 7.5
+2025-12-15 07:24:29.686977: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2025-12-15 07:24:29.687007: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      
+W1215 07:24:29.696970 139939888759360 module_wrapper.py:139] From train_model.py:158: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
 
-2025-05-29 17:31:16.270254: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
-W0529 17:31:16.405756 140442201666112 deprecation.py:323] From /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1276: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use standard file APIs to check for files with this prefix.
-W0529 17:31:16.612587 140442201666112 deprecation_wrapper.py:119] From train_model.py:170: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+W1215 07:24:30.336488 139939888759360 module_wrapper.py:139] From train_model.py:170: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
 
 -->图片尺寸: 60 X 100
 -->验证码长度: 4
@@ -77,5 +74,5 @@ W0529 17:31:16.612587 140442201666112 deprecation_wrapper.py:119] From train_mod
 >>> End model test
 定时保存模型成功
 第10次训练 >>> 
-[训练集] 字符准确率为 1.00000 图片准确率为 1.00000 >>> loss 0.0000634307
-[验证集] 字符准确率为 0.02500 图片准确率为 0.00000 >>> loss 0.0000634307
+[训练集] 字符准确率为 1.00000 图片准确率为 1.00000 >>> loss 0.0000007758
+[验证集] 字符准确率为 0.03000 图片准确率为 0.00000 >>> loss 0.0000007758

@@ -23,6 +23,7 @@ torch==1.1.0
 torchvision==0.3.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ['numpy', 'six', 'torch (==1.4.0)', 'pillow (>=4.1.1)', "scipy ; extra == 'scipy'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

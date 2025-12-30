@@ -1,0 +1,11 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-learn==0.20.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0d/3a/b92670f5c368c20329ecc4c255993fae7934564d485c3ed7ea7b8da7f741/scikit_learn-0.20.2-cp36-cp36m-manylinux1_x86_64.whl (5.4 MB)
+Requirement already satisfied: scipy>=0.13.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from scikit-learn==0.20.2) (0.18.1)
+Requirement already satisfied: numpy>=1.8.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from scikit-learn==0.20.2) (1.16.4)
+Installing collected packages: scikit-learn
+  Attempting uninstall: scikit-learn
+    Found existing installation: scikit-learn 0.18.1
+    Uninstalling scikit-learn-0.18.1:
+      Successfully uninstalled scikit-learn-0.18.1
+Successfully installed scikit-learn-0.20.2

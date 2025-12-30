@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting numpy==1.16.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c1/e2/4db8df8f6cddc98e7d7c537245ef2f4e41a1ed17bf0c3177ab3cc6beac7f/numpy-1.16.3-cp36-cp36m-manylinux1_x86_64.whl (17.3 MB)
+Installing collected packages: numpy
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.16.2
+    Uninstalling numpy-1.16.2:
+      Successfully uninstalled numpy-1.16.2
+Successfully installed numpy-1.16.3

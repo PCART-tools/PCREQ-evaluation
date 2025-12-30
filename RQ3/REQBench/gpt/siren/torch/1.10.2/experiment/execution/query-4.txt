@@ -21,20 +21,20 @@ coloredlogs==15.0.1
 configparser==4.0.2
 CProfileV==1.0.7
 cycler==0.10.0
-decorator==4.4.0
+decorator==4.4.2
 defusedxml==0.6.0
 docker-pycreds==0.4.0
 docopt==0.6.2
 entrypoints==0.3
 fastparquet==0.3.2
 future==0.18.0
-gast==0.4.0
+gast==0.2.2
 git-pylint-commit-hook==2.5.1
 gitdb2==2.0.5
 GitPython==3.0.2
 google-auth==1.10.0
 google-auth-oauthlib==0.4.1
-google-pasta==0.2.0
+google-pasta==0.1.8
 gpustat==0.6.0
 gql==0.1.0
 graphql-core==2.2.1
@@ -42,9 +42,9 @@ grpcio==1.26.0
 h5py==2.10.0
 humanfriendly==10.0
 idna==2.8
-ignite==1.4.0
+ignite==1.1.0
 imageio==2.5.0
-imgaug==0.4.0
+imgaug==0.3.0
 importlib-metadata==0.23
 inspect-it==0.3.2
 ipdb==0.13.2
@@ -54,7 +54,7 @@ ipython-genutils==0.2.0
 ipywidgets==7.5.1
 isort==4.3.21
 jedi==0.15.1
-Jinja2==2.10.1
+Jinja2==2.10.3
 joblib==0.13.2
 json5==0.8.5
 jsonschema==3.0.2
@@ -71,100 +71,220 @@ kiwisolver==1.1.0
 lazy-object-proxy==1.4.2
 lesscpy==0.13.0
 llvmlite==0.29.0
-Markdown==3.3.4
+Markdown==3.1.1
 MarkupSafe==1.1.1
-matplotlib==3.3.4
+matplotlib==3.0.3
 mccabe==0.6.1
 mistune==0.8.4
 more-itertools==7.2.0
 mpmath==1.2.1
 natsort==6.0.0
-nbconvert==5.6.1
+nbconvert==5.6.0
 nbformat==4.4.0
-networkx==2.5
+networkx==2.3
 notebook==6.0.1
-numba==0.55.0
+numba==0.45.1
 numpy==1.19.5
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
-opencv-python==4.6.0.66
-opencv-python-headless==4.6.0.66
-opt-einsum==3.3.0
-pandas==1.1.5
-pandocfilters==1.4.3
-parso==0.5.2
+opencv-python==4.1.0.25
+opencv-python-headless==4.1.1.26
+opt-einsum==3.1.0
+pandas==0.24.2
+pandocfilters==1.4.2
+parso==0.5.1
 pathtools==0.1.2
-pexpect==4.8.0
+pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==7.2.0
-plotly==5.3.1
+Pillow==9.3.0
+plotly==4.1.0
 ply==3.11
 prometheus-client==0.7.1
-promise==2.3
-prompt-toolkit==2.0.10
-protobuf==3.19.4
-psutil==5.8.0
+promise==2.2.1
+prompt-toolkit==2.0.9
+protobuf==3.9.1
+psutil==5.6.6
 ptyprocess==0.6.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycodestyle==2.5.0
-Pygments==2.12.0
-pylint==2.10.2
-pyparsing==2.4.7
-pyrsistent==0.18.1
-python-dateutil==2.8.2
-pytorch-ignite==0.4.10
+Pygments==2.4.2
+pylint==2.4.2
+pyparsing==2.4.2
+pyrsistent==0.15.4
+python-dateutil==2.8.0
+pytorch-ignite==0.5.0
 pytz==2019.2
-PyWavelets==1.1.1
-PyYAML==5.4.1
-pyzmq==18.1.1
-qtconsole==4.7.7
-requests==2.24.0
+PyWavelets==1.0.3
+PyYAML==5.1.2
+pyzmq==18.1.0
+qtconsole==4.5.4
+requests==2.22.0
 requests-oauthlib==1.3.0
 retrying==1.3.3
-rsa==4.8
-Rx==3.2.0
-scikit-image==0.16.2
-scikit-learn==0.22.2.post1
-scipy==1.4.1
-seaborn==0.10.1
-Send2Trash==1.8.0
-sentry-sdk==0.19.5
-Shapely==1.8.0
-shortuuid==1.0.11
+rsa==4.0
+Rx==1.6.1
+scikit-image==0.15.0
+scikit-learn==0.21.3
+scipy==1.6.0
+seaborn==0.9.0
+Send2Trash==1.5.0
+sentry-sdk==0.11.1
+Shapely==1.6.4.post2
+shortuuid==0.5.0
 siren-torch==1.1
-six==1.16.0
+six==1.12.0
 smmap2==2.0.5
 subprocess32==3.5.4
 sympy==1.10.1
-tensorboard==2.7.0
+tensorboard==2.5.0
 tensorboardX==1.8
-tensorflow-estimator==2.7.0
+tensorflow-estimator==2.0.1
 termcolor==1.1.0
-terminado==0.8.3
-testpath==0.4.3
-thrift==0.13.0
+terminado==0.8.2
+testpath==0.4.2
+thrift==0.11.0
 torch==1.10.2
 torchfile==0.1.0
 torchsummary==1.5.1
 torchvision==0.11.3
-tornado==6.1
-tqdm==4.62.3
-traitlets==4.3.3
-typed-ast==1.5.3
-urllib3==1.26.11
-visdom==0.1.8.9
-wandb==0.12.5
-watchdog==2.1.9
-wcwidth==0.2.5
+tornado==6.0.3
+tqdm==4.33.0
+traitlets==4.3.2
+typed-ast==1.4.0
+typing-extensions==4.0.1
+urllib3==1.25.3
+visdom==0.1.8.8
+wandb==0.8.19
+watchdog==0.9.0
+wcwidth==0.1.7
 webencodings==0.5.1
-websocket-client==1.3.0
-Werkzeug==2.0.3
-widgetsnbextension==3.5.2
-wrapt==1.13.3
-zipp==3.6.0
+websocket-client==0.56.0
+Werkzeug==0.16.0
+widgetsnbextension==3.5.1
+wrapt==1.11.2
+zipp==1.2.0
 
                         - Python version: 3.7
+                        - Project source code: import os
+from datetime import datetime
+from PIL import Image
+import logging
+import numpy as np
+from tqdm import tqdm
+import torch
+from torch.utils.data import TensorDataset, DataLoader
+from siren import SIREN
+from utils import set_logger
+
+SAMPLING_RATIO = 0.1
+BATCH_SIZE = 8192
+EPOCHS = 1  #原为5000
+LEARNING_RATE = 0.0005
+
+# Image Reference - http://earthsongtiles.com/celtic_tiles.html
+img_filepath = 'data/celtic_spiral_knot.jpg'
+img_raw = np.array(Image.open(img_filepath))
+img_ground_truth = torch.from_numpy(img_raw).float()
+
+rows, cols, channels = img_ground_truth.shape
+pixel_count = rows * cols
+sampled_pixel_count = int(pixel_count * SAMPLING_RATIO)
+
+
+def build_train_tensors():
+    img_mask_x = torch.from_numpy(
+        np.random.randint(0, rows, sampled_pixel_count))
+    img_mask_y = torch.from_numpy(
+        np.random.randint(0, cols, sampled_pixel_count))
+
+    img_train = img_ground_truth[img_mask_x, img_mask_y]
+
+    img_mask_x = img_mask_x.float() / rows
+    img_mask_y = img_mask_y.float() / cols
+
+    img_mask = torch.stack([img_mask_x, img_mask_y], dim=-1)
+
+    return img_mask, img_train
+
+
+img_mask, img_train = build_train_tensors()
+
+train_dataset = TensorDataset(img_mask, img_train)
+train_dataloader = DataLoader(
+    train_dataset, batch_size=BATCH_SIZE, shuffle=True, pin_memory=True)
+
+# Build model
+layers = [256, 256, 256, 256, 256]
+in_features = 2
+out_features = 3
+initializer = 'siren'
+w0 = 1.0
+w0_initial = 30.0
+c = 6
+model = SIREN(
+    layers, in_features, out_features, w0, w0_initial,
+    initializer=initializer, c=c)
+
+model.train()
+
+BATCH_SIZE = min(BATCH_SIZE, len(img_mask))
+num_steps = int(len(img_mask) * EPOCHS / BATCH_SIZE)
+print("Total training steps : ", num_steps)
+
+# TODO scheduler
+# learning_rate = tf.keras.optimizers.schedules.PolynomialDecay(
+#   0.0005, decay_steps=num_steps, end_learning_rate=5e-5, power=2.0)
+# TODO: tensorboard
+
+optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
+criterion = torch.nn.MSELoss()
+
+checkpoint_dir = 'checkpoints/siren/inpainting/'
+if not os.path.exists(checkpoint_dir):
+    os.makedirs(checkpoint_dir)
+
+timestamp = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+logdir = os.path.join('logs/siren/inpainting/', timestamp)
+
+if not os.path.exists(logdir):
+    os.makedirs(logdir)
+
+set_logger(os.path.join(logdir, 'train.log'))
+
+best_loss = np.inf
+
+for epoch in range(EPOCHS):
+    iterator = tqdm(train_dataloader, dynamic_ncols=True)
+
+    losses = []
+
+    for batch in iterator:
+        inputs, targets = batch
+        predictions = model(inputs)
+        loss = criterion(predictions, targets)
+        losses.append(loss.reshape(-1))
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        iterator.set_description(
+            "Epoch: {} | Loss {:.4f}".format(epoch, loss), refresh=True)
+
+    avg_loss = torch.mean(torch.cat(losses)).item()
+    logging.info("Epoch: {} | Avg. Loss {:.4f}".format(epoch, avg_loss))
+
+    if avg_loss < best_loss:
+        logging.info('Loss improved from {:.4f} to {:.4f}'.format(
+            best_loss, avg_loss))
+        best_loss = avg_loss
+        torch.save(
+            {'network': model.state_dict()},
+            os.path.join(checkpoint_dir + 'model'))
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
                         - Crash traceback: Traceback (most recent call last):
   File "scripts/train_inpainting_siren.py", line 3, in <module>
     from PIL import Image

@@ -170,5 +170,5 @@ Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
 Epoch: 1
-Time taken for epoch 1 is 11 sec
+Time taken for epoch 1 is 9 sec
 

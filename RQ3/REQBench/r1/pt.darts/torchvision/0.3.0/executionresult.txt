@@ -1,18 +1,40 @@
+12/16 01:32:47 AM | 
+12/16 01:32:47 AM | Parameters:
+12/16 01:32:47 AM | AUX_WEIGHT=0.4
+12/16 01:32:47 AM | BATCH_SIZE=256
+12/16 01:32:47 AM | CUTOUT_LENGTH=16
+12/16 01:32:47 AM | DATA_PATH=./data/
+12/16 01:32:47 AM | DATASET=cifar10
+12/16 01:32:47 AM | DROP_PATH_PROB=0.2
+12/16 01:32:47 AM | EPOCHS=1
+12/16 01:32:47 AM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 01:32:47 AM | GPUS=[0, 1, 2]
+12/16 01:32:47 AM | GRAD_CLIP=5.0
+12/16 01:32:47 AM | INIT_CHANNELS=36
+12/16 01:32:47 AM | LAYERS=20
+12/16 01:32:47 AM | LR=0.025
+12/16 01:32:47 AM | MOMENTUM=0.9
+12/16 01:32:47 AM | NAME=cifar10
+12/16 01:32:47 AM | PATH=augments/cifar10
+12/16 01:32:47 AM | PRINT_FREQ=200
+12/16 01:32:47 AM | SEED=2
+12/16 01:32:47 AM | WEIGHT_DECAY=0.0003
+12/16 01:32:47 AM | WORKERS=4
+12/16 01:32:47 AM | 
+12/16 01:32:47 AM | Logger is set - training start
+12/16 01:32:52 AM | Model size = 3.159 MB
+12/16 01:32:52 AM | Epoch 0 LR 0.0
+Files already downloaded and verified
+Files already downloaded and verified
 Traceback (most recent call last):
-  File "augment.py", line 8, in <module>
-    import utils
-  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 6, in <module>
-    import torchvision.datasets as dset
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/__init__.py", line 1, in <module>
-    from torchvision import models
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/__init__.py", line 11, in <module>
-    from . import detection
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/detection/__init__.py", line 1, in <module>
-    from .faster_rcnn import *
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/detection/faster_rcnn.py", line 7, in <module>
-    from torchvision.ops import misc as misc_nn_ops
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/ops/__init__.py", line 1, in <module>
-    from .boxes import nms, box_iou
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/ops/boxes.py", line 2, in <module>
-    from torchvision import _C
-ImportError: libcudart.so.9.0: cannot open shared object file: No such file or directory
+  File "augment.py", line 177, in <module>
+    main()
+  File "augment.py", line 75, in main
+    train(train_loader, model, optimizer, criterion, epoch)
+  File "augment.py", line 111, in train
+    logits, aux_logits = model(X)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 493, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 146, in forward
+    "them on device: {}".format(self.src_device_obj, t.device))
+RuntimeError: module must have its parameters and buffers on device cuda:0 (device_ids[0]) but found one of them on device: cuda:2

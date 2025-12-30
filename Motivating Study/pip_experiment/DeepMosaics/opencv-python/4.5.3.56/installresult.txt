@@ -1,0 +1,10 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting opencv-python==4.5.3.56
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6b/73/a8921d221a673600dc744033786eeab56ed5116686a1b932b724a33003c6/opencv_python-4.5.3.56-cp37-cp37m-manylinux2014_x86_64.whl (49.9 MB)
+Requirement already satisfied: numpy>=1.14.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from opencv-python==4.5.3.56) (1.19.3)
+Installing collected packages: opencv-python
+  Attempting uninstall: opencv-python
+    Found existing installation: opencv-python 4.5.1.48
+    Uninstalling opencv-python-4.5.1.48:
+      Successfully uninstalled opencv-python-4.5.1.48
+Successfully installed opencv-python-4.5.3.56

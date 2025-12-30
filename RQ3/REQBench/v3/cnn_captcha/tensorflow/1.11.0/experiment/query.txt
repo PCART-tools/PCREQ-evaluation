@@ -38,6 +38,7 @@ urllib3==1.23
 Werkzeug==0.15.2
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): ['absl-py (>=0.1.6)', 'astor (>=0.6.0)', 'gast (>=0.2.0)', 'keras-applications (>=1.0.5)', 'keras-preprocessing (>=1.0.3)', 'numpy (>=1.13.3)', 'six (>=1.10.0)', 'protobuf (>=3.6.0)', 'setuptools (<=39.1.0)', 'tensorboard (<1.12.0,>=1.11.0)', 'termcolor (>=1.1.0)', 'grpcio (>=1.8.6)', 'wheel (>=0.26)']
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

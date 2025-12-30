@@ -1,0 +1,82 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting seqeval==0.0.8
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/a0/1fbc1491e77caa6ddb4dea3214db82d174abefa005004fecbb2e9e1b85c1/seqeval-0.0.8-py3-none-any.whl (7.4 kB)
+Requirement already satisfied: numpy>=1.14.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from seqeval==0.0.8) (1.21.6)
+Collecting tensorflow>=1.13.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/42/24/830571895f0927fe205a23309b136520c7914921420bd1e81aff1da47bb1/tensorflow-2.11.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (588.3 MB)
+Collecting Keras>=2.2.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/44/bf1b0eef5b13e6201aef076ff34b91bc40aace8591cd273c1c2a94a9cc00/keras-2.11.0-py2.py3-none-any.whl (1.7 MB)
+Collecting astunparse>=1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Collecting h5py>=2.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/95/be/de1e591bec008ed92d3829b985757b8bc2d34179feef5e181530876a4f9d/h5py-3.8.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+Collecting flatbuffers>=2.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ee/1b/00a78aa2e8fbd63f9af08c9c19e6deb3d5d66b4dda677a0f61654680ee89/flatbuffers-25.9.23-py2.py3-none-any.whl (30 kB)
+Collecting libclang>=13.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/fc/716c1e62e512ef1c160e7984a73a5fc7df45166f2ff3f254e71c58076f7c/libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorflow>=1.13.1->seqeval==0.0.8) (59.5.0)
+Collecting termcolor>=1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/67/e1/434566ffce04448192369c1a282931cf4ae593e91907558eaecd2e9f2801/termcolor-2.3.0-py3-none-any.whl (6.9 kB)
+Collecting protobuf<3.20,>=3.9.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9c/c3/6768e798cc7e08301ec0a5ef59a30dc49f5f0df2d3950cd5585cecf246a8/protobuf-3.19.6-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+Requirement already satisfied: six>=1.12.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorflow>=1.13.1->seqeval==0.0.8) (1.16.0)
+Collecting opt-einsum>=2.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting packaging
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Collecting tensorflow-estimator<2.12,>=2.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bb/e2/8bf618c7c30a525054230ee6d40b036d3e5abc2c4ff67cf7c7420a519204/tensorflow_estimator-2.11.0-py2.py3-none-any.whl (439 kB)
+Collecting gast<=0.4.0,>=0.2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b6/48/583c032b79ae5b3daa02225a675aeb673e58d2cb698e78510feceb11958c/gast-0.4.0-py3-none-any.whl (9.8 kB)
+Collecting absl-py>=1.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a2/ad/e0d3c824784ff121c03cc031f944bc7e139a8f1870ffd2845cc2dd76f6c4/absl_py-2.1.0-py3-none-any.whl (133 kB)
+Collecting tensorboard<2.12,>=2.11
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6f/77/e624b4916531721e674aa105151ffa5223fb224d3ca4bd5c10574664f944/tensorboard-2.11.2-py3-none-any.whl (6.0 MB)
+Requirement already satisfied: typing-extensions>=3.6.6 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorflow>=1.13.1->seqeval==0.0.8) (4.7.1)
+Collecting tensorflow-io-gcs-filesystem>=0.23.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/47/45/f8aeca557bbd5fb505363520fec96cdec72467725ec4bc12fa24372b011a/tensorflow_io_gcs_filesystem-0.34.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (2.4 MB)
+Collecting grpcio<2.0,>=1.24.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/f8/ffc848081d7c66ded9ed0743c1ad0140c70e45861566607889eb8fa1c098/grpcio-1.62.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.6 MB)
+Collecting wrapt>=1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/46/896369f2550d1ecb5e776f532aada5e77e5e13f821045978cf3d7f3f236b/wrapt-1.16.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
+Collecting google-pasta>=0.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from astunparse>=1.6.0->tensorflow>=1.13.1->seqeval==0.0.8) (0.38.4)
+Collecting tensorboard-plugin-wit>=1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
+Requirement already satisfied: werkzeug>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (2.2.3)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/0e/0636cc1448a7abc444fb1b3a63655e294e0d2d49092dc3de05241be6d43c/google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
+Collecting markdown>=2.6.8
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/b5/228c1cdcfe138f1a8e01ab1b54284c8b83735476cb22b6ba251656ed13ad/Markdown-3.4.4-py3-none-any.whl (94 kB)
+Collecting google-auth<3,>=1.6.3
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/6f/d1/385110a9ae86d91cc14c5282c61fe9f4dc41c0b9f7d423c6ad77038c4448/google_auth-2.43.0-py2.py3-none-any.whl (223 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 223.1/223.1 kB 9.9 MB/s eta 0:00:00
+Collecting tensorboard-data-server<0.7.0,>=0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/f9/802efd84988bffd9f644c03b6e66fde8e76c3aa33db4279ddd11c5d61f4b/tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)
+Requirement already satisfied: requests<3,>=2.21.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (2.31.0)
+Collecting rsa<5,>=3.1.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl (34 kB)
+Collecting pyasn1-modules>=0.2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/8e/bea464350e1b8c6ed0da3a312659cb648804a08af6cacc6435867f74f8bd/pyasn1_modules-0.3.0-py2.py3-none-any.whl (181 kB)
+Collecting cachetools<7.0,>=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/72/76/20fa66124dbe6be5cafeb312ece67de6b61dd91a0247d1ea13db4ebb33c2/cachetools-5.5.2-py3-none-any.whl (10 kB)
+Collecting requests-oauthlib>=0.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Requirement already satisfied: importlib-metadata>=4.4 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from markdown>=2.6.8->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (6.7.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests<3,>=2.21.0->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (2025.11.12)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests<3,>=2.21.0->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests<3,>=2.21.0->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests<3,>=2.21.0->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (1.26.19)
+Requirement already satisfied: MarkupSafe>=2.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from werkzeug>=1.0.1->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (2.1.5)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<2.12,>=2.11->tensorflow>=1.13.1->seqeval==0.0.8) (3.15.0)
+Collecting pyasn1<0.6.0,>=0.4.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/75/4686d2872bf2fc0b37917cbc8bbf0dd3a5cdb0990799be1b9cbf1e1eb733/pyasn1-0.5.1-py2.py3-none-any.whl (84 kB)
+Collecting oauthlib>=3.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Installing collected packages: tensorboard-plugin-wit, libclang, flatbuffers, wrapt, termcolor, tensorflow-io-gcs-filesystem, tensorflow-estimator, tensorboard-data-server, pyasn1, protobuf, packaging, opt-einsum, oauthlib, Keras, h5py, grpcio, google-pasta, gast, cachetools, astunparse, absl-py, rsa, requests-oauthlib, pyasn1-modules, markdown, google-auth, google-auth-oauthlib, tensorboard, tensorflow, seqeval
+  Attempting uninstall: seqeval
+    Found existing installation: seqeval 0.0.5
+    Uninstalling seqeval-0.0.5:
+      Successfully uninstalled seqeval-0.0.5
+Successfully installed Keras-2.11.0 absl-py-2.1.0 astunparse-1.6.3 cachetools-5.5.2 flatbuffers-25.9.23 gast-0.4.0 google-auth-2.43.0 google-auth-oauthlib-0.4.6 google-pasta-0.2.0 grpcio-1.62.3 h5py-3.8.0 libclang-18.1.1 markdown-3.4.4 oauthlib-3.2.2 opt-einsum-3.3.0 packaging-24.0 protobuf-3.19.6 pyasn1-0.5.1 pyasn1-modules-0.3.0 requests-oauthlib-2.0.0 rsa-4.9.1 seqeval-0.0.8 tensorboard-2.11.2 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.1 tensorflow-2.11.0 tensorflow-estimator-2.11.0 tensorflow-io-gcs-filesystem-0.34.0 termcolor-2.3.0 wrapt-1.16.0

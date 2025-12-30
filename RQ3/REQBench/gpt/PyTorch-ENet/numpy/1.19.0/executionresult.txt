@@ -40,7 +40,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.01, inplace=False)
+    (ext_regul): Dropout2d(p=0.01)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular1_1): RegularBottleneck(
@@ -59,7 +59,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.01, inplace=False)
+    (ext_regul): Dropout2d(p=0.01)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular1_2): RegularBottleneck(
@@ -78,7 +78,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.01, inplace=False)
+    (ext_regul): Dropout2d(p=0.01)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular1_3): RegularBottleneck(
@@ -97,7 +97,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.01, inplace=False)
+    (ext_regul): Dropout2d(p=0.01)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular1_4): RegularBottleneck(
@@ -116,7 +116,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.01, inplace=False)
+    (ext_regul): Dropout2d(p=0.01)
     (out_activation): PReLU(num_parameters=1)
   )
   (downsample2_0): DownsamplingBottleneck(
@@ -136,7 +136,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular2_1): RegularBottleneck(
@@ -155,7 +155,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated2_2): RegularBottleneck(
@@ -174,7 +174,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (asymmetric2_3): RegularBottleneck(
@@ -196,7 +196,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated2_4): RegularBottleneck(
@@ -215,7 +215,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular2_5): RegularBottleneck(
@@ -234,7 +234,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated2_6): RegularBottleneck(
@@ -253,7 +253,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (asymmetric2_7): RegularBottleneck(
@@ -275,7 +275,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated2_8): RegularBottleneck(
@@ -294,7 +294,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular3_0): RegularBottleneck(
@@ -313,7 +313,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated3_1): RegularBottleneck(
@@ -332,7 +332,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (asymmetric3_2): RegularBottleneck(
@@ -354,7 +354,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated3_3): RegularBottleneck(
@@ -373,7 +373,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (regular3_4): RegularBottleneck(
@@ -392,7 +392,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated3_5): RegularBottleneck(
@@ -411,7 +411,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (asymmetric3_6): RegularBottleneck(
@@ -433,7 +433,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (dilated3_7): RegularBottleneck(
@@ -452,7 +452,7 @@ ENet(
       (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): PReLU(num_parameters=1)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): PReLU(num_parameters=1)
   )
   (upsample4_0): UpsamplingBottleneck(
@@ -473,7 +473,7 @@ ENet(
       (0): Conv2d(32, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): ReLU()
   )
   (regular4_1): RegularBottleneck(
@@ -492,7 +492,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): ReLU()
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): ReLU()
   )
   (regular4_2): RegularBottleneck(
@@ -511,7 +511,7 @@ ENet(
       (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): ReLU()
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): ReLU()
   )
   (upsample5_0): UpsamplingBottleneck(
@@ -532,7 +532,7 @@ ENet(
       (0): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
       (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): ReLU()
   )
   (regular5_1): RegularBottleneck(
@@ -551,7 +551,7 @@ ENet(
       (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (2): ReLU()
     )
-    (ext_regul): Dropout2d(p=0.1, inplace=False)
+    (ext_regul): Dropout2d(p=0.1)
     (out_activation): ReLU()
   )
   (transposed_conv): ConvTranspose2d(16, 12, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
@@ -560,6 +560,7 @@ ENet(
 Testing...
 
 >>>> Running test dataset
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=383 error=11 : invalid argument
 >>>> Avg. loss: 1.0979 | Mean IoU: 0.5210
 sky: 0.9023
 building: 0.6862

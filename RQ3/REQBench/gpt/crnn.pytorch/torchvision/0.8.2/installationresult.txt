@@ -7,14 +7,14 @@ Collecting lmdb==0.97
   Using cached lmdb-0.97-cp37-cp37m-linux_x86_64.whl
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
-Collecting numpy==1.19.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/04/c3846024ddc7514cde17087f62f0502abf85c53e8f69f6312c70db6d144e/numpy-1.19.2-cp37-cp37m-manylinux2010_x86_64.whl (14.5 MB)
-Collecting Pillow==7.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e8/f2/6722dd0c22e3a143ac792ccb2424924ac72af4adea756b1165b4cad50da7/Pillow-7.2.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
-Collecting six==1.15.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl (10 kB)
-Collecting sympy==1.6.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/1f/8cbbf698e853019ac3dc5d60ca8f6be4ace4542b2f05f7b62949617fc98e/sympy-1.6.2-py3-none-any.whl (5.8 MB)
+Collecting numpy==1.19.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/65/b3/07864c89acb2a86df6f2e8c9bf091ec5916da58dd3ce3a633a51a02c115e/numpy-1.19.3-cp37-cp37m-manylinux2010_x86_64.whl (14.9 MB)
+Collecting Pillow==8.0.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/fa/c1302a26d5e1a17fa8e10e43417b6cf038b0648c4b79fcf2302a4a0c5d30/Pillow-8.0.1-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
+Collecting six==1.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting sympy==1.10.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
 Collecting torch==1.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/5d/095ddddc91c8a769a68c791c019c5793f9c4456a688ddd235d6670924ecb/torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl (776.8 MB)
 Collecting torchvision==0.8.2
@@ -22,4 +22,4 @@ Collecting torchvision==0.8.2
 Collecting typing-extensions
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Installing collected packages: mpmath, lmdb, typing-extensions, sympy, six, Pillow, numpy, humanfriendly, torch, coloredlogs, torchvision
-Successfully installed Pillow-7.2.0 coloredlogs-15.0.1 humanfriendly-10.0 lmdb-0.97 mpmath-1.2.1 numpy-1.19.2 six-1.15.0 sympy-1.6.2 torch-1.7.1 torchvision-0.8.2 typing-extensions-4.7.1
+Successfully installed Pillow-8.0.1 coloredlogs-15.0.1 humanfriendly-10.0 lmdb-0.97 mpmath-1.2.1 numpy-1.19.3 six-1.12.0 sympy-1.10.1 torch-1.7.1 torchvision-0.8.2 typing-extensions-4.7.1

@@ -1,4 +1,4 @@
-2025-05-28 10:24:51.739242: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
+2025-12-15 16:55:41.865293: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudart.so.11.0
 Traceback (most recent call last):
   File "train_model.py", line 273, in <module>
     main()

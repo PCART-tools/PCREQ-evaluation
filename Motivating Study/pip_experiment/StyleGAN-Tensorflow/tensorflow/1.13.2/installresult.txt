@@ -1,0 +1,31 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==1.13.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/db/d3/651f95288a6cd9094f7411cdd90ef12a3d01a268009e0e3cd66b5c8d65bd/tensorflow-1.13.2-cp36-cp36m-manylinux1_x86_64.whl (92.6 MB)
+Requirement already satisfied: tensorflow-estimator<1.14.0rc0,>=1.13.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.13.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (0.37.1)
+Requirement already satisfied: keras-preprocessing>=1.0.5 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.1.2)
+Requirement already satisfied: tensorboard<1.14.0,>=1.13.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.13.1)
+Requirement already satisfied: protobuf>=3.6.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (3.19.6)
+Requirement already satisfied: grpcio>=1.8.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.48.2)
+Requirement already satisfied: termcolor>=1.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.1.0)
+Requirement already satisfied: gast>=0.2.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (0.6.0)
+Requirement already satisfied: astor>=0.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (0.8.1)
+Requirement already satisfied: keras-applications>=1.0.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.0.8)
+Requirement already satisfied: numpy<2.0,>=1.16.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.16.4)
+Requirement already satisfied: six>=1.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.16.0)
+Requirement already satisfied: absl-py>=0.1.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.13.2) (1.4.0)
+Requirement already satisfied: h5py in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from keras-applications>=1.0.6->tensorflow==1.13.2) (3.1.0)
+Requirement already satisfied: werkzeug>=0.11.15 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (2.0.3)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (3.3.7)
+Requirement already satisfied: importlib-metadata>=4.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from markdown>=2.6.8->tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (4.8.3)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (3.6.0)
+Requirement already satisfied: typing-extensions>=3.6.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (4.1.1)
+Requirement already satisfied: mock>=2.0.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow-estimator<1.14.0rc0,>=1.13.0->tensorflow==1.13.2) (5.1.0)
+Requirement already satisfied: dataclasses in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from werkzeug>=0.11.15->tensorboard<1.14.0,>=1.13.0->tensorflow==1.13.2) (0.8)
+Requirement already satisfied: cached-property in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from h5py->keras-applications>=1.0.6->tensorflow==1.13.2) (1.5.2)
+Installing collected packages: tensorflow
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 1.13.1
+    Uninstalling tensorflow-1.13.1:
+      Successfully uninstalled tensorflow-1.13.1
+Successfully installed tensorflow-1.13.2

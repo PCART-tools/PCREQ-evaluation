@@ -1,9 +1,9 @@
-absl-py==1.4.0
+absl-py==2.1.0
 coloredlogs==15.0.1
 graphviz==0.8.4
 grpcio==1.62.2
 humanfriendly==10.0
-importlib-metadata==5.2.0
+importlib-metadata==6.7.0
 Markdown==3.4.4
 MarkupSafe==2.1.5
 mpmath==1.2.1

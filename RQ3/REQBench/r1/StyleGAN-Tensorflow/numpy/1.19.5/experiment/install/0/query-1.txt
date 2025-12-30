@@ -8,41 +8,36 @@ astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
 dataclasses==0.8
-gast==0.6.0
-grpcio==1.17.1
+gast==0.3.3
+grpcio==1.30.0
 h5py==3.1.0
-importlib-metadata==4.6.4
+importlib-metadata==4.8.3
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 Markdown==3.3.7
 mock==5.1.0
 numpy==1.19.5
-opencv-python==4.1.0.25
+opencv-python==4.4.0.46
 Pillow==6.1.0
 protobuf==3.19.6
-scipy==1.2.2
+scipy==1.2.0
 six==1.16.0
 tensorboard==1.15.0
-tensorflow==1.15.5
+tensorflow==1.15.0
 tensorflow-estimator==1.15.1
 termcolor==1.1.0
 tqdm==4.32.1
 typing_extensions==4.1.1
-Werkzeug==1.0.1
+Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): None
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested numpy==1.19.5
-    h5py 3.1.0 depends on numpy>=1.12; python_version == "3.6"
-    keras-applications 1.0.8 depends on numpy>=1.9.1
-    keras-preprocessing 1.1.2 depends on numpy>=1.9.1
-    opencv-python 4.1.0.25 depends on numpy>=1.11.3
-    scipy 1.2.2 depends on numpy>=1.8.2
-    tensorboard 1.15.0 depends on numpy>=1.12.0
-    tensorflow 1.15.5 depends on numpy<1.19.0 and >=1.16.0
+    The user requested gast==0.3.3
+    tensorflow 1.15.0 depends on gast==0.2.2
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

@@ -1,6 +1,6 @@
 epochs:   0%|          | 0/1 [00:00<?, ?it/s]
 steps:   0%|          | 0/468 [00:00<?, ?it/s][Asteps:   0%|          | 0/468 [00:01<?, ?it/s]
-epochs:   0%|          | 0/1 [00:02<?, ?it/s]
+epochs:   0%|          | 0/1 [00:01<?, ?it/s]
 Traceback (most recent call last):
   File "train.py", line 145, in <module>
     main(args)

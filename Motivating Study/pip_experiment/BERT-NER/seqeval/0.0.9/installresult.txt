@@ -1,0 +1,12 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting seqeval==0.0.9
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/aa/48adacc396310b081a61c9b5ec2c9fb048c58e128c231fb77cadd8bc5e97/seqeval-0.0.9-py3-none-any.whl (8.6 kB)
+Collecting Keras>=2.2.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/44/bf1b0eef5b13e6201aef076ff34b91bc40aace8591cd273c1c2a94a9cc00/keras-2.11.0-py2.py3-none-any.whl (1.7 MB)
+Requirement already satisfied: numpy>=1.14.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from seqeval==0.0.9) (1.21.6)
+Installing collected packages: Keras, seqeval
+  Attempting uninstall: seqeval
+    Found existing installation: seqeval 0.0.5
+    Uninstalling seqeval-0.0.5:
+      Successfully uninstalled seqeval-0.0.5
+Successfully installed Keras-2.11.0 seqeval-0.0.9

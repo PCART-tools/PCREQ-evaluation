@@ -34,10 +34,10 @@ sympy==1.10.1
 tensorboardX==1.6
 thinc==8.0.17
 threadpoolctl==3.1.0
-tokenizers==0.10.3
+tokenizers==0.8.0
 torch==1.8.0
 tqdm==4.55.1
-transformers==4.4.0
+transformers==4.0.0
 typer==0.3.2
 typing_extensions==4.1.1
 urllib3==2.0.7

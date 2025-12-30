@@ -5,7 +5,6 @@
                 **Input Context**
                 - Full requirements.txt: click==8.1.7
 coloredlogs==15.0.1
-correlation-cuda==0.0.0
 future==1.0.0
 humanfriendly==10.0
 importlib-metadata==6.7.0
@@ -15,7 +14,6 @@ nltk==3.6.5
 numpy==1.18.5
 protobuf==3.20.0
 regex==2024.4.16
-resample2d-cuda==0.0.0
 six==1.16.0
 sympy==1.10.1
 tensorboardX==2.0
@@ -25,6 +23,7 @@ typing_extensions==4.7.1
 zipp==3.15.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ['click', 'joblib', 'regex (>=2021.8.3)', 'tqdm', "scikit-learn ; extra == 'all'", "python-crfsuite ; extra == 'all'", "requests ; extra == 'all'", "numpy ; extra == 'all'", "pyparsing ; extra == 'all'", "twython ; extra == 'all'", "scipy ; extra == 'all'", "matplotlib ; extra == 'all'", "requests ; extra == 'corenlp'", "numpy ; extra == 'machine_learning'", "python-crfsuite ; extra == 'machine_learning'", "scikit-learn ; extra == 'machine_learning'", "scipy ; extra == 'machine_learning'", "matplotlib ; extra == 'plot'", "pyparsing ; extra == 'tgrep'", "twython ; extra == 'twitter'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

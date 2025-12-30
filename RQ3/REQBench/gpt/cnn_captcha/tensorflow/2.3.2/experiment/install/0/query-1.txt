@@ -3,48 +3,47 @@
             Resolve pip install conflict in requirements.txt while preserving library integrity.
 
             **Input Context**
-            - Current requirements.txt: absl-py==0.9.0
-astor==0.8.1
-bleach==3.1.5
+            - Current requirements.txt: absl-py==0.7.1
+astor==0.7.1
+bleach==1.5.0
 captcha==0.3
 certifi==2019.3.9
 chardet==3.0.4
 Click==7.0
 cycler==0.10.0
-easydict==1.9
+easydict==1.8
 Flask==1.0.2
 gast==0.3.3
-grpcio==1.33.2
-html5lib==1.0.1
+grpcio==1.19.0
+html5lib==0.9999999
 idna==2.7
 itsdangerous==1.1.0
 Jinja2==2.10.1
-Markdown==3.2.2
+Markdown==3.1
 MarkupSafe==1.1.1
-matplotlib==3.3.4
-numpy==1.19.5
+matplotlib==2.1.0
+numpy==1.16.2
 olefile==0.46
-Pillow==8.1.0
-protobuf==3.13.0
-pyparsing==2.4.7
-python-dateutil==2.8.1
-pytz==2020.5
-requests==2.24.0
-six==1.15.0
+Pillow==4.3.0
+protobuf==3.9.2
+pyparsing==2.4.0
+python-dateutil==2.8.0
+pytz==2018.9
+requests==2.19.1
+six==1.12.0
 tensorboard==2.3.0
 tensorflow==2.3.2
 termcolor==1.1.0
-urllib3==1.25.11
-Werkzeug==1.0.1
+urllib3==1.23
+Werkzeug==0.15.2
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested numpy==1.19.5
-    matplotlib 3.3.4 depends on numpy>=1.15
-    tensorboard 2.3.0 depends on numpy>=1.12.0
-    tensorflow 2.3.2 depends on numpy<1.19.0 and >=1.16.0
+    The user requested requests==2.19.1
+    tensorboard 2.3.0 depends on requests<3 and >=2.21.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

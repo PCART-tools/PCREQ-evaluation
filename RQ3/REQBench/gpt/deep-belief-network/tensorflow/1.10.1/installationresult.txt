@@ -1,29 +1,69 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-Collecting absl-py==0.7.0
-  Using cached absl_py-0.7.0-py3-none-any.whl
+Collecting absl-py==0.6.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0c/63/f505d2d4c21db849cf80bad517f0065a30be6b006b0a5637f1b95584a305/absl-py-0.6.1.tar.gz (94 kB)
+Collecting astor==0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/69/32/e8a3285c0be9ce7ef42bfa302b995109036994713344b6baeed88bb12146/astor-0.6-py2.py3-none-any.whl (26 kB)
 Collecting bleach==1.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/70/86c5fec937ea4964184d4d6c4f0b9551564f821e1c3575907639036d9b90/bleach-1.5.0-py2.py3-none-any.whl (17 kB)
-Collecting certifi==2020.12.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl (147 kB)
+Collecting certifi==2021.5.30
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
 Collecting dataclasses==0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
+Collecting enum34==1.1.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/42/cb9355df32c69b553e72a2e28daee25d1611d2c0d9c272aa1d34204205b2/enum34-1.1.6-py3-none-any.whl (12 kB)
+Collecting gast==0.2.0
+  Using cached gast-0.2.0-py3-none-any.whl
+Collecting grpcio==1.8.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/b3/c1744b5a8d7a4f2ebefc488b05bf2f0c634d2d57647cca95de5cf44ce710/grpcio-1.8.6-cp36-cp36m-manylinux1_x86_64.whl (6.0 MB)
 Collecting html5lib==0.9999999
   Using cached html5lib-0.9999999-py3-none-any.whl
-Collecting importlib-metadata==1.7.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8e/58/cdea07eb51fc2b906db0968a94700866fc46249bdc75cac23f9d13168929/importlib_metadata-1.7.0-py2.py3-none-any.whl (31 kB)
-Collecting Markdown==3.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f5/e4/d8c18f2555add57ff21bf25af36d827145896a07607486cc79a2aea641af/Markdown-3.1-py2.py3-none-any.whl (87 kB)
+Collecting importlib-metadata==4.8.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/a1/b153a0a4caf7a7e3f15c2cd56c7702e2cf3d89b1b359d1f1c5e59d68f4ce/importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
+Collecting Markdown==3.3.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f3/df/ca72f352e15b6f8ce32b74af029f1189abffb906f7c137501ffe69c98a65/Markdown-3.3.7-py3-none-any.whl (97 kB)
+Collecting mock==2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl (56 kB)
 Collecting numpy==1.14.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/68/1e/116ad560de97694e2d0c1843a7a0075cc9f49e922454d32f49a80eb6f1f2/numpy-1.14.5-cp36-cp36m-manylinux1_x86_64.whl (12.2 MB)
-Collecting protobuf==3.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fc/f0/db040681187496d10ac50ad167a8fd5f953d115b16a7085e19193a6abfd2/protobuf-3.6.0-cp36-cp36m-manylinux1_x86_64.whl (7.1 MB)
-Collecting scikit-learn==0.19.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/c8/8db4108aba5e2166cd2ea4eafa1a4b82f89240a1fa85733029cc2358ad1f/scikit_learn-0.19.2-cp36-cp36m-manylinux1_x86_64.whl (4.9 MB)
-Collecting scipy==0.19.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0e/46/da8d7166102d29695330f7c0b912955498542988542c0d2ae3ea0389c68d/scipy-0.19.1-cp36-cp36m-manylinux1_x86_64.whl (48.2 MB)
-Collecting six==1.11.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl (10 kB)
+Collecting protobuf==3.6.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/f9/28787754923612ca9bfdffc588daa05580ed70698add063a5629d1a4209d/protobuf-3.6.1-cp36-cp36m-manylinux1_x86_64.whl (1.1 MB)
+Collecting scikit-learn==0.18.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/d2/efa7f8bef195c459a527edc58bf863bd44fde727630486cb8256e9a5a326/scikit_learn-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
+Collecting scipy==0.18.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/c0/f0bf4eaef1b6aa7bdd1ae5597ce1d9e729417b3ca085c47d0f1c640d34f8/scipy-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (42.5 MB)
+Collecting setuptools==39.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8c/10/79282747f9169f21c053c562a0baa21815a8c7879be97abd930dbcf862e8/setuptools-39.1.0-py2.py3-none-any.whl (566 kB)
+Collecting six==1.16.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting tensorboard==1.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c6/17/ecd918a004f297955c30b4fffbea100b1606c225dbf0443264012773c3ff/tensorboard-1.10.0-py3-none-any.whl (3.3 MB)
 Collecting tensorflow==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/04/7e/a484776c73b1431f2b077e13801531e966113492552194fe721e6ef88d5d/tensorflow-1.10.1-cp36-cp36m-manylinux1_x86_64.whl (58.4 MB)
-ERROR: Could not find a version that satisfies the requirement tensorflow-tensorboard==1.10.0 (from versions: 0.1.1, 0.1.2, 0.1.4, 0.1.5, 0.1.6, 0.1.7, 0.1.8, 0.4.0rc1, 0.4.0rc2, 0.4.0rc3, 0.4.0, 1.5.0, 1.5.1)
-ERROR: No matching distribution found for tensorflow-tensorboard==1.10.0
+Collecting termcolor==1.1.0
+  Using cached termcolor-1.1.0-py3-none-any.whl
+Collecting typing_extensions==4.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+Collecting Werkzeug==0.15.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/ab/d3bed6b92042622d24decc7aadc8877badf18aeca1571045840ad4956d3f/Werkzeug-0.15.5-py2.py3-none-any.whl (328 kB)
+Collecting wheel==0.33.6
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/00/83/b4a77d044e78ad1a45610eb88f745be2fd2c6d658f9798a15e384b7d57c9/wheel-0.33.6-py2.py3-none-any.whl (21 kB)
+Collecting zipp==3.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
+Collecting pbr>=0.11
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c0/db/61efa0d08a99f897ef98256b03e563092d36cc38dc4ebe4a85020fe40b31/pbr-7.0.3-py2.py3-none-any.whl (131 kB)
+Building wheels for collected packages: absl-py
+  Building wheel for absl-py (setup.py): started
+  Building wheel for absl-py (setup.py): finished with status 'done'
+  Created wheel for absl-py: filename=absl_py-0.6.1-py3-none-any.whl size=111590 sha256=fb8dc1af0dab0cf23563d5af137cebb5b73afa920ba2f895f36dc1a189a8c2aa
+  Stored in directory: /home/lei/.cache/pip/wheels/f3/94/f1/59258400edf23c786565c9eea7aaa52e1533181536145a8ef0
+Successfully built absl-py
+Installing collected packages: zipp, typing-extensions, six, setuptools, importlib-metadata, wheel, Werkzeug, protobuf, numpy, Markdown, termcolor, tensorboard, pbr, html5lib, grpcio, gast, astor, absl-py, tensorflow, scipy, scikit-learn, mock, enum34, dataclasses, certifi, bleach
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 59.6.0
+    Uninstalling setuptools-59.6.0:
+      Successfully uninstalled setuptools-59.6.0
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.31.1
+    Uninstalling wheel-0.31.1:
+      Successfully uninstalled wheel-0.31.1
+Successfully installed Markdown-3.3.7 Werkzeug-0.15.5 absl-py-0.6.1 astor-0.6 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 enum34-1.1.6 gast-0.2.0 grpcio-1.8.6 html5lib-0.9999999 importlib-metadata-4.8.3 mock-2.0.0 numpy-1.14.5 pbr-7.0.3 protobuf-3.6.1 scikit-learn-0.18.1 scipy-0.18.1 setuptools-39.1.0 six-1.16.0 tensorboard-1.10.0 tensorflow-1.10.1 termcolor-1.1.0 typing-extensions-4.1.1 wheel-0.33.6 zipp-3.6.0

@@ -1,0 +1,6 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.4.0
+  Could not find a version that satisfies the requirement torchvision==0.4.0 (from versions: )
+No matching distribution found for torchvision==0.4.0
+You are using pip version 10.0.1, however version 20.3.4 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

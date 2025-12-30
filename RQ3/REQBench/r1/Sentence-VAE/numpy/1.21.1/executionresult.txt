@@ -8,38 +8,142 @@ SentenceVAE(
   (latent2hidden): Linear(in_features=16, out_features=256, bias=True)
   (outputs2vocab): Linear(in_features=256, out_features=9877, bias=True)
 )
-TRAIN Batch 0000/1314, Loss  212.3593, NLL-Loss  212.3585, KL-Loss    0.3902, KL-Weight  0.002
-TRAIN Batch 0050/1314, Loss  149.9569, NLL-Loss  149.9180, KL-Loss   17.8478, KL-Weight  0.002
-TRAIN Batch 0100/1314, Loss  136.1152, NLL-Loss  136.0483, KL-Loss   27.0440, KL-Weight  0.002
-TRAIN Batch 0150/1314, Loss  117.2894, NLL-Loss  117.1858, KL-Loss   37.0162, KL-Weight  0.003
-TRAIN Batch 0200/1314, Loss  133.3815, NLL-Loss  133.2146, KL-Loss   52.6050, KL-Weight  0.003
-TRAIN Batch 0250/1314, Loss  118.2148, NLL-Loss  118.0225, KL-Loss   53.5135, KL-Weight  0.004
-TRAIN Batch 0300/1314, Loss  145.0698, NLL-Loss  144.8308, KL-Loss   58.7288, KL-Weight  0.004
-TRAIN Batch 0350/1314, Loss  136.5612, NLL-Loss  136.2851, KL-Loss   59.8923, KL-Weight  0.005
-TRAIN Batch 0400/1314, Loss  126.7341, NLL-Loss  126.3937, KL-Loss   65.2063, KL-Weight  0.005
-TRAIN Batch 0450/1314, Loss  122.1484, NLL-Loss  121.7821, KL-Loss   61.9717, KL-Weight  0.006
-TRAIN Batch 0500/1314, Loss  113.8327, NLL-Loss  113.4018, KL-Loss   64.3798, KL-Weight  0.007
-TRAIN Batch 0550/1314, Loss  131.8393, NLL-Loss  131.3460, KL-Loss   65.1042, KL-Weight  0.008
-TRAIN Batch 0600/1314, Loss  139.7419, NLL-Loss  139.1826, KL-Loss   65.2053, KL-Weight  0.009
-TRAIN Batch 0650/1314, Loss  118.7744, NLL-Loss  118.1713, KL-Loss   62.1133, KL-Weight  0.010
-TRAIN Batch 0700/1314, Loss  119.0686, NLL-Loss  118.3934, KL-Loss   61.4530, KL-Weight  0.011
-TRAIN Batch 0750/1314, Loss  107.3538, NLL-Loss  106.6053, KL-Loss   60.2139, KL-Weight  0.012
-TRAIN Batch 0800/1314, Loss  124.1235, NLL-Loss  123.2570, KL-Loss   61.6174, KL-Weight  0.014
-TRAIN Batch 0850/1314, Loss  119.4959, NLL-Loss  118.5313, KL-Loss   60.6406, KL-Weight  0.016
-TRAIN Batch 0900/1314, Loss  108.3048, NLL-Loss  107.2127, KL-Loss   60.7182, KL-Weight  0.018
-TRAIN Batch 0950/1314, Loss  103.0683, NLL-Loss  101.8837, KL-Loss   58.2629, KL-Weight  0.020
-TRAIN Batch 1000/1314, Loss  109.2410, NLL-Loss  108.0259, KL-Loss   52.8855, KL-Weight  0.023
-TRAIN Batch 1050/1314, Loss  108.8376, NLL-Loss  107.4716, KL-Loss   52.6219, KL-Weight  0.026
-TRAIN Batch 1100/1314, Loss  104.9096, NLL-Loss  103.4224, KL-Loss   50.7354, KL-Weight  0.029
-TRAIN Batch 1150/1314, Loss  106.9858, NLL-Loss  105.2494, KL-Loss   52.4806, KL-Weight  0.033
-TRAIN Batch 1200/1314, Loss   96.4103, NLL-Loss   94.6690, KL-Loss   46.6513, KL-Weight  0.037
-TRAIN Batch 1250/1314, Loss  113.0308, NLL-Loss  111.0894, KL-Loss   46.1259, KL-Weight  0.042
-TRAIN Batch 1300/1314, Loss  112.5984, NLL-Loss  110.4599, KL-Loss   45.0910, KL-Weight  0.047
-TRAIN Batch 1314/1314, Loss  110.3957, NLL-Loss  108.2282, KL-Loss   44.2049, KL-Weight  0.049
-TRAIN Epoch 00/1, Mean ELBO  119.9751
-Model saved at bin/2025-May-29-04:56:55/E0.pytorch
-VALID Batch 0000/105, Loss  124.8379, NLL-Loss  122.8438, KL-Loss   40.5743, KL-Weight  0.049
-VALID Batch 0050/105, Loss  123.6889, NLL-Loss  121.4811, KL-Loss   44.9206, KL-Weight  0.049
-VALID Batch 0100/105, Loss   91.0577, NLL-Loss   89.1576, KL-Loss   38.6591, KL-Weight  0.049
-VALID Batch 0105/105, Loss   91.6501, NLL-Loss   89.4981, KL-Loss   43.7853, KL-Weight  0.049
-VALID Epoch 00/1, Mean ELBO  104.8052
+TRAIN Batch 0000/1314, Loss  217.2198, NLL-Loss  217.2191, KL-Loss    0.3463, KL-Weight  0.002
+TRAIN Batch 0050/1314, Loss  142.2181, NLL-Loss  142.1780, KL-Loss   18.3714, KL-Weight  0.002
+TRAIN Batch 0100/1314, Loss  139.2272, NLL-Loss  139.1447, KL-Loss   33.3868, KL-Weight  0.002
+TRAIN Batch 0150/1314, Loss  124.6729, NLL-Loss  124.5588, KL-Loss   40.7688, KL-Weight  0.003
+TRAIN Batch 0200/1314, Loss  148.2904, NLL-Loss  148.1266, KL-Loss   51.6553, KL-Weight  0.003
+TRAIN Batch 0250/1314, Loss  143.3573, NLL-Loss  143.1565, KL-Loss   55.8748, KL-Weight  0.004
+TRAIN Batch 0300/1314, Loss  134.5073, NLL-Loss  134.2495, KL-Loss   63.3352, KL-Weight  0.004
+TRAIN Batch 0350/1314, Loss  142.1987, NLL-Loss  141.9053, KL-Loss   63.6378, KL-Weight  0.005
+TRAIN Batch 0400/1314, Loss  105.6957, NLL-Loss  105.3682, KL-Loss   62.7333, KL-Weight  0.005
+TRAIN Batch 0450/1314, Loss  121.3112, NLL-Loss  120.9228, KL-Loss   65.7025, KL-Weight  0.006
+TRAIN Batch 0500/1314, Loss  110.8166, NLL-Loss  110.3577, KL-Loss   68.5711, KL-Weight  0.007
+TRAIN Batch 0550/1314, Loss  122.5721, NLL-Loss  122.0532, KL-Loss   68.4837, KL-Weight  0.008
+TRAIN Batch 0600/1314, Loss  120.2486, NLL-Loss  119.6625, KL-Loss   68.3238, KL-Weight  0.009
+TRAIN Batch 0650/1314, Loss  104.5426, NLL-Loss  103.8887, KL-Loss   67.3570, KL-Weight  0.010
+TRAIN Batch 0700/1314, Loss  112.9606, NLL-Loss  112.2648, KL-Loss   63.3272, KL-Weight  0.011
+TRAIN Batch 0750/1314, Loss   97.0560, NLL-Loss   96.2892, KL-Loss   61.6852, KL-Weight  0.012
+TRAIN Batch 0800/1314, Loss  110.1431, NLL-Loss  109.2980, KL-Loss   60.0921, KL-Weight  0.014
+TRAIN Batch 0850/1314, Loss  117.3356, NLL-Loss  116.3502, KL-Loss   61.9494, KL-Weight  0.016
+TRAIN Batch 0900/1314, Loss  116.0946, NLL-Loss  115.0580, KL-Loss   57.6331, KL-Weight  0.018
+TRAIN Batch 0950/1314, Loss  110.2797, NLL-Loss  109.1374, KL-Loss   56.1803, KL-Weight  0.020
+TRAIN Batch 1000/1314, Loss  119.6885, NLL-Loss  118.3645, KL-Loss   57.6199, KL-Weight  0.023
+TRAIN Batch 1050/1314, Loss  109.0749, NLL-Loss  107.7290, KL-Loss   51.8503, KL-Weight  0.026
+TRAIN Batch 1100/1314, Loss  112.3837, NLL-Loss  110.9120, KL-Loss   50.2083, KL-Weight  0.029
+TRAIN Batch 1150/1314, Loss   94.0655, NLL-Loss   92.4636, KL-Loss   48.4146, KL-Weight  0.033
+TRAIN Batch 1200/1314, Loss  124.2537, NLL-Loss  122.4314, KL-Loss   48.8197, KL-Weight  0.037
+TRAIN Batch 1250/1314, Loss  118.4849, NLL-Loss  116.4972, KL-Loss   47.2275, KL-Weight  0.042
+TRAIN Batch 1300/1314, Loss  106.6032, NLL-Loss  104.5325, KL-Loss   43.6608, KL-Weight  0.047
+TRAIN Batch 1314/1314, Loss  125.8499, NLL-Loss  123.5270, KL-Loss   47.3762, KL-Weight  0.049
+TRAIN Epoch 00/1, Mean ELBO  119.3859
+Model saved at bin/2025-Dec-14-18:34:10/E0.pytorch
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+[W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
+VALID Batch 0000/105, Loss  124.3089, NLL-Loss  122.2286, KL-Loss   42.3261, KL-Weight  0.049
+VALID Batch 0050/105, Loss  121.2783, NLL-Loss  118.9351, KL-Loss   47.6755, KL-Weight  0.049
+VALID Batch 0100/105, Loss   89.6150, NLL-Loss   87.5249, KL-Loss   42.5256, KL-Weight  0.049
+VALID Batch 0105/105, Loss   92.6881, NLL-Loss   90.4882, KL-Loss   44.7587, KL-Weight  0.049
+VALID Epoch 00/1, Mean ELBO  104.6678

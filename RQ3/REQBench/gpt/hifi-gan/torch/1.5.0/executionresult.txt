@@ -1,5 +1,9 @@
 Initializing Training Process..
 Batch size per GPU : 5
+Loading 'cp_hifigan/g_00000030'
+Complete.
+Loading 'cp_hifigan/do_00000030'
+Complete.
 Generator(
   (conv_pre): Conv1d(80, 512, kernel_size=(7,), stride=(1,), padding=(3,))
   (ups): ModuleList(
@@ -166,10 +170,6 @@ Loading 'cp_hifigan/g_00000030'
 Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
-Loading 'cp_hifigan/g_00000030'
-Complete.
-Loading 'cp_hifigan/do_00000030'
-Complete.
 THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingHostAllocator.cpp line=278 error=2 : out of memory
 THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingHostAllocator.cpp line=278 error=2 : out of memory
 Exception in thread Thread-1:
@@ -188,10 +188,10 @@ Traceback (most recent call last):
     with _resource_sharer.get_connection(self._id) as conn:
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/resource_sharer.py", line 87, in get_connection
     c = Client(address, authkey=process.current_process().authkey)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 498, in Client
-    answer_challenge(c, authkey)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 742, in answer_challenge
-    message = connection.recv_bytes(256)         # reject large message
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 499, in Client
+    deliver_challenge(c, authkey)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 730, in deliver_challenge
+    response = connection.recv_bytes(256)        # reject large message
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
     buf = self._recv_bytes(maxlength)
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
@@ -213,7 +213,7 @@ Traceback (most recent call last):
     raise Exception(msg)
 Exception: 
 
--- Process 2 terminated with the following error:
+-- Process 1 terminated with the following error:
 Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/multiprocessing/spawn.py", line 20, in _wrap
     fn(i, *args)

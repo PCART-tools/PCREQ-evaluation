@@ -41,6 +41,7 @@ zope.event==4.5.0
 zope.interface==5.5.1
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ['typing-extensions', 'numpy', 'dataclasses ; python_version < "3.7"']
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

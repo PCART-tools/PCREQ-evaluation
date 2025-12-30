@@ -1,4 +1,4 @@
-absl-py==1.4.0
+absl-py==0.15.0
 astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
@@ -22,6 +22,6 @@ tensorflow==2.6.1
 tensorflow-estimator==2.6.0
 termcolor==1.1.0
 tqdm==4.32.1
-typing_extensions==4.1.1
+typing_extensions==3.7.4.3
 Werkzeug==2.0.3
 zipp==3.6.0

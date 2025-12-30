@@ -85,7 +85,7 @@ Collecting Werkzeug==0.16.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/e4/a859d2fe516f466642fa5c6054fd9646271f9da26b0cac0d2f37fc858c8f/Werkzeug-0.16.1-py2.py3-none-any.whl (327 kB)
 Collecting wrapt==1.11.2
   Using cached wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.14.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/DexiNed-opencv-python-4.7.0.68.txt (line 9)) (57.5.0)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.14.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/DexiNed-opencv-python-4.7.0.68.txt (line 9)) (57.5.0)
 WARNING: The candidate selected for download or install is a yanked version: 'opencv-python' candidate (version 4.7.0.68 at https://pypi.tuna.tsinghua.edu.cn/packages/07/e2/405fd71f433960b0ce6a546536b05a26d85508df7eea98850784e10323e9/opencv_python-4.7.0.68-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/) (requires-python:>=3.6))
 Reason for being yanked: <none given>
 Installing collected packages: wrapt, termcolor, pyasn1, mpmath, chardet, certifi, Werkzeug, urllib3, typing_extensions, sympy, six, rsa, pyparsing, pyasn1-modules, oauthlib, numpy, mock, Markdown, idna, humanfriendly, gast, future, cachetools, torch, requests, python-dateutil, protobuf, opt-einsum, opencv-python, kiwisolver, Keras-Preprocessing, h5py, grpcio, google-pasta, google-auth, cycler, coloredlogs, absl-py, requests-oauthlib, matplotlib, kornia, Keras-Applications, google-auth-oauthlib

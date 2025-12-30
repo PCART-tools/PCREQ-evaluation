@@ -63,14 +63,14 @@ Collecting Werkzeug==2.2.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/f8/9da63c1617ae2a1dec2fbf6412f3a0cfe9d4ce029eccbda6e1e4258ca45f/Werkzeug-2.2.3-py3-none-any.whl (233 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Collecting packaging>=20.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Collecting fonttools>=4.22.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/d9/e9bae85e84737e76ebbcbea13607236da0c0699baed0ae4f1151b728a608/fonttools-4.38.0-py3-none-any.whl (965 kB)
+Collecting packaging>=20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Collecting setuptools-scm>=4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/66/8f42c941be949ef2b22fe905d850c794e7c170a526023612aad5f3a121ad/setuptools_scm-7.1.0-py3-none-any.whl (43 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from numba==0.48.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.0.txt (line 15)) (59.5.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.0.txt (line 27)) (0.38.4)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from numba==0.48.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.0.txt (line 15)) (59.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/hifi-gan-matplotlib-3.5.0.txt (line 27)) (0.38.4)
 Collecting tomli>=1.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
 Installing collected packages: llvmlite, zipp, typing_extensions, torch, tomli, threadpoolctl, six, pyparsing, pycparser, protobuf, Pillow, packaging, numpy, MarkupSafe, joblib, grpcio, fonttools, decorator, cycler, audioread, absl-py, Werkzeug, scipy, python-dateutil, numba, kiwisolver, importlib-metadata, cffi, SoundFile, setuptools-scm, scikit-learn, resampy, Markdown, tensorboard, matplotlib, librosa

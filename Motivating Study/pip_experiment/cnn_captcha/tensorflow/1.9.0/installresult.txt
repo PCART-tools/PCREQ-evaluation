@@ -1,0 +1,32 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==1.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/86/95/274190b39950e1e9eef4b071acefea832ac3e2c19bb4b442fa54f3214d2e/tensorflow-1.9.0-cp36-cp36m-manylinux1_x86_64.whl (51.1 MB)
+Requirement already satisfied: grpcio>=1.8.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (1.19.0)
+Requirement already satisfied: astor>=0.6.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (0.7.1)
+Requirement already satisfied: six>=1.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (1.12.0)
+Requirement already satisfied: gast>=0.2.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (0.2.2)
+Collecting tensorboard<1.10.0,>=1.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9e/1f/3da43860db614e294a034e42d4be5c8f7f0d2c75dc1c428c541116d8cdab/tensorboard-1.9.0-py3-none-any.whl (3.3 MB)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (0.37.1)
+Requirement already satisfied: protobuf>=3.4.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (3.6.0)
+Requirement already satisfied: absl-py>=0.1.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (0.7.1)
+Requirement already satisfied: numpy>=1.13.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (1.16.2)
+Collecting setuptools<=39.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8c/10/79282747f9169f21c053c562a0baa21815a8c7879be97abd930dbcf862e8/setuptools-39.1.0-py2.py3-none-any.whl (566 kB)
+Requirement already satisfied: termcolor>=1.1.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.9.0) (1.1.0)
+Requirement already satisfied: werkzeug>=0.11.10 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.10.0,>=1.9.0->tensorflow==1.9.0) (0.15.2)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.10.0,>=1.9.0->tensorflow==1.9.0) (3.1)
+Installing collected packages: setuptools, tensorboard, tensorflow
+  Attempting uninstall: setuptools
+    Found existing installation: setuptools 59.6.0
+    Uninstalling setuptools-59.6.0:
+      Successfully uninstalled setuptools-59.6.0
+  Attempting uninstall: tensorboard
+    Found existing installation: tensorboard 1.7.0
+    Uninstalling tensorboard-1.7.0:
+      Successfully uninstalled tensorboard-1.7.0
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 1.7.0
+    Uninstalling tensorflow-1.7.0:
+      Successfully uninstalled tensorflow-1.7.0
+Successfully installed setuptools-39.1.0 tensorboard-1.9.0 tensorflow-1.9.0

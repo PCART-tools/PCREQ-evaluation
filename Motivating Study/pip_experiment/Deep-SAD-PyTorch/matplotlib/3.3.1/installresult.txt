@@ -1,0 +1,24 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting matplotlib==3.3.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f1/b9/712584f12f840968a14969a1fe298ffdeaa9c4b484b3bfd973c74c4a481d/matplotlib-3.3.1-cp37-cp37m-manylinux1_x86_64.whl (11.6 MB)
+Requirement already satisfied: numpy>=1.15 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.1) (1.16.4)
+Requirement already satisfied: python-dateutil>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.1) (2.8.0)
+Collecting certifi>=2020.06.20
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
+Collecting pillow>=6.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/95/48565d6beb34deaacda1543b515dab9479b8fa8b9046703fd08ad447ddfe/Pillow-9.5.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.1) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.1) (1.1.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.3 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.1) (2.4.0)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from cycler>=0.10->matplotlib==3.3.1) (1.12.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib==3.3.1) (59.5.0)
+Installing collected packages: pillow, certifi, matplotlib
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 6.0.0
+    Uninstalling Pillow-6.0.0:
+      Successfully uninstalled Pillow-6.0.0
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.1.0
+    Uninstalling matplotlib-3.1.0:
+      Successfully uninstalled matplotlib-3.1.0
+Successfully installed certifi-2025.11.12 matplotlib-3.3.1 pillow-9.5.0

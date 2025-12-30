@@ -29,20 +29,21 @@ s3transfer==0.2.1
 sacremoses==0.0.33
 scikit-learn==0.21.3
 scipy==1.3.1
-sentencepiece==0.1.83
+sentencepiece==0.1.96
 six==1.12.0
-tokenizers==0.8.1
+tokenizers==0.10.3
 torch==1.13.1
 tqdm==4.35.0
-transformers==4.0.0
+transformers==4.18.0
 urllib3==1.25.3
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99) ; platform_system == "Linux"', 'nvidia-cudnn-cu11 (==8.5.0.96) ; platform_system == "Linux"', 'nvidia-cublas-cu11 (==11.10.3.66) ; platform_system == "Linux"', 'nvidia-cuda-nvrtc-cu11 (==11.7.99) ; platform_system == "Linux"', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested tokenizers==0.8.1
-    transformers 4.0.0 depends on tokenizers==0.9.4
+    The user requested tokenizers==0.10.3
+    transformers 4.18.0 depends on tokenizers!=0.11.3, <0.13 and >=0.11.1
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

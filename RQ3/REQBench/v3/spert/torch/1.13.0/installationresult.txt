@@ -71,14 +71,14 @@ Collecting thinc==8.0.17
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/cc/622b73af2bfcb0e2955844be843342040cf780fb001b298e0f2b43c0db33/thinc-8.0.17-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (660 kB)
 Collecting threadpoolctl==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
-Collecting tokenizers==0.10.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/e2/df3543e8ffdab68f5acc73f613de9c2b155ac47f162e725dcac87c521c11/tokenizers-0.10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3 MB)
+Collecting tokenizers==0.9.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/36/59e4a62254c5fcb43894c6b0e9403ec6f4238cc2422a003ed2e6279a1784/tokenizers-0.9.4-cp37-cp37m-manylinux2010_x86_64.whl (2.9 MB)
 Collecting torch==1.13.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7a/fb/b1b11ae95ffa7099ca2e60ed5945e56130cc8740208f42aa77f17e03ab3c/torch-1.13.0-cp37-cp37m-manylinux1_x86_64.whl (890.2 MB)
 Collecting tqdm==4.55.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ac/a2/1fc6ceff232a4755fa85e2bd3aaca1145c3103b298000129381309995072/tqdm-4.55.1-py2.py3-none-any.whl (68 kB)
-Collecting transformers==4.12.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/f1/7d1c2507ae984a8b075df530ebb1939de5291a7dfb3208b658aa1c547fd4/transformers-4.12.5-py3-none-any.whl (3.1 MB)
+Collecting transformers==4.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/50/0c/7d5950fcd80b029be0a8891727ba21e0cd27692c407c51261c3c921f6da3/transformers-4.1.1-py3-none-any.whl (1.5 MB)
 Collecting typer==0.3.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/34/d138832f6945432c638f32137e6c79a3b682f06a63c488dcfaca6b166c64/typer-0.3.2-py3-none-any.whl (21 kB)
 Collecting typing_extensions==4.1.1
@@ -89,22 +89,16 @@ Collecting wasabi==0.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/74/bd566f876c2de097e75d525c2696fb9829009987a0d93a4fb3576778a0a8/wasabi-0.10.1-py3-none-any.whl (26 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 23)) (2022.12.7)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 30)) (65.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 23)) (2022.12.7)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 30)) (65.6.3)
+Collecting nvidia-cudnn-cu11==8.5.0.96
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
 Collecting nvidia-cuda-runtime-cu11==11.7.99
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/92/89cf558b514125d2ebd8344dd2f0533404b416486ff681d5434a5832a019/nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)
 Collecting nvidia-cublas-cu11==11.10.3.66
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
 Collecting nvidia-cuda-nvrtc-cu11==11.7.99
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/25/922c5996aada6611b79b53985af7999fc629aee1d5d001b6a22431e18fec/nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
-Collecting nvidia-cudnn-cu11==8.5.0.96
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
-Collecting pyyaml>=5.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
-Collecting huggingface-hub<1.0,>=0.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
-Requirement already satisfied: wheel in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 38)) (0.38.4)
-Collecting fsspec
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/f0d369ede0ca54fdd520bdee5086dbaf0af81dac53a2ce847bd1ec6e0bf1/fsspec-2023.1.0-py3-none-any.whl (143 kB)
-Installing collected packages: wasabi, tokenizers, sentencepiece, mpmath, cymem, zipp, urllib3, typing_extensions, tqdm, threadpoolctl, sympy, spacy-legacy, smart-open, six, regex, pyyaml, pydantic, protobuf, packaging, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cublas-cu11, numpy, murmurhash, MarkupSafe, joblib, idna, humanfriendly, fsspec, filelock, click, charset-normalizer, typer, tensorboardX, scipy, sacremoses, requests, preshed, nvidia-cudnn-cu11, Jinja2, importlib-metadata, coloredlogs, catalogue, blis, torch, srsly, scikit-learn, pathy, huggingface-hub, transformers, thinc, spacy
-Successfully installed Jinja2-2.11.3 MarkupSafe-2.1.5 blis-0.7.11 catalogue-2.0.10 charset-normalizer-3.3.2 click-7.1.2 coloredlogs-15.0.1 cymem-2.0.8 filelock-3.12.2 fsspec-2023.1.0 huggingface-hub-0.16.4 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 murmurhash-1.0.10 numpy-1.21.6 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 packaging-24.0 pathy-0.10.3 preshed-3.0.9 protobuf-3.20.0 pydantic-1.7.4 pyyaml-6.0.1 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 scikit-learn-0.24.0 scipy-1.7.3 sentencepiece-0.1.91 six-1.16.0 smart-open-6.4.0 spacy-3.0.1 spacy-legacy-3.0.12 srsly-2.4.8 sympy-1.10.1 tensorboardX-1.6 thinc-8.0.17 threadpoolctl-3.1.0 tokenizers-0.10.3 torch-1.13.0 tqdm-4.55.1 transformers-4.12.5 typer-0.3.2 typing_extensions-4.1.1 urllib3-2.0.7 wasabi-0.10.1 zipp-3.15.0
+Requirement already satisfied: wheel in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/spert-torch-1.13.0.txt (line 38)) (0.38.4)
+Installing collected packages: wasabi, tokenizers, sentencepiece, mpmath, cymem, zipp, urllib3, typing_extensions, tqdm, threadpoolctl, sympy, spacy-legacy, smart-open, six, regex, pydantic, protobuf, packaging, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cublas-cu11, numpy, murmurhash, MarkupSafe, joblib, idna, humanfriendly, filelock, click, charset-normalizer, typer, tensorboardX, scipy, sacremoses, requests, preshed, nvidia-cudnn-cu11, Jinja2, importlib-metadata, coloredlogs, catalogue, blis, transformers, torch, srsly, scikit-learn, pathy, thinc, spacy
+Successfully installed Jinja2-2.11.3 MarkupSafe-2.1.5 blis-0.7.11 catalogue-2.0.10 charset-normalizer-3.3.2 click-7.1.2 coloredlogs-15.0.1 cymem-2.0.8 filelock-3.12.2 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 murmurhash-1.0.10 numpy-1.21.6 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 packaging-24.0 pathy-0.10.3 preshed-3.0.9 protobuf-3.20.0 pydantic-1.7.4 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 scikit-learn-0.24.0 scipy-1.7.3 sentencepiece-0.1.91 six-1.16.0 smart-open-6.4.0 spacy-3.0.1 spacy-legacy-3.0.12 srsly-2.4.8 sympy-1.10.1 tensorboardX-1.6 thinc-8.0.17 threadpoolctl-3.1.0 tokenizers-0.9.4 torch-1.13.0 tqdm-4.55.1 transformers-4.1.1 typer-0.3.2 typing_extensions-4.1.1 urllib3-2.0.7 wasabi-0.10.1 zipp-3.15.0

@@ -13,7 +13,7 @@ idna==3.7
 importlib-metadata==4.8.3
 importlib-resources==5.4.0
 joblib==1.1.1
-keras==2.4.3
+keras==2.10.0
 numpy==1.19.5
 packaging==21.3
 pyparsing==3.1.2
@@ -21,23 +21,24 @@ pytorch-crf==0.7.2
 regex==2023.8.8
 requests==2.27.1
 sacremoses==0.0.53
-sentencepiece==0.2.0
+sentencepiece==0.1.91
 seqeval==0.0.12
 six==1.16.0
-tokenizers==0.9.4
+tokenizers==0.9.3
 torch==1.8.0
 tqdm==4.64.1
-transformers==3.5.1
+transformers==4.12.5
 typing_extensions==4.1.1
 urllib3==1.26.19
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested sentencepiece==0.2.0
-    transformers 3.5.1 depends on sentencepiece==0.1.91
+    The user requested tokenizers==0.9.3
+    transformers 4.12.5 depends on tokenizers<0.11 and >=0.10.1
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

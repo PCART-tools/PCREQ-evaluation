@@ -26,6 +26,7 @@ torch==1.4.0
 torchvision==0.5.0
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): ['future', 'numpy']
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

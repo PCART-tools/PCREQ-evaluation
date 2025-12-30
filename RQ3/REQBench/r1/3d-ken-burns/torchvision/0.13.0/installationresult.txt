@@ -5,10 +5,8 @@ Collecting click==8.1.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/f1/df59e28c642d583f7dacffb1e0965d0e00b218e0186d7858ac5233dce840/click-8.1.3-py3-none-any.whl (96 kB)
 Collecting coverage==6.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0d/ef/8735875a8dc09e1c4e484a5436c8b4148731b70daccc6f203c50b05e7505/coverage-6.5.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (210 kB)
-Collecting cupy==11.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/62/c808623b8000185efebd8b4542efdf76cc93d20dfd3f0a3eaeb5e5697430/cupy-11.6.0.tar.gz (1.8 MB)
-  Preparing metadata (setup.py): started
-  Preparing metadata (setup.py): finished with status 'done'
+Collecting cupy==11.3.0
+  Using cached cupy-11.3.0-cp37-cp37m-linux_x86_64.whl
 Collecting dataclasses==0.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/26/2f/1095cdc2868052dd1e64520f7c0d5c8c550ad297e944e641dbf1ffbb9a5d/dataclasses-0.6-py3-none-any.whl (14 kB)
 Collecting decorator==4.4.2
@@ -73,24 +71,8 @@ Collecting zope.event==4.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9e/85/b45408c64f3b888976f1d5b37eed8d746b8d5729a66a49ec846fda27d371/zope.event-4.5.0-py2.py3-none-any.whl (6.8 kB)
 Collecting zope.interface==5.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/48/d202873106a33efafdae2b80210d8c96439603d52ac99393510701e0702e/zope.interface-5.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (254 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from gevent==22.10.2->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/3d-ken-burns-torchvision-0.13.0.txt (line 11)) (57.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from gevent==22.10.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/3d-ken-burns-torchvision-0.13.0.txt (line 11)) (57.5.0)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
-Building wheels for collected packages: cupy
-  Building wheel for cupy (setup.py): started
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): still running...
-  Building wheel for cupy (setup.py): finished with status 'done'
-  Created wheel for cupy: filename=cupy-11.6.0-cp37-cp37m-linux_x86_64.whl size=80230110 sha256=9f3df3decd26e8893ee47ddc7fc0bfd0121f62a4c82529b23faa70792f737b3f
-  Stored in directory: /home/lei/.cache/pip/wheels/de/75/db/1f0e50320c5d30a59a270bdb8fd2d91c55d2a0e0da5771e192
-Successfully built cupy
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
 Installing collected packages: fastrlock, dataclasses, zope.interface, zope.event, zipp, urllib3, typing_extensions, tqdm, Pillow, numpy, MarkupSafe, itsdangerous, imageio-ffmpeg, idna, greenlet, future, dill, decorator, coverage, charset-normalizer, certifi, Werkzeug, torch, scipy, requests, proglog, opencv-contrib-python, Jinja2, importlib-metadata, imageio, h5py, gevent, cupy, torchvision, moviepy, click, Flask
-Successfully installed Flask-2.2.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Pillow-9.3.0 Werkzeug-2.2.2 certifi-2025.4.26 charset-normalizer-2.1.1 click-8.1.3 coverage-6.5.0 cupy-11.6.0 dataclasses-0.6 decorator-4.4.2 dill-0.3.7 fastrlock-0.8.1 future-0.18.3 gevent-22.10.2 greenlet-2.0.1 h5py-3.7.0 idna-3.4 imageio-2.22.4 imageio-ffmpeg-0.4.7 importlib-metadata-5.0.0 itsdangerous-2.1.2 moviepy-1.0.3 numpy-1.21.5 opencv-contrib-python-4.6.0.66 proglog-0.1.10 requests-2.28.1 scipy-1.7.2 torch-1.12.0 torchvision-0.13.0 tqdm-4.64.1 typing_extensions-4.4.0 urllib3-1.26.12 zipp-3.10.0 zope.event-4.5.0 zope.interface-5.5.1
+Successfully installed Flask-2.2.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Pillow-9.3.0 Werkzeug-2.2.2 certifi-2025.11.12 charset-normalizer-2.1.1 click-8.1.3 coverage-6.5.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 dill-0.3.7 fastrlock-0.8.1 future-0.18.3 gevent-22.10.2 greenlet-2.0.1 h5py-3.7.0 idna-3.4 imageio-2.22.4 imageio-ffmpeg-0.4.7 importlib-metadata-5.0.0 itsdangerous-2.1.2 moviepy-1.0.3 numpy-1.21.5 opencv-contrib-python-4.6.0.66 proglog-0.1.10 requests-2.28.1 scipy-1.7.2 torch-1.12.0 torchvision-0.13.0 tqdm-4.64.1 typing_extensions-4.4.0 urllib3-1.26.12 zipp-3.10.0 zope.event-4.5.0 zope.interface-5.5.1

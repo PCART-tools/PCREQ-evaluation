@@ -11,11 +11,11 @@ Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 Markdown==3.3.7
 mock==5.1.0
-numpy==1.16.4
+numpy==1.18.5
 opencv-python==4.1.0.25
 Pillow==6.1.0
 protobuf==3.19.6
-scipy==1.2.0
+scipy==1.4.1
 six==1.16.0
 tensorboard==2.0.3
 tensorflow==2.0.3

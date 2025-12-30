@@ -1,17 +1,2091 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-Collecting cupy==11.3.0
-  Using cached cupy-11.3.0-cp37-cp37m-linux_x86_64.whl
-Collecting fastrlock==0.8.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/42/4e/8bff5aa98ba1406c23a7dded13fea0bf2f536b4f8f7096fcbea0303e9cf5/fastrlock-0.8.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_24_x86_64.whl (47 kB)
-Collecting future==1.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
-Collecting numpy==1.20.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3a/6c/322f6aa128179d0ea45a543a4e29a74da2317117109899cfd56d09bf3de0/numpy-1.20.0-cp37-cp37m-manylinux2010_x86_64.whl (15.3 MB)
-Collecting Pillow==8.3.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/41/07/ecb2a0d55460385163c82a4bd65263a00510966dddbd54876796bd18857c/Pillow-8.3.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+Collecting cupy==9.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/07/f8/64b350de7bbf1aaa070ce97dcb26379a4226441a4916900f68dcfe235d62/cupy-9.0.0.tar.gz (1.6 MB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting fastrlock==0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/15/bf/3dbaacaaacbc1926e70a8b05b708125c81b45a30dcd6b4709674cfbdd91f/fastrlock-0.5-cp37-cp37m-manylinux1_x86_64.whl (31 kB)
+Collecting future==0.18.2
+  Using cached future-0.18.2-py3-none-any.whl
+Collecting numpy==1.19.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
+Collecting Pillow==8.0.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/fa/c1302a26d5e1a17fa8e10e43417b6cf038b0648c4b79fcf2302a4a0c5d30/Pillow-8.0.1-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
 Collecting torch==1.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/5d/095ddddc91c8a769a68c791c019c5793f9c4456a688ddd235d6670924ecb/torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl (776.8 MB)
-Collecting typing-extensions
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
-Installing collected packages: fastrlock, typing-extensions, Pillow, numpy, future, torch, cupy
-Successfully installed Pillow-8.3.2 cupy-11.3.0 fastrlock-0.8.2 future-1.0.0 numpy-1.20.0 torch-1.7.1 typing-extensions-4.7.1
+Collecting typing-extensions==3.7.4.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/7a/e881b5abb54db0e6e671ab088d079c57ce54e8a01a3ca443f561ccadb37e/typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting dataclasses==0.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/26/2f/1095cdc2868052dd1e64520f7c0d5c8c550ad297e944e641dbf1ffbb9a5d/dataclasses-0.6-py3-none-any.whl (14 kB)
+Building wheels for collected packages: cupy
+  Building wheel for cupy (setup.py): started
+  Building wheel for cupy (setup.py): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × python setup.py bdist_wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [1021 lines of output]
+      Options: {'package_name': 'cupy', 'long_description': None, 'wheel_libs': [], 'wheel_includes': [], 'wheel_metadata': None, 'no_rpath': False, 'profile': False, 'linetrace': False, 'annotate': False, 'no_cuda': False, 'use_hip': False}
+      
+      -------- Configuring Module: cuda --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cusolver --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cudnn --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpwbb5y9e8/a.cpp:1:10: fatal error: cudnn.h: No such file or directory
+       #include <cudnn.h>
+                ^~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nccl --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpkerxrwdn/a.cpp:1:10: fatal error: nccl.h: No such file or directory
+       #include <nccl.h>
+                ^~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nvtx --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cutensor --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpbhs0fgp4/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
+       #include <cutensor.h>
+                ^~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cub --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: jitify --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      **************************************************
+      *** WARNING: Cannot determine Jitify version
+      Cannot determine Jitify version from git
+      **************************************************
+      
+      -------- Configuring Module: random --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cusparselt --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpd631x4k1/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
+       #include <cusparseLt.h>
+                ^~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cugraph --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpwpj9xj_6/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
+       #include <cugraph/raft/error.hpp>
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: thrust --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: dlpack --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      ************************************************************
+      * CuPy Configuration Summary                               *
+      ************************************************************
+      
+      Build Environment:
+        Include directories: ['/usr/local/cuda-11.4/include/cub', '/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include', '/usr/local/cuda-11.4/include']
+        Library directories: ['/usr/local/cuda-11.4/lib64']
+        nvcc command       : ['/usr/local/cuda-11.4/bin/nvcc']
+        hipcc command      : (not found)
+      
+      Environment Variables:
+        CFLAGS          : (none)
+        LDFLAGS         : (none)
+        LIBRARY_PATH    : (none)
+        CUDA_PATH       : (none)
+        NVTOOLSEXT_PATH : (none)
+        NVCC            : (none)
+        HIPCC           : (none)
+        ROCM_HOME       : (none)
+      
+      Modules:
+        cuda      : Yes (version 11040)
+        cusolver  : Yes
+        cudnn     : No
+          -> Include files not found: ['cudnn.h']
+          -> Check your CFLAGS environment variable.
+        nccl      : No
+          -> Include files not found: ['nccl.h']
+          -> Check your CFLAGS environment variable.
+        nvtx      : Yes
+        cutensor  : No
+          -> Include files not found: ['cutensor.h']
+          -> Check your CFLAGS environment variable.
+        cub       : Yes (version 101201)
+        jitify    : Yes (version <unknown>)
+        random    : Yes
+        cusparselt: No
+          -> Include files not found: ['cusparseLt.h']
+          -> Check your CFLAGS environment variable.
+        cugraph   : No
+          -> Include files not found: ['cugraph/raft/error.hpp']
+          -> Check your CFLAGS environment variable.
+        thrust    : Yes (version 101201)
+        dlpack    : Yes
+      
+      WARNING: Some modules could not be configured.
+      CuPy will be installed without these modules.
+      Please refer to the Installation Guide for details:
+      https://docs.cupy.dev/en/stable/install.html
+      
+      ************************************************************
+      
+      running bdist_wheel
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-3.7
+      creating build/lib.linux-x86_64-3.7/cupy_backends
+      copying cupy_backends/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends
+      creating build/lib.linux-x86_64-3.7/cupy
+      copying cupy/_environment.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/cublas.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/cusparse.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/__init__.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/_version.py -> build/lib.linux-x86_64-3.7/cupy
+      creating build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/time.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_runtime.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/__init__.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_scatter.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_rsqrt.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_ufunc_config.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/lapack.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_pinned_array.py -> build/lib.linux-x86_64-3.7/cupyx
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda
+      copying cupy_backends/cuda/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda/libs
+      copying cupy_backends/cuda/libs/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda/libs
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda/api
+      copying cupy_backends/cuda/api/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda/api
+      creating build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/who.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/memory_ranges.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      creating build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/stride_tricks.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/__init__.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/_shape_base.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/_routines_poly.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      creating build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/comparison.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/truth.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/content.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/type_test.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/ops.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      creating build/lib.linux-x86_64-3.7/cupy/prof
+      copying cupy/prof/__init__.py -> build/lib.linux-x86_64-3.7/cupy/prof
+      copying cupy/prof/_time_range.py -> build/lib.linux-x86_64-3.7/cupy/prof
+      creating build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/__init__.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/polynomial.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/polyutils.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      creating build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/add_remove.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/split.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/tiling.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/basic.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/kind.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/join.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/dims.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/shape.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/rearrange.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/transpose.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      creating build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_sample.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_generator.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_distributions.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/__init__.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_permutations.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_kernels.py -> build/lib.linux-x86_64-3.7/cupy/random
+      creating build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/indexing.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/iterate.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/generate.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/insert.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      creating build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/packing.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/elementwise.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      creating build/lib.linux-x86_64-3.7/cupy/sparse
+      copying cupy/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupy/sparse
+      creating build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/text.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/npz.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/formatting.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      creating build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/count.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/sort.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/search.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      creating build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_condition.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_attr.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_pytest_impl.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/__init__.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_bundle.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_parameterized.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_hypothesis.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_random.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_helper.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_array.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      creating build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/nvtx.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/__init__.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/nccl.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cutensor.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cudnn.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/profiler.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/runtime.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/compiler.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      creating build/lib.linux-x86_64-3.7/cupy/_padding
+      copying cupy/_padding/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_padding
+      copying cupy/_padding/pad.py -> build/lib.linux-x86_64-3.7/cupy/_padding
+      creating build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/config.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/__init__.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/_fft.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      creating build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/vectorize.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/piecewise.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      creating build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/matrix.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/ranges.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/basic.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/from_data.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      creating build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_op.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_interface.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_gufuncs.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/syncdetect.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_optimization.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_ufuncs.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      creating build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_einsum.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_einsum_opt.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_eigenvalue.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_util.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_product.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_norms.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_decomposition.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      creating build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/correlation.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/meanvar.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/histogram.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/order.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      creating build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/arithmetic.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/rational.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/hyperbolic.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/trigonometric.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/sumprod.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/window.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/explog.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/rounding.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/misc.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/ufunc.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/floating.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/special.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      creating build/lib.linux-x86_64-3.7/cupy/sparse/linalg
+      copying cupy/sparse/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupy/sparse/linalg
+      creating build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/__init__.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/line_profile.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/debug_print.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy
+      copying cupyx/scipy/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy
+      creating build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/fallback.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/notification.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      creating build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_types.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_typerules.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_compile.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_codeblock.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_interface.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      creating build/lib.linux-x86_64-3.7/cupyx/optimizing
+      copying cupyx/optimizing/_optimize.py -> build/lib.linux-x86_64-3.7/cupyx/optimizing
+      copying cupyx/optimizing/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/optimizing
+      creating build/lib.linux-x86_64-3.7/cupyx/tools
+      copying cupyx/tools/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/tools
+      copying cupyx/tools/install_library.py -> build/lib.linux-x86_64-3.7/cupyx/tools
+      creating build/lib.linux-x86_64-3.7/cupyx/linalg
+      copying cupyx/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/linalg
+      copying cupyx/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_gammaln.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_statistics.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_polygamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_erf.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_bessel.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_digamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_gamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_convex_analysis.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_zeta.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      copying cupyx/scipy/fftpack/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      copying cupyx/scipy/fftpack/_fft.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/data.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/sputils.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/csr.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/csc.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/extract.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/_util.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/_index.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/dia.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/coo.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/compressed.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/construct.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/base.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/bsplines.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/signaltools.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/_signaltools_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_spline_prefilter_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/interpolation.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/morphology.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/filters.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_util.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_interp_kernels.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/measurements.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_spline_kernel_weights.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_filters_generic.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/fourier.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_filters_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/_fft.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/_helper.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      copying cupyx/scipy/stats/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      copying cupyx/scipy/stats/distributions.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/decomp_lu.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/special_matrices.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/solve_triangular.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      copying cupyx/scipy/sparse/csgraph/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      copying cupyx/scipy/sparse/csgraph/_traversal.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_lobpcg.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_iterative.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_interface.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_norm.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_eigen.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupyx/linalg/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupyx/linalg/sparse/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupy/cuda/cupy_thrust.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cub.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufftXt.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufftXt.h -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufft.h -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cufft.pxd -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cufft.pyx -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/random/cupy_distributions.cu -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/cupy_distributions.cuh -> build/lib.linux-x86_64-3.7/cupy/random
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/dlpack/dlpack.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/dlpack/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/tuple.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_gmem_atomics.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_smem_atomics.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_cub.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/sparse_matrix.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/defunct/example_coo_spmv.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/defunct/test_device_seg_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/histogram_compare.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/spmv_compare.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/spmv_script.sh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/common.mk -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      copying cupy/_core/include/cupy/cub/tune/tune_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      copying cupy/_core/include/cupy/cub/tune/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/reduce_by_key.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_partition_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_partition_flagged.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_sort_find_non_trivial_runs.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_flagged.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_unique.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/link_b.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_load_store.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/half.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_warp_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_iterator.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_select_unique.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_histogram.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_util.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/mersenne.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_allocator.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/link_a.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_histogram.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_run_length_encode.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_warp_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_grid_barrier.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_select_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_reduce_by_key.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_even_share.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_queue.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_barrier.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_mapping.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/host
+      copying cupy/_core/include/cupy/cub/cub/host/mutex.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/host
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_reduce_by_key.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_radix_sort_upsweep.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/single_pass_scan_operators.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_radix_sort_downsweep.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_select_if.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_segment_fixup.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_rle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_spmv_orig.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/util_device.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_radix_rank.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_raking_commutative_only.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_warp_reductions.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans3.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_raking.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_raking.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans2.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_histogram_atomic.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_histogram_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/block_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_exchange.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_raking_layout.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_adjacent_difference.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_shuffle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_discontinuity.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_load.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_store.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/util_ptx.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_debug.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_arch.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_type.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_search.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_load.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_operators.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_store.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_scan_smem.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_scan_shfl.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_reduce_smem.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_reduce_shfl.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/warp_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      copying cupy/_core/include/cupy/cub/cub/warp/warp_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_segmented_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_select_if.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_spmv_orig.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_rle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_reduce_by_key.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/device_select.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_segmented_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_run_length_encode.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_partition.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_spmv.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/cub.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_namespace.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/arg_index_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/tex_ref_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/counting_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/constant_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/tex_obj_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/cache_modified_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/transform_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/discard_output_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/cache_modified_output_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/util_macro.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_allocator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/eclipse code style profile.xml -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/LICENSE.TXT -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/CHANGE_LOG.TXT -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/atomics.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/carray.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      copying cupy/_core/include/cupy/_cuda/cuda-11.0/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      copying cupy/_core/include/cupy/_cuda/cuda-11.0/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      copying cupy/_core/include/cupy/_cuda/cuda-10.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      copying cupy/_core/include/cupy/_cuda/cuda-10.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      copying cupy/_core/include/cupy/_cuda/cuda-11.1/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      copying cupy/_core/include/cupy/_cuda/cuda-11.1/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      copying cupy/_core/include/cupy/_cuda/cuda-10.1/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      copying cupy/_core/include/cupy/_cuda/cuda-10.1/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      copying cupy/_core/include/cupy/_cuda/cuda-11.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      copying cupy/_core/include/cupy/_cuda/cuda-11.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      copying cupy/_core/include/cupy/_cuda/cuda-10.0/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      copying cupy/_core/include/cupy/_cuda/cuda-10.0/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/cuda-9.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/cuda-9.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda
+      copying cupy/_core/include/cupy/math_constants.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/jitify.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/LICENSE -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/jitify_test.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/Doxyfile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header3.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/class_arg_kernel.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header2.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/constant_header.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header1.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/cuComplex_bridge.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/complex.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/tuple/type_traits.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/tuple/tuple.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/type_dispatcher.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cpow.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ccosh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ccoshf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/catrigf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cexpf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ctanh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csqrtf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cproj.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/arithmetic.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csinh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/clog.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csqrt.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/clogf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csinhf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/complex_inl.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/catrig.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/math_private.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cexp.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ctanhf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/complex.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      running build_ext
+      
+      -------- Configuring Module: cuda --------
+      creating /tmp/tmp8o6b53yn/tmp
+      creating /tmp/tmp8o6b53yn/tmp/tmp8o6b53yn
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp8o6b53yn/a.cpp -o /tmp/tmp8o6b53yn/tmp/tmp8o6b53yn/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp8o6b53yn/tmp/tmp8o6b53yn/a.o -o /tmp/tmp8o6b53yn/liba.so
+      creating /tmp/tmpkfqoxq_t/tmp
+      creating /tmp/tmpkfqoxq_t/tmp/tmpkfqoxq_t
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmpkfqoxq_t/a.cpp -o /tmp/tmpkfqoxq_t/tmp/tmpkfqoxq_t/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpkfqoxq_t/tmp/tmpkfqoxq_t/a.o -L/usr/local/cuda-11.4/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o /tmp/tmpkfqoxq_t/liba.so
+      creating /tmp/tmpjtmrxzo2/tmp
+      creating /tmp/tmpjtmrxzo2/tmp/tmpjtmrxzo2
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpjtmrxzo2/a.cpp -o /tmp/tmpjtmrxzo2/tmp/tmpjtmrxzo2/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmpjtmrxzo2/tmp/tmpjtmrxzo2/a.o -o /tmp/tmpjtmrxzo2/a
+      
+      -------- Configuring Module: cusolver --------
+      creating /tmp/tmpiu4fbgvi/tmp
+      creating /tmp/tmpiu4fbgvi/tmp/tmpiu4fbgvi
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpiu4fbgvi/a.cpp -o /tmp/tmpiu4fbgvi/tmp/tmpiu4fbgvi/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpiu4fbgvi/tmp/tmpiu4fbgvi/a.o -o /tmp/tmpiu4fbgvi/liba.so
+      creating /tmp/tmplsmtzuga/tmp
+      creating /tmp/tmplsmtzuga/tmp/tmplsmtzuga
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmplsmtzuga/a.cpp -o /tmp/tmplsmtzuga/tmp/tmplsmtzuga/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmplsmtzuga/tmp/tmplsmtzuga/a.o -L/usr/local/cuda-11.4/lib64 -lcusolver -o /tmp/tmplsmtzuga/liba.so
+      creating /tmp/tmphzl2skf9/tmp
+      creating /tmp/tmphzl2skf9/tmp/tmphzl2skf9
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmphzl2skf9/a.cpp -o /tmp/tmphzl2skf9/tmp/tmphzl2skf9/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmphzl2skf9/tmp/tmphzl2skf9/a.o -o /tmp/tmphzl2skf9/a
+      
+      -------- Configuring Module: cudnn --------
+      creating /tmp/tmpknbqk26k/tmp
+      creating /tmp/tmpknbqk26k/tmp/tmpknbqk26k
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpknbqk26k/a.cpp -o /tmp/tmpknbqk26k/tmp/tmpknbqk26k/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpknbqk26k/a.cpp:1:10: fatal error: cudnn.h: No such file or directory
+       #include <cudnn.h>
+                ^~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nccl --------
+      creating /tmp/tmpat03_t5_/tmp
+      creating /tmp/tmpat03_t5_/tmp/tmpat03_t5_
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpat03_t5_/a.cpp -o /tmp/tmpat03_t5_/tmp/tmpat03_t5_/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpat03_t5_/a.cpp:1:10: fatal error: nccl.h: No such file or directory
+       #include <nccl.h>
+                ^~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nvtx --------
+      creating /tmp/tmptj9dnkky/tmp
+      creating /tmp/tmptj9dnkky/tmp/tmptj9dnkky
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmptj9dnkky/a.cpp -o /tmp/tmptj9dnkky/tmp/tmptj9dnkky/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmptj9dnkky/tmp/tmptj9dnkky/a.o -o /tmp/tmptj9dnkky/liba.so
+      creating /tmp/tmp2whudn0v/tmp
+      creating /tmp/tmp2whudn0v/tmp/tmp2whudn0v
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmp2whudn0v/a.cpp -o /tmp/tmp2whudn0v/tmp/tmp2whudn0v/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp2whudn0v/tmp/tmp2whudn0v/a.o -L/usr/local/cuda-11.4/lib64 -lnvToolsExt -o /tmp/tmp2whudn0v/liba.so
+      
+      -------- Configuring Module: cutensor --------
+      creating /tmp/tmphb9ma2a7/tmp
+      creating /tmp/tmphb9ma2a7/tmp/tmphb9ma2a7
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmphb9ma2a7/a.cpp -o /tmp/tmphb9ma2a7/tmp/tmphb9ma2a7/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmphb9ma2a7/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
+       #include <cutensor.h>
+                ^~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cub --------
+      creating /tmp/tmpatwea8qa/tmp
+      creating /tmp/tmpatwea8qa/tmp/tmpatwea8qa
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpatwea8qa/a.cpp -o /tmp/tmpatwea8qa/tmp/tmpatwea8qa/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpatwea8qa/tmp/tmpatwea8qa/a.o -o /tmp/tmpatwea8qa/liba.so
+      creating /tmp/tmp3y6m7q7_/tmp
+      creating /tmp/tmp3y6m7q7_/tmp/tmp3y6m7q7_
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmp3y6m7q7_/a.cpp -o /tmp/tmp3y6m7q7_/tmp/tmp3y6m7q7_/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp3y6m7q7_/tmp/tmp3y6m7q7_/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmp3y6m7q7_/liba.so
+      creating /tmp/tmp21npdgva/tmp
+      creating /tmp/tmp21npdgva/tmp/tmp21npdgva
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp21npdgva/a.cpp -o /tmp/tmp21npdgva/tmp/tmp21npdgva/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmp21npdgva/tmp/tmp21npdgva/a.o -o /tmp/tmp21npdgva/a
+      
+      -------- Configuring Module: jitify --------
+      creating /tmp/tmplnn8efn3/tmp
+      creating /tmp/tmplnn8efn3/tmp/tmplnn8efn3
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmplnn8efn3/a.cpp -o /tmp/tmplnn8efn3/tmp/tmplnn8efn3/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmplnn8efn3/tmp/tmplnn8efn3/a.o -o /tmp/tmplnn8efn3/liba.so
+      creating /tmp/tmpsahzs8n3/tmp
+      creating /tmp/tmpsahzs8n3/tmp/tmpsahzs8n3
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -c /tmp/tmpsahzs8n3/a.cpp -o /tmp/tmpsahzs8n3/tmp/tmpsahzs8n3/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpsahzs8n3/tmp/tmpsahzs8n3/a.o -L/usr/local/cuda-11.4/lib64 -lcuda -lcudart -lnvrtc -o /tmp/tmpsahzs8n3/liba.so
+      **************************************************
+      *** WARNING: Cannot determine Jitify version
+      Cannot determine Jitify version from git
+      **************************************************
+      
+      -------- Configuring Module: random --------
+      creating /tmp/tmpi764dpt8/tmp
+      creating /tmp/tmpi764dpt8/tmp/tmpi764dpt8
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpi764dpt8/a.cpp -o /tmp/tmpi764dpt8/tmp/tmpi764dpt8/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpi764dpt8/tmp/tmpi764dpt8/a.o -o /tmp/tmpi764dpt8/liba.so
+      creating /tmp/tmp5x27ov9g/tmp
+      creating /tmp/tmp5x27ov9g/tmp/tmp5x27ov9g
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmp5x27ov9g/a.cpp -o /tmp/tmp5x27ov9g/tmp/tmp5x27ov9g/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp5x27ov9g/tmp/tmp5x27ov9g/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -lcurand -o /tmp/tmp5x27ov9g/liba.so
+      
+      -------- Configuring Module: cusparselt --------
+      creating /tmp/tmpmctpu1c9/tmp
+      creating /tmp/tmpmctpu1c9/tmp/tmpmctpu1c9
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpmctpu1c9/a.cpp -o /tmp/tmpmctpu1c9/tmp/tmpmctpu1c9/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpmctpu1c9/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
+       #include <cusparseLt.h>
+                ^~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cugraph --------
+      creating /tmp/tmpekv227z4/tmp
+      creating /tmp/tmpekv227z4/tmp/tmpekv227z4
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpekv227z4/a.cpp -o /tmp/tmpekv227z4/tmp/tmpekv227z4/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpekv227z4/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
+       #include <cugraph/raft/error.hpp>
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: thrust --------
+      creating /tmp/tmp3n_fhkjk/tmp
+      creating /tmp/tmp3n_fhkjk/tmp/tmp3n_fhkjk
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp3n_fhkjk/a.cpp -o /tmp/tmp3n_fhkjk/tmp/tmp3n_fhkjk/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp3n_fhkjk/tmp/tmp3n_fhkjk/a.o -o /tmp/tmp3n_fhkjk/liba.so
+      creating /tmp/tmpzomfy7ii/tmp
+      creating /tmp/tmpzomfy7ii/tmp/tmpzomfy7ii
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmpzomfy7ii/a.cpp -o /tmp/tmpzomfy7ii/tmp/tmpzomfy7ii/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpzomfy7ii/tmp/tmpzomfy7ii/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmpzomfy7ii/liba.so
+      creating /tmp/tmps57bjsvx/tmp
+      creating /tmp/tmps57bjsvx/tmp/tmps57bjsvx
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmps57bjsvx/a.cpp -o /tmp/tmps57bjsvx/tmp/tmps57bjsvx/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmps57bjsvx/tmp/tmps57bjsvx/a.o -o /tmp/tmps57bjsvx/a
+      
+      -------- Configuring Module: dlpack --------
+      creating /tmp/tmpqs7jxqo8/tmp
+      creating /tmp/tmpqs7jxqo8/tmp/tmpqs7jxqo8
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpqs7jxqo8/a.cpp -o /tmp/tmpqs7jxqo8/tmp/tmpqs7jxqo8/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpqs7jxqo8/tmp/tmpqs7jxqo8/a.o -o /tmp/tmpqs7jxqo8/liba.so
+      creating /tmp/tmp81sbnw6u/tmp
+      creating /tmp/tmp81sbnw6u/tmp/tmp81sbnw6u
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmp81sbnw6u/a.cpp -o /tmp/tmp81sbnw6u/tmp/tmp81sbnw6u/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp81sbnw6u/tmp/tmp81sbnw6u/a.o -L/usr/local/cuda-11.4/lib64 -o /tmp/tmp81sbnw6u/liba.so
+      creating /tmp/tmpbhxp3zky/tmp
+      creating /tmp/tmpbhxp3zky/tmp/tmpbhxp3zky
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpbhxp3zky/a.cpp -o /tmp/tmpbhxp3zky/tmp/tmpbhxp3zky/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmpbhxp3zky/tmp/tmpbhxp3zky/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmpbhxp3zky/a
+      
+      ************************************************************
+      * CuPy Configuration Summary                               *
+      ************************************************************
+      
+      Build Environment:
+        Include directories: ['/usr/local/cuda-11.4/include/cub', '/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include', '/usr/local/cuda-11.4/include']
+        Library directories: ['/usr/local/cuda-11.4/lib64']
+        nvcc command       : ['/usr/local/cuda-11.4/bin/nvcc']
+        hipcc command      : (not found)
+      
+      Environment Variables:
+        CFLAGS          : (none)
+        LDFLAGS         : (none)
+        LIBRARY_PATH    : (none)
+        CUDA_PATH       : (none)
+        NVTOOLSEXT_PATH : (none)
+        NVCC            : (none)
+        HIPCC           : (none)
+        ROCM_HOME       : (none)
+      
+      Modules:
+        cuda      : Yes (version 11040)
+        cusolver  : Yes
+        cudnn     : No
+          -> Include files not found: ['cudnn.h']
+          -> Check your CFLAGS environment variable.
+        nccl      : No
+          -> Include files not found: ['nccl.h']
+          -> Check your CFLAGS environment variable.
+        nvtx      : Yes
+        cutensor  : No
+          -> Include files not found: ['cutensor.h']
+          -> Check your CFLAGS environment variable.
+        cub       : Yes (version 101201)
+        jitify    : Yes (version <unknown>)
+        random    : Yes
+        cusparselt: No
+          -> Include files not found: ['cusparseLt.h']
+          -> Check your CFLAGS environment variable.
+        cugraph   : No
+          -> Include files not found: ['cugraph/raft/error.hpp']
+          -> Check your CFLAGS environment variable.
+        thrust    : Yes (version 101201)
+        dlpack    : Yes
+      
+      WARNING: Some modules could not be configured.
+      CuPy will be installed without these modules.
+      Please refer to the Installation Guide for details:
+      https://docs.cupy.dev/en/stable/install.html
+      
+      ************************************************************
+      
+      Compiling cupy_backends/cuda/api/driver.pyx because it changed.
+      Compiling cupy_backends/cuda/api/runtime.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cublas.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/curand.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cusparse.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/nvrtc.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/profiler.pyx because it changed.
+      Compiling cupy_backends/cuda/stream.pyx because it changed.
+      Compiling cupy/_core/_accelerator.pyx because it changed.
+      Compiling cupy/_core/_carray.pyx because it changed.
+      Compiling cupy/_core/_cub_reduction.pyx because it changed.
+      Compiling cupy/_core/_dtype.pyx because it changed.
+      Compiling cupy/_core/_fusion_kernel.pyx because it changed.
+      Compiling cupy/_core/_fusion_thread_local.pyx because it changed.
+      Compiling cupy/_core/_fusion_trace.pyx because it changed.
+      Compiling cupy/_core/_fusion_variable.pyx because it changed.
+      Compiling cupy/_core/_kernel.pyx because it changed.
+      Compiling cupy/_core/_memory_range.pyx because it changed.
+      Compiling cupy/_core/_optimize_config.pyx because it changed.
+      Compiling cupy/_core/_reduction.pyx because it changed.
+      Compiling cupy/_core/_routines_binary.pyx because it changed.
+      Compiling cupy/_core/_routines_indexing.pyx because it changed.
+      Compiling cupy/_core/_routines_linalg.pyx because it changed.
+      Compiling cupy/_core/_routines_logic.pyx because it changed.
+      Compiling cupy/_core/_routines_manipulation.pyx because it changed.
+      Compiling cupy/_core/_routines_math.pyx because it changed.
+      Compiling cupy/_core/_routines_sorting.pyx because it changed.
+      Compiling cupy/_core/_routines_statistics.pyx because it changed.
+      Compiling cupy/_core/_scalar.pyx because it changed.
+      Compiling cupy/_core/core.pyx because it changed.
+      Compiling cupy/_core/flags.pyx because it changed.
+      Compiling cupy/_core/internal.pyx because it changed.
+      Compiling cupy/_core/fusion.pyx because it changed.
+      Compiling cupy/_core/new_fusion.pyx because it changed.
+      Compiling cupy/_core/raw.pyx because it changed.
+      Compiling cupy/cuda/common.pyx because it changed.
+      Compiling cupy/cuda/cufft.pyx because it changed.
+      Compiling cupy/cuda/device.pyx because it changed.
+      Compiling cupy/cuda/memory.pyx because it changed.
+      Compiling cupy/cuda/memory_hook.pyx because it changed.
+      Compiling cupy/cuda/pinned_memory.pyx because it changed.
+      Compiling cupy/cuda/function.pyx because it changed.
+      Compiling cupy/cuda/stream.pyx because it changed.
+      Compiling cupy/cuda/texture.pyx because it changed.
+      Compiling cupy/fft/_cache.pyx because it changed.
+      Compiling cupy/fft/_callback.pyx because it changed.
+      Compiling cupy/lib/_polynomial.pyx because it changed.
+      Compiling cupy/_util.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cusolver.pyx because it changed.
+      Compiling cupy/cusolver.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/nvtx.pyx because it changed.
+      Compiling cupy/cuda/cub.pyx because it changed.
+      Compiling cupy/cuda/jitify.pyx because it changed.
+      Compiling cupy/random/_bit_generator.pyx because it changed.
+      Compiling cupy/random/_generator_api.pyx because it changed.
+      Compiling cupy/cuda/thrust.pyx because it changed.
+      Compiling cupy/_core/dlpack.pyx because it changed.
+      [ 1/57] Cythonizing cupy/_core/_accelerator.pyx
+      [ 2/57] Cythonizing cupy/_core/_carray.pyx
+      [ 3/57] Cythonizing cupy/_core/_cub_reduction.pyx
+      warning: cupy_backends/cuda/api/runtime.pxd:107:4: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:370:8: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:586:0: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:702:4: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      
+      ###############################################################################
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:841:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      ###############################################################################
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+      cpdef int deviceAttributeComputeCapabilityMajor
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:842:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+      cpdef int deviceAttributeComputeCapabilityMajor
+      cpdef int deviceAttributeComputeCapabilityMinor
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:843:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      Traceback (most recent call last):
+        File "<string>", line 36, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/setup.py", line 169, in <module>
+          cmdclass={'build_ext': build_ext},
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/setuptools/__init__.py", line 153, in setup
+          return distutils.core.setup(**attrs)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/core.py", line 148, in setup
+          dist.run_commands()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 966, in run_commands
+          self.run_command(cmd)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/wheel/bdist_wheel.py", line 325, in run
+          self.run_command("build")
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+          self.distribution.run_command(command)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/command/build.py", line 135, in run
+          self.run_command(cmd_name)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+          self.distribution.run_command(command)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/cupy_setup_build.py", line 1184, in run
+          cythonize(ext_modules, cupy_setup_options)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/cupy_setup_build.py", line 901, in cythonize
+          compiler_directives=directives, **cythonize_options)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/.eggs/Cython-3.0.12-py3.7-linux-x86_64.egg/Cython/Build/Dependencies.py", line 1154, in cythonize
+          cythonize_one(*args)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/.eggs/Cython-3.0.12-py3.7-linux-x86_64.egg/Cython/Build/Dependencies.py", line 1321, in cythonize_one
+          raise CompileError(None, pyx_file)
+      Cython.Compiler.Errors.CompileError: cupy/_core/_cub_reduction.pyx
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for cupy
+  Running setup.py clean for cupy
+Failed to build cupy
+Installing collected packages: typing-extensions, fastrlock, dataclasses, Pillow, numpy, future, torch, cupy
+  Running setup.py install for cupy: started
+  Running setup.py install for cupy: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Running setup.py install for cupy did not run successfully.
+  │ exit code: 1
+  ╰─> [1019 lines of output]
+      Options: {'package_name': 'cupy', 'long_description': None, 'wheel_libs': [], 'wheel_includes': [], 'wheel_metadata': None, 'no_rpath': False, 'profile': False, 'linetrace': False, 'annotate': False, 'no_cuda': False, 'use_hip': False}
+      
+      -------- Configuring Module: cuda --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cusolver --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cudnn --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmp62_0fxvy/a.cpp:1:10: fatal error: cudnn.h: No such file or directory
+       #include <cudnn.h>
+                ^~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nccl --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpqz4d78x9/a.cpp:1:10: fatal error: nccl.h: No such file or directory
+       #include <nccl.h>
+                ^~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nvtx --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cutensor --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpgf2zd402/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
+       #include <cutensor.h>
+                ^~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cub --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: jitify --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      **************************************************
+      *** WARNING: Cannot determine Jitify version
+      Cannot determine Jitify version from git
+      **************************************************
+      
+      -------- Configuring Module: random --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: cusparselt --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpbxiybtta/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
+       #include <cusparseLt.h>
+                ^~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cugraph --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpl9gmw3s1/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
+       #include <cugraph/raft/error.hpp>
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: thrust --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      -------- Configuring Module: dlpack --------
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      
+      ************************************************************
+      * CuPy Configuration Summary                               *
+      ************************************************************
+      
+      Build Environment:
+        Include directories: ['/usr/local/cuda-11.4/include/cub', '/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include', '/usr/local/cuda-11.4/include']
+        Library directories: ['/usr/local/cuda-11.4/lib64']
+        nvcc command       : ['/usr/local/cuda-11.4/bin/nvcc']
+        hipcc command      : (not found)
+      
+      Environment Variables:
+        CFLAGS          : (none)
+        LDFLAGS         : (none)
+        LIBRARY_PATH    : (none)
+        CUDA_PATH       : (none)
+        NVTOOLSEXT_PATH : (none)
+        NVCC            : (none)
+        HIPCC           : (none)
+        ROCM_HOME       : (none)
+      
+      Modules:
+        cuda      : Yes (version 11040)
+        cusolver  : Yes
+        cudnn     : No
+          -> Include files not found: ['cudnn.h']
+          -> Check your CFLAGS environment variable.
+        nccl      : No
+          -> Include files not found: ['nccl.h']
+          -> Check your CFLAGS environment variable.
+        nvtx      : Yes
+        cutensor  : No
+          -> Include files not found: ['cutensor.h']
+          -> Check your CFLAGS environment variable.
+        cub       : Yes (version 101201)
+        jitify    : Yes (version <unknown>)
+        random    : Yes
+        cusparselt: No
+          -> Include files not found: ['cusparseLt.h']
+          -> Check your CFLAGS environment variable.
+        cugraph   : No
+          -> Include files not found: ['cugraph/raft/error.hpp']
+          -> Check your CFLAGS environment variable.
+        thrust    : Yes (version 101201)
+        dlpack    : Yes
+      
+      WARNING: Some modules could not be configured.
+      CuPy will be installed without these modules.
+      Please refer to the Installation Guide for details:
+      https://docs.cupy.dev/en/stable/install.html
+      
+      ************************************************************
+      
+      running install
+      running build
+      running build_py
+      creating build
+      creating build/lib.linux-x86_64-3.7
+      creating build/lib.linux-x86_64-3.7/cupy_backends
+      copying cupy_backends/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends
+      creating build/lib.linux-x86_64-3.7/cupy
+      copying cupy/_environment.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/cublas.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/cusparse.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/__init__.py -> build/lib.linux-x86_64-3.7/cupy
+      copying cupy/_version.py -> build/lib.linux-x86_64-3.7/cupy
+      creating build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/time.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_runtime.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/__init__.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_scatter.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_rsqrt.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_ufunc_config.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/lapack.py -> build/lib.linux-x86_64-3.7/cupyx
+      copying cupyx/_pinned_array.py -> build/lib.linux-x86_64-3.7/cupyx
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda
+      copying cupy_backends/cuda/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda/libs
+      copying cupy_backends/cuda/libs/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda/libs
+      creating build/lib.linux-x86_64-3.7/cupy_backends/cuda/api
+      copying cupy_backends/cuda/api/__init__.py -> build/lib.linux-x86_64-3.7/cupy_backends/cuda/api
+      creating build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/who.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      copying cupy/_misc/memory_ranges.py -> build/lib.linux-x86_64-3.7/cupy/_misc
+      creating build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/stride_tricks.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/__init__.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/_shape_base.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      copying cupy/lib/_routines_poly.py -> build/lib.linux-x86_64-3.7/cupy/lib
+      creating build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/comparison.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/truth.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/content.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/type_test.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      copying cupy/_logic/ops.py -> build/lib.linux-x86_64-3.7/cupy/_logic
+      creating build/lib.linux-x86_64-3.7/cupy/prof
+      copying cupy/prof/__init__.py -> build/lib.linux-x86_64-3.7/cupy/prof
+      copying cupy/prof/_time_range.py -> build/lib.linux-x86_64-3.7/cupy/prof
+      creating build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/__init__.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/polynomial.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      copying cupy/polynomial/polyutils.py -> build/lib.linux-x86_64-3.7/cupy/polynomial
+      creating build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/add_remove.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/split.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/tiling.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/basic.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/kind.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/join.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/dims.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/shape.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/rearrange.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      copying cupy/_manipulation/transpose.py -> build/lib.linux-x86_64-3.7/cupy/_manipulation
+      creating build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_sample.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_generator.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_distributions.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/__init__.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_permutations.py -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/_kernels.py -> build/lib.linux-x86_64-3.7/cupy/random
+      creating build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/indexing.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/iterate.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/generate.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      copying cupy/_indexing/insert.py -> build/lib.linux-x86_64-3.7/cupy/_indexing
+      creating build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/packing.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      copying cupy/_binary/elementwise.py -> build/lib.linux-x86_64-3.7/cupy/_binary
+      creating build/lib.linux-x86_64-3.7/cupy/sparse
+      copying cupy/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupy/sparse
+      creating build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/text.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/npz.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      copying cupy/_io/formatting.py -> build/lib.linux-x86_64-3.7/cupy/_io
+      creating build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/count.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/sort.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      copying cupy/_sorting/search.py -> build/lib.linux-x86_64-3.7/cupy/_sorting
+      creating build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_condition.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_attr.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_pytest_impl.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/__init__.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_bundle.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_parameterized.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_hypothesis.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_random.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_helper.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      copying cupy/testing/_array.py -> build/lib.linux-x86_64-3.7/cupy/testing
+      creating build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/nvtx.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/__init__.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/nccl.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cutensor.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cudnn.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/profiler.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/runtime.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/compiler.py -> build/lib.linux-x86_64-3.7/cupy/cuda
+      creating build/lib.linux-x86_64-3.7/cupy/_padding
+      copying cupy/_padding/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_padding
+      copying cupy/_padding/pad.py -> build/lib.linux-x86_64-3.7/cupy/_padding
+      creating build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/config.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/__init__.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      copying cupy/fft/_fft.py -> build/lib.linux-x86_64-3.7/cupy/fft
+      creating build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/vectorize.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      copying cupy/_functional/piecewise.py -> build/lib.linux-x86_64-3.7/cupy/_functional
+      creating build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/matrix.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/ranges.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/basic.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      copying cupy/_creation/from_data.py -> build/lib.linux-x86_64-3.7/cupy/_creation
+      creating build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_op.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_interface.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_gufuncs.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/syncdetect.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_fusion_optimization.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      copying cupy/_core/_ufuncs.py -> build/lib.linux-x86_64-3.7/cupy/_core
+      creating build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_einsum.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_einsum_opt.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_eigenvalue.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_util.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_product.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_norms.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      copying cupy/linalg/_decomposition.py -> build/lib.linux-x86_64-3.7/cupy/linalg
+      creating build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/correlation.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/meanvar.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/histogram.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      copying cupy/_statistics/order.py -> build/lib.linux-x86_64-3.7/cupy/_statistics
+      creating build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/arithmetic.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/rational.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/hyperbolic.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/trigonometric.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/__init__.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/sumprod.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/window.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/explog.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/rounding.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/misc.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/ufunc.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/floating.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      copying cupy/_math/special.py -> build/lib.linux-x86_64-3.7/cupy/_math
+      creating build/lib.linux-x86_64-3.7/cupy/sparse/linalg
+      copying cupy/sparse/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupy/sparse/linalg
+      creating build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/__init__.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/line_profile.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      copying cupy/cuda/memory_hooks/debug_print.py -> build/lib.linux-x86_64-3.7/cupy/cuda/memory_hooks
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy
+      copying cupyx/scipy/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy
+      creating build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/fallback.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      copying cupyx/fallback_mode/notification.py -> build/lib.linux-x86_64-3.7/cupyx/fallback_mode
+      creating build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_types.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_typerules.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_compile.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_codeblock.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      copying cupyx/jit/_interface.py -> build/lib.linux-x86_64-3.7/cupyx/jit
+      creating build/lib.linux-x86_64-3.7/cupyx/optimizing
+      copying cupyx/optimizing/_optimize.py -> build/lib.linux-x86_64-3.7/cupyx/optimizing
+      copying cupyx/optimizing/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/optimizing
+      creating build/lib.linux-x86_64-3.7/cupyx/tools
+      copying cupyx/tools/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/tools
+      copying cupyx/tools/install_library.py -> build/lib.linux-x86_64-3.7/cupyx/tools
+      creating build/lib.linux-x86_64-3.7/cupyx/linalg
+      copying cupyx/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/linalg
+      copying cupyx/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_gammaln.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_statistics.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_polygamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_erf.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_bessel.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_digamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_gamma.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_convex_analysis.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      copying cupyx/scipy/special/_zeta.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/special
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      copying cupyx/scipy/fftpack/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      copying cupyx/scipy/fftpack/_fft.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fftpack
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/data.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/sputils.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/csr.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/csc.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/extract.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/_util.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/_index.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/dia.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/coo.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/compressed.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/construct.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      copying cupyx/scipy/sparse/base.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/bsplines.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/signaltools.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/_signaltools_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      copying cupyx/scipy/signal/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/signal
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_spline_prefilter_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/interpolation.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/morphology.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/filters.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_util.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_interp_kernels.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/measurements.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_spline_kernel_weights.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_filters_generic.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/fourier.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      copying cupyx/scipy/ndimage/_filters_core.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/ndimage
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/_fft.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      copying cupyx/scipy/fft/_helper.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/fft
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      copying cupyx/scipy/stats/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      copying cupyx/scipy/stats/distributions.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/stats
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/decomp_lu.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/special_matrices.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      copying cupyx/scipy/linalg/solve_triangular.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      copying cupyx/scipy/sparse/csgraph/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      copying cupyx/scipy/sparse/csgraph/_traversal.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/csgraph
+      creating build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_lobpcg.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_iterative.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_interface.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_norm.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      copying cupyx/scipy/sparse/linalg/_eigen.py -> build/lib.linux-x86_64-3.7/cupyx/scipy/sparse/linalg
+      creating build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupyx/linalg/sparse/__init__.py -> build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupyx/linalg/sparse/_solve.py -> build/lib.linux-x86_64-3.7/cupyx/linalg/sparse
+      copying cupy/cuda/cupy_thrust.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cub.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufftXt.cu -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufftXt.h -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cupy_cufft.h -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cufft.pxd -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/cuda/cufft.pyx -> build/lib.linux-x86_64-3.7/cupy/cuda
+      copying cupy/random/cupy_distributions.cu -> build/lib.linux-x86_64-3.7/cupy/random
+      copying cupy/random/cupy_distributions.cuh -> build/lib.linux-x86_64-3.7/cupy/random
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/dlpack/dlpack.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/dlpack/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/dlpack
+      copying cupy/_core/include/cupy/tuple.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_gmem_atomics.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_smem_atomics.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/histogram/histogram_cub.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/histogram
+      copying cupy/_core/include/cupy/cub/experimental/sparse_matrix.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/defunct/example_coo_spmv.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/defunct/test_device_seg_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental/defunct
+      copying cupy/_core/include/cupy/cub/experimental/histogram_compare.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/spmv_compare.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/experimental/spmv_script.sh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/experimental
+      copying cupy/_core/include/cupy/cub/common.mk -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      copying cupy/_core/include/cupy/cub/tune/tune_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      copying cupy/_core/include/cupy/cub/tune/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/tune
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/example_block_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      copying cupy/_core/include/cupy/cub/examples/block/reduce_by_key.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/block
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_partition_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_partition_flagged.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_sort_find_non_trivial_runs.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_flagged.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_unique.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      copying cupy/_core/include/cupy/cub/examples/device/example_device_select_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/examples/device
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/link_b.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_load_store.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/half.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_warp_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_iterator.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_radix_sort.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_select_unique.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_histogram.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_util.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/mersenne.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_allocator.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/link_a.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_histogram.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_run_length_encode.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_warp_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_grid_barrier.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_select_if.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_device_reduce_by_key.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_scan.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      copying cupy/_core/include/cupy/cub/test/test_block_reduce.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/test
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_even_share.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_queue.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_barrier.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      copying cupy/_core/include/cupy/cub/cub/grid/grid_mapping.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/grid
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/host
+      copying cupy/_core/include/cupy/cub/cub/host/mutex.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/host
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_reduce_by_key.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_radix_sort_upsweep.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/single_pass_scan_operators.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_radix_sort_downsweep.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_select_if.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_segment_fixup.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_rle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/agent/agent_spmv_orig.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/agent
+      copying cupy/_core/include/cupy/cub/cub/util_device.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_radix_rank.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_raking_commutative_only.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_warp_reductions.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans3.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_raking.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_reduce_raking.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans2.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_histogram_atomic.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_scan_warp_scans.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/specializations/block_histogram_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block/specializations
+      copying cupy/_core/include/cupy/cub/cub/block/block_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_exchange.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_raking_layout.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_adjacent_difference.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_shuffle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_discontinuity.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_load.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/block/block_store.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/block
+      copying cupy/_core/include/cupy/cub/cub/util_ptx.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_debug.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_arch.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_type.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_search.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_load.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_operators.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      copying cupy/_core/include/cupy/cub/cub/thread/thread_store.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/thread
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_scan_smem.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_scan_shfl.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_reduce_smem.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/specializations/warp_reduce_shfl.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp/specializations
+      copying cupy/_core/include/cupy/cub/cub/warp/warp_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      copying cupy/_core/include/cupy/cub/cub/warp/warp_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/warp
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_segmented_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_select_if.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_spmv_orig.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_rle.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_reduce_by_key.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/dispatch/dispatch_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device/dispatch
+      copying cupy/_core/include/cupy/cub/cub/device/device_select.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_histogram.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_segmented_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_run_length_encode.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_scan.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_radix_sort.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_partition.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_reduce.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/device/device_spmv.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/device
+      copying cupy/_core/include/cupy/cub/cub/cub.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_namespace.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/arg_index_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/tex_ref_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/counting_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/constant_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/tex_obj_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/cache_modified_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/transform_input_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/discard_output_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/iterator/cache_modified_output_iterator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub/iterator
+      copying cupy/_core/include/cupy/cub/cub/util_macro.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/cub/util_allocator.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub/cub
+      copying cupy/_core/include/cupy/cub/eclipse code style profile.xml -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/LICENSE.TXT -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/CHANGE_LOG.TXT -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/cub/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/cub
+      copying cupy/_core/include/cupy/atomics.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/carray.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      copying cupy/_core/include/cupy/_cuda/cuda-11.0/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      copying cupy/_core/include/cupy/_cuda/cuda-11.0/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.0
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      copying cupy/_core/include/cupy/_cuda/cuda-10.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      copying cupy/_core/include/cupy/_cuda/cuda-10.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.2
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      copying cupy/_core/include/cupy/_cuda/cuda-11.1/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      copying cupy/_core/include/cupy/_cuda/cuda-11.1/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.1
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      copying cupy/_core/include/cupy/_cuda/cuda-10.1/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      copying cupy/_core/include/cupy/_cuda/cuda-10.1/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.1
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      copying cupy/_core/include/cupy/_cuda/cuda-11.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      copying cupy/_core/include/cupy/_cuda/cuda-11.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-11.2
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      copying cupy/_core/include/cupy/_cuda/cuda-10.0/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      copying cupy/_core/include/cupy/_cuda/cuda-10.0/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-10.0
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/cuda-9.2/cuda_fp16.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/cuda-9.2/cuda_fp16.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda/cuda-9.2
+      copying cupy/_core/include/cupy/_cuda/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/_cuda
+      copying cupy/_core/include/cupy/math_constants.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/jitify.hpp -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/Makefile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/LICENSE -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/jitify_test.cu -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/Doxyfile -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      copying cupy/_core/include/cupy/jitify/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header3.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/class_arg_kernel.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header2.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/constant_header.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/jitify/example_headers/my_header1.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/jitify/example_headers
+      copying cupy/_core/include/cupy/cuComplex_bridge.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/complex.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/tuple/type_traits.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/tuple/tuple.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/tuple
+      copying cupy/_core/include/cupy/type_dispatcher.cuh -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      copying cupy/_core/include/cupy/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy
+      creating build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cpow.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ccosh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ccoshf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/catrigf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cexpf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ctanh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csqrtf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cproj.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/arithmetic.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csinh.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/clog.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csqrt.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/clogf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/csinhf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/complex_inl.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/catrig.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/math_private.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/cexp.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/ctanhf.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/README.md -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      copying cupy/_core/include/cupy/complex/complex.h -> build/lib.linux-x86_64-3.7/cupy/_core/include/cupy/complex
+      running build_ext
+      
+      -------- Configuring Module: cuda --------
+      creating /tmp/tmp326ujlrl/tmp
+      creating /tmp/tmp326ujlrl/tmp/tmp326ujlrl
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp326ujlrl/a.cpp -o /tmp/tmp326ujlrl/tmp/tmp326ujlrl/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp326ujlrl/tmp/tmp326ujlrl/a.o -o /tmp/tmp326ujlrl/liba.so
+      creating /tmp/tmpr1e3bq9c/tmp
+      creating /tmp/tmpr1e3bq9c/tmp/tmpr1e3bq9c
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmpr1e3bq9c/a.cpp -o /tmp/tmpr1e3bq9c/tmp/tmpr1e3bq9c/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpr1e3bq9c/tmp/tmpr1e3bq9c/a.o -L/usr/local/cuda-11.4/lib64 -lcublas -lcuda -lcudart -lcufft -lcurand -lcusparse -lnvrtc -o /tmp/tmpr1e3bq9c/liba.so
+      creating /tmp/tmpqtm7mdd4/tmp
+      creating /tmp/tmpqtm7mdd4/tmp/tmpqtm7mdd4
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpqtm7mdd4/a.cpp -o /tmp/tmpqtm7mdd4/tmp/tmpqtm7mdd4/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmpqtm7mdd4/tmp/tmpqtm7mdd4/a.o -o /tmp/tmpqtm7mdd4/a
+      
+      -------- Configuring Module: cusolver --------
+      creating /tmp/tmp6u5ejryd/tmp
+      creating /tmp/tmp6u5ejryd/tmp/tmp6u5ejryd
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp6u5ejryd/a.cpp -o /tmp/tmp6u5ejryd/tmp/tmp6u5ejryd/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp6u5ejryd/tmp/tmp6u5ejryd/a.o -o /tmp/tmp6u5ejryd/liba.so
+      creating /tmp/tmpwrvpg81z/tmp
+      creating /tmp/tmpwrvpg81z/tmp/tmpwrvpg81z
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmpwrvpg81z/a.cpp -o /tmp/tmpwrvpg81z/tmp/tmpwrvpg81z/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpwrvpg81z/tmp/tmpwrvpg81z/a.o -L/usr/local/cuda-11.4/lib64 -lcusolver -o /tmp/tmpwrvpg81z/liba.so
+      creating /tmp/tmph99qdipe/tmp
+      creating /tmp/tmph99qdipe/tmp/tmph99qdipe
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmph99qdipe/a.cpp -o /tmp/tmph99qdipe/tmp/tmph99qdipe/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmph99qdipe/tmp/tmph99qdipe/a.o -o /tmp/tmph99qdipe/a
+      
+      -------- Configuring Module: cudnn --------
+      creating /tmp/tmpgyg4q_bk/tmp
+      creating /tmp/tmpgyg4q_bk/tmp/tmpgyg4q_bk
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpgyg4q_bk/a.cpp -o /tmp/tmpgyg4q_bk/tmp/tmpgyg4q_bk/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpgyg4q_bk/a.cpp:1:10: fatal error: cudnn.h: No such file or directory
+       #include <cudnn.h>
+                ^~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nccl --------
+      creating /tmp/tmpdc2hl9ly/tmp
+      creating /tmp/tmpdc2hl9ly/tmp/tmpdc2hl9ly
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpdc2hl9ly/a.cpp -o /tmp/tmpdc2hl9ly/tmp/tmpdc2hl9ly/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpdc2hl9ly/a.cpp:1:10: fatal error: nccl.h: No such file or directory
+       #include <nccl.h>
+                ^~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: nvtx --------
+      creating /tmp/tmp85295qs_/tmp
+      creating /tmp/tmp85295qs_/tmp/tmp85295qs_
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp85295qs_/a.cpp -o /tmp/tmp85295qs_/tmp/tmp85295qs_/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp85295qs_/tmp/tmp85295qs_/a.o -o /tmp/tmp85295qs_/liba.so
+      creating /tmp/tmpdr9nvd3_/tmp
+      creating /tmp/tmpdr9nvd3_/tmp/tmpdr9nvd3_
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmpdr9nvd3_/a.cpp -o /tmp/tmpdr9nvd3_/tmp/tmpdr9nvd3_/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpdr9nvd3_/tmp/tmpdr9nvd3_/a.o -L/usr/local/cuda-11.4/lib64 -lnvToolsExt -o /tmp/tmpdr9nvd3_/liba.so
+      
+      -------- Configuring Module: cutensor --------
+      creating /tmp/tmpzyagb0nh/tmp
+      creating /tmp/tmpzyagb0nh/tmp/tmpzyagb0nh
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpzyagb0nh/a.cpp -o /tmp/tmpzyagb0nh/tmp/tmpzyagb0nh/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpzyagb0nh/a.cpp:1:10: fatal error: cutensor.h: No such file or directory
+       #include <cutensor.h>
+                ^~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cub --------
+      creating /tmp/tmpsag1w2z0/tmp
+      creating /tmp/tmpsag1w2z0/tmp/tmpsag1w2z0
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpsag1w2z0/a.cpp -o /tmp/tmpsag1w2z0/tmp/tmpsag1w2z0/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpsag1w2z0/tmp/tmpsag1w2z0/a.o -o /tmp/tmpsag1w2z0/liba.so
+      creating /tmp/tmp_eeg4qqb/tmp
+      creating /tmp/tmp_eeg4qqb/tmp/tmp_eeg4qqb
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -c /tmp/tmp_eeg4qqb/a.cpp -o /tmp/tmp_eeg4qqb/tmp/tmp_eeg4qqb/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp_eeg4qqb/tmp/tmp_eeg4qqb/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmp_eeg4qqb/liba.so
+      creating /tmp/tmp0dhl859z/tmp
+      creating /tmp/tmp0dhl859z/tmp/tmp0dhl859z
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp0dhl859z/a.cpp -o /tmp/tmp0dhl859z/tmp/tmp0dhl859z/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmp0dhl859z/tmp/tmp0dhl859z/a.o -o /tmp/tmp0dhl859z/a
+      
+      -------- Configuring Module: jitify --------
+      creating /tmp/tmp3tk_loz5/tmp
+      creating /tmp/tmp3tk_loz5/tmp/tmp3tk_loz5
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp3tk_loz5/a.cpp -o /tmp/tmp3tk_loz5/tmp/tmp3tk_loz5/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp3tk_loz5/tmp/tmp3tk_loz5/a.o -o /tmp/tmp3tk_loz5/liba.so
+      creating /tmp/tmpqpwllysj/tmp
+      creating /tmp/tmpqpwllysj/tmp/tmpqpwllysj
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -c /tmp/tmpqpwllysj/a.cpp -o /tmp/tmpqpwllysj/tmp/tmpqpwllysj/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpqpwllysj/tmp/tmpqpwllysj/a.o -L/usr/local/cuda-11.4/lib64 -lcuda -lcudart -lnvrtc -o /tmp/tmpqpwllysj/liba.so
+      **************************************************
+      *** WARNING: Cannot determine Jitify version
+      Cannot determine Jitify version from git
+      **************************************************
+      
+      -------- Configuring Module: random --------
+      creating /tmp/tmpxtg2jpve/tmp
+      creating /tmp/tmpxtg2jpve/tmp/tmpxtg2jpve
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpxtg2jpve/a.cpp -o /tmp/tmpxtg2jpve/tmp/tmpxtg2jpve/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpxtg2jpve/tmp/tmpxtg2jpve/a.o -o /tmp/tmpxtg2jpve/liba.so
+      creating /tmp/tmpf0ffcupo/tmp
+      creating /tmp/tmpf0ffcupo/tmp/tmpf0ffcupo
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmpf0ffcupo/a.cpp -o /tmp/tmpf0ffcupo/tmp/tmpf0ffcupo/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpf0ffcupo/tmp/tmpf0ffcupo/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -lcurand -o /tmp/tmpf0ffcupo/liba.so
+      
+      -------- Configuring Module: cusparselt --------
+      creating /tmp/tmpzw8hxtfa/tmp
+      creating /tmp/tmpzw8hxtfa/tmp/tmpzw8hxtfa
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpzw8hxtfa/a.cpp -o /tmp/tmpzw8hxtfa/tmp/tmpzw8hxtfa/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmpzw8hxtfa/a.cpp:1:10: fatal error: cusparseLt.h: No such file or directory
+       #include <cusparseLt.h>
+                ^~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: cugraph --------
+      creating /tmp/tmps8zqzluk/tmp
+      creating /tmp/tmps8zqzluk/tmp/tmps8zqzluk
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmps8zqzluk/a.cpp -o /tmp/tmps8zqzluk/tmp/tmps8zqzluk/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      /tmp/tmps8zqzluk/a.cpp:1:10: fatal error: cugraph/raft/error.hpp: No such file or directory
+       #include <cugraph/raft/error.hpp>
+                ^~~~~~~~~~~~~~~~~~~~~~~~
+      compilation terminated.
+      command 'gcc' failed with exit status 1
+      
+      -------- Configuring Module: thrust --------
+      creating /tmp/tmp3oz6ydle/tmp
+      creating /tmp/tmp3oz6ydle/tmp/tmp3oz6ydle
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp3oz6ydle/a.cpp -o /tmp/tmp3oz6ydle/tmp/tmp3oz6ydle/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp3oz6ydle/tmp/tmp3oz6ydle/a.o -o /tmp/tmp3oz6ydle/liba.so
+      creating /tmp/tmpgj7rkdek/tmp
+      creating /tmp/tmpgj7rkdek/tmp/tmpgj7rkdek
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmpgj7rkdek/a.cpp -o /tmp/tmpgj7rkdek/tmp/tmpgj7rkdek/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpgj7rkdek/tmp/tmpgj7rkdek/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmpgj7rkdek/liba.so
+      creating /tmp/tmp33gc0w97/tmp
+      creating /tmp/tmp33gc0w97/tmp/tmp33gc0w97
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp33gc0w97/a.cpp -o /tmp/tmp33gc0w97/tmp/tmp33gc0w97/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmp33gc0w97/tmp/tmp33gc0w97/a.o -o /tmp/tmp33gc0w97/a
+      
+      -------- Configuring Module: dlpack --------
+      creating /tmp/tmp791sal_0/tmp
+      creating /tmp/tmp791sal_0/tmp/tmp791sal_0
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmp791sal_0/a.cpp -o /tmp/tmp791sal_0/tmp/tmp791sal_0/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmp791sal_0/tmp/tmp791sal_0/a.o -o /tmp/tmp791sal_0/liba.so
+      creating /tmp/tmpvx1fbudf/tmp
+      creating /tmp/tmpvx1fbudf/tmp/tmpvx1fbudf
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -D_FORCE_INLINES=1 -DCUPY_CUB_VERSION_CODE=101201 -DCUPY_JITIFY_VERSION_CODE=-1 -c /tmp/tmpvx1fbudf/a.cpp -o /tmp/tmpvx1fbudf/tmp/tmpvx1fbudf/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -shared -B /home/lei/anaconda3/envs/py37-3/compiler_compat -L/home/lei/anaconda3/envs/py37-3/lib -Wl,-rpath=/home/lei/anaconda3/envs/py37-3/lib -Wl,--no-as-needed -Wl,--sysroot=/ /tmp/tmpvx1fbudf/tmp/tmpvx1fbudf/a.o -L/usr/local/cuda-11.4/lib64 -o /tmp/tmpvx1fbudf/liba.so
+      creating /tmp/tmpaxsczn10/tmp
+      creating /tmp/tmpaxsczn10/tmp/tmpaxsczn10
+      gcc -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/usr/local/cuda-11.4/include/cub -I/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include -I/usr/local/cuda-11.4/include -c /tmp/tmpaxsczn10/a.cpp -o /tmp/tmpaxsczn10/tmp/tmpaxsczn10/a.o
+      cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++
+      g++ -pthread -B /home/lei/anaconda3/envs/py37-3/compiler_compat -Wl,--sysroot=/ /tmp/tmpaxsczn10/tmp/tmpaxsczn10/a.o -L/usr/local/cuda-11.4/lib64 -lcudart -o /tmp/tmpaxsczn10/a
+      
+      ************************************************************
+      * CuPy Configuration Summary                               *
+      ************************************************************
+      
+      Build Environment:
+        Include directories: ['/usr/local/cuda-11.4/include/cub', '/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/install/../cupy/_core/include', '/usr/local/cuda-11.4/include']
+        Library directories: ['/usr/local/cuda-11.4/lib64']
+        nvcc command       : ['/usr/local/cuda-11.4/bin/nvcc']
+        hipcc command      : (not found)
+      
+      Environment Variables:
+        CFLAGS          : (none)
+        LDFLAGS         : (none)
+        LIBRARY_PATH    : (none)
+        CUDA_PATH       : (none)
+        NVTOOLSEXT_PATH : (none)
+        NVCC            : (none)
+        HIPCC           : (none)
+        ROCM_HOME       : (none)
+      
+      Modules:
+        cuda      : Yes (version 11040)
+        cusolver  : Yes
+        cudnn     : No
+          -> Include files not found: ['cudnn.h']
+          -> Check your CFLAGS environment variable.
+        nccl      : No
+          -> Include files not found: ['nccl.h']
+          -> Check your CFLAGS environment variable.
+        nvtx      : Yes
+        cutensor  : No
+          -> Include files not found: ['cutensor.h']
+          -> Check your CFLAGS environment variable.
+        cub       : Yes (version 101201)
+        jitify    : Yes (version <unknown>)
+        random    : Yes
+        cusparselt: No
+          -> Include files not found: ['cusparseLt.h']
+          -> Check your CFLAGS environment variable.
+        cugraph   : No
+          -> Include files not found: ['cugraph/raft/error.hpp']
+          -> Check your CFLAGS environment variable.
+        thrust    : Yes (version 101201)
+        dlpack    : Yes
+      
+      WARNING: Some modules could not be configured.
+      CuPy will be installed without these modules.
+      Please refer to the Installation Guide for details:
+      https://docs.cupy.dev/en/stable/install.html
+      
+      ************************************************************
+      
+      Compiling cupy_backends/cuda/api/driver.pyx because it changed.
+      Compiling cupy_backends/cuda/api/runtime.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cublas.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/curand.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cusparse.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/nvrtc.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/profiler.pyx because it changed.
+      Compiling cupy_backends/cuda/stream.pyx because it changed.
+      Compiling cupy/_core/_cub_reduction.pyx because it changed.
+      Compiling cupy/_core/_dtype.pyx because it changed.
+      Compiling cupy/_core/_fusion_kernel.pyx because it changed.
+      Compiling cupy/_core/_fusion_thread_local.pyx because it changed.
+      Compiling cupy/_core/_fusion_trace.pyx because it changed.
+      Compiling cupy/_core/_fusion_variable.pyx because it changed.
+      Compiling cupy/_core/_kernel.pyx because it changed.
+      Compiling cupy/_core/_memory_range.pyx because it changed.
+      Compiling cupy/_core/_optimize_config.pyx because it changed.
+      Compiling cupy/_core/_reduction.pyx because it changed.
+      Compiling cupy/_core/_routines_binary.pyx because it changed.
+      Compiling cupy/_core/_routines_indexing.pyx because it changed.
+      Compiling cupy/_core/_routines_linalg.pyx because it changed.
+      Compiling cupy/_core/_routines_logic.pyx because it changed.
+      Compiling cupy/_core/_routines_manipulation.pyx because it changed.
+      Compiling cupy/_core/_routines_math.pyx because it changed.
+      Compiling cupy/_core/_routines_sorting.pyx because it changed.
+      Compiling cupy/_core/_routines_statistics.pyx because it changed.
+      Compiling cupy/_core/_scalar.pyx because it changed.
+      Compiling cupy/_core/core.pyx because it changed.
+      Compiling cupy/_core/flags.pyx because it changed.
+      Compiling cupy/_core/internal.pyx because it changed.
+      Compiling cupy/_core/fusion.pyx because it changed.
+      Compiling cupy/_core/new_fusion.pyx because it changed.
+      Compiling cupy/_core/raw.pyx because it changed.
+      Compiling cupy/cuda/common.pyx because it changed.
+      Compiling cupy/cuda/cufft.pyx because it changed.
+      Compiling cupy/cuda/device.pyx because it changed.
+      Compiling cupy/cuda/memory.pyx because it changed.
+      Compiling cupy/cuda/memory_hook.pyx because it changed.
+      Compiling cupy/cuda/pinned_memory.pyx because it changed.
+      Compiling cupy/cuda/function.pyx because it changed.
+      Compiling cupy/cuda/stream.pyx because it changed.
+      Compiling cupy/cuda/texture.pyx because it changed.
+      Compiling cupy/fft/_cache.pyx because it changed.
+      Compiling cupy/fft/_callback.pyx because it changed.
+      Compiling cupy/lib/_polynomial.pyx because it changed.
+      Compiling cupy/_util.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/cusolver.pyx because it changed.
+      Compiling cupy/cusolver.pyx because it changed.
+      Compiling cupy_backends/cuda/libs/nvtx.pyx because it changed.
+      Compiling cupy/cuda/cub.pyx because it changed.
+      Compiling cupy/cuda/jitify.pyx because it changed.
+      Compiling cupy/random/_bit_generator.pyx because it changed.
+      Compiling cupy/random/_generator_api.pyx because it changed.
+      Compiling cupy/cuda/thrust.pyx because it changed.
+      Compiling cupy/_core/dlpack.pyx because it changed.
+      [ 1/55] Cythonizing cupy/_core/_cub_reduction.pyx
+      warning: cupy_backends/cuda/api/runtime.pxd:107:4: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:370:8: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:586:0: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      warning: cupy_backends/cuda/api/runtime.pxd:702:4: The 'IF' statement is deprecated and will be removed in a future Cython version. Consider using runtime conditions or C macros instead. See https://github.com/cython/cython/issues/4310
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      
+      ###############################################################################
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:841:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      ###############################################################################
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+      cpdef int deviceAttributeComputeCapabilityMajor
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:842:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      
+      Error compiling Cython file:
+      ------------------------------------------------------------
+      ...
+      # Const value
+      ###############################################################################
+      
+      cpdef bint _is_hip_environment
+      cpdef int deviceAttributeComputeCapabilityMajor
+      cpdef int deviceAttributeComputeCapabilityMinor
+            ^
+      ------------------------------------------------------------
+      
+      cupy_backends/cuda/api/runtime.pxd:843:6: Variables cannot be declared with 'cpdef'. Use 'cdef' instead.
+      Traceback (most recent call last):
+        File "<string>", line 36, in <module>
+        File "<pip-setuptools-caller>", line 34, in <module>
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/setup.py", line 169, in <module>
+          cmdclass={'build_ext': build_ext},
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/setuptools/__init__.py", line 153, in setup
+          return distutils.core.setup(**attrs)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/core.py", line 148, in setup
+          dist.run_commands()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 966, in run_commands
+          self.run_command(cmd)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/setuptools/command/install.py", line 61, in run
+          return orig.install.run(self)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/command/install.py", line 545, in run
+          self.run_command('build')
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+          self.distribution.run_command(command)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/command/build.py", line 135, in run
+          self.run_command(cmd_name)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/cmd.py", line 313, in run_command
+          self.distribution.run_command(command)
+        File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/distutils/dist.py", line 985, in run_command
+          cmd_obj.run()
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/cupy_setup_build.py", line 1184, in run
+          cythonize(ext_modules, cupy_setup_options)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/cupy_setup_build.py", line 901, in cythonize
+          compiler_directives=directives, **cythonize_options)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/.eggs/Cython-3.0.12-py3.7-linux-x86_64.egg/Cython/Build/Dependencies.py", line 1154, in cythonize
+          cythonize_one(*args)
+        File "/tmp/pip-install-ggil5uy8/cupy_aece6882c3fd47268486cac995a1e6e6/.eggs/Cython-3.0.12-py3.7-linux-x86_64.egg/Cython/Build/Dependencies.py", line 1321, in cythonize_one
+          raise CompileError(None, pyx_file)
+      Cython.Compiler.Errors.CompileError: cupy/_core/_cub_reduction.pyx
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: legacy-install-failure
+
+× Encountered error while trying to install package.
+╰─> cupy
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for output from the failure.

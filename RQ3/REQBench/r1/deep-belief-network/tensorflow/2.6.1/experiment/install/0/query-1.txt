@@ -3,8 +3,8 @@
             Resolve pip install conflict in requirements.txt while preserving library integrity.
 
             **Input Context**
-            - Current requirements.txt: absl-py==0.13.0
-bleach==2.1.0
+            - Current requirements.txt: absl-py==0.10.0
+bleach==1.5.0
 certifi==2021.5.30
 dataclasses==0.8
 html5lib==0.9999999
@@ -12,21 +12,25 @@ importlib-metadata==4.8.3
 Markdown==3.3.7
 numpy==1.19.5
 protobuf==3.19.6
-scikit-learn==0.24.2
-scipy==1.5.4
+scikit-learn==0.18.1
+scipy==0.18.1
 six==1.16.0
 tensorflow==2.6.1
 tensorflow-tensorboard==1.5.1
-typing_extensions==4.1.1
-Werkzeug==1.0.1
+typing_extensions==3.7.4.3
+Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): ['numpy (~=1.19.2)', 'absl-py (~=0.10)', 'astunparse (~=1.6.3)', 'clang (~=5.0)', 'flatbuffers (~=1.12.0)', 'google-pasta (~=0.2)', 'h5py (~=3.1.0)', 'keras-preprocessing (~=1.1.2)', 'opt-einsum (~=3.3.0)', 'protobuf (>=3.9.2)', 'six (~=1.15.0)', 'termcolor (~=1.1.0)', 'typing-extensions (~=3.7.4)', 'wheel (~=0.35)', 'wrapt (~=1.12.1)', 'gast (==0.4.0)', 'tensorboard (~=2.6)', 'tensorflow-estimator (<2.7)', 'keras (~=2.6)', 'grpcio (<2.0,>=1.37.0)']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested html5lib==0.9999999
-    bleach 2.1 depends on html5lib!=1.0b1, !=1.0b2, !=1.0b3, !=1.0b4, !=1.0b5, !=1.0b6, !=1.0b7, !=1.0b8 and >=0.99999999pre
+    The user requested six==1.16.0
+    absl-py 0.10.0 depends on six
+    bleach 1.5.0 depends on six
+    html5lib 0.9999999 depends on six
+    tensorflow 2.6.1 depends on six~=1.15.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

@@ -1,0 +1,322 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: absl-py==2.1.0
+audioread==3.0.1
+cffi==1.15.1
+cycler==0.11.0
+decorator==5.1.1
+grpcio==1.62.2
+importlib-metadata==6.7.0
+joblib==1.3.2
+kiwisolver==1.4.5
+librosa==0.7.2
+llvmlite==0.33.0
+Markdown==3.4.4
+MarkupSafe==2.1.5
+matplotlib==3.2.2
+numba==0.50.1
+numpy==1.19.1
+Pillow==9.3.0
+protobuf==3.20.0
+pycparser==2.21
+pyparsing==3.1.2
+python-dateutil==2.9.0.post0
+resampy==0.2.2
+scikit-learn==1.0.2
+scipy==1.5.4
+six==1.16.0
+SoundFile==0.10.3.post1
+tensorboard==2.0.0
+threadpoolctl==3.1.0
+torch==1.4.0
+typing_extensions==4.7.1
+Werkzeug==2.2.3
+zipp==3.15.0
+
+                        - Python version: 3.7
+                        - Project source code: import math
+import os
+import random
+import torch
+import torch.utils.data
+import numpy as np
+from librosa.util import normalize
+from scipy.io.wavfile import read
+from librosa.filters import mel as librosa_mel_fn
+
+MAX_WAV_VALUE = 32768.0
+
+
+def load_wav(full_path):
+    sampling_rate, data = read(full_path)
+    return data, sampling_rate
+
+
+def dynamic_range_compression(x, C=1, clip_val=1e-5):
+    return np.log(np.clip(x, a_min=clip_val, a_max=None) * C)
+
+
+def dynamic_range_decompression(x, C=1):
+    return np.exp(x) / C
+
+
+def dynamic_range_compression_torch(x, C=1, clip_val=1e-5):
+    return torch.log(torch.clamp(x, min=clip_val) * C)
+
+
+def dynamic_range_decompression_torch(x, C=1):
+    return torch.exp(x) / C
+
+
+def spectral_normalize_torch(magnitudes):
+    output = dynamic_range_compression_torch(magnitudes)
+    return output
+
+
+def spectral_de_normalize_torch(magnitudes):
+    output = dynamic_range_decompression_torch(magnitudes)
+    return output
+
+
+mel_basis = {}
+hann_window = {}
+
+
+def mel_spectrogram(y, n_fft, num_mels, sampling_rate, hop_size, win_size, fmin, fmax, center=False):
+    if torch.min(y) < -1.:
+        print('min value is ', torch.min(y))
+    if torch.max(y) > 1.:
+        print('max value is ', torch.max(y))
+
+    global mel_basis, hann_window
+    if fmax not in mel_basis:
+        mel = librosa_mel_fn(sampling_rate, n_fft, num_mels, fmin, fmax)
+        mel_basis[str(fmax)+'_'+str(y.device)] = torch.from_numpy(mel).float().to(y.device)
+        hann_window[str(y.device)] = torch.hann_window(win_size).to(y.device)
+
+    y = torch.nn.functional.pad(y.unsqueeze(1), (int((n_fft-hop_size)/2), int((n_fft-hop_size)/2)), mode='reflect')
+    y = y.squeeze(1)
+
+    spec = torch.stft(y, n_fft, hop_length=hop_size, win_length=win_size, window=hann_window[str(y.device)],
+                      center=center, pad_mode='reflect', normalized=False, onesided=True)
+
+    spec = torch.sqrt(spec.pow(2).sum(-1)+(1e-9))
+
+    spec = torch.matmul(mel_basis[str(fmax)+'_'+str(y.device)], spec)
+    spec = spectral_normalize_torch(spec)
+
+    return spec
+
+
+def get_dataset_filelist(a):
+    with open(a.input_training_file, 'r', encoding='utf-8') as fi:
+        training_files = [os.path.join(a.input_wavs_dir, x.split('|')[0] + '.wav')
+                          for x in fi.read().split('\n') if len(x) > 0]
+
+    with open(a.input_validation_file, 'r', encoding='utf-8') as fi:
+        validation_files = [os.path.join(a.input_wavs_dir, x.split('|')[0] + '.wav')
+                            for x in fi.read().split('\n') if len(x) > 0]
+    return training_files, validation_files
+
+
+class MelDataset(torch.utils.data.Dataset):
+    def __init__(self, training_files, segment_size, n_fft, num_mels,
+                 hop_size, win_size, sampling_rate,  fmin, fmax, split=True, shuffle=True, n_cache_reuse=1,
+                 device=None, fmax_loss=None, fine_tuning=False, base_mels_path=None):
+        self.audio_files = training_files
+        random.seed(1234)
+        if shuffle:
+            random.shuffle(self.audio_files)
+        self.segment_size = segment_size
+        self.sampling_rate = sampling_rate
+        self.split = split
+        self.n_fft = n_fft
+        self.num_mels = num_mels
+        self.hop_size = hop_size
+        self.win_size = win_size
+        self.fmin = fmin
+        self.fmax = fmax
+        self.fmax_loss = fmax_loss
+        self.cached_wav = None
+        self.n_cache_reuse = n_cache_reuse
+        self._cache_ref_count = 0
+        self.device = device
+        self.fine_tuning = fine_tuning
+        self.base_mels_path = base_mels_path
+
+    def __getitem__(self, index):
+        filename = self.audio_files[index]
+        if self._cache_ref_count == 0:
+            audio, sampling_rate = load_wav(filename)
+            audio = audio / MAX_WAV_VALUE
+            if not self.fine_tuning:
+                audio = normalize(audio) * 0.95
+            self.cached_wav = audio
+            if sampling_rate != self.sampling_rate:
+                raise ValueError("{} SR doesn't match target {} SR".format(
+                    sampling_rate, self.sampling_rate))
+            self._cache_ref_count = self.n_cache_reuse
+        else:
+            audio = self.cached_wav
+            self._cache_ref_count -= 1
+
+        audio = torch.FloatTensor(audio)
+        audio = audio.unsqueeze(0)
+
+        if not self.fine_tuning:
+            if self.split:
+                if audio.size(1) >= self.segment_size:
+                    max_audio_start = audio.size(1) - self.segment_size
+                    audio_start = random.randint(0, max_audio_start)
+                    audio = audio[:, audio_start:audio_start+self.segment_size]
+                else:
+                    audio = torch.nn.functional.pad(audio, (0, self.segment_size - audio.size(1)), 'constant')
+
+            mel = mel_spectrogram(audio, self.n_fft, self.num_mels,
+                                  self.sampling_rate, self.hop_size, self.win_size, self.fmin, self.fmax,
+                                  center=False)
+        else:
+            mel = np.load(
+                os.path.join(self.base_mels_path, os.path.splitext(os.path.split(filename)[-1])[0] + '.npy'))
+            mel = torch.from_numpy(mel)
+
+            if len(mel.shape) < 3:
+                mel = mel.unsqueeze(0)
+
+            if self.split:
+                frames_per_seg = math.ceil(self.segment_size / self.hop_size)
+
+                if audio.size(1) >= self.segment_size:
+                    mel_start = random.randint(0, mel.size(2) - frames_per_seg - 1)
+                    mel = mel[:, :, mel_start:mel_start + frames_per_seg]
+                    audio = audio[:, mel_start * self.hop_size:(mel_start + frames_per_seg) * self.hop_size]
+                else:
+                    mel = torch.nn.functional.pad(mel, (0, frames_per_seg - mel.size(2)), 'constant')
+                    audio = torch.nn.functional.pad(audio, (0, self.segment_size - audio.size(1)), 'constant')
+
+        mel_loss = mel_spectrogram(audio, self.n_fft, self.num_mels,
+                                   self.sampling_rate, self.hop_size, self.win_size, self.fmin, self.fmax_loss,
+                                   center=False)
+
+        return (mel.squeeze(), audio.squeeze(0), filename, mel_loss.squeeze())
+
+    def __len__(self):
+        return len(self.audio_files)
+
+                        - library source code: #!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+# CREATED:2015-02-15 10:06:03 by Brian McFee <brian.mcfee@nyu.edu>
+'''Helpful tools for deprecation'''
+
+import warnings
+from decorator import decorator
+import six
+from numba.decorators import jit as optional_jit
+
+__all__ = ['moved', 'deprecated', 'optional_jit']
+
+
+def moved(moved_from, version, version_removed):
+    '''This is a decorator which can be used to mark functions
+    as moved/renamed.
+
+    It will result in a warning being emitted when the function is used.
+    '''
+
+    def __wrapper(func, *args, **kwargs):
+        '''Warn the user, and then proceed.'''
+        code = six.get_function_code(func)
+        warnings.warn_explicit(
+            "{:s}\n\tThis function was moved to '{:s}.{:s}' in "
+            "librosa version {:s}."
+            "\n\tThis alias will be removed in librosa version "
+            "{:s}.".format(moved_from, func.__module__,
+                           func.__name__, version, version_removed),
+
+            category=DeprecationWarning,
+            filename=code.co_filename,
+            lineno=code.co_firstlineno + 1
+        )
+        return func(*args, **kwargs)
+
+    return decorator(__wrapper)
+
+
+def deprecated(version, version_removed):
+    '''This is a decorator which can be used to mark functions
+    as deprecated.
+
+    It will result in a warning being emitted when the function is used.'''
+
+    def __wrapper(func, *args, **kwargs):
+        '''Warn the user, and then proceed.'''
+        code = six.get_function_code(func)
+        warnings.warn_explicit(
+            "{:s}.{:s}\n\tDeprecated as of librosa version {:s}."
+            "\n\tIt will be removed in librosa version {:s}."
+            .format(func.__module__, func.__name__,
+                    version, version_removed),
+            category=DeprecationWarning,
+            filename=code.co_filename,
+            lineno=code.co_firstlineno + 1
+        )
+        return func(*args, **kwargs)
+
+    return decorator(__wrapper)
+
+                        - PyPI metadata (including version constraints): None
+                        - Crash traceback: Traceback (most recent call last):
+  File "train.py", line 16, in <module>
+    from meldataset import MelDataset, mel_spectrogram, get_dataset_filelist
+  File "/home/lei/compatibility_analysis/pytorch/1.4/hifi-gan/meldataset.py", line 7, in <module>
+    from librosa.util import normalize
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/__init__.py", line 12, in <module>
+    from . import core
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/core/__init__.py", line 125, in <module>
+    from .time_frequency import *  # pylint: disable=wildcard-import
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/core/time_frequency.py", line 11, in <module>
+    from ..util.exceptions import ParameterError
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/__init__.py", line 77, in <module>
+    from .utils import *  # pylint: disable=wildcard-import
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/utils.py", line 15, in <module>
+    from .decorators import deprecated
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py", line 9, in <module>
+    from numba.decorators import jit as optional_jit
+ModuleNotFoundError: No module named 'numba.decorators'
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in numpy v1.19.1 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in numpy
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain numpy==1.19.1
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

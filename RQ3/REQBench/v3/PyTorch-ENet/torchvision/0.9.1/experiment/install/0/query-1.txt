@@ -20,6 +20,7 @@ torch==1.1.0
 torchvision==0.9.1
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['numpy', 'torch (==1.8.1)', 'pillow (>=4.1.1)', "scipy ; extra == 'scipy'"]
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

@@ -4,4 +4,4 @@
   warnings.warn("The default behavior for interpolate/upsample with float scale_factor changed "
 Let's use 3 GPUs!
 Total_params: 291234
-epoch [0/1], loss:0.6657
+epoch [0/1], loss:0.6771

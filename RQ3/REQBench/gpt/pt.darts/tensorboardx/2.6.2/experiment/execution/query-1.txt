@@ -6,34 +6,392 @@
                         - Current environment: absl-py==2.1.0
 coloredlogs==15.0.1
 graphviz==0.8.4
-grpcio==1.42.0
+grpcio==1.62.2
 humanfriendly==10.0
 importlib-metadata==6.7.0
 Markdown==3.4.4
 MarkupSafe==2.1.5
 mpmath==1.2.1
-numpy==1.19.5
+numpy==1.21.6
 Pillow==6.2.2
-protobuf==3.20.0
+protobuf==3.20.3
 six==1.16.0
 sympy==1.10.1
 tensorboard==2.6.0
 tensorboardX==2.6.2
-torch==1.7.1
-torchvision==0.8.2
+torch==1.0.0
+torchvision==0.2.1
 typing_extensions==4.7.1
 Werkzeug==2.2.3
 zipp==3.15.0
 
                         - Python version: 3.7
+                        - Project source code: """ Training augmented model """
+import os
+import torch
+import torch.nn as nn
+import numpy as np
+from tensorboardX import SummaryWriter
+from config import AugmentConfig
+import utils
+from models.augment_cnn import AugmentCNN
+
+
+config = AugmentConfig()
+
+device = torch.device("cuda")
+
+# tensorboard
+writer = SummaryWriter(log_dir=os.path.join(config.path, "tb"))
+writer.add_text('config', config.as_markdown(), 0)
+
+logger = utils.get_logger(os.path.join(config.path, "{}.log".format(config.name)))
+config.print_params(logger.info)
+
+
+def main():
+    logger.info("Logger is set - training start")
+
+    # set default gpu device id
+    torch.cuda.set_device(config.gpus[2])
+
+    # set seed
+    np.random.seed(config.seed)
+    torch.manual_seed(config.seed)
+    torch.cuda.manual_seed_all(config.seed)
+
+#    torch.backends.cudnn.benchmark = True
+
+    # get data with meta info
+    input_size, input_channels, n_classes, train_data, valid_data = utils.get_data(
+        config.dataset, config.data_path, config.cutout_length, validation=True)
+
+    criterion = nn.CrossEntropyLoss().to(device)
+    use_aux = config.aux_weight > 0.
+    model = AugmentCNN(input_size, input_channels, config.init_channels, n_classes, config.layers,
+                       use_aux, config.genotype)
+    model = nn.DataParallel(model, device_ids=config.gpus).to(device)
+
+    # model size
+    mb_params = utils.param_size(model)
+    logger.info("Model size = {:.3f} MB".format(mb_params))
+
+    # weights optimizer
+    optimizer = torch.optim.SGD(model.parameters(), config.lr, momentum=config.momentum,
+                                weight_decay=config.weight_decay)
+
+    train_loader = torch.utils.data.DataLoader(train_data,
+                                               batch_size=config.batch_size,
+                                               shuffle=True,
+                                               num_workers=config.workers,
+                                               pin_memory=True)
+    valid_loader = torch.utils.data.DataLoader(valid_data,
+                                               batch_size=config.batch_size,
+                                               shuffle=False,
+                                               num_workers=config.workers,
+                                               pin_memory=True)
+    lr_scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, config.epochs)
+
+    best_top1 = 0.
+    # training loop
+    for epoch in range(config.epochs):
+        lr_scheduler.step()
+        drop_prob = config.drop_path_prob * epoch / config.epochs
+        model.module.drop_path_prob(drop_prob)
+
+        # training
+        train(train_loader, model, optimizer, criterion, epoch)
+
+        # validation
+        cur_step = (epoch+1) * len(train_loader)
+        top1 = validate(valid_loader, model, criterion, epoch, cur_step)
+
+        # save
+        if best_top1 < top1:
+            best_top1 = top1
+            is_best = True
+        else:
+            is_best = False
+        utils.save_checkpoint(model, config.path, is_best)
+
+        print("")
+
+    logger.info("Final best Prec@1 = {:.4%}".format(best_top1))
+
+
+def train(train_loader, model, optimizer, criterion, epoch):
+    top1 = utils.AverageMeter()
+    top5 = utils.AverageMeter()
+    losses = utils.AverageMeter()
+
+    cur_step = epoch*len(train_loader)
+    cur_lr = optimizer.param_groups[0]['lr']
+    logger.info("Epoch {} LR {}".format(epoch, cur_lr))
+    writer.add_scalar('train/lr', cur_lr, cur_step)
+
+    model.train()
+
+    for step, (X, y) in enumerate(train_loader):
+        X, y = X.to(device, non_blocking=True), y.to(device, non_blocking=True)
+        N = X.size(0)
+
+        optimizer.zero_grad()
+        logits, aux_logits = model(X)
+        loss = criterion(logits, y)
+        if config.aux_weight > 0.:
+            loss += config.aux_weight * criterion(aux_logits, y)
+        loss.backward()
+        # gradient clipping
+        nn.utils.clip_grad_norm_(model.parameters(), config.grad_clip)
+        optimizer.step()
+
+        prec1, prec5 = utils.accuracy(logits, y, topk=(1, 5))
+        losses.update(loss.item(), N)
+        top1.update(prec1.item(), N)
+        top5.update(prec5.item(), N)
+
+        if step % config.print_freq == 0 or step == len(train_loader)-1:
+            logger.info(
+                "Train: [{:3d}/{}] Step {:03d}/{:03d} Loss {losses.avg:.3f} "
+                "Prec@(1,5) ({top1.avg:.1%}, {top5.avg:.1%})".format(
+                    epoch+1, config.epochs, step, len(train_loader)-1, losses=losses,
+                    top1=top1, top5=top5))
+
+        writer.add_scalar('train/loss', loss.item(), cur_step)
+        writer.add_scalar('train/top1', prec1.item(), cur_step)
+        writer.add_scalar('train/top5', prec5.item(), cur_step)
+        cur_step += 1
+
+    logger.info("Train: [{:3d}/{}] Final Prec@1 {:.4%}".format(epoch+1, config.epochs, top1.avg))
+
+
+def validate(valid_loader, model, criterion, epoch, cur_step):
+    top1 = utils.AverageMeter()
+    top5 = utils.AverageMeter()
+    losses = utils.AverageMeter()
+
+    model.eval()
+
+    with torch.no_grad():
+        for step, (X, y) in enumerate(valid_loader):
+            X, y = X.to(device, non_blocking=True), y.to(device, non_blocking=True)
+            N = X.size(0)
+
+            logits, _ = model(X)
+            loss = criterion(logits, y)
+
+            prec1, prec5 = utils.accuracy(logits, y, topk=(1, 5))
+            losses.update(loss.item(), N)
+            top1.update(prec1.item(), N)
+            top5.update(prec5.item(), N)
+
+            if step % config.print_freq == 0 or step == len(valid_loader)-1:
+                logger.info(
+                    "Valid: [{:3d}/{}] Step {:03d}/{:03d} Loss {losses.avg:.3f} "
+                    "Prec@(1,5) ({top1.avg:.1%}, {top5.avg:.1%})".format(
+                        epoch+1, config.epochs, step, len(valid_loader)-1, losses=losses,
+                        top1=top1, top5=top5))
+
+    writer.add_scalar('val/loss', losses.avg, cur_step)
+    writer.add_scalar('val/top1', top1.avg, cur_step)
+    writer.add_scalar('val/top5', top5.avg, cur_step)
+
+    logger.info("Valid: [{:3d}/{}] Final Prec@1 {:.4%}".format(epoch+1, config.epochs, top1.avg))
+
+    return top1.avg
+
+
+if __name__ == "__main__":
+    main()
+
+                        - library source code: import torch
+from . import nccl
+from torch._utils import _accumulate, _take_tensors, _flatten_dense_tensors, \
+    _flatten_sparse_tensors, _unflatten_dense_tensors, \
+    _unflatten_sparse_tensors, _reorder_tensors_as
+
+
+def broadcast(tensor, devices):
+    """Broadcasts a tensor to a number of GPUs.
+
+    Arguments:
+        tensor (Tensor): tensor to broadcast.
+        devices (Iterable): an iterable of devices among which to broadcast.
+          Note that it should be like (src, dst1, dst2, ...), the first element
+          of which is the source device to broadcast from.
+
+    Returns:
+        A tuple containing copies of the ``tensor``, placed on devices
+        corresponding to indices from ``devices``.
+    """
+    return torch._C._broadcast(tensor, devices)
+
+
+def broadcast_coalesced(tensors, devices, buffer_size=10485760):
+    """Broadcasts a sequence tensors to the specified GPUs.
+    Small tensors are first coalesced into a buffer to reduce the number
+    of synchronizations.
+
+    Arguments:
+        tensors (sequence): tensors to broadcast.
+        devices (Iterable): an iterable of devices among which to broadcast.
+          Note that it should be like (src, dst1, dst2, ...), the first element
+          of which is the source device to broadcast from.
+        buffer_size (int): maximum size of the buffer used for coalescing
+
+    Returns:
+        A tuple containing copies of the ``tensor``, placed on devices
+        corresponding to indices from ``devices``.
+    """
+    return torch._C._broadcast_coalesced(tensors, devices, buffer_size)
+
+
+def reduce_add(inputs, destination=None):
+    """Sums tensors from multiple GPUs.
+
+    All inputs should have matching shapes.
+
+    Arguments:
+        inputs (Iterable[Tensor]): an iterable of tensors to add.
+        destination (int, optional): a device on which the output will be
+            placed (default: current device).
+
+    Returns:
+        A tensor containing an elementwise sum of all inputs, placed on the
+        ``destination`` device.
+    """
+    # TODO: try to find an input on another gpu, copy it,
+    # and accumulate into the copy
+    if destination is None:
+        destination = torch.cuda.current_device()
+    input_size = inputs[0].size()
+    nccl_root = None
+    for i, inp in enumerate(inputs):
+        assert inp.is_cuda, "reduce_add expects all inputs to be on GPUs"
+        if inp.get_device() == destination:
+            nccl_root = i
+        if inp.size() != input_size:
+            got = 'x'.join(str(x) for x in inp.size())
+            expected = 'x'.join(str(x) for x in input_size)
+            raise ValueError("input {} has invalid size: got {}, but expected "
+                             "{}".format(i, got, expected))
+    if nccl_root is None:
+        raise RuntimeError("reduce_add expects destination to be on the same GPU with one of the tensors")
+    result = inp.new(device=destination).resize_as_(inp).zero_()
+
+    if nccl.is_available(inputs) and inputs[0].get_device() == destination:
+        outputs = [result] + [t.new(t.size()) for t in inputs[1:]]
+        nccl.reduce(inputs, outputs, root=nccl_root)
+        return result
+    for inp in inputs:
+        input_correct_gpu = inp.cuda(result.get_device())
+        result.add_(input_correct_gpu)
+    return result
+
+
+def reduce_add_coalesced(inputs, destination=None, buffer_size=10485760):
+    """Sums tensors from multiple GPUs.
+
+    Small tensors are first coalesced into a buffer to reduce the number
+    of synchronizations.
+
+    Arguments:
+        inputs (Iterable[Iterable[Tensor]]): iterable of iterables that
+            contain tensors from a single device.
+        destination (int, optional): a device on which the output will be
+            placed (default: current device).
+        buffer_size (int): maximum size of the buffer used for coalescing
+
+    Returns:
+        A tuple of tensors containing an elementwise sum of each group of
+        inputs, placed on the ``destination`` device.
+    """
+    # TODO: When `len(inputs) == 1` and all inputs are on `destination`, just
+    #       return `inputs`.
+    dense_tensors = [[] for _ in inputs]  # shape (num_gpus, num_tensors)
+    output = []
+    ref_order = []
+    # process sparse ones first since they may have different sizes on different gpus
+    for tensor_at_gpus in zip(*inputs):
+        if all(t.is_sparse for t in tensor_at_gpus):
+            result = reduce_add(tensor_at_gpus, destination)
+            output.append(result)
+            ref_order.append(tensor_at_gpus[0])
+        else:
+            for coll, t in zip(dense_tensors, tensor_at_gpus):
+                coll.append(t.to_dense() if t.is_sparse else t)
+            ref_order.append(dense_tensors[0][-1])
+    itrs = [_take_tensors(tensors, buffer_size) for tensors in dense_tensors]
+    # now the dense ones, which have consistent sizes
+    for chunks in zip(*itrs):
+        flat_tensors = [_flatten_dense_tensors(chunk) for chunk in chunks]
+        flat_result = reduce_add(flat_tensors, destination)
+        for t in _unflatten_dense_tensors(flat_result, chunks[0]):
+            # The unflattened tensors do not share storage, and we don't expose
+            # base flat tensor anyways, so give them different version counters.
+            # See NOTE [ Version Counter in comm.*_coalesced ]
+            output.append(t.data)
+    return tuple(_reorder_tensors_as(output, ref_order))
+
+
+def scatter(tensor, devices, chunk_sizes=None, dim=0, streams=None):
+    """Scatters tensor across multiple GPUs.
+
+    Arguments:
+        tensor (Tensor): tensor to scatter.
+        devices (Iterable[int]): iterable of ints, specifying among which
+            devices the tensor should be scattered.
+        chunk_sizes (Iterable[int], optional): sizes of chunks to be placed on
+            each device. It should match ``devices`` in length and sum to
+            ``tensor.size(dim)``. If not specified, the tensor will be divided
+            into equal chunks.
+        dim (int, optional): A dimension along which to chunk the tensor.
+
+    Returns:
+        A tuple containing chunks of the ``tensor``, spread across given
+        ``devices``.
+    """
+    return tuple(torch._C._scatter(tensor, devices, chunk_sizes, dim, streams))
+
+
+def gather(tensors, dim=0, destination=None):
+    """Gathers tensors from multiple GPUs.
+
+    Tensor sizes in all dimension different than ``dim`` have to match.
+
+    Arguments:
+        tensors (Iterable[Tensor]): iterable of tensors to gather.
+        dim (int): a dimension along which the tensors will be concatenated.
+        destination (int, optional): output device (-1 means CPU, default:
+            current device)
+
+    Returns:
+        A tensor located on ``destination`` device, that is a result of
+        concatenating ``tensors`` along ``dim``.
+    """
+    return torch._C._gather(tensors, dim, destination)
+
+                        - PyPI metadata (including version constraints): ['numpy', 'packaging', 'protobuf']
                         - Crash traceback: Traceback (most recent call last):
   File "augment.py", line 177, in <module>
     main()
-  File "augment.py", line 39, in main
-    config.dataset, config.data_path, config.cutout_length, validation=True)
-  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
-    shape = trn_data.train_data.shape
-AttributeError: 'CIFAR10' object has no attribute 'train_data'
+  File "augment.py", line 75, in main
+    train(train_loader, model, optimizer, criterion, epoch)
+  File "augment.py", line 111, in train
+    logits, aux_logits = model(X)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 489, in __call__
+    result = self.forward(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 142, in forward
+    replicas = self.replicate(self.module, self.device_ids[:len(inputs)])
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 147, in replicate
+    return replicate(module, device_ids)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/parallel/replicate.py", line 13, in replicate
+    param_copies = Broadcast.apply(devices, *params)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/parallel/_functions.py", line 21, in forward
+    outputs = comm.broadcast_coalesced(inputs, ctx.target_gpus)
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/comm.py", line 40, in broadcast_coalesced
+    return torch._C._broadcast_coalesced(tensors, devices, buffer_size)
+RuntimeError: all tensors must be on devices[0]
 
 
                         **Analysis Protocol**

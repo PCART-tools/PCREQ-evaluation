@@ -1,0 +1,19 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.8.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/df/969e69a94cff1c8911acb0688117f95e1915becc1e01c73e7960a2c76ec8/torchvision-0.8.2-cp37-cp37m-manylinux1_x86_64.whl (12.8 MB)
+Collecting torch==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/5d/095ddddc91c8a769a68c791c019c5793f9c4456a688ddd235d6670924ecb/torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl (776.8 MB)
+Requirement already satisfied: pillow>=4.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.8.2) (6.0.0)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.8.2) (1.16.4)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Installing collected packages: typing-extensions, torch, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 1.1.0
+    Uninstalling torch-1.1.0:
+      Successfully uninstalled torch-1.1.0
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.3.0
+    Uninstalling torchvision-0.3.0:
+      Successfully uninstalled torchvision-0.3.0
+Successfully installed torch-1.7.1 torchvision-0.8.2 typing-extensions-4.7.1

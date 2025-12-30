@@ -5,8 +5,8 @@ Collecting cycler==0.11.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5c/f9/695d6bedebd747e5eb0fe8fad57b72fdf25411273a39791cde838d5a8f51/cycler-0.11.0-py3-none-any.whl (6.4 kB)
 Collecting humanfriendly==10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f0/0f/310fb31e39e2d734ccaa2c0fb981ee41f7bd5056ce9bc29b2248bd569169/humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
-Collecting imageio==2.19.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/65/e566d02fffd9dec9a111cc0fb5c74e9a29bc50029db57b88b82fbd900d3a/imageio-2.19.5-py3-none-any.whl (3.4 MB)
+Collecting imageio==2.31.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7b/88/59411e1a652ac3338d348901ffa5a73daf1f67fcb3f97d750237d4fa0821/imageio-2.31.2-py3-none-any.whl (313 kB)
 Collecting kiwisolver==1.4.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/77/e3046bf19720b22e3e0b7c12e28f6f2c0c18a213fb91a56cea640862270f/kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
 Collecting matplotlib==3.3.2
@@ -47,6 +47,6 @@ Collecting torchvision==0.8.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/df/969e69a94cff1c8911acb0688117f95e1915becc1e01c73e7960a2c76ec8/torchvision-0.8.2-cp37-cp37m-manylinux1_x86_64.whl (12.8 MB)
 Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
-Requirement already satisfied: certifi>=2020.06.20 in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from matplotlib==3.3.2->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/DeepMosaics-numpy-1.19.4.txt (line 6)) (2022.12.7)
+Requirement already satisfied: certifi>=2020.06.20 in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from matplotlib==3.3.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/DeepMosaics-numpy-1.19.4.txt (line 6)) (2022.12.7)
 Installing collected packages: mpmath, typing_extensions, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, cycler, torch, tifffile, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
-Successfully installed Pillow-9.5.0 PyWavelets-1.3.0 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.19.5 kiwisolver-1.4.5 matplotlib-3.3.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.19.4 opencv-python-4.5.1.48 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.17.2 scipy-1.7.3 six-1.16.0 sympy-1.10.1 tensorboardX-2.2 tifffile-2021.11.2 torch-1.7.1 torchvision-0.8.2 typing_extensions-4.7.1
+Successfully installed Pillow-9.5.0 PyWavelets-1.3.0 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.31.2 kiwisolver-1.4.5 matplotlib-3.3.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.19.4 opencv-python-4.5.1.48 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.17.2 scipy-1.7.3 six-1.16.0 sympy-1.10.1 tensorboardX-2.2 tifffile-2021.11.2 torch-1.7.1 torchvision-0.8.2 typing_extensions-4.7.1

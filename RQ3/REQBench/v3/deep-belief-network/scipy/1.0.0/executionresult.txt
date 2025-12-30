@@ -1,1 +1,10 @@
-2025-05-30 13:29:13.282918: F tensorflow/python/lib/core/bfloat16.cc:664] Check failed: PyBfloat16_Type.tp_base != nullptr 
+2025-12-13 20:06:31.657136: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+[START] Pre-training step:
+>> Epoch 1 finished 	RBM Reconstruction error 3.223902
+>> Epoch 1 finished 	RBM Reconstruction error 0.781945
+[END] Pre-training step
+[START] Fine tuning step:
+>> Epoch 0 finished 	ANN training loss 2.300924
+[END] Fine tuning step
+Done.
+Accuracy: 0.075000

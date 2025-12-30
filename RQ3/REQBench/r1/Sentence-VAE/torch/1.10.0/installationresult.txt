@@ -15,8 +15,8 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting nltk==3.6.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/aa/b8/09ac15436591cefc0adc882798d5cf629f13addae0495b20b682219e3afe/nltk-3.6.5-py3-none-any.whl (1.5 MB)
-Collecting numpy==1.18.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d6/c6/58e517e8b1fb192725cfa23c01c2e60e4e6699314ee9684a1c5f5c9b27e1/numpy-1.18.5-cp37-cp37m-manylinux1_x86_64.whl (20.1 MB)
+Collecting numpy==1.19.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting protobuf==3.20.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/26/cf27940ece6bb8890a67f741eb9da5359b72749f816edf210a28fe01a247/protobuf-3.20.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting regex==2024.4.16
@@ -25,8 +25,8 @@ Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tensorboardX==2.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/98/88/977b2f03fd0f8a2490fc7a1ad691d5e44cee5f1dc90c57078c5c168e2e70/tensorboardX-2.4.1-py2.py3-none-any.whl (124 kB)
+Collecting tensorboardX==2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/07/84/46421bd3e0e89a92682b1a38b40efc22dafb6d8e3d947e4ceefd4a5fabc7/tensorboardX-2.2-py2.py3-none-any.whl (120 kB)
 Collecting torch==1.10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c4/0f/e209948db1f0c2fae6e617f928d83952795bc5298979db2e880cd2d688a1/torch-1.10.0-cp37-cp37m-manylinux1_x86_64.whl (881.9 MB)
 Collecting tqdm==4.66.4
@@ -36,4 +36,4 @@ Collecting typing_extensions==4.7.1
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
 Installing collected packages: mpmath, zipp, typing_extensions, tqdm, sympy, six, regex, protobuf, numpy, joblib, humanfriendly, future, torch, tensorboardX, importlib-metadata, coloredlogs, click, nltk
-Successfully installed click-8.1.7 coloredlogs-15.0.1 future-1.0.0 humanfriendly-10.0 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 nltk-3.6.5 numpy-1.18.5 protobuf-3.20.0 regex-2024.4.16 six-1.16.0 sympy-1.10.1 tensorboardX-2.4.1 torch-1.10.0 tqdm-4.66.4 typing_extensions-4.7.1 zipp-3.15.0
+Successfully installed click-8.1.7 coloredlogs-15.0.1 future-1.0.0 humanfriendly-10.0 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 nltk-3.6.5 numpy-1.19.5 protobuf-3.20.0 regex-2024.4.16 six-1.16.0 sympy-1.10.1 tensorboardX-2.2 torch-1.10.0 tqdm-4.66.4 typing_extensions-4.7.1 zipp-3.15.0

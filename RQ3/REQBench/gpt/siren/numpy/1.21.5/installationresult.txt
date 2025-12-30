@@ -71,8 +71,8 @@ Collecting graphql-core==2.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6a/11/bc4a7eb440124271289d93e4d208bd07d94196038fabbe2a52435a07d3d3/graphql_core-2.2.1-py2.py3-none-any.whl (250 kB)
 Collecting grpcio==1.26.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/b3/0052e38c640d52b710e235b15821cc3c61d0065bf54e70a44550ef127349/grpcio-1.26.0-cp37-cp37m-manylinux2010_x86_64.whl (2.4 MB)
-Collecting h5py==3.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/74/9eae2bedd8201ab464308f42c601a12d79727a1c87f0c867fdefb212c6cf/h5py-3.1.0-cp37-cp37m-manylinux1_x86_64.whl (4.0 MB)
+Collecting h5py==2.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3f/c0/abde58b837e066bca19a3f7332d9d0493521d7dd6b48248451a9e3fe2214/h5py-2.10.0-cp37-cp37m-manylinux1_x86_64.whl (2.9 MB)
 Collecting humanfriendly==10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f0/0f/310fb31e39e2d734ccaa2c0fb981ee41f7bd5056ce9bc29b2248bd569169/humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
 Collecting idna==2.8
@@ -155,12 +155,12 @@ Collecting nbconvert==5.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/df/4505c0a7fea624cac461d0f41051f33456ae656753f65cee8c2f43121cb2/nbconvert-5.6.0-py2.py3-none-any.whl (453 kB)
 Collecting nbformat==4.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/27/9a654d2b6cc1eaa517d1c5a4405166c7f6d72f04f6e7eea41855fe808a46/nbformat-4.4.0-py2.py3-none-any.whl (155 kB)
-Collecting networkx==2.3
-  Using cached networkx-2.3-py2.py3-none-any.whl
+Collecting networkx==2.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e9/93/aa6613aa70d6eb4868e667068b5a11feca9645498fd31b954b6c4bb82fa5/networkx-2.6.3-py3-none-any.whl (1.9 MB)
 Collecting notebook==6.0.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f3/a1/1e07cedcb554408fefe4a7d32b2a041c86517167aec6ca8251c808ef6c1e/notebook-6.0.1-py3-none-any.whl (9.0 MB)
-Collecting numba==0.49.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/ed/456c92a28f04e6910c2ab5deac3a74038115d38f074617bd9052bf318468/numba-0.49.0-cp37-cp37m-manylinux2014_x86_64.whl (3.6 MB)
+Collecting numba==0.47.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/d7/9f0a9e1b173fddc77ad6cb8943bc433a850c2a6d3fa5c02a086400ba0c8f/numba-0.47.0-cp37-cp37m-manylinux1_x86_64.whl (3.7 MB)
 Collecting numpy==1.21.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/50/46/292cff79f5b30151b027400efdb3f740ea03271b600751b6696cf550c10d/numpy-1.21.5-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
 Collecting nvidia-ml-py3==7.352.0
@@ -171,10 +171,10 @@ Collecting opencv-python==4.1.0.25
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/52/61b9619a7a95a8d809515f68f1441224a07ce1873fd3af5e662851014a55/opencv_python-4.1.0.25-cp37-cp37m-manylinux1_x86_64.whl (26.6 MB)
 Collecting opencv-python-headless==4.1.1.26
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/50/c2/18fdc40a4e696e55600448b56fc0f281274223c02dd320ccacc70ec683e3/opencv_python_headless-4.1.1.26-cp37-cp37m-manylinux1_x86_64.whl (22.1 MB)
-Collecting opt-einsum==3.1.0
-  Using cached opt_einsum-3.1.0-py3-none-any.whl
-Collecting pandas==1.3.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/99/f7/01cea7f6c963100f045876eb4aa1817069c5c9eca73d2dbfb5d31ff9a39f/pandas-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (10.8 MB)
+Collecting opt-einsum==3.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting pandas==1.3.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/0c/23764c4635dcb0a784a787498d56847b90ebf974e65f4ab4053a5d97b1a5/pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
 Collecting pandocfilters==1.4.2
   Using cached pandocfilters-1.4.2-py3-none-any.whl
 Collecting parso==0.5.1
@@ -197,8 +197,8 @@ Collecting promise==2.2.1
   Using cached promise-2.2.1-py3-none-any.whl
 Collecting prompt-toolkit==2.0.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f7/a7/9b1dd14ef45345f186ef69d175bdd2491c40ab1dfa4b2b3e4352df719ed7/prompt_toolkit-2.0.9-py3-none-any.whl (337 kB)
-Collecting protobuf==3.9.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/30/fd/60ce148d8e4205bdf6da4ffec31348fd33f710c20a882b44319d54fd51ae/protobuf-3.9.1-cp37-cp37m-manylinux1_x86_64.whl (1.2 MB)
+Collecting protobuf==3.19.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9c/c3/6768e798cc7e08301ec0a5ef59a30dc49f5f0df2d3950cd5585cecf246a8/protobuf-3.19.6-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
 Collecting psutil==5.6.6
   Using cached psutil-5.6.6-cp37-cp37m-linux_x86_64.whl
 Collecting ptyprocess==0.6.0
@@ -223,8 +223,8 @@ Collecting pytorch-ignite==0.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/35/55/41e8a995876fd2ade29bdba0c3efefa38e7d605cb353c70f3173c04928b5/pytorch_ignite-0.3.0-py2.py3-none-any.whl (103 kB)
 Collecting pytz==2019.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/87/76/46d697698a143e05f77bec5a526bf4e56a0be61d63425b68f4ba553b51f2/pytz-2019.2-py2.py3-none-any.whl (508 kB)
-Collecting PyWavelets==1.0.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/91/607449f27a3a068739498eddf921cf2686f0a71fa8b44a8efce0af9446a8/PyWavelets-1.0.3-cp37-cp37m-manylinux1_x86_64.whl (4.4 MB)
+Collecting PyWavelets==1.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/62/bd/592c7242fdd1218a96431512e77265c50812315ef72570ace85e1cfae298/PyWavelets-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (4.4 MB)
 Collecting PyYAML==5.1.2
   Using cached PyYAML-5.1.2-cp37-cp37m-linux_x86_64.whl
 Collecting pyzmq==18.1.0
@@ -241,14 +241,14 @@ Collecting rsa==4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl (38 kB)
 Collecting Rx==1.6.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/0f/5ef4ac78e2a538cc1b054eb86285fe0bf7a5dbaeaac2c584757c300515e2/Rx-1.6.1-py2.py3-none-any.whl (179 kB)
-Collecting scikit-image==0.15.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2e/21/ea56c8bb2e8112837dd71aebeb2ac67913e784911c0d7f493a593fa1a207/scikit_image-0.15.0-cp37-cp37m-manylinux1_x86_64.whl (26.3 MB)
-Collecting scikit-learn==0.24.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a8/eb/a48f25c967526b66d5f1fa7a984594f0bf0a5afafa94a8c4dbc317744620/scikit_learn-0.24.2-cp37-cp37m-manylinux2010_x86_64.whl (22.3 MB)
+Collecting scikit-image==0.16.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/48/454bf836d302465475e02bc0468b879302145b07a005174c409a5b5869c7/scikit_image-0.16.2-cp37-cp37m-manylinux1_x86_64.whl (26.5 MB)
+Collecting scikit-learn==1.0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/05/e561bc99a615b5c099c7a9355409e5e57c525a108f1c2e156abb005b90a6/scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
 Collecting scipy==1.7.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/58/4f/11f34cfc57ead25752a7992b069c36f5d18421958ebd6466ecd849aeaf86/scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
-Collecting seaborn==0.9.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a8/76/220ba4420459d9c4c9c9587c6ce607bf56c25b3d3d2de62056efe482dadc/seaborn-0.9.0-py3-none-any.whl (208 kB)
+Collecting seaborn==0.11.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/10/5b/0479d7d845b5ba410ca702ffcd7f2cd95a14a4dfff1fde2637802b258b9b/seaborn-0.11.2-py3-none-any.whl (292 kB)
 Collecting Send2Trash==1.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/46/c3dc27481d1cc57b9385aff41c474ceb7714f7935b1247194adae45db714/Send2Trash-1.5.0-py3-none-any.whl (12 kB)
 Collecting sentry-sdk==0.11.1
@@ -319,11 +319,9 @@ Collecting wrapt==1.11.2
   Using cached wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl
 Collecting zipp==0.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/3d/1ee25a26411ba0401b43c6376d2316a71addcc72ef8690b101b4ea56d76a/zipp-0.6.0-py2.py3-none-any.whl (4.1 kB)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.10.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/siren-numpy-1.21.5.txt (line 30)) (57.5.0)
-Collecting cached-property
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.10.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/siren-numpy-1.21.5.txt (line 30)) (57.5.0)
 Collecting threadpoolctl>=2.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.0.2->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/siren-numpy-1.21.5.txt (line 135)) (0.38.4)
-Installing collected packages: wrapt, webencodings, wcwidth, typed-ast, torchsummary, torchfile, testpath, termcolor, tensorflow-estimator, shortuuid, Shapely, Send2Trash, Rx, pytz, pyasn1, ptyprocess, prometheus-client, ply, pickleshare, pathtools, parso, pandocfilters, nvidia-ml-py3, mpmath, mistune, mccabe, llvmlite, json5, joblib, ipython-genutils, docopt, chardet, certifi, cached-property, bottle, backcall, argh, Werkzeug, urllib3, tqdm, tornado, torch, threadpoolctl, sympy, subprocess32, smmap2, six, siren-torch, rsa, pyzmq, PyYAML, pyparsing, Pygments, pycodestyle, pyasn1-modules, psutil, Pillow, pexpect, oauthlib, numpy, natsort, more-itertools, MarkupSafe, Markdown, lazy-object-proxy, kiwisolver, jedi, isort, idna, humanfriendly, gast, future, entrypoints, defusedxml, decorator, CProfileV, configparser, Click, cachetools, attrs, astor, zipp, websocket-client, watchdog, traitlets, torchvision, thrift, terminado, sentry-sdk, scipy, retrying, requests, PyWavelets, pytorch-ignite, python-dateutil, pyrsistent, protobuf, prompt-toolkit, promise, opt-einsum, opencv-python-headless, opencv-python, numba, networkx, lesscpy, Keras-Preprocessing, Jinja2, imageio, h5py, grpcio, google-pasta, google-auth, gitdb2, docker-pycreds, cycler, coloredlogs, blessings, bleach, autopep8, astroid, absl-py, visdom, tensorboardX, scikit-learn, requests-oauthlib, pylint, plotly, pandas, matplotlib, Keras-Applications, jupyter-core, jsonschema, ipython, inspect-it, importlib-metadata, ignite, graphql-core, gpustat, GitPython, seaborn, scikit-image, nbformat, jupyter-client, ipdb, gql, google-auth-oauthlib, git-pylint-commit-hook, fastparquet, wandb, tensorboard, nbconvert, ipykernel, imgaug, qtconsole, notebook, jupyter-console, widgetsnbextension, jupyterthemes, jupyterlab-server, jupyterlab, ipywidgets, jupyter
-Successfully installed CProfileV-1.0.7 Click-7.0 GitPython-3.0.2 Jinja2-2.10.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.1.1 MarkupSafe-1.1.1 Pillow-6.2.2 PyWavelets-1.0.3 PyYAML-5.1.2 Pygments-2.4.2 Rx-1.6.1 Send2Trash-1.5.0 Shapely-1.6.4.post2 Werkzeug-0.16.0 absl-py-0.9.0 argh-0.26.2 astor-0.8.1 astroid-2.3.1 attrs-19.1.0 autopep8-1.4.4 backcall-0.1.0 bleach-6.0.0 blessings-1.7 bottle-0.12.18 cached-property-1.5.2 cachetools-4.0.0 certifi-2019.6.16 chardet-3.0.4 coloredlogs-15.0.1 configparser-4.0.2 cycler-0.10.0 decorator-4.4.0 defusedxml-0.6.0 docker-pycreds-0.4.0 docopt-0.6.2 entrypoints-0.3 fastparquet-0.3.2 future-0.18.0 gast-0.2.2 git-pylint-commit-hook-2.5.1 gitdb2-2.0.5 google-auth-1.10.0 google-auth-oauthlib-0.4.1 google-pasta-0.1.8 gpustat-0.6.0 gql-0.1.0 graphql-core-2.2.1 grpcio-1.26.0 h5py-3.1.0 humanfriendly-10.0 idna-2.8 ignite-1.1.0 imageio-2.5.0 imgaug-0.3.0 importlib-metadata-0.23 inspect-it-0.3.2 ipdb-0.13.2 ipykernel-5.1.2 ipython-7.7.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 isort-4.3.21 jedi-0.15.1 joblib-0.13.2 json5-0.8.5 jsonschema-3.0.2 jupyter-1.0.0 jupyter-client-5.3.4 jupyter-console-6.0.0 jupyter-core-4.6.1 jupyterlab-1.0.9 jupyterlab-server-1.0.6 jupyterthemes-0.20.0 kiwisolver-1.1.0 lazy-object-proxy-1.4.2 lesscpy-0.13.0 llvmlite-0.31.0 matplotlib-3.0.3 mccabe-0.6.1 mistune-0.8.4 more-itertools-7.2.0 mpmath-1.2.1 natsort-6.0.0 nbconvert-5.6.0 nbformat-4.4.0 networkx-2.3 notebook-6.0.1 numba-0.49.0 numpy-1.21.5 nvidia-ml-py3-7.352.0 oauthlib-3.1.0 opencv-python-4.1.0.25 opencv-python-headless-4.1.1.26 opt-einsum-3.1.0 pandas-1.3.0 pandocfilters-1.4.2 parso-0.5.1 pathtools-0.1.2 pexpect-4.7.0 pickleshare-0.7.5 plotly-4.1.0 ply-3.11 prometheus-client-0.7.1 promise-2.2.1 prompt-toolkit-2.0.9 protobuf-3.9.1 psutil-5.6.6 ptyprocess-0.6.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycodestyle-2.5.0 pylint-2.4.2 pyparsing-2.4.2 pyrsistent-0.15.4 python-dateutil-2.8.0 pytorch-ignite-0.3.0 pytz-2019.2 pyzmq-18.1.0 qtconsole-4.5.4 requests-2.22.0 requests-oauthlib-1.3.0 retrying-1.3.3 rsa-4.0 scikit-image-0.15.0 scikit-learn-0.24.2 scipy-1.7.3 seaborn-0.9.0 sentry-sdk-0.11.1 shortuuid-0.5.0 siren-torch-1.1 six-1.12.0 smmap2-2.0.5 subprocess32-3.5.4 sympy-1.10.1 tensorboard-2.0.2 tensorboardX-1.8 tensorflow-estimator-2.0.1 termcolor-1.1.0 terminado-0.8.2 testpath-0.4.2 threadpoolctl-3.1.0 thrift-0.11.0 torch-1.4.0 torchfile-0.1.0 torchsummary-1.5.1 torchvision-0.5.0 tornado-6.0.3 tqdm-4.33.0 traitlets-4.3.2 typed-ast-1.4.0 urllib3-1.25.3 visdom-0.1.8.8 wandb-0.8.19 watchdog-0.9.0 wcwidth-0.1.7 webencodings-0.5.1 websocket-client-0.56.0 widgetsnbextension-3.5.1 wrapt-1.11.2 zipp-0.6.0
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.0.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/siren-numpy-1.21.5.txt (line 135)) (0.38.4)
+Installing collected packages: wrapt, webencodings, wcwidth, typed-ast, torchsummary, torchfile, testpath, termcolor, tensorflow-estimator, shortuuid, Shapely, Send2Trash, Rx, pytz, pyasn1, ptyprocess, prometheus-client, ply, pickleshare, pathtools, parso, pandocfilters, nvidia-ml-py3, mpmath, mistune, mccabe, llvmlite, json5, joblib, ipython-genutils, docopt, chardet, certifi, bottle, backcall, argh, Werkzeug, urllib3, tqdm, tornado, torch, threadpoolctl, sympy, subprocess32, smmap2, six, siren-torch, rsa, pyzmq, PyYAML, pyparsing, Pygments, pycodestyle, pyasn1-modules, psutil, protobuf, Pillow, pexpect, oauthlib, numpy, networkx, natsort, more-itertools, MarkupSafe, Markdown, lazy-object-proxy, kiwisolver, jedi, isort, idna, humanfriendly, gast, future, entrypoints, defusedxml, decorator, CProfileV, configparser, Click, cachetools, attrs, astor, zipp, websocket-client, watchdog, traitlets, torchvision, thrift, terminado, tensorboardX, sentry-sdk, scipy, retrying, requests, PyWavelets, pytorch-ignite, python-dateutil, pyrsistent, prompt-toolkit, promise, opt-einsum, opencv-python-headless, opencv-python, numba, lesscpy, Keras-Preprocessing, Jinja2, imageio, h5py, grpcio, google-pasta, google-auth, gitdb2, docker-pycreds, cycler, coloredlogs, blessings, bleach, autopep8, astroid, absl-py, visdom, scikit-learn, requests-oauthlib, pylint, plotly, pandas, matplotlib, Keras-Applications, jupyter-core, jsonschema, ipython, inspect-it, importlib-metadata, ignite, graphql-core, gpustat, GitPython, seaborn, scikit-image, nbformat, jupyter-client, ipdb, gql, google-auth-oauthlib, git-pylint-commit-hook, fastparquet, wandb, tensorboard, nbconvert, ipykernel, imgaug, qtconsole, notebook, jupyter-console, widgetsnbextension, jupyterthemes, jupyterlab-server, jupyterlab, ipywidgets, jupyter
+Successfully installed CProfileV-1.0.7 Click-7.0 GitPython-3.0.2 Jinja2-2.10.1 Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.1.1 MarkupSafe-1.1.1 Pillow-6.2.2 PyWavelets-1.1.1 PyYAML-5.1.2 Pygments-2.4.2 Rx-1.6.1 Send2Trash-1.5.0 Shapely-1.6.4.post2 Werkzeug-0.16.0 absl-py-0.9.0 argh-0.26.2 astor-0.8.1 astroid-2.3.1 attrs-19.1.0 autopep8-1.4.4 backcall-0.1.0 bleach-6.0.0 blessings-1.7 bottle-0.12.18 cachetools-4.0.0 certifi-2019.6.16 chardet-3.0.4 coloredlogs-15.0.1 configparser-4.0.2 cycler-0.10.0 decorator-4.4.0 defusedxml-0.6.0 docker-pycreds-0.4.0 docopt-0.6.2 entrypoints-0.3 fastparquet-0.3.2 future-0.18.0 gast-0.2.2 git-pylint-commit-hook-2.5.1 gitdb2-2.0.5 google-auth-1.10.0 google-auth-oauthlib-0.4.1 google-pasta-0.1.8 gpustat-0.6.0 gql-0.1.0 graphql-core-2.2.1 grpcio-1.26.0 h5py-2.10.0 humanfriendly-10.0 idna-2.8 ignite-1.1.0 imageio-2.5.0 imgaug-0.3.0 importlib-metadata-0.23 inspect-it-0.3.2 ipdb-0.13.2 ipykernel-5.1.2 ipython-7.7.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 isort-4.3.21 jedi-0.15.1 joblib-0.13.2 json5-0.8.5 jsonschema-3.0.2 jupyter-1.0.0 jupyter-client-5.3.4 jupyter-console-6.0.0 jupyter-core-4.6.1 jupyterlab-1.0.9 jupyterlab-server-1.0.6 jupyterthemes-0.20.0 kiwisolver-1.1.0 lazy-object-proxy-1.4.2 lesscpy-0.13.0 llvmlite-0.31.0 matplotlib-3.0.3 mccabe-0.6.1 mistune-0.8.4 more-itertools-7.2.0 mpmath-1.2.1 natsort-6.0.0 nbconvert-5.6.0 nbformat-4.4.0 networkx-2.6.3 notebook-6.0.1 numba-0.47.0 numpy-1.21.5 nvidia-ml-py3-7.352.0 oauthlib-3.1.0 opencv-python-4.1.0.25 opencv-python-headless-4.1.1.26 opt-einsum-3.3.0 pandas-1.3.5 pandocfilters-1.4.2 parso-0.5.1 pathtools-0.1.2 pexpect-4.7.0 pickleshare-0.7.5 plotly-4.1.0 ply-3.11 prometheus-client-0.7.1 promise-2.2.1 prompt-toolkit-2.0.9 protobuf-3.19.6 psutil-5.6.6 ptyprocess-0.6.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycodestyle-2.5.0 pylint-2.4.2 pyparsing-2.4.2 pyrsistent-0.15.4 python-dateutil-2.8.0 pytorch-ignite-0.3.0 pytz-2019.2 pyzmq-18.1.0 qtconsole-4.5.4 requests-2.22.0 requests-oauthlib-1.3.0 retrying-1.3.3 rsa-4.0 scikit-image-0.16.2 scikit-learn-1.0.2 scipy-1.7.3 seaborn-0.11.2 sentry-sdk-0.11.1 shortuuid-0.5.0 siren-torch-1.1 six-1.12.0 smmap2-2.0.5 subprocess32-3.5.4 sympy-1.10.1 tensorboard-2.0.2 tensorboardX-1.8 tensorflow-estimator-2.0.1 termcolor-1.1.0 terminado-0.8.2 testpath-0.4.2 threadpoolctl-3.1.0 thrift-0.11.0 torch-1.4.0 torchfile-0.1.0 torchsummary-1.5.1 torchvision-0.5.0 tornado-6.0.3 tqdm-4.33.0 traitlets-4.3.2 typed-ast-1.4.0 urllib3-1.25.3 visdom-0.1.8.8 wandb-0.8.19 watchdog-0.9.0 wcwidth-0.1.7 webencodings-0.5.1 websocket-client-0.56.0 widgetsnbextension-3.5.1 wrapt-1.11.2 zipp-0.6.0

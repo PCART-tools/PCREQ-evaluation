@@ -17,6 +17,7 @@ torchvision==0.2.2
 tqdm==4.19.9
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): ['numpy (>=1.13.3)', 'scipy (>=0.19.1)', 'joblib (>=0.11)', 'threadpoolctl (>=2.0.0)', "numpy (>=1.13.3) ; extra == 'alldeps'", "scipy (>=0.19.1) ; extra == 'alldeps'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

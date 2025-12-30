@@ -17,7 +17,7 @@ scikit-image==0.15.0
 scipy==1.5.4
 six==1.16.0
 sympy==1.10.1
-tensorboardX==1.9
+tensorboardX==1.8
 terminaltables==3.1.0
 torch==1.7.0
 torchvision==0.8.1

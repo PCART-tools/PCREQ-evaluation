@@ -27,14 +27,14 @@ pyasn1==0.5.1
 pyasn1-modules==0.3.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
-pytorch-lightning==1.6.0
-PyYAML==5.4.1
+pytorch-lightning==0.9.0
+PyYAML==6.0.1
 requests==2.31.0
 requests-oauthlib==2.0.0
 rsa==4.9
 scipy==1.5.4
 six==1.16.0
-tensorboard==2.10.1
+tensorboard==2.11.2
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 torch==1.10.0
@@ -45,11 +45,12 @@ Werkzeug==2.2.3
 zipp==3.15.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested protobuf==3.20.3
-    tensorboard 2.10.1 depends on protobuf<3.20 and >=3.9.2
+    The user requested tensorboard==2.11.2
+    pytorch-lightning 0.9.0 depends on tensorboard==2.2.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

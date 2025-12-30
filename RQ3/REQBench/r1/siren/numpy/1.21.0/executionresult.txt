@@ -1,4 +1,4 @@
-Traceback (most recent call last):
-  File "scripts/train_inpainting_siren.py", line 9, in <module>
-    from siren import SIREN
-ModuleNotFoundError: No module named 'siren'
+  0%|          | 0/5 [00:00<?, ?it/s]Epoch: 0 | Loss 17829.5332:   0%|          | 0/5 [00:02<?, ?it/s]Epoch: 0 | Loss 17829.5332:  20%|██        | 1/5 [00:02<00:10,  2.64s/it]Epoch: 0 | Loss 18099.2695:  20%|██        | 1/5 [00:02<00:10,  2.64s/it]Epoch: 0 | Loss 18099.2695:  40%|████      | 2/5 [00:02<00:05,  1.92s/it]Epoch: 0 | Loss 17905.7285:  40%|████      | 2/5 [00:03<00:05,  1.92s/it]Epoch: 0 | Loss 17905.7285:  60%|██████    | 3/5 [00:03<00:02,  1.42s/it]Epoch: 0 | Loss 17896.4004:  60%|██████    | 3/5 [00:03<00:02,  1.42s/it]Epoch: 0 | Loss 17896.4004:  80%|████████  | 4/5 [00:03<00:01,  1.06s/it]Epoch: 0 | Loss 17835.2441:  80%|████████  | 4/5 [00:03<00:01,  1.06s/it]Epoch: 0 | Loss 17835.2441: 100%|██████████| 5/5 [00:03<00:00,  1.23it/s]
+Epoch: 0 | Avg. Loss 17913.2344
+Loss improved from inf to 17913.2344
+Total training steps :  4

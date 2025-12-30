@@ -33,7 +33,7 @@ scipy==1.5.4
 torch==1.7.1
 torchvision==0.8.2
 tqdm==4.64.1
-typing_extensions==4.4.0
+typing_extensions==4.0.1
 urllib3==1.26.12
 Werkzeug==2.2.2
 zipp==3.10.0
@@ -41,6 +41,7 @@ zope.event==4.5.0
 zope.interface==5.5.1
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

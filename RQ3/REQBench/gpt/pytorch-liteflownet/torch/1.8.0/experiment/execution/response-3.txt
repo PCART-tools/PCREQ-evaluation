@@ -1,6 +1,7 @@
-cupy==8.6.0
-fastrlock==0.5
-future==1.0.0
-numpy==1.19.5
-Pillow==8.1.2
+fastrlock==0.8
+future==0.18.2
+numpy==1.19.2
+Pillow==7.2.0
 torch==1.8.0
+typing-extensions==3.7.4.3
+cupy-cuda102==8.3.0

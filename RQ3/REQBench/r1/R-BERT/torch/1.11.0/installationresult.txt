@@ -29,20 +29,20 @@ Collecting requests==2.31.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
 Collecting sacremoses==0.0.53
   Using cached sacremoses-0.0.53-py3-none-any.whl
-Collecting sentencepiece==0.1.96
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ac/aa/1437691b0c7c83086ebb79ce2da16e00bef024f24fec2a5161c35476f499/sentencepiece-0.1.96-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.2 MB)
+Collecting sentencepiece==0.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9e/6c/fb0d3fb0ed59c978f50de93fdbfc0879934e9c5701224a66cc7d884a122c/sentencepiece-0.2.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
 Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tokenizers==0.12.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/84/aa/f0509ce47f22334654b3bbe9553525160df8ad7a02a37f6eab27def3c4c2/tokenizers-0.12.1-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.6 MB)
+Collecting tokenizers==0.10.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/23/2ddc317b2121117bf34dd00f5b0de194158f2a44ee2bf5e47c7166878a97/tokenizers-0.10.1-cp37-cp37m-manylinux2010_x86_64.whl (3.2 MB)
 Collecting torch==1.11.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/32/96a0955e5d6ed8a837eda5ca095dd2694c4617cfa70ca599660cd5ff7447/torch-1.11.0-cp37-cp37m-manylinux1_x86_64.whl (750.6 MB)
 Collecting tqdm==4.66.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/18/eb/fdb7eb9e48b7b02554e1664afd3bd3f117f6b6d6c5881438a0b055554f9b/tqdm-4.66.4-py3-none-any.whl (78 kB)
-Collecting transformers==4.18.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/e9/c2b4c823b3959d475a570c1bd2df4125478e2e37b96fb967a87933ae7134/transformers-4.18.0-py3-none-any.whl (4.0 MB)
+Collecting transformers==4.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c0/b7/826ae9cce874ea125623e3855f7cbd29d114933ec59b2c9376118caef802/transformers-4.10.0-py3-none-any.whl (2.8 MB)
 Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Collecting urllib3==2.0.7
@@ -50,12 +50,12 @@ Collecting urllib3==2.0.7
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
 Collecting pyyaml>=5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
-Collecting huggingface-hub<1.0,>=0.1.0
+Collecting huggingface-hub>=0.0.12
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
 Collecting fsspec
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/f0d369ede0ca54fdd520bdee5086dbaf0af81dac53a2ce847bd1ec6e0bf1/fsspec-2023.1.0-py3-none-any.whl (143 kB)
 Installing collected packages: tokenizers, sentencepiece, mpmath, zipp, urllib3, typing_extensions, tqdm, sympy, six, regex, pyyaml, packaging, numpy, joblib, idna, humanfriendly, future, fsspec, filelock, charset-normalizer, certifi, torch, requests, importlib-metadata, coloredlogs, huggingface-hub, click, sacremoses, transformers
-Successfully installed certifi-2025.4.26 charset-normalizer-3.3.2 click-8.1.7 coloredlogs-15.0.1 filelock-3.12.2 fsspec-2023.1.0 future-1.0.0 huggingface-hub-0.16.4 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 numpy-1.21.6 packaging-24.0 pyyaml-6.0.1 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 sentencepiece-0.1.96 six-1.16.0 sympy-1.10.1 tokenizers-0.12.1 torch-1.11.0 tqdm-4.66.4 transformers-4.18.0 typing_extensions-4.7.1 urllib3-2.0.7 zipp-3.15.0
+Successfully installed certifi-2025.11.12 charset-normalizer-3.3.2 click-8.1.7 coloredlogs-15.0.1 filelock-3.12.2 fsspec-2023.1.0 future-1.0.0 huggingface-hub-0.16.4 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 numpy-1.21.6 packaging-24.0 pyyaml-6.0.1 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 sentencepiece-0.2.0 six-1.16.0 sympy-1.10.1 tokenizers-0.10.1 torch-1.11.0 tqdm-4.66.4 transformers-4.10.0 typing_extensions-4.7.1 urllib3-2.0.7 zipp-3.15.0

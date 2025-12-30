@@ -1,4 +1,2 @@
-segment parameters: 12.4M
-Add Mosaic: ./imgs/ruoruo.jpg
-Clean temp...
-Finished!
+No module named 'numpy'
+Please press any key to exit.

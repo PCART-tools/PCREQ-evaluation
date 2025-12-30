@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting numpy==1.18.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b7/ce/d0b92f0283faa4da76ea82587ff9da70104e81f59ba14f76c87e4196254e/numpy-1.18.2-cp37-cp37m-manylinux1_x86_64.whl (20.2 MB)
+Installing collected packages: numpy
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.16.4
+    Uninstalling numpy-1.16.4:
+      Successfully uninstalled numpy-1.16.4
+Successfully installed numpy-1.18.2

@@ -1,4 +1,22 @@
-Traceback (most recent call last):
-  File "train.py", line 1, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+use gpu: 1 to train.
+begin loading training dataset to memory
+finish loading training dataset to memory
+begin loading test dataset to memory
+finish loading test dataset to memory
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:43: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+[10]	loss:	0.69158	time lapsed:	1.27 s
+[20]	loss:	0.66638	time lapsed:	0.99 s
+[30]	loss:	0.62297	time lapsed:	1.00 s
+[40]	loss:	0.61535	time lapsed:	1.00 s
+[50]	loss:	0.59881	time lapsed:	1.00 s
+[60]	loss:	0.58262	time lapsed:	1.00 s
+[70]	loss:	0.57255	time lapsed:	1.00 s
+[80]	loss:	0.55966	time lapsed:	1.00 s
+[90]	loss:	0.54869	time lapsed:	1.00 s
+[100]	loss:	0.54128	time lapsed:	1.00 s
+**********************************************************************
+[100]	Test set	correct:	67	error:	333	precision:	0.167500
+**********************************************************************
+######################################################################
+final accuracy:  0.008375

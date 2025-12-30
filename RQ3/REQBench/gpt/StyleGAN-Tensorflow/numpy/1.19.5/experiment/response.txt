@@ -10,12 +10,12 @@ importlib-metadata==4.8.3
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 Markdown==3.3.7
-mock==4.0.3
+mock==5.1.0
 numpy==1.19.5
 opencv-python==4.1.0.25
 Pillow==6.2.2
 protobuf==3.19.6
-scipy==1.5.2
+scipy==1.5.4
 six==1.16.0
 tensorboard==1.15.0
 tensorflow==1.15.0

@@ -5,18 +5,18 @@ begin loading test dataset to memory
 finish loading test dataset to memory
 /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:43: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
   warnings.warn(warning.format(ret))
-[10]	loss:	0.69079	time lapsed:	1.38 s
-[20]	loss:	0.65642	time lapsed:	1.04 s
-[30]	loss:	0.62990	time lapsed:	1.04 s
-[40]	loss:	0.60919	time lapsed:	1.04 s
-[50]	loss:	0.59498	time lapsed:	1.05 s
-[60]	loss:	0.57082	time lapsed:	1.04 s
-[70]	loss:	0.55026	time lapsed:	1.05 s
-[80]	loss:	0.55794	time lapsed:	1.05 s
-[90]	loss:	0.55473	time lapsed:	1.05 s
-[100]	loss:	0.54043	time lapsed:	1.05 s
+[10]	loss:	0.69221	time lapsed:	1.43 s
+[20]	loss:	0.66912	time lapsed:	1.04 s
+[30]	loss:	0.62953	time lapsed:	1.04 s
+[40]	loss:	0.61796	time lapsed:	1.04 s
+[50]	loss:	0.60094	time lapsed:	1.04 s
+[60]	loss:	0.59039	time lapsed:	1.04 s
+[70]	loss:	0.57907	time lapsed:	1.04 s
+[80]	loss:	0.56321	time lapsed:	1.04 s
+[90]	loss:	0.55435	time lapsed:	1.04 s
+[100]	loss:	0.56076	time lapsed:	1.04 s
 **********************************************************************
-[100]	Test set	correct:	48	error:	352	precision:	0.120000
+[100]	Test set	correct:	47	error:	353	precision:	0.117500
 **********************************************************************
 ######################################################################
-final accuracy:  0.006
+final accuracy:  0.005875

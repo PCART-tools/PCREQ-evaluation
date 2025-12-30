@@ -1,0 +1,16 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting matplotlib==3.2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b2/c2/71fcf957710f3ba1f09088b35776a799ba7dd95f7c2b195ec800933b276b/matplotlib-3.2.1-cp37-cp37m-manylinux1_x86_64.whl (12.4 MB)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.2.1) (0.10.0)
+Requirement already satisfied: numpy>=1.11 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.2.1) (1.17.2)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.2.1) (2.4.2)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.2.1) (1.1.0)
+Requirement already satisfied: python-dateutil>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.2.1) (2.8.0)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from cycler>=0.10->matplotlib==3.2.1) (1.12.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib==3.2.1) (59.5.0)
+Installing collected packages: matplotlib
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.1.1
+    Uninstalling matplotlib-3.1.1:
+      Successfully uninstalled matplotlib-3.1.1
+Successfully installed matplotlib-3.2.1

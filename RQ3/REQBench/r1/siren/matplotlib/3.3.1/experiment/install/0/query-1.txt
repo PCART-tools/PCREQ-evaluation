@@ -165,6 +165,7 @@ wrapt==1.11.2
 zipp==0.6.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['pillow>=6.2.0']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

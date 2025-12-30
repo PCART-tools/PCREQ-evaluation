@@ -1,28 +1,33 @@
+12/16 06:02:17 AM | 
+12/16 06:02:17 AM | Parameters:
+12/16 06:02:17 AM | AUX_WEIGHT=0.4
+12/16 06:02:17 AM | BATCH_SIZE=256
+12/16 06:02:17 AM | CUTOUT_LENGTH=16
+12/16 06:02:17 AM | DATA_PATH=./data/
+12/16 06:02:17 AM | DATASET=cifar10
+12/16 06:02:17 AM | DROP_PATH_PROB=0.2
+12/16 06:02:17 AM | EPOCHS=1
+12/16 06:02:17 AM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 06:02:17 AM | GPUS=[0, 1, 2]
+12/16 06:02:17 AM | GRAD_CLIP=5.0
+12/16 06:02:17 AM | INIT_CHANNELS=36
+12/16 06:02:17 AM | LAYERS=20
+12/16 06:02:17 AM | LR=0.025
+12/16 06:02:17 AM | MOMENTUM=0.9
+12/16 06:02:17 AM | NAME=cifar10
+12/16 06:02:17 AM | PATH=augments/cifar10
+12/16 06:02:17 AM | PRINT_FREQ=200
+12/16 06:02:17 AM | SEED=2
+12/16 06:02:17 AM | WEIGHT_DECAY=0.0003
+12/16 06:02:17 AM | WORKERS=4
+12/16 06:02:17 AM | 
+12/16 06:02:17 AM | Logger is set - training start
+Files already downloaded and verified
 Traceback (most recent call last):
-  File "augment.py", line 6, in <module>
-    from tensorboardX import SummaryWriter
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/__init__.py", line 5, in <module>
-    from .torchvis import TorchVis
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/torchvis.py", line 11, in <module>
-    from .writer import SummaryWriter
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/writer.py", line 15, in <module>
-    from .event_file_writer import EventFileWriter
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/event_file_writer.py", line 28, in <module>
-    from .proto import event_pb2
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/proto/event_pb2.py", line 16, in <module>
-    from tensorboardX.proto import summary_pb2 as tensorboardX_dot_proto_dot_summary__pb2
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/proto/summary_pb2.py", line 16, in <module>
-    from tensorboardX.proto import tensor_pb2 as tensorboardX_dot_proto_dot_tensor__pb2
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/proto/tensor_pb2.py", line 16, in <module>
-    from tensorboardX.proto import resource_handle_pb2 as tensorboardX_dot_proto_dot_resource__handle__pb2
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/tensorboardX/proto/resource_handle_pb2.py", line 42, in <module>
-    serialized_options=None, file=DESCRIPTOR),
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/google/protobuf/descriptor.py", line 560, in __new__
-    _message.Message._CheckCalledFromGeneratedFile()
-TypeError: Descriptors cannot not be created directly.
-If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
-If you cannot immediately regenerate your protos, some other possible workarounds are:
- 1. Downgrade the protobuf package to 3.20.x or lower.
- 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
-
-More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+  File "augment.py", line 177, in <module>
+    main()
+  File "augment.py", line 39, in main
+    config.dataset, config.data_path, config.cutout_length, validation=True)
+  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
+    shape = trn_data.train_data.shape
+AttributeError: 'CIFAR10' object has no attribute 'train_data'

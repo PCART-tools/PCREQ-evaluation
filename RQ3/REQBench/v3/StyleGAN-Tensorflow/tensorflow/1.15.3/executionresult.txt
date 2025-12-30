@@ -12,10 +12,10 @@ WARNING:tensorflow:From main.py:69: The name tf.Session is deprecated. Please us
 
 WARNING:tensorflow:From main.py:69: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
 
-2025-05-29 18:33:48.935135: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2025-05-29 18:33:48.971367: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
-2025-05-29 18:33:48.979152: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560954685bd0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2025-05-29 18:33:48.979215: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2025-12-13 12:43:46.275851: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2025-12-13 12:43:46.314122: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2025-12-13 12:43:46.323179: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55fe5203a0f0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-12-13 12:43:46.323244: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 WARNING:tensorflow:From /home/lei/compatibility_analysis/tensorflow/1.13/StyleGAN-Tensorflow/StyleGAN.py:298: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
 
 WARNING:tensorflow:From /home/lei/compatibility_analysis/tensorflow/1.13/StyleGAN-Tensorflow/StyleGAN.py:313: The name tf.assign is deprecated. Please use tf.compat.v1.assign instead.
@@ -67,7 +67,7 @@ WARNING:tensorflow:From /home/lei/compatibility_analysis/tensorflow/1.13/StyleGA
 
 WARNING:tensorflow:From /home/lei/compatibility_analysis/tensorflow/1.13/StyleGAN-Tensorflow/StyleGAN.py:400: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
 
-2025-05-29 18:33:55.874474: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.342512: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -82,7 +82,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   IteratorToStringHandle (IteratorToStringHandle) /device:GPU:0
   IteratorGetNext (IteratorGetNext) /device:GPU:0
 
-2025-05-29 18:33:55.874738: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.342824: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -102,7 +102,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator_1/WAvg/Assign (Assign) /device:GPU:0
   generator_2/WAvg/Assign (Assign) /device:GPU:0
 
-2025-05-29 18:33:55.875010: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.343094: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -144,7 +144,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_0/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_0/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.875248: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.343326: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -186,7 +186,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   Adam_1/mul_1 (Mul) /device:GPU:0
   Adam_1/Assign_1 (Assign) /device:GPU:0
 
-2025-05-29 18:33:55.875485: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.343567: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -228,7 +228,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_1/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_1/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.875703: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.343773: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -257,7 +257,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_1/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_1/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.875936: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.344006: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -299,7 +299,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_2/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_2/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.876164: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.344216: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -328,7 +328,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_2/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_2/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.876386: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.344446: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -370,7 +370,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_3/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_3/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.876598: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.344662: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -399,7 +399,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_3/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_3/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.876833: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.344915: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -441,7 +441,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_4/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_4/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.877040: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.345120: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -470,7 +470,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_4/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_4/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.877275: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.345354: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -512,7 +512,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_5/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_5/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.877483: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.345558: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -541,7 +541,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_5/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_5/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.877716: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.345801: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -583,7 +583,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_6/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_6/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.877922: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.346000: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -612,7 +612,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_6/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_6/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.878174: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.346235: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -654,7 +654,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_7/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_7/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.878391: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.346444: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -683,7 +683,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_mapping/FC_7/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_mapping/FC_7/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.878737: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.346762: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -719,7 +719,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/const_block/Const/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/const_block/Const/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.878982: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.346989: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -748,7 +748,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/const_block/Noise/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/const_block/Noise/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.879196: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.347186: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -777,7 +777,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/const_block/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/const_block/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.879457: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.347426: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -819,7 +819,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/const_block/StyleMod/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/const_block/StyleMod/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.879688: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.347647: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -855,7 +855,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/const_block/StyleMod/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/const_block/StyleMod/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.879926: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.347877: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -897,7 +897,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/Conv/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/Conv/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.880149: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.348092: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -926,7 +926,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/Conv/Noise/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/Conv/Noise/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.880367: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.348294: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -955,7 +955,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/Conv/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/Conv/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.880608: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.348551: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -997,7 +997,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/Conv/StyleMod/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/Conv/StyleMod/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.880834: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.348776: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1033,7 +1033,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/Conv/StyleMod/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/Conv/StyleMod/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.881067: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.349012: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1075,7 +1075,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/ToRGB/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/ToRGB/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.881284: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.349221: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1104,7 +1104,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/4x4/ToRGB/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/4x4/ToRGB/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.881527: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.349470: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1146,7 +1146,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv0_up/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv0_up/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.881757: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.349699: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1175,7 +1175,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv0_up/Noise/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv0_up/Noise/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.881969: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.349944: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1204,7 +1204,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv0_up/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv0_up/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.882247: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.350191: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1246,7 +1246,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv0_up/StyleMod/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv0_up/StyleMod/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.882482: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.350420: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1282,7 +1282,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv0_up/StyleMod/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv0_up/StyleMod/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.882730: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.350667: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1324,7 +1324,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv1/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv1/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.882962: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.350884: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1353,7 +1353,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv1/Noise/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv1/Noise/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.883179: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.351107: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1382,7 +1382,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv1/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv1/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.883425: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.351349: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1424,7 +1424,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv1/StyleMod/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv1/StyleMod/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.883687: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.351577: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1460,7 +1460,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/Conv1/StyleMod/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/Conv1/StyleMod/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.883937: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.351819: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1502,7 +1502,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/ToRGB/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/ToRGB/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.884158: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.352035: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1531,7 +1531,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   generator/g_synthesis/8x8/ToRGB/bias/Adam_1/read (Identity) /device:GPU:0
   Adam_1/update_generator/g_synthesis/8x8/ToRGB/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.884457: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.352298: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1573,7 +1573,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/FromRGB/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/FromRGB/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.884674: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.352506: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1602,7 +1602,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/FromRGB/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/FromRGB/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.884921: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.352735: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1644,7 +1644,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/Conv0/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/Conv0/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.885165: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.352941: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1673,7 +1673,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/Conv0/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/Conv0/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.885407: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.353174: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1715,7 +1715,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/Conv1_down/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/Conv1_down/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.885635: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.353405: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1744,7 +1744,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/8x8/Conv1_down/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/8x8/Conv1_down/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.885864: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.353643: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1786,7 +1786,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/FromRGB/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/FromRGB/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.886092: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.353880: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1815,7 +1815,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/FromRGB/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/FromRGB/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.886366: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.354148: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1857,7 +1857,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/Conv0/conv_0/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/Conv0/conv_0/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.886596: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.354384: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1899,7 +1899,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   Adam/mul_1 (Mul) /device:GPU:0
   Adam/Assign_1 (Assign) /device:GPU:0
 
-2025-05-29 18:33:55.886837: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.354637: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1941,7 +1941,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/Dense0/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/Dense0/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.887096: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.354848: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -1970,7 +1970,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/Dense0/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/Dense0/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.887351: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.355081: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -2007,7 +2007,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/Dense1/linear/weight/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/Dense1/linear/weight/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.887593: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.355300: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -2036,7 +2036,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   discriminator/4x4/Dense1/bias/Adam_1/read (Identity) /device:GPU:0
   Adam/update_discriminator/4x4/Dense1/bias/ApplyAdam (ApplyAdam) /device:GPU:0
 
-2025-05-29 18:33:55.888039: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.355755: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:
@@ -2051,7 +2051,7 @@ Colocation members, user-requested devices, and framework assigned devices, if a
   IteratorToStringHandle_1 (IteratorToStringHandle) /device:GPU:1
   IteratorGetNext_1 (IteratorGetNext) /device:GPU:1
 
-2025-05-29 18:33:55.888825: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
+2025-12-13 12:43:53.356551: W tensorflow/core/common_runtime/colocation_graph.cc:983] Failed to place the graph without changing the devices of some resources. Some of the operations (that had to be colocated with resource generating operations) are not supported on the resources' devices. Current candidate devices are [
   /job:localhost/replica:0/task:0/device:CPU:0].
 See below for details of this colocation group:
 Colocation Debug Info:

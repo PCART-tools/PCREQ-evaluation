@@ -1,0 +1,24 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-image==0.19.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/44/8f8c7f9c9de7fde70587a656d7df7d056e6f05192a74491f7bc074a724d0/scikit_image-0.19.1-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (13.3 MB)
+Requirement already satisfied: networkx>=2.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.19.1) (2.6.3)
+Collecting tifffile>=2019.7.26
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d8/38/85ae5ed77598ca90558c17a2f79ddaba33173b31cf8d8f545d34d9134f0d/tifffile-2021.11.2-py3-none-any.whl (178 kB)
+Collecting packaging>=20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: imageio>=2.4.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.19.1) (2.9.0)
+Requirement already satisfied: pillow!=7.1.0,!=7.1.1,!=8.3.0,>=6.1.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.19.1) (6.1.0)
+Collecting numpy>=1.17.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Requirement already satisfied: scipy>=1.4.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.19.1) (1.5.4)
+Requirement already satisfied: PyWavelets>=1.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.19.1) (1.1.1)
+Installing collected packages: packaging, numpy, tifffile, scikit-image
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.16.4
+    Uninstalling numpy-1.16.4:
+      Successfully uninstalled numpy-1.16.4
+  Attempting uninstall: scikit-image
+    Found existing installation: scikit-image 0.15.0
+    Uninstalling scikit-image-0.15.0:
+      Successfully uninstalled scikit-image-0.15.0
+Successfully installed numpy-1.21.6 packaging-24.0 scikit-image-0.19.1 tifffile-2021.11.2

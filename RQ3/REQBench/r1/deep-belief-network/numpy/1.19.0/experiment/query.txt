@@ -22,6 +22,7 @@ Werkzeug==2.0.3
 zipp==3.6.0
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): None
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

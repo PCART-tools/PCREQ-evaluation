@@ -23,7 +23,7 @@ pyasn1-modules==0.3.0
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 pytorch-lightning==1.5.10
-PyYAML==5.4.1
+PyYAML==6.0.1
 requests==2.31.0
 requests-oauthlib==2.0.0
 rsa==4.9
@@ -32,7 +32,7 @@ six==1.16.0
 tensorboard==2.11.2
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-torch==1.7.1
+torch==1.8.0
 tqdm==4.66.4
 typing_extensions==4.7.1
 urllib3==2.0.7

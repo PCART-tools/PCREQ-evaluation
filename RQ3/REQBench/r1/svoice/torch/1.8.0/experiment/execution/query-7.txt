@@ -3,8 +3,9 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: antlr4-python3-runtime==4.8
+                        - Current environment: numpy==1.19.5
 audioread==3.0.1
+antlr4-python3-runtime==4.8
 cffi==1.15.1
 coloredlogs==15.0.1
 colorlog==6.8.2
@@ -15,13 +16,12 @@ hydra-colorlog==1.0.0
 hydra-core==1.0.3
 importlib-resources==5.12.0
 joblib==1.3.2
-librosa==0.8.0
-llvmlite==0.39.0
+librosa==0.7.1
+llvmlite==0.31.0
 mpmath==1.2.1
-numba==0.56.4
-numpy==1.19.5
+numba==0.48.0
 omegaconf==2.1.2
-pesq==0.0.2
+pesq==0.0.4
 Pillow==9.5.0
 pycparser==2.21
 pystoi==0.3.3
@@ -33,21 +33,191 @@ six==1.16.0
 soundfile==0.12.1
 sympy==1.10.1
 threadpoolctl==3.1.0
-torch==1.8.0+cu111
-torchaudio==0.8.0+cu111
-torchvision==0.9.0+cu111
+torch==1.8.0
+torchaudio==0.8.0
+torchvision==0.9.0
 tqdm==4.51.0
 zipp==3.15.0
 
                         - Python version: 3.7
+                        - Project source code: 
+                        - library source code: # 2019-May
+# github.com/ludlows
+# Python Wrapper for PESQ Score (narrowband and wideband)
+
+import numpy as np
+from multiprocessing import Pool, Queue, Process, cpu_count
+from functools import partial
+from .cypesq import cypesq, cypesq_retvals, cypesq_error_message as pesq_error_message
+from .cypesq import PesqError, InvalidSampleRateError, OutOfMemoryError
+from .cypesq import BufferTooShortError, NoUtterancesError
+
+
+__all__ = ['pesq', 'pesq_batch', 'PesqError', 'InvalidSampleRateError', 'OutOfMemoryError', 'BufferTooShortError',
+           'NoUtterancesError']
+
+USAGE = """
+        Run model on reference(ref) and degraded(deg)
+        Sample rate (fs) - No default. Must select either 8000 or 16000.
+        Note there is narrow band (nb) mode only when sampling rate is 8000Hz.
+       """
+
+USAGE_BATCH = USAGE + """
+        The shapes of ref and deg should be identical if both are 2D numpy arrays.
+        Once the `ref` is 1D  and the `deg` is 2D, the broadcast operation is applied. 
+        """
+
+
+def _check_fs_mode(mode, fs, usage=USAGE):
+    if mode != 'wb' and mode != 'nb':
+        print(usage)
+        raise ValueError("mode should be either 'nb' or 'wb'")
+
+    if fs != 8000 and fs != 16000:
+        print(usage)
+        raise ValueError("fs (sampling frequency) should be either 8000 or 16000")
+
+    if fs == 8000 and mode == 'wb':
+        print(usage)
+        raise ValueError("no wide band mode if fs = 8000")
+
+
+def _pesq_inner(ref, deg, fs=16000, mode='wb', on_error=PesqError.RAISE_EXCEPTION):
+    """
+    Args:
+        ref: numpy 1D array, reference audio signal
+        deg: numpy 1D array, degraded audio signal
+        fs:  integer, sampling rate
+        mode: 'wb' (wide-band) or 'nb' (narrow-band)
+        on_error: PesqError.RAISE_EXCEPTION (default) or PesqError.RETURN_VALUES
+    Returns:
+        pesq_score: float, P.862.2 Prediction (MOS-LQO)
+    """
+    max_val = max(np.max(np.abs(ref / 1.0)), np.max(np.abs(deg / 1.0)))
+    if mode == 'wb':
+        mode_code = 1
+    else:
+        mode_code = 0
+    if on_error == PesqError.RETURN_VALUES:
+        return cypesq_retvals(
+            fs,
+            (ref / max_val).astype(np.float32),
+            (deg / max_val).astype(np.float32),
+            mode_code
+        )
+    return cypesq(
+        fs,
+        (ref / max_val).astype(np.float32),
+        (deg / max_val).astype(np.float32),
+        mode_code
+    )
+
+
+def _processor_coordinator(func, args_q, results_q):
+    while True:
+        index, arg = args_q.get()
+        if index is None:
+            break
+        try:
+            result = func(*arg)
+        except Exception as e:
+            result = e
+        results_q.put((index, result))
+
+
+def _processor_mapping(func, args, n_processor):
+    args_q = Queue(maxsize=1)
+    results_q = Queue()
+    processors = [Process(target=_processor_coordinator, args=(func, args_q, results_q)) for _ in range(n_processor)]
+    for p in processors:
+        p.daemon = True
+        p.start()
+    for i, arg in enumerate(args):
+        args_q.put((i, arg))
+    # send stop messages
+    for _ in range(n_processor):
+        args_q.put((None, None))
+    results = [results_q.get() for _ in range(len(args))]
+    [p.join() for p in processors]
+    return [v[1] for v in sorted(results)]
+
+
+def pesq(fs, ref, deg, mode='wb', on_error=PesqError.RAISE_EXCEPTION):
+    """
+    Args:
+        ref: numpy 1D array, reference audio signal
+        deg: numpy 1D array, degraded audio signal
+        fs:  integer, sampling rate
+        mode: 'wb' (wide-band) or 'nb' (narrow-band)
+        on_error: PesqError.RAISE_EXCEPTION (default) or PesqError.RETURN_VALUES
+    Returns:
+        pesq_score: float, P.862.2 Prediction (MOS-LQO)
+    """
+    _check_fs_mode(mode, fs, USAGE)
+    return _pesq_inner(ref, deg, fs, mode, on_error)
+
+
+def pesq_batch(fs, ref, deg, mode, n_processor=cpu_count(), on_error=PesqError.RAISE_EXCEPTION):
+    """
+    Running `pesq` using multiple processors
+    Args:
+        on_error:
+        ref: numpy 1D (n_sample,) or 2D array (n_file, n_sample), reference audio signal
+        deg: numpy 1D (n_sample,) or 2D array (n_file, n_sample), degraded audio signal
+        fs:  integer, sampling rate
+        mode: 'wb' (wide-band) or 'nb' (narrow-band)
+        n_processor: cpu_count() (default) or number of processors (chosen by the user) or 0 (without multiprocessing)
+        on_error: PesqError.RAISE_EXCEPTION (default) or PesqError.RETURN_VALUES
+    Returns:
+        pesq_score: list of pesq scores, P.862.2 Prediction (MOS-LQO)
+    """
+    _check_fs_mode(mode, fs, USAGE_BATCH)
+    # check dimension
+    if len(ref.shape) == 1:
+        if len(deg.shape) == 1 and ref.shape == deg.shape:
+            return [_pesq_inner(ref, deg, fs, mode, PesqError.RETURN_VALUES)]
+        elif len(deg.shape) == 2 and ref.shape[-1] == deg.shape[-1]:
+            if n_processor <= 0:
+                pesq_score = [np.nan for i in range(deg.shape[0])]
+                for i in range(deg.shape[0]):
+                    pesq_score[i] = _pesq_inner(ref, deg[i, :], fs, mode, on_error)
+                return pesq_score
+            else:
+                with Pool(n_processor) as p:
+                    return p.map(partial(_pesq_inner, ref, fs=fs, mode=mode, on_error=on_error),
+                                 [deg[i, :] for i in range(deg.shape[0])])
+        else:
+            raise ValueError("The shapes of `deg` is invalid!")
+    elif len(ref.shape) == 2:
+        if deg.shape == ref.shape:
+            if n_processor <= 0:
+                pesq_score = [np.nan for i in range(deg.shape[0])]
+                for i in range(deg.shape[0]):
+                    pesq_score[i] = _pesq_inner(ref[i, :], deg[i, :], fs, mode, on_error)
+                return pesq_score
+            else:
+                return _processor_mapping(_pesq_inner,
+                                          [(ref[i, :], deg[i, :], fs, mode, on_error) for i in range(deg.shape[0])],
+                                          n_processor)
+        else:
+            raise ValueError("The shape of `deg` is invalid!")
+    else:
+        raise ValueError("The shape of `ref` should be either 1D or 2D!")
+
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'numpy', 'dataclasses ; python_version < "3.7"']
                         - Crash traceback: Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/runpy.py", line 193, in _run_module_as_main
     "__main__", mod_spec)
   File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/runpy.py", line 85, in _run_code
     exec(code, run_globals)
-  File "/home/lei/compatibility_analysis/pytorch/1.6/svoice/svoice/evaluate.py", line 15, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+  File "/home/lei/compatibility_analysis/pytorch/1.6/svoice/svoice/evaluate.py", line 16, in <module>
+    from pesq import pesq
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/pesq/__init__.py", line 5, in <module>
+    from ._pesq import pesq, pesq_batch
+  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/pesq/_pesq.py", line 8, in <module>
+    from .cypesq import cypesq, cypesq_retvals, cypesq_error_message as pesq_error_message
+  File "pesq/cypesq.pyx", line 1, in init cypesq
+ImportError: numpy.core.multiarray failed to import (auto-generated because you didn't call 'numpy.import_array()' after cimporting numpy; use '<void>numpy._import_array' to disable if you are certain you don't need it).
 
 
                         **Analysis Protocol**

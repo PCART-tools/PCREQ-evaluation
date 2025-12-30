@@ -1,0 +1,30 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==2.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/ba/dda44bbf35b071441635708a3dd568a5ca6bf29f77389f7c7c6818ae9498/transformers-2.7.0-py3-none-any.whl (544 kB)
+Requirement already satisfied: sentencepiece in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (0.1.83)
+Requirement already satisfied: tokenizers==0.5.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (0.5.2)
+Requirement already satisfied: tqdm>=4.27 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (4.35.0)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (1.17.2)
+Requirement already satisfied: sacremoses in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (0.0.33)
+Requirement already satisfied: filelock in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (3.12.2)
+Requirement already satisfied: requests in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (2.22.0)
+Requirement already satisfied: regex!=2019.12.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (2019.8.19)
+Requirement already satisfied: boto3 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==2.7.0) (1.9.227)
+Requirement already satisfied: botocore<1.13.0,>=1.12.227 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from boto3->transformers==2.7.0) (1.12.227)
+Requirement already satisfied: s3transfer<0.3.0,>=0.2.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from boto3->transformers==2.7.0) (0.2.1)
+Requirement already satisfied: jmespath<1.0.0,>=0.7.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from boto3->transformers==2.7.0) (0.9.4)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==2.7.0) (2019.9.11)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==2.7.0) (1.25.3)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==2.7.0) (3.0.4)
+Requirement already satisfied: idna<2.9,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==2.7.0) (2.8)
+Requirement already satisfied: click in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==2.7.0) (7.0)
+Requirement already satisfied: joblib in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==2.7.0) (0.13.2)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==2.7.0) (1.12.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from botocore<1.13.0,>=1.12.227->boto3->transformers==2.7.0) (2.8.0)
+Requirement already satisfied: docutils<0.16,>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from botocore<1.13.0,>=1.12.227->boto3->transformers==2.7.0) (0.15.2)
+Installing collected packages: transformers
+  Attempting uninstall: transformers
+    Found existing installation: transformers 2.5.1
+    Uninstalling transformers-2.5.1:
+      Successfully uninstalled transformers-2.5.1
+Successfully installed transformers-2.7.0

@@ -3,7 +3,8 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: boto3==1.9.227
+                        - Current environment: protobuf==3.20.3
+boto3==1.9.227
 botocore==1.12.227
 certifi==2019.9.11
 chardet==3.0.4
@@ -24,20 +25,61 @@ python-dateutil==2.8.0
 pytorch-transformers==1.2.0
 pytz==2019.2
 regex==2019.8.19
-requests==2.23.0
+requests==2.22.0
 s3transfer==0.2.1
-sacremoses==0.0.33
+sacremoses==0.0.46
 scikit-learn==0.21.3
-scipy==1.5.4
+scipy==1.3.1
 sentencepiece==0.1.91
 six==1.12.0
-tokenizers==0.12.1
+tokenizers==0.10.1
 torch==1.12.1
 tqdm==4.35.0
-transformers==4.21.3
+transformers==4.10.0
 urllib3==1.25.3
 
                         - Python version: 3.7
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
+
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions']
                         - Crash traceback: Traceback (most recent call last):
   File "run_bert.py", line 14, in <module>
     from pybert.model.bert_for_multi_label import BertForMultiLable

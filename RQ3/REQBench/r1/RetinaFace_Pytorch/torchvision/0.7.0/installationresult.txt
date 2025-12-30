@@ -37,8 +37,8 @@ Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tensorboardX==2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/35/f1/5843425495765c8c2dd0784a851a93ef204d314fc87bcc2bbb9f662a3ad1/tensorboardX-2.0-py2.py3-none-any.whl (195 kB)
+Collecting tensorboardX==2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/0c/4f41bcd45db376e6fe5c619c01100e9b7531c55791b7244815bac6eac32c/tensorboardX-2.1-py2.py3-none-any.whl (308 kB)
 Collecting terminaltables==3.1.0
   Using cached terminaltables-3.1.0-py3-none-any.whl
 Collecting torch==1.6.0
@@ -52,4 +52,4 @@ Collecting typing_extensions==4.7.1
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Installing collected packages: terminaltables, mpmath, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, future, cycler, torch, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
-Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 future-1.0.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.16.4 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-2.0 terminaltables-3.1.0 torch-1.6.0 torchvision-0.7.0 tqdm-4.32.1 typing_extensions-4.7.1
+Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 future-1.0.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.16.4 opencv-python-4.1.0.25 protobuf-3.20.0 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-2.1 terminaltables-3.1.0 torch-1.6.0 torchvision-0.7.0 tqdm-4.32.1 typing_extensions-4.7.1

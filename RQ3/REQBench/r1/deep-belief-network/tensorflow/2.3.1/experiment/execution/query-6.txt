@@ -8,20 +8,57 @@ bleach==1.5.0
 certifi==2021.5.30
 dataclasses==0.8
 html5lib==0.9999999
-importlib-metadata==4.5.0
+importlib-metadata==4.8.3
 Markdown==3.3.7
-numpy==1.19.3
+numpy==1.18.0
 protobuf==3.19.6
-scikit-learn==0.24.2
-scipy==1.5.4
+scikit-learn==0.20.4
+scipy==1.2.0
 six==1.16.0
 tensorflow==2.3.1
-tensorflow-tensorboard==1.6.0
-typing_extensions==4.0.1
+tensorflow-tensorboard==2.3.0
+typing_extensions==4.1.1
 Werkzeug==2.0.3
-zipp==3.4.1
+zipp==3.6.0
 
                         - Python version: 3.6
+                        - Project source code: import numpy as np
+
+np.random.seed(1337)  # for reproducibility
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.metrics.classification import accuracy_score
+
+from dbn.tensorflow import SupervisedDBNClassification
+
+
+# Loading dataset
+digits = load_digits()
+X, Y = digits.data, digits.target
+
+# Data scaling
+X = (X / 16).astype(np.float32)
+
+# Splitting data
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
+# Training
+classifier = SupervisedDBNClassification(hidden_layers_structure=[256, 256],
+                                         learning_rate_rbm=0.05,
+                                         learning_rate=0.1,
+                                         n_epochs_rbm=1,
+                                         n_iter_backprop=1,
+                                         batch_size=32,
+                                         activation_function='relu',
+                                         dropout_p=0.2)
+classifier.fit(X_train, Y_train)
+
+# Test
+Y_pred = classifier.predict(X_test)
+print('Done.\nAccuracy: %f' % accuracy_score(Y_test, Y_pred))
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['absl-py (>=0.7.0)', 'astunparse (==1.6.3)', 'gast (==0.3.3)', 'google-pasta (>=0.1.8)', 'h5py (<2.11.0,>=2.10.0)', 'keras-preprocessing (<1.2,>=1.1.1)', 'numpy (<1.19.0,>=1.16.0)', 'opt-einsum (>=2.3.2)', 'protobuf (>=3.9.2)', 'tensorboard (<3,>=2.3.0)', 'tensorflow-estimator (<2.4.0,>=2.3.0)', 'termcolor (>=1.1.0)', 'wrapt (>=1.11.1)', 'wheel (>=0.26)', 'six (>=1.12.0)', 'grpcio (>=1.8.6)']
                         - Crash traceback: Traceback (most recent call last):
   File "example_classification.py", line 1, in <module>
     import numpy as np

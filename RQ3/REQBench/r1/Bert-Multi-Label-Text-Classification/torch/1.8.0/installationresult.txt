@@ -1,1 +1,85 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.8.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/99/5861239a6e1ffe66e120f114a4d67e96e5c4b17c1a785dfc6ca6769585fc/torch-1.8.0-cp37-cp37m-manylinux1_x86_64.whl (735.5 MB)
+Collecting transformers==3.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9c/34/fb092588df61bf33f113ade030d1cbe74fb73a0353648f8dd938a223dce7/transformers-3.5.0-py3-none-any.whl (1.3 MB)
+Collecting tokenizers==0.9.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7b/ac/f5ba028f0f097d855e1541301e946d4672eb0f30b6e25cb2369075f916d2/tokenizers-0.9.3-cp37-cp37m-manylinux1_x86_64.whl (2.9 MB)
+Collecting sentencepiece==0.1.91
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/e2/813dff3d72df2f49554204e7e5f73a3dc0f0eb1e3958a4cad3ef3fb278b7/sentencepiece-0.1.91-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
+Collecting sacremoses==0.0.33
+  Using cached sacremoses-0.0.33-py3-none-any.whl
+Collecting numpy==1.21.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Collecting scipy==1.7.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/58/4f/11f34cfc57ead25752a7992b069c36f5d18421958ebd6466ecd849aeaf86/scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+Collecting scikit-learn==0.24.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a8/eb/a48f25c967526b66d5f1fa7a984594f0bf0a5afafa94a8c4dbc317744620/scikit_learn-0.24.2-cp37-cp37m-manylinux2010_x86_64.whl (22.3 MB)
+Collecting pandas==1.3.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/0c/23764c4635dcb0a784a787498d56847b90ebf974e65f4ab4053a5d97b1a5/pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
+Collecting matplotlib==3.5.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ad/62/7b662284352867a86acfb636761ba351723fc3a235efd8397578d903413d/matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+Collecting Pillow==8.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a7/f3/c81e9c41c6ee4c99ad7436b7a1509f5bce5de4ccf4b83138cf88760d96ff/Pillow-8.4.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.1 MB)
+Collecting torchvision==0.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6f/6a/4e8d7c897f24a6aa9d5e7c23a157b52084ccd43d1b6019603361d2136dde/torchvision-0.9.0-cp37-cp37m-manylinux1_x86_64.whl (17.3 MB)
+Collecting tqdm==4.64.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8a/c4/d15f1e627fff25443ded77ea70a7b5532d6371498f9285d44d62587e209c/tqdm-4.64.0-py2.py3-none-any.whl (78 kB)
+Collecting regex==2021.11.10
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/31/3c/3f711534937e801d2df43e838a792c9361d430737f594f6572947a0c9228/regex-2021.11.10-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (749 kB)
+Collecting requests==2.27.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2d/61/08076519c80041bc0ffa1a8af0cbd3bf3e2b62af10435d269a9d0f40564d/requests-2.27.1-py2.py3-none-any.whl (63 kB)
+Collecting boto3==1.17.49
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fc/79/64c0815cbe8c6abd7fe5525ec37a2689d3cf10e387629ba4a6e44daff6d0/boto3-1.17.49-py2.py3-none-any.whl (131 kB)
+Collecting botocore==1.20.49
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/68/59/6e28ce58206039ad2592992b75ee79a8f9dbc902a9704373ddacc4f96300/botocore-1.20.49-py2.py3-none-any.whl (7.4 MB)
+Collecting certifi==2021.10.8
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/45/946c02767aabb873146011e665728b680884cd8fe70dde973c640e45b775/certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+Collecting chardet==4.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl (178 kB)
+Collecting Click==8.0.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/a8/0b2ced25639fb20cc1c9784de90a8c25f9504a7f18cd8b5397bd61696d7d/click-8.0.4-py3-none-any.whl (97 kB)
+Collecting cycler==0.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5c/f9/695d6bedebd747e5eb0fe8fad57b72fdf25411273a39791cde838d5a8f51/cycler-0.11.0-py3-none-any.whl (6.4 kB)
+Collecting docutils==0.15.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/22/cd/a6aa959dca619918ccb55023b4cb151949c64d4d5d55b3f4ffd7eee0c6e8/docutils-0.15.2-py3-none-any.whl (547 kB)
+Collecting filelock==3.4.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ca/6c/ab2f79146ca546875e2a633d21e968acc17042ce88e4413b340541f0d4c5/filelock-3.4.2-py3-none-any.whl (9.9 kB)
+Collecting idna==3.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/04/a2/d918dcd22354d8958fe113e1a3630137e0fc8b44859ade3063982eacd2a4/idna-3.3-py3-none-any.whl (61 kB)
+Collecting jmespath==0.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/07/cb/5f001272b6faeb23c1c9e0acc04d48eaaf5c862c17709d20e3469c6e0139/jmespath-0.10.0-py2.py3-none-any.whl (24 kB)
+Collecting joblib==1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/d5/0163eb0cfa0b673aa4fe1cd3ea9d8a81ea0f32e50807b0c295871e4aab2e/joblib-1.1.0-py2.py3-none-any.whl (306 kB)
+Collecting kiwisolver==1.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/09/6b/6e567cb2e86d4e5939a9233f8734e26021b6a9c1bc4b1edccba236a84cc2/kiwisolver-1.3.2-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+Collecting pyparsing==3.0.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/80/c1/23fd82ad3121656b585351aba6c19761926bb0db2ebed9e4ff09a43a3fcc/pyparsing-3.0.7-py3-none-any.whl (98 kB)
+Collecting python-dateutil==2.8.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting pytz==2021.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d3/e3/d9f046b5d1c94a3aeab15f1f867aa414f8ee9d196fae6865f1d6a0ee1a0b/pytz-2021.3-py2.py3-none-any.whl (503 kB)
+Collecting s3transfer==0.3.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/43/4b4a1b26eb03a429a4c37ca7fdf369d938bd60018fc194e94b8379b0c77c/s3transfer-0.3.4-py2.py3-none-any.whl (69 kB)
+Collecting six==1.16.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting urllib3==1.26.8
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4e/b8/f5a25b22e803f0578e668daa33ba3701bb37858ec80e08a150bd7d2cf1b1/urllib3-1.26.8-py2.py3-none-any.whl (138 kB)
+Collecting protobuf==3.20.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4c/12/62e1d5505c172e1a7f803d83b0b1693f7952c3c271eb2f155703012ae67a/protobuf-3.20.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting packaging
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Collecting threadpoolctl>=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
+Collecting fonttools>=4.22.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/d9/e9bae85e84737e76ebbcbea13607236da0c0699baed0ae4f1151b728a608/fonttools-4.38.0-py3-none-any.whl (965 kB)
+Collecting charset-normalizer~=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/06/b3/24afc8868eba069a7f03650ac750a778862dc34941a4bebeb58706715726/charset_normalizer-2.0.12-py3-none-any.whl (39 kB)
+Collecting importlib-metadata
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Collecting zipp>=0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Installing collected packages: tokenizers, sentencepiece, regex, pytz, certifi, zipp, urllib3, typing-extensions, tqdm, threadpoolctl, six, pyparsing, protobuf, Pillow, packaging, numpy, kiwisolver, joblib, jmespath, idna, fonttools, filelock, docutils, cycler, charset-normalizer, chardet, torch, scipy, requests, python-dateutil, importlib-metadata, torchvision, scikit-learn, pandas, matplotlib, Click, botocore, sacremoses, s3transfer, transformers, boto3
+Successfully installed Click-8.0.4 Pillow-8.4.0 boto3-1.17.49 botocore-1.20.49 certifi-2021.10.8 chardet-4.0.0 charset-normalizer-2.0.12 cycler-0.11.0 docutils-0.15.2 filelock-3.4.2 fonttools-4.38.0 idna-3.3 importlib-metadata-6.7.0 jmespath-0.10.0 joblib-1.1.0 kiwisolver-1.3.2 matplotlib-3.5.3 numpy-1.21.6 packaging-24.0 pandas-1.3.5 protobuf-3.20.3 pyparsing-3.0.7 python-dateutil-2.8.2 pytz-2021.3 regex-2021.11.10 requests-2.27.1 s3transfer-0.3.4 sacremoses-0.0.33 scikit-learn-0.24.2 scipy-1.7.3 sentencepiece-0.1.91 six-1.16.0 threadpoolctl-3.1.0 tokenizers-0.9.3 torch-1.8.0 torchvision-0.9.0 tqdm-4.64.0 transformers-3.5.0 typing-extensions-4.7.1 urllib3-1.26.8 zipp-3.15.0

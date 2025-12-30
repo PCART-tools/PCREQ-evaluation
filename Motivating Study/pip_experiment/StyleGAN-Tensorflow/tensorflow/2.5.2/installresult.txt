@@ -1,0 +1,7 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==2.5.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/cf/6b9df4d76261fd065abc4fce2926212077bcf5bc4c0d2627e8e1f0df88ba/tensorflow-2.5.2-cp36-cp36m-manylinux2010_x86_64.whl (454.3 MB)
+Collecting google-pasta~=0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+ERROR: Could not find a version that satisfies the requirement keras-nightly~=2.5.0.dev (from tensorflow) (from versions: none)
+ERROR: No matching distribution found for keras-nightly~=2.5.0.dev

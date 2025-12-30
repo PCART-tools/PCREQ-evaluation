@@ -1,0 +1,21 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.8.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/19/f1/d1d9b2be9f50e840accfa180ec2fb759dd2504f2b3a12a232398d5fa00ae/torchvision-0.8.2-cp36-cp36m-manylinux1_x86_64.whl (12.8 MB)
+Requirement already satisfied: pillow>=4.1.1 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torchvision==0.8.2) (7.2.0)
+Collecting torch==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/4f/acf48b3a18a8f9223c6616647f0a011a5713a985336088d7c76f3a211374/torch-1.7.1-cp36-cp36m-manylinux1_x86_64.whl (776.8 MB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torchvision==0.8.2) (1.16.4)
+Collecting dataclasses
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+Installing collected packages: typing-extensions, dataclasses, torch, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 1.5.1
+    Uninstalling torch-1.5.1:
+      Successfully uninstalled torch-1.5.1
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.6.1
+    Uninstalling torchvision-0.6.1:
+      Successfully uninstalled torchvision-0.6.1
+Successfully installed dataclasses-0.8 torch-1.7.1 torchvision-0.8.2 typing-extensions-4.1.1

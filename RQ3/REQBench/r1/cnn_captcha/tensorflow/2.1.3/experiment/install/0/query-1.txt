@@ -38,11 +38,12 @@ urllib3==1.23
 Werkzeug==0.15.2
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): ['absl-py (>=0.7.0)', 'astor (>=0.6.0)', 'gast (==0.2.2)', 'google-pasta (>=0.1.6)', 'keras-applications (>=1.0.8)', 'keras-preprocessing (==1.1.0)', 'numpy (<1.19.0,>=1.16.0)', 'opt-einsum (>=2.3.2)', 'protobuf (>=3.8.0)', 'tensorboard (<2.2.0,>=2.1.0)', 'tensorflow-estimator (<2.2.0,>=2.1.0rc0)', 'termcolor (>=1.1.0)', 'wrapt (>=1.11.1)', 'six (>=1.12.0)', 'h5py (<=2.10.0)', 'grpcio (>=1.8.6)', 'wheel ; python_version < "3"', 'mock (>=2.0.0) ; python_version < "3"', 'functools32 (>=3.2.3) ; python_version < "3"', 'backports.weakref (>=1.0rc1) ; python_version < "3.4"', 'enum34 (>=1.1.6) ; python_version < "3.4"', 'wheel (>=0.26) ; python_version >= "3"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested grpcio==1.19.0
-    tensorboard 2.1.0 depends on grpcio>=1.24.3
+    The user requested requests==2.19.1
+    tensorboard 2.1.0 depends on requests<3 and >=2.21.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

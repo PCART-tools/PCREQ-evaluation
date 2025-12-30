@@ -10,7 +10,7 @@ astroid==2.3.1
 attrs==19.1.0
 autopep8==1.4.4
 backcall==0.1.0
-bleach==6.0.0
+bleach==3.3.0
 blessings==1.7
 bottle==0.12.18
 cachetools==4.0.0
@@ -87,7 +87,7 @@ numba==0.45.1
 numpy==1.17.1
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
-opencv-python==4.1.1.26
+opencv-python==4.1.0.25
 opencv-python-headless==4.1.1.26
 opt-einsum==3.1.0
 pandas==0.24.2
@@ -96,7 +96,7 @@ parso==0.5.1
 pathtools==0.1.2
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==5.4.1
+Pillow==6.2.2
 plotly==4.1.0
 ply==3.11
 prometheus-client==0.7.1
@@ -113,7 +113,7 @@ pylint==2.4.2
 pyparsing==2.4.2
 pyrsistent==0.15.4
 python-dateutil==2.8.0
-pytorch-ignite==0.3.0
+pytorch-ignite==0.4.0
 pytz==2019.2
 PyWavelets==1.0.3
 PyYAML==5.1.2
@@ -146,8 +146,8 @@ testpath==0.4.2
 thrift==0.11.0
 torch==1.5.1
 torchfile==0.1.0
-torchsummary==1.6.0
-torchvision==0.6.1
+torchsummary==1.5.1
+torchvision==0.6.0
 tornado==6.0.3
 tqdm==4.33.0
 traitlets==4.3.2
@@ -165,6 +165,125 @@ wrapt==1.11.2
 zipp==0.6.0
 
                         - Python version: 3.7
+                        - Project source code: import os
+from datetime import datetime
+from PIL import Image
+import logging
+import numpy as np
+from tqdm import tqdm
+import torch
+from torch.utils.data import TensorDataset, DataLoader
+from siren import SIREN
+from utils import set_logger
+
+SAMPLING_RATIO = 0.1
+BATCH_SIZE = 8192
+EPOCHS = 1  #原为5000
+LEARNING_RATE = 0.0005
+
+# Image Reference - http://earthsongtiles.com/celtic_tiles.html
+img_filepath = 'data/celtic_spiral_knot.jpg'
+img_raw = np.array(Image.open(img_filepath))
+img_ground_truth = torch.from_numpy(img_raw).float()
+
+rows, cols, channels = img_ground_truth.shape
+pixel_count = rows * cols
+sampled_pixel_count = int(pixel_count * SAMPLING_RATIO)
+
+
+def build_train_tensors():
+    img_mask_x = torch.from_numpy(
+        np.random.randint(0, rows, sampled_pixel_count))
+    img_mask_y = torch.from_numpy(
+        np.random.randint(0, cols, sampled_pixel_count))
+
+    img_train = img_ground_truth[img_mask_x, img_mask_y]
+
+    img_mask_x = img_mask_x.float() / rows
+    img_mask_y = img_mask_y.float() / cols
+
+    img_mask = torch.stack([img_mask_x, img_mask_y], dim=-1)
+
+    return img_mask, img_train
+
+
+img_mask, img_train = build_train_tensors()
+
+train_dataset = TensorDataset(img_mask, img_train)
+train_dataloader = DataLoader(
+    train_dataset, batch_size=BATCH_SIZE, shuffle=True, pin_memory=True)
+
+# Build model
+layers = [256, 256, 256, 256, 256]
+in_features = 2
+out_features = 3
+initializer = 'siren'
+w0 = 1.0
+w0_initial = 30.0
+c = 6
+model = SIREN(
+    layers, in_features, out_features, w0, w0_initial,
+    initializer=initializer, c=c)
+
+model.train()
+
+BATCH_SIZE = min(BATCH_SIZE, len(img_mask))
+num_steps = int(len(img_mask) * EPOCHS / BATCH_SIZE)
+print("Total training steps : ", num_steps)
+
+# TODO scheduler
+# learning_rate = tf.keras.optimizers.schedules.PolynomialDecay(
+#   0.0005, decay_steps=num_steps, end_learning_rate=5e-5, power=2.0)
+# TODO: tensorboard
+
+optimizer = torch.optim.Adam(model.parameters(), lr=LEARNING_RATE)
+criterion = torch.nn.MSELoss()
+
+checkpoint_dir = 'checkpoints/siren/inpainting/'
+if not os.path.exists(checkpoint_dir):
+    os.makedirs(checkpoint_dir)
+
+timestamp = datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+logdir = os.path.join('logs/siren/inpainting/', timestamp)
+
+if not os.path.exists(logdir):
+    os.makedirs(logdir)
+
+set_logger(os.path.join(logdir, 'train.log'))
+
+best_loss = np.inf
+
+for epoch in range(EPOCHS):
+    iterator = tqdm(train_dataloader, dynamic_ncols=True)
+
+    losses = []
+
+    for batch in iterator:
+        inputs, targets = batch
+        predictions = model(inputs)
+        loss = criterion(predictions, targets)
+        losses.append(loss.reshape(-1))
+
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+        iterator.set_description(
+            "Epoch: {} | Loss {:.4f}".format(epoch, loss), refresh=True)
+
+    avg_loss = torch.mean(torch.cat(losses)).item()
+    logging.info("Epoch: {} | Avg. Loss {:.4f}".format(epoch, avg_loss))
+
+    if avg_loss < best_loss:
+        logging.info('Loss improved from {:.4f} to {:.4f}'.format(
+            best_loss, avg_loss))
+        best_loss = avg_loss
+        torch.save(
+            {'network': model.state_dict()},
+            os.path.join(checkpoint_dir + 'model'))
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['future', 'numpy']
                         - Crash traceback: Traceback (most recent call last):
   File "scripts/train_inpainting_siren.py", line 3, in <module>
     from PIL import Image

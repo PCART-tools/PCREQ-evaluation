@@ -35,8 +35,8 @@ Collecting future==0.18.2
   Using cached future-0.18.2-py3-none-any.whl
 Collecting gdown==3.11.0
   Using cached gdown-3.11.0-py3-none-any.whl
-Collecting gluonnlp==0.10.0
-  Using cached gluonnlp-0.10.0-cp37-cp37m-linux_x86_64.whl
+Collecting gluonnlp==0.9.1
+  Using cached gluonnlp-0.9.1-cp37-cp37m-linux_x86_64.whl
 Collecting google-auth==1.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/12/a3/2695fdcda305ea85c43ebd2a4d1429f3c7e897c7cf9045a8c378e1115a15/google_auth-1.15.0-py2.py3-none-any.whl (89 kB)
 Collecting google-auth-oauthlib==0.4.1
@@ -89,22 +89,22 @@ Collecting mistune==0.8.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/09/ec/4b43dae793655b7d8a25f76119624350b4d65eb663459eb9603d7f1f0345/mistune-0.8.4-py2.py3-none-any.whl (16 kB)
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
-Collecting mxnet==1.9.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/27/83/b307ad1f6e1ff60f8e418cb87f53646192681b417aadc1f40a345ba64637/mxnet-1.9.1-py3-none-manylinux2014_x86_64.whl (49.1 MB)
+Collecting mxnet==1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/81/f5/d79b5b40735086ff1100c680703e0f3efc830fa455e268e9e96f3c857e93/mxnet-1.6.0-py2.py3-none-any.whl (68.7 MB)
 Collecting nbconvert==5.6.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/6c/05a569e9f703d18aacb89b7ad6075b404e8a4afde2c26b73ca77bb644b14/nbconvert-5.6.1-py2.py3-none-any.whl (455 kB)
 Collecting nbformat==5.0.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d5/3c/251cfe5e3c9545ece107d342909ee3822d8cd9f3f11a591df37baeff2089/nbformat-5.0.6-py3-none-any.whl (170 kB)
 Collecting notebook==6.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/f1/0a67f09ef53a342403ffa66646ee39273e0ac79ffa5de5dbe2f3e28b5bdf/notebook-6.0.3-py3-none-any.whl (9.7 MB)
-Collecting numpy==1.21.6
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Collecting numpy==1.19.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting oauthlib==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
 Collecting packaging==20.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/89/7ea760b4daa42653ece2380531c90f64788d979110a2ab51049d92f408af/packaging-20.9-py2.py3-none-any.whl (40 kB)
-Collecting pandas==1.1.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fd/70/e8eee0cbddf926bf51958c7d6a86bc69167c300fa2ba8e592330a2377d1b/pandas-1.1.5-cp37-cp37m-manylinux1_x86_64.whl (9.5 MB)
+Collecting pandas==1.0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/f3/683bf2547a3eaeec15b39cef86f61e921b3b187f250fcd2b5c5fb4386369/pandas-1.0.5-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
 Collecting pandocfilters==1.4.2
   Using cached pandocfilters-1.4.2-py3-none-any.whl
 Collecting parso==0.7.0
@@ -119,8 +119,8 @@ Collecting prometheus-client==0.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3f/0e/554a265ffdc56e1494ef08e18f765b0cdec78797f510c58c45cf37abb4f4/prometheus_client-0.8.0-py2.py3-none-any.whl (53 kB)
 Collecting prompt-toolkit==3.0.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e4/a7/81b39aa50e9284fe2cb21cc7fb7de7817b224172d42793fd57451d38842b/prompt_toolkit-3.0.5-py3-none-any.whl (351 kB)
-Collecting protobuf==3.12.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/fa/32192c80b43c1f974aaaa9b4d75b004843089dc15201685f29c92bc43de6/protobuf-3.12.1-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
+Collecting protobuf==3.12.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/9c/12df13f237fe7ef6b617b8aea231c7bf5155d88c272bbbb9cad6fb9c6937/protobuf-3.12.4-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
 Collecting ptyprocess==0.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
 Collecting pyasn1==0.4.8
@@ -139,8 +139,8 @@ Collecting python-dateutil==2.8.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
 Collecting pytz==2020.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl (510 kB)
-Collecting pyzmq==19.0.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/43/93/36a783239874b894d1fe1e791185ee6e627529661190bb06dc9f16fca78f/pyzmq-19.0.1-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
+Collecting pyzmq==19.0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/ba/144b5f68fcd643937a4a953017abf1527ff34d43d2d912206fed962efde0/pyzmq-19.0.2-cp37-cp37m-manylinux1_x86_64.whl (1.1 MB)
 Collecting qtconsole==4.7.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/9c/ee26b844381f0cf2ea24bd822e4a9ed2c7fd6d8cdeef63be459c62132f9b/qtconsole-4.7.4-py2.py3-none-any.whl (118 kB)
 Collecting QtPy==1.9.0
@@ -155,10 +155,10 @@ Collecting rsa==4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl (38 kB)
 Collecting sacremoses==0.0.43
   Using cached sacremoses-0.0.43-py3-none-any.whl
-Collecting scikit-learn==0.23.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b8/7e/74e707b66490d4eb05f702966ad0990881127acecf9d5cdcef3c95ec6c16/scikit_learn-0.23.1-cp37-cp37m-manylinux1_x86_64.whl (6.8 MB)
-Collecting scipy==1.7.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/58/4f/11f34cfc57ead25752a7992b069c36f5d18421958ebd6466ecd849aeaf86/scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
+Collecting scikit-learn==0.23.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/cb/64623369f348e9bfb29ff898a57ac7c91ed4921f228e9726546614d63ccb/scikit_learn-0.23.2-cp37-cp37m-manylinux1_x86_64.whl (6.8 MB)
+Collecting scipy==1.5.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/7e/8f6a79b102ca1ea928bae8998b05bf5dc24a90571db13cd119f275ba6252/scipy-1.5.4-cp37-cp37m-manylinux1_x86_64.whl (25.9 MB)
 Collecting Send2Trash==1.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/46/c3dc27481d1cc57b9385aff41c474ceb7714f7935b1247194adae45db714/Send2Trash-1.5.0-py3-none-any.whl (12 kB)
 Collecting sentencepiece==0.1.91
@@ -167,18 +167,18 @@ Collecting six==1.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl (10 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tensorboard==2.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/fd/4f3ca1516cbb3713259ef229abd9314bba0077ef6070285dde0dd1ed21b2/tensorboard-2.2.1-py3-none-any.whl (3.0 MB)
+Collecting tensorboard==2.2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/74/0a6fcb206dcc72a6da9a62dd81784bfdbff5fedb099982861dc2219014fb/tensorboard-2.2.2-py3-none-any.whl (3.0 MB)
 Collecting tensorboard-plugin-wit==1.6.0.post3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/51/cd/a0c1f9e4582ea64dddf76c1b808b318d01e3b858a51c715bffab1016ecc7/tensorboard_plugin_wit-1.6.0.post3-py3-none-any.whl (777 kB)
 Collecting terminado==0.8.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/96/1d9a2c23990aea8f8e0b5c3b6627d03196a73771a17a2d9860bbe9823ab6/terminado-0.8.3-py2.py3-none-any.whl (33 kB)
 Collecting testpath==0.4.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1b/9e/1a170feaa54f22aeb5a5d16c9015e82234275a3c8ab630b552493f9cb8a9/testpath-0.4.4-py2.py3-none-any.whl (163 kB)
-Collecting threadpoolctl==2.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/db/09/cab2f398e28e9f183714afde872b2ce23629f5833e467b151f18e1e08908/threadpoolctl-2.0.0-py3-none-any.whl (34 kB)
-Collecting tokenizers==0.13.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4d/40/ab3c3c705e0a8cbbe760c49302b407190201d96fe7dfeea37ccafa004da3/tokenizers-0.13.3-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (7.8 MB)
+Collecting threadpoolctl==2.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f7/12/ec3f2e203afa394a149911729357aa48affc59c20e2c1c8297a60f33f133/threadpoolctl-2.1.0-py3-none-any.whl (12 kB)
+Collecting tokenizers==0.10.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/e2/df3543e8ffdab68f5acc73f613de9c2b155ac47f162e725dcac87c521c11/tokenizers-0.10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3 MB)
 Collecting torch==1.13.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/00/86/77a9eddbf46f1bca2468d16a401911f58917f95b63402d6a7a4522521e5d/torch-1.13.1-cp37-cp37m-manylinux1_x86_64.whl (887.5 MB)
 Collecting torchvision==0.14.1
@@ -189,8 +189,8 @@ Collecting tqdm==4.46.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c9/40/058b12e8ba10e35f89c9b1fdfc2d4c7f8c05947df2d5eb3c7b258019fda0/tqdm-4.46.0-py2.py3-none-any.whl (63 kB)
 Collecting traitlets==4.3.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl (75 kB)
-Collecting transformers==4.30.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e2/72/1af3d38e98fdcceb3876de4567ac395a66c26976e259fe2d46266e052d61/transformers-4.30.0-py3-none-any.whl (7.2 MB)
+Collecting transformers==4.10.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/9f/ec840879f2604d5c948858f605c55256f21010bca3c5705a344daafafbba/transformers-4.10.3-py3-none-any.whl (2.8 MB)
 Collecting tweepy==3.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/1b/2bd38043d22ade352fc3d3902cf30ce0e2f4bf285be3b304a2782a767aec/tweepy-3.8.0-py2.py3-none-any.whl (28 kB)
 Collecting urllib3==1.25.9
@@ -207,30 +207,22 @@ Collecting zipp==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b2/34/bfcb43cc0ba81f527bc4f40ef41ba2ff4080e047acb0586b56b3d017ace4/zipp-3.1.0-py3-none-any.whl (4.9 kB)
 Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/nlp_classification-torch-1.13.1.txt (line 20)) (57.5.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.2.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/nlp_classification-torch-1.13.1.txt (line 85)) (0.38.4)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/nlp_classification-torch-1.13.1.txt (line 20)) (57.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.2.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/nlp_classification-torch-1.13.1.txt (line 85)) (0.38.4)
 Collecting nvidia-cuda-nvrtc-cu11==11.7.99
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/25/922c5996aada6611b79b53985af7999fc629aee1d5d001b6a22431e18fec/nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
-Collecting nvidia-cublas-cu11==11.10.3.66
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
 Collecting nvidia-cuda-runtime-cu11==11.7.99
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/92/89cf558b514125d2ebd8344dd2f0533404b416486ff681d5434a5832a019/nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)
 Collecting typing-extensions
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Collecting nvidia-cudnn-cu11==8.5.0.96
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
+Collecting nvidia-cublas-cu11==11.10.3.66
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
+Collecting huggingface-hub>=0.0.12
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
 Collecting pyyaml>=5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
-Collecting huggingface-hub<1.0,>=0.14.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
-Collecting safetensors>=0.3.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/7e/2d5d6ee7b40c0682315367ec7475693d110f512922d582fef1bd4a63adc3/safetensors-0.5.3.tar.gz (67 kB)
-  Installing build dependencies: started
-  Installing build dependencies: finished with status 'done'
-  Getting requirements to build wheel: started
-  Getting requirements to build wheel: finished with status 'done'
-  Preparing metadata (pyproject.toml): started
-  Preparing metadata (pyproject.toml): finished with status 'done'
 Collecting fsspec
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/f0d369ede0ca54fdd520bdee5086dbaf0af81dac53a2ce847bd1ec6e0bf1/fsspec-2023.1.0-py3-none-any.whl (143 kB)
 Collecting requests[socks]
@@ -245,28 +237,5 @@ Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl (61 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/39/fc/f91eac5a39a65f75a7adb58eac7fa78871ea9872283fb9c44e6545998134/requests-2.25.0-py2.py3-none-any.whl (61 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/1e/0c169c6a5381e241ba7404532c16a21d86ab872c9bed8bdcd4c423954103/requests-2.24.0-py2.py3-none-any.whl (61 kB)
-Building wheels for collected packages: safetensors
-  Building wheel for safetensors (pyproject.toml): started
-  Building wheel for safetensors (pyproject.toml): finished with status 'error'
-  error: subprocess-exited-with-error
-  
-  × Building wheel for safetensors (pyproject.toml) did not run successfully.
-  │ exit code: 1
-  ╰─> [11 lines of output]
-      Running `maturin pep517 build-wheel -i /home/lei/anaconda3/envs/py37-3/bin/python --compatibility off`
-      🍹 Building a mixed python/rust project
-      🔗 Found pyo3 bindings with abi3 support
-      🐍 Not using a specific python interpreter
-      📡 Using build options features, bindings from pyproject.toml
-      error: package `safetensors v0.5.3 (/tmp/pip-install-ez_0dl0z/safetensors_b9bfe7ebe713419fa87cef81af0a957f/safetensors)` cannot be built because it requires rustc 1.74 or newer, while the currently active rustc version is 1.65.0
-      
-      💥 maturin failed
-        Caused by: Failed to build a native library through cargo
-        Caused by: Cargo build finished with "exit status: 101": `env -u CARGO PYO3_ENVIRONMENT_SIGNATURE="cpython-3.7-64bit" PYO3_PYTHON="/home/lei/anaconda3/envs/py37-3/bin/python" PYTHON_SYS_EXECUTABLE="/home/lei/anaconda3/envs/py37-3/bin/python" "cargo" "rustc" "--features" "pyo3/extension-module" "--message-format" "json-render-diagnostics" "--manifest-path" "/tmp/pip-install-ez_0dl0z/safetensors_b9bfe7ebe713419fa87cef81af0a957f/bindings/python/Cargo.toml" "--release" "--lib"`
-      Error: command ['maturin', 'pep517', 'build-wheel', '-i', '/home/lei/anaconda3/envs/py37-3/bin/python', '--compatibility', 'off'] returned non-zero exit status 1
-      [end of output]
-  
-  note: This error originates from a subprocess, and is likely not a problem with pip.
-  ERROR: Failed building wheel for safetensors
-Failed to build safetensors
-ERROR: Could not build wheels for safetensors, which is required to install pyproject.toml-based projects
+Installing collected packages: webencodings, wcwidth, tokenizers, testpath, tensorboard-plugin-wit, sentencepiece, Send2Trash, regex, QtPy, pytz, pyasn1, ptyprocess, prometheus-client, pickleshare, pandocfilters, mpmath, mistune, JPype1, ipython-genutils, filelock, chardet, certifi, beautifulsoup4, backcall, zipp, Werkzeug, urllib3, typing-extensions, tqdm, tornado, threadpoolctl, sympy, six, rsa, pyzmq, pyyaml, PySocks, pyparsing, Pygments, pyasn1-modules, prompt-toolkit, Pillow, pexpect, parso, oauthlib, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cublas-cu11, numpy, MarkupSafe, lxml, joblib, idna, humanfriendly, graphviz, future, fsspec, entrypoints, defusedxml, decorator, Cython, colorama, click, cachetools, attrs, traitlets, terminado, scipy, sacremoses, requests, python-dateutil, pyrsistent, protobuf, packaging, nvidia-cudnn-cu11, Jinja2, jedi, importlib-metadata, grpcio, google-auth, coloredlogs, absl-py, torch, scikit-learn, requests-oauthlib, pandas, mxnet, Markdown, jupyter-core, jsonschema, ipython, huggingface-hub, gluonnlp, bleach, tweepy, transformers, torchvision, nbformat, jupyter-client, google-auth-oauthlib, gdown, tensorboard, nbconvert, konlpy, ipykernel, qtconsole, notebook, jupyter-console, widgetsnbextension, ipywidgets, jupyter
+Successfully installed Cython-0.29.19 JPype1-0.7.5 Jinja2-2.11.2 Markdown-3.2.2 MarkupSafe-1.1.1 Pillow-7.1.2 PySocks-1.7.1 Pygments-2.6.1 QtPy-1.9.0 Send2Trash-1.5.0 Werkzeug-1.0.1 absl-py-0.9.0 attrs-19.3.0 backcall-0.1.0 beautifulsoup4-4.6.0 bleach-3.1.5 cachetools-4.1.0 certifi-2020.4.5.1 chardet-3.0.4 click-7.1.2 colorama-0.4.3 coloredlogs-15.0.1 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 filelock-3.0.12 fsspec-2023.1.0 future-0.18.2 gdown-3.11.0 gluonnlp-0.9.1 google-auth-1.15.0 google-auth-oauthlib-0.4.1 graphviz-0.8.4 grpcio-1.29.0 huggingface-hub-0.16.4 humanfriendly-10.0 idna-2.9 importlib-metadata-1.6.0 ipykernel-5.3.0 ipython-7.14.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.17.0 joblib-0.15.1 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-6.1.3 jupyter-console-6.1.0 jupyter-core-4.6.3 konlpy-0.5.2 lxml-4.5.1 mistune-0.8.4 mpmath-1.2.1 mxnet-1.6.0 nbconvert-5.6.1 nbformat-5.0.6 notebook-6.0.3 numpy-1.19.5 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 oauthlib-3.1.0 packaging-20.9 pandas-1.0.5 pandocfilters-1.4.2 parso-0.7.0 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.8.0 prompt-toolkit-3.0.5 protobuf-3.12.4 ptyprocess-0.6.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.7 pyrsistent-0.16.0 python-dateutil-2.8.1 pytz-2020.1 pyyaml-6.0.1 pyzmq-19.0.2 qtconsole-4.7.4 regex-2020.5.14 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 sacremoses-0.0.43 scikit-learn-0.23.2 scipy-1.5.4 sentencepiece-0.1.91 six-1.15.0 sympy-1.10.1 tensorboard-2.2.2 tensorboard-plugin-wit-1.6.0.post3 terminado-0.8.3 testpath-0.4.4 threadpoolctl-2.1.0 tokenizers-0.10.3 torch-1.13.1 torchvision-0.14.1 tornado-6.0.4 tqdm-4.46.0 traitlets-4.3.3 transformers-4.10.3 tweepy-3.8.0 typing-extensions-4.7.1 urllib3-1.25.9 wcwidth-0.1.9 webencodings-0.5.1 widgetsnbextension-3.5.1 zipp-3.1.0

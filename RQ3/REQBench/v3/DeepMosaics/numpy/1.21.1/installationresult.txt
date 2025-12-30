@@ -9,8 +9,8 @@ Collecting imageio==2.31.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7b/88/59411e1a652ac3338d348901ffa5a73daf1f67fcb3f97d750237d4fa0821/imageio-2.31.2-py3-none-any.whl (313 kB)
 Collecting kiwisolver==1.4.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/77/e3046bf19720b22e3e0b7c12e28f6f2c0c18a213fb91a56cea640862270f/kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
-Collecting matplotlib==3.5.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ad/62/7b662284352867a86acfb636761ba351723fc3a235efd8397578d903413d/matplotlib-3.5.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+Collecting matplotlib==3.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/87/a6/8d7d06f6b69236a3c1818157875ceb1259ba0d9df4194f4fe138ffdc0f41/matplotlib-3.3.2-cp37-cp37m-manylinux1_x86_64.whl (11.6 MB)
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting networkx==2.6.3
@@ -29,8 +29,8 @@ Collecting python-dateutil==2.9.0.post0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Collecting PyWavelets==1.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/56/4441877073d8a5266dbf7b04c7f3dc66f1149c8efb9323e0ef987a9bb1ce/PyWavelets-1.3.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.4 MB)
-Collecting scikit-image==0.19.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2d/ba/63ce953b7d593bd493e80be158f2d9f82936582380aee0998315510633aa/scikit_image-0.19.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (13.5 MB)
+Collecting scikit-image==0.17.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/ee/753ea56fda5bc2a5516a1becb631bf5ada593a2dd44f21971a13a762d4db/scikit_image-0.17.2-cp37-cp37m-manylinux1_x86_64.whl (12.5 MB)
 Collecting scipy==1.7.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/58/4f/11f34cfc57ead25752a7992b069c36f5d18421958ebd6466ecd849aeaf86/scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
 Collecting six==1.16.0
@@ -47,9 +47,6 @@ Collecting torchvision==0.8.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/df/969e69a94cff1c8911acb0688117f95e1915becc1e01c73e7960a2c76ec8/torchvision-0.8.2-cp37-cp37m-manylinux1_x86_64.whl (12.8 MB)
 Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
-Collecting fonttools>=4.22.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/d9/e9bae85e84737e76ebbcbea13607236da0c0699baed0ae4f1151b728a608/fonttools-4.38.0-py3-none-any.whl (965 kB)
-Collecting packaging>=20.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
-Installing collected packages: mpmath, typing_extensions, sympy, six, pyparsing, protobuf, Pillow, packaging, numpy, networkx, humanfriendly, fonttools, cycler, torch, tifffile, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, scikit-image, matplotlib
-Successfully installed Pillow-9.5.0 PyWavelets-1.3.0 coloredlogs-15.0.1 cycler-0.11.0 fonttools-4.38.0 humanfriendly-10.0 imageio-2.31.2 kiwisolver-1.4.5 matplotlib-3.5.3 mpmath-1.2.1 networkx-2.6.3 numpy-1.21.1 opencv-python-4.5.1.48 packaging-24.0 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.19.3 scipy-1.7.3 six-1.16.0 sympy-1.10.1 tensorboardX-2.2 tifffile-2021.11.2 torch-1.7.1 torchvision-0.8.2 typing_extensions-4.7.1
+Requirement already satisfied: certifi>=2020.06.20 in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from matplotlib==3.3.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/DeepMosaics-numpy-1.21.1.txt (line 6)) (2022.12.7)
+Installing collected packages: mpmath, typing_extensions, sympy, six, pyparsing, protobuf, Pillow, numpy, networkx, humanfriendly, cycler, torch, tifffile, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
+Successfully installed Pillow-9.5.0 PyWavelets-1.3.0 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.31.2 kiwisolver-1.4.5 matplotlib-3.3.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.21.1 opencv-python-4.5.1.48 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.17.2 scipy-1.7.3 six-1.16.0 sympy-1.10.1 tensorboardX-2.2 tifffile-2021.11.2 torch-1.7.1 torchvision-0.8.2 typing_extensions-4.7.1

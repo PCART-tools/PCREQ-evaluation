@@ -19,6 +19,7 @@ torchvision==0.6.1
 tqdm==4.47.0
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): ['numpy', 'torch (==1.10.1)', 'pillow (!=8.3.0,>=5.3.0)', "scipy ; extra == 'scipy'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

@@ -3,106 +3,309 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: blis==0.7.11
+                        - Current environment: blis==0.7.9
 catalogue==2.0.7
-charset-normalizer==3.3.2
-click==7.1.2
+charset-normalizer==2.1.1
+click==8.1.3
 coloredlogs==15.0.1
-cymem==2.0.8
-filelock==3.12.2
+cymem==2.0.6
+filelock==3.9.0
 humanfriendly==10.0
-idna==3.7
+idna==3.6
 importlib-metadata==4.13.0
-Jinja2==2.11.3
-joblib==1.3.2
-MarkupSafe==2.1.1
+Jinja2==3.1.2
+joblib==1.1.1
+MarkupSafe==2.0.1
 mpmath==1.2.1
 murmurhash==1.0.8
-numpy==1.21.6
+numpy==1.22.0
 packaging==21.3
-pathy==0.10.3
-preshed==3.0.9
-protobuf==3.20.3
-pydantic==1.8.2
-regex==2022.3.2
-requests==2.28.2
+pathy==0.10.2
+preshed==3.0.6
+protobuf==3.20.1
+pydantic==1.10.2
+regex==2021.11.10
+requests==2.28.1
 sacremoses==0.0.53
-scikit-learn==0.24.2
+scikit-learn==1.0.2
 scipy==1.7.3
-sentencepiece==0.1.91
+sentencepiece==0.1.96
 six==1.16.0
-smart-open==6.4.0
-spacy==3.1.2
+smart-open==6.0.0
+spacy==3.4.3
 spacy-legacy==3.0.12
-srsly==2.4.8
+srsly==2.4.4
 sympy==1.10.1
-tensorboardX==2.5
-thinc==8.0.15
-threadpoolctl==2.2.0
-tokenizers==0.12.1
+tensorboardX==2.6
+thinc==8.1.0
+threadpoolctl==3.1.0
+tokenizers==0.10.3
 torch==1.13.0
-tqdm==4.64.1
-transformers==4.21.3
+tqdm==4.62.3
+transformers==4.16.2
 typer==0.3.2
-typing-extensions==3.7.4.3
-urllib3==1.26.15
-wasabi==0.9.1
-zipp==3.15.0
+typing_extensions==4.1.0
+urllib3==1.26.12
+wasabi==0.10.1
+zipp==3.8.0
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/threading.py", line 926, in _bootstrap_inner
-    self.run()
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/event_file_writer.py", line 202, in run
-    data = self._queue.get(True, queue_wait_duration)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/queues.py", line 108, in get
-    res = self._recv_bytes()
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
-    buf = self._recv(4)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
-    raise EOFError
-EOFError
+                        - Project source code: import json
+from abc import abstractmethod, ABC
+from collections import OrderedDict
+from logging import Logger
+from typing import List
+from tqdm import tqdm
+from transformers import BertTokenizer
 
-Traceback (most recent call last):
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
-    self.run()
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/process.py", line 99, in run
-    self._target(*self._args, **self._kwargs)
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert.py", line 17, in __train
-    types_path=run_args.types_path, input_reader_cls=input_reader.JsonInputReader)
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/spert_trainer.py", line 94, in train
-    self._train_epoch(model, compute_loss, optimizer, train_dataset, updates_epoch, epoch)
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/spert_trainer.py", line 192, in _train_epoch
-    relations=batch['rels'], rel_masks=batch['rel_masks'])
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/models.py", line 224, in forward
-    return self._forward_train(*args, **kwargs)
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/models.py", line 62, in _forward_train
-    h = self.bert(input_ids=encodings, attention_mask=context_masks)['last_hidden_state']
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 1028, in forward
-    return_dict=return_dict,
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 614, in forward
-    output_attentions,
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 498, in forward
-    past_key_value=self_attn_past_key_value,
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 430, in forward
-    output_attentions,
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
-    return forward_call(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 327, in forward
-    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
-RuntimeError: CUDA error: CUBLAS_STATUS_NOT_SUPPORTED when calling `cublasSgemmStridedBatched( handle, opa, opb, m, n, k, &alpha, a, lda, stridea, b, ldb, strideb, &beta, c, ldc, stridec, num_batches)`
+from spert import util
+from spert.entities import Dataset, EntityType, RelationType, Entity, Relation, Document
+from spert.opt import spacy
+
+
+class BaseInputReader(ABC):
+    def __init__(self, types_path: str, tokenizer: BertTokenizer, neg_entity_count: int = None,
+                 neg_rel_count: int = None, max_span_size: int = None, logger: Logger = None, **kwargs):
+        types = json.load(open(types_path), object_pairs_hook=OrderedDict)  # entity + relation types
+
+        self._entity_types = OrderedDict()
+        self._idx2entity_type = OrderedDict()
+        self._relation_types = OrderedDict()
+        self._idx2relation_type = OrderedDict()
+
+        # entities
+        # add 'None' entity type
+        none_entity_type = EntityType('None', 0, 'None', 'No Entity')
+        self._entity_types['None'] = none_entity_type
+        self._idx2entity_type[0] = none_entity_type
+
+        # specified entity types
+        for i, (key, v) in enumerate(types['entities'].items()):
+            entity_type = EntityType(key, i + 1, v['short'], v['verbose'])
+            self._entity_types[key] = entity_type
+            self._idx2entity_type[i + 1] = entity_type
+
+        # relations
+        # add 'None' relation type
+        none_relation_type = RelationType('None', 0, 'None', 'No Relation')
+        self._relation_types['None'] = none_relation_type
+        self._idx2relation_type[0] = none_relation_type
+
+        # specified relation types
+        for i, (key, v) in enumerate(types['relations'].items()):
+            relation_type = RelationType(key, i + 1, v['short'], v['verbose'], v['symmetric'])
+            self._relation_types[key] = relation_type
+            self._idx2relation_type[i + 1] = relation_type
+
+        self._neg_entity_count = neg_entity_count
+        self._neg_rel_count = neg_rel_count
+        self._max_span_size = max_span_size
+
+        self._datasets = dict()
+
+        self._tokenizer = tokenizer
+        self._logger = logger
+
+        self._vocabulary_size = tokenizer.vocab_size
+
+    @abstractmethod
+    def read(self, dataset_path, dataset_label):
+        pass
+
+    def get_dataset(self, label) -> Dataset:
+        return self._datasets[label]
+
+    def get_entity_type(self, idx) -> EntityType:
+        entity = self._idx2entity_type[idx]
+        return entity
+
+    def get_relation_type(self, idx) -> RelationType:
+        relation = self._idx2relation_type[idx]
+        return relation
+
+    def _log(self, text):
+        if self._logger is not None:
+            self._logger.info(text)
+
+    @property
+    def datasets(self):
+        return self._datasets
+
+    @property
+    def entity_types(self):
+        return self._entity_types
+
+    @property
+    def relation_types(self):
+        return self._relation_types
+
+    @property
+    def relation_type_count(self):
+        return len(self._relation_types)
+
+    @property
+    def entity_type_count(self):
+        return len(self._entity_types)
+
+    @property
+    def vocabulary_size(self):
+        return self._vocabulary_size
+
+    def __str__(self):
+        string = ""
+        for dataset in self._datasets.values():
+            string += "Dataset: %s\n" % dataset
+            string += str(dataset)
+
+        return string
+
+    def __repr__(self):
+        return self.__str__()
+
+
+class JsonInputReader(BaseInputReader):
+    def __init__(self, types_path: str, tokenizer: BertTokenizer, neg_entity_count: int = None,
+                 neg_rel_count: int = None, max_span_size: int = None, logger: Logger = None):
+        super().__init__(types_path, tokenizer, neg_entity_count, neg_rel_count, max_span_size, logger)
+
+    def read(self, dataset_path, dataset_label):
+        dataset = Dataset(dataset_label, self._relation_types, self._entity_types, self._neg_entity_count,
+                          self._neg_rel_count, self._max_span_size)
+        self._parse_dataset(dataset_path, dataset)
+        self._datasets[dataset_label] = dataset
+        return dataset
+
+    def _parse_dataset(self, dataset_path, dataset):
+        documents = json.load(open(dataset_path))
+        for document in tqdm(documents, desc="Parse dataset '%s'" % dataset.label):
+            self._parse_document(document, dataset)
+
+    def _parse_document(self, doc, dataset) -> Document:
+        jtokens = doc['tokens']
+        jrelations = doc['relations']
+        jentities = doc['entities']
+
+        # parse tokens
+        doc_tokens, doc_encoding = _parse_tokens(jtokens, dataset, self._tokenizer)
+
+        # parse entity mentions
+        entities = self._parse_entities(jentities, doc_tokens, dataset)
+
+        # parse relations
+        relations = self._parse_relations(jrelations, entities, dataset)
+
+        # create document
+        document = dataset.create_document(doc_tokens, entities, relations, doc_encoding)
+
+        return document
+
+    def _parse_entities(self, jentities, doc_tokens, dataset) -> List[Entity]:
+        entities = []
+
+        for entity_idx, jentity in enumerate(jentities):
+            entity_type = self._entity_types[jentity['type']]
+            start, end = jentity['start'], jentity['end']
+
+            # create entity mention
+            tokens = doc_tokens[start:end]
+            phrase = " ".join([t.phrase for t in tokens])
+            entity = dataset.create_entity(entity_type, tokens, phrase)
+            entities.append(entity)
+
+        return entities
+
+    def _parse_relations(self, jrelations, entities, dataset) -> List[Relation]:
+        relations = []
+
+        for jrelation in jrelations:
+            relation_type = self._relation_types[jrelation['type']]
+
+            head_idx = jrelation['head']
+            tail_idx = jrelation['tail']
+
+            # create relation
+            head = entities[head_idx]
+            tail = entities[tail_idx]
+
+            reverse = int(tail.tokens[0].index) < int(head.tokens[0].index)
+
+            # for symmetric relations: head occurs before tail in sentence
+            if relation_type.symmetric and reverse:
+                head, tail = util.swap(head, tail)
+
+            relation = dataset.create_relation(relation_type, head_entity=head, tail_entity=tail, reverse=reverse)
+            relations.append(relation)
+
+        return relations
+
+
+class JsonPredictionInputReader(BaseInputReader):
+    def __init__(self, types_path: str, tokenizer: BertTokenizer, spacy_model: str = None,
+                 max_span_size: int = None, logger: Logger = None):
+        super().__init__(types_path, tokenizer, max_span_size=max_span_size, logger=logger)
+        self._spacy_model = spacy_model
+
+        self._nlp = spacy.load(spacy_model) if spacy is not None and spacy_model is not None else None
+
+    def read(self, dataset_path, dataset_label):
+        dataset = Dataset(dataset_label, self._relation_types, self._entity_types, self._neg_entity_count,
+                          self._neg_rel_count, self._max_span_size)
+        self._parse_dataset(dataset_path, dataset)
+        self._datasets[dataset_label] = dataset
+        return dataset
+
+    def _parse_dataset(self, dataset_path, dataset):
+        documents = json.load(open(dataset_path))
+        for document in tqdm(documents, desc="Parse dataset '%s'" % dataset.label):
+            self._parse_document(document, dataset)
+
+    def _parse_document(self, document, dataset) -> Document:
+        if type(document) == list:
+            jtokens = document
+        elif type(document) == dict:
+            jtokens = document['tokens']
+        else:
+            jtokens = [t.text for t in self._nlp(document)]
+
+        # parse tokens
+        doc_tokens, doc_encoding = _parse_tokens(jtokens, dataset, self._tokenizer)
+
+        # create document
+        document = dataset.create_document(doc_tokens, [], [], doc_encoding)
+
+        return document
+
+
+def _parse_tokens(jtokens, dataset, tokenizer):
+    doc_tokens = []
+
+    # full document encoding including special tokens ([CLS] and [SEP]) and byte-pair encodings of original tokens
+    doc_encoding = [tokenizer.convert_tokens_to_ids('[CLS]')]
+
+    # parse tokens
+    for i, token_phrase in enumerate(jtokens):
+        token_encoding = tokenizer.encode(token_phrase, add_special_tokens=False)
+        if not token_encoding:
+            token_encoding = [tokenizer.convert_tokens_to_ids('[UNK]')]
+        span_start, span_end = (len(doc_encoding), len(doc_encoding) + len(token_encoding))
+
+        token = dataset.create_token(i, span_start, span_end, token_phrase)
+
+        doc_tokens.append(token)
+        doc_encoding += token_encoding
+
+    doc_encoding += [tokenizer.convert_tokens_to_ids('[SEP]')]
+
+    return doc_tokens, doc_encoding
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99)', 'nvidia-cudnn-cu11 (==8.5.0.96)', 'nvidia-cublas-cu11 (==11.10.3.66)', 'nvidia-cuda-nvrtc-cu11 (==11.7.99)', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "./spert.py", line 5, in <module>
+    from spert import input_reader
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/input_reader.py", line 6, in <module>
+    from tqdm import tqdm
+ModuleNotFoundError: No module named 'tqdm'
 
 
                         **Analysis Protocol**

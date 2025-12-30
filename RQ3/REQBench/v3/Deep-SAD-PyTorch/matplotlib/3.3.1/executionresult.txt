@@ -22,13 +22,13 @@ INFO:root:Pretraining batch size: 128
 INFO:root:Pretraining weight decay: 0.0005
 INFO:root:Starting pretraining...
 THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=383 error=11 : invalid argument
-INFO:root:| Epoch: 001/001 | Train Time: 0.666s | Train Loss: 0.263133 |
-INFO:root:Pretraining Time: 0.667s
+INFO:root:| Epoch: 001/001 | Train Time: 0.671s | Train Loss: 0.263133 |
+INFO:root:Pretraining Time: 0.672s
 INFO:root:Finished pretraining.
 INFO:root:Testing autoencoder...
 INFO:root:Test Loss: 0.224851
-INFO:root:Test AUC: 51.23%
-INFO:root:Test Time: 0.716s
+INFO:root:Test AUC: 51.24%
+INFO:root:Test Time: 0.729s
 INFO:root:Finished testing autoencoder.
 INFO:root:Training optimizer: adam
 INFO:root:Training learning rate: 0.0001
@@ -39,11 +39,11 @@ INFO:root:Training weight decay: 5e-07
 INFO:root:Initializing center c...
 INFO:root:Center c initialized.
 INFO:root:Starting training...
-INFO:root:| Epoch: 001/001 | Train Time: 0.612s | Train Loss: 3.380861 |
-INFO:root:Training Time: 0.612s
+INFO:root:| Epoch: 001/001 | Train Time: 0.605s | Train Loss: 3.380861 |
+INFO:root:Training Time: 0.605s
 INFO:root:Finished training.
 INFO:root:Starting testing...
 INFO:root:Test Loss: 1.576255
 INFO:root:Test AUC: 82.45%
-INFO:root:Test Time: 0.635s
+INFO:root:Test Time: 0.679s
 INFO:root:Finished testing.

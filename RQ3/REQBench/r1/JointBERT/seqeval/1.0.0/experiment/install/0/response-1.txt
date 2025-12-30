@@ -8,7 +8,7 @@ idna==3.7
 importlib-metadata==4.8.3
 importlib-resources==5.4.0
 joblib==1.1.1
-keras==2.10.0
+keras==2.4.3
 numpy==1.19.2
 packaging==21.3
 pyparsing==3.1.2

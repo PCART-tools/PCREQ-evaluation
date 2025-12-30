@@ -65,20 +65,20 @@ Collecting urllib3==1.23
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/c9/6fdd990019071a4a32a5e7cb78a1d92c53851ef4f56f62a3486e6a7d8ffb/urllib3-1.23-py2.py3-none-any.whl (133 kB)
 Collecting Werkzeug==0.15.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328 kB)
-Requirement already satisfied: setuptools>=36 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from Markdown==3.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/cnn_captcha-numpy-1.19.2.txt (line 17)) (59.6.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.15.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/cnn_captcha-numpy-1.19.2.txt (line 29)) (0.37.1)
-Collecting opt-einsum>=2.3.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
-Collecting wrapt>=1.11.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/66/50/1c5ccb23dd63f8f3d312dc2d5e0e64c681faf7c2388fa1ab2553713cef11/wrapt-1.16.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
-Collecting google-pasta>=0.1.6
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
-Collecting keras-preprocessing>=1.0.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
-Collecting tensorflow-estimator==1.15.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/62/2ee9cd74c9fa2fa450877847ba560b260f5d0fb70ee0595203082dafcc9d/tensorflow_estimator-1.15.1-py2.py3-none-any.whl (503 kB)
+Requirement already satisfied: setuptools>=36 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from Markdown==3.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/cnn_captcha-numpy-1.19.2.txt (line 17)) (59.6.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.15.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/cnn_captcha-numpy-1.19.2.txt (line 29)) (0.37.1)
 Collecting keras-applications>=1.0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
+Collecting keras-preprocessing>=1.0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Collecting google-pasta>=0.1.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting opt-einsum>=2.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting tensorflow-estimator==1.15.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/62/2ee9cd74c9fa2fa450877847ba560b260f5d0fb70ee0595203082dafcc9d/tensorflow_estimator-1.15.1-py2.py3-none-any.whl (503 kB)
+Collecting wrapt>=1.11.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/66/50/1c5ccb23dd63f8f3d312dc2d5e0e64c681faf7c2388fa1ab2553713cef11/wrapt-1.16.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
 Collecting h5py
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7a/e53e500335afb6b1aade11227cdf107fca54106a1dca5c9d13242a043f3b/h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
 Collecting cached-property

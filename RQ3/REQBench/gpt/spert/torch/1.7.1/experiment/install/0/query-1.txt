@@ -28,11 +28,11 @@ regex==2024.4.16
 requests==2.31.0
 sacremoses==0.0.53
 scikit-learn==0.24.0
-scipy==1.7.3
+scipy==1.6.3
 sentencepiece==0.1.91
 six==1.16.0
 smart-open==6.4.0
-spacy==3.0.1
+spacy==3.0.6
 spacy-legacy==3.0.12
 srsly==2.4.8
 sympy==1.10.1
@@ -42,19 +42,22 @@ threadpoolctl==3.1.0
 tokenizers==0.9.4
 torch==1.7.1
 tqdm==4.55.1
-transformers==4.4.2
+transformers==4.4.0
 typer==0.3.2
-typing_extensions==4.0.0
+typing_extensions==4.1.1
 urllib3==2.0.7
 wasabi==0.10.1
 zipp==3.15.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested tokenizers==0.9.4
-    transformers 4.4.2 depends on tokenizers<0.11 and >=0.10.1
+    The user requested typing_extensions==4.1.1
+    catalogue 2.0.10 depends on typing-extensions>=3.6.4; python_version < "3.8"
+    importlib-metadata 6.7.0 depends on typing-extensions>=3.6.4; python_version < "3.8"
+    spacy 3.0.6 depends on typing-extensions<4.0.0.0 and >=3.7.4; python_version < "3.8"
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

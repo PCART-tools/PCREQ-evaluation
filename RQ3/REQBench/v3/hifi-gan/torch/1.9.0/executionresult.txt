@@ -1,5 +1,9 @@
 Initializing Training Process..
 Batch size per GPU : 5
+Loading 'cp_hifigan/g_00000030'
+Complete.
+Loading 'cp_hifigan/do_00000030'
+Complete.
 Generator(
   (conv_pre): Conv1d(80, 512, kernel_size=(7,), stride=(1,), padding=(3,))
   (ups): ModuleList(
@@ -162,10 +166,6 @@ Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
 Epoch: 1
-Loading 'cp_hifigan/g_00000030'
-Complete.
-Loading 'cp_hifigan/do_00000030'
-Complete.
 Loading 'cp_hifigan/g_00000030'
 Complete.
 Loading 'cp_hifigan/do_00000030'

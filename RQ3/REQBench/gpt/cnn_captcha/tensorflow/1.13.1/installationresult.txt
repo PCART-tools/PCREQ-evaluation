@@ -31,8 +31,8 @@ Collecting itsdangerous==1.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
 Collecting Jinja2==2.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124 kB)
-Collecting Markdown==3.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7a/fd/e22357c299e93c0bc11ec8ba54e79f98dd568e09adfe9b39d6852c744938/Markdown-3.0-py2.py3-none-any.whl (89 kB)
+Collecting Markdown==3.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f5/e4/d8c18f2555add57ff21bf25af36d827145896a07607486cc79a2aea641af/Markdown-3.1-py2.py3-none-any.whl (87 kB)
 Collecting MarkupSafe==1.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/d3/75cddfad6ca1d1bb3a017cece499a65e54ceb4583800f1256b8ad07bb57f/MarkupSafe-1.1.1-cp36-cp36m-manylinux2010_x86_64.whl (32 kB)
 Collecting matplotlib==2.1.0
@@ -55,18 +55,18 @@ Collecting requests==2.19.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/65/47/7e02164a2a3db50ed6d8a6ab1d6d60b69c4c3fdf57a284257925dfc12bda/requests-2.19.1-py2.py3-none-any.whl (91 kB)
 Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
-Collecting tensorboard==1.13.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0f/39/bdd75b08a6fba41f098b6cb091b9e8c7a80e1b4d679a581a0ccd17b10373/tensorboard-1.13.1-py3-none-any.whl (3.2 MB)
+Collecting tensorboard==1.13.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fa/7b/3ee06856ec30d5136cd2002408df1d111fcff269f3691147dbf3b8dc0ba2/tensorboard-1.13.0-py3-none-any.whl (3.2 MB)
 Collecting tensorflow==1.13.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/77/63/a9fa76de8dffe7455304c4ed635be4aa9c0bacef6e0633d87d5f54530c5c/tensorflow-1.13.1-cp36-cp36m-manylinux1_x86_64.whl (92.5 MB)
 Collecting termcolor==1.1.0
   Using cached termcolor-1.1.0-py3-none-any.whl
 Collecting urllib3==1.23
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/c9/6fdd990019071a4a32a5e7cb78a1d92c53851ef4f56f62a3486e6a7d8ffb/urllib3-1.23-py2.py3-none-any.whl (133 kB)
-Collecting Werkzeug==0.15.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/57/92a497e38161ce40606c27a86759c6b92dd34fcdb33f64171ec559257c02/Werkzeug-0.15.4-py2.py3-none-any.whl (327 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from protobuf==3.6.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/cnn_captcha-tensorflow-1.13.1.txt (line 23)) (39.1.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.13.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/cnn_captcha-tensorflow-1.13.1.txt (line 29)) (0.37.1)
+Collecting Werkzeug==0.15.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328 kB)
+Requirement already satisfied: setuptools>=36 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from Markdown==3.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/cnn_captcha-tensorflow-1.13.1.txt (line 17)) (39.1.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.13.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/cnn_captcha-tensorflow-1.13.1.txt (line 29)) (0.37.1)
 Collecting keras-applications>=1.0.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
 Collecting keras-preprocessing>=1.0.5
@@ -80,4 +80,4 @@ Collecting mock>=2.0.0
 Collecting cached-property
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
 Installing collected packages: six, numpy, cached-property, Werkzeug, protobuf, olefile, mock, MarkupSafe, Markdown, h5py, grpcio, absl-py, urllib3, termcolor, tensorflow-estimator, tensorboard, pytz, python-dateutil, pyparsing, Pillow, keras-preprocessing, keras-applications, Jinja2, itsdangerous, idna, html5lib, gast, cycler, Click, chardet, certifi, astor, tensorflow, requests, matplotlib, Flask, easydict, captcha, bleach
-Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.1 Markdown-3.0 MarkupSafe-1.1.1 Pillow-4.3.0 Werkzeug-0.15.4 absl-py-0.7.1 astor-0.8.0 bleach-1.5.0 cached-property-1.5.2 captcha-0.3 certifi-2019.3.9 chardet-3.0.4 cycler-0.10.0 easydict-1.8 gast-0.2.2 grpcio-1.19.0 h5py-3.1.0 html5lib-0.9999999 idna-2.7 itsdangerous-1.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 matplotlib-2.1.0 mock-5.2.0 numpy-1.16.2 olefile-0.46 protobuf-3.6.1 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2018.9 requests-2.19.1 six-1.12.0 tensorboard-1.13.1 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 urllib3-1.23
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.1 Markdown-3.1 MarkupSafe-1.1.1 Pillow-4.3.0 Werkzeug-0.15.2 absl-py-0.7.1 astor-0.8.0 bleach-1.5.0 cached-property-1.5.2 captcha-0.3 certifi-2019.3.9 chardet-3.0.4 cycler-0.10.0 easydict-1.8 gast-0.2.2 grpcio-1.19.0 h5py-3.1.0 html5lib-0.9999999 idna-2.7 itsdangerous-1.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 matplotlib-2.1.0 mock-5.2.0 numpy-1.16.2 olefile-0.46 protobuf-3.6.1 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2018.9 requests-2.19.1 six-1.12.0 tensorboard-1.13.0 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 urllib3-1.23

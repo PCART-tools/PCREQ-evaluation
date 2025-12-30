@@ -1,4 +1,32 @@
 Traceback (most recent call last):
-  File "example_classification.py", line 1, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+  File "example_classification.py", line 8, in <module>
+    from dbn.tensorflow import SupervisedDBNClassification
+  File "/home/lei/compatibility_analysis/tensorflow/1.5/deep-belief-network/dbn/tensorflow/__init__.py", line 1, in <module>
+    from .models import BinaryRBM, UnsupervisedDBN, SupervisedDBNRegression, SupervisedDBNClassification
+  File "/home/lei/compatibility_analysis/tensorflow/1.5/deep-belief-network/dbn/tensorflow/models.py", line 5, in <module>
+    import tensorflow as tf
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/__init__.py", line 55, in <module>
+    from ._api.v2 import compat
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/__init__.py", line 39, in <module>
+    from . import v1
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v1/__init__.py", line 34, in <module>
+    from . import compat
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v1/compat/__init__.py", line 40, in <module>
+    from . import v2
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v1/compat/v2/__init__.py", line 32, in <module>
+    from tensorflow._api.v2.compat.v2 import __internal__
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v2/__init__.py", line 37, in <module>
+    from . import compat
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v2/compat/__init__.py", line 40, in <module>
+    from . import v2
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/_api/v2/compat/v2/compat/v2/__init__.py", line 334, in <module>
+    from tensorboard.summary._tf import summary
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorboard/summary/__init__.py", line 28, in <module>
+    from tensorboard.summary import v2  # noqa: F401
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorboard/summary/v2.py", line 21, in <module>
+    from tensorboard.plugins.audio.summary_v2 import audio  # noqa: F401
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorboard/plugins/audio/summary_v2.py", line 27, in <module>
+    from tensorboard.compat import tf2 as tf
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorboard/compat/__init__.py", line 23, in <module>
+    import tensorboard.lazy as _lazy
+AttributeError: module 'tensorboard' has no attribute 'lazy'

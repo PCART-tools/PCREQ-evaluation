@@ -11,8 +11,8 @@ Collecting pyparsing==2.3.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/0a/001be530836743d8be6c2d85069f46fecf84ac6c18c7f5fb8125ee11d854/pyparsing-2.3.1-py2.py3-none-any.whl (61 kB)
 Collecting scikit-learn==0.20.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/82/c0de5839d613b82bddd088599ac0bbfbbbcbd8ca470680658352d2c435bd/scikit_learn-0.20.3-cp36-cp36m-manylinux1_x86_64.whl (5.4 MB)
-Collecting scipy==1.3.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/29/50/a552a5aff252ae915f522e44642bb49a7b7b31677f9580cfd11bcc869976/scipy-1.3.1-cp36-cp36m-manylinux1_x86_64.whl (25.2 MB)
+Collecting scipy==1.2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/5f/c48860704092933bf1c4c1574a8de1ffd16bf4fde8bab190d747598844b2/scipy-1.2.1-cp36-cp36m-manylinux1_x86_64.whl (24.8 MB)
 Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
 Collecting sklearn==0.0
@@ -26,4 +26,4 @@ Collecting tqdm==4.19.9
 WARNING: The candidate selected for download or install is a yanked version: 'torchvision' candidate (version 0.2.2 at https://pypi.tuna.tsinghua.edu.cn/packages/ce/a1/66d72a2fe580a9f0fcbaaa5b976911fbbde9dce9b330ba12791997b856e9/torchvision-0.2.2-py2.py3-none-any.whl#sha256=686cda0037bc904a35593a1394eaf7337edd141b78dc2eadc4667abb6fd569b5 (from https://pypi.tuna.tsinghua.edu.cn/simple/torchvision/))
 Reason for being yanked: So that users won't accidentally install this when using python 3.11
 Installing collected packages: numpy, scipy, tqdm, torch, six, scikit-learn, pyparsing, Pillow, torchvision, sklearn, pyhocon, certifi
-Successfully installed Pillow-8.3.2 certifi-2021.5.30 numpy-1.17.1 pyhocon-0.3.51 pyparsing-2.3.1 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 sklearn-0.0 torch-1.0.1 torchvision-0.2.2 tqdm-4.19.9
+Successfully installed Pillow-8.3.2 certifi-2021.5.30 numpy-1.17.1 pyhocon-0.3.51 pyparsing-2.3.1 scikit-learn-0.20.3 scipy-1.2.1 six-1.12.0 sklearn-0.0 torch-1.0.1 torchvision-0.2.2 tqdm-4.19.9

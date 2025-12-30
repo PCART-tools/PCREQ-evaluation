@@ -92,13 +92,13 @@ tensorboard-plugin-wit==1.6.0.post3
 terminado==0.8.3
 testpath==0.4.4
 threadpoolctl==2.0.0
-tokenizers==0.5.2
+tokenizers==0.9.0
 torch==1.11.0
 torchvision==0.12.0
 tornado==6.0.4
 tqdm==4.46.0
 traitlets==4.3.3
-transformers==3.5.1
+transformers==4.0.0
 tweepy==3.8.0
 urllib3==1.25.9
 wcwidth==0.1.9
@@ -108,11 +108,12 @@ widgetsnbextension==3.5.1
 zipp==3.1.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested tokenizers==0.5.2
-    transformers 3.5.1 depends on tokenizers==0.9.3
+    The user requested tokenizers==0.9.0
+    transformers 4.0.0 depends on tokenizers==0.9.4
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

@@ -4,17 +4,16 @@
 
                 **Input Context**
                 - Full requirements.txt: coloredlogs==15.0.1
-correlation-cuda==0.0.0
 future==1.0.0
 humanfriendly==10.0
 mpmath==1.2.1
 numpy==1.15.0
 Pillow==5.0.0
-resample2d-cuda==0.0.0
 sympy==1.10.1
 torch==1.6.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99)', 'nvidia-cudnn-cu11 (==8.5.0.96)', 'nvidia-cublas-cu11 (==11.10.3.66)', 'nvidia-cuda-nvrtc-cu11 (==11.7.99)', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

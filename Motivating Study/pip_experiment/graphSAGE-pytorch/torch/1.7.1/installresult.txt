@@ -1,0 +1,14 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/4f/acf48b3a18a8f9223c6616647f0a011a5713a985336088d7c76f3a211374/torch-1.7.1-cp36-cp36m-manylinux1_x86_64.whl (776.8 MB)
+Collecting dataclasses
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from torch==1.7.1) (1.16.2)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
+Installing collected packages: typing-extensions, dataclasses, torch
+  Attempting uninstall: torch
+    Found existing installation: torch 1.0.1
+    Uninstalling torch-1.0.1:
+      Successfully uninstalled torch-1.0.1
+Successfully installed dataclasses-0.8 torch-1.7.1 typing-extensions-4.1.1

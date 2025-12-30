@@ -1,0 +1,12 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.5.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a4/cf/007b6de316c9f3d4cb315a60c308342cc299e464167f5ebc369e93b5e23a/torch-1.5.1-cp37-cp37m-manylinux1_x86_64.whl (753.2 MB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torch==1.5.1) (1.16.0)
+Collecting future
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
+Installing collected packages: future, torch
+  Attempting uninstall: torch
+    Found existing installation: torch 1.1.0
+    Uninstalling torch-1.1.0:
+      Successfully uninstalled torch-1.1.0
+Successfully installed future-1.0.0 torch-1.5.1

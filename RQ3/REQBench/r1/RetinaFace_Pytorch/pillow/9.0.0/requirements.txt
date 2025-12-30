@@ -19,7 +19,7 @@ six==1.16.0
 sympy==1.10.1
 tensorboardX==1.8
 terminaltables==3.1.0
-torch==1.4.0
-torchvision==0.5.0
+torch==1.7.1
+torchvision==0.8.2
 tqdm==4.32.1
 typing_extensions==4.7.1

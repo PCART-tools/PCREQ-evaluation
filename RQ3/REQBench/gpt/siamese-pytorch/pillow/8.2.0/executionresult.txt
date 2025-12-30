@@ -3,20 +3,21 @@ begin loading training dataset to memory
 finish loading training dataset to memory
 begin loading test dataset to memory
 finish loading test dataset to memory
-/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:49: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
   warnings.warn(warning.format(ret))
-[10]	loss:	0.69056	time lapsed:	1.42 s
-[20]	loss:	0.65847	time lapsed:	1.00 s
-[30]	loss:	0.62363	time lapsed:	1.00 s
-[40]	loss:	0.60997	time lapsed:	1.00 s
-[50]	loss:	0.57716	time lapsed:	1.00 s
-[60]	loss:	0.59510	time lapsed:	1.01 s
-[70]	loss:	0.55119	time lapsed:	1.01 s
-[80]	loss:	0.55634	time lapsed:	1.01 s
-[90]	loss:	0.55050	time lapsed:	1.01 s
-[100]	loss:	0.54797	time lapsed:	1.01 s
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=405 error=11 : invalid argument
+[10]	loss:	0.69099	time lapsed:	1.21 s
+[20]	loss:	0.65870	time lapsed:	0.93 s
+[30]	loss:	0.62609	time lapsed:	0.93 s
+[40]	loss:	0.61073	time lapsed:	0.93 s
+[50]	loss:	0.59579	time lapsed:	0.93 s
+[60]	loss:	0.57354	time lapsed:	0.93 s
+[70]	loss:	0.57773	time lapsed:	0.93 s
+[80]	loss:	0.53841	time lapsed:	0.93 s
+[90]	loss:	0.54004	time lapsed:	0.93 s
+[100]	loss:	0.55204	time lapsed:	0.93 s
 **********************************************************************
-[100]	Test set	correct:	60	error:	340	precision:	0.150000
+[100]	Test set	correct:	77	error:	323	precision:	0.192500
 **********************************************************************
 ######################################################################
-final accuracy:  0.0075
+final accuracy:  0.009625

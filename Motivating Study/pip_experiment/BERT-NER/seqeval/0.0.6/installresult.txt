@@ -1,0 +1,10 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting seqeval==0.0.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/51/79/d2cd36181d1a8843b312766a94b5c83ce451194b1e4cd99fb5dd50fa6760/seqeval-0.0.6-py3-none-any.whl (6.0 kB)
+Requirement already satisfied: numpy>=1.14.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from seqeval==0.0.6) (1.21.6)
+Installing collected packages: seqeval
+  Attempting uninstall: seqeval
+    Found existing installation: seqeval 0.0.5
+    Uninstalling seqeval-0.0.5:
+      Successfully uninstalled seqeval-0.0.5
+Successfully installed seqeval-0.0.6

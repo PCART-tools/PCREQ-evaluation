@@ -21,6 +21,7 @@ torchvision==0.4.2
 tqdm==4.19.9
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['numpy', 'future']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

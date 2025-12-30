@@ -19,8 +19,8 @@ Collecting easydict==1.8
   Using cached easydict-1.8-py3-none-any.whl
 Collecting Flask==1.0.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91 kB)
-Collecting gast==0.2.2
-  Using cached gast-0.2.2-py3-none-any.whl
+Collecting gast==0.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b6/48/583c032b79ae5b3daa02225a675aeb673e58d2cb698e78510feceb11958c/gast-0.4.0-py3-none-any.whl (9.8 kB)
 Collecting grpcio==1.37.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/ed/a6ac635bfd93e0a3655bd71e0de1b87f182c0d4bb0cfb544a9df03399d46/grpcio-1.37.0-cp36-cp36m-manylinux2014_x86_64.whl (4.2 MB)
 Collecting html5lib==0.9999999
@@ -55,33 +55,61 @@ Collecting requests==2.21.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57 kB)
 Collecting six==1.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl (10 kB)
-Collecting tensorboard==1.15.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1e/e9/d3d747a97f7188f48aa5eda486907f3b345cd409f0a0850468ba867db246/tensorboard-1.15.0-py3-none-any.whl (3.8 MB)
-Collecting tensorflow==1.15.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3f/98/5a99af92fb911d7a88a0005ad55005f35b4c1ba8d75fba02df726cd936e6/tensorflow-1.15.0-cp36-cp36m-manylinux2010_x86_64.whl (412.3 MB)
+Collecting tensorboard==2.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/20/a59a30c32330e4ff704faa4273b251db042d495e0c367bcdf045c6fe26e9/tensorboard-2.6.0-py3-none-any.whl (5.6 MB)
+Collecting tensorflow==2.6.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/17/af/d657a205f04b376ce63b7e11df809a07b0d2f7e16797c6023428dac084d3/tensorflow-2.6.1-cp36-cp36m-manylinux2010_x86_64.whl (458.3 MB)
 Collecting termcolor==1.1.0
   Using cached termcolor-1.1.0-py3-none-any.whl
 Collecting urllib3==1.23
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/c9/6fdd990019071a4a32a5e7cb78a1d92c53851ef4f56f62a3486e6a7d8ffb/urllib3-1.23-py2.py3-none-any.whl (133 kB)
 Collecting Werkzeug==0.15.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/18/79/84f02539cc181cdbf5ff5a41b9f52cae870b6f632767e43ba6ac70132e92/Werkzeug-0.15.2-py2.py3-none-any.whl (328 kB)
-Requirement already satisfied: setuptools>=36 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from Markdown==3.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/cnn_captcha-tensorflow-2.6.1.txt (line 17)) (59.6.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.15.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/cnn_captcha-tensorflow-2.6.1.txt (line 29)) (0.37.1)
-Collecting opt-einsum>=2.3.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
-Collecting keras-preprocessing>=1.0.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
-Collecting keras-applications>=1.0.8
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
-Collecting google-pasta>=0.1.6
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
-Collecting wrapt>=1.11.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/66/50/1c5ccb23dd63f8f3d312dc2d5e0e64c681faf7c2388fa1ab2553713cef11/wrapt-1.16.0-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (77 kB)
-Collecting tensorflow-estimator==1.15.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/62/2ee9cd74c9fa2fa450877847ba560b260f5d0fb70ee0595203082dafcc9d/tensorflow_estimator-1.15.1-py2.py3-none-any.whl (503 kB)
-Collecting h5py
+Requirement already satisfied: setuptools>=36 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from Markdown==3.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/cnn_captcha-tensorflow-2.6.1.txt (line 17)) (59.6.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==2.6.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/cnn_captcha-tensorflow-2.6.1.txt (line 29)) (0.37.1)
+Collecting tensorboard-data-server<0.7.0,>=0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/f9/802efd84988bffd9f644c03b6e66fde8e76c3aa33db4279ddd11c5d61f4b/tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)
+Collecting google-auth-oauthlib<0.5,>=0.4.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/0e/0636cc1448a7abc444fb1b3a63655e294e0d2d49092dc3de05241be6d43c/google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
+Collecting tensorboard-plugin-wit>=1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
+Collecting google-auth<2,>=1.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/7a/1b3eb54caee1b8c73c2c3645f78a382eca4805a301a30c64a078e736e446/google_auth-1.35.0-py2.py3-none-any.whl (152 kB)
+Collecting flatbuffers~=1.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/eb/26/712e578c5f14e26ae3314c39a1bdc4eb2ec2f4ddc89b708cf8e0a0d20423/flatbuffers-1.12-py2.py3-none-any.whl (15 kB)
+Collecting clang~=5.0
+  Using cached clang-5.0-py3-none-any.whl
+Collecting typing-extensions~=3.7.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/7a/e881b5abb54db0e6e671ab088d079c57ce54e8a01a3ca443f561ccadb37e/typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting astunparse~=1.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Collecting h5py~=3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7a/e53e500335afb6b1aade11227cdf107fca54106a1dca5c9d13242a043f3b/h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Collecting wrapt~=1.12.1
+  Using cached wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
+Collecting keras~=2.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/4d/dc255a437c9616b155e5bd55e325e092b7cdcb4652361d733ae051d40853/keras-2.10.0-py2.py3-none-any.whl (1.7 MB)
+Collecting tensorflow-estimator<2.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/54/1b2f1e22a2670546cc02e4df1b80425edaee02133173bb91aa0f6d3d0293/tensorflow_estimator-2.6.0-py2.py3-none-any.whl (462 kB)
+Collecting opt-einsum~=3.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting google-pasta~=0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting keras-preprocessing~=1.1.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Collecting pyasn1-modules>=0.2.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/8e/bea464350e1b8c6ed0da3a312659cb648804a08af6cacc6435867f74f8bd/pyasn1_modules-0.3.0-py2.py3-none-any.whl (181 kB)
+Collecting cachetools<5.0,>=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/c1/4740af52db75e6dbdd57fc7e9478439815bbac549c1c05881be27d19a17d/cachetools-4.2.4-py3-none-any.whl (10 kB)
+Collecting rsa<5,>=3.1.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl (34 kB)
+Collecting requests-oauthlib>=0.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
 Collecting cached-property
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
-Installing collected packages: six, numpy, cached-property, Werkzeug, protobuf, olefile, MarkupSafe, Markdown, h5py, grpcio, absl-py, wrapt, urllib3, termcolor, tensorflow-estimator, tensorboard, pytz, python-dateutil, pyparsing, Pillow, opt-einsum, keras-preprocessing, keras-applications, Jinja2, itsdangerous, idna, html5lib, google-pasta, gast, cycler, Click, chardet, certifi, astor, tensorflow, requests, matplotlib, Flask, easydict, captcha, bleach
-Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.1 Markdown-3.1 MarkupSafe-1.1.1 Pillow-4.3.0 Werkzeug-0.15.2 absl-py-0.10.0 astor-0.7.1 bleach-1.5.0 cached-property-1.5.2 captcha-0.3 certifi-2019.3.9 chardet-3.0.4 cycler-0.10.0 easydict-1.8 gast-0.2.2 google-pasta-0.2.0 grpcio-1.37.0 h5py-3.1.0 html5lib-0.9999999 idna-2.7 itsdangerous-1.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 matplotlib-2.1.0 numpy-1.19.2 olefile-0.46 opt-einsum-3.3.0 protobuf-3.9.2 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2018.9 requests-2.21.0 six-1.15.0 tensorboard-1.15.0 tensorflow-1.15.0 tensorflow-estimator-1.15.1 termcolor-1.1.0 urllib3-1.23 wrapt-1.16.0
+Collecting pyasn1<0.6.0,>=0.4.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/75/4686d2872bf2fc0b37917cbc8bbf0dd3a5cdb0990799be1b9cbf1e1eb733/pyasn1-0.5.1-py2.py3-none-any.whl (84 kB)
+Collecting oauthlib>=3.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Installing collected packages: urllib3, pyasn1, idna, chardet, certifi, six, rsa, requests, pyasn1-modules, oauthlib, cachetools, requests-oauthlib, google-auth, Werkzeug, tensorboard-plugin-wit, tensorboard-data-server, protobuf, olefile, numpy, MarkupSafe, Markdown, grpcio, google-auth-oauthlib, cached-property, absl-py, wrapt, typing-extensions, termcolor, tensorflow-estimator, tensorboard, pytz, python-dateutil, pyparsing, Pillow, opt-einsum, keras-preprocessing, keras, Jinja2, itsdangerous, html5lib, h5py, google-pasta, gast, flatbuffers, cycler, Click, clang, astunparse, tensorflow, matplotlib, Flask, easydict, captcha, bleach, astor
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.1 Markdown-3.1 MarkupSafe-1.1.1 Pillow-4.3.0 Werkzeug-0.15.2 absl-py-0.10.0 astor-0.7.1 astunparse-1.6.3 bleach-1.5.0 cached-property-1.5.2 cachetools-4.2.4 captcha-0.3 certifi-2019.3.9 chardet-3.0.4 clang-5.0 cycler-0.10.0 easydict-1.8 flatbuffers-1.12 gast-0.4.0 google-auth-1.35.0 google-auth-oauthlib-0.4.6 google-pasta-0.2.0 grpcio-1.37.0 h5py-3.1.0 html5lib-0.9999999 idna-2.7 itsdangerous-1.1.0 keras-2.10.0 keras-preprocessing-1.1.2 matplotlib-2.1.0 numpy-1.19.2 oauthlib-3.2.2 olefile-0.46 opt-einsum-3.3.0 protobuf-3.9.2 pyasn1-0.5.1 pyasn1-modules-0.3.0 pyparsing-2.4.0 python-dateutil-2.8.0 pytz-2018.9 requests-2.21.0 requests-oauthlib-2.0.0 rsa-4.9.1 six-1.15.0 tensorboard-2.6.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.1 tensorflow-2.6.1 tensorflow-estimator-2.6.0 termcolor-1.1.0 typing-extensions-3.7.4.3 urllib3-1.23 wrapt-1.12.1

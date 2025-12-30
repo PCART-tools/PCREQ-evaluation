@@ -1,0 +1,12 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorboardx==2.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8b/6e/1a997fbf7f10aa80ea7c70d44c69724bf9dd6823a5d60f6cb6a4a246114e/tensorboardX-2.5-py2.py3-none-any.whl (125 kB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboardx==2.5) (1.19.3)
+Requirement already satisfied: protobuf>=3.8.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboardx==2.5) (4.24.4)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboardx==2.5) (1.16.0)
+Installing collected packages: tensorboardx
+  Attempting uninstall: tensorboardx
+    Found existing installation: tensorboardX 2.2
+    Uninstalling tensorboardX-2.2:
+      Successfully uninstalled tensorboardX-2.2
+Successfully installed tensorboardx-2.5

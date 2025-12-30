@@ -17,7 +17,7 @@ joblib==0.13.2
 kiwisolver==1.1.0
 matplotlib==3.1.1
 numpy==1.19.5
-pandas==0.25.3
+pandas==1.1.5
 Pillow==6.2.0
 pyparsing==2.4.2
 python-dateutil==2.8.0
@@ -26,36 +26,66 @@ pytz==2019.2
 regex==2019.8.19
 requests==2.22.0
 s3transfer==0.2.1
-sacremoses==0.0.33
-scikit-learn==0.22.2.post1
+sacremoses==0.0.43
+scikit-learn==0.22.2
 scipy==1.4.1
-sentencepiece==0.1.83
+sentencepiece==0.1.91
 six==1.12.0
-tokenizers==0.10.1
+tokenizers==0.9.4
 torch==1.8.0
-tqdm==4.35.0
-transformers==4.5.1
+tqdm==4.48.2
+transformers==4.2.2
 urllib3==1.25.3
+typing-extensions==3.10.0.2
 
                         - Python version: 3.7
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
+
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'numpy', 'dataclasses ; python_version < "3.7"']
                         - Crash traceback: Traceback (most recent call last):
-  File "run_bert.py", line 10, in <module>
-    from pybert.io.bert_processor import BertProcessor
-  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/io/bert_processor.py", line 8, in <module>
-    from transformers import BertTokenizer
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/__init__.py", line 43, in <module>
-    from . import dependency_versions_check
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/dependency_versions_check.py", line 41, in <module>
-    require_version_core(deps[pkg])
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/utils/versions.py", line 101, in require_version_core
-    return require_version(requirement, hint)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/utils/versions.py", line 92, in require_version
-    if want_ver is not None and not ops[op](version.parse(got_ver), version.parse(want_ver)):
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/packaging/version.py", line 54, in parse
-    return Version(version)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/packaging/version.py", line 200, in __init__
-    raise InvalidVersion(f"Invalid version: '{version}'")
-packaging.version.InvalidVersion: Invalid version: '0.10.1,<0.11'
+  File "run_bert.py", line 14, in <module>
+    from pybert.model.bert_for_multi_label import BertForMultiLable
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/model/bert_for_multi_label.py", line 2, in <module>
+    from transformers.modeling_bert import BertPreTrainedModel, BertModel
+ModuleNotFoundError: No module named 'transformers.modeling_bert'
 
 
                         **Analysis Protocol**

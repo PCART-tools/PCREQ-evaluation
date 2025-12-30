@@ -7,8 +7,8 @@ Collecting humanfriendly==10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f0/0f/310fb31e39e2d734ccaa2c0fb981ee41f7bd5056ce9bc29b2248bd569169/humanfriendly-10.0-py2.py3-none-any.whl (86 kB)
 Collecting kiwisolver==1.0.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5c/7e/d6cae2f241ba474a2665f24b480bf4e247036d63939dda2bbc4d2ee5069d/kiwisolver-1.0.1-cp37-cp37m-manylinux1_x86_64.whl (89 kB)
-Collecting matplotlib==3.0.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e7/f9/5377596cb1c035c102396f5934237a046f80da69974026f90bee5db8b7ba/matplotlib-3.0.2-cp37-cp37m-manylinux1_x86_64.whl (12.9 MB)
+Collecting matplotlib==3.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1c/15/3fea1bfb7e5b77b7cca9c6010a9cabc58ea125385345ecb6f5832eb8b49a/matplotlib-3.3.0-1-cp37-cp37m-manylinux1_x86_64.whl (11.5 MB)
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting numpy==1.19.1
@@ -25,10 +25,10 @@ Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting torch==1.3.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/34/2107f342d4493b7107a600ee16005b2870b5a0a5a165bdf5c5e7168a16a6/torch-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (734.6 MB)
-Collecting torchvision==0.4.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/ee/d872c12ea508f9cca4cf0d7b91fc5a5e476cec77628a66795ec5a585a67f/torchvision-0.4.2-cp37-cp37m-manylinux1_x86_64.whl (10.2 MB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/PyTorch-ENet-numpy-1.19.1.txt (line 4)) (65.6.3)
-Installing collected packages: pytz, pyparsing, mpmath, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, torch, python-dateutil, cycler, coloredlogs, torchvision, matplotlib
-Successfully installed Pillow-6.2.0 coloredlogs-15.0.1 cycler-0.10.0 humanfriendly-10.0 kiwisolver-1.0.1 matplotlib-3.0.2 mpmath-1.2.1 numpy-1.19.1 pyparsing-2.3.1 python-dateutil-2.7.5 pytz-2018.9 six-1.12.0 sympy-1.10.1 torch-1.3.1 torchvision-0.4.2
+Collecting torch==1.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/3b/fa92ece1e58a6a48ec598bab327f39d69808133e5b2fb33002ca754e381e/torch-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (753.4 MB)
+Collecting torchvision==0.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1c/32/cb0e4c43cd717da50258887b088471568990b5a749784c465a8a1962e021/torchvision-0.5.0-cp37-cp37m-manylinux1_x86_64.whl (4.0 MB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/PyTorch-ENet-numpy-1.19.1.txt (line 4)) (65.6.3)
+Installing collected packages: pytz, pyparsing, mpmath, torch, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, torchvision, python-dateutil, cycler, coloredlogs, matplotlib
+Successfully installed Pillow-6.2.0 coloredlogs-15.0.1 cycler-0.10.0 humanfriendly-10.0 kiwisolver-1.0.1 matplotlib-3.3.0 mpmath-1.2.1 numpy-1.19.1 pyparsing-2.3.1 python-dateutil-2.7.5 pytz-2018.9 six-1.12.0 sympy-1.10.1 torch-1.4.0 torchvision-0.5.0

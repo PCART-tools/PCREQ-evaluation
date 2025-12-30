@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tqdm==4.32.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/ab/97014da326141edd2c70711ff2b355ef16b4fb856ae3a176f93c310a25a1/tqdm-4.32.0-py2.py3-none-any.whl (49 kB)
+Installing collected packages: tqdm
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.31.1
+    Uninstalling tqdm-4.31.1:
+      Successfully uninstalled tqdm-4.31.1
+Successfully installed tqdm-4.32.0

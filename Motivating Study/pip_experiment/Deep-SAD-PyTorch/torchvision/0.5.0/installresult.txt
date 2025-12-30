@@ -1,0 +1,18 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1c/32/cb0e4c43cd717da50258887b088471568990b5a749784c465a8a1962e021/torchvision-0.5.0-cp37-cp37m-manylinux1_x86_64.whl (4.0 MB)
+Requirement already satisfied: pillow>=4.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.5.0) (6.0.0)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.5.0) (1.16.4)
+Collecting torch==1.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1a/3b/fa92ece1e58a6a48ec598bab327f39d69808133e5b2fb33002ca754e381e/torch-1.4.0-cp37-cp37m-manylinux1_x86_64.whl (753.4 MB)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.5.0) (1.12.0)
+Installing collected packages: torch, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 1.1.0
+    Uninstalling torch-1.1.0:
+      Successfully uninstalled torch-1.1.0
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.3.0
+    Uninstalling torchvision-0.3.0:
+      Successfully uninstalled torchvision-0.3.0
+Successfully installed torch-1.4.0 torchvision-0.5.0

@@ -45,55 +45,25 @@ Collecting resampy==0.2.2
   Using cached resampy-0.2.2-py3-none-any.whl
 Collecting scikit-learn==1.0.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/05/e561bc99a615b5c099c7a9355409e5e57c525a108f1c2e156abb005b90a6/scikit_learn-1.0.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (24.8 MB)
-Collecting scipy==1.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dd/82/c1fe128f3526b128cfd185580ba40d01371c5d299fcf7f77968e22dfcc2e/scipy-1.4.1-cp37-cp37m-manylinux1_x86_64.whl (26.1 MB)
+Collecting scipy==1.7.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/58/4f/11f34cfc57ead25752a7992b069c36f5d18421958ebd6466ecd849aeaf86/scipy-1.7.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (38.1 MB)
 Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting SoundFile==0.10.3.post1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/eb/f2/3cbbbf3b96fb9fa91582c438b574cff3f45b29c772f94c400e2c99ef5db9/SoundFile-0.10.3.post1-py2.py3-none-any.whl (21 kB)
-Collecting tensorboard==2.5.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/44/f5/7feea02a3fb54d5db827ac4b822a7ba8933826b36de21880518250b8733a/tensorboard-2.5.0-py3-none-any.whl (6.0 MB)
+Collecting tensorboard==2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/a6/e8ffa4e2ddb216449d34cfcb825ebb38206bee5c4553d69e7bc8bc2c5d64/tensorboard-2.0.0-py3-none-any.whl (3.8 MB)
 Collecting threadpoolctl==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Collecting torch==1.11.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/32/96a0955e5d6ed8a837eda5ca095dd2694c4617cfa70ca599660cd5ff7447/torch-1.11.0-cp37-cp37m-manylinux1_x86_64.whl (750.6 MB)
-Collecting typing_extensions==4.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6a/1e/df241fd31424de8c834a6c0281652a13a30191bdb10c600c35cef02cd160/typing_extensions-4.1.0-py3-none-any.whl (26 kB)
+Collecting typing_extensions==4.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/17/61/32c3ab8951142e061587d957226b5683d1387fb22d95b4f69186d92616d1/typing_extensions-4.0.0-py3-none-any.whl (22 kB)
 Collecting Werkzeug==2.2.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/f8/9da63c1617ae2a1dec2fbf6412f3a0cfe9d4ce029eccbda6e1e4258ca45f/Werkzeug-2.2.3-py3-none-any.whl (233 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from numba==0.48.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/hifi-gan-torch-1.11.0.txt (line 15)) (59.5.0)
-Collecting google-auth<2,>=1.6.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fb/7a/1b3eb54caee1b8c73c2c3645f78a382eca4805a301a30c64a078e736e446/google_auth-1.35.0-py2.py3-none-any.whl (152 kB)
-Collecting google-auth-oauthlib<0.5,>=0.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/0e/0636cc1448a7abc444fb1b3a63655e294e0d2d49092dc3de05241be6d43c/google_auth_oauthlib-0.4.6-py2.py3-none-any.whl (18 kB)
-Collecting tensorboard-data-server<0.7.0,>=0.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/f9/802efd84988bffd9f644c03b6e66fde8e76c3aa33db4279ddd11c5d61f4b/tensorboard_data_server-0.6.1-py3-none-manylinux2010_x86_64.whl (4.9 MB)
-Collecting requests<3,>=2.21.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
-Collecting tensorboard-plugin-wit>=1.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.5.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/hifi-gan-torch-1.11.0.txt (line 27)) (0.38.4)
-Collecting cachetools<5.0,>=2.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/c1/4740af52db75e6dbdd57fc7e9478439815bbac549c1c05881be27d19a17d/cachetools-4.2.4-py3-none-any.whl (10 kB)
-Collecting rsa<5,>=3.1.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl (34 kB)
-Collecting pyasn1-modules>=0.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/8e/bea464350e1b8c6ed0da3a312659cb648804a08af6cacc6435867f74f8bd/pyasn1_modules-0.3.0-py2.py3-none-any.whl (181 kB)
-Collecting requests-oauthlib>=0.7.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
-Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
-Collecting urllib3<3,>=1.21.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
-Collecting charset-normalizer<4,>=2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/38/84/cec08586c7c294e2c5e984de797c15b3efb30d42a0dd0132a62d2dfe3a27/charset_normalizer-3.4.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (141 kB)
-Collecting idna<4,>=2.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl (70 kB)
-Collecting pyasn1<0.6.0,>=0.4.6
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/75/4686d2872bf2fc0b37917cbc8bbf0dd3a5cdb0990799be1b9cbf1e1eb733/pyasn1-0.5.1-py2.py3-none-any.whl (84 kB)
-Collecting oauthlib>=3.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl (151 kB)
-Installing collected packages: tensorboard-plugin-wit, llvmlite, zipp, urllib3, typing_extensions, threadpoolctl, tensorboard-data-server, six, pyparsing, pycparser, pyasn1, protobuf, Pillow, oauthlib, numpy, MarkupSafe, joblib, idna, decorator, cycler, charset-normalizer, certifi, cachetools, audioread, absl-py, Werkzeug, torch, scipy, rsa, requests, python-dateutil, pyasn1-modules, numba, kiwisolver, importlib-metadata, grpcio, cffi, SoundFile, scikit-learn, resampy, requests-oauthlib, matplotlib, Markdown, google-auth, librosa, google-auth-oauthlib, tensorboard
-Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-9.3.0 SoundFile-0.10.3.post1 Werkzeug-2.2.3 absl-py-2.1.0 audioread-3.0.1 cachetools-4.2.4 certifi-2025.4.26 cffi-1.15.1 charset-normalizer-3.4.2 cycler-0.11.0 decorator-5.1.1 google-auth-1.35.0 google-auth-oauthlib-0.4.6 grpcio-1.42.0 idna-3.10 importlib-metadata-6.7.0 joblib-1.3.2 kiwisolver-1.4.5 librosa-0.7.2 llvmlite-0.31.0 matplotlib-3.1.3 numba-0.48.0 numpy-1.21.6 oauthlib-3.2.2 protobuf-3.20.3 pyasn1-0.5.1 pyasn1-modules-0.3.0 pycparser-2.21 pyparsing-3.1.2 python-dateutil-2.9.0.post0 requests-2.31.0 requests-oauthlib-2.0.0 resampy-0.2.2 rsa-4.9.1 scikit-learn-1.0.2 scipy-1.4.1 six-1.16.0 tensorboard-2.5.0 tensorboard-data-server-0.6.1 tensorboard-plugin-wit-1.8.1 threadpoolctl-3.1.0 torch-1.11.0 typing_extensions-4.1.0 urllib3-2.0.7 zipp-3.15.0
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from numba==0.48.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/hifi-gan-torch-1.11.0.txt (line 15)) (59.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from tensorboard==2.0.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/hifi-gan-torch-1.11.0.txt (line 27)) (0.38.4)
+Installing collected packages: llvmlite, zipp, typing_extensions, threadpoolctl, six, pyparsing, pycparser, protobuf, Pillow, numpy, MarkupSafe, joblib, decorator, cycler, audioread, absl-py, Werkzeug, torch, scipy, python-dateutil, numba, kiwisolver, importlib-metadata, grpcio, cffi, SoundFile, scikit-learn, resampy, matplotlib, Markdown, tensorboard, librosa
+Successfully installed Markdown-3.4.4 MarkupSafe-2.1.5 Pillow-9.3.0 SoundFile-0.10.3.post1 Werkzeug-2.2.3 absl-py-2.1.0 audioread-3.0.1 cffi-1.15.1 cycler-0.11.0 decorator-5.1.1 grpcio-1.42.0 importlib-metadata-6.7.0 joblib-1.3.2 kiwisolver-1.4.5 librosa-0.7.2 llvmlite-0.31.0 matplotlib-3.1.3 numba-0.48.0 numpy-1.21.6 protobuf-3.20.3 pycparser-2.21 pyparsing-3.1.2 python-dateutil-2.9.0.post0 resampy-0.2.2 scikit-learn-1.0.2 scipy-1.7.3 six-1.16.0 tensorboard-2.0.0 threadpoolctl-3.1.0 torch-1.11.0 typing_extensions-4.0.0 zipp-3.15.0

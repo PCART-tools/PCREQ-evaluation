@@ -23,6 +23,7 @@ torch==1.1.0
 torchvision==0.3.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ["furo ; extra == 'docs'", "olefile ; extra == 'docs'", "sphinx (>=2.4) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "sphinx-issues (>=3.0.1) ; extra == 'docs'", "sphinx-removed-in ; extra == 'docs'", "sphinxext-opengraph ; extra == 'docs'", "check-manifest ; extra == 'tests'", "coverage ; extra == 'tests'", "defusedxml ; extra == 'tests'", "markdown2 ; extra == 'tests'", "olefile ; extra == 'tests'", "packaging ; extra == 'tests'", "pyroma ; extra == 'tests'", "pytest ; extra == 'tests'", "pytest-cov ; extra == 'tests'", "pytest-timeout ; extra == 'tests'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

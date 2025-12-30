@@ -1,29 +1,45 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
 Collecting certifi==2021.5.30
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
-Collecting numpy==1.18.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/a9/b1bc4c935ed063766bce7d3e8c7b20bd52e515ff1c732b02caacf7918e5a/numpy-1.18.5-cp36-cp36m-manylinux1_x86_64.whl (20.1 MB)
+Collecting numpy==1.18.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/92/e6/45f71bd24f4e37629e9db5fb75caab919507deae6a5a257f9e4685a5f931/numpy-1.18.0-cp36-cp36m-manylinux1_x86_64.whl (20.1 MB)
 Collecting Pillow==8.3.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cc/e2/31c6ee4acc116b65c40badc4a6eeb38e7cdb697c0e9a365397de52d17c08/Pillow-8.3.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
 Collecting pyhocon==0.3.51
   Using cached pyhocon-0.3.51-py3-none-any.whl
 Collecting pyparsing==2.3.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/0a/001be530836743d8be6c2d85069f46fecf84ac6c18c7f5fb8125ee11d854/pyparsing-2.3.1-py2.py3-none-any.whl (61 kB)
-Collecting scikit-learn==0.20.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/82/c0de5839d613b82bddd088599ac0bbfbbbcbd8ca470680658352d2c435bd/scikit_learn-0.20.3-cp36-cp36m-manylinux1_x86_64.whl (5.4 MB)
-Collecting scipy==1.5.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/89/63171228d5ced148f5ced50305c89e8576ffc695a90b58fe5bb602b910c2/scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
+Collecting scikit-learn==0.23.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/3a/eb8d7bbe28f4787d140bb9df685b7d5bf6115c0e2a969def4027144e98b6/scikit_learn-0.23.1-cp36-cp36m-manylinux1_x86_64.whl (6.8 MB)
+Collecting scipy==1.5.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8a/14/d0475ceeaa047f3eae2dc7597c3d40228e1d5beee42c1730f3c96ffb5526/scipy-1.5.3-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
 Collecting six==1.12.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl (10 kB)
-Collecting sklearn==0.0
-  Using cached sklearn-0.0-py2.py3-none-any.whl
-Collecting torch==1.5.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/62/01/457b49d790b6c4b9720e6f9dbbb617692f6ce8afdaadf425c055c41a7416/torch-1.5.1-cp36-cp36m-manylinux1_x86_64.whl (753.2 MB)
-Collecting torchvision==0.6.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/f1/535a407b4a265adf2dd7c2c2458217e37c5fe83ec97234e66c564592a9a0/torchvision-0.6.1-cp36-cp36m-manylinux1_x86_64.whl (6.6 MB)
-Collecting tqdm==4.19.9
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/c4/b67cf1ab472b770e08e94105a0c7ca7032cd070627c435f5998c9cf6e64f/tqdm-4.19.9-py2.py3-none-any.whl (52 kB)
-Collecting future
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
-Installing collected packages: numpy, scipy, future, torch, scikit-learn, pyparsing, Pillow, tqdm, torchvision, sklearn, six, pyhocon, certifi
-Successfully installed Pillow-8.3.2 certifi-2021.5.30 future-1.0.0 numpy-1.18.5 pyhocon-0.3.51 pyparsing-2.3.1 scikit-learn-0.20.3 scipy-1.5.4 six-1.12.0 sklearn-0.0 torch-1.5.1 torchvision-0.6.1 tqdm-4.19.9
+Collecting sklearn==0.0.post1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/db/1e/af4e9cded5093a92e60d4ae7149a02c7427661b2db66c8ea4d34b17864a2/sklearn-0.0.post1.tar.gz (3.6 kB)
+    ERROR: Command errored out with exit status 1:
+     command: /home/lei/anaconda3/envs/py36-5/bin/python -c 'import io, os, sys, setuptools, tokenize; sys.argv[0] = '"'"'/tmp/pip-install-w2fuuk1d/sklearn_99f2d58e393c40b58f661ea467840975/setup.py'"'"'; __file__='"'"'/tmp/pip-install-w2fuuk1d/sklearn_99f2d58e393c40b58f661ea467840975/setup.py'"'"';f = getattr(tokenize, '"'"'open'"'"', open)(__file__) if os.path.exists(__file__) else io.StringIO('"'"'from setuptools import setup; setup()'"'"');code = f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /tmp/pip-pip-egg-info-eltfha4l
+         cwd: /tmp/pip-install-w2fuuk1d/sklearn_99f2d58e393c40b58f661ea467840975/
+    Complete output (18 lines):
+    The 'sklearn' PyPI package is deprecated, use 'scikit-learn'
+    rather than 'sklearn' for pip commands.
+    
+    Here is how to fix this error in the main use cases:
+    - use 'pip install scikit-learn' rather than 'pip install sklearn'
+    - replace 'sklearn' by 'scikit-learn' in your pip requirements files
+      (requirements.txt, setup.py, setup.cfg, Pipfile, etc ...)
+    - if the 'sklearn' package is used by one of your dependencies,
+      it would be great if you take some time to track which package uses
+      'sklearn' instead of 'scikit-learn' and report it to their issue tracker
+    - as a last resort, set the environment variable
+      SKLEARN_ALLOW_DEPRECATED_SKLEARN_PACKAGE_INSTALL=True to avoid this error
+    
+    More information is available at
+    https://github.com/scikit-learn/sklearn-pypi-package
+    
+    If the previous advice does not cover your use case, feel free to report it at
+    https://github.com/scikit-learn/sklearn-pypi-package/issues/new
+    ----------------------------------------
+WARNING: Discarding https://pypi.tuna.tsinghua.edu.cn/packages/db/1e/af4e9cded5093a92e60d4ae7149a02c7427661b2db66c8ea4d34b17864a2/sklearn-0.0.post1.tar.gz#sha256=76b9ed1623775168657b86b5fe966d45752e5c87f528de6240c38923b94147c5 (from https://pypi.tuna.tsinghua.edu.cn/simple/sklearn/). Command errored out with exit status 1: python setup.py egg_info Check the logs for full command output.
+ERROR: Could not find a version that satisfies the requirement sklearn==0.0.post1 (from versions: 0.0, 0.0.post1, 0.0.post2, 0.0.post4, 0.0.post5, 0.0.post7, 0.0.post9, 0.0.post10, 0.0.post11, 0.0.post12)
+ERROR: No matching distribution found for sklearn==0.0.post1

@@ -171,6 +171,7 @@ Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
 THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingHostAllocator.cpp line=278 error=2 : out of memory
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingHostAllocator.cpp line=278 error=2 : out of memory
 Exception in thread Thread-1:
 Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/threading.py", line 926, in _bootstrap_inner
@@ -183,23 +184,14 @@ Traceback (most recent call last):
     return _ForkingPickler.loads(res)
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/multiprocessing/reductions.py", line 294, in rebuild_storage_fd
     fd = df.detach()
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/resource_sharer.py", line 57, in detach
-    with _resource_sharer.get_connection(self._id) as conn:
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/resource_sharer.py", line 87, in get_connection
-    c = Client(address, authkey=process.current_process().authkey)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 498, in Client
-    answer_challenge(c, authkey)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 747, in answer_challenge
-    response = connection.recv_bytes(256)        # reject large message
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
-    buf = self._recv_bytes(maxlength)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
-    buf = self._recv(4)
-  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/connection.py", line 379, in _recv
-    chunk = read(handle, remaining)
-ConnectionResetError: [Errno 104] Connection reset by peer
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/resource_sharer.py", line 58, in detach
+    return reduction.recv_handle(conn)
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/reduction.py", line 185, in recv_handle
+    return recvfds(s, 1)[0]
+  File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/multiprocessing/reduction.py", line 155, in recvfds
+    raise EOFError
+EOFError
 
-THCudaCheck FAIL file=/pytorch/aten/src/THC/THCCachingHostAllocator.cpp line=278 error=2 : out of memory
 Traceback (most recent call last):
   File "train.py", line 277, in <module>
     main()

@@ -1,27 +1,27 @@
-05/31 07:59:41 PM | 
-05/31 07:59:41 PM | Parameters:
-05/31 07:59:41 PM | AUX_WEIGHT=0.4
-05/31 07:59:41 PM | BATCH_SIZE=256
-05/31 07:59:41 PM | CUTOUT_LENGTH=16
-05/31 07:59:41 PM | DATA_PATH=./data/
-05/31 07:59:41 PM | DATASET=cifar10
-05/31 07:59:41 PM | DROP_PATH_PROB=0.2
-05/31 07:59:41 PM | EPOCHS=1
-05/31 07:59:41 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
-05/31 07:59:41 PM | GPUS=[0, 1, 2]
-05/31 07:59:41 PM | GRAD_CLIP=5.0
-05/31 07:59:41 PM | INIT_CHANNELS=36
-05/31 07:59:41 PM | LAYERS=20
-05/31 07:59:41 PM | LR=0.025
-05/31 07:59:41 PM | MOMENTUM=0.9
-05/31 07:59:41 PM | NAME=cifar10
-05/31 07:59:41 PM | PATH=augments/cifar10
-05/31 07:59:41 PM | PRINT_FREQ=200
-05/31 07:59:41 PM | SEED=2
-05/31 07:59:41 PM | WEIGHT_DECAY=0.0003
-05/31 07:59:41 PM | WORKERS=4
-05/31 07:59:41 PM | 
-05/31 07:59:41 PM | Logger is set - training start
+12/16 03:35:10 PM | 
+12/16 03:35:10 PM | Parameters:
+12/16 03:35:10 PM | AUX_WEIGHT=0.4
+12/16 03:35:10 PM | BATCH_SIZE=256
+12/16 03:35:10 PM | CUTOUT_LENGTH=16
+12/16 03:35:10 PM | DATA_PATH=./data/
+12/16 03:35:10 PM | DATASET=cifar10
+12/16 03:35:10 PM | DROP_PATH_PROB=0.2
+12/16 03:35:10 PM | EPOCHS=1
+12/16 03:35:10 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 03:35:10 PM | GPUS=[0, 1, 2]
+12/16 03:35:10 PM | GRAD_CLIP=5.0
+12/16 03:35:10 PM | INIT_CHANNELS=36
+12/16 03:35:10 PM | LAYERS=20
+12/16 03:35:10 PM | LR=0.025
+12/16 03:35:10 PM | MOMENTUM=0.9
+12/16 03:35:10 PM | NAME=cifar10
+12/16 03:35:10 PM | PATH=augments/cifar10
+12/16 03:35:10 PM | PRINT_FREQ=200
+12/16 03:35:10 PM | SEED=2
+12/16 03:35:10 PM | WEIGHT_DECAY=0.0003
+12/16 03:35:10 PM | WORKERS=4
+12/16 03:35:10 PM | 
+12/16 03:35:10 PM | Logger is set - training start
 Files already downloaded and verified
 Traceback (most recent call last):
   File "augment.py", line 177, in <module>

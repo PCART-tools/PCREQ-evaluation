@@ -1,0 +1,24 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scikit-image==0.17.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/ee/753ea56fda5bc2a5516a1becb631bf5ada593a2dd44f21971a13a762d4db/scikit_image-0.17.2-cp37-cp37m-manylinux1_x86_64.whl (12.5 MB)
+Requirement already satisfied: networkx>=2.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (2.6.3)
+Requirement already satisfied: pillow!=7.1.0,!=7.1.1,>=4.3.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (6.1.0)
+Requirement already satisfied: numpy>=1.15.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (1.16.4)
+Requirement already satisfied: imageio>=2.3.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (2.9.0)
+Requirement already satisfied: scipy>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (1.5.4)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (3.2.2)
+Collecting tifffile>=2019.7.26
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d8/38/85ae5ed77598ca90558c17a2f79ddaba33173b31cf8d8f545d34d9134f0d/tifffile-2021.11.2-py3-none-any.whl (178 kB)
+Requirement already satisfied: PyWavelets>=1.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from scikit-image==0.17.2) (1.1.1)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (0.11.0)
+Requirement already satisfied: python-dateutil>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (2.9.0.post0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (3.1.2)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (1.4.5)
+Requirement already satisfied: typing-extensions in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (4.7.1)
+Requirement already satisfied: six>=1.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from python-dateutil>=2.1->matplotlib!=3.0.0,>=2.0.0->scikit-image==0.17.2) (1.16.0)
+Installing collected packages: tifffile, scikit-image
+  Attempting uninstall: scikit-image
+    Found existing installation: scikit-image 0.15.0
+    Uninstalling scikit-image-0.15.0:
+      Successfully uninstalled scikit-image-0.15.0
+Successfully installed scikit-image-0.17.2 tifffile-2021.11.2

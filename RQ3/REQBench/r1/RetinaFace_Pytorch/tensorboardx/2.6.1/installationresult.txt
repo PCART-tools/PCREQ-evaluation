@@ -9,20 +9,20 @@ Collecting imageio==2.9.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6e/57/5d899fae74c1752f52869b613a8210a2480e1a69688e65df6cb26117d45d/imageio-2.9.0-py3-none-any.whl (3.3 MB)
 Collecting kiwisolver==1.4.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/77/e3046bf19720b22e3e0b7c12e28f6f2c0c18a213fb91a56cea640862270f/kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
-Collecting matplotlib==3.4.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/ee/8d7e0149ecf95fae7e744c5a93f51a8c9f7a96c63691d10aed6d2c1d8735/matplotlib-3.4.0-cp37-cp37m-manylinux1_x86_64.whl (10.3 MB)
+Collecting matplotlib==3.2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/aa/22af3c636d6b87e8d7f8f28c02da338e348ed08beff1e2b58843f0f62fc1/matplotlib-3.2.2-cp37-cp37m-manylinux1_x86_64.whl (12.4 MB)
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting networkx==2.6.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e9/93/aa6613aa70d6eb4868e667068b5a11feca9645498fd31b954b6c4bb82fa5/networkx-2.6.3-py3-none-any.whl (1.9 MB)
-Collecting numpy==1.16.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fc/d1/45be1144b03b6b1e24f9a924f23f66b4ad030d834ad31fb9e5581bd328af/numpy-1.16.4-cp37-cp37m-manylinux1_x86_64.whl (17.3 MB)
+Collecting numpy==1.21.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
 Collecting opencv-python==4.1.0.25
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/52/61b9619a7a95a8d809515f68f1441224a07ce1873fd3af5e662851014a55/opencv_python-4.1.0.25-cp37-cp37m-manylinux1_x86_64.whl (26.6 MB)
-Collecting Pillow==6.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/b7/fb24ad352b747340ec1975c84c30cca37bb93a0079e037d1f0930afd65ad/Pillow-6.2.0-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
-Collecting protobuf==4.24.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/2c/03046cac73f46bfe98fc846ef629cf4f84c2f59258216aa2cc0d22bfca8f/protobuf-4.24.4-cp37-abi3-manylinux2014_x86_64.whl (311 kB)
+Collecting Pillow==6.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a4/da/2bd281c875686230eabc13d20ab590ea617563b0e746abfb0698c4d5b645/Pillow-6.1.0-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
+Collecting protobuf==4.22.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/fd/d8d309382c71c5e83a1920ae9840410396e595e3b36229d96e3ba755687e/protobuf-4.22.3-cp37-abi3-manylinux2014_x86_64.whl (302 kB)
 Collecting pyparsing==3.1.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/ea/6d76df31432a0e6fdf81681a895f009a4bb47b3c39036db3e1b528191d52/pyparsing-3.1.2-py3-none-any.whl (103 kB)
 Collecting python-dateutil==2.9.0.post0
@@ -52,4 +52,4 @@ Collecting typing_extensions==4.7.1
 Collecting packaging
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Installing collected packages: terminaltables, mpmath, typing_extensions, tqdm, sympy, six, pyparsing, protobuf, Pillow, packaging, numpy, networkx, humanfriendly, cycler, torch, tensorboardX, scipy, PyWavelets, python-dateutil, opencv-python, kiwisolver, imageio, coloredlogs, torchvision, matplotlib, scikit-image
-Successfully installed Pillow-6.2.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.4.0 mpmath-1.2.1 networkx-2.6.3 numpy-1.16.4 opencv-python-4.1.0.25 packaging-24.0 protobuf-4.24.4 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-2.6.1 terminaltables-3.1.0 torch-1.1.0 torchvision-0.3.0 tqdm-4.32.1 typing_extensions-4.7.1
+Successfully installed Pillow-6.1.0 PyWavelets-1.1.1 coloredlogs-15.0.1 cycler-0.11.0 humanfriendly-10.0 imageio-2.9.0 kiwisolver-1.4.5 matplotlib-3.2.2 mpmath-1.2.1 networkx-2.6.3 numpy-1.21.6 opencv-python-4.1.0.25 packaging-24.0 protobuf-4.22.3 pyparsing-3.1.2 python-dateutil-2.9.0.post0 scikit-image-0.15.0 scipy-1.5.4 six-1.16.0 sympy-1.10.1 tensorboardX-2.6.1 terminaltables-3.1.0 torch-1.1.0 torchvision-0.3.0 tqdm-4.32.1 typing_extensions-4.7.1

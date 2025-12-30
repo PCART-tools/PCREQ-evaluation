@@ -5,13 +5,13 @@ dataclasses==0.8
 html5lib==0.9999999
 importlib-metadata==4.8.3
 Markdown==3.3.7
-numpy==1.16.4
+numpy==1.16.0
 protobuf==3.19.6
 scikit-learn==0.18.1
 scipy==0.18.1
 six==1.16.0
 tensorflow==2.0.1
-tensorflow-tensorboard==2.0.2
+tensorflow-tensorboard==2.0.1
 typing_extensions==4.1.1
 Werkzeug==2.0.3
 zipp==3.6.0

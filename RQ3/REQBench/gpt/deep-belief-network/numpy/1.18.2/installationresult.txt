@@ -17,10 +17,10 @@ Collecting numpy==1.18.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/07/08/a549ba8b061005bb629b76adc000f3caaaf881028b963c2e18f811c6edc1/numpy-1.18.2-cp36-cp36m-manylinux1_x86_64.whl (20.2 MB)
 Collecting protobuf==3.19.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/8e/06fc0df62dd80a32739b51bb3256f1417349eb5c3899f6ccab3796937458/protobuf-3.19.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
-Collecting scikit-learn==0.20.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5e/82/c0de5839d613b82bddd088599ac0bbfbbbcbd8ca470680658352d2c435bd/scikit_learn-0.20.3-cp36-cp36m-manylinux1_x86_64.whl (5.4 MB)
-Collecting scipy==1.2.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/69/20c8f3b7efe362093dff891239551ff90d4c463b5f52676e2694fea09442/scipy-1.2.2-cp36-cp36m-manylinux1_x86_64.whl (24.8 MB)
+Collecting scikit-learn==0.18.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/d2/efa7f8bef195c459a527edc58bf863bd44fde727630486cb8256e9a5a326/scikit_learn-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
+Collecting scipy==1.2.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c7/d6/661cf4fb32ecda40fc03685ef0995db3d3300c619f461751621f646ab3f6/scipy-1.2.3-cp36-cp36m-manylinux1_x86_64.whl (24.8 MB)
 Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting tensorflow==1.5.0
@@ -33,6 +33,6 @@ Collecting Werkzeug==2.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/f3/22afbdb20cc4654b10c98043414a14057cd27fdba9d4ae61cea596000ba2/Werkzeug-2.0.3-py3-none-any.whl (289 kB)
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/deep-belief-network-numpy-1.18.2.txt (line 13)) (0.37.1)
-Installing collected packages: zipp, typing-extensions, six, importlib-metadata, html5lib, dataclasses, Werkzeug, protobuf, numpy, Markdown, bleach, tensorflow-tensorboard, scipy, absl-py, tensorflow, scikit-learn, certifi
-Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 numpy-1.18.2 protobuf-3.19.6 scikit-learn-0.20.3 scipy-1.2.2 six-1.16.0 tensorflow-1.5.0 tensorflow-tensorboard-1.5.1 typing-extensions-4.1.1 zipp-3.6.0
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/deep-belief-network-numpy-1.18.2.txt (line 13)) (0.37.1)
+Installing collected packages: zipp, typing-extensions, six, importlib-metadata, html5lib, dataclasses, Werkzeug, protobuf, numpy, Markdown, bleach, tensorflow-tensorboard, absl-py, tensorflow, scipy, scikit-learn, certifi
+Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 numpy-1.18.2 protobuf-3.19.6 scikit-learn-0.18.1 scipy-1.2.3 six-1.16.0 tensorflow-1.5.0 tensorflow-tensorboard-1.5.1 typing-extensions-4.1.1 zipp-3.6.0

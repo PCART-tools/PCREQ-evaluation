@@ -3,85 +3,1310 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: blis==0.7.11
+                        - Current environment: blis==0.7.9
 catalogue==2.0.7
-charset-normalizer==3.3.2
-click==7.1.2
+charset-normalizer==2.1.1
+click==8.1.3
 coloredlogs==15.0.1
-cymem==2.0.8
-filelock==3.12.2
+cymem==2.0.6
+filelock==3.9.0
 humanfriendly==10.0
-idna==3.7
+idna==3.6
 importlib-metadata==4.13.0
 Jinja2==3.1.2
-joblib==1.3.2
-MarkupSafe==2.1.1
+joblib==1.1.1
+MarkupSafe==2.0.1
 mpmath==1.2.1
 murmurhash==1.0.8
 numpy==1.21.6
 packaging==21.3
-pathy==0.10.3
-preshed==3.0.9
-protobuf==4.21.12
-pydantic==1.8.2
-regex==2022.3.2
-requests==2.28.2
+pathy==0.10.2
+preshed==3.0.6
+protobuf==3.20.1
+pydantic==1.9.2
+regex==2021.11.10
+requests==2.28.1
 sacremoses==0.0.53
-scikit-learn==0.24.2
+scikit-learn==1.0.2
 scipy==1.7.3
-sentencepiece==0.1.99
+sentencepiece==0.1.96
 six==1.16.0
-smart-open==6.4.0
-spacy==3.2.4
+smart-open==6.0.0
+spacy==3.4.3
 spacy-legacy==3.0.12
-srsly==2.4.8
+srsly==2.4.4
 sympy==1.10.1
-tensorboardX==2.5
-thinc==8.0.17
-threadpoolctl==2.2.0
-tokenizers==0.12.1
+tensorboardX==2.6
+thinc==8.1.0
+threadpoolctl==3.1.0
+tokenizers==0.10.3
 torch==1.13.0
 tqdm==4.64.1
-transformers==4.21.3
-typer==0.3.2
-typing-extensions==3.7.4.3
-urllib3==1.26.15
-wasabi==0.9.1
-zipp==3.15.0
+transformers==4.16.2
+typer==0.4.2
+typing_extensions==4.1.0
+urllib3==1.26.12
+wasabi==0.10.1
+zipp==3.8.0
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "./spert.py", line 5, in <module>
-    from spert import input_reader
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/input_reader.py", line 11, in <module>
-    from spert.opt import spacy
-  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/opt.py", line 4, in <module>
-    import tensorboardX
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/__init__.py", line 5, in <module>
-    from .torchvis import TorchVis
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/torchvis.py", line 11, in <module>
-    from .writer import SummaryWriter
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/writer.py", line 17, in <module>
-    from .comet_utils import CometLogger
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/comet_utils.py", line 7, in <module>
-    from .summary import _clean_tag
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/summary.py", line 13, in <module>
-    from .proto.summary_pb2 import Summary
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/proto/summary_pb2.py", line 16, in <module>
-    from tensorboardX.proto import tensor_pb2 as tensorboardX_dot_proto_dot_tensor__pb2
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/proto/tensor_pb2.py", line 16, in <module>
-    from tensorboardX.proto import resource_handle_pb2 as tensorboardX_dot_proto_dot_resource__handle__pb2
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/proto/resource_handle_pb2.py", line 42, in <module>
-    serialized_options=None, file=DESCRIPTOR),
-  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/google/protobuf/descriptor.py", line 560, in __new__
-    _message.Message._CheckCalledFromGeneratedFile()
-TypeError: Descriptors cannot not be created directly.
-If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
-If you cannot immediately regenerate your protos, some other possible workarounds are:
- 1. Downgrade the protobuf package to 3.20.x or lower.
- 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+                        - Project source code: import torch
+from torch import nn as nn
+from transformers import BertConfig
+from transformers import BertModel
+from transformers import BertPreTrainedModel
 
-More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+from spert import sampling
+from spert import util
+
+
+def get_token(h: torch.tensor, x: torch.tensor, token: int):
+    """ Get specific token embedding (e.g. [CLS]) """
+    emb_size = h.shape[-1]
+
+    token_h = h.view(-1, emb_size)
+    flat = x.contiguous().view(-1)
+
+    # get contextualized embedding of given token
+    token_h = token_h[flat == token, :]
+
+    return token_h
+
+
+class SpERT(BertPreTrainedModel):
+    """ Span-based model to jointly extract entities and relations """
+
+    VERSION = '1.1'
+
+    def __init__(self, config: BertConfig, cls_token: int, relation_types: int, entity_types: int,
+                 size_embedding: int, prop_drop: float, freeze_transformer: bool, max_pairs: int = 100):
+        super(SpERT, self).__init__(config)
+
+        # BERT model
+        self.bert = BertModel(config)
+
+        # layers
+        self.rel_classifier = nn.Linear(config.hidden_size * 3 + size_embedding * 2, relation_types)
+        print('nn.Linear(config.hidden_size * 2 + size_embedding, entity_types)')
+        self.entity_classifier = nn.Linear(config.hidden_size * 2 + size_embedding, entity_types)
+        self.size_embeddings = nn.Embedding(100, size_embedding)
+        self.dropout = nn.Dropout(prop_drop)
+
+        self._cls_token = cls_token
+        self._relation_types = relation_types
+        self._entity_types = entity_types
+        self._max_pairs = max_pairs
+
+        # weight initialization
+        self.init_weights()
+
+        if freeze_transformer:
+            print("Freeze transformer weights")
+
+            # freeze all transformer weights
+            for param in self.bert.parameters():
+                param.requires_grad = False
+
+    def _forward_train(self, encodings: torch.tensor, context_masks: torch.tensor, entity_masks: torch.tensor,
+                       entity_sizes: torch.tensor, relations: torch.tensor, rel_masks: torch.tensor):
+        # get contextualized token embeddings from last transformer layer
+        context_masks = context_masks.float()
+        h = self.bert(input_ids=encodings, attention_mask=context_masks)['last_hidden_state']
+
+        batch_size = encodings.shape[0]
+
+        # classify entities
+        size_embeddings = self.size_embeddings(entity_sizes)  # embed entity candidate sizes
+        entity_clf, entity_spans_pool = self._classify_entities(encodings, h, entity_masks, size_embeddings)
+
+        # classify relations
+        h_large = h.unsqueeze(1).repeat(1, max(min(relations.shape[1], self._max_pairs), 1), 1, 1)
+        rel_clf = torch.zeros([batch_size, relations.shape[1], self._relation_types]).to(
+            self.rel_classifier.weight.device)
+
+        # obtain relation logits
+        # chunk processing to reduce memory usage
+        for i in range(0, relations.shape[1], self._max_pairs):
+            # classify relation candidates
+            chunk_rel_logits = self._classify_relations(entity_spans_pool, size_embeddings,
+                                                        relations, rel_masks, h_large, i)
+            rel_clf[:, i:i + self._max_pairs, :] = chunk_rel_logits
+
+        return entity_clf, rel_clf
+
+    def _forward_inference(self, encodings: torch.tensor, context_masks: torch.tensor, entity_masks: torch.tensor,
+                           entity_sizes: torch.tensor, entity_spans: torch.tensor, entity_sample_masks: torch.tensor):
+        # get contextualized token embeddings from last transformer layer
+        context_masks = context_masks.float()
+        h = self.bert(input_ids=encodings, attention_mask=context_masks)['last_hidden_state']
+
+        batch_size = encodings.shape[0]
+        ctx_size = context_masks.shape[-1]
+
+        # classify entities
+        size_embeddings = self.size_embeddings(entity_sizes)  # embed entity candidate sizes
+        entity_clf, entity_spans_pool = self._classify_entities(encodings, h, entity_masks, size_embeddings)
+
+        # ignore entity candidates that do not constitute an actual entity for relations (based on classifier)
+        relations, rel_masks, rel_sample_masks = self._filter_spans(entity_clf, entity_spans,
+                                                                    entity_sample_masks, ctx_size)
+
+        rel_sample_masks = rel_sample_masks.float().unsqueeze(-1)
+        h_large = h.unsqueeze(1).repeat(1, max(min(relations.shape[1], self._max_pairs), 1), 1, 1)
+        rel_clf = torch.zeros([batch_size, relations.shape[1], self._relation_types]).to(
+            self.rel_classifier.weight.device)
+
+        # obtain relation logits
+        # chunk processing to reduce memory usage
+        for i in range(0, relations.shape[1], self._max_pairs):
+            # classify relation candidates
+            chunk_rel_logits = self._classify_relations(entity_spans_pool, size_embeddings,
+                                                        relations, rel_masks, h_large, i)
+            # apply sigmoid
+            chunk_rel_clf = torch.sigmoid(chunk_rel_logits)
+            rel_clf[:, i:i + self._max_pairs, :] = chunk_rel_clf
+
+        rel_clf = rel_clf * rel_sample_masks  # mask
+
+        # apply softmax
+        entity_clf = torch.softmax(entity_clf, dim=2)
+
+        return entity_clf, rel_clf, relations
+
+    def _classify_entities(self, encodings, h, entity_masks, size_embeddings):
+        # max pool entity candidate spans
+        m = (entity_masks.unsqueeze(-1) == 0).float() * (-1e30)
+        entity_spans_pool = m + h.unsqueeze(1).repeat(1, entity_masks.shape[1], 1, 1)
+        entity_spans_pool = entity_spans_pool.max(dim=2)[0]
+
+        # get cls token as candidate context representation
+        entity_ctx = get_token(h, encodings, self._cls_token)
+
+        # create candidate representations including context, max pooled span and size embedding
+        entity_repr = torch.cat([entity_ctx.unsqueeze(1).repeat(1, entity_spans_pool.shape[1], 1),
+                                 entity_spans_pool, size_embeddings], dim=2)
+        entity_repr = self.dropout(entity_repr)
+
+        # classify entity candidates
+        entity_clf = self.entity_classifier(entity_repr)
+
+        return entity_clf, entity_spans_pool
+
+    def _classify_relations(self, entity_spans, size_embeddings, relations, rel_masks, h, chunk_start):
+        batch_size = relations.shape[0]
+
+        # create chunks if necessary
+        if relations.shape[1] > self._max_pairs:
+            relations = relations[:, chunk_start:chunk_start + self._max_pairs]
+            rel_masks = rel_masks[:, chunk_start:chunk_start + self._max_pairs]
+            h = h[:, :relations.shape[1], :]
+
+        # get pairs of entity candidate representations
+        entity_pairs = util.batch_index(entity_spans, relations)
+        entity_pairs = entity_pairs.view(batch_size, entity_pairs.shape[1], -1)
+
+        # get corresponding size embeddings
+        size_pair_embeddings = util.batch_index(size_embeddings, relations)
+        size_pair_embeddings = size_pair_embeddings.view(batch_size, size_pair_embeddings.shape[1], -1)
+
+        # relation context (context between entity candidate pair)
+        # mask non entity candidate tokens
+        m = ((rel_masks == 0).float() * (-1e30)).unsqueeze(-1)
+        rel_ctx = m + h
+        # max pooling
+        rel_ctx = rel_ctx.max(dim=2)[0]
+        # set the context vector of neighboring or adjacent entity candidates to zero
+        rel_ctx[rel_masks.to(torch.uint8).any(-1) == 0] = 0
+
+        # create relation candidate representations including context, max pooled entity candidate pairs
+        # and corresponding size embeddings
+        rel_repr = torch.cat([rel_ctx, entity_pairs, size_pair_embeddings], dim=2)
+        rel_repr = self.dropout(rel_repr)
+
+        # classify relation candidates
+        chunk_rel_logits = self.rel_classifier(rel_repr)
+        return chunk_rel_logits
+
+    def _filter_spans(self, entity_clf, entity_spans, entity_sample_masks, ctx_size):
+        batch_size = entity_clf.shape[0]
+        entity_logits_max = entity_clf.argmax(dim=-1) * entity_sample_masks.long()  # get entity type (including none)
+        batch_relations = []
+        batch_rel_masks = []
+        batch_rel_sample_masks = []
+
+        for i in range(batch_size):
+            rels = []
+            rel_masks = []
+            sample_masks = []
+
+            # get spans classified as entities
+            non_zero_indices = (entity_logits_max[i] != 0).nonzero().view(-1)
+            non_zero_spans = entity_spans[i][non_zero_indices].tolist()
+            non_zero_indices = non_zero_indices.tolist()
+
+            # create relations and masks
+            for i1, s1 in zip(non_zero_indices, non_zero_spans):
+                for i2, s2 in zip(non_zero_indices, non_zero_spans):
+                    if i1 != i2:
+                        rels.append((i1, i2))
+                        rel_masks.append(sampling.create_rel_mask(s1, s2, ctx_size))
+                        sample_masks.append(1)
+
+            if not rels:
+                # case: no more than two spans classified as entities
+                batch_relations.append(torch.tensor([[0, 0]], dtype=torch.long))
+                batch_rel_masks.append(torch.tensor([[0] * ctx_size], dtype=torch.bool))
+                batch_rel_sample_masks.append(torch.tensor([0], dtype=torch.bool))
+            else:
+                # case: more than two spans classified as entities
+                batch_relations.append(torch.tensor(rels, dtype=torch.long))
+                batch_rel_masks.append(torch.stack(rel_masks))
+                batch_rel_sample_masks.append(torch.tensor(sample_masks, dtype=torch.bool))
+
+        # stack
+        device = self.rel_classifier.weight.device
+        batch_relations = util.padded_stack(batch_relations).to(device)
+        batch_rel_masks = util.padded_stack(batch_rel_masks).to(device)
+        batch_rel_sample_masks = util.padded_stack(batch_rel_sample_masks).to(device)
+
+        return batch_relations, batch_rel_masks, batch_rel_sample_masks
+
+    def forward(self, *args, inference=False, **kwargs):
+        if not inference:
+            return self._forward_train(*args, **kwargs)
+        else:
+            return self._forward_inference(*args, **kwargs)
+
+
+# Model access
+
+_MODELS = {
+    'spert': SpERT,
+}
+
+
+def get_model(name):
+    return _MODELS[name]
+
+                        - library source code: #
+# A higher level module for using sockets (or Windows named pipes)
+#
+# multiprocessing/connection.py
+#
+# Copyright (c) 2006-2008, R Oudkerk
+# Licensed to PSF under a Contributor Agreement.
+#
+
+__all__ = [ 'Client', 'Listener', 'Pipe', 'wait' ]
+
+import io
+import os
+import sys
+import socket
+import struct
+import time
+import tempfile
+import itertools
+
+import _multiprocessing
+
+from . import util
+
+from . import AuthenticationError, BufferTooShort
+from .context import reduction
+_ForkingPickler = reduction.ForkingPickler
+
+try:
+    import _winapi
+    from _winapi import WAIT_OBJECT_0, WAIT_ABANDONED_0, WAIT_TIMEOUT, INFINITE
+except ImportError:
+    if sys.platform == 'win32':
+        raise
+    _winapi = None
+
+#
+#
+#
+
+BUFSIZE = 8192
+# A very generous timeout when it comes to local connections...
+CONNECTION_TIMEOUT = 20.
+
+_mmap_counter = itertools.count()
+
+default_family = 'AF_INET'
+families = ['AF_INET']
+
+if hasattr(socket, 'AF_UNIX'):
+    default_family = 'AF_UNIX'
+    families += ['AF_UNIX']
+
+if sys.platform == 'win32':
+    default_family = 'AF_PIPE'
+    families += ['AF_PIPE']
+
+
+def _init_timeout(timeout=CONNECTION_TIMEOUT):
+    return time.monotonic() + timeout
+
+def _check_timeout(t):
+    return time.monotonic() > t
+
+#
+#
+#
+
+def arbitrary_address(family):
+    '''
+    Return an arbitrary free address for the given family
+    '''
+    if family == 'AF_INET':
+        return ('localhost', 0)
+    elif family == 'AF_UNIX':
+        return tempfile.mktemp(prefix='listener-', dir=util.get_temp_dir())
+    elif family == 'AF_PIPE':
+        return tempfile.mktemp(prefix=r'\\.\pipe\pyc-%d-%d-' %
+                               (os.getpid(), next(_mmap_counter)), dir="")
+    else:
+        raise ValueError('unrecognized family')
+
+def _validate_family(family):
+    '''
+    Checks if the family is valid for the current environment.
+    '''
+    if sys.platform != 'win32' and family == 'AF_PIPE':
+        raise ValueError('Family %s is not recognized.' % family)
+
+    if sys.platform == 'win32' and family == 'AF_UNIX':
+        # double check
+        if not hasattr(socket, family):
+            raise ValueError('Family %s is not recognized.' % family)
+
+def address_type(address):
+    '''
+    Return the types of the address
+
+    This can be 'AF_INET', 'AF_UNIX', or 'AF_PIPE'
+    '''
+    if type(address) == tuple:
+        return 'AF_INET'
+    elif type(address) is str and address.startswith('\\\\'):
+        return 'AF_PIPE'
+    elif type(address) is str or util.is_abstract_socket_namespace(address):
+        return 'AF_UNIX'
+    else:
+        raise ValueError('address type of %r unrecognized' % address)
+
+#
+# Connection classes
+#
+
+class _ConnectionBase:
+    _handle = None
+
+    def __init__(self, handle, readable=True, writable=True):
+        handle = handle.__index__()
+        if handle < 0:
+            raise ValueError("invalid handle")
+        if not readable and not writable:
+            raise ValueError(
+                "at least one of `readable` and `writable` must be True")
+        self._handle = handle
+        self._readable = readable
+        self._writable = writable
+
+    # XXX should we use util.Finalize instead of a __del__?
+
+    def __del__(self):
+        if self._handle is not None:
+            self._close()
+
+    def _check_closed(self):
+        if self._handle is None:
+            raise OSError("handle is closed")
+
+    def _check_readable(self):
+        if not self._readable:
+            raise OSError("connection is write-only")
+
+    def _check_writable(self):
+        if not self._writable:
+            raise OSError("connection is read-only")
+
+    def _bad_message_length(self):
+        if self._writable:
+            self._readable = False
+        else:
+            self.close()
+        raise OSError("bad message length")
+
+    @property
+    def closed(self):
+        """True if the connection is closed"""
+        return self._handle is None
+
+    @property
+    def readable(self):
+        """True if the connection is readable"""
+        return self._readable
+
+    @property
+    def writable(self):
+        """True if the connection is writable"""
+        return self._writable
+
+    def fileno(self):
+        """File descriptor or handle of the connection"""
+        self._check_closed()
+        return self._handle
+
+    def close(self):
+        """Close the connection"""
+        if self._handle is not None:
+            try:
+                self._close()
+            finally:
+                self._handle = None
+
+    def send_bytes(self, buf, offset=0, size=None):
+        """Send the bytes data from a bytes-like object"""
+        self._check_closed()
+        self._check_writable()
+        m = memoryview(buf)
+        # HACK for byte-indexing of non-bytewise buffers (e.g. array.array)
+        if m.itemsize > 1:
+            m = memoryview(bytes(m))
+        n = len(m)
+        if offset < 0:
+            raise ValueError("offset is negative")
+        if n < offset:
+            raise ValueError("buffer length < offset")
+        if size is None:
+            size = n - offset
+        elif size < 0:
+            raise ValueError("size is negative")
+        elif offset + size > n:
+            raise ValueError("buffer length < offset + size")
+        self._send_bytes(m[offset:offset + size])
+
+    def send(self, obj):
+        """Send a (picklable) object"""
+        self._check_closed()
+        self._check_writable()
+        self._send_bytes(_ForkingPickler.dumps(obj))
+
+    def recv_bytes(self, maxlength=None):
+        """
+        Receive bytes data as a bytes object.
+        """
+        self._check_closed()
+        self._check_readable()
+        if maxlength is not None and maxlength < 0:
+            raise ValueError("negative maxlength")
+        buf = self._recv_bytes(maxlength)
+        if buf is None:
+            self._bad_message_length()
+        return buf.getvalue()
+
+    def recv_bytes_into(self, buf, offset=0):
+        """
+        Receive bytes data into a writeable bytes-like object.
+        Return the number of bytes read.
+        """
+        self._check_closed()
+        self._check_readable()
+        with memoryview(buf) as m:
+            # Get bytesize of arbitrary buffer
+            itemsize = m.itemsize
+            bytesize = itemsize * len(m)
+            if offset < 0:
+                raise ValueError("negative offset")
+            elif offset > bytesize:
+                raise ValueError("offset too large")
+            result = self._recv_bytes()
+            size = result.tell()
+            if bytesize < offset + size:
+                raise BufferTooShort(result.getvalue())
+            # Message can fit in dest
+            result.seek(0)
+            result.readinto(m[offset // itemsize :
+                              (offset + size) // itemsize])
+            return size
+
+    def recv(self):
+        """Receive a (picklable) object"""
+        self._check_closed()
+        self._check_readable()
+        buf = self._recv_bytes()
+        return _ForkingPickler.loads(buf.getbuffer())
+
+    def poll(self, timeout=0.0):
+        """Whether there is any input available to be read"""
+        self._check_closed()
+        self._check_readable()
+        return self._poll(timeout)
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        self.close()
+
+
+if _winapi:
+
+    class PipeConnection(_ConnectionBase):
+        """
+        Connection class based on a Windows named pipe.
+        Overlapped I/O is used, so the handles must have been created
+        with FILE_FLAG_OVERLAPPED.
+        """
+        _got_empty_message = False
+
+        def _close(self, _CloseHandle=_winapi.CloseHandle):
+            _CloseHandle(self._handle)
+
+        def _send_bytes(self, buf):
+            ov, err = _winapi.WriteFile(self._handle, buf, overlapped=True)
+            try:
+                if err == _winapi.ERROR_IO_PENDING:
+                    waitres = _winapi.WaitForMultipleObjects(
+                        [ov.event], False, INFINITE)
+                    assert waitres == WAIT_OBJECT_0
+            except:
+                ov.cancel()
+                raise
+            finally:
+                nwritten, err = ov.GetOverlappedResult(True)
+            assert err == 0
+            assert nwritten == len(buf)
+
+        def _recv_bytes(self, maxsize=None):
+            if self._got_empty_message:
+                self._got_empty_message = False
+                return io.BytesIO()
+            else:
+                bsize = 128 if maxsize is None else min(maxsize, 128)
+                try:
+                    ov, err = _winapi.ReadFile(self._handle, bsize,
+                                                overlapped=True)
+                    try:
+                        if err == _winapi.ERROR_IO_PENDING:
+                            waitres = _winapi.WaitForMultipleObjects(
+                                [ov.event], False, INFINITE)
+                            assert waitres == WAIT_OBJECT_0
+                    except:
+                        ov.cancel()
+                        raise
+                    finally:
+                        nread, err = ov.GetOverlappedResult(True)
+                        if err == 0:
+                            f = io.BytesIO()
+                            f.write(ov.getbuffer())
+                            return f
+                        elif err == _winapi.ERROR_MORE_DATA:
+                            return self._get_more_data(ov, maxsize)
+                except OSError as e:
+                    if e.winerror == _winapi.ERROR_BROKEN_PIPE:
+                        raise EOFError
+                    else:
+                        raise
+            raise RuntimeError("shouldn't get here; expected KeyboardInterrupt")
+
+        def _poll(self, timeout):
+            if (self._got_empty_message or
+                        _winapi.PeekNamedPipe(self._handle)[0] != 0):
+                return True
+            return bool(wait([self], timeout))
+
+        def _get_more_data(self, ov, maxsize):
+            buf = ov.getbuffer()
+            f = io.BytesIO()
+            f.write(buf)
+            left = _winapi.PeekNamedPipe(self._handle)[1]
+            assert left > 0
+            if maxsize is not None and len(buf) + left > maxsize:
+                self._bad_message_length()
+            ov, err = _winapi.ReadFile(self._handle, left, overlapped=True)
+            rbytes, err = ov.GetOverlappedResult(True)
+            assert err == 0
+            assert rbytes == left
+            f.write(ov.getbuffer())
+            return f
+
+
+class Connection(_ConnectionBase):
+    """
+    Connection class based on an arbitrary file descriptor (Unix only), or
+    a socket handle (Windows).
+    """
+
+    if _winapi:
+        def _close(self, _close=_multiprocessing.closesocket):
+            _close(self._handle)
+        _write = _multiprocessing.send
+        _read = _multiprocessing.recv
+    else:
+        def _close(self, _close=os.close):
+            _close(self._handle)
+        _write = os.write
+        _read = os.read
+
+    def _send(self, buf, write=_write):
+        remaining = len(buf)
+        while True:
+            n = write(self._handle, buf)
+            remaining -= n
+            if remaining == 0:
+                break
+            buf = buf[n:]
+
+    def _recv(self, size, read=_read):
+        buf = io.BytesIO()
+        handle = self._handle
+        remaining = size
+        while remaining > 0:
+            chunk = read(handle, remaining)
+            n = len(chunk)
+            if n == 0:
+                if remaining == size:
+                    raise EOFError
+                else:
+                    raise OSError("got end of file during message")
+            buf.write(chunk)
+            remaining -= n
+        return buf
+
+    def _send_bytes(self, buf):
+        n = len(buf)
+        # For wire compatibility with 3.2 and lower
+        header = struct.pack("!i", n)
+        if n > 16384:
+            # The payload is large so Nagle's algorithm won't be triggered
+            # and we'd better avoid the cost of concatenation.
+            self._send(header)
+            self._send(buf)
+        else:
+            # Issue #20540: concatenate before sending, to avoid delays due
+            # to Nagle's algorithm on a TCP socket.
+            # Also note we want to avoid sending a 0-length buffer separately,
+            # to avoid "broken pipe" errors if the other end closed the pipe.
+            self._send(header + buf)
+
+    def _recv_bytes(self, maxsize=None):
+        buf = self._recv(4)
+        size, = struct.unpack("!i", buf.getvalue())
+        if maxsize is not None and size > maxsize:
+            return None
+        return self._recv(size)
+
+    def _poll(self, timeout):
+        r = wait([self], timeout)
+        return bool(r)
+
+
+#
+# Public functions
+#
+
+class Listener(object):
+    '''
+    Returns a listener object.
+
+    This is a wrapper for a bound socket which is 'listening' for
+    connections, or for a Windows named pipe.
+    '''
+    def __init__(self, address=None, family=None, backlog=1, authkey=None):
+        family = family or (address and address_type(address)) \
+                 or default_family
+        address = address or arbitrary_address(family)
+
+        _validate_family(family)
+        if family == 'AF_PIPE':
+            self._listener = PipeListener(address, backlog)
+        else:
+            self._listener = SocketListener(address, family, backlog)
+
+        if authkey is not None and not isinstance(authkey, bytes):
+            raise TypeError('authkey should be a byte string')
+
+        self._authkey = authkey
+
+    def accept(self):
+        '''
+        Accept a connection on the bound socket or named pipe of `self`.
+
+        Returns a `Connection` object.
+        '''
+        if self._listener is None:
+            raise OSError('listener is closed')
+        c = self._listener.accept()
+        if self._authkey:
+            deliver_challenge(c, self._authkey)
+            answer_challenge(c, self._authkey)
+        return c
+
+    def close(self):
+        '''
+        Close the bound socket or named pipe of `self`.
+        '''
+        listener = self._listener
+        if listener is not None:
+            self._listener = None
+            listener.close()
+
+    @property
+    def address(self):
+        return self._listener._address
+
+    @property
+    def last_accepted(self):
+        return self._listener._last_accepted
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        self.close()
+
+
+def Client(address, family=None, authkey=None):
+    '''
+    Returns a connection to the address of a `Listener`
+    '''
+    family = family or address_type(address)
+    _validate_family(family)
+    if family == 'AF_PIPE':
+        c = PipeClient(address)
+    else:
+        c = SocketClient(address)
+
+    if authkey is not None and not isinstance(authkey, bytes):
+        raise TypeError('authkey should be a byte string')
+
+    if authkey is not None:
+        answer_challenge(c, authkey)
+        deliver_challenge(c, authkey)
+
+    return c
+
+
+if sys.platform != 'win32':
+
+    def Pipe(duplex=True):
+        '''
+        Returns pair of connection objects at either end of a pipe
+        '''
+        if duplex:
+            s1, s2 = socket.socketpair()
+            s1.setblocking(True)
+            s2.setblocking(True)
+            c1 = Connection(s1.detach())
+            c2 = Connection(s2.detach())
+        else:
+            fd1, fd2 = os.pipe()
+            c1 = Connection(fd1, writable=False)
+            c2 = Connection(fd2, readable=False)
+
+        return c1, c2
+
+else:
+
+    def Pipe(duplex=True):
+        '''
+        Returns pair of connection objects at either end of a pipe
+        '''
+        address = arbitrary_address('AF_PIPE')
+        if duplex:
+            openmode = _winapi.PIPE_ACCESS_DUPLEX
+            access = _winapi.GENERIC_READ | _winapi.GENERIC_WRITE
+            obsize, ibsize = BUFSIZE, BUFSIZE
+        else:
+            openmode = _winapi.PIPE_ACCESS_INBOUND
+            access = _winapi.GENERIC_WRITE
+            obsize, ibsize = 0, BUFSIZE
+
+        h1 = _winapi.CreateNamedPipe(
+            address, openmode | _winapi.FILE_FLAG_OVERLAPPED |
+            _winapi.FILE_FLAG_FIRST_PIPE_INSTANCE,
+            _winapi.PIPE_TYPE_MESSAGE | _winapi.PIPE_READMODE_MESSAGE |
+            _winapi.PIPE_WAIT,
+            1, obsize, ibsize, _winapi.NMPWAIT_WAIT_FOREVER,
+            # default security descriptor: the handle cannot be inherited
+            _winapi.NULL
+            )
+        h2 = _winapi.CreateFile(
+            address, access, 0, _winapi.NULL, _winapi.OPEN_EXISTING,
+            _winapi.FILE_FLAG_OVERLAPPED, _winapi.NULL
+            )
+        _winapi.SetNamedPipeHandleState(
+            h2, _winapi.PIPE_READMODE_MESSAGE, None, None
+            )
+
+        overlapped = _winapi.ConnectNamedPipe(h1, overlapped=True)
+        _, err = overlapped.GetOverlappedResult(True)
+        assert err == 0
+
+        c1 = PipeConnection(h1, writable=duplex)
+        c2 = PipeConnection(h2, readable=duplex)
+
+        return c1, c2
+
+#
+# Definitions for connections based on sockets
+#
+
+class SocketListener(object):
+    '''
+    Representation of a socket which is bound to an address and listening
+    '''
+    def __init__(self, address, family, backlog=1):
+        self._socket = socket.socket(getattr(socket, family))
+        try:
+            # SO_REUSEADDR has different semantics on Windows (issue #2550).
+            if os.name == 'posix':
+                self._socket.setsockopt(socket.SOL_SOCKET,
+                                        socket.SO_REUSEADDR, 1)
+            self._socket.setblocking(True)
+            self._socket.bind(address)
+            self._socket.listen(backlog)
+            self._address = self._socket.getsockname()
+        except OSError:
+            self._socket.close()
+            raise
+        self._family = family
+        self._last_accepted = None
+
+        if family == 'AF_UNIX' and not util.is_abstract_socket_namespace(address):
+            # Linux abstract socket namespaces do not need to be explicitly unlinked
+            self._unlink = util.Finalize(
+                self, os.unlink, args=(address,), exitpriority=0
+                )
+        else:
+            self._unlink = None
+
+    def accept(self):
+        s, self._last_accepted = self._socket.accept()
+        s.setblocking(True)
+        return Connection(s.detach())
+
+    def close(self):
+        try:
+            self._socket.close()
+        finally:
+            unlink = self._unlink
+            if unlink is not None:
+                self._unlink = None
+                unlink()
+
+
+def SocketClient(address):
+    '''
+    Return a connection object connected to the socket given by `address`
+    '''
+    family = address_type(address)
+    with socket.socket( getattr(socket, family) ) as s:
+        s.setblocking(True)
+        s.connect(address)
+        return Connection(s.detach())
+
+#
+# Definitions for connections based on named pipes
+#
+
+if sys.platform == 'win32':
+
+    class PipeListener(object):
+        '''
+        Representation of a named pipe
+        '''
+        def __init__(self, address, backlog=None):
+            self._address = address
+            self._handle_queue = [self._new_handle(first=True)]
+
+            self._last_accepted = None
+            util.sub_debug('listener created with address=%r', self._address)
+            self.close = util.Finalize(
+                self, PipeListener._finalize_pipe_listener,
+                args=(self._handle_queue, self._address), exitpriority=0
+                )
+
+        def _new_handle(self, first=False):
+            flags = _winapi.PIPE_ACCESS_DUPLEX | _winapi.FILE_FLAG_OVERLAPPED
+            if first:
+                flags |= _winapi.FILE_FLAG_FIRST_PIPE_INSTANCE
+            return _winapi.CreateNamedPipe(
+                self._address, flags,
+                _winapi.PIPE_TYPE_MESSAGE | _winapi.PIPE_READMODE_MESSAGE |
+                _winapi.PIPE_WAIT,
+                _winapi.PIPE_UNLIMITED_INSTANCES, BUFSIZE, BUFSIZE,
+                _winapi.NMPWAIT_WAIT_FOREVER, _winapi.NULL
+                )
+
+        def accept(self):
+            self._handle_queue.append(self._new_handle())
+            handle = self._handle_queue.pop(0)
+            try:
+                ov = _winapi.ConnectNamedPipe(handle, overlapped=True)
+            except OSError as e:
+                if e.winerror != _winapi.ERROR_NO_DATA:
+                    raise
+                # ERROR_NO_DATA can occur if a client has already connected,
+                # written data and then disconnected -- see Issue 14725.
+            else:
+                try:
+                    res = _winapi.WaitForMultipleObjects(
+                        [ov.event], False, INFINITE)
+                except:
+                    ov.cancel()
+                    _winapi.CloseHandle(handle)
+                    raise
+                finally:
+                    _, err = ov.GetOverlappedResult(True)
+                    assert err == 0
+            return PipeConnection(handle)
+
+        @staticmethod
+        def _finalize_pipe_listener(queue, address):
+            util.sub_debug('closing listener with address=%r', address)
+            for handle in queue:
+                _winapi.CloseHandle(handle)
+
+    def PipeClient(address):
+        '''
+        Return a connection object connected to the pipe given by `address`
+        '''
+        t = _init_timeout()
+        while 1:
+            try:
+                _winapi.WaitNamedPipe(address, 1000)
+                h = _winapi.CreateFile(
+                    address, _winapi.GENERIC_READ | _winapi.GENERIC_WRITE,
+                    0, _winapi.NULL, _winapi.OPEN_EXISTING,
+                    _winapi.FILE_FLAG_OVERLAPPED, _winapi.NULL
+                    )
+            except OSError as e:
+                if e.winerror not in (_winapi.ERROR_SEM_TIMEOUT,
+                                      _winapi.ERROR_PIPE_BUSY) or _check_timeout(t):
+                    raise
+            else:
+                break
+        else:
+            raise
+
+        _winapi.SetNamedPipeHandleState(
+            h, _winapi.PIPE_READMODE_MESSAGE, None, None
+            )
+        return PipeConnection(h)
+
+#
+# Authentication stuff
+#
+
+MESSAGE_LENGTH = 20
+
+CHALLENGE = b'#CHALLENGE#'
+WELCOME = b'#WELCOME#'
+FAILURE = b'#FAILURE#'
+
+def deliver_challenge(connection, authkey):
+    import hmac
+    if not isinstance(authkey, bytes):
+        raise ValueError(
+            "Authkey must be bytes, not {0!s}".format(type(authkey)))
+    message = os.urandom(MESSAGE_LENGTH)
+    connection.send_bytes(CHALLENGE + message)
+    digest = hmac.new(authkey, message, 'md5').digest()
+    response = connection.recv_bytes(256)        # reject large message
+    if response == digest:
+        connection.send_bytes(WELCOME)
+    else:
+        connection.send_bytes(FAILURE)
+        raise AuthenticationError('digest received was wrong')
+
+def answer_challenge(connection, authkey):
+    import hmac
+    if not isinstance(authkey, bytes):
+        raise ValueError(
+            "Authkey must be bytes, not {0!s}".format(type(authkey)))
+    message = connection.recv_bytes(256)         # reject large message
+    assert message[:len(CHALLENGE)] == CHALLENGE, 'message = %r' % message
+    message = message[len(CHALLENGE):]
+    digest = hmac.new(authkey, message, 'md5').digest()
+    connection.send_bytes(digest)
+    response = connection.recv_bytes(256)        # reject large message
+    if response != WELCOME:
+        raise AuthenticationError('digest sent was rejected')
+
+#
+# Support for using xmlrpclib for serialization
+#
+
+class ConnectionWrapper(object):
+    def __init__(self, conn, dumps, loads):
+        self._conn = conn
+        self._dumps = dumps
+        self._loads = loads
+        for attr in ('fileno', 'close', 'poll', 'recv_bytes', 'send_bytes'):
+            obj = getattr(conn, attr)
+            setattr(self, attr, obj)
+    def send(self, obj):
+        s = self._dumps(obj)
+        self._conn.send_bytes(s)
+    def recv(self):
+        s = self._conn.recv_bytes()
+        return self._loads(s)
+
+def _xml_dumps(obj):
+    return xmlrpclib.dumps((obj,), None, None, None, 1).encode('utf-8')
+
+def _xml_loads(s):
+    (obj,), method = xmlrpclib.loads(s.decode('utf-8'))
+    return obj
+
+class XmlListener(Listener):
+    def accept(self):
+        global xmlrpclib
+        import xmlrpc.client as xmlrpclib
+        obj = Listener.accept(self)
+        return ConnectionWrapper(obj, _xml_dumps, _xml_loads)
+
+def XmlClient(*args, **kwds):
+    global xmlrpclib
+    import xmlrpc.client as xmlrpclib
+    return ConnectionWrapper(Client(*args, **kwds), _xml_dumps, _xml_loads)
+
+#
+# Wait
+#
+
+if sys.platform == 'win32':
+
+    def _exhaustive_wait(handles, timeout):
+        # Return ALL handles which are currently signalled.  (Only
+        # returning the first signalled might create starvation issues.)
+        L = list(handles)
+        ready = []
+        while L:
+            res = _winapi.WaitForMultipleObjects(L, False, timeout)
+            if res == WAIT_TIMEOUT:
+                break
+            elif WAIT_OBJECT_0 <= res < WAIT_OBJECT_0 + len(L):
+                res -= WAIT_OBJECT_0
+            elif WAIT_ABANDONED_0 <= res < WAIT_ABANDONED_0 + len(L):
+                res -= WAIT_ABANDONED_0
+            else:
+                raise RuntimeError('Should not get here')
+            ready.append(L[res])
+            L = L[res+1:]
+            timeout = 0
+        return ready
+
+    _ready_errors = {_winapi.ERROR_BROKEN_PIPE, _winapi.ERROR_NETNAME_DELETED}
+
+    def wait(object_list, timeout=None):
+        '''
+        Wait till an object in object_list is ready/readable.
+
+        Returns list of those objects in object_list which are ready/readable.
+        '''
+        if timeout is None:
+            timeout = INFINITE
+        elif timeout < 0:
+            timeout = 0
+        else:
+            timeout = int(timeout * 1000 + 0.5)
+
+        object_list = list(object_list)
+        waithandle_to_obj = {}
+        ov_list = []
+        ready_objects = set()
+        ready_handles = set()
+
+        try:
+            for o in object_list:
+                try:
+                    fileno = getattr(o, 'fileno')
+                except AttributeError:
+                    waithandle_to_obj[o.__index__()] = o
+                else:
+                    # start an overlapped read of length zero
+                    try:
+                        ov, err = _winapi.ReadFile(fileno(), 0, True)
+                    except OSError as e:
+                        ov, err = None, e.winerror
+                        if err not in _ready_errors:
+                            raise
+                    if err == _winapi.ERROR_IO_PENDING:
+                        ov_list.append(ov)
+                        waithandle_to_obj[ov.event] = o
+                    else:
+                        # If o.fileno() is an overlapped pipe handle and
+                        # err == 0 then there is a zero length message
+                        # in the pipe, but it HAS NOT been consumed...
+                        if ov and sys.getwindowsversion()[:2] >= (6, 2):
+                            # ... except on Windows 8 and later, where
+                            # the message HAS been consumed.
+                            try:
+                                _, err = ov.GetOverlappedResult(False)
+                            except OSError as e:
+                                err = e.winerror
+                            if not err and hasattr(o, '_got_empty_message'):
+                                o._got_empty_message = True
+                        ready_objects.add(o)
+                        timeout = 0
+
+            ready_handles = _exhaustive_wait(waithandle_to_obj.keys(), timeout)
+        finally:
+            # request that overlapped reads stop
+            for ov in ov_list:
+                ov.cancel()
+
+            # wait for all overlapped reads to stop
+            for ov in ov_list:
+                try:
+                    _, err = ov.GetOverlappedResult(True)
+                except OSError as e:
+                    err = e.winerror
+                    if err not in _ready_errors:
+                        raise
+                if err != _winapi.ERROR_OPERATION_ABORTED:
+                    o = waithandle_to_obj[ov.event]
+                    ready_objects.add(o)
+                    if err == 0:
+                        # If o.fileno() is an overlapped pipe handle then
+                        # a zero length message HAS been consumed.
+                        if hasattr(o, '_got_empty_message'):
+                            o._got_empty_message = True
+
+        ready_objects.update(waithandle_to_obj[h] for h in ready_handles)
+        return [o for o in object_list if o in ready_objects]
+
+else:
+
+    import selectors
+
+    # poll/select have the advantage of not requiring any extra file
+    # descriptor, contrarily to epoll/kqueue (also, they require a single
+    # syscall).
+    if hasattr(selectors, 'PollSelector'):
+        _WaitSelector = selectors.PollSelector
+    else:
+        _WaitSelector = selectors.SelectSelector
+
+    def wait(object_list, timeout=None):
+        '''
+        Wait till an object in object_list is ready/readable.
+
+        Returns list of those objects in object_list which are ready/readable.
+        '''
+        with _WaitSelector() as selector:
+            for obj in object_list:
+                selector.register(obj, selectors.EVENT_READ)
+
+            if timeout is not None:
+                deadline = time.monotonic() + timeout
+
+            while True:
+                ready = selector.select(timeout)
+                if ready:
+                    return [key.fileobj for (key, events) in ready]
+                else:
+                    if timeout is not None:
+                        timeout = deadline - time.monotonic()
+                        if timeout < 0:
+                            return ready
+
+#
+# Make connection and socket objects sharable if possible
+#
+
+if sys.platform == 'win32':
+    def reduce_connection(conn):
+        handle = conn.fileno()
+        with socket.fromfd(handle, socket.AF_INET, socket.SOCK_STREAM) as s:
+            from . import resource_sharer
+            ds = resource_sharer.DupSocket(s)
+            return rebuild_connection, (ds, conn.readable, conn.writable)
+    def rebuild_connection(ds, readable, writable):
+        sock = ds.detach()
+        return Connection(sock.detach(), readable, writable)
+    reduction.register(Connection, reduce_connection)
+
+    def reduce_pipe_connection(conn):
+        access = ((_winapi.FILE_GENERIC_READ if conn.readable else 0) |
+                  (_winapi.FILE_GENERIC_WRITE if conn.writable else 0))
+        dh = reduction.DupHandle(conn.fileno(), access)
+        return rebuild_pipe_connection, (dh, conn.readable, conn.writable)
+    def rebuild_pipe_connection(dh, readable, writable):
+        handle = dh.detach()
+        return PipeConnection(handle, readable, writable)
+    reduction.register(PipeConnection, reduce_pipe_connection)
+
+else:
+    def reduce_connection(conn):
+        df = reduction.DupFd(conn.fileno())
+        return rebuild_connection, (df, conn.readable, conn.writable)
+    def rebuild_connection(df, readable, writable):
+        fd = df.detach()
+        return Connection(fd, readable, writable)
+    reduction.register(Connection, reduce_connection)
+
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99)', 'nvidia-cudnn-cu11 (==8.5.0.96)', 'nvidia-cublas-cu11 (==11.10.3.66)', 'nvidia-cuda-nvrtc-cu11 (==11.7.99)', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert.py", line 17, in __train
+    types_path=run_args.types_path, input_reader_cls=input_reader.JsonInputReader)
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/spert_trainer.py", line 94, in train
+    self._train_epoch(model, compute_loss, optimizer, train_dataset, updates_epoch, epoch)
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/spert_trainer.py", line 192, in _train_epoch
+    relations=batch['rels'], rel_masks=batch['rel_masks'])
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/models.py", line 224, in forward
+    return self._forward_train(*args, **kwargs)
+  File "/home/lei/compatibility_analysis/pytorch/1.4/spert/spert/models.py", line 62, in _forward_train
+    h = self.bert(input_ids=encodings, attention_mask=context_masks)['last_hidden_state']
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 1006, in forward
+    return_dict=return_dict,
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 592, in forward
+    output_attentions,
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 477, in forward
+    past_key_value=self_attn_past_key_value,
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 409, in forward
+    output_attentions,
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/transformers/models/bert/modeling_bert.py", line 306, in forward
+    attention_scores = torch.matmul(query_layer, key_layer.transpose(-1, -2))
+RuntimeError: CUDA error: CUBLAS_STATUS_NOT_SUPPORTED when calling `cublasSgemmStridedBatched( handle, opa, opb, m, n, k, &alpha, a, lda, stridea, b, ldb, strideb, &beta, c, ldc, stridec, num_batches)`
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/tensorboardX/event_file_writer.py", line 202, in run
+    data = self._queue.get(True, queue_wait_duration)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/queues.py", line 108, in get
+    res = self._recv_bytes()
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/lei/anaconda3/envs/py37-4/lib/python3.7/multiprocessing/connection.py", line 383, in _recv
+    raise EOFError
+EOFError
+
 
 
                         **Analysis Protocol**

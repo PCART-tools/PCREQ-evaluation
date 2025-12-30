@@ -13,16 +13,16 @@ Collecting importlib-metadata==4.8.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/a1/b153a0a4caf7a7e3f15c2cd56c7702e2cf3d89b1b359d1f1c5e59d68f4ce/importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
 Collecting Markdown==3.3.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f3/df/ca72f352e15b6f8ce32b74af029f1189abffb906f7c137501ffe69c98a65/Markdown-3.3.7-py3-none-any.whl (97 kB)
-Collecting numpy==1.14.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/68/1e/116ad560de97694e2d0c1843a7a0075cc9f49e922454d32f49a80eb6f1f2/numpy-1.14.5-cp36-cp36m-manylinux1_x86_64.whl (12.2 MB)
-Collecting protobuf==3.5.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/0d/6e9cf54be86c742a375a0ca0addadb582c890939b1b6d3339570e51091bd/protobuf-3.5.2-cp36-cp36m-manylinux1_x86_64.whl (6.4 MB)
+Collecting numpy==1.16.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/87/2d/e4656149cbadd3a8a0369fcd1a9c7d61cc7b87b3903b85389c70c989a696/numpy-1.16.4-cp36-cp36m-manylinux1_x86_64.whl (17.3 MB)
+Collecting protobuf==3.4.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/31/65/e5a0f3cdefb79ccbdbf09e8a696be6db087f4b3bd0618e03ec18685266ae/protobuf-3.4.0-cp36-cp36m-manylinux1_x86_64.whl (6.2 MB)
 Collecting scikit-learn==0.18.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/d2/efa7f8bef195c459a527edc58bf863bd44fde727630486cb8256e9a5a326/scikit_learn-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
 Collecting scipy==0.18.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/c0/f0bf4eaef1b6aa7bdd1ae5597ce1d9e729417b3ca085c47d0f1c640d34f8/scipy-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (42.5 MB)
-Collecting six==1.11.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl (10 kB)
+Collecting six==1.16.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting tensorflow==1.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9d/e0/d371c595fa93a709a88a1d6127ca8a5e145e42e379c9ef9490407bccea44/tensorflow-1.5.1-cp36-cp36m-manylinux1_x86_64.whl (44.7 MB)
 Collecting tensorflow-tensorboard==1.5.1
@@ -33,7 +33,7 @@ Collecting Werkzeug==2.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/f3/22afbdb20cc4654b10c98043414a14057cd27fdba9d4ae61cea596000ba2/Werkzeug-2.0.3-py3-none-any.whl (289 kB)
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from protobuf==3.5.2->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/deep-belief-network-tensorflow-1.5.1.txt (line 9)) (58.0.4)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/deep-belief-network-tensorflow-1.5.1.txt (line 13)) (0.37.1)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from protobuf==3.4.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/deep-belief-network-tensorflow-1.5.1.txt (line 9)) (59.6.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.5.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/deep-belief-network-tensorflow-1.5.1.txt (line 13)) (0.37.1)
 Installing collected packages: zipp, typing-extensions, six, importlib-metadata, html5lib, dataclasses, Werkzeug, protobuf, numpy, Markdown, bleach, tensorflow-tensorboard, absl-py, tensorflow, scipy, scikit-learn, certifi
-Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 numpy-1.14.5 protobuf-3.5.2 scikit-learn-0.18.1 scipy-0.18.1 six-1.11.0 tensorflow-1.5.1 tensorflow-tensorboard-1.5.1 typing-extensions-4.1.1 zipp-3.6.0
+Successfully installed Markdown-3.3.7 Werkzeug-2.0.3 absl-py-1.4.0 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 html5lib-0.9999999 importlib-metadata-4.8.3 numpy-1.16.4 protobuf-3.4.0 scikit-learn-0.18.1 scipy-0.18.1 six-1.16.0 tensorflow-1.5.1 tensorflow-tensorboard-1.5.1 typing-extensions-4.1.1 zipp-3.6.0

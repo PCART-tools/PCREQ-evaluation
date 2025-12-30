@@ -15,10 +15,10 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting nltk==3.6.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/aa/b8/09ac15436591cefc0adc882798d5cf629f13addae0495b20b682219e3afe/nltk-3.6.5-py3-none-any.whl (1.5 MB)
-Collecting numpy==1.18.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d6/c6/58e517e8b1fb192725cfa23c01c2e60e4e6699314ee9684a1c5f5c9b27e1/numpy-1.18.5-cp37-cp37m-manylinux1_x86_64.whl (20.1 MB)
-Collecting protobuf==3.12.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/9c/12df13f237fe7ef6b617b8aea231c7bf5155d88c272bbbb9cad6fb9c6937/protobuf-3.12.4-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
+Collecting numpy==1.19.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/04/c3846024ddc7514cde17087f62f0502abf85c53e8f69f6312c70db6d144e/numpy-1.19.2-cp37-cp37m-manylinux2010_x86_64.whl (14.5 MB)
+Collecting protobuf==3.20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/26/cf27940ece6bb8890a67f741eb9da5359b72749f816edf210a28fe01a247/protobuf-3.20.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting regex==2024.4.16
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/05/18911646681dfab0ffb76b4b958356c0a3d211bb08e9a2f33f1e9487977d/regex-2024.4.16-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (761 kB)
 Collecting six==1.16.0
@@ -31,12 +31,11 @@ Collecting torch==1.7.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/74/d52c014fbfb50aefc084d2bf5ffaa0a8456f69c586782b59f93ef45e2da9/torch-1.7.0-cp37-cp37m-manylinux1_x86_64.whl (776.7 MB)
 Collecting tqdm==4.66.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/18/eb/fdb7eb9e48b7b02554e1664afd3bd3f117f6b6d6c5881438a0b055554f9b/tqdm-4.66.4-py3-none-any.whl (78 kB)
-Collecting typing_extensions==3.7.4.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/7a/e881b5abb54db0e6e671ab088d079c57ce54e8a01a3ca443f561ccadb37e/typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting typing_extensions==4.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/17/61/32c3ab8951142e061587d957226b5683d1387fb22d95b4f69186d92616d1/typing_extensions-4.0.0-py3-none-any.whl (22 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from protobuf==3.12.4->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/Sentence-VAE-torch-1.7.0.txt (line 10)) (59.5.0)
 Collecting dataclasses
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/26/2f/1095cdc2868052dd1e64520f7c0d5c8c550ad297e944e641dbf1ffbb9a5d/dataclasses-0.6-py3-none-any.whl (14 kB)
-Installing collected packages: typing_extensions, mpmath, dataclasses, zipp, tqdm, sympy, six, regex, numpy, joblib, humanfriendly, future, torch, protobuf, importlib-metadata, coloredlogs, tensorboardX, click, nltk
-Successfully installed click-8.1.7 coloredlogs-15.0.1 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 nltk-3.6.5 numpy-1.18.5 protobuf-3.12.4 regex-2024.4.16 six-1.16.0 sympy-1.10.1 tensorboardX-2.0 torch-1.7.0 tqdm-4.66.4 typing_extensions-3.7.4.3 zipp-3.15.0
+Installing collected packages: mpmath, dataclasses, zipp, typing_extensions, tqdm, sympy, six, regex, protobuf, numpy, joblib, humanfriendly, future, torch, tensorboardX, importlib-metadata, coloredlogs, click, nltk
+Successfully installed click-8.1.7 coloredlogs-15.0.1 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 nltk-3.6.5 numpy-1.19.2 protobuf-3.20.0 regex-2024.4.16 six-1.16.0 sympy-1.10.1 tensorboardX-2.0 torch-1.7.0 tqdm-4.66.4 typing_extensions-4.0.0 zipp-3.15.0

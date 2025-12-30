@@ -1,0 +1,5 @@
+torch==1.7.1
+numpy==1.19.2
+typing-extensions==3.7.4.3
+dataclasses==0.6
+tensorboardX==2.1

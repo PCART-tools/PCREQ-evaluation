@@ -27,8 +27,8 @@ Collecting h5py==3.7.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/f9/c53bfbd9da31cd56058f7c4552ac634bf71f17413cb36f151b6e956eb0bd/h5py-3.7.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (4.1 MB)
 Collecting idna==3.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl (61 kB)
-Collecting imageio==2.22.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/4d/d31ab40bb761fb381c7514e6070c6e1643c44f83a2a48a83e4066227737f/imageio-2.22.4-py3-none-any.whl (3.4 MB)
+Collecting imageio==2.9.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6e/57/5d899fae74c1752f52869b613a8210a2480e1a69688e65df6cb26117d45d/imageio-2.9.0-py3-none-any.whl (3.3 MB)
 Collecting imageio-ffmpeg==0.4.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e5/3b/fdf3e75462e93b7806ffecad6c5aa35f2cc76b9f2faaedf5e43194ceff09/imageio_ffmpeg-0.4.7-py3-none-manylinux2010_x86_64.whl (26.9 MB)
 Collecting importlib-metadata==5.0.0
@@ -41,8 +41,8 @@ Collecting MarkupSafe==2.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/83/b221ce5a0224f409b9f02b0dc6cb0b921c46033f4870d64fa3e8a96af701/MarkupSafe-2.1.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (25 kB)
 Collecting moviepy==1.0.3
   Using cached moviepy-1.0.3-py3-none-any.whl
-Collecting numpy==1.21.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/50/46/292cff79f5b30151b027400efdb3f740ea03271b600751b6696cf550c10d/numpy-1.21.5-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Collecting numpy==1.20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3a/6c/322f6aa128179d0ea45a543a4e29a74da2317117109899cfd56d09bf3de0/numpy-1.20.0-cp37-cp37m-manylinux2010_x86_64.whl (15.3 MB)
 Collecting opencv-contrib-python==4.6.0.66
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/45/c8bc145b1541d1fbbf25d5494cd76453d9855971cfe571b9ad7e13cdb4c8/opencv_contrib_python-4.6.0.66-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (67.1 MB)
 Collecting Pillow==9.3.0
@@ -71,8 +71,8 @@ Collecting zope.event==4.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9e/85/b45408c64f3b888976f1d5b37eed8d746b8d5729a66a49ec846fda27d371/zope.event-4.5.0-py2.py3-none-any.whl (6.8 kB)
 Collecting zope.interface==5.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/48/d202873106a33efafdae2b80210d8c96439603d52ac99393510701e0702e/zope.interface-5.5.1-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (254 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from gevent==22.10.2->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/3d-ken-burns-torchvision-0.8.2.txt (line 11)) (57.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from gevent==22.10.2->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/3d-ken-burns-torchvision-0.8.2.txt (line 11)) (57.5.0)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
 Installing collected packages: fastrlock, dataclasses, zope.interface, zope.event, zipp, urllib3, typing_extensions, tqdm, Pillow, numpy, MarkupSafe, itsdangerous, imageio-ffmpeg, idna, greenlet, future, dill, decorator, coverage, charset-normalizer, certifi, Werkzeug, torch, scipy, requests, proglog, opencv-contrib-python, Jinja2, importlib-metadata, imageio, h5py, gevent, cupy, torchvision, moviepy, click, Flask
-Successfully installed Flask-2.2.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Pillow-9.3.0 Werkzeug-2.2.2 certifi-2025.4.26 charset-normalizer-2.1.1 click-8.1.3 coverage-6.5.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 dill-0.3.7 fastrlock-0.8.1 future-0.18.3 gevent-22.10.2 greenlet-2.0.1 h5py-3.7.0 idna-3.4 imageio-2.22.4 imageio-ffmpeg-0.4.7 importlib-metadata-5.0.0 itsdangerous-2.1.2 moviepy-1.0.3 numpy-1.21.5 opencv-contrib-python-4.6.0.66 proglog-0.1.10 requests-2.28.1 scipy-1.7.2 torch-1.7.1 torchvision-0.8.2 tqdm-4.64.1 typing_extensions-4.4.0 urllib3-1.26.12 zipp-3.10.0 zope.event-4.5.0 zope.interface-5.5.1
+Successfully installed Flask-2.2.2 Jinja2-3.1.2 MarkupSafe-2.1.1 Pillow-9.3.0 Werkzeug-2.2.2 certifi-2025.11.12 charset-normalizer-2.1.1 click-8.1.3 coverage-6.5.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 dill-0.3.7 fastrlock-0.8.1 future-0.18.3 gevent-22.10.2 greenlet-2.0.1 h5py-3.7.0 idna-3.4 imageio-2.9.0 imageio-ffmpeg-0.4.7 importlib-metadata-5.0.0 itsdangerous-2.1.2 moviepy-1.0.3 numpy-1.20.0 opencv-contrib-python-4.6.0.66 proglog-0.1.10 requests-2.28.1 scipy-1.7.2 torch-1.7.1 torchvision-0.8.2 tqdm-4.64.1 typing_extensions-4.4.0 urllib3-1.26.12 zipp-3.10.0 zope.event-4.5.0 zope.interface-5.5.1

@@ -1,0 +1,41 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting matplotlib==3.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6b/48/710ebe39563c5f0cb464c6f1c0eb7bfeb6171a151d65ae8254e12306a210/matplotlib-3.5.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (11.2 MB)
+Collecting packaging>=20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Collecting setuptools-scm>=4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/66/8f42c941be949ef2b22fe905d850c794e7c170a526023612aad5f3a121ad/setuptools_scm-7.1.0-py3-none-any.whl (43 kB)
+Collecting numpy>=1.17
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.5.0) (0.10.0)
+Collecting pillow>=6.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/37/95/48565d6beb34deaacda1543b515dab9479b8fa8b9046703fd08ad447ddfe/Pillow-9.5.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.5.0) (1.1.0)
+Requirement already satisfied: pyparsing>=2.2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.5.0) (2.4.0)
+Collecting fonttools>=4.22.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e3/d9/e9bae85e84737e76ebbcbea13607236da0c0699baed0ae4f1151b728a608/fonttools-4.38.0-py3-none-any.whl (965 kB)
+Requirement already satisfied: python-dateutil>=2.7 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.5.0) (2.8.0)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from cycler>=0.10->matplotlib==3.5.0) (1.12.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib==3.5.0) (59.5.0)
+Collecting importlib-metadata
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting tomli>=1.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl (12 kB)
+Collecting zipp>=0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Installing collected packages: zipp, typing-extensions, tomli, pillow, packaging, numpy, fonttools, importlib-metadata, setuptools-scm, matplotlib
+  Attempting uninstall: pillow
+    Found existing installation: Pillow 6.0.0
+    Uninstalling Pillow-6.0.0:
+      Successfully uninstalled Pillow-6.0.0
+  Attempting uninstall: numpy
+    Found existing installation: numpy 1.16.4
+    Uninstalling numpy-1.16.4:
+      Successfully uninstalled numpy-1.16.4
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.1.0
+    Uninstalling matplotlib-3.1.0:
+      Successfully uninstalled matplotlib-3.1.0
+Successfully installed fonttools-4.38.0 importlib-metadata-6.7.0 matplotlib-3.5.0 numpy-1.21.6 packaging-24.0 pillow-9.5.0 setuptools-scm-7.1.0 tomli-2.0.1 typing-extensions-4.7.1 zipp-3.15.0

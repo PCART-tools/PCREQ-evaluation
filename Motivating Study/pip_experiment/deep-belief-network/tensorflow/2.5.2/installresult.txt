@@ -1,0 +1,25 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==2.5.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/cf/6b9df4d76261fd065abc4fce2926212077bcf5bc4c0d2627e8e1f0df88ba/tensorflow-2.5.2-cp36-cp36m-manylinux2010_x86_64.whl (454.3 MB)
+Collecting typing-extensions~=3.7.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/60/7a/e881b5abb54db0e6e671ab088d079c57ce54e8a01a3ca443f561ccadb37e/typing_extensions-3.7.4.3-py3-none-any.whl (22 kB)
+Collecting astunparse~=1.6.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2b/03/13dde6512ad7b4557eb792fbcf0c653af6076b81e5941d36ec61f7ce6028/astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+Collecting absl-py~=0.10
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/97/75/f5e61fb67ecbe45c31035b17562464e11b91a2b8a351bae5ca0db2969e3b/absl_py-0.15.0-py3-none-any.whl (132 kB)
+Collecting grpcio~=1.34.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ab/f5/3d3bcb82beae990021cbf6877456a1aab650e68c902194566edd6a73e37c/grpcio-1.34.1-cp36-cp36m-manylinux2014_x86_64.whl (4.0 MB)
+Collecting google-pasta~=0.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57 kB)
+Collecting flatbuffers~=1.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/eb/26/712e578c5f14e26ae3314c39a1bdc4eb2ec2f4ddc89b708cf8e0a0d20423/flatbuffers-1.12-py2.py3-none-any.whl (15 kB)
+Collecting tensorboard~=2.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/80/49/a5ec29886ef823718c8ae54ed0b3ad7e19066b5bf21cec5038427e6a04c4/tensorboard-2.10.1-py3-none-any.whl (5.9 MB)
+Collecting opt-einsum~=3.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting h5py~=3.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7a/e53e500335afb6b1aade11227cdf107fca54106a1dca5c9d13242a043f3b/h5py-3.1.0-cp36-cp36m-manylinux1_x86_64.whl (4.0 MB)
+Collecting termcolor~=1.1.0
+  Using cached termcolor-1.1.0-py3-none-any.whl
+ERROR: Could not find a version that satisfies the requirement keras-nightly~=2.5.0.dev (from tensorflow) (from versions: none)
+ERROR: No matching distribution found for keras-nightly~=2.5.0.dev

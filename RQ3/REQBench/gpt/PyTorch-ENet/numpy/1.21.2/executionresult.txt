@@ -7,7 +7,7 @@ Save directory: save/ENet_CamVid
 Number of classes to predict: 12
 Train dataset size: 367
 Validation dataset size: 101
-/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torchvision/transforms/transforms.py:258: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torchvision/transforms/transforms.py:281: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
   "Argument interpolation should be of type InterpolationMode instead of int. "
 Image size: torch.Size([10, 3, 360, 480])
 Label size: torch.Size([10, 360, 480])
@@ -562,6 +562,8 @@ ENet(
 Testing...
 
 >>>> Running test dataset
+/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
 >>>> Avg. loss: 1.0979 | Mean IoU: 0.5210
 sky: 0.9023
 building: 0.6862

@@ -9,11 +9,11 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
-Collecting Pillow==7.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e8/f2/6722dd0c22e3a143ac792ccb2424924ac72af4adea756b1165b4cad50da7/Pillow-7.2.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
-Collecting sympy==1.10.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
+Collecting Pillow==5.4.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/2a/0a0ab2833e5270664fb5fae590717f867ac6319b124160c09f1d3291de28/Pillow-5.4.1-cp37-cp37m-manylinux1_x86_64.whl (2.0 MB)
+Collecting sympy==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/69/b16fc81b939d3efdd0b552f2e3e54f7fa1423d0c320cced2e69e675dde26/sympy-1.7.1-py3-none-any.whl (5.9 MB)
 Collecting torch==1.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5d/5e/35140615fc1f925023f489e71086a9ecc188053d263d3594237281284d82/torch-1.6.0-cp37-cp37m-manylinux1_x86_64.whl (748.8 MB)
 Installing collected packages: mpmath, sympy, Pillow, numpy, humanfriendly, future, torch, coloredlogs
-Successfully installed Pillow-7.2.0 coloredlogs-15.0.1 future-1.0.0 humanfriendly-10.0 mpmath-1.2.1 numpy-1.19.5 sympy-1.10.1 torch-1.6.0
+Successfully installed Pillow-5.4.1 coloredlogs-15.0.1 future-1.0.0 humanfriendly-10.0 mpmath-1.2.1 numpy-1.19.5 sympy-1.7.1 torch-1.6.0

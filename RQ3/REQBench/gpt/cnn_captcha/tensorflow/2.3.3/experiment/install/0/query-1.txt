@@ -3,9 +3,9 @@
             Resolve pip install conflict in requirements.txt while preserving library integrity.
 
             **Input Context**
-            - Current requirements.txt: absl-py==0.9.0
-astor==0.8.1
-bleach==3.1.0
+            - Current requirements.txt: absl-py==0.7.1
+astor==0.7.1
+bleach==1.5.0
 captcha==0.3
 certifi==2019.3.9
 chardet==3.0.4
@@ -14,14 +14,14 @@ cycler==0.10.0
 easydict==1.8
 Flask==1.0.2
 gast==0.3.3
-grpcio==1.30.0
-html5lib==1.0.1
+grpcio==1.19.0
+html5lib==0.9999999
 idna==2.7
 itsdangerous==1.1.0
 Jinja2==2.10.1
-Markdown==3.2.1
+Markdown==3.1
 MarkupSafe==1.1.1
-matplotlib==3.3.0
+matplotlib==2.1.0
 numpy==1.18.5
 olefile==0.46
 Pillow==4.3.0
@@ -30,20 +30,20 @@ pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2018.9
 requests==2.19.1
-six==1.15.0
+six==1.12.0
 tensorboard==2.3.0
 tensorflow==2.3.3
 termcolor==1.1.0
 urllib3==1.23
-Werkzeug==1.0.1
+Werkzeug==0.15.2
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested Pillow==4.3.0
-    captcha 0.3 depends on Pillow
-    matplotlib 3.3.0 depends on pillow>=6.2.0
+    The user requested grpcio==1.19.0
+    tensorboard 2.3.0 depends on grpcio>=1.24.3
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

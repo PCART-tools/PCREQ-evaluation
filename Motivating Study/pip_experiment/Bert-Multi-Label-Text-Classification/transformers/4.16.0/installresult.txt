@@ -1,0 +1,49 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==4.16.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bf/c5/55dcf95258d2d4e7a8d4a98800581ca8ae6bfe1b1b320c743cfa0bd322da/transformers-4.16.0-py3-none-any.whl (3.5 MB)
+Collecting pyyaml>=5.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
+Requirement already satisfied: regex!=2019.12.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.16.0) (2019.8.19)
+Collecting packaging>=20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: sacremoses in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.16.0) (0.0.33)
+Requirement already satisfied: numpy>=1.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.16.0) (1.17.2)
+Requirement already satisfied: tqdm>=4.27 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.16.0) (4.35.0)
+Collecting tokenizers!=0.11.3,>=0.10.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/20/41/c2be10975ca37f6ec40d7abd7e98a5213bb04f284b869c1a24e6504fd94d/tokenizers-0.21.0.tar.gz (343 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [15 lines of output]
+      error: failed to select a version for `env_logger`.
+          ... required by package `tokenizers-python v0.21.0 (/tmp/pip-install-yg01fjdb/tokenizers_bdd9352c97424bb69d98e3373ed40d97/bindings/python)`
+      versions that meet the requirements `^0.11` (locked to 0.11.5) are: 0.11.5
+      
+      the package `tokenizers-python` depends on `env_logger`, with features: `anstream` but `env_logger` does not have these features.
+       It has an optional dependency with that name, but that dependency uses the "dep:" syntax in the features table, so it does not have an implicit feature with that name.
+      
+      
+      failed to select a version for `env_logger` which could resolve this conflict
+      💥 maturin failed
+        Caused by: Cargo metadata failed. Does your crate compile with `cargo build`?
+        Caused by: `cargo metadata` exited with an error:
+      Error running maturin: Command '['maturin', 'pep517', 'write-dist-info', '--metadata-directory', '/tmp/pip-modern-metadata-v4ae6n9l', '--interpreter', '/home/lei/anaconda3/envs/py37-1/bin/python']' returned non-zero exit status 1.
+      Checking for Rust toolchain....
+      Running `maturin pep517 write-dist-info --metadata-directory /tmp/pip-modern-metadata-v4ae6n9l --interpreter /home/lei/anaconda3/envs/py37-1/bin/python`
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

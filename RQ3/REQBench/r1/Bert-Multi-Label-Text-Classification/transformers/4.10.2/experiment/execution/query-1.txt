@@ -23,7 +23,7 @@ pyparsing==2.4.2
 python-dateutil==2.8.0
 pytorch-transformers==1.2.0
 pytz==2019.2
-regex==2020.1.8
+regex==2019.8.19
 requests==2.22.0
 s3transfer==0.2.1
 sacremoses==0.0.33
@@ -31,12 +31,54 @@ scikit-learn==0.21.3
 scipy==1.3.1
 sentencepiece==0.1.83
 six==1.12.0
-tokenizers==0.10.1
-torch==1.4.0
+tokenizers==0.10.2
+torch==1.3.0
 tqdm==4.35.0
 transformers==4.10.2
+urllib3==1.25.3
 
                         - Python version: 3.7
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
+
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['filelock', 'huggingface-hub (>=0.0.12)', 'numpy (>=1.17)', 'packaging', 'pyyaml (>=5.1)', 'regex (!=2019.12.17)', 'requests', 'sacremoses', 'tokenizers (<0.11,>=0.10.1)', 'tqdm (>=4.27)', 'dataclasses ; python_version < "3.7"', 'importlib-metadata ; python_version < "3.8"', "tensorflow (>=2.3) ; extra == 'all'", "onnxconverter-common ; extra == 'all'", "keras2onnx ; extra == 'all'", "torch (>=1.0) ; extra == 'all'", "jax (>=0.2.8) ; extra == 'all'", "jaxlib (>=0.1.65) ; extra == 'all'", "flax (>=0.3.4) ; extra == 'all'", "optax (>=0.0.8) ; extra == 'all'", "sentencepiece (==0.1.91) ; extra == 'all'", "protobuf ; extra == 'all'", "tokenizers (<0.11,>=0.10.1) ; extra == 'all'", "torchaudio ; extra == 'all'", "soundfile ; extra == 'all'", "Pillow ; extra == 'all'", "optuna ; extra == 'all'", "ray[tune] ; extra == 'all'", "timm ; extra == 'all'", "codecarbon (==1.2.0) ; extra == 'all'", "soundfile ; extra == 'audio'", "codecarbon (==1.2.0) ; extra == 'codecarbon'", "deepspeed (>=0.5.1) ; extra == 'deepspeed'", "tensorflow (>=2.3) ; extra == 'dev'", "onnxconverter-common ; extra == 'dev'", "keras2onnx ; extra == 'dev'", "torch (>=1.0) ; extra == 'dev'", "jax (>=0.2.8) ; extra == 'dev'", "jaxlib (>=0.1.65) ; extra == 'dev'", "flax (>=0.3.4) ; extra == 'dev'", "optax (>=0.0.8) ; extra == 'dev'", "sentencepiece (==0.1.91) ; extra == 'dev'", "protobuf ; extra == 'dev'", "tokenizers (<0.11,>=0.10.1) ; extra == 'dev'", "torchaudio ; extra == 'dev'", "soundfile ; extra == 'dev'", "Pillow ; extra == 'dev'", "optuna ; extra == 'dev'", "ray[tune] ; extra == 'dev'", "timm ; extra == 'dev'", "codecarbon (==1.2.0) ; extra == 'dev'", "pytest ; extra == 'dev'", "pytest-xdist ; extra == 'dev'", "timeout-decorator ; extra == 'dev'", "parameterized ; extra == 'dev'", "psutil ; extra == 'dev'", "datasets ; extra == 'dev'", "pytest-timeout ; extra == 'dev'", "black (==21.4b0) ; extra == 'dev'", "sacrebleu (<2.0.0,>=1.4.12) ; extra == 'dev'", "rouge-score ; extra == 'dev'", "nltk ; extra == 'dev'", "GitPython (<3.1.19) ; extra == 'dev'", "faiss-cpu ; extra == 'dev'", "cookiecutter (==1.7.2) ; extra == 'dev'", "isort (>=5.5.4) ; extra == 'dev'", "flake8 (>=3.8.3) ; extra == 'dev'", "fugashi (>=1.0) ; extra == 'dev'", "ipadic (<2.0,>=1.0.0) ; extra == 'dev'", "unidic-lite (>=1.0.7) ; extra == 'dev'", "unidic (>=1.0.2) ; extra == 'dev'", "docutils (==0.16.0) ; extra == 'dev'", "recommonmark ; extra == 'dev'", "sphinx (==3.5.4) ; extra == 'dev'", "sphinx-markdown-tables ; extra == 'dev'", "sphinx-rtd-theme (==0.4.3) ; extra == 'dev'", "sphinx-copybutton ; extra == 'dev'", "sphinxext-opengraph (==0.4.1) ; extra == 'dev'", "sphinx-intl ; extra == 'dev'", "scikit-learn ; extra == 'dev'", "tensorflow (>=2.3) ; extra == 'docs'", "onnxconverter-common ; extra == 'docs'", "keras2onnx ; extra == 'docs'", "torch (>=1.0) ; extra == 'docs'", "jax (>=0.2.8) ; extra == 'docs'", "jaxlib (>=0.1.65) ; extra == 'docs'", "flax (>=0.3.4) ; extra == 'docs'", "optax (>=0.0.8) ; extra == 'docs'", "sentencepiece (==0.1.91) ; extra == 'docs'", "protobuf ; extra == 'docs'", "tokenizers (<0.11,>=0.10.1) ; extra == 'docs'", "torchaudio ; extra == 'docs'", "soundfile ; extra == 'docs'", "Pillow ; extra == 'docs'", "optuna ; extra == 'docs'", "ray[tune] ; extra == 'docs'", "timm ; extra == 'docs'", "codecarbon (==1.2.0) ; extra == 'docs'", "docutils (==0.16.0) ; extra == 'docs'", "recommonmark ; extra == 'docs'", "sphinx (==3.5.4) ; extra == 'docs'", "sphinx-markdown-tables ; extra == 'docs'", "sphinx-rtd-theme (==0.4.3) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "sphinxext-opengraph (==0.4.1) ; extra == 'docs'", "sphinx-intl ; extra == 'docs'", "docutils (==0.16.0) ; extra == 'docs_specific'", "recommonmark ; extra == 'docs_specific'", "sphinx (==3.5.4) ; extra == 'docs_specific'", "sphinx-markdown-tables ; extra == 'docs_specific'", "sphinx-rtd-theme (==0.4.3) ; extra == 'docs_specific'", "sphinx-copybutton ; extra == 'docs_specific'", "sphinxext-opengraph (==0.4.1) ; extra == 'docs_specific'", "sphinx-intl ; extra == 'docs_specific'", "fairscale (>0.3) ; extra == 'fairscale'", "jax (>=0.2.8) ; extra == 'flax'", "jaxlib (>=0.1.65) ; extra == 'flax'", "flax (>=0.3.4) ; extra == 'flax'", "optax (>=0.0.8) ; extra == 'flax'", "soundfile ; extra == 'flax-speech'", "optuna ; extra == 'integrations'", "ray[tune] ; extra == 'integrations'", "fugashi (>=1.0) ; extra == 'ja'", "ipadic (<2.0,>=1.0.0) ; extra == 'ja'", "unidic-lite (>=1.0.7) ; extra == 'ja'", "unidic (>=1.0.2) ; extra == 'ja'", "cookiecutter (==1.7.2) ; extra == 'modelcreation'", "onnxconverter-common ; extra == 'onnx'", "keras2onnx ; extra == 'onnx'", "onnxruntime (>=1.4.0) ; extra == 'onnx'", "onnxruntime-tools (>=1.4.2) ; extra == 'onnx'", "onnxruntime (>=1.4.0) ; extra == 'onnxruntime'", "onnxruntime-tools (>=1.4.2) ; extra == 'onnxruntime'", "optuna ; extra == 'optuna'", "black (==21.4b0) ; extra == 'quality'", "isort (>=5.5.4) ; extra == 'quality'", "flake8 (>=3.8.3) ; extra == 'quality'", "ray[tune] ; extra == 'ray'", "faiss-cpu ; extra == 'retrieval'", "datasets ; extra == 'retrieval'", "sagemaker (>=2.31.0) ; extra == 'sagemaker'", "sentencepiece (==0.1.91) ; extra == 'sentencepiece'", "protobuf ; extra == 'sentencepiece'", "pydantic ; extra == 'serving'", "uvicorn ; extra == 'serving'", "fastapi ; extra == 'serving'", "starlette ; extra == 'serving'", "scikit-learn ; extra == 'sklearn'", "torchaudio ; extra == 'speech'", "soundfile ; extra == 'speech'", "pytest ; extra == 'testing'", "pytest-xdist ; extra == 'testing'", "timeout-decorator ; extra == 'testing'", "parameterized ; extra == 'testing'", "psutil ; extra == 'testing'", "datasets ; extra == 'testing'", "pytest-timeout ; extra == 'testing'", "black (==21.4b0) ; extra == 'testing'", "sacrebleu (<2.0.0,>=1.4.12) ; extra == 'testing'", "rouge-score ; extra == 'testing'", "nltk ; extra == 'testing'", "GitPython (<3.1.19) ; extra == 'testing'", "faiss-cpu ; extra == 'testing'", "cookiecutter (==1.7.2) ; extra == 'testing'", "tensorflow (>=2.3) ; extra == 'tf'", "onnxconverter-common ; extra == 'tf'", "keras2onnx ; extra == 'tf'", "tensorflow-cpu (>=2.3) ; extra == 'tf-cpu'", "onnxconverter-common ; extra == 'tf-cpu'", "keras2onnx ; extra == 'tf-cpu'", "soundfile ; extra == 'tf-speech'", "timm ; extra == 'timm'", "tokenizers (<0.11,>=0.10.1) ; extra == 'tokenizers'", "torch (>=1.0) ; extra == 'torch'", "torchaudio ; extra == 'torch-speech'", "soundfile ; extra == 'torch-speech'", "filelock ; extra == 'torchhub'", "huggingface-hub (>=0.0.12) ; extra == 'torchhub'", "importlib-metadata ; extra == 'torchhub'", "numpy (>=1.17) ; extra == 'torchhub'", "packaging ; extra == 'torchhub'", "protobuf ; extra == 'torchhub'", "regex (!=2019.12.17) ; extra == 'torchhub'", "requests ; extra == 'torchhub'", "sacremoses ; extra == 'torchhub'", "sentencepiece (==0.1.91) ; extra == 'torchhub'", "torch (>=1.0) ; extra == 'torchhub'", "tokenizers (<0.11,>=0.10.1) ; extra == 'torchhub'", "tqdm (>=4.27) ; extra == 'torchhub'", "Pillow ; extra == 'vision'"]
                         - Crash traceback: Traceback (most recent call last):
   File "run_bert.py", line 14, in <module>
     from pybert.model.bert_for_multi_label import BertForMultiLable

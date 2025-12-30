@@ -7,7 +7,7 @@ Save directory: save/ENet_CamVid
 Number of classes to predict: 12
 Train dataset size: 367
 Validation dataset size: 101
-/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torchvision/transforms/transforms.py:258: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+/home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torchvision/transforms/transforms.py:281: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
   "Argument interpolation should be of type InterpolationMode instead of int. "
 Image size: torch.Size([10, 3, 360, 480])
 Label size: torch.Size([10, 360, 480])

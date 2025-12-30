@@ -1,4 +1,4 @@
-Traceback (most recent call last):
-  File "scripts/train_inpainting_siren.py", line 3, in <module>
-    from PIL import Image
-ModuleNotFoundError: No module named 'PIL'
+  0%|          | 0/5 [00:00<?, ?it/s]Epoch: 0 | Loss 18193.8105:   0%|          | 0/5 [00:02<?, ?it/s]Epoch: 0 | Loss 18193.8105:  20%|██        | 1/5 [00:02<00:11,  2.76s/it]Epoch: 0 | Loss 18359.3848:  20%|██        | 1/5 [00:03<00:11,  2.76s/it]Epoch: 0 | Loss 18359.3848:  40%|████      | 2/5 [00:03<00:06,  2.01s/it]Epoch: 0 | Loss 18077.8125:  40%|████      | 2/5 [00:03<00:06,  2.01s/it]Epoch: 0 | Loss 18077.8125:  60%|██████    | 3/5 [00:03<00:02,  1.47s/it]Epoch: 0 | Loss 18148.7832:  60%|██████    | 3/5 [00:03<00:02,  1.47s/it]Epoch: 0 | Loss 18148.7832:  80%|████████  | 4/5 [00:03<00:01,  1.09s/it]Epoch: 0 | Loss 16826.0312:  80%|████████  | 4/5 [00:03<00:01,  1.09s/it]Epoch: 0 | Loss 16826.0312: 100%|██████████| 5/5 [00:03<00:00,  1.24it/s]
+Epoch: 0 | Avg. Loss 17921.1641
+Loss improved from inf to 17921.1641
+Total training steps :  4

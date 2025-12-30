@@ -37,6 +37,417 @@ Werkzeug==2.2.3
 zipp==3.15.0
 
                         - Python version: 3.7
+                        - Project source code: import math
+import os
+import random
+import torch
+import torch.utils.data
+import numpy as np
+from librosa.util import normalize
+from scipy.io.wavfile import read
+from librosa.filters import mel as librosa_mel_fn
+
+MAX_WAV_VALUE = 32768.0
+
+
+def load_wav(full_path):
+    sampling_rate, data = read(full_path)
+    return data, sampling_rate
+
+
+def dynamic_range_compression(x, C=1, clip_val=1e-5):
+    return np.log(np.clip(x, a_min=clip_val, a_max=None) * C)
+
+
+def dynamic_range_decompression(x, C=1):
+    return np.exp(x) / C
+
+
+def dynamic_range_compression_torch(x, C=1, clip_val=1e-5):
+    return torch.log(torch.clamp(x, min=clip_val) * C)
+
+
+def dynamic_range_decompression_torch(x, C=1):
+    return torch.exp(x) / C
+
+
+def spectral_normalize_torch(magnitudes):
+    output = dynamic_range_compression_torch(magnitudes)
+    return output
+
+
+def spectral_de_normalize_torch(magnitudes):
+    output = dynamic_range_decompression_torch(magnitudes)
+    return output
+
+
+mel_basis = {}
+hann_window = {}
+
+
+def mel_spectrogram(y, n_fft, num_mels, sampling_rate, hop_size, win_size, fmin, fmax, center=False):
+    if torch.min(y) < -1.:
+        print('min value is ', torch.min(y))
+    if torch.max(y) > 1.:
+        print('max value is ', torch.max(y))
+
+    global mel_basis, hann_window
+    if fmax not in mel_basis:
+        mel = librosa_mel_fn(sampling_rate, n_fft, num_mels, fmin, fmax)
+        mel_basis[str(fmax)+'_'+str(y.device)] = torch.from_numpy(mel).float().to(y.device)
+        hann_window[str(y.device)] = torch.hann_window(win_size).to(y.device)
+
+    y = torch.nn.functional.pad(y.unsqueeze(1), (int((n_fft-hop_size)/2), int((n_fft-hop_size)/2)), mode='reflect')
+    y = y.squeeze(1)
+
+    spec = torch.stft(y, n_fft, hop_length=hop_size, win_length=win_size, window=hann_window[str(y.device)],
+                      center=center, pad_mode='reflect', normalized=False, onesided=True)
+
+    spec = torch.sqrt(spec.pow(2).sum(-1)+(1e-9))
+
+    spec = torch.matmul(mel_basis[str(fmax)+'_'+str(y.device)], spec)
+    spec = spectral_normalize_torch(spec)
+
+    return spec
+
+
+def get_dataset_filelist(a):
+    with open(a.input_training_file, 'r', encoding='utf-8') as fi:
+        training_files = [os.path.join(a.input_wavs_dir, x.split('|')[0] + '.wav')
+                          for x in fi.read().split('\n') if len(x) > 0]
+
+    with open(a.input_validation_file, 'r', encoding='utf-8') as fi:
+        validation_files = [os.path.join(a.input_wavs_dir, x.split('|')[0] + '.wav')
+                            for x in fi.read().split('\n') if len(x) > 0]
+    return training_files, validation_files
+
+
+class MelDataset(torch.utils.data.Dataset):
+    def __init__(self, training_files, segment_size, n_fft, num_mels,
+                 hop_size, win_size, sampling_rate,  fmin, fmax, split=True, shuffle=True, n_cache_reuse=1,
+                 device=None, fmax_loss=None, fine_tuning=False, base_mels_path=None):
+        self.audio_files = training_files
+        random.seed(1234)
+        if shuffle:
+            random.shuffle(self.audio_files)
+        self.segment_size = segment_size
+        self.sampling_rate = sampling_rate
+        self.split = split
+        self.n_fft = n_fft
+        self.num_mels = num_mels
+        self.hop_size = hop_size
+        self.win_size = win_size
+        self.fmin = fmin
+        self.fmax = fmax
+        self.fmax_loss = fmax_loss
+        self.cached_wav = None
+        self.n_cache_reuse = n_cache_reuse
+        self._cache_ref_count = 0
+        self.device = device
+        self.fine_tuning = fine_tuning
+        self.base_mels_path = base_mels_path
+
+    def __getitem__(self, index):
+        filename = self.audio_files[index]
+        if self._cache_ref_count == 0:
+            audio, sampling_rate = load_wav(filename)
+            audio = audio / MAX_WAV_VALUE
+            if not self.fine_tuning:
+                audio = normalize(audio) * 0.95
+            self.cached_wav = audio
+            if sampling_rate != self.sampling_rate:
+                raise ValueError("{} SR doesn't match target {} SR".format(
+                    sampling_rate, self.sampling_rate))
+            self._cache_ref_count = self.n_cache_reuse
+        else:
+            audio = self.cached_wav
+            self._cache_ref_count -= 1
+
+        audio = torch.FloatTensor(audio)
+        audio = audio.unsqueeze(0)
+
+        if not self.fine_tuning:
+            if self.split:
+                if audio.size(1) >= self.segment_size:
+                    max_audio_start = audio.size(1) - self.segment_size
+                    audio_start = random.randint(0, max_audio_start)
+                    audio = audio[:, audio_start:audio_start+self.segment_size]
+                else:
+                    audio = torch.nn.functional.pad(audio, (0, self.segment_size - audio.size(1)), 'constant')
+
+            mel = mel_spectrogram(audio, self.n_fft, self.num_mels,
+                                  self.sampling_rate, self.hop_size, self.win_size, self.fmin, self.fmax,
+                                  center=False)
+        else:
+            mel = np.load(
+                os.path.join(self.base_mels_path, os.path.splitext(os.path.split(filename)[-1])[0] + '.npy'))
+            mel = torch.from_numpy(mel)
+
+            if len(mel.shape) < 3:
+                mel = mel.unsqueeze(0)
+
+            if self.split:
+                frames_per_seg = math.ceil(self.segment_size / self.hop_size)
+
+                if audio.size(1) >= self.segment_size:
+                    mel_start = random.randint(0, mel.size(2) - frames_per_seg - 1)
+                    mel = mel[:, :, mel_start:mel_start + frames_per_seg]
+                    audio = audio[:, mel_start * self.hop_size:(mel_start + frames_per_seg) * self.hop_size]
+                else:
+                    mel = torch.nn.functional.pad(mel, (0, frames_per_seg - mel.size(2)), 'constant')
+                    audio = torch.nn.functional.pad(audio, (0, self.segment_size - audio.size(1)), 'constant')
+
+        mel_loss = mel_spectrogram(audio, self.n_fft, self.num_mels,
+                                   self.sampling_rate, self.hop_size, self.win_size, self.fmin, self.fmax_loss,
+                                   center=False)
+
+        return (mel.squeeze(), audio.squeeze(0), filename, mel_loss.squeeze())
+
+    def __len__(self):
+        return len(self.audio_files)
+
+                        - library source code: 
+from typing import Optional
+import multiprocessing
+import multiprocessing.connection
+import signal
+import sys
+import warnings
+
+from . import _prctl_pr_set_pdeathsig  # type: ignore[attr-defined]
+
+
+class ProcessException(Exception):
+    __slots__ = ["error_index", "error_pid"]
+
+    def __init__(self, msg: str, error_index: int, pid: int):
+        super().__init__(msg)
+        self.msg = msg
+        self.error_index = error_index
+        self.pid = pid
+
+    def __reduce__(self):
+        return type(self), (self.msg, self.error_index, self.pid)
+
+
+class ProcessRaisedException(ProcessException):
+    """
+    Exception is thrown when the process failed due to exception
+    raised by the code.
+    """
+    def __init__(
+        self,
+        msg: str,
+        error_index: int,
+        error_pid: int,
+    ):
+        super().__init__(msg, error_index, error_pid)
+
+
+class ProcessExitedException(ProcessException):
+    """
+    Exception is thrown when the process failed due to signal
+    or exited with a specific code.
+    """
+    __slots__ = ["exit_code"]
+
+    def __init__(
+            self, msg: str, error_index: int, error_pid: int,
+            exit_code: int, signal_name: Optional[str] = None
+    ):
+        super().__init__(msg, error_index, error_pid)
+        self.exit_code = exit_code
+        self.signal_name = signal_name
+
+    def __reduce__(self):
+        return (
+            type(self),
+            (self.msg, self.error_index, self.pid, self.exit_code, self.signal_name),
+        )
+
+
+def _wrap(fn, i, args, error_queue):
+    # prctl(2) is a Linux specific system call.
+    # On other systems the following function call has no effect.
+    # This is set to ensure that non-daemonic child processes can
+    # terminate if their parent terminates before they do.
+    _prctl_pr_set_pdeathsig(signal.SIGINT)
+
+    try:
+        fn(i, *args)
+    except KeyboardInterrupt:
+        pass  # SIGINT; Killed by parent, do nothing
+    except Exception:
+        # Propagate exception to parent process, keeping original traceback
+        import traceback
+        error_queue.put(traceback.format_exc())
+        sys.exit(1)
+
+
+class ProcessContext:
+    def __init__(self, processes, error_queues):
+        self.error_queues = error_queues
+        self.processes = processes
+        self.sentinels = {
+            process.sentinel: index
+            for index, process in enumerate(processes)
+        }
+
+    def pids(self):
+        return [int(process.pid) for process in self.processes]
+
+    def join(self, timeout=None):
+        r"""
+        Tries to join one or more processes in this spawn context.
+        If one of them exited with a non-zero exit status, this function
+        kills the remaining processes and raises an exception with the cause
+        of the first process exiting.
+
+        Returns ``True`` if all processes have been joined successfully,
+        ``False`` if there are more processes that need to be joined.
+
+        Args:
+            timeout (float): Wait this long before giving up on waiting.
+        """
+        # Ensure this function can be called even when we're done.
+        if len(self.sentinels) == 0:
+            return True
+
+        # Wait for any process to fail or all of them to succeed.
+        ready = multiprocessing.connection.wait(
+            self.sentinels.keys(),
+            timeout=timeout,
+        )
+
+        error_index = None
+        for sentinel in ready:
+            index = self.sentinels.pop(sentinel)
+            process = self.processes[index]
+            process.join()
+            if process.exitcode != 0:
+                error_index = index
+                break
+
+        # Return if there was no error.
+        if error_index is None:
+            # Return whether or not all processes have been joined.
+            return len(self.sentinels) == 0
+
+        # Assume failure. Terminate processes that are still alive.
+        for process in self.processes:
+            if process.is_alive():
+                process.terminate()
+            process.join()
+
+        # There won't be an error on the queue if the process crashed.
+        failed_process = self.processes[error_index]
+        if self.error_queues[error_index].empty():
+            exitcode = self.processes[error_index].exitcode
+            if exitcode < 0:
+                name = signal.Signals(-exitcode).name
+                raise ProcessExitedException(
+                    "process %d terminated with signal %s" %
+                    (error_index, name),
+                    error_index=error_index,
+                    error_pid=failed_process.pid,
+                    exit_code=exitcode,
+                    signal_name=name
+                )
+            else:
+                raise ProcessExitedException(
+                    "process %d terminated with exit code %d" %
+                    (error_index, exitcode),
+                    error_index=error_index,
+                    error_pid=failed_process.pid,
+                    exit_code=exitcode
+                )
+
+        original_trace = self.error_queues[error_index].get()
+        msg = "\n\n-- Process %d terminated with the following error:\n" % error_index
+        msg += original_trace
+        raise ProcessRaisedException(msg, error_index, failed_process.pid)
+
+
+class SpawnContext(ProcessContext):
+    def __init__(self, processes, error_queues):
+        warnings.warn('SpawnContext is renamed to ProcessContext since 1.4 release.')
+        super(SpawnContext, self).__init__(processes, error_queues)
+    pass
+
+
+# Note: [start_processes]
+# mp.start_processes handles both start_method='spawn' and 'fork'. It's supposed to be a
+# more generalized API than mp.spawn. Currently we only document mp.spawn as it's the
+# CUDA compatible start_method. However, in environments like Ipython notebooks, 'fork'
+# works better than 'spawn'. Every helper function we created for mp.spawn is indeed
+# general enough, and backends like XLA can reuse them in Colab notebooks as well.
+# Currently we only add this API first, we can consider adding it to documentation as
+# needed in the future.
+def start_processes(fn, args=(), nprocs=1, join=True, daemon=False, start_method='spawn'):
+    mp = multiprocessing.get_context(start_method)
+    error_queues = []
+    processes = []
+    for i in range(nprocs):
+        error_queue = mp.SimpleQueue()
+        process = mp.Process(
+            target=_wrap,
+            args=(fn, i, args, error_queue),
+            daemon=daemon,
+        )
+        process.start()
+        error_queues.append(error_queue)
+        processes.append(process)
+
+    context = ProcessContext(processes, error_queues)
+    if not join:
+        return context
+
+    # Loop on join until it returns True or raises an exception.
+    while not context.join():
+        pass
+
+
+def spawn(fn, args=(), nprocs=1, join=True, daemon=False, start_method='spawn'):
+    r"""Spawns ``nprocs`` processes that run ``fn`` with ``args``.
+
+    If one of the processes exits with a non-zero exit status, the
+    remaining processes are killed and an exception is raised with the
+    cause of termination. In the case an exception was caught in the
+    child process, it is forwarded and its traceback is included in
+    the exception raised in the parent process.
+
+    Args:
+        fn (function): Function is called as the entrypoint of the
+            spawned process. This function must be defined at the top
+            level of a module so it can be pickled and spawned. This
+            is a requirement imposed by multiprocessing.
+
+            The function is called as ``fn(i, *args)``, where ``i`` is
+            the process index and ``args`` is the passed through tuple
+            of arguments.
+
+        args (tuple): Arguments passed to ``fn``.
+        nprocs (int): Number of processes to spawn.
+        join (bool): Perform a blocking join on all processes.
+        daemon (bool): The spawned processes' daemon flag. If set to True,
+                       daemonic processes will be created.
+        start_method (str): (deprecated) this method will always use ``spawn``
+                               as the start method. To use a different start method
+                               use ``start_processes()``.
+
+    Returns:
+        None if ``join`` is ``True``,
+        :class:`~ProcessContext` if ``join`` is ``False``
+
+    """
+    if start_method != 'spawn':
+        msg = ('This method only supports start_method=spawn (got: %s).\n'
+               'To use a different start_method use:\n\t\t'
+               ' torch.multiprocessing.start_processes(...)' % start_method)
+        warnings.warn(msg)
+    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
+
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99) ; platform_system == "Linux"', 'nvidia-cudnn-cu11 (==8.5.0.96) ; platform_system == "Linux"', 'nvidia-cublas-cu11 (==11.10.3.66) ; platform_system == "Linux"', 'nvidia-cuda-nvrtc-cu11 (==11.7.99) ; platform_system == "Linux"', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
                         - Crash traceback: Traceback (most recent call last):
   File "train.py", line 277, in <module>
     main()
@@ -50,7 +461,7 @@ zipp==3.15.0
     raise ProcessRaisedException(msg, error_index, failed_process.pid)
 torch.multiprocessing.spawn.ProcessRaisedException: 
 
--- Process 0 terminated with the following error:
+-- Process 1 terminated with the following error:
 Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
     fn(i, *args)

@@ -1,0 +1,10 @@
+torch==1.13.1
+numpy==1.21.6
+Pillow==9.5.0
+typing-extensions==4.7.1
+nvidia-cuda-runtime-cu11==11.7.99 ; platform_system == "Linux"
+nvidia-cudnn-cu11==8.5.0.96 ; platform_system == "Linux"
+nvidia-cublas-cu11==11.10.3.66 ; platform_system == "Linux"
+nvidia-cuda-nvrtc-cu11==11.7.99 ; platform_system == "Linux"
+opt-einsum==3.3.0
+cupy-cuda117==11.0.0 ; platform_system == "Linux"

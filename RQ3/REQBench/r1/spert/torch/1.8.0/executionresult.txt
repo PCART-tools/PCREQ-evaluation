@@ -5,43 +5,43 @@ Repeat 1 times
 --------------------------------------------------
 Iteration 0
 --------------------------------------------------
-2025-05-30 07:21:46,085 [MainThread  ] [INFO ]  Datasets: data/datasets/conll04/conll04_train.json, data/datasets/conll04/conll04_dev.json
-2025-05-30 07:21:46,086 [MainThread  ] [INFO ]  Model type: spert
-Parse dataset 'train':   0%|          | 0/922 [00:00<?, ?it/s]Parse dataset 'train':   5%|▌         | 48/922 [00:00<00:01, 479.74it/s]Parse dataset 'train':  11%|█         | 101/922 [00:00<00:01, 505.94it/s]Parse dataset 'train':  16%|█▋        | 152/922 [00:00<00:01, 507.64it/s]Parse dataset 'train':  23%|██▎       | 210/922 [00:00<00:01, 535.99it/s]Parse dataset 'train':  29%|██▊       | 264/922 [00:00<00:01, 488.07it/s]Parse dataset 'train':  34%|███▍      | 314/922 [00:00<00:01, 472.94it/s]Parse dataset 'train':  40%|███▉      | 366/922 [00:00<00:01, 487.20it/s]Parse dataset 'train':  45%|████▌     | 416/922 [00:00<00:01, 486.14it/s]Parse dataset 'train':  50%|█████     | 465/922 [00:00<00:00, 485.35it/s]Parse dataset 'train':  56%|█████▌    | 514/922 [00:01<00:00, 482.04it/s]Parse dataset 'train':  61%|██████    | 563/922 [00:01<00:00, 406.60it/s]Parse dataset 'train':  66%|██████▌   | 609/922 [00:01<00:00, 419.48it/s]Parse dataset 'train':  72%|███████▏  | 660/922 [00:01<00:00, 443.19it/s]Parse dataset 'train':  77%|███████▋  | 714/922 [00:01<00:00, 469.72it/s]Parse dataset 'train':  83%|████████▎ | 763/922 [00:01<00:00, 470.54it/s]Parse dataset 'train':  88%|████████▊ | 813/922 [00:01<00:00, 478.10it/s]Parse dataset 'train':  93%|█████████▎| 862/922 [00:01<00:00, 470.72it/s]Parse dataset 'train':  99%|█████████▉| 913/922 [00:01<00:00, 477.77it/s]Parse dataset 'train': 100%|██████████| 922/922 [00:01<00:00, 472.34it/s]
-Parse dataset 'valid':   0%|          | 0/231 [00:00<?, ?it/s]Parse dataset 'valid':  22%|██▏       | 50/231 [00:00<00:00, 489.18it/s]Parse dataset 'valid':  43%|████▎     | 99/231 [00:00<00:00, 478.21it/s]Parse dataset 'valid':  64%|██████▎   | 147/231 [00:00<00:00, 474.20it/s]Parse dataset 'valid':  84%|████████▍ | 195/231 [00:00<00:00, 454.82it/s]Parse dataset 'valid': 100%|██████████| 231/231 [00:00<00:00, 474.66it/s]2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Relation type count: 6
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Entity type count: 5
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Entities:
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  No Entity=0
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Location=1
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Organization=2
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  People=3
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Other=4
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Relations:
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  No Relation=0
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Work for=1
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Kill=2
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Organization based in=3
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Live in=4
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Located in=5
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Dataset: train
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Document count: 922
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Relation count: 1283
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Entity count: 3377
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Dataset: valid
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Document count: 231
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Relation count: 343
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Entity count: 893
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Updates per epoch: 461
-2025-05-30 07:21:48,545 [MainThread  ] [INFO ]  Updates total: 461
+2025-12-15 13:46:56,818 [MainThread  ] [INFO ]  Datasets: data/datasets/conll04/conll04_train.json, data/datasets/conll04/conll04_dev.json
+2025-12-15 13:46:56,818 [MainThread  ] [INFO ]  Model type: spert
+Parse dataset 'train':   0%|          | 0/922 [00:00<?, ?it/s]Parse dataset 'train':   5%|▌         | 47/922 [00:00<00:01, 467.31it/s]Parse dataset 'train':  11%|█         | 98/922 [00:00<00:01, 490.57it/s]Parse dataset 'train':  16%|█▌        | 148/922 [00:00<00:01, 489.57it/s]Parse dataset 'train':  22%|██▏       | 202/922 [00:00<00:01, 506.94it/s]Parse dataset 'train':  27%|██▋       | 253/922 [00:00<00:01, 481.43it/s]Parse dataset 'train':  33%|███▎      | 302/922 [00:00<00:01, 453.20it/s]Parse dataset 'train':  39%|███▊      | 355/922 [00:00<00:01, 473.87it/s]Parse dataset 'train':  44%|████▎     | 403/922 [00:00<00:01, 468.49it/s]Parse dataset 'train':  49%|████▉     | 453/922 [00:00<00:00, 475.77it/s]Parse dataset 'train':  54%|█████▍    | 501/922 [00:01<00:00, 466.42it/s]Parse dataset 'train':  60%|██████    | 557/922 [00:01<00:00, 491.39it/s]Parse dataset 'train':  66%|██████▌   | 607/922 [00:01<00:00, 467.41it/s]Parse dataset 'train':  71%|███████   | 655/922 [00:01<00:00, 395.58it/s]Parse dataset 'train':  77%|███████▋  | 707/922 [00:01<00:00, 427.00it/s]Parse dataset 'train':  82%|████████▏ | 752/922 [00:01<00:00, 431.89it/s]Parse dataset 'train':  87%|████████▋ | 804/922 [00:01<00:00, 455.57it/s]Parse dataset 'train':  92%|█████████▏| 851/922 [00:01<00:00, 445.53it/s]Parse dataset 'train':  98%|█████████▊| 902/922 [00:01<00:00, 462.29it/s]Parse dataset 'train': 100%|██████████| 922/922 [00:02<00:00, 458.79it/s]
+Parse dataset 'valid':   0%|          | 0/231 [00:00<?, ?it/s]Parse dataset 'valid':  20%|██        | 47/231 [00:00<00:00, 467.50it/s]Parse dataset 'valid':  41%|████      | 95/231 [00:00<00:00, 465.25it/s]Parse dataset 'valid':  61%|██████▏   | 142/231 [00:00<00:00, 451.52it/s]Parse dataset 'valid':  81%|████████▏ | 188/231 [00:00<00:00, 439.36it/s]Parse dataset 'valid': 100%|██████████| 231/231 [00:00<00:00, 456.20it/s]2025-12-15 13:46:59,354 [MainThread  ] [INFO ]  Relation type count: 6
+2025-12-15 13:46:59,354 [MainThread  ] [INFO ]  Entity type count: 5
+2025-12-15 13:46:59,354 [MainThread  ] [INFO ]  Entities:
+2025-12-15 13:46:59,354 [MainThread  ] [INFO ]  No Entity=0
+2025-12-15 13:46:59,354 [MainThread  ] [INFO ]  Location=1
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Organization=2
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  People=3
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Other=4
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Relations:
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  No Relation=0
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Work for=1
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Kill=2
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Organization based in=3
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Live in=4
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Located in=5
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Dataset: train
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Document count: 922
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Relation count: 1283
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Entity count: 3377
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Dataset: valid
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Document count: 231
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Relation count: 343
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Entity count: 893
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Updates per epoch: 461
+2025-12-15 13:46:59,355 [MainThread  ] [INFO ]  Updates total: 461
 
-Some weights of the model checkpoint at bert-base-cased were not used when initializing SpERT: ['cls.predictions.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.seq_relationship.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.dense.weight', 'cls.seq_relationship.bias']
+Some weights of the model checkpoint at bert-base-cased were not used when initializing SpERT: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']
 - This IS expected if you are initializing SpERT from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
 - This IS NOT expected if you are initializing SpERT from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
-Some weights of SpERT were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['entity_classifier.bias', 'rel_classifier.bias', 'rel_classifier.weight', 'entity_classifier.weight', 'size_embeddings.weight']
+Some weights of SpERT were not initialized from the model checkpoint at bert-base-cased and are newly initialized: ['rel_classifier.weight', 'rel_classifier.bias', 'entity_classifier.weight', 'entity_classifier.bias', 'size_embeddings.weight']
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 nn.Linear(config.hidden_size * 2 + size_embedding, entity_types)
 torch.nn.CrossEntropyLoss(reduction='none')
-2025-05-30 07:22:14,871 [MainThread  ] [INFO ]  Train epoch: 0
+2025-12-15 13:47:26,975 [MainThread  ] [INFO ]  Train epoch: 0
 Train epoch 0:   0%|          | 0/461 [00:00<?, ?it/s]torch.tensor(entity_types, dtype=torch.long)
 torch.tensor(entity_types, dtype=torch.long)
 torch.tensor(entity_types, dtype=torch.long)

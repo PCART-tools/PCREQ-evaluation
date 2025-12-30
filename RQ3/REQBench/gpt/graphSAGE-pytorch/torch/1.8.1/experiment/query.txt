@@ -17,6 +17,7 @@ torchvision==0.2.2
 tqdm==4.19.9
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): ['typing-extensions', 'numpy', 'dataclasses ; python_version < "3.7"']
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

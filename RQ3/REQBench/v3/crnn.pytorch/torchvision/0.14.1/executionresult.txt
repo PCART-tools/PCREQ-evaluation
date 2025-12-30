@@ -1,3 +1,4 @@
-loading pretrained model from ./data/crnn.pth
-True
-a-----v--a-i-l-a-bb-l-e--- => available           
+Traceback (most recent call last):
+  File "demo.py", line 1, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'

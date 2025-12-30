@@ -31,7 +31,7 @@ Collecting torchvision==0.2.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/a1/66d72a2fe580a9f0fcbaaa5b976911fbbde9dce9b330ba12791997b856e9/torchvision-0.2.2-py2.py3-none-any.whl (64 kB)
 Collecting tqdm==4.19.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/c4/b67cf1ab472b770e08e94105a0c7ca7032cd070627c435f5998c9cf6e64f/tqdm-4.19.9-py2.py3-none-any.whl (52 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/siamese-pytorch-pillow-6.2.0.txt (line 4)) (59.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/siamese-pytorch-pillow-6.2.0.txt (line 4)) (59.5.0)
 WARNING: The candidate selected for download or install is a yanked version: 'torchvision' candidate (version 0.2.2 at https://pypi.tuna.tsinghua.edu.cn/packages/ce/a1/66d72a2fe580a9f0fcbaaa5b976911fbbde9dce9b330ba12791997b856e9/torchvision-0.2.2-py2.py3-none-any.whl (from https://pypi.tuna.tsinghua.edu.cn/simple/torchvision/))
 Reason for being yanked: <none given>
 Installing collected packages: tqdm, torch, python-gflags, pyparsing, mpmath, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, torchvision, python-dateutil, cycler, coloredlogs, matplotlib

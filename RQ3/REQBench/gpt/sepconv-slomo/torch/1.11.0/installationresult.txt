@@ -23,8 +23,8 @@ Collecting networkx==2.6.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e9/93/aa6613aa70d6eb4868e667068b5a11feca9645498fd31b954b6c4bb82fa5/networkx-2.6.3-py3-none-any.whl (1.9 MB)
 Collecting numpy==1.21.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
-Collecting packaging==21.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl (40 kB)
+Collecting packaging==24.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Collecting Pillow==9.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c0/47/4023dab2d77ea3f687939770b06e0c191b4a5a20590f158a6e8dbb03e357/Pillow-9.3.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.2 MB)
 Collecting proglog==0.1.10
@@ -47,10 +47,8 @@ Collecting typing_extensions==4.2.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/75/e1/932e06004039dd670c9d5e1df0cd606bf46e29a28e65d5bb28e894ea29c9/typing_extensions-4.2.0-py3-none-any.whl (24 kB)
 Collecting urllib3==2.0.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from imageio-ffmpeg==0.5.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/sepconv-slomo-torch-1.11.0.txt (line 9)) (57.5.0)
-Collecting pyparsing!=3.0.5,>=2.0.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl (104 kB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from imageio-ffmpeg==0.5.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/sepconv-slomo-torch-1.11.0.txt (line 9)) (57.5.0)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
-Installing collected packages: fastrlock, dataclasses, urllib3, typing_extensions, tqdm, pyparsing, Pillow, numpy, networkx, imageio-ffmpeg, idna, future, decorator, charset-normalizer, certifi, torch, tifffile, scipy, requests, PyWavelets, proglog, packaging, imageio, cupy, scikit-image, moviepy
-Successfully installed Pillow-9.3.0 PyWavelets-1.3.0 certifi-2025.4.26 charset-normalizer-3.4.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 fastrlock-0.8.2 future-1.0.0 idna-3.10 imageio-2.31.2 imageio-ffmpeg-0.5.1 moviepy-1.0.3 networkx-2.6.3 numpy-1.21.6 packaging-21.3 proglog-0.1.10 pyparsing-3.1.4 requests-2.31.0 scikit-image-0.19.3 scipy-1.7.3 tifffile-2021.11.2 torch-1.11.0 tqdm-4.67.1 typing_extensions-4.2.0 urllib3-2.0.7
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
+Installing collected packages: fastrlock, dataclasses, urllib3, typing_extensions, tqdm, Pillow, packaging, numpy, networkx, imageio-ffmpeg, idna, future, decorator, charset-normalizer, certifi, torch, tifffile, scipy, requests, PyWavelets, proglog, imageio, cupy, scikit-image, moviepy
+Successfully installed Pillow-9.3.0 PyWavelets-1.3.0 certifi-2025.11.12 charset-normalizer-3.4.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 fastrlock-0.8.2 future-1.0.0 idna-3.10 imageio-2.31.2 imageio-ffmpeg-0.5.1 moviepy-1.0.3 networkx-2.6.3 numpy-1.21.6 packaging-24.0 proglog-0.1.10 requests-2.31.0 scikit-image-0.19.3 scipy-1.7.3 tifffile-2021.11.2 torch-1.11.0 tqdm-4.67.1 typing_extensions-4.2.0 urllib3-2.0.7

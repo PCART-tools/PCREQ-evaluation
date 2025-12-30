@@ -1,4 +1,4 @@
-2025-05-30 13:41:27.378783: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
+2025-12-21 15:45:16.065647: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
 /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:493: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   _np_qint8 = np.dtype([("qint8", np.int8, 1)])
 /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:494: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
@@ -12,11 +12,11 @@
 /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/tensorflow/python/framework/dtypes.py:502: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
   np_resource = np.dtype([("resource", np.ubyte, 1)])
 [START] Pre-training step:
->> Epoch 1 finished 	RBM Reconstruction error 3.185269
->> Epoch 1 finished 	RBM Reconstruction error 0.802602
+>> Epoch 1 finished 	RBM Reconstruction error 3.214360
+>> Epoch 1 finished 	RBM Reconstruction error 0.808824
 [END] Pre-training step
 [START] Fine tuning step:
->> Epoch 0 finished 	ANN training loss 2.296463
+>> Epoch 0 finished 	ANN training loss 2.296118
 [END] Fine tuning step
 Done.
 Accuracy: 0.075000

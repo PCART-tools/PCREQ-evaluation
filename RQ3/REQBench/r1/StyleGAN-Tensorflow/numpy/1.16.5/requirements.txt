@@ -3,8 +3,8 @@ astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
 dataclasses==0.8
-gast==0.2.2
-grpcio==1.22.0
+gast==0.6.0
+grpcio==1.48.2
 h5py==3.1.0
 importlib-metadata==4.8.3
 Keras-Applications==1.0.8
@@ -17,9 +17,9 @@ Pillow==6.1.0
 protobuf==3.19.6
 scipy==1.2.0
 six==1.16.0
-tensorboard==1.14.0
-tensorflow==1.14.0
-tensorflow-estimator==1.14.0
+tensorboard==1.13.1
+tensorflow==1.13.1
+tensorflow-estimator==1.13.0
 termcolor==1.1.0
 tqdm==4.32.1
 typing_extensions==4.1.1

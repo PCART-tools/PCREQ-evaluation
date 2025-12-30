@@ -29,7 +29,7 @@ Collecting torch==1.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a4/cf/007b6de316c9f3d4cb315a60c308342cc299e464167f5ebc369e93b5e23a/torch-1.5.1-cp37-cp37m-manylinux1_x86_64.whl (753.2 MB)
 Collecting torchvision==0.6.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/ef/c32275c040f12f24adcd6302f0f3cd12cc432e408ce4ea521600e8fd989c/torchvision-0.6.1-cp37-cp37m-manylinux1_x86_64.whl (6.6 MB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/PyTorch-ENet-torchvision-0.6.1.txt (line 4)) (65.6.3)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/PyTorch-ENet-torchvision-0.6.1.txt (line 4)) (65.6.3)
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Installing collected packages: pytz, pyparsing, mpmath, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, future, torch, python-dateutil, cycler, coloredlogs, torchvision, matplotlib

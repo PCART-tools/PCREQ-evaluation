@@ -97,14 +97,14 @@ Collecting nbformat==5.0.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d5/3c/251cfe5e3c9545ece107d342909ee3822d8cd9f3f11a591df37baeff2089/nbformat-5.0.6-py3-none-any.whl (170 kB)
 Collecting notebook==6.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b1/f1/0a67f09ef53a342403ffa66646ee39273e0ac79ffa5de5dbe2f3e28b5bdf/notebook-6.0.3-py3-none-any.whl (9.7 MB)
-Collecting numpy==1.21.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3f/03/c3526fb4e79a793498829ca570f2f868204ad9a8040afcd72d82a8f121db/numpy-1.21.0-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Collecting numpy==1.21.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
 Collecting oauthlib==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
-Collecting packaging==20.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/46/19/c5ab91b1b05cfe63cccd5cfc971db9214c6dd6ced54e33c30d5af1d2bc43/packaging-20.4-py2.py3-none-any.whl (37 kB)
-Collecting pandas==1.0.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/6a/94b219b8ea0f2d580169e85ed1edc0163743f55aaeca8a44c2e8fc1e344e/pandas-1.0.3-cp37-cp37m-manylinux1_x86_64.whl (10.0 MB)
+Collecting packaging==20.9
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/89/7ea760b4daa42653ece2380531c90f64788d979110a2ab51049d92f408af/packaging-20.9-py2.py3-none-any.whl (40 kB)
+Collecting pandas==1.3.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3e/0c/23764c4635dcb0a784a787498d56847b90ebf974e65f4ab4053a5d97b1a5/pandas-1.3.5-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.3 MB)
 Collecting pandocfilters==1.4.2
   Using cached pandocfilters-1.4.2-py3-none-any.whl
 Collecting parso==0.7.0
@@ -113,14 +113,14 @@ Collecting pexpect==4.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/39/7b/88dbb785881c28a102619d46423cb853b46dbccc70d3ac362d99773a78ce/pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
 Collecting pickleshare==0.7.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
-Collecting Pillow==7.1.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ab/f8/d3627cc230270a6a4eedee32974fbc8cb26c5fdb8710dd5ea70133640022/Pillow-7.1.2-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
+Collecting Pillow==9.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/10/e8/360519e53809ed7d6658605efff9e2423aff136516b6f0afac9b79c1a5ed/Pillow-9.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
 Collecting prometheus-client==0.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/3f/0e/554a265ffdc56e1494ef08e18f765b0cdec78797f510c58c45cf37abb4f4/prometheus_client-0.8.0-py2.py3-none-any.whl (53 kB)
 Collecting prompt-toolkit==3.0.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e4/a7/81b39aa50e9284fe2cb21cc7fb7de7817b224172d42793fd57451d38842b/prompt_toolkit-3.0.5-py3-none-any.whl (351 kB)
-Collecting protobuf==3.12.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/fa/32192c80b43c1f974aaaa9b4d75b004843089dc15201685f29c92bc43de6/protobuf-3.12.1-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
+Collecting protobuf==3.20.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4c/12/62e1d5505c172e1a7f803d83b0b1693f7952c3c271eb2f155703012ae67a/protobuf-3.20.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.0 MB)
 Collecting ptyprocess==0.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
 Collecting pyasn1==0.4.8
@@ -167,18 +167,18 @@ Collecting six==1.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl (10 kB)
 Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
-Collecting tensorboard==2.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/fd/4f3ca1516cbb3713259ef229abd9314bba0077ef6070285dde0dd1ed21b2/tensorboard-2.2.1-py3-none-any.whl (3.0 MB)
-Collecting tensorboard-plugin-wit==1.6.0.post3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/51/cd/a0c1f9e4582ea64dddf76c1b808b318d01e3b858a51c715bffab1016ecc7/tensorboard_plugin_wit-1.6.0.post3-py3-none-any.whl (777 kB)
+Collecting tensorboard==2.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e9/1b/6a420d7e6ba431cf3d51b2a5bfa06a958c4141e3189385963dc7f6fbffb6/tensorboard-2.3.0-py3-none-any.whl (6.8 MB)
+Collecting tensorboard-plugin-wit==1.8.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/68/e8ecfac5dd594b676c23a7f07ea34c197d7d69b3313afdf8ac1b0a9905a2/tensorboard_plugin_wit-1.8.1-py3-none-any.whl (781 kB)
 Collecting terminado==0.8.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/96/1d9a2c23990aea8f8e0b5c3b6627d03196a73771a17a2d9860bbe9823ab6/terminado-0.8.3-py2.py3-none-any.whl (33 kB)
 Collecting testpath==0.4.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1b/9e/1a170feaa54f22aeb5a5d16c9015e82234275a3c8ab630b552493f9cb8a9/testpath-0.4.4-py2.py3-none-any.whl (163 kB)
 Collecting threadpoolctl==2.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/db/09/cab2f398e28e9f183714afde872b2ce23629f5833e467b151f18e1e08908/threadpoolctl-2.0.0-py3-none-any.whl (34 kB)
-Collecting tokenizers==0.7.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/59/bb06dd5ca53547d523422d32735585493e0103c992a52a97ba3aa3be33bf/tokenizers-0.7.0-cp37-cp37m-manylinux1_x86_64.whl (5.6 MB)
+Collecting tokenizers==0.12.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/84/aa/f0509ce47f22334654b3bbe9553525160df8ad7a02a37f6eab27def3c4c2/tokenizers-0.12.1-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.6 MB)
 Collecting torch==1.11.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/32/96a0955e5d6ed8a837eda5ca095dd2694c4617cfa70ca599660cd5ff7447/torch-1.11.0-cp37-cp37m-manylinux1_x86_64.whl (750.6 MB)
 Collecting torchvision==0.12.0
@@ -189,8 +189,8 @@ Collecting tqdm==4.46.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c9/40/058b12e8ba10e35f89c9b1fdfc2d4c7f8c05947df2d5eb3c7b258019fda0/tqdm-4.46.0-py2.py3-none-any.whl (63 kB)
 Collecting traitlets==4.3.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl (75 kB)
-Collecting transformers==2.10.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/12/b5/ac41e3e95205ebf53439e4dd087c58e9fd371fd8e3724f2b9b4cdb8282e5/transformers-2.10.0-py3-none-any.whl (660 kB)
+Collecting transformers==4.19.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/52/82/b62f139e77c70fab2763d99d83a77a27a179502430851144a1765e37f5ad/transformers-4.19.2-py3-none-any.whl (4.2 MB)
 Collecting tweepy==3.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/1b/2bd38043d22ade352fc3d3902cf30ce0e2f4bf285be3b304a2782a767aec/tweepy-3.8.0-py2.py3-none-any.whl (28 kB)
 Collecting urllib3==1.25.9
@@ -207,10 +207,16 @@ Collecting zipp==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b2/34/bfcb43cc0ba81f527bc4f40ef41ba2ff4080e047acb0586b56b3d017ace4/zipp-3.1.0-py3-none-any.whl (4.9 kB)
 Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/nlp_classification-torch-1.11.0.txt (line 20)) (57.5.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.2.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/nlp_classification-torch-1.11.0.txt (line 85)) (0.38.4)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/nlp_classification-torch-1.11.0.txt (line 20)) (57.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.3.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/nlp_classification-torch-1.11.0.txt (line 85)) (0.38.4)
 Collecting typing-extensions
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting pyyaml>=5.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
+Collecting huggingface-hub<1.0,>=0.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
+Collecting fsspec
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/f0d369ede0ca54fdd520bdee5086dbaf0af81dac53a2ce847bd1ec6e0bf1/fsspec-2023.1.0-py3-none-any.whl (143 kB)
 Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/96/80/034ffeca15c0f4e01b7b9c6ad0fb704b44e190cde4e757edbd60be404c41/requests-2.30.0-py3-none-any.whl (62 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cf/e1/2aa539876d9ed0ddc95882451deb57cfd7aa8dbf0b8dbce68e045549ba56/requests-2.29.0-py3-none-any.whl (62 kB)
@@ -223,5 +229,5 @@ Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl (61 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/39/fc/f91eac5a39a65f75a7adb58eac7fa78871ea9872283fb9c44e6545998134/requests-2.25.0-py2.py3-none-any.whl (61 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/1e/0c169c6a5381e241ba7404532c16a21d86ab872c9bed8bdcd4c423954103/requests-2.24.0-py2.py3-none-any.whl (61 kB)
-Installing collected packages: webencodings, wcwidth, tokenizers, testpath, tensorboard-plugin-wit, sentencepiece, Send2Trash, regex, QtPy, pytz, pyasn1, ptyprocess, prometheus-client, pickleshare, pandocfilters, mpmath, mistune, JPype1, ipython-genutils, filelock, chardet, certifi, beautifulsoup4, backcall, zipp, Werkzeug, urllib3, typing-extensions, tqdm, tornado, threadpoolctl, sympy, six, rsa, pyzmq, PySocks, pyparsing, Pygments, pyasn1-modules, prompt-toolkit, Pillow, pexpect, parso, oauthlib, numpy, MarkupSafe, lxml, joblib, idna, humanfriendly, graphviz, future, entrypoints, defusedxml, decorator, Cython, colorama, click, cachetools, attrs, traitlets, torch, terminado, scipy, sacremoses, requests, python-dateutil, pyrsistent, protobuf, packaging, Jinja2, jedi, importlib-metadata, grpcio, google-auth, coloredlogs, absl-py, transformers, torchvision, scikit-learn, requests-oauthlib, pandas, mxnet, Markdown, jupyter-core, jsonschema, ipython, gluonnlp, bleach, tweepy, nbformat, jupyter-client, google-auth-oauthlib, gdown, tensorboard, nbconvert, konlpy, ipykernel, qtconsole, notebook, jupyter-console, widgetsnbextension, ipywidgets, jupyter
-Successfully installed Cython-0.29.19 JPype1-0.7.5 Jinja2-2.11.2 Markdown-3.2.2 MarkupSafe-1.1.1 Pillow-7.1.2 PySocks-1.7.1 Pygments-2.6.1 QtPy-1.9.0 Send2Trash-1.5.0 Werkzeug-1.0.1 absl-py-0.9.0 attrs-19.3.0 backcall-0.1.0 beautifulsoup4-4.6.0 bleach-3.1.5 cachetools-4.1.0 certifi-2020.4.5.1 chardet-3.0.4 click-7.1.2 colorama-0.4.3 coloredlogs-15.0.1 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 filelock-3.0.12 future-0.18.2 gdown-3.11.0 gluonnlp-0.9.1 google-auth-1.15.0 google-auth-oauthlib-0.4.1 graphviz-0.8.4 grpcio-1.29.0 humanfriendly-10.0 idna-2.9 importlib-metadata-1.6.0 ipykernel-5.3.0 ipython-7.14.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.17.0 joblib-0.15.1 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-6.1.3 jupyter-console-6.1.0 jupyter-core-4.6.3 konlpy-0.5.2 lxml-4.5.1 mistune-0.8.4 mpmath-1.2.1 mxnet-1.6.0 nbconvert-5.6.1 nbformat-5.0.6 notebook-6.0.3 numpy-1.21.0 oauthlib-3.1.0 packaging-20.4 pandas-1.0.3 pandocfilters-1.4.2 parso-0.7.0 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.8.0 prompt-toolkit-3.0.5 protobuf-3.12.1 ptyprocess-0.6.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.7 pyrsistent-0.16.0 python-dateutil-2.8.1 pytz-2020.1 pyzmq-19.0.1 qtconsole-4.7.4 regex-2020.5.14 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 sacremoses-0.0.43 scikit-learn-0.23.1 scipy-1.7.3 sentencepiece-0.1.91 six-1.15.0 sympy-1.10.1 tensorboard-2.2.1 tensorboard-plugin-wit-1.6.0.post3 terminado-0.8.3 testpath-0.4.4 threadpoolctl-2.0.0 tokenizers-0.7.0 torch-1.11.0 torchvision-0.12.0 tornado-6.0.4 tqdm-4.46.0 traitlets-4.3.3 transformers-2.10.0 tweepy-3.8.0 typing-extensions-4.7.1 urllib3-1.25.9 wcwidth-0.1.9 webencodings-0.5.1 widgetsnbextension-3.5.1 zipp-3.1.0
+Installing collected packages: webencodings, wcwidth, tokenizers, testpath, tensorboard-plugin-wit, sentencepiece, Send2Trash, regex, QtPy, pytz, pyasn1, ptyprocess, prometheus-client, pickleshare, pandocfilters, mpmath, mistune, JPype1, ipython-genutils, filelock, chardet, certifi, beautifulsoup4, backcall, zipp, Werkzeug, urllib3, typing-extensions, tqdm, tornado, threadpoolctl, sympy, six, rsa, pyzmq, pyyaml, PySocks, pyparsing, Pygments, pyasn1-modules, protobuf, prompt-toolkit, Pillow, pexpect, parso, oauthlib, numpy, MarkupSafe, lxml, joblib, idna, humanfriendly, graphviz, future, fsspec, entrypoints, defusedxml, decorator, Cython, colorama, click, cachetools, attrs, traitlets, torch, terminado, scipy, sacremoses, requests, python-dateutil, pyrsistent, packaging, Jinja2, jedi, importlib-metadata, grpcio, google-auth, coloredlogs, absl-py, torchvision, scikit-learn, requests-oauthlib, pandas, mxnet, Markdown, jupyter-core, jsonschema, ipython, huggingface-hub, gluonnlp, bleach, tweepy, transformers, nbformat, jupyter-client, google-auth-oauthlib, gdown, tensorboard, nbconvert, konlpy, ipykernel, qtconsole, notebook, jupyter-console, widgetsnbextension, ipywidgets, jupyter
+Successfully installed Cython-0.29.19 JPype1-0.7.5 Jinja2-2.11.2 Markdown-3.2.2 MarkupSafe-1.1.1 Pillow-9.1.0 PySocks-1.7.1 Pygments-2.6.1 QtPy-1.9.0 Send2Trash-1.5.0 Werkzeug-1.0.1 absl-py-0.9.0 attrs-19.3.0 backcall-0.1.0 beautifulsoup4-4.6.0 bleach-3.1.5 cachetools-4.1.0 certifi-2020.4.5.1 chardet-3.0.4 click-7.1.2 colorama-0.4.3 coloredlogs-15.0.1 decorator-4.4.2 defusedxml-0.6.0 entrypoints-0.3 filelock-3.0.12 fsspec-2023.1.0 future-0.18.2 gdown-3.11.0 gluonnlp-0.9.1 google-auth-1.15.0 google-auth-oauthlib-0.4.1 graphviz-0.8.4 grpcio-1.29.0 huggingface-hub-0.16.4 humanfriendly-10.0 idna-2.9 importlib-metadata-1.6.0 ipykernel-5.3.0 ipython-7.14.0 ipython-genutils-0.2.0 ipywidgets-7.5.1 jedi-0.17.0 joblib-0.15.1 jsonschema-3.2.0 jupyter-1.0.0 jupyter-client-6.1.3 jupyter-console-6.1.0 jupyter-core-4.6.3 konlpy-0.5.2 lxml-4.5.1 mistune-0.8.4 mpmath-1.2.1 mxnet-1.6.0 nbconvert-5.6.1 nbformat-5.0.6 notebook-6.0.3 numpy-1.21.6 oauthlib-3.1.0 packaging-20.9 pandas-1.3.5 pandocfilters-1.4.2 parso-0.7.0 pexpect-4.8.0 pickleshare-0.7.5 prometheus-client-0.8.0 prompt-toolkit-3.0.5 protobuf-3.20.3 ptyprocess-0.6.0 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.7 pyrsistent-0.16.0 python-dateutil-2.8.1 pytz-2020.1 pyyaml-6.0.1 pyzmq-19.0.1 qtconsole-4.7.4 regex-2020.5.14 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 sacremoses-0.0.43 scikit-learn-0.23.1 scipy-1.7.3 sentencepiece-0.1.91 six-1.15.0 sympy-1.10.1 tensorboard-2.3.0 tensorboard-plugin-wit-1.8.1 terminado-0.8.3 testpath-0.4.4 threadpoolctl-2.0.0 tokenizers-0.12.1 torch-1.11.0 torchvision-0.12.0 tornado-6.0.4 tqdm-4.46.0 traitlets-4.3.3 transformers-4.19.2 tweepy-3.8.0 typing-extensions-4.7.1 urllib3-1.25.9 wcwidth-0.1.9 webencodings-0.5.1 widgetsnbextension-3.5.1 zipp-3.1.0

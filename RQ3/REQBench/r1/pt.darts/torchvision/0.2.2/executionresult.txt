@@ -1,33 +1,18 @@
-05/31 04:09:09 AM | 
-05/31 04:09:09 AM | Parameters:
-05/31 04:09:09 AM | AUX_WEIGHT=0.4
-05/31 04:09:09 AM | BATCH_SIZE=256
-05/31 04:09:09 AM | CUTOUT_LENGTH=16
-05/31 04:09:09 AM | DATA_PATH=./data/
-05/31 04:09:09 AM | DATASET=cifar10
-05/31 04:09:09 AM | DROP_PATH_PROB=0.2
-05/31 04:09:09 AM | EPOCHS=1
-05/31 04:09:09 AM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
-05/31 04:09:09 AM | GPUS=[0, 1, 2]
-05/31 04:09:09 AM | GRAD_CLIP=5.0
-05/31 04:09:09 AM | INIT_CHANNELS=36
-05/31 04:09:09 AM | LAYERS=20
-05/31 04:09:09 AM | LR=0.025
-05/31 04:09:09 AM | MOMENTUM=0.9
-05/31 04:09:09 AM | NAME=cifar10
-05/31 04:09:09 AM | PATH=augments/cifar10
-05/31 04:09:09 AM | PRINT_FREQ=200
-05/31 04:09:09 AM | SEED=2
-05/31 04:09:09 AM | WEIGHT_DECAY=0.0003
-05/31 04:09:09 AM | WORKERS=4
-05/31 04:09:09 AM | 
-05/31 04:09:09 AM | Logger is set - training start
-Files already downloaded and verified
 Traceback (most recent call last):
-  File "augment.py", line 177, in <module>
-    main()
-  File "augment.py", line 39, in main
-    config.dataset, config.data_path, config.cutout_length, validation=True)
-  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
-    shape = trn_data.train_data.shape
-AttributeError: 'CIFAR10' object has no attribute 'train_data'
+  File "augment.py", line 8, in <module>
+    import utils
+  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 6, in <module>
+    import torchvision.datasets as dset
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/__init__.py", line 2, in <module>
+    from torchvision import datasets
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/datasets/__init__.py", line 9, in <module>
+    from .fakedata import FakeData
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/datasets/fakedata.py", line 3, in <module>
+    from .. import transforms
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/transforms/__init__.py", line 1, in <module>
+    from .transforms import *
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 17, in <module>
+    from . import functional as F
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 5, in <module>
+    from PIL import Image, ImageOps, ImageEnhance, PILLOW_VERSION
+ImportError: cannot import name 'PILLOW_VERSION' from 'PIL' (/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/PIL/__init__.py)

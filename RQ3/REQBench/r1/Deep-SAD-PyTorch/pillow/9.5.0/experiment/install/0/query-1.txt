@@ -8,26 +8,27 @@ cvxopt==1.2.3
 cycler==0.10.0
 joblib==0.13.2
 kiwisolver==1.1.0
-matplotlib==3.1.0
-numpy==1.16.4
-pandas==0.24.2
+matplotlib==3.5.0
+numpy==1.17.0
+pandas==0.25.0
 Pillow==9.5.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
 scikit-learn==0.21.2
 scipy==1.3.0
-seaborn==0.9.0
+seaborn==0.11.0
 six==1.12.0
-torch==1.2.0
-torchvision==0.4.2
+torch==1.7.0
+torchvision==0.9.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ["furo ; extra == 'docs'", "olefile ; extra == 'docs'", "sphinx (>=2.4) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "sphinx-inline-tabs ; extra == 'docs'", "sphinx-removed-in ; extra == 'docs'", "sphinxext-opengraph ; extra == 'docs'", "check-manifest ; extra == 'tests'", "coverage ; extra == 'tests'", "defusedxml ; extra == 'tests'", "markdown2 ; extra == 'tests'", "olefile ; extra == 'tests'", "packaging ; extra == 'tests'", "pyroma ; extra == 'tests'", "pytest ; extra == 'tests'", "pytest-cov ; extra == 'tests'", "pytest-timeout ; extra == 'tests'"]
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested torch==1.2.0
-    torchvision 0.4.2 depends on torch==1.3.1
+    The user requested torch==1.7.0
+    torchvision 0.9.0 depends on torch==1.8.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

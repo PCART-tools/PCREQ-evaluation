@@ -3,20 +3,22 @@ begin loading training dataset to memory
 finish loading training dataset to memory
 begin loading test dataset to memory
 finish loading test dataset to memory
-/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
   warnings.warn(warning.format(ret))
-[10]	loss:	0.69178	time lapsed:	1.30 s
-[20]	loss:	0.66778	time lapsed:	1.00 s
-[30]	loss:	0.62897	time lapsed:	1.00 s
-[40]	loss:	0.61746	time lapsed:	1.01 s
-[50]	loss:	0.59389	time lapsed:	1.00 s
-[60]	loss:	0.58533	time lapsed:	1.00 s
-[70]	loss:	0.56426	time lapsed:	1.00 s
-[80]	loss:	0.54356	time lapsed:	1.01 s
-[90]	loss:	0.55315	time lapsed:	1.01 s
-[100]	loss:	0.54591	time lapsed:	1.01 s
+[10]	loss:	0.69251	time lapsed:	1.39 s
+[20]	loss:	0.67779	time lapsed:	0.99 s
+[30]	loss:	0.62699	time lapsed:	0.99 s
+[40]	loss:	0.61127	time lapsed:	0.99 s
+[50]	loss:	0.59320	time lapsed:	1.00 s
+[60]	loss:	0.59164	time lapsed:	0.99 s
+[70]	loss:	0.57397	time lapsed:	1.00 s
+[80]	loss:	0.55716	time lapsed:	1.00 s
+[90]	loss:	0.55704	time lapsed:	1.00 s
+[100]	loss:	0.51676	time lapsed:	1.00 s
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
 **********************************************************************
-[100]	Test set	correct:	67	error:	333	precision:	0.167500
+[100]	Test set	correct:	45	error:	355	precision:	0.112500
 **********************************************************************
 ######################################################################
-final accuracy:  0.008375
+final accuracy:  0.005625

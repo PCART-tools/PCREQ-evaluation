@@ -31,7 +31,7 @@ Collecting torchvision==0.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7b/ed/a894f274a7733d6492e438a5831a95b507c5ec777edf6d8c3b97574e08c4/torchvision-0.6.0-cp37-cp37m-manylinux1_x86_64.whl (6.6 MB)
 Collecting tqdm==4.19.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/c4/b67cf1ab472b770e08e94105a0c7ca7032cd070627c435f5998c9cf6e64f/tqdm-4.19.9-py2.py3-none-any.whl (52 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/siamese-pytorch-torch-1.5.0.txt (line 4)) (59.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/siamese-pytorch-torch-1.5.0.txt (line 4)) (59.5.0)
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Installing collected packages: tqdm, python-gflags, pyparsing, mpmath, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, future, torch, python-dateutil, cycler, coloredlogs, torchvision, matplotlib

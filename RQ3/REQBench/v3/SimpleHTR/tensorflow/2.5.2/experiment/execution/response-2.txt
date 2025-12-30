@@ -22,7 +22,7 @@ Markdown==3.3.7
 matplotlib==3.2.1
 numpy==1.19.5
 oauthlib==3.2.2
-opencv-python-headless==4.5.5.64
+opencv-python==4.4.0.46
 opt-einsum==3.3.0
 path==15.0.0
 protobuf==3.19.6

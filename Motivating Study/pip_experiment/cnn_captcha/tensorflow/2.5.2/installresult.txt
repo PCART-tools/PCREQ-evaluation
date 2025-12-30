@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==2.5.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ea/cf/6b9df4d76261fd065abc4fce2926212077bcf5bc4c0d2627e8e1f0df88ba/tensorflow-2.5.2-cp36-cp36m-manylinux2010_x86_64.whl (454.3 MB)
+Collecting opt-einsum~=3.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
+Collecting protobuf>=3.9.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8f/8e/06fc0df62dd80a32739b51bb3256f1417349eb5c3899f6ccab3796937458/protobuf-3.19.6-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+ERROR: Could not find a version that satisfies the requirement keras-nightly~=2.5.0.dev (from tensorflow) (from versions: none)
+ERROR: No matching distribution found for keras-nightly~=2.5.0.dev

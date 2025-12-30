@@ -1,0 +1,41 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==4.17.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/11/07cea2439c82726ee05575472e5b09c3b6eeac7e32eef1a736ad3646a8f0/transformers-4.17.0-py3-none-any.whl (3.8 MB)
+Collecting tokenizers!=0.11.3,>=0.11.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/20/41/c2be10975ca37f6ec40d7abd7e98a5213bb04f284b869c1a24e6504fd94d/tokenizers-0.21.0.tar.gz (343 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [15 lines of output]
+      error: failed to select a version for `env_logger`.
+          ... required by package `tokenizers-python v0.21.0 (/tmp/pip-install-agw5yrwd/tokenizers_5830f4b41fec4baab43dea5d2db7cc15/bindings/python)`
+      versions that meet the requirements `^0.11` (locked to 0.11.5) are: 0.11.5
+      
+      the package `tokenizers-python` depends on `env_logger`, with features: `anstream` but `env_logger` does not have these features.
+       It has an optional dependency with that name, but that dependency uses the "dep:" syntax in the features table, so it does not have an implicit feature with that name.
+      
+      
+      failed to select a version for `env_logger` which could resolve this conflict
+      💥 maturin failed
+        Caused by: Cargo metadata failed. Does your crate compile with `cargo build`?
+        Caused by: `cargo metadata` exited with an error:
+      Error running maturin: Command '['maturin', 'pep517', 'write-dist-info', '--metadata-directory', '/tmp/pip-modern-metadata-5e_22wa1', '--interpreter', '/home/lei/anaconda3/envs/py37-1/bin/python']' returned non-zero exit status 1.
+      Checking for Rust toolchain....
+      Running `maturin pep517 write-dist-info --metadata-directory /tmp/pip-modern-metadata-5e_22wa1 --interpreter /home/lei/anaconda3/envs/py37-1/bin/python`
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.

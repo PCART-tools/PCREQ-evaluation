@@ -19,8 +19,8 @@ Collecting importlib-metadata==4.8.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/a1/b153a0a4caf7a7e3f15c2cd56c7702e2cf3d89b1b359d1f1c5e59d68f4ce/importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
 Collecting Keras-Applications==1.0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
-Collecting Keras-Preprocessing==1.1.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42 kB)
+Collecting Keras-Preprocessing==1.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl (41 kB)
 Collecting Markdown==3.3.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f3/df/ca72f352e15b6f8ce32b74af029f1189abffb906f7c137501ffe69c98a65/Markdown-3.3.7-py3-none-any.whl (97 kB)
 Collecting mock==5.1.0
@@ -33,8 +33,8 @@ Collecting Pillow==6.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/41/db6dec65ddbc176a59b89485e8cc136a433ed9c6397b6bfe2cd38412051e/Pillow-6.1.0-cp36-cp36m-manylinux1_x86_64.whl (2.1 MB)
 Collecting protobuf==3.6.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/f9/28787754923612ca9bfdffc588daa05580ed70698add063a5629d1a4209d/protobuf-3.6.1-cp36-cp36m-manylinux1_x86_64.whl (1.1 MB)
-Collecting scipy==1.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/29/162476fd44203116e7980cfbd9352eef9db37c49445d1fec35509022f6aa/scipy-1.4.1-cp36-cp36m-manylinux1_x86_64.whl (26.1 MB)
+Collecting scipy==1.2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/69/20c8f3b7efe362093dff891239551ff90d4c463b5f52676e2694fea09442/scipy-1.2.2-cp36-cp36m-manylinux1_x86_64.whl (24.8 MB)
 Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
 Collecting tensorboard==1.13.1
@@ -49,11 +49,11 @@ Collecting tqdm==4.32.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/af/685bf3ce889ea191f3b916557f5677cc95a5e87b2fa120d74b5dd6d049d0/tqdm-4.32.1-py2.py3-none-any.whl (49 kB)
 Collecting typing_extensions==4.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
-Collecting Werkzeug==2.0.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/f3/22afbdb20cc4654b10c98043414a14057cd27fdba9d4ae61cea596000ba2/Werkzeug-2.0.3-py3-none-any.whl (289 kB)
+Collecting Werkzeug==0.15.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b7/61/c0a1adf9ad80db012ed7191af98fa05faa95fa09eceb71bb6fa8b66e6a43/Werkzeug-0.15.6-py2.py3-none-any.whl (328 kB)
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from protobuf==3.6.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/StyleGAN-Tensorflow-numpy-1.18.3.txt (line 17)) (59.6.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.13.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/StyleGAN-Tensorflow-numpy-1.18.3.txt (line 20)) (0.37.1)
-Installing collected packages: zipp, typing-extensions, six, numpy, importlib-metadata, dataclasses, Werkzeug, protobuf, mock, Markdown, h5py, grpcio, absl-py, termcolor, tensorflow-estimator, tensorboard, Keras-Preprocessing, Keras-Applications, gast, astor, tqdm, tensorflow, scipy, Pillow, opencv-python, certifi, cached-property
-Successfully installed Keras-Applications-1.0.8 Keras-Preprocessing-1.1.2 Markdown-3.3.7 Pillow-6.1.0 Werkzeug-2.0.3 absl-py-1.4.0 astor-0.8.1 cached-property-1.5.2 certifi-2021.5.30 dataclasses-0.8 gast-0.2.2 grpcio-1.48.2 h5py-2.10.0 importlib-metadata-4.8.3 mock-5.1.0 numpy-1.18.3 opencv-python-4.1.0.25 protobuf-3.6.1 scipy-1.4.1 six-1.16.0 tensorboard-1.13.1 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 tqdm-4.32.1 typing-extensions-4.1.1 zipp-3.6.0
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from protobuf==3.6.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/StyleGAN-Tensorflow-numpy-1.18.3.txt (line 17)) (59.6.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages (from tensorboard==1.13.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/StyleGAN-Tensorflow-numpy-1.18.3.txt (line 20)) (0.37.1)
+Installing collected packages: zipp, typing-extensions, six, numpy, importlib-metadata, Werkzeug, protobuf, mock, Markdown, h5py, grpcio, absl-py, termcolor, tensorflow-estimator, tensorboard, Keras-Preprocessing, Keras-Applications, gast, astor, tqdm, tensorflow, scipy, Pillow, opencv-python, dataclasses, certifi, cached-property
+Successfully installed Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.3.7 Pillow-6.1.0 Werkzeug-0.15.6 absl-py-1.4.0 astor-0.8.1 cached-property-1.5.2 certifi-2021.5.30 dataclasses-0.8 gast-0.2.2 grpcio-1.48.2 h5py-2.10.0 importlib-metadata-4.8.3 mock-5.1.0 numpy-1.18.3 opencv-python-4.1.0.25 protobuf-3.6.1 scipy-1.2.2 six-1.16.0 tensorboard-1.13.1 tensorflow-1.13.1 tensorflow-estimator-1.13.0 termcolor-1.1.0 tqdm-4.32.1 typing-extensions-4.1.1 zipp-3.6.0

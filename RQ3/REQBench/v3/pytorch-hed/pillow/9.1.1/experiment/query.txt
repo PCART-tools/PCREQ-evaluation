@@ -4,19 +4,18 @@
 
                 **Input Context**
                 - Full requirements.txt: coloredlogs==15.0.1
-correlation-cuda==0.0.0
 dataclasses==0.6
 future==1.0.0
 humanfriendly==10.0
 mpmath==1.2.1
 numpy==1.15.0
 Pillow==5.0.0
-resample2d-cuda==0.0.0
 sympy==1.10.1
 torch==1.7.0
 typing_extensions==4.7.1
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ["olefile ; extra == 'docs'", "sphinx (>=2.4) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "sphinx-issues (>=3.0.1) ; extra == 'docs'", "sphinx-removed-in ; extra == 'docs'", "sphinx-rtd-theme (>=1.0) ; extra == 'docs'", "sphinxext-opengraph ; extra == 'docs'", "check-manifest ; extra == 'tests'", "coverage ; extra == 'tests'", "defusedxml ; extra == 'tests'", "markdown2 ; extra == 'tests'", "olefile ; extra == 'tests'", "packaging ; extra == 'tests'", "pyroma ; extra == 'tests'", "pytest ; extra == 'tests'", "pytest-cov ; extra == 'tests'", "pytest-timeout ; extra == 'tests'"]
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

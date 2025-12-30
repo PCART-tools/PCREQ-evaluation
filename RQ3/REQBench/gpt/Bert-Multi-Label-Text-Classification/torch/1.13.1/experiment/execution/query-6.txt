@@ -5,82 +5,86 @@
                         **Input Context**
                         - Current environment: boto3==1.20.24
 botocore==1.23.24
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
-Click==7.1.2
+Click==7.0
 cycler==0.10.0
 docutils==0.15.2
-filelock==3.3.0
+filelock==3.7.1
 idna==2.8
 jmespath==0.10.0
-joblib==1.1.1
+joblib==0.14.1
 kiwisolver==1.1.0
 matplotlib==3.1.1
-numpy==1.21.6
-pandas==1.3.5
+numpy==1.19.5
+pandas==0.25.3
 Pillow==6.2.0
-pyparsing==2.4.2
+pyparsing==2.4.7
 python-dateutil==2.8.0
-pytorch-transformers==1.0.0
-pytz==2019.2
-regex==2021.4.4
+pytorch-transformers==1.2.0
+pytz==2022.5
+regex==2021.11.10
 requests==2.22.0
 s3transfer==0.5.0
-sacremoses==0.0.35
-scikit-learn==0.24.2
+sacremoses==0.0.33
+scikit-learn==0.22.2.post1
 scipy==1.5.4
 sentencepiece==0.1.83
-six==1.15.0
-tokenizers==0.7.0
+six==1.12.0
+tokenizers==0.11.1
 torch==1.13.1
-tqdm==4.64.0
-transformers==2.11.0
-urllib3==1.25.8
+tqdm==4.62.3
+transformers==4.24.0
+urllib3==1.25.11
 
                         - Python version: 3.7
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
+
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99) ; platform_system == "Linux"', 'nvidia-cudnn-cu11 (==8.5.0.96) ; platform_system == "Linux"', 'nvidia-cublas-cu11 (==11.10.3.66) ; platform_system == "Linux"', 'nvidia-cuda-nvrtc-cu11 (==11.7.99) ; platform_system == "Linux"', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
                         - Crash traceback: Traceback (most recent call last):
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 242, in _lazy_init
-    queued_call()
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 125, in _check_capability
-    capability = get_device_capability(d)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 357, in get_device_capability
-    prop = get_device_properties(device)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 375, in get_device_properties
-    return _get_device_properties(device)  # type: ignore[name-defined]
-RuntimeError: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":50, please report a bug to PyTorch. 
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "run_bert.py", line 216, in <module>
-    main()
-  File "run_bert.py", line 209, in main
-    run_train(args)
-  File "run_bert.py", line 116, in run_train
-    MultiLabelReport(id2label=id2label)])
-  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/train/trainer.py", line 27, in __init__
-    self.model, self.device = model_device(n_gpu = args.n_gpu, model=self.model)
-  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/common/tools.py", line 101, in model_device
-    model = model.to(device)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 989, in to
-    return self._apply(convert)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 641, in _apply
-    module._apply(fn)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 641, in _apply
-    module._apply(fn)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 641, in _apply
-    module._apply(fn)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 664, in _apply
-    param_applied = fn(param)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/nn/modules/module.py", line 987, in convert
-    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 246, in _lazy_init
-    raise DeferredCudaCallError(msg) from e
-torch.cuda.DeferredCudaCallError: CUDA call failed lazily at initialization with error: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":50, please report a bug to PyTorch. 
-
-CUDA call was originally invoked at:
-
-['  File "run_bert.py", line 1, in <module>\n    import torch\n', '  File "<frozen importlib._bootstrap>", line 983, in _find_and_load\n', '  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked\n', '  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked\n', '  File "<frozen importlib._bootstrap_external>", line 728, in exec_module\n', '  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed\n', '  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/__init__.py", line 798, in <module>\n    _C._initExtension(manager_path())\n', '  File "<frozen importlib._bootstrap>", line 983, in _find_and_load\n', '  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked\n', '  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked\n', '  File "<frozen importlib._bootstrap_external>", line 728, in exec_module\n', '  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed\n', '  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 179, in <module>\n    _lazy_call(_check_capability)\n', '  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torch/cuda/__init__.py", line 177, in _lazy_call\n    _queued_calls.append((callable, traceback.format_stack()))\n']
+  File "run_bert.py", line 14, in <module>
+    from pybert.model.bert_for_multi_label import BertForMultiLable
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/model/bert_for_multi_label.py", line 2, in <module>
+    from transformers.modeling_bert import BertPreTrainedModel, BertModel
+ModuleNotFoundError: No module named 'transformers.modeling_bert'
 
 
                         **Analysis Protocol**

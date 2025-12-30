@@ -12,3 +12,5 @@ six==1.16.0
 torch==1.9.0
 torchvision==0.10.0
 tqdm==4.47.0
+typing-extensions==3.10.0.2
+dataclasses==0.8

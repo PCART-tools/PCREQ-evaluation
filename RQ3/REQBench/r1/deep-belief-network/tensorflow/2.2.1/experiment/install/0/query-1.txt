@@ -4,13 +4,13 @@
 
             **Input Context**
             - Current requirements.txt: absl-py==1.4.0
-bleach==2.1.0
+bleach==3.3.0
 certifi==2021.5.30
 dataclasses==0.8
-html5lib==1.0.1
+html5lib==1.1
 importlib-metadata==4.8.3
 Markdown==3.3.7
-numpy==1.16.4
+numpy==1.18.5
 protobuf==3.19.6
 scikit-learn==0.18.1
 scipy==0.18.1
@@ -22,10 +22,11 @@ Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): ['absl-py (>=0.7.0)', 'astunparse (==1.6.3)', 'gast (==0.3.3)', 'google-pasta (>=0.1.8)', 'h5py (<2.11.0,>=2.10.0)', 'keras-preprocessing (>=1.1.0)', 'numpy (<1.19.0,>=1.16.0)', 'opt-einsum (>=2.3.2)', 'protobuf (>=3.8.0)', 'tensorboard (<2.3.0,>=2.2.0)', 'tensorflow-estimator (<2.3.0,>=2.2.0)', 'termcolor (>=1.1.0)', 'wrapt (>=1.11.1)', 'six (>=1.12.0)', 'grpcio (>=1.8.6)', 'wheel ; python_version < "3"', 'mock (>=2.0.0) ; python_version < "3"', 'functools32 (>=3.2.3) ; python_version < "3"', 'backports.weakref (>=1.0rc1) ; python_version < "3.4"', 'enum34 (>=1.1.6) ; python_version < "3.4"', 'wheel (>=0.26) ; python_version >= "3"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested bleach==2.1.0
+    The user requested bleach==3.3.0
     tensorflow-tensorboard 1.5.1 depends on bleach==1.5.0
 
 To fix this you could try to:

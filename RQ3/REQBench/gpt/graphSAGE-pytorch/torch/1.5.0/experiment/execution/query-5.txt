@@ -7,16 +7,277 @@
 numpy==1.18.5
 Pillow==8.3.2
 pyhocon==0.3.51
-pyparsing==2.3.1
+pyparsing==2.4.7
 scikit-learn==0.22.2.post1
 scipy==1.4.1
-six==1.12.0
+six==1.16.0
 sklearn==0.0
 torch==1.5.0
 torchvision==0.6.0
-tqdm==4.46.0
+tqdm==4.41.1
 
                         - Python version: 3.6
+                        - Project source code: import sys
+import os
+import torch
+import random
+import math
+
+from sklearn.utils import shuffle
+from sklearn.metrics import f1_score
+
+import torch.nn as nn
+import numpy as np
+
+def evaluate(dataCenter, ds, graphSage, classification, device, max_vali_f1, name, cur_epoch):
+	test_nodes = getattr(dataCenter, ds+'_test')
+	val_nodes = getattr(dataCenter, ds+'_val')
+	labels = getattr(dataCenter, ds+'_labels')
+
+	models = [graphSage, classification]
+
+	params = []
+	for model in models:
+		for param in model.parameters():
+			if param.requires_grad:
+				param.requires_grad = False
+				params.append(param)
+
+	embs = graphSage(val_nodes)
+	logists = classification(embs)
+	_, predicts = torch.max(logists, 1)
+	labels_val = labels[val_nodes]
+	assert len(labels_val) == len(predicts)
+	comps = zip(labels_val, predicts.data)
+
+	vali_f1 = f1_score(labels_val, predicts.cpu().data, average="micro")
+	print("Validation F1:", vali_f1)
+
+	if vali_f1 > max_vali_f1:
+		max_vali_f1 = vali_f1
+		embs = graphSage(test_nodes)
+		logists = classification(embs)
+		_, predicts = torch.max(logists, 1)
+		labels_test = labels[test_nodes]
+		assert len(labels_test) == len(predicts)
+		comps = zip(labels_test, predicts.data)
+
+		test_f1 = f1_score(labels_test, predicts.cpu().data, average="micro")
+		print("Test F1:", test_f1)
+
+		for param in params:
+			param.requires_grad = True
+
+		torch.save(models, 'models/model_best_{}_ep{}_{:.4f}.torch'.format(name, cur_epoch, test_f1))
+
+	for param in params:
+		param.requires_grad = True
+
+	return max_vali_f1
+
+def get_gnn_embeddings(gnn_model, dataCenter, ds):
+    print('Loading embeddings from trained GraphSAGE model.')
+    features = np.zeros((len(getattr(dataCenter, ds+'_labels')), gnn_model.out_size))
+    nodes = np.arange(len(getattr(dataCenter, ds+'_labels'))).tolist()
+    b_sz = 500
+    batches = math.ceil(len(nodes) / b_sz)
+    embs = []
+    for index in range(batches):
+        nodes_batch = nodes[index*b_sz:(index+1)*b_sz]
+        embs_batch = gnn_model(nodes_batch)
+        assert len(embs_batch) == len(nodes_batch)
+        embs.append(embs_batch)
+        # if ((index+1)*b_sz) % 10000 == 0:
+        #     print(f'Dealed Nodes [{(index+1)*b_sz}/{len(nodes)}]')
+
+    assert len(embs) == batches
+    embs = torch.cat(embs, 0)
+    assert len(embs) == len(nodes)
+    print('Embeddings loaded.')
+    return embs.detach()
+
+def train_classification(dataCenter, graphSage, classification, ds, device, max_vali_f1, name, epochs=800):
+	print('Training Classification ...')
+	c_optimizer = torch.optim.SGD(classification.parameters(), lr=0.5)
+	# train classification, detached from the current graph
+	#classification.init_params()
+	b_sz = 50
+	train_nodes = getattr(dataCenter, ds+'_train')
+	labels = getattr(dataCenter, ds+'_labels')
+	features = get_gnn_embeddings(graphSage, dataCenter, ds)
+	for epoch in range(epochs):
+		train_nodes = shuffle(train_nodes)
+		batches = math.ceil(len(train_nodes) / b_sz)
+		visited_nodes = set()
+		for index in range(batches):
+			nodes_batch = train_nodes[index*b_sz:(index+1)*b_sz]
+			visited_nodes |= set(nodes_batch)
+			labels_batch = labels[nodes_batch]
+			embs_batch = features[nodes_batch]
+
+			logists = classification(embs_batch)
+			loss = -torch.sum(logists[range(logists.size(0)), labels_batch], 0)
+			loss /= len(nodes_batch)
+			# print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}, Dealed Nodes [{}/{}] '.format(epoch+1, epochs, index, batches, loss.item(), len(visited_nodes), len(train_nodes)))
+
+			loss.backward()
+			
+			nn.utils.clip_grad_norm_(classification.parameters(), 5)
+			c_optimizer.step()
+			c_optimizer.zero_grad()
+
+		max_vali_f1 = evaluate(dataCenter, ds, graphSage, classification, device, max_vali_f1, name, epoch)
+	return classification, max_vali_f1
+
+def apply_model(dataCenter, ds, graphSage, classification, unsupervised_loss, b_sz, unsup_loss, device, learn_method):
+	test_nodes = getattr(dataCenter, ds+'_test')
+	val_nodes = getattr(dataCenter, ds+'_val')
+	train_nodes = getattr(dataCenter, ds+'_train')
+	labels = getattr(dataCenter, ds+'_labels')
+
+	if unsup_loss == 'margin':
+		num_neg = 6
+	elif unsup_loss == 'normal':
+		num_neg = 100
+	else:
+		print("unsup_loss can be only 'margin' or 'normal'.")
+		sys.exit(1)
+
+	train_nodes = shuffle(train_nodes)
+
+	models = [graphSage, classification]
+	params = []
+	for model in models:
+		for param in model.parameters():
+			if param.requires_grad:
+				params.append(param)
+
+	optimizer = torch.optim.SGD(params, lr=0.7)
+	optimizer.zero_grad()
+	for model in models:
+		model.zero_grad()
+
+	batches = math.ceil(len(train_nodes) / b_sz)
+
+	visited_nodes = set()
+	for index in range(batches):
+		nodes_batch = train_nodes[index*b_sz:(index+1)*b_sz]
+
+		# extend nodes batch for unspervised learning
+		# no conflicts with supervised learning
+		nodes_batch = np.asarray(list(unsupervised_loss.extend_nodes(nodes_batch, num_neg=num_neg)))
+		visited_nodes |= set(nodes_batch)
+
+		# get ground-truth for the nodes batch
+		labels_batch = labels[nodes_batch]
+
+		# feed nodes batch to the graphSAGE
+		# returning the nodes embeddings
+		embs_batch = graphSage(nodes_batch)
+
+		if learn_method == 'sup':
+			# superivsed learning
+			logists = classification(embs_batch)
+			loss_sup = -torch.sum(logists[range(logists.size(0)), labels_batch], 0)
+			loss_sup /= len(nodes_batch)
+			loss = loss_sup
+		elif learn_method == 'plus_unsup':
+			# superivsed learning
+			logists = classification(embs_batch)
+			loss_sup = -torch.sum(logists[range(logists.size(0)), labels_batch], 0)
+			loss_sup /= len(nodes_batch)
+			# unsuperivsed learning
+			if unsup_loss == 'margin':
+				loss_net = unsupervised_loss.get_loss_margin(embs_batch, nodes_batch)
+			elif unsup_loss == 'normal':
+				loss_net = unsupervised_loss.get_loss_sage(embs_batch, nodes_batch)
+			loss = loss_sup + loss_net
+		else:
+			if unsup_loss == 'margin':
+				loss_net = unsupervised_loss.get_loss_margin(embs_batch, nodes_batch)
+			elif unsup_loss == 'normal':
+				loss_net = unsupervised_loss.get_loss_sage(embs_batch, nodes_batch)
+			loss = loss_net
+
+		print('Step [{}/{}], Loss: {:.4f}, Dealed Nodes [{}/{}] '.format(index+1, batches, loss.item(), len(visited_nodes), len(train_nodes)))
+		loss.backward()
+		for model in models:
+			nn.utils.clip_grad_norm_(model.parameters(), 5)
+		optimizer.step()
+
+		optimizer.zero_grad()
+		for model in models:
+			model.zero_grad()
+
+	return graphSage, classification
+                        - library source code: import warnings
+import torch
+from torch._six import inf
+
+
+def clip_grad_norm_(parameters, max_norm, norm_type=2):
+    r"""Clips gradient norm of an iterable of parameters.
+
+    The norm is computed over all gradients together, as if they were
+    concatenated into a single vector. Gradients are modified in-place.
+
+    Arguments:
+        parameters (Iterable[Tensor] or Tensor): an iterable of Tensors or a
+            single Tensor that will have gradients normalized
+        max_norm (float or int): max norm of the gradients
+        norm_type (float or int): type of the used p-norm. Can be ``'inf'`` for
+            infinity norm.
+
+    Returns:
+        Total norm of the parameters (viewed as a single vector).
+    """
+    if isinstance(parameters, torch.Tensor):
+        parameters = [parameters]
+    parameters = list(filter(lambda p: p.grad is not None, parameters))
+    max_norm = float(max_norm)
+    norm_type = float(norm_type)
+    if norm_type == inf:
+        total_norm = max(p.grad.detach().abs().max() for p in parameters)
+    else:
+        total_norm = torch.norm(torch.stack([torch.norm(p.grad.detach(), norm_type) for p in parameters]), norm_type)
+    clip_coef = max_norm / (total_norm + 1e-6)
+    if clip_coef < 1:
+        for p in parameters:
+            p.grad.detach().mul_(clip_coef)
+    return total_norm
+
+
+def clip_grad_norm(parameters, max_norm, norm_type=2):
+    r"""Clips gradient norm of an iterable of parameters.
+
+    .. warning::
+        This method is now deprecated in favor of
+        :func:`torch.nn.utils.clip_grad_norm_`.
+    """
+    warnings.warn("torch.nn.utils.clip_grad_norm is now deprecated in favor "
+                  "of torch.nn.utils.clip_grad_norm_.", stacklevel=2)
+    return clip_grad_norm_(parameters, max_norm, norm_type)
+
+
+def clip_grad_value_(parameters, clip_value):
+    r"""Clips gradient of an iterable of parameters at specified value.
+
+    Gradients are modified in-place.
+
+    Arguments:
+        parameters (Iterable[Tensor] or Tensor): an iterable of Tensors or a
+            single Tensor that will have gradients normalized
+        clip_value (float or int): maximum allowed value of the gradients.
+            The gradients are clipped in the range
+            :math:`\left[\text{-clip\_value}, \text{clip\_value}\right]`
+    """
+    if isinstance(parameters, torch.Tensor):
+        parameters = [parameters]
+    clip_value = float(clip_value)
+    for p in filter(lambda p: p.grad is not None, parameters):
+        p.grad.data.clamp_(min=-clip_value, max=clip_value)
+
+                        - PyPI metadata (including version constraints): ['future', 'numpy']
                         - Crash traceback: Traceback (most recent call last):
   File "/home/lei/anaconda3/envs/py36-5/lib/python3.6/runpy.py", line 193, in _run_module_as_main
     "__main__", mod_spec)

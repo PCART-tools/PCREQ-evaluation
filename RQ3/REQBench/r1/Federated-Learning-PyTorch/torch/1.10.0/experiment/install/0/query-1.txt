@@ -9,9 +9,9 @@ humanfriendly==10.0
 kiwisolver==1.4.5
 matplotlib==3.0.1
 mpmath==1.2.1
-numpy==1.15.4
+numpy==1.19.5
 Pillow==6.2.2
-protobuf==4.21.12
+protobuf==4.24.4
 pyparsing==3.1.2
 python-dateutil==2.9.0.post0
 six==1.16.0
@@ -23,6 +23,7 @@ tqdm==4.66.4
 typing_extensions==4.7.1
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

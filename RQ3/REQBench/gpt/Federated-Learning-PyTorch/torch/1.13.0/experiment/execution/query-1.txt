@@ -1,0 +1,168 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: coloredlogs==15.0.1
+cycler==0.11.0
+humanfriendly==10.0
+kiwisolver==1.4.5
+matplotlib==3.0.1
+mpmath==1.2.1
+numpy==1.21.6
+Pillow==6.2.2
+protobuf==4.21.0
+pyparsing==3.0.9
+python-dateutil==2.9.0
+six==1.16.0
+sympy==1.10.1
+tensorboardX==1.4
+torch==1.13.0
+torchvision==0.13.1+cu116
+tqdm==4.66.4
+typing_extensions==4.1.1
+
+                        - Python version: 3.7
+                        - Project source code: #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Python version: 3.6
+
+
+from tqdm import tqdm
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
+import torch
+from torch.utils.data import DataLoader
+
+from utils import get_dataset
+from options import args_parser
+from update import test_inference
+from models import MLP, CNNMnist, CNNFashion_Mnist, CNNCifar
+
+
+if __name__ == '__main__':
+    args = args_parser()
+    if args.gpu:
+        torch.cuda.set_device(args.gpu)
+    device = 'cuda' if args.gpu else 'cpu'
+
+    # load datasets
+    train_dataset, test_dataset, _ = get_dataset(args)
+
+    # BUILD MODEL
+    if args.model == 'cnn':
+        # Convolutional neural netork
+        if args.dataset == 'mnist':
+            global_model = CNNMnist(args=args)
+        elif args.dataset == 'fmnist':
+            global_model = CNNFashion_Mnist(args=args)
+        elif args.dataset == 'cifar':
+            global_model = CNNCifar(args=args)
+    elif args.model == 'mlp':
+        # Multi-layer preceptron
+        img_size = train_dataset[0][0].shape
+        len_in = 1
+        for x in img_size:
+            len_in *= x
+            global_model = MLP(dim_in=len_in, dim_hidden=64,
+                               dim_out=args.num_classes)
+    else:
+        exit('Error: unrecognized model')
+
+    # Set the model to train and send it to device.
+    global_model.to(device)
+    global_model.train()
+    print(global_model)
+
+    # Training
+    # Set optimizer and criterion
+    if args.optimizer == 'sgd':
+        optimizer = torch.optim.SGD(global_model.parameters(), lr=args.lr,
+                                    momentum=0.5)
+    elif args.optimizer == 'adam':
+        optimizer = torch.optim.Adam(global_model.parameters(), lr=args.lr,
+                                     weight_decay=1e-4)
+
+    trainloader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+    criterion = torch.nn.NLLLoss().to(device)
+    epoch_loss = []
+
+    for epoch in tqdm(range(args.epochs)):
+        batch_loss = []
+
+        for batch_idx, (images, labels) in enumerate(trainloader):
+            images, labels = images.to(device), labels.to(device)
+
+            optimizer.zero_grad()
+            outputs = global_model(images)
+            loss = criterion(outputs, labels)
+            loss.backward()
+            optimizer.step()
+
+            if batch_idx % 50 == 0:
+                print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                    epoch+1, batch_idx * len(images), len(trainloader.dataset),
+                    100. * batch_idx / len(trainloader), loss.item()))
+            batch_loss.append(loss.item())
+
+        loss_avg = sum(batch_loss)/len(batch_loss)
+        print('\nTrain loss:', loss_avg)
+        epoch_loss.append(loss_avg)
+
+    # Plot loss
+    #import matplotlib
+    #matplotlib.use('Agg')
+    plt.figure()
+    plt.plot(range(len(epoch_loss)), epoch_loss)
+    plt.xlabel('epochs')
+    plt.ylabel('Train loss')
+    plt.savefig('../save/nn_{}_{}_{}.png'.format(args.dataset, args.model,
+                                                 args.epochs))
+
+    # testing
+    test_acc, test_loss = test_inference(args, global_model, test_dataset)
+    print('Test on', len(test_dataset), 'samples')
+    print("Test Accuracy: {:.2f}%".format(100*test_acc))
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99)', 'nvidia-cudnn-cu11 (==8.5.0.96)', 'nvidia-cublas-cu11 (==11.10.3.66)', 'nvidia-cuda-nvrtc-cu11 (==11.7.99)', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "baseline_main.py", line 6, in <module>
+    from tqdm import tqdm
+ModuleNotFoundError: No module named 'tqdm'
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in torch v1.13.0 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in torch
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain torch==1.13.0
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

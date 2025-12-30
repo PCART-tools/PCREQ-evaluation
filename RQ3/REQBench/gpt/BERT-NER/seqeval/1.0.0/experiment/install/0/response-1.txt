@@ -22,7 +22,7 @@ sacremoses==0.0.53
 sentencepiece==0.2.0
 seqeval==1.0.0
 six==1.16.0
-torch==1.7.1
+torch==1.2.0
 tqdm==4.31.1
 typing_extensions==4.7.1
 urllib3==1.26.19

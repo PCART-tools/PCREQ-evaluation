@@ -1,0 +1,160 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cuda-nvrtc-cu11==11.7.99
+opt-einsum==3.3.0
+tqdm==4.64.0
+matplotlib==3.5.0
+torch==1.13.0
+
+                        - Python version: 3.7
+                        - Project source code: #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Python version: 3.6
+
+import copy
+import torch
+from torchvision import datasets, transforms
+from sampling import mnist_iid, mnist_noniid, mnist_noniid_unequal
+from sampling import cifar_iid, cifar_noniid
+
+
+def get_dataset(args):
+    """ Returns train and test datasets and a user group which is a dict where
+    the keys are the user index and the values are the corresponding data for
+    each of those users.
+    """
+
+    if args.dataset == 'cifar':
+        data_dir = '../data/cifar/'
+        apply_transform = transforms.Compose(
+            [transforms.ToTensor(),
+             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+
+        train_dataset = datasets.CIFAR10(data_dir, train=True, download=True,
+                                       transform=apply_transform)
+
+        test_dataset = datasets.CIFAR10(data_dir, train=False, download=True,
+                                      transform=apply_transform)
+
+        # sample training data amongst users
+        if args.iid:
+            # Sample IID user data from Mnist
+            user_groups = cifar_iid(train_dataset, args.num_users)
+        else:
+            # Sample Non-IID user data from Mnist
+            if args.unequal:
+                # Chose uneuqal splits for every user
+                raise NotImplementedError()
+            else:
+                # Chose euqal splits for every user
+                user_groups = cifar_noniid(train_dataset, args.num_users)
+
+    elif args.dataset == 'mnist' or 'fmnist':
+        if args.dataset == 'mnist':
+            data_dir = '../data/mnist/'
+        else:
+            data_dir = '../data/fmnist/'
+
+        apply_transform = transforms.Compose([
+            transforms.ToTensor(),
+            transforms.Normalize((0.1307,), (0.3081,))])
+
+        train_dataset = datasets.MNIST(data_dir, train=True, download=True,
+                                       transform=apply_transform)
+
+        test_dataset = datasets.MNIST(data_dir, train=False, download=True,
+                                      transform=apply_transform)
+
+        # sample training data amongst users
+        if args.iid:
+            # Sample IID user data from Mnist
+            user_groups = mnist_iid(train_dataset, args.num_users)
+        else:
+            # Sample Non-IID user data from Mnist
+            if args.unequal:
+                # Chose uneuqal splits for every user
+                user_groups = mnist_noniid_unequal(train_dataset, args.num_users)
+            else:
+                # Chose euqal splits for every user
+                user_groups = mnist_noniid(train_dataset, args.num_users)
+
+    return train_dataset, test_dataset, user_groups
+
+
+def average_weights(w):
+    """
+    Returns the average of the weights.
+    """
+    w_avg = copy.deepcopy(w[0])
+    for key in w_avg.keys():
+        for i in range(1, len(w)):
+            w_avg[key] += w[i][key]
+        w_avg[key] = torch.div(w_avg[key], len(w))
+    return w_avg
+
+
+def exp_details(args):
+    print('\nExperimental details:')
+    print(f'    Model     : {args.model}')
+    print(f'    Optimizer : {args.optimizer}')
+    print(f'    Learning  : {args.lr}')
+    print(f'    Global Rounds   : {args.epochs}\n')
+
+    print('    Federated parameters:')
+    if args.iid:
+        print('    IID')
+    else:
+        print('    Non-IID')
+    print(f'    Fraction of users  : {args.frac}')
+    print(f'    Local Batch size   : {args.local_bs}')
+    print(f'    Local Epochs       : {args.local_ep}\n')
+    return
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions', 'nvidia-cuda-runtime-cu11 (==11.7.99)', 'nvidia-cudnn-cu11 (==8.5.0.96)', 'nvidia-cublas-cu11 (==11.10.3.66)', 'nvidia-cuda-nvrtc-cu11 (==11.7.99)', "opt-einsum (>=3.3) ; extra == 'opt-einsum'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "baseline_main.py", line 14, in <module>
+    from utils import get_dataset
+  File "/home/lei/compatibility_analysis/pytorch/1.2/Federated-Learning-PyTorch/src/utils.py", line 7, in <module>
+    from torchvision import datasets, transforms
+ModuleNotFoundError: No module named 'torchvision'
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in torch v1.13.0 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in torch
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain torch==1.13.0
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

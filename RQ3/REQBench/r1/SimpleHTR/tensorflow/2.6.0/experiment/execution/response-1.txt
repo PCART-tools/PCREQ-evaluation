@@ -35,14 +35,13 @@ requests-oauthlib==2.0.0
 rsa==4.9
 six==1.15.0
 tensorboard==2.6.0
-tensorboard-data-server==0.6.0
+tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.6.0
 tensorflow-estimator==2.6.0
 termcolor==1.1.0
 typing-extensions==3.7.4.3
 urllib3==1.26.19
-Werkzeug==1.0.1
+Werkzeug==2.0.3
 wrapt==1.12.1
 zipp==3.6.0
-keras==2.6.0

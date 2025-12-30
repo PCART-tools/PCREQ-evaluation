@@ -5,7 +5,7 @@
             **Input Context**
             - Current requirements.txt: absl-py==0.7.1
 astor==0.8.0
-bleach==3.1.0
+bleach==3.1.4
 captcha==0.3
 certifi==2019.3.9
 chardet==3.0.4
@@ -13,36 +13,42 @@ Click==7.0
 cycler==0.10.0
 easydict==1.8
 Flask==1.0.2
-gast==0.3.3
-grpcio==1.24.3
-html5lib==1.0.1
+gast==0.2.2
+google-pasta==0.1.6
+grpcio==1.8.6
+html5lib==0.9999999
 idna==2.7
 itsdangerous==1.1.0
 Jinja2==2.10.1
+keras-applications==1.0.8
+keras-preprocessing==1.0.5
 Markdown==3.1
 MarkupSafe==1.1.1
-matplotlib==3.1.1
+matplotlib==2.1.0
 numpy==1.18.0
 olefile==0.46
-Pillow==6.2.2
-protobuf==3.10.0
-pyparsing==2.4.5
+Pillow==4.3.0
+protobuf==3.6.1
+pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2018.9
-requests==2.22.0
+requests==2.21.0
 six==1.12.0
 tensorboard==2.0.2
 tensorflow==2.0.3
+tensorflow-estimator==2.0.1
 termcolor==1.1.0
-urllib3==1.25.7
-Werkzeug==0.15.4
+urllib3==1.23
+Werkzeug==0.15.2
+wrapt==1.11.1
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested gast==0.3.3
-    tensorflow 2.0.3 depends on gast==0.2.2
+    The user requested grpcio==1.8.6
+    tensorboard 2.0.2 depends on grpcio>=1.24.3
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

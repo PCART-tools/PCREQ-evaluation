@@ -29,6 +29,6 @@ Collecting torch==1.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ac/23/a4b5c189dd624411ec84613b717594a00480282b949e3448d189c4aa4e47/torch-1.1.0-cp37-cp37m-manylinux1_x86_64.whl (676.9 MB)
 Collecting torchvision==0.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cc/9b/208f48d5a5013bdb0c27a84a02df4fcf5fd24ab5902667c11e554a12b681/torchvision-0.3.0-cp37-cp37m-manylinux1_x86_64.whl (2.6 MB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/PyTorch-ENet-matplotlib-3.2.0.txt (line 4)) (65.6.3)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from kiwisolver==1.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/PyTorch-ENet-matplotlib-3.2.0.txt (line 4)) (65.6.3)
 Installing collected packages: pytz, pyparsing, mpmath, sympy, six, Pillow, numpy, kiwisolver, humanfriendly, torch, python-dateutil, cycler, coloredlogs, torchvision, matplotlib
 Successfully installed Pillow-6.2.0 coloredlogs-15.0.1 cycler-0.10.0 humanfriendly-10.0 kiwisolver-1.0.1 matplotlib-3.2.0 mpmath-1.2.1 numpy-1.16.0 pyparsing-2.3.1 python-dateutil-2.7.5 pytz-2018.9 six-1.12.0 sympy-1.10.1 torch-1.1.0 torchvision-0.3.0

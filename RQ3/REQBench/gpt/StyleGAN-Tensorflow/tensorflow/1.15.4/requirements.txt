@@ -1,10 +1,10 @@
-absl-py==0.9.0
+absl-py==0.8.1
 astor==0.8.1
 cached-property==1.5.2
 certifi==2021.5.30
 dataclasses==0.8
 gast==0.2.2
-grpcio==1.24.3
+grpcio==1.28.1
 h5py==2.10.0
 importlib-metadata==4.8.3
 Keras-Applications==1.0.8
@@ -15,8 +15,8 @@ numpy==1.16.4
 opencv-python==4.1.0.25
 Pillow==6.1.0
 protobuf==3.6.1
-scipy==1.2.0
-six==1.12.0
+scipy==1.2.2
+six==1.16.0
 tensorboard==1.15.0
 tensorflow==1.15.4
 tensorflow-estimator==1.15.1

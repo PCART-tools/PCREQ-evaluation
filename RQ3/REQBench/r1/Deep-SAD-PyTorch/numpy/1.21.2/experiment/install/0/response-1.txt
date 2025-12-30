@@ -1,7 +1,7 @@
 Click==7.0
 cvxopt==1.2.3
 cycler==0.10.0
-joblib==1.2.0
+joblib==0.13.2
 kiwisolver==1.1.0
 matplotlib==3.2.2
 numpy==1.21.2
@@ -10,9 +10,9 @@ Pillow==6.0.0
 pyparsing==2.4.0
 python-dateutil==2.8.0
 pytz==2019.1
-scikit-learn==1.0.2
-scipy==1.7.3
-seaborn==0.11.2
+scikit-learn==0.24.2
+scipy==1.5.4
+seaborn==0.11.1
 six==1.12.0
-torch==1.13.1
-torchvision==0.14.1
+torch==1.8.0
+torchvision==0.9.0

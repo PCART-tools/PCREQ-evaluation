@@ -1,16 +1,22 @@
-Traceback (most recent call last):
-  File "train.py", line 3, in <module>
-    import torchvision
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/__init__.py", line 2, in <module>
-    from torchvision import datasets
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/datasets/__init__.py", line 9, in <module>
-    from .fakedata import FakeData
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/datasets/fakedata.py", line 3, in <module>
-    from .. import transforms
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/transforms/__init__.py", line 1, in <module>
-    from .transforms import *
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/transforms/transforms.py", line 17, in <module>
-    from . import functional as F
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 5, in <module>
-    from PIL import Image, ImageOps, ImageEnhance, PILLOW_VERSION
-ImportError: cannot import name 'PILLOW_VERSION' from 'PIL' (/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/PIL/__init__.py)
+use gpu: 1 to train.
+begin loading training dataset to memory
+finish loading training dataset to memory
+begin loading test dataset to memory
+finish loading test dataset to memory
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+[10]	loss:	0.69022	time lapsed:	1.32 s
+[20]	loss:	0.65131	time lapsed:	0.99 s
+[30]	loss:	0.61805	time lapsed:	0.99 s
+[40]	loss:	0.60917	time lapsed:	0.99 s
+[50]	loss:	0.58750	time lapsed:	0.99 s
+[60]	loss:	0.57834	time lapsed:	0.99 s
+[70]	loss:	0.57887	time lapsed:	0.99 s
+[80]	loss:	0.54950	time lapsed:	0.99 s
+[90]	loss:	0.55649	time lapsed:	0.99 s
+[100]	loss:	0.54662	time lapsed:	0.99 s
+**********************************************************************
+[100]	Test set	correct:	59	error:	341	precision:	0.147500
+**********************************************************************
+######################################################################
+final accuracy:  0.007375

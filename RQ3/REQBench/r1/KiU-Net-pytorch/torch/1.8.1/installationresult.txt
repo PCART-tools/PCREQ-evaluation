@@ -41,9 +41,9 @@ Collecting torch==1.8.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dd/b9/824df420f6abf551e41bbaacbaa0be8321dc104f9f3803051513844dc310/torch-1.8.1-cp36-cp36m-manylinux1_x86_64.whl (804.1 MB)
 Collecting torchvision==0.9.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/a0/4bfa036c5b88444e95d0b3b24c6e0d6047b9c5920572c4be3135e24f15ba/torchvision-0.9.1-cp36-cp36m-manylinux1_x86_64.whl (17.4 MB)
-Collecting typing-extensions
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
 Collecting dataclasses
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
+Collecting typing-extensions
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
 Installing collected packages: six, typing-extensions, python-dateutil, pyparsing, Pillow, numpy, kiwisolver, decorator, dataclasses, cycler, torch, tifffile, scipy, PyWavelets, pytz, networkx, matplotlib, imageio, torchvision, scikit-image, pandas, opencv-python, certifi
 Successfully installed Pillow-8.4.0 PyWavelets-1.1.1 certifi-2021.5.30 cycler-0.11.0 dataclasses-0.8 decorator-4.4.2 imageio-2.15.0 kiwisolver-1.3.1 matplotlib-3.3.4 networkx-2.5.1 numpy-1.19.5 opencv-python-4.6.0.66 pandas-1.1.5 pyparsing-3.1.2 python-dateutil-2.9.0.post0 pytz-2024.1 scikit-image-0.17.2 scipy-1.5.4 six-1.16.0 tifffile-2020.9.3 torch-1.8.1 torchvision-0.9.1 typing-extensions-4.1.1

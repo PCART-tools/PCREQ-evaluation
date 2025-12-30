@@ -1,0 +1,36 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==4.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/81/91/61d69d58a1af1bd81d9ca9d62c90a6de3ab80d77f27c5df65d9a2c1f5626/transformers-4.5.0-py3-none-any.whl (2.1 MB)
+Requirement already satisfied: filelock in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (3.12.2)
+Requirement already satisfied: tqdm>=4.27 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (4.35.0)
+Requirement already satisfied: numpy>=1.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (1.17.2)
+Collecting packaging
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: regex!=2019.12.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (2019.8.19)
+Collecting importlib-metadata
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: requests in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (2.22.0)
+Collecting tokenizers<0.11,>=0.10.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/e2/df3543e8ffdab68f5acc73f613de9c2b155ac47f162e725dcac87c521c11/tokenizers-0.10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3 MB)
+Requirement already satisfied: sacremoses in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.5.0) (0.0.33)
+Collecting typing-extensions>=3.6.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting zipp>=0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.5.0) (3.0.4)
+Requirement already satisfied: idna<2.9,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.5.0) (2.8)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.5.0) (2019.9.11)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.5.0) (1.25.3)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==4.5.0) (1.12.0)
+Requirement already satisfied: click in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==4.5.0) (7.0)
+Requirement already satisfied: joblib in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from sacremoses->transformers==4.5.0) (0.13.2)
+Installing collected packages: tokenizers, zipp, typing-extensions, packaging, importlib-metadata, transformers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.5.2
+    Uninstalling tokenizers-0.5.2:
+      Successfully uninstalled tokenizers-0.5.2
+  Attempting uninstall: transformers
+    Found existing installation: transformers 2.5.1
+    Uninstalling transformers-2.5.1:
+      Successfully uninstalled transformers-2.5.1
+Successfully installed importlib-metadata-6.7.0 packaging-24.0 tokenizers-0.10.3 transformers-4.5.0 typing-extensions-4.7.1 zipp-3.15.0

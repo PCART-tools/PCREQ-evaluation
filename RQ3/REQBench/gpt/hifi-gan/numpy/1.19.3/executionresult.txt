@@ -1,11 +1,9 @@
 Initializing Training Process..
 Batch size per GPU : 5
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
+Loading 'cp_hifigan/g_00000030'
+Complete.
+Loading 'cp_hifigan/do_00000030'
+Complete.
 Generator(
   (conv_pre): Conv1d(80, 512, kernel_size=(7,), stride=(1,), padding=(3,))
   (ups): ModuleList(
@@ -168,49 +166,9 @@ Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
 Epoch: 1
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
 Loading 'cp_hifigan/g_00000030'
 Complete.
 Loading 'cp_hifigan/do_00000030'
 Complete.
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-Loading 'cp_hifigan/g_00000030'
-Complete.
-Loading 'cp_hifigan/do_00000030'
-Complete.
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-/home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/librosa/util/decorators.py:9: NumbaDeprecationWarning: An import was requested from a module that has moved location.
-Import of 'jit' requested from: 'numba.decorators', please update to use 'numba.core.decorators' or pin to Numba version 0.48.0. This alias will not be present in Numba version 0.50.0.
-  from numba.decorators import jit as optional_jit
-Time taken for epoch 1 is 10 sec
+Time taken for epoch 1 is 9 sec
 

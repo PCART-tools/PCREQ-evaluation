@@ -38,16 +38,16 @@ Collecting matplotlib==3.0.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/89/61/465fb3bfba684b0f53b5c4829c3c89e86e6fe9fdcdfda93e38f1788090f0/matplotlib-3.0.3-cp35-cp35m-manylinux1_x86_64.whl (13.0 MB)
 Collecting networkx==2.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/41/8f/dd6a8e85946def36e4f2c69c84219af0fa5e832b018c970e92f2ad337e45/networkx-2.4-py3-none-any.whl (1.6 MB)
-Collecting numpy==1.13.3
-  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/0d/41/6c224571decd61c2578baedfdb0eec6283617c6679c35b20973f4e68aeaf/numpy-1.13.3-cp35-cp35m-manylinux1_x86_64.whl (16.9 MB)
+Collecting numpy==1.18.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b5/36/88723426b4ff576809fec7d73594fe17a35c27f8d01f93637637a29ae25b/numpy-1.18.5-cp35-cp35m-manylinux1_x86_64.whl (19.9 MB)
 Collecting oauthlib==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
 Collecting opencv-python==4.2.0.32
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/d4/02daf2fdd0a3d6607cd51df5b8fca9c9ab6ba9c8fb47c0d4a759e3f1438a/opencv_python-4.2.0.32-cp35-cp35m-manylinux1_x86_64.whl (28.2 MB)
 Collecting opencv-python-headless==4.2.0.32
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/03/6f/2473992c2b22e9c6164756995862f2699e24803a8984643f25cbf8a80a79/opencv_python_headless-4.2.0.32-cp35-cp35m-manylinux1_x86_64.whl (21.6 MB)
-Collecting Pillow==5.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8b/e9/5c47710fe383f0582da668302a80a6355fe15c2ce2dde89b50fe34acefa6/Pillow-5.4.1-cp35-cp35m-manylinux1_x86_64.whl (2.0 MB)
+Collecting Pillow==5.3.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/cc/b6e47b0075ca4267855d77850af7ea4194d2fc591664f1d70e5151b50637/Pillow-5.3.0-cp35-cp35m-manylinux1_x86_64.whl (2.0 MB)
 Collecting protobuf==3.11.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/56/10999d97e62eba72a12ebd147d806fa702ab82a620e28f6bc3e5d2c59e34/protobuf-3.11.3-cp35-cp35m-manylinux1_x86_64.whl (1.3 MB)
 Collecting pyasn1==0.4.8
@@ -68,39 +68,31 @@ Collecting requests-oauthlib==1.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/12/b92740d845ab62ea4edf04d2f4164d82532b5a0b03836d4d4e71c6f3d379/requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
 Collecting rsa==4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/02/e5/38518af393f7c214357079ce67a317307936896e961e35450b70fad2a9cf/rsa-4.0-py2.py3-none-any.whl (38 kB)
-Collecting scikit-image==0.14.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/82/73/4fbb789c741daf2530a96c74d37f2143162c30d512e68ac6cf3bbb9bf3dc/scikit_image-0.14.2-cp35-cp35m-manylinux1_x86_64.whl (25.2 MB)
+Collecting scikit-image==0.15.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/00/ba/9688afba6ab3714875a8d22284ce0362086e47f3cda60243e5d4de5e5943/scikit_image-0.15.0-cp35-cp35m-manylinux1_x86_64.whl (26.2 MB)
 Collecting scikit-learn==0.22.2.post1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/42/ec/32310181e803f5d22e0dd33eb18924489b2f8d08cf5b6e116a93a6a5d1c6/scikit_learn-0.22.2.post1-cp35-cp35m-manylinux1_x86_64.whl (7.0 MB)
-Collecting scipy==1.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/32/5196b64476bd41d596a8aba43506e2403e019c90e1a3dfc21d51b83db5a6/scipy-1.1.0-cp35-cp35m-manylinux1_x86_64.whl (33.1 MB)
+Collecting scipy==1.4.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c1/60/8cbf00c0deb50a971e6e3a015fb32513960a92867df979870a454481817c/scipy-1.4.1-cp35-cp35m-manylinux1_x86_64.whl (26.0 MB)
 Collecting six==1.14.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl (10 kB)
 Collecting sklearn==0.0
   Using cached sklearn-0.0-py2.py3-none-any.whl
-Collecting tensorboard==2.1.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/40/23/53ffe290341cd0855d595b0a2e7485932f473798af173bbe3a584b99bb06/tensorboard-2.1.0-py3-none-any.whl (3.8 MB)
+Collecting tensorboard==1.15.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1e/e9/d3d747a97f7188f48aa5eda486907f3b345cd409f0a0850468ba867db246/tensorboard-1.15.0-py3-none-any.whl (3.8 MB)
 Collecting torch==1.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/47/69/7a1291b74a3af0043db9048606daeb8b57cd9dea90b9df740485f3843878/torch-1.4.0-cp35-cp35m-manylinux1_x86_64.whl (753.4 MB)
-Collecting torchvision==0.2.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/a1/66d72a2fe580a9f0fcbaaa5b976911fbbde9dce9b330ba12791997b856e9/torchvision-0.2.2-py2.py3-none-any.whl (64 kB)
+Collecting torchvision==0.5.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d6/d0/64a337d3fadf7bee37c699f8574b038b8b0207f5815a322eecd52c65417a/torchvision-0.5.0-cp35-cp35m-manylinux1_x86_64.whl (4.0 MB)
 Collecting tqdm==4.19.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b3/c4/b67cf1ab472b770e08e94105a0c7ca7032cd070627c435f5998c9cf6e64f/tqdm-4.19.9-py2.py3-none-any.whl (52 kB)
 Collecting urllib3==1.25.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl (125 kB)
 Collecting Werkzeug==1.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl (298 kB)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py35-6/lib/python3.5/site-packages (from google-auth==1.11.3->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/ConSinGAN-torch-1.4.0.txt (line 9)) (50.3.2)
-Collecting cloudpickle>=0.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e7/e3/898487e5dbeb612054cf2e0c188463acb358167fef749c53c8bb8918cea1/cloudpickle-1.6.0-py3-none-any.whl (23 kB)
-Collecting dask[array]>=1.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f8/70/b7e55088c6a6c9d5e786c85738d92e99c4bf085fc4009d5ffe483cd6b44f/dask-2.6.0-py3-none-any.whl (760 kB)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py35-6/lib/python3.5/site-packages (from tensorboard==2.1.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/ConSinGAN-torch-1.4.0.txt (line 40)) (0.37.1)
-Collecting toolz>=0.7.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/5c/922a3508f5bda2892be3df86c74f9cf1e01217c2b1f8a0ac4841d903e3e9/toolz-0.12.0-py3-none-any.whl (55 kB)
-WARNING: The candidate selected for download or install is a yanked version: 'torchvision' candidate (version 0.2.2 at https://pypi.tuna.tsinghua.edu.cn/packages/ce/a1/66d72a2fe580a9f0fcbaaa5b976911fbbde9dce9b330ba12791997b856e9/torchvision-0.2.2-py2.py3-none-any.whl#sha256=686cda0037bc904a35593a1394eaf7337edd141b78dc2eadc4667abb6fd569b5 (from https://pypi.tuna.tsinghua.edu.cn/simple/torchvision/))
-Reason for being yanked: So that users won't accidentally install this when using python 3.11
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py35-6/lib/python3.5/site-packages (from google-auth==1.11.3->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/ConSinGAN-torch-1.4.0.txt (line 9)) (50.3.2)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py35-6/lib/python3.5/site-packages (from tensorboard==1.15.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/ConSinGAN-torch-1.4.0.txt (line 40)) (0.37.1)
 WARNING: The candidate selected for download or install is a yanked version: 'opencv-python-headless' candidate (version 4.2.0.32 at https://pypi.tuna.tsinghua.edu.cn/packages/03/6f/2473992c2b22e9c6164756995862f2699e24803a8984643f25cbf8a80a79/opencv_python_headless-4.2.0.32-cp35-cp35m-manylinux1_x86_64.whl#sha256=b4549c71277e2cc427cc32fbec6cb2dd92f0f839467cdb22381b4e5b0e53f35c (from https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python-headless/))
 Reason for being yanked: Deprecated, use 4.2.0.34
-Installing collected packages: six, urllib3, toolz, python-dateutil, pyparsing, pyasn1, numpy, kiwisolver, idna, decorator, dask, cycler, chardet, certifi, scipy, rsa, requests, PyWavelets, pyasn1-modules, Pillow, oauthlib, networkx, matplotlib, cloudpickle, cachetools, scikit-image, requests-oauthlib, joblib, google-auth, Werkzeug, tqdm, torch, scikit-learn, PyYAML, protobuf, opencv-python-headless, Markdown, imgaug, grpcio, google-auth-oauthlib, absl-py, torchvision, tensorboard, sklearn, opencv-python, imageio, future, albumentations
-Successfully installed Markdown-3.2.1 Pillow-5.4.1 PyWavelets-1.1.1 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 albumentations-0.4.3 cachetools-4.0.0 certifi-2019.11.28 chardet-3.0.4 cloudpickle-1.6.0 cycler-0.10.0 dask-2.6.0 decorator-4.4.2 future-0.18.2 google-auth-1.11.3 google-auth-oauthlib-0.4.1 grpcio-1.27.2 idna-2.9 imageio-2.8.0 imgaug-0.2.6 joblib-0.14.1 kiwisolver-1.1.0 matplotlib-3.0.3 networkx-2.4 numpy-1.13.3 oauthlib-3.1.0 opencv-python-4.2.0.32 opencv-python-headless-4.2.0.32 protobuf-3.11.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.6 python-dateutil-2.7.3 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 scikit-image-0.14.2 scikit-learn-0.22.2.post1 scipy-1.1.0 six-1.14.0 sklearn-0.0 tensorboard-2.1.0 toolz-0.12.0 torch-1.4.0 torchvision-0.2.2 tqdm-4.19.9 urllib3-1.25.8
+Installing collected packages: six, python-dateutil, pyparsing, Pillow, numpy, kiwisolver, decorator, cycler, urllib3, scipy, PyWavelets, pyasn1, networkx, matplotlib, imageio, idna, chardet, certifi, scikit-image, rsa, requests, pyasn1-modules, oauthlib, joblib, cachetools, Werkzeug, torch, scikit-learn, requests-oauthlib, PyYAML, protobuf, opencv-python-headless, Markdown, imgaug, grpcio, google-auth, absl-py, tqdm, torchvision, tensorboard, sklearn, opencv-python, google-auth-oauthlib, future, albumentations
+Successfully installed Markdown-3.2.1 Pillow-5.3.0 PyWavelets-1.1.1 PyYAML-5.3.1 Werkzeug-1.0.0 absl-py-0.9.0 albumentations-0.4.3 cachetools-4.0.0 certifi-2019.11.28 chardet-3.0.4 cycler-0.10.0 decorator-4.4.2 future-0.18.2 google-auth-1.11.3 google-auth-oauthlib-0.4.1 grpcio-1.27.2 idna-2.9 imageio-2.8.0 imgaug-0.2.6 joblib-0.14.1 kiwisolver-1.1.0 matplotlib-3.0.3 networkx-2.4 numpy-1.18.5 oauthlib-3.1.0 opencv-python-4.2.0.32 opencv-python-headless-4.2.0.32 protobuf-3.11.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.6 python-dateutil-2.7.3 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 scikit-image-0.15.0 scikit-learn-0.22.2.post1 scipy-1.4.1 six-1.14.0 sklearn-0.0 tensorboard-1.15.0 torch-1.4.0 torchvision-0.5.0 tqdm-4.19.9 urllib3-1.25.8

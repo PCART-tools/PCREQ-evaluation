@@ -21,6 +21,7 @@ pandas==0.25.1
 Pillow==6.2.0
 pyparsing==2.4.2
 python-dateutil==2.8.0
+pytorch-transformers==1.2.0
 pytz==2019.2
 regex==2019.8.19
 requests==2.22.0
@@ -37,6 +38,7 @@ transformers==2.9.0
 urllib3==1.25.3
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['numpy', 'tokenizers (==0.7.0)', 'filelock', 'requests', 'tqdm (>=4.27)', 'regex (!=2019.12.17)', 'sentencepiece', 'sacremoses', 'dataclasses ; python_version < "3.7"', "pydantic ; extra == 'all'", "uvicorn ; extra == 'all'", "fastapi ; extra == 'all'", "starlette ; extra == 'all'", "tensorflow ; extra == 'all'", "torch ; extra == 'all'", "pytest ; extra == 'dev'", "pytest-xdist ; extra == 'dev'", "timeout-decorator ; extra == 'dev'", "black ; extra == 'dev'", "isort ; extra == 'dev'", "flake8 ; extra == 'dev'", "mecab-python3 ; extra == 'dev'", "scikit-learn ; extra == 'dev'", "tensorflow ; extra == 'dev'", "torch ; extra == 'dev'", "recommonmark ; extra == 'docs'", "sphinx ; extra == 'docs'", "sphinx-markdown-tables ; extra == 'docs'", "sphinx-rtd-theme ; extra == 'docs'", "mecab-python3 ; extra == 'mecab'", "black ; extra == 'quality'", "isort ; extra == 'quality'", "flake8 ; extra == 'quality'", "pydantic ; extra == 'serving'", "uvicorn ; extra == 'serving'", "fastapi ; extra == 'serving'", "starlette ; extra == 'serving'", "scikit-learn ; extra == 'sklearn'", "pytest ; extra == 'testing'", "pytest-xdist ; extra == 'testing'", "timeout-decorator ; extra == 'testing'", "tensorflow ; extra == 'tf'", "tensorflow-cpu ; extra == 'tf-cpu'", "torch ; extra == 'torch'"]
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

@@ -29,8 +29,8 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting murmurhash==1.0.10
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/df/4ca6fdd031d7625d8861080c6476b8468a81ed4a71a42b59fbdc0eb895dd/murmurhash-1.0.10-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
-Collecting numpy==1.19.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/08/d6/a6aaa29fea945bc6c61d11f6e0697b325ff7446de5ffd62c2fa02f627048/numpy-1.19.5-cp37-cp37m-manylinux2010_x86_64.whl (14.8 MB)
+Collecting numpy==1.19.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9b/04/c3846024ddc7514cde17087f62f0502abf85c53e8f69f6312c70db6d144e/numpy-1.19.2-cp37-cp37m-manylinux2010_x86_64.whl (14.5 MB)
 Collecting packaging==24.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
 Collecting pathy==0.10.3
@@ -67,8 +67,8 @@ Collecting sympy==1.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/04/66be21ceb305c66a4b326b0ae44cc4f027a43bc08cac204b48fb45bb3653/sympy-1.10.1-py3-none-any.whl (6.4 MB)
 Collecting tensorboardX==1.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5c/76/89dd44458eb976347e5a6e75eb79fecf8facd46c1ce259bad54e0044ea35/tensorboardX-1.6-py2.py3-none-any.whl (129 kB)
-Collecting thinc==8.0.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dd/0b/c3ecbeabf7827ee6fbe7eac23db379573400a23832e4571161b2aa4677ad/thinc-8.0.1-cp37-cp37m-manylinux2014_x86_64.whl (1.1 MB)
+Collecting thinc==8.0.17
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/cc/622b73af2bfcb0e2955844be843342040cf780fb001b298e0f2b43c0db33/thinc-8.0.17-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (660 kB)
 Collecting threadpoolctl==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Collecting tokenizers==0.9.4
@@ -81,17 +81,17 @@ Collecting transformers==4.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/50/0c/7d5950fcd80b029be0a8891727ba21e0cd27692c407c51261c3c921f6da3/transformers-4.1.1-py3-none-any.whl (1.5 MB)
 Collecting typer==0.3.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/34/d138832f6945432c638f32137e6c79a3b682f06a63c488dcfaca6b166c64/typer-0.3.2-py3-none-any.whl (21 kB)
-Collecting typing_extensions==3.7.4.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/03/92/705fe8aca27678e01bbdd7738173b8e7df0088a2202c80352f664630d638/typing_extensions-3.7.4.1-py3-none-any.whl (20 kB)
+Collecting typing_extensions==4.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
 Collecting urllib3==2.0.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
 Collecting wasabi==0.10.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/34/74/bd566f876c2de097e75d525c2696fb9829009987a0d93a4fb3576778a0a8/wasabi-0.10.1-py3-none-any.whl (26 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/spert-torch-1.5.1.txt (line 23)) (2022.12.7)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/spert-torch-1.5.1.txt (line 30)) (65.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/spert-torch-1.5.1.txt (line 23)) (2022.12.7)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from spacy==3.0.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/spert-torch-1.5.1.txt (line 30)) (65.6.3)
 Collecting future
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
-Installing collected packages: wasabi, typing_extensions, tokenizers, sentencepiece, mpmath, cymem, zipp, urllib3, tqdm, threadpoolctl, sympy, spacy-legacy, smart-open, six, regex, pydantic, protobuf, packaging, numpy, murmurhash, MarkupSafe, joblib, idna, humanfriendly, future, filelock, click, charset-normalizer, typer, torch, tensorboardX, scipy, sacremoses, requests, preshed, Jinja2, importlib-metadata, coloredlogs, catalogue, blis, transformers, srsly, scikit-learn, pathy, thinc, spacy
-Successfully installed Jinja2-2.11.3 MarkupSafe-2.1.5 blis-0.7.11 catalogue-2.0.10 charset-normalizer-3.3.2 click-7.1.2 coloredlogs-15.0.1 cymem-2.0.8 filelock-3.12.2 future-1.0.0 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 murmurhash-1.0.10 numpy-1.19.5 packaging-24.0 pathy-0.10.3 preshed-3.0.9 protobuf-3.20.0 pydantic-1.7.4 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 scikit-learn-0.24.0 scipy-1.5.4 sentencepiece-0.1.91 six-1.16.0 smart-open-6.4.0 spacy-3.0.1 spacy-legacy-3.0.12 srsly-2.4.8 sympy-1.10.1 tensorboardX-1.6 thinc-8.0.1 threadpoolctl-3.1.0 tokenizers-0.9.4 torch-1.5.1 tqdm-4.55.1 transformers-4.1.1 typer-0.3.2 typing_extensions-3.7.4.1 urllib3-2.0.7 wasabi-0.10.1 zipp-3.15.0
+Installing collected packages: wasabi, tokenizers, sentencepiece, mpmath, cymem, zipp, urllib3, typing_extensions, tqdm, threadpoolctl, sympy, spacy-legacy, smart-open, six, regex, pydantic, protobuf, packaging, numpy, murmurhash, MarkupSafe, joblib, idna, humanfriendly, future, filelock, click, charset-normalizer, typer, torch, tensorboardX, scipy, sacremoses, requests, preshed, Jinja2, importlib-metadata, coloredlogs, catalogue, blis, transformers, srsly, scikit-learn, pathy, thinc, spacy
+Successfully installed Jinja2-2.11.3 MarkupSafe-2.1.5 blis-0.7.11 catalogue-2.0.10 charset-normalizer-3.3.2 click-7.1.2 coloredlogs-15.0.1 cymem-2.0.8 filelock-3.12.2 future-1.0.0 humanfriendly-10.0 idna-3.7 importlib-metadata-6.7.0 joblib-1.3.2 mpmath-1.2.1 murmurhash-1.0.10 numpy-1.19.2 packaging-24.0 pathy-0.10.3 preshed-3.0.9 protobuf-3.20.0 pydantic-1.7.4 regex-2024.4.16 requests-2.31.0 sacremoses-0.0.53 scikit-learn-0.24.0 scipy-1.5.4 sentencepiece-0.1.91 six-1.16.0 smart-open-6.4.0 spacy-3.0.1 spacy-legacy-3.0.12 srsly-2.4.8 sympy-1.10.1 tensorboardX-1.6 thinc-8.0.17 threadpoolctl-3.1.0 tokenizers-0.9.4 torch-1.5.1 tqdm-4.55.1 transformers-4.1.1 typer-0.3.2 typing_extensions-4.1.1 urllib3-2.0.7 wasabi-0.10.1 zipp-3.15.0

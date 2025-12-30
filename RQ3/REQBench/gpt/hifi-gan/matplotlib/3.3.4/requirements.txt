@@ -17,11 +17,11 @@ numpy==1.19.3
 Pillow==9.3.0
 protobuf==3.20.0
 pycparser==2.21
-pyparsing==3.0.9
-python-dateutil==2.8.1
+pyparsing==2.4.7
+python-dateutil==2.8.2
 resampy==0.2.2
 scikit-learn==1.0.2
-scipy==1.4.1
+scipy==1.5.4
 six==1.16.0
 SoundFile==0.10.3.post1
 tensorboard==2.0.0

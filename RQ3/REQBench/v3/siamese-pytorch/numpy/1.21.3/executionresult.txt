@@ -3,21 +3,15 @@ begin loading training dataset to memory
 finish loading training dataset to memory
 begin loading test dataset to memory
 finish loading test dataset to memory
-/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:49: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/_reduction.py:42: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
   warnings.warn(warning.format(ret))
-THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=405 error=11 : invalid argument
-[10]	loss:	0.69199	time lapsed:	1.29 s
-[20]	loss:	0.66411	time lapsed:	0.94 s
-[30]	loss:	0.62634	time lapsed:	0.94 s
-[40]	loss:	0.61513	time lapsed:	0.94 s
-[50]	loss:	0.59512	time lapsed:	0.94 s
-[60]	loss:	0.59406	time lapsed:	0.94 s
-[70]	loss:	0.59494	time lapsed:	0.94 s
-[80]	loss:	0.58118	time lapsed:	0.94 s
-[90]	loss:	0.55333	time lapsed:	0.94 s
-[100]	loss:	0.54720	time lapsed:	0.94 s
-**********************************************************************
-[100]	Test set	correct:	65	error:	335	precision:	0.162500
-**********************************************************************
-######################################################################
-final accuracy:  0.008125
+Traceback (most recent call last):
+  File "train.py", line 87, in <module>
+    output = net.forward(img1, img2)
+  File "/home/lei/compatibility_analysis/pytorch/1.0/siamese-pytorch/model.py", line 36, in forward
+    out = self.out(dis)
+  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: CUDA error: CUBLAS_STATUS_INVALID_VALUE when calling `cublasSgemm( handle, opa, opb, m, n, k, &alpha, a, lda, b, ldb, &beta, c, ldc)`

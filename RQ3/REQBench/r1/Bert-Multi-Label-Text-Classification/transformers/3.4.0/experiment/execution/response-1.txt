@@ -1,3 +1,4 @@
+protobuf==3.20.1
 boto3==1.9.227
 botocore==1.12.227
 certifi==2019.9.11
@@ -16,7 +17,7 @@ pandas==0.25.1
 Pillow==6.2.0
 pyparsing==2.4.2
 python-dateutil==2.8.0
-protobuf==3.20.1
+pytorch-transformers==1.2.0
 pytz==2019.2
 regex==2019.8.19
 requests==2.22.0

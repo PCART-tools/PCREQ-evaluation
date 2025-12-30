@@ -1,0 +1,28 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.12.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/11/5a/6dc5d28e352187502f80b4015fb05ccdd401fa6125f51750a789f2536c18/torchvision-0.12.0-cp37-cp37m-manylinux1_x86_64.whl (21.0 MB)
+Collecting torch==1.11.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/94/32/96a0955e5d6ed8a837eda5ca095dd2694c4617cfa70ca599660cd5ff7447/torch-1.11.0-cp37-cp37m-manylinux1_x86_64.whl (750.6 MB)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.12.0) (1.15.4)
+Requirement already satisfied: typing-extensions in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.12.0) (4.7.1)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.12.0) (6.2.2)
+Collecting requests
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
+Collecting urllib3<3,>=1.21.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
+Collecting charset-normalizer<4,>=2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0a/4c/925909008ed5a988ccbb72dcc897407e5d6d3bd72410d69e051fc0c14647/charset_normalizer-3.4.4-py3-none-any.whl (53 kB)
+Collecting certifi>=2017.4.17
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
+Collecting idna<4,>=2.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl (70 kB)
+Installing collected packages: urllib3, torch, idna, charset-normalizer, certifi, requests, torchvision
+  Attempting uninstall: torch
+    Found existing installation: torch 1.2.0
+    Uninstalling torch-1.2.0:
+      Successfully uninstalled torch-1.2.0
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.4.0
+    Uninstalling torchvision-0.4.0:
+      Successfully uninstalled torchvision-0.4.0
+Successfully installed certifi-2025.11.12 charset-normalizer-3.4.4 idna-3.10 requests-2.31.0 torch-1.11.0 torchvision-0.12.0 urllib3-2.0.7

@@ -1,0 +1,15 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torchvision==0.8.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/39/a9caac0deb027feec2cdd7cc40b2a598256d3f50050c80f349c030f915f2/torchvision-0.8.1-cp37-cp37m-manylinux1_x86_64.whl (12.7 MB)
+Requirement already satisfied: torch==1.7.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.8.1) (1.7.0)
+Requirement already satisfied: pillow>=4.1.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.8.1) (9.3.0)
+Requirement already satisfied: numpy in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torchvision==0.8.1) (1.21.5)
+Requirement already satisfied: dataclasses in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torch==1.7.0->torchvision==0.8.1) (0.6)
+Requirement already satisfied: typing-extensions in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torch==1.7.0->torchvision==0.8.1) (4.4.0)
+Requirement already satisfied: future in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from torch==1.7.0->torchvision==0.8.1) (0.18.3)
+Installing collected packages: torchvision
+  Attempting uninstall: torchvision
+    Found existing installation: torchvision 0.8.0
+    Uninstalling torchvision-0.8.0:
+      Successfully uninstalled torchvision-0.8.0
+Successfully installed torchvision-0.8.1

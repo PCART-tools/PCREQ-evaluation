@@ -182,7 +182,7 @@ Epoch: 1
   normalized, onesided, return_complex)
 /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/functional.py:516: UserWarning: The function torch.rfft is deprecated and will be removed in a future PyTorch release. Use the new torch.fft module functions, instead, by importing torch.fft and calling torch.fft.fft or torch.fft.rfft. (Triggered internally at  /pytorch/aten/src/ATen/native/SpectralOps.cpp:590.)
   normalized, onesided, return_complex)
-Time taken for epoch 1 is 5 sec
+Time taken for epoch 1 is 4 sec
 
 /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages/torch/functional.py:516: UserWarning: stft will require the return_complex parameter be explicitly  specified in a future PyTorch release. Use return_complex=False  to preserve the current behavior or return_complex=True to return  a complex output. (Triggered internally at  /pytorch/aten/src/ATen/native/SpectralOps.cpp:653.)
   normalized, onesided, return_complex)

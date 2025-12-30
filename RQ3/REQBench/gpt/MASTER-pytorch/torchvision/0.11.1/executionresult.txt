@@ -1,11 +1,11 @@
-[2025-05-28 16:21:10,028 - train - INFO] - One GPU or CPU training mode start...
-[2025-05-28 16:21:10,028 - train - WARNING] - You have chosen to benchmark training. This will turn on the CUDNN benchmark settingwhich can speed up your training considerably! You may see unexpected behavior when restarting from checkpoints due to RandomizedMultiLinearMap need deterministic turn on.
-[2025-05-28 16:21:29,750 - train - INFO] - Dataloader instances have finished. Train datasets: 12747394 Val datasets: 1694655 Train_batch_size/gpu: 64 Val_batch_size/gpu: 64.
-[2025-05-28 16:21:30,870 - train - INFO] - Model created, trainable parameters: 54687382.
-[2025-05-28 16:21:30,871 - train - INFO] - Optimizer and lr_scheduler created.
-[2025-05-28 16:21:30,871 - train - INFO] - Max_epochs: 1 Log_step_interval: 1 Validation_step_interval: 10.
-[2025-05-28 16:21:30,871 - train - INFO] - Training start...
-[2025-05-28 16:21:30,898 - trainer - WARNING] - Training is using GPU 0!
+[2025-12-17 06:40:48,315 - train - INFO] - One GPU or CPU training mode start...
+[2025-12-17 06:40:48,315 - train - WARNING] - You have chosen to benchmark training. This will turn on the CUDNN benchmark settingwhich can speed up your training considerably! You may see unexpected behavior when restarting from checkpoints due to RandomizedMultiLinearMap need deterministic turn on.
+[2025-12-17 06:41:07,794 - train - INFO] - Dataloader instances have finished. Train datasets: 12747394 Val datasets: 1694655 Train_batch_size/gpu: 64 Val_batch_size/gpu: 64.
+[2025-12-17 06:41:09,218 - train - INFO] - Model created, trainable parameters: 54687382.
+[2025-12-17 06:41:09,219 - train - INFO] - Optimizer and lr_scheduler created.
+[2025-12-17 06:41:09,219 - train - INFO] - Max_epochs: 1 Log_step_interval: 1 Validation_step_interval: 10.
+[2025-12-17 06:41:09,219 - train - INFO] - Training start...
+[2025-12-17 06:41:09,234 - trainer - WARNING] - Training is using GPU 0!
 Traceback (most recent call last):
   File "train.py", line 210, in <module>
     entry_point(config)

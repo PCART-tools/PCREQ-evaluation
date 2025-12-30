@@ -1,0 +1,10 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting scipy==1.0.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2c/13/eb888fcc83f14d114dee794c3491477ce156caa9f456b7bef1112dde36b5/scipy-1.0.1-cp36-cp36m-manylinux1_x86_64.whl (50.0 MB)
+Requirement already satisfied: numpy>=1.8.2 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from scipy==1.0.1) (1.16.4)
+Installing collected packages: scipy
+  Attempting uninstall: scipy
+    Found existing installation: scipy 0.18.1
+    Uninstalling scipy-0.18.1:
+      Successfully uninstalled scipy-0.18.1
+Successfully installed scipy-1.0.1

@@ -1,0 +1,44 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting transformers==4.21.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6a/4a/d35a2140bba25a26b8c8daf74b89f3ab46ad957e998bf77b7b4305187bc5/transformers-4.21.3-py3-none-any.whl (4.7 MB)
+Collecting tokenizers!=0.11.3,<0.13,>=0.11.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/84/aa/f0509ce47f22334654b3bbe9553525160df8ad7a02a37f6eab27def3c4c2/tokenizers-0.12.1-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (6.6 MB)
+Collecting pyyaml>=5.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d7/8f/db62b0df635b9008fe90aa68424e99cee05e68b398740c8a666a98455589/PyYAML-6.0.1-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (670 kB)
+Collecting packaging>=20.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/49/df/1fceb2f8900f8639e278b056416d49134fb8d84c5942ffaa01ad34782422/packaging-24.0-py3-none-any.whl (53 kB)
+Requirement already satisfied: filelock in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.21.3) (3.12.2)
+Collecting importlib-metadata
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/94/64287b38c7de4c90683630338cf28f129decbba0a44f0c6db35a873c73c4/importlib_metadata-6.7.0-py3-none-any.whl (22 kB)
+Requirement already satisfied: tqdm>=4.27 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.21.3) (4.35.0)
+Requirement already satisfied: requests in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.21.3) (2.22.0)
+Requirement already satisfied: numpy>=1.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.21.3) (1.17.2)
+Collecting huggingface-hub<1.0,>=0.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7f/c4/adcbe9a696c135578cabcbdd7331332daad4d49b7c43688bc2d36b3a47d2/huggingface_hub-0.16.4-py3-none-any.whl (268 kB)
+Requirement already satisfied: regex!=2019.12.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from transformers==4.21.3) (2019.8.19)
+Collecting tqdm>=4.27
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d0/30/dc54f88dd4a2b5dc8a0279bdd7270e735851848b762aeb1c1184ed1f6b14/tqdm-4.67.1-py3-none-any.whl (78 kB)
+Collecting fsspec
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/f0d369ede0ca54fdd520bdee5086dbaf0af81dac53a2ce847bd1ec6e0bf1/fsspec-2023.1.0-py3-none-any.whl (143 kB)
+Collecting typing-extensions>=3.7.4.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting zipp>=0.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
+Requirement already satisfied: idna<2.9,>=2.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.21.3) (2.8)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.21.3) (1.25.3)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.21.3) (2019.9.11)
+Requirement already satisfied: chardet<3.1.0,>=3.0.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from requests->transformers==4.21.3) (3.0.4)
+Installing collected packages: tokenizers, zipp, typing-extensions, tqdm, pyyaml, packaging, fsspec, importlib-metadata, huggingface-hub, transformers
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.5.2
+    Uninstalling tokenizers-0.5.2:
+      Successfully uninstalled tokenizers-0.5.2
+  Attempting uninstall: tqdm
+    Found existing installation: tqdm 4.35.0
+    Uninstalling tqdm-4.35.0:
+      Successfully uninstalled tqdm-4.35.0
+  Attempting uninstall: transformers
+    Found existing installation: transformers 2.5.1
+    Uninstalling transformers-2.5.1:
+      Successfully uninstalled transformers-2.5.1
+Successfully installed fsspec-2023.1.0 huggingface-hub-0.16.4 importlib-metadata-6.7.0 packaging-24.0 pyyaml-6.0.1 tokenizers-0.12.1 tqdm-4.67.1 transformers-4.21.3 typing-extensions-4.7.1 zipp-3.15.0

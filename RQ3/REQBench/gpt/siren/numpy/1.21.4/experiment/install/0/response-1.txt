@@ -34,7 +34,7 @@ gpustat==0.6.0
 gql==0.1.0
 graphql-core==2.2.1
 grpcio==1.26.0
-h5py==3.6.0
+h5py==3.1.0
 humanfriendly==10.0
 idna==2.8
 ignite==1.1.0
@@ -65,7 +65,7 @@ Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.2
 lesscpy==0.13.0
-llvmlite==0.31.0
+llvmlite==0.36.0
 Markdown==3.1.1
 MarkupSafe==1.1.1
 matplotlib==3.0.3
@@ -78,7 +78,7 @@ nbconvert==5.6.0
 nbformat==4.4.0
 networkx==2.3
 notebook==6.0.1
-numba==0.48.0
+numba==0.53.1
 numpy==1.21.4
 nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
@@ -132,9 +132,9 @@ six==1.12.0
 smmap2==2.0.5
 subprocess32==3.5.4
 sympy==1.10.1
-tensorboard==2.0.2
+tensorboard==2.7.0
 tensorboardX==1.8
-tensorflow-estimator==2.0.1
+tensorflow-estimator==2.7.0
 termcolor==1.1.0
 terminado==0.8.2
 testpath==0.4.2

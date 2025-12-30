@@ -1,11 +1,64 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-Collecting absl-py==0.9.0
-  Using cached absl_py-0.9.0-py3-none-any.whl
+Collecting absl-py==0.1.6
+  Using cached absl_py-0.1.6-py3-none-any.whl
+Collecting astor==0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/69/32/e8a3285c0be9ce7ef42bfa302b995109036994713344b6baeed88bb12146/astor-0.6-py2.py3-none-any.whl (26 kB)
+Collecting backports.weakref==1.0.post1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/88/ec/f598b633c3d5ffe267aaada57d961c94fdfa183c5c3ebda2b6d151943db6/backports.weakref-1.0.post1-py2.py3-none-any.whl (5.2 kB)
 Collecting bleach==1.5.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/70/86c5fec937ea4964184d4d6c4f0b9551564f821e1c3575907639036d9b90/bleach-1.5.0-py2.py3-none-any.whl (17 kB)
 Collecting certifi==2021.5.30
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
 Collecting dataclasses==0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fe/ca/75fac5856ab5cfa51bbbcefa250182e50441074fdc3f803f6e76451fab43/dataclasses-0.8-py3-none-any.whl (19 kB)
-ERROR: Could not find a version that satisfies the requirement html5lib==1.0 (from versions: 1.0-reupload, 0.2, 0.9, 0.10, 0.11, 0.11.1, 0.90, 0.95, 0.99, 0.999, 0.9999, 0.99999, 0.999999, 0.9999999, 0.99999999, 0.999999999, 1.0b1, 1.0b2, 1.0b3, 1.0b5, 1.0b6, 1.0b7, 1.0b8, 1.0b9, 1.0b10, 1.0.1, 1.1)
-ERROR: No matching distribution found for html5lib==1.0
+Collecting enum34==1.1.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/af/42/cb9355df32c69b553e72a2e28daee25d1611d2c0d9c272aa1d34204205b2/enum34-1.1.6-py3-none-any.whl (12 kB)
+Collecting gast==0.2.0
+  Using cached gast-0.2.0-py3-none-any.whl
+Collecting grpcio==1.8.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/b3/c1744b5a8d7a4f2ebefc488b05bf2f0c634d2d57647cca95de5cf44ce710/grpcio-1.8.6-cp36-cp36m-manylinux1_x86_64.whl (6.0 MB)
+Collecting html5lib==0.9999999
+  Using cached html5lib-0.9999999-py3-none-any.whl
+Collecting importlib-metadata==2.1.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/98/b8/8ec57a8ef46fbe7f185318c7ff7df9a06c9df451d9a59a067bfa851bb828/importlib_metadata-2.1.1-py2.py3-none-any.whl (10 kB)
+Collecting Markdown==3.3.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6e/33/1ae0f71395e618d6140fbbc9587cc3156591f748226075e0f7d6f9176522/Markdown-3.3.4-py3-none-any.whl (97 kB)
+Collecting mock==2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/35/f187bdf23be87092bd0f1200d43d23076cee4d0dec109f195173fd3ebc79/mock-2.0.0-py2.py3-none-any.whl (56 kB)
+Collecting numpy==1.13.3
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/57/a7/e3e6bd9d595125e1abbe162e323fd2d06f6f6683185294b79cd2cdb190d5/numpy-1.13.3-cp36-cp36m-manylinux1_x86_64.whl (17.0 MB)
+Collecting protobuf==3.5.0.post1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/98/74/0df1aeb6fdda6a62ebd2f73bdb622683f5a31701ea0935db7699e0d42b09/protobuf-3.5.0.post1-cp36-cp36m-manylinux1_x86_64.whl (6.4 MB)
+Collecting scikit-learn==0.18.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/d2/efa7f8bef195c459a527edc58bf863bd44fde727630486cb8256e9a5a326/scikit_learn-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (11.8 MB)
+Collecting scipy==0.18.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/74/c0/f0bf4eaef1b6aa7bdd1ae5597ce1d9e729417b3ca085c47d0f1c640d34f8/scipy-0.18.1-cp36-cp36m-manylinux1_x86_64.whl (42.5 MB)
+Collecting six==1.10.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/0a/b6723e1bc4c516cb687841499455a8505b44607ab535be01091c0f24f079/six-1.10.0-py2.py3-none-any.whl (10 kB)
+Collecting tensorboard==1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b0/67/a8c91665987d359211dcdca5c8b2a7c1e0876eb0702a4383c1e4ff76228d/tensorboard-1.6.0-py3-none-any.whl (3.0 MB)
+Collecting tensorflow==1.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/0f/fbd8bb92459c75db93040f80702ebe4ba83a52cdb6ad930654c31dc0b711/tensorflow-1.6.0-cp36-cp36m-manylinux1_x86_64.whl (45.8 MB)
+Collecting tensorflow-tensorboard==1.5.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cc/fa/91c06952517b4f1bc075545b062a4112e30cebe558a6b962816cb33efa27/tensorflow_tensorboard-1.5.1-py3-none-any.whl (3.0 MB)
+Collecting termcolor==1.1.0
+  Using cached termcolor-1.1.0-py3-none-any.whl
+Collecting typing_extensions==3.7.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/27/aa/bd1442cfb0224da1b671ab334d3b0a4302e4161ea916e28904ff9618d471/typing_extensions-3.7.4-py3-none-any.whl (20 kB)
+Collecting Werkzeug==0.12.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/97/02/306e0d57fdbf467ec1c763bc1757ec6ba20b1332e0ea7e49111533d71d1c/Werkzeug-0.12.2-py2.py3-none-any.whl (312 kB)
+Collecting wheel==0.31.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/81/30/e935244ca6165187ae8be876b6316ae201b71485538ffac1d718843025a9/wheel-0.31.1-py2.py3-none-any.whl (41 kB)
+Collecting zipp==1.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/50/cc72c5bcd48f6e98219fc4a88a5227e9e28b81637a99c49feba1d51f4d50/zipp-1.0.0-py2.py3-none-any.whl (4.1 kB)
+Collecting pbr>=0.11
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c0/db/61efa0d08a99f897ef98256b03e563092d36cc38dc4ebe4a85020fe40b31/pbr-7.0.3-py2.py3-none-any.whl (131 kB)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from protobuf==3.5.0.post1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/deep-belief-network-tensorflow-1.6.0.txt (line 15)) (59.6.0)
+Collecting more-itertools
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0b/ff/1ad78678bee731ae5414ea5e97396b3f91de32186028daa614d322ac5a8b/more_itertools-8.14.0-py3-none-any.whl (52 kB)
+Installing collected packages: more-itertools, zipp, six, importlib-metadata, html5lib, wheel, Werkzeug, protobuf, numpy, Markdown, bleach, termcolor, tensorboard, pbr, grpcio, gast, astor, absl-py, typing-extensions, tensorflow-tensorboard, tensorflow, scipy, scikit-learn, mock, enum34, dataclasses, certifi, backports.weakref
+  Attempting uninstall: wheel
+    Found existing installation: wheel 0.37.1
+    Uninstalling wheel-0.37.1:
+      Successfully uninstalled wheel-0.37.1
+Successfully installed Markdown-3.3.4 Werkzeug-0.12.2 absl-py-0.1.6 astor-0.6 backports.weakref-1.0.post1 bleach-1.5.0 certifi-2021.5.30 dataclasses-0.8 enum34-1.1.6 gast-0.2.0 grpcio-1.8.6 html5lib-0.9999999 importlib-metadata-2.1.1 mock-2.0.0 more-itertools-8.14.0 numpy-1.13.3 pbr-7.0.3 protobuf-3.5.0.post1 scikit-learn-0.18.1 scipy-0.18.1 six-1.10.0 tensorboard-1.6.0 tensorflow-1.6.0 tensorflow-tensorboard-1.5.1 termcolor-1.1.0 typing-extensions-3.7.4 wheel-0.31.1 zipp-1.0.0

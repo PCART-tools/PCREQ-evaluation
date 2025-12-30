@@ -23,13 +23,13 @@ INFO:root:Pretraining weight decay: 0.0005
 INFO:root:Starting pretraining...
 /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
-INFO:root:| Epoch: 001/001 | Train Time: 0.600s | Train Loss: 0.262662 |
-INFO:root:Pretraining Time: 0.601s
+INFO:root:| Epoch: 001/001 | Train Time: 0.580s | Train Loss: 0.262662 |
+INFO:root:Pretraining Time: 0.581s
 INFO:root:Finished pretraining.
 INFO:root:Testing autoencoder...
 INFO:root:Test Loss: 0.224842
 INFO:root:Test AUC: 51.31%
-INFO:root:Test Time: 0.606s
+INFO:root:Test Time: 0.585s
 INFO:root:Finished testing autoencoder.
 INFO:root:Training optimizer: adam
 INFO:root:Training learning rate: 0.0001
@@ -42,11 +42,11 @@ INFO:root:Center c initialized.
 INFO:root:Starting training...
 /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:134: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
   "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
-INFO:root:| Epoch: 001/001 | Train Time: 0.521s | Train Loss: 3.381837 |
-INFO:root:Training Time: 0.522s
+INFO:root:| Epoch: 001/001 | Train Time: 0.499s | Train Loss: 3.381837 |
+INFO:root:Training Time: 0.500s
 INFO:root:Finished training.
 INFO:root:Starting testing...
 INFO:root:Test Loss: 1.564093
 INFO:root:Test AUC: 81.77%
-INFO:root:Test Time: 0.567s
+INFO:root:Test Time: 0.547s
 INFO:root:Finished testing.

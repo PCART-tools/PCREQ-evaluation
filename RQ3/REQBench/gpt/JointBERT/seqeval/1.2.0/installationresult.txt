@@ -57,9 +57,9 @@ Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
 Collecting scikit-learn==0.23.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5c/a1/273def87037a7fb010512bbc5901c31cfddfca8080bc63b42b26e3cc55b3/scikit_learn-0.23.2-cp36-cp36m-manylinux1_x86_64.whl (6.8 MB)
-Collecting threadpoolctl>=2.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Collecting scipy>=0.19.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/89/63171228d5ced148f5ced50305c89e8576ffc695a90b58fe5bb602b910c2/scipy-1.5.4-cp36-cp36m-manylinux1_x86_64.whl (25.9 MB)
+Collecting threadpoolctl>=2.0.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/61/cf/6e354304bcb9c6413c4e02a747b600061c21d38ba51e7e544ac7bc66aecc/threadpoolctl-3.1.0-py3-none-any.whl (14 kB)
 Installing collected packages: zipp, typing-extensions, numpy, importlib-resources, importlib-metadata, urllib3, tqdm, threadpoolctl, six, scipy, regex, pyparsing, joblib, idna, click, charset-normalizer, certifi, tokenizers, sentencepiece, scikit-learn, sacremoses, requests, packaging, future, filelock, dataclasses, transformers, torch, seqeval, pytorch-crf, keras
 Successfully installed certifi-2021.5.30 charset-normalizer-2.0.12 click-8.0.4 dataclasses-0.8 filelock-3.4.1 future-1.0.0 idna-3.7 importlib-metadata-4.8.3 importlib-resources-5.4.0 joblib-1.1.1 keras-2.10.0 numpy-1.19.2 packaging-21.3 pyparsing-3.1.2 pytorch-crf-0.7.2 regex-2023.8.8 requests-2.27.1 sacremoses-0.0.53 scikit-learn-0.23.2 scipy-1.5.4 sentencepiece-0.2.0 seqeval-1.2.0 six-1.16.0 threadpoolctl-3.1.0 tokenizers-0.8.1rc1 torch-1.6.0 tqdm-4.64.1 transformers-3.0.2 typing-extensions-4.1.1 urllib3-1.26.19 zipp-3.6.0

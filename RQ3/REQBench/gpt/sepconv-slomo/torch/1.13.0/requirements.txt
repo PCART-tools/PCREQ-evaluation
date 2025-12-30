@@ -10,7 +10,7 @@ imageio-ffmpeg==0.5.1
 moviepy==1.0.3
 networkx==2.6.3
 numpy==1.21.6
-packaging==24.0
+packaging==21.3
 Pillow==9.3.0
 proglog==0.1.10
 PyWavelets==1.3.0
@@ -19,6 +19,6 @@ scikit-image==0.19.3
 scipy==1.7.3
 tifffile==2021.11.2
 torch==1.13.0
-tqdm==4.65.0
-typing_extensions==4.1.1
+tqdm==4.67.1
+typing_extensions==4.0.1
 urllib3==2.0.7

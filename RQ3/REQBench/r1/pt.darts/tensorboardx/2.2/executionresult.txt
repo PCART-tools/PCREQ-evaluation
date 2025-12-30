@@ -1,29 +1,29 @@
-05/31 06:41:22 PM | 
-05/31 06:41:22 PM | Parameters:
-05/31 06:41:22 PM | AUX_WEIGHT=0.4
-05/31 06:41:22 PM | BATCH_SIZE=256
-05/31 06:41:22 PM | CUTOUT_LENGTH=16
-05/31 06:41:22 PM | DATA_PATH=./data/
-05/31 06:41:22 PM | DATASET=cifar10
-05/31 06:41:22 PM | DROP_PATH_PROB=0.2
-05/31 06:41:22 PM | EPOCHS=1
-05/31 06:41:22 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
-05/31 06:41:22 PM | GPUS=[0, 1, 2]
-05/31 06:41:22 PM | GRAD_CLIP=5.0
-05/31 06:41:22 PM | INIT_CHANNELS=36
-05/31 06:41:22 PM | LAYERS=20
-05/31 06:41:22 PM | LR=0.025
-05/31 06:41:22 PM | MOMENTUM=0.9
-05/31 06:41:22 PM | NAME=cifar10
-05/31 06:41:22 PM | PATH=augments/cifar10
-05/31 06:41:22 PM | PRINT_FREQ=200
-05/31 06:41:22 PM | SEED=2
-05/31 06:41:22 PM | WEIGHT_DECAY=0.0003
-05/31 06:41:22 PM | WORKERS=4
-05/31 06:41:22 PM | 
-05/31 06:41:22 PM | Logger is set - training start
-05/31 06:41:26 PM | Model size = 3.159 MB
-05/31 06:41:26 PM | Epoch 0 LR 0.025
+12/16 02:33:36 PM | 
+12/16 02:33:36 PM | Parameters:
+12/16 02:33:36 PM | AUX_WEIGHT=0.4
+12/16 02:33:36 PM | BATCH_SIZE=256
+12/16 02:33:36 PM | CUTOUT_LENGTH=16
+12/16 02:33:36 PM | DATA_PATH=./data/
+12/16 02:33:36 PM | DATASET=cifar10
+12/16 02:33:36 PM | DROP_PATH_PROB=0.2
+12/16 02:33:36 PM | EPOCHS=1
+12/16 02:33:36 PM | GENOTYPE=Genotype(normal=[[('sep_conv_3x3', 0), ('dil_conv_5x5', 1)], [('skip_connect', 0), ('dil_conv_3x3', 2)], [('sep_conv_3x3', 1), ('skip_connect', 0)], [('sep_conv_3x3', 1), ('skip_connect', 0)]], normal_concat=range(2, 6), reduce=[[('max_pool_3x3', 0), ('max_pool_3x3', 1)], [('max_pool_3x3', 0), ('skip_connect', 2)], [('skip_connect', 3), ('max_pool_3x3', 0)], [('skip_connect', 2), ('max_pool_3x3', 0)]], reduce_concat=range(2, 6))
+12/16 02:33:36 PM | GPUS=[0, 1, 2]
+12/16 02:33:36 PM | GRAD_CLIP=5.0
+12/16 02:33:36 PM | INIT_CHANNELS=36
+12/16 02:33:36 PM | LAYERS=20
+12/16 02:33:36 PM | LR=0.025
+12/16 02:33:36 PM | MOMENTUM=0.9
+12/16 02:33:36 PM | NAME=cifar10
+12/16 02:33:36 PM | PATH=augments/cifar10
+12/16 02:33:36 PM | PRINT_FREQ=200
+12/16 02:33:36 PM | SEED=2
+12/16 02:33:36 PM | WEIGHT_DECAY=0.0003
+12/16 02:33:36 PM | WORKERS=4
+12/16 02:33:36 PM | 
+12/16 02:33:36 PM | Logger is set - training start
+12/16 02:33:40 PM | Model size = 3.159 MB
+12/16 02:33:40 PM | Epoch 0 LR 0.025
 Files already downloaded and verified
 Files already downloaded and verified
 Traceback (most recent call last):

@@ -38,6 +38,7 @@ urllib3==1.23
 Werkzeug==0.15.2
 
                 - Python version: 3.6
+                - PyPI metadata (including version constraints): None
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

@@ -1,0 +1,9 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting torch==1.0.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4e/ba/d78f35357995297206790fe1af8688bc0403828c90f8e99190035196d56e/torch-1.0.1-cp37-cp37m-manylinux1_x86_64.whl (560.1 MB)
+Installing collected packages: torch
+  Attempting uninstall: torch
+    Found existing installation: torch 1.0.0
+    Uninstalling torch-1.0.0:
+      Successfully uninstalled torch-1.0.0
+Successfully installed torch-1.0.1

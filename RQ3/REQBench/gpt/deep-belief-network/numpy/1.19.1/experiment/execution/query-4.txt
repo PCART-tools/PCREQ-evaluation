@@ -7,21 +7,58 @@
 bleach==3.3.0
 certifi==2021.5.30
 dataclasses==0.8
-html5lib==1.0.1
-importlib-metadata==2.0.0
+html5lib==1.1
+importlib-metadata==4.8.3
 Markdown==3.3.4
 numpy==1.19.1
-protobuf==3.11.3
-scikit-learn==0.22.2.post1
-scipy==1.5.4
+protobuf==3.6.1
+scikit-learn==0.20.3
+scipy==1.2.1
 six==1.16.0
-tensorflow==1.15.0
-tensorflow-tensorboard==1.15.0
-typing_extensions==3.7.4
-Werkzeug==0.16.1
-zipp==1.2.0
+tensorflow==1.13.1
+tensorflow-tensorboard==1.13.1
+typing_extensions==4.1.1
+Werkzeug==0.15.4
+zipp==3.1.2
 
                         - Python version: 3.6
+                        - Project source code: import numpy as np
+
+np.random.seed(1337)  # for reproducibility
+from sklearn.datasets import load_digits
+from sklearn.model_selection import train_test_split
+from sklearn.metrics.classification import accuracy_score
+
+from dbn.tensorflow import SupervisedDBNClassification
+
+
+# Loading dataset
+digits = load_digits()
+X, Y = digits.data, digits.target
+
+# Data scaling
+X = (X / 16).astype(np.float32)
+
+# Splitting data
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=0)
+
+# Training
+classifier = SupervisedDBNClassification(hidden_layers_structure=[256, 256],
+                                         learning_rate_rbm=0.05,
+                                         learning_rate=0.1,
+                                         n_epochs_rbm=1,
+                                         n_iter_backprop=1,
+                                         batch_size=32,
+                                         activation_function='relu',
+                                         dropout_p=0.2)
+classifier.fit(X_train, Y_train)
+
+# Test
+Y_pred = classifier.predict(X_test)
+print('Done.\nAccuracy: %f' % accuracy_score(Y_test, Y_pred))
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): None
                         - Crash traceback: Traceback (most recent call last):
   File "example_classification.py", line 1, in <module>
     import numpy as np

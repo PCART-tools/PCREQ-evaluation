@@ -8,36 +8,36 @@ SentenceVAE(
   (latent2hidden): Linear(in_features=16, out_features=256, bias=True)
   (outputs2vocab): Linear(in_features=256, out_features=9877, bias=True)
 )
-TRAIN Batch 0000/1314, Loss  207.4678, NLL-Loss  207.4671, KL-Loss    0.3537, KL-Weight  0.002
-TRAIN Batch 0050/1314, Loss  153.0939, NLL-Loss  153.0527, KL-Loss   18.8915, KL-Weight  0.002
-TRAIN Batch 0100/1314, Loss  137.9598, NLL-Loss  137.8894, KL-Loss   28.4778, KL-Weight  0.002
-TRAIN Batch 0150/1314, Loss  131.9098, NLL-Loss  131.8146, KL-Loss   33.9882, KL-Weight  0.003
-TRAIN Batch 0200/1314, Loss   99.2088, NLL-Loss   99.0647, KL-Loss   45.4249, KL-Weight  0.003
-TRAIN Batch 0250/1314, Loss  106.1512, NLL-Loss  105.9785, KL-Loss   48.0480, KL-Weight  0.004
-TRAIN Batch 0300/1314, Loss  115.8127, NLL-Loss  115.5824, KL-Loss   56.5967, KL-Weight  0.004
-TRAIN Batch 0350/1314, Loss  136.5188, NLL-Loss  136.2406, KL-Loss   60.3509, KL-Weight  0.005
-TRAIN Batch 0400/1314, Loss  111.7237, NLL-Loss  111.3891, KL-Loss   64.1109, KL-Weight  0.005
-TRAIN Batch 0450/1314, Loss  120.3520, NLL-Loss  119.9767, KL-Loss   63.5031, KL-Weight  0.006
-TRAIN Batch 0500/1314, Loss  102.7305, NLL-Loss  102.2818, KL-Loss   67.0377, KL-Weight  0.007
-TRAIN Batch 0550/1314, Loss  125.3567, NLL-Loss  124.8633, KL-Loss   65.1079, KL-Weight  0.008
-TRAIN Batch 0600/1314, Loss  108.9458, NLL-Loss  108.4167, KL-Loss   61.6850, KL-Weight  0.009
-TRAIN Batch 0650/1314, Loss  131.7714, NLL-Loss  131.1095, KL-Loss   68.1833, KL-Weight  0.010
-TRAIN Batch 0700/1314, Loss  135.9047, NLL-Loss  135.2122, KL-Loss   63.0286, KL-Weight  0.011
-TRAIN Batch 0750/1314, Loss   87.3338, NLL-Loss   86.5972, KL-Loss   59.2517, KL-Weight  0.012
-TRAIN Batch 0800/1314, Loss   99.5669, NLL-Loss   98.7501, KL-Loss   58.0755, KL-Weight  0.014
-TRAIN Batch 0850/1314, Loss  102.1590, NLL-Loss  101.2261, KL-Loss   58.6490, KL-Weight  0.016
-TRAIN Batch 0900/1314, Loss   98.4185, NLL-Loss   97.3825, KL-Loss   57.5995, KL-Weight  0.018
-TRAIN Batch 0950/1314, Loss  104.8364, NLL-Loss  103.7336, KL-Loss   54.2390, KL-Weight  0.020
-TRAIN Batch 1000/1314, Loss  112.4070, NLL-Loss  111.1542, KL-Loss   54.5231, KL-Weight  0.023
-TRAIN Batch 1050/1314, Loss  110.4346, NLL-Loss  109.0388, KL-Loss   53.7691, KL-Weight  0.026
-TRAIN Batch 1100/1314, Loss   97.9402, NLL-Loss   96.4310, KL-Loss   51.4860, KL-Weight  0.029
-TRAIN Batch 1150/1314, Loss   87.0991, NLL-Loss   85.4751, KL-Loss   49.0843, KL-Weight  0.033
-TRAIN Batch 1200/1314, Loss  133.8445, NLL-Loss  132.0004, KL-Loss   49.4050, KL-Weight  0.037
-TRAIN Batch 1250/1314, Loss  111.4617, NLL-Loss  109.5064, KL-Loss   46.4578, KL-Weight  0.042
-TRAIN Batch 1300/1314, Loss  107.9025, NLL-Loss  105.7144, KL-Loss   46.1386, KL-Weight  0.047
-TRAIN Batch 1314/1314, Loss  115.4996, NLL-Loss  113.2763, KL-Loss   45.3446, KL-Weight  0.049
-TRAIN Epoch 00/1, Mean ELBO  119.7710
-Model saved at bin/2025-May-27-14:07:36/E0.pytorch
+TRAIN Batch 0000/1314, Loss  201.8594, NLL-Loss  201.8587, KL-Loss    0.3708, KL-Weight  0.002
+TRAIN Batch 0050/1314, Loss  146.8074, NLL-Loss  146.7938, KL-Loss    6.2150, KL-Weight  0.002
+TRAIN Batch 0100/1314, Loss  128.8268, NLL-Loss  128.7832, KL-Loss   17.6355, KL-Weight  0.002
+TRAIN Batch 0150/1314, Loss  132.5731, NLL-Loss  132.4833, KL-Loss   32.0524, KL-Weight  0.003
+TRAIN Batch 0200/1314, Loss  124.3904, NLL-Loss  124.2561, KL-Loss   42.3159, KL-Weight  0.003
+TRAIN Batch 0250/1314, Loss  123.9914, NLL-Loss  123.8102, KL-Loss   50.4296, KL-Weight  0.004
+TRAIN Batch 0300/1314, Loss  134.5044, NLL-Loss  134.2786, KL-Loss   55.4806, KL-Weight  0.004
+TRAIN Batch 0350/1314, Loss  132.6205, NLL-Loss  132.3672, KL-Loss   54.9495, KL-Weight  0.005
+TRAIN Batch 0400/1314, Loss  125.8484, NLL-Loss  125.5264, KL-Loss   61.6922, KL-Weight  0.005
+TRAIN Batch 0450/1314, Loss  132.3685, NLL-Loss  131.9968, KL-Loss   62.8757, KL-Weight  0.006
+TRAIN Batch 0500/1314, Loss  121.7248, NLL-Loss  121.3023, KL-Loss   63.1248, KL-Weight  0.007
+TRAIN Batch 0550/1314, Loss  132.9653, NLL-Loss  132.5222, KL-Loss   58.4791, KL-Weight  0.008
+TRAIN Batch 0600/1314, Loss  110.5663, NLL-Loss  110.0563, KL-Loss   59.4578, KL-Weight  0.009
+TRAIN Batch 0650/1314, Loss  100.8838, NLL-Loss  100.2263, KL-Loss   67.7244, KL-Weight  0.010
+TRAIN Batch 0700/1314, Loss  110.8351, NLL-Loss  110.1374, KL-Loss   63.5017, KL-Weight  0.011
+TRAIN Batch 0750/1314, Loss  105.2132, NLL-Loss  104.4714, KL-Loss   59.6729, KL-Weight  0.012
+TRAIN Batch 0800/1314, Loss  118.0310, NLL-Loss  117.1992, KL-Loss   59.1501, KL-Weight  0.014
+TRAIN Batch 0850/1314, Loss  120.1005, NLL-Loss  119.1683, KL-Loss   58.6066, KL-Weight  0.016
+TRAIN Batch 0900/1314, Loss  105.0093, NLL-Loss  103.9910, KL-Loss   56.6145, KL-Weight  0.018
+TRAIN Batch 0950/1314, Loss  103.4419, NLL-Loss  102.3050, KL-Loss   55.9168, KL-Weight  0.020
+TRAIN Batch 1000/1314, Loss   89.6766, NLL-Loss   88.4821, KL-Loss   51.9841, KL-Weight  0.023
+TRAIN Batch 1050/1314, Loss  108.2837, NLL-Loss  106.8798, KL-Loss   54.0833, KL-Weight  0.026
+TRAIN Batch 1100/1314, Loss  110.1731, NLL-Loss  108.7408, KL-Loss   48.8641, KL-Weight  0.029
+TRAIN Batch 1150/1314, Loss   91.7126, NLL-Loss   90.1494, KL-Loss   47.2457, KL-Weight  0.033
+TRAIN Batch 1200/1314, Loss  119.3155, NLL-Loss  117.5134, KL-Loss   48.2796, KL-Weight  0.037
+TRAIN Batch 1250/1314, Loss   95.1553, NLL-Loss   93.2446, KL-Loss   45.3973, KL-Weight  0.042
+TRAIN Batch 1300/1314, Loss  111.8288, NLL-Loss  109.6120, KL-Loss   46.7410, KL-Weight  0.047
+TRAIN Batch 1314/1314, Loss   94.9670, NLL-Loss   92.9689, KL-Loss   40.7515, KL-Weight  0.049
+TRAIN Epoch 00/1, Mean ELBO  119.9208
+Model saved at bin/2025-Dec-16-16:30:11/E0.pytorch
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
@@ -142,8 +142,8 @@ Model saved at bin/2025-May-27-14:07:36/E0.pytorch
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
 [W pthreadpool-cpp.cc:90] Warning: Leaking Caffe2 thread-pool after fork. (function pthreadpool)
-VALID Batch 0000/105, Loss  124.9872, NLL-Loss  122.9063, KL-Loss   42.3388, KL-Weight  0.049
-VALID Batch 0050/105, Loss  125.5202, NLL-Loss  123.2031, KL-Loss   47.1445, KL-Weight  0.049
-VALID Batch 0100/105, Loss   90.5597, NLL-Loss   88.5801, KL-Loss   40.2785, KL-Weight  0.049
-VALID Batch 0105/105, Loss   91.8873, NLL-Loss   89.6335, KL-Loss   45.8566, KL-Weight  0.049
-VALID Epoch 00/1, Mean ELBO  105.6099
+VALID Batch 0000/105, Loss  124.6947, NLL-Loss  122.6852, KL-Loss   40.8858, KL-Weight  0.049
+VALID Batch 0050/105, Loss  123.7360, NLL-Loss  121.4844, KL-Loss   45.8112, KL-Weight  0.049
+VALID Batch 0100/105, Loss   90.2530, NLL-Loss   88.3395, KL-Loss   38.9320, KL-Weight  0.049
+VALID Batch 0105/105, Loss   90.9222, NLL-Loss   88.8107, KL-Loss   42.9620, KL-Weight  0.049
+VALID Epoch 00/1, Mean ELBO  104.3706

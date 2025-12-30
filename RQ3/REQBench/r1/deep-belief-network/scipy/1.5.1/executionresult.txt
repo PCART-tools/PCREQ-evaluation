@@ -1,4 +1,8 @@
 Traceback (most recent call last):
-  File "example_classification.py", line 1, in <module>
-    import numpy as np
-ModuleNotFoundError: No module named 'numpy'
+  File "example_classification.py", line 5, in <module>
+    from sklearn.model_selection import train_test_split
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/sklearn/model_selection/__init__.py", line 1, in <module>
+    from ._split import BaseCrossValidator
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/sklearn/model_selection/_split.py", line 25, in <module>
+    from scipy.misc import comb
+ImportError: cannot import name 'comb'

@@ -11,16 +11,17 @@ opencv-python==4.5.2.54
 Pillow==8.2.0
 sympy==1.10.1
 torch==1.10.0
-torchvision==0.11.2
+torchvision==0.11.0
 tqdm==4.61.1
 typing_extensions==4.7.1
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
     The user requested torch==1.10.0
-    torchvision 0.11.2 depends on torch==1.10.1
+    torchvision 0.11.0 depends on torch==1.10.0+cu102
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

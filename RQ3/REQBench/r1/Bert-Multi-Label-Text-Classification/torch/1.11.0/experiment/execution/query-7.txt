@@ -3,11 +3,11 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: boto3==1.10.0
-botocore==1.13.0
-certifi==2019.9.11
+                        - Current environment: boto3==1.9.227
+botocore==1.12.227
+certifi==2021.5.30
 chardet==3.0.4
-Click==7.1.2
+Click==7.0
 cycler==0.10.0
 docutils==0.15.2
 filelock==3.12.2
@@ -16,56 +16,77 @@ jmespath==0.9.4
 joblib==0.13.2
 kiwisolver==1.1.0
 matplotlib==3.1.1
-numpy==1.17.2
-pandas==0.25.1
+numpy==1.21.6
+pandas==1.3.5
 Pillow==6.2.0
 pyparsing==2.4.2
-python-dateutil==2.8.0
+python-dateutil==2.8.2
 pytorch-transformers==1.2.0
 pytz==2019.2
-regex==2020.1.8
-requests==2.23.0
+regex==2019.8.19
+requests==2.25.1
 s3transfer==0.2.1
 sacremoses==0.0.33
-scikit-learn==0.21.3
-scipy==1.3.1
+scikit-learn==0.24.2
+scipy==1.7.3
 sentencepiece==0.1.91
-six==1.12.0
-tokenizers==0.9.3
-tqdm==4.35.0
+six==1.16.0
+tokenizers==0.11.1
 torch==1.11.0
-transformers==3.5.1
-urllib3==1.25.3
+tqdm==4.64.1
+transformers==4.25.1
+urllib3==1.25.11
+protobuf==3.19.6
+typing-extensions==4.0.0
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "run_bert.py", line 10, in <module>
-    from pybert.io.bert_processor import BertProcessor
-  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/io/bert_processor.py", line 8, in <module>
-    from transformers import BertTokenizer
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/__init__.py", line 135, in <module>
-    from .pipelines import (
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/pipelines.py", line 38, in <module>
-    from .tokenization_auto import AutoTokenizer
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/tokenization_auto.py", line 119, in <module>
-    from .tokenization_albert_fast import AlbertTokenizerFast
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/tokenization_albert_fast.py", line 23, in <module>
-    from .tokenization_utils_fast import PreTrainedTokenizerFast
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/tokenization_utils_fast.py", line 30, in <module>
-    from .convert_slow_tokenizer import convert_slow_tokenizer
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/convert_slow_tokenizer.py", line 28, in <module>
-    from transformers.utils import sentencepiece_model_pb2 as model
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/transformers/utils/sentencepiece_model_pb2.py", line 38, in <module>
-    _descriptor.EnumValueDescriptor(name="UNIGRAM", index=0, number=1, options=None, type=None),
-  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/google/protobuf/descriptor.py", line 796, in __new__
-    _message.Message._CheckCalledFromGeneratedFile()
-TypeError: Descriptors cannot not be created directly.
-If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
-If you cannot immediately regenerate your protos, some other possible workarounds are:
- 1. Downgrade the protobuf package to 3.20.x or lower.
- 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+                        - Project source code: import torch.nn as nn
+from transformers.modeling_bert import BertPreTrainedModel, BertModel
 
-More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+class BertForMultiLable(BertPreTrainedModel):
+    def __init__(self, config):
+        super(BertForMultiLable, self).__init__(config)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, config.num_labels)
+        self.init_weights()
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None,head_mask=None):
+        outputs = self.bert(input_ids, token_type_ids=token_type_ids,attention_mask=attention_mask, head_mask=head_mask)
+        pooled_output = outputs[1]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+    def unfreeze(self,start_layer,end_layer):
+        def children(m):
+            return m if isinstance(m, (list, tuple)) else list(m.children())
+        def set_trainable_attr(m, b):
+            m.trainable = b
+            for p in m.parameters():
+                p.requires_grad = b
+        def apply_leaf(m, f):
+            c = children(m)
+            if isinstance(m, nn.Module):
+                f(m)
+            if len(c) > 0:
+                for l in c:
+                    apply_leaf(l, f)
+        def set_trainable(l, b):
+            apply_leaf(l, lambda m: set_trainable_attr(m, b))
+
+        # You can unfreeze the last layer of bert by calling set_trainable(model.bert.encoder.layer[23], True)
+        set_trainable(self.bert, False)
+        for i in range(start_layer, end_layer+1):
+            set_trainable(self.bert.encoder.layer[i], True)
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['typing-extensions']
+                        - Crash traceback: Traceback (most recent call last):
+  File "run_bert.py", line 14, in <module>
+    from pybert.model.bert_for_multi_label import BertForMultiLable
+  File "/home/lei/compatibility_analysis/pytorch/1.0/Bert-Multi-Label-Text-Classification/pybert/model/bert_for_multi_label.py", line 2, in <module>
+    from transformers.modeling_bert import BertPreTrainedModel, BertModel
+ModuleNotFoundError: No module named 'transformers.modeling_bert'
 
 
                         **Analysis Protocol**

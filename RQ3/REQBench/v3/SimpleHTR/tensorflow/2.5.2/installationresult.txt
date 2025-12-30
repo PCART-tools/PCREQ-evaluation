@@ -47,8 +47,8 @@ Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/32/d3fa649ad7ec0b82737b92fefd3c4dd376b0bb23730715124569f38f3a08/numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting oauthlib==3.2.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl (151 kB)
-Collecting opencv-python==4.5.5.64
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/67/50/665a503167396ad347957bea0bd8d5c08c865030b2d1565ff06eba613780/opencv_python-4.5.5.64-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (60.5 MB)
+Collecting opencv-python==4.4.0.46
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/80/10a9ae6fa0940f25af32739d1dc6dfdbbdc79af3f04c5ea1a6de4303cd54/opencv_python-4.4.0.46-cp36-cp36m-manylinux2014_x86_64.whl (49.5 MB)
 Collecting opt-einsum==3.3.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bc/19/404708a7e54ad2798907210462fd950c3442ea51acc8790f3da48d2bee8b/opt_einsum-3.3.0-py3-none-any.whl (65 kB)
 Collecting path==15.0.0
@@ -93,8 +93,8 @@ Collecting wrapt==1.12.1
   Using cached wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Requirement already satisfied: wheel<1.0,>=0.23.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from astunparse==1.6.3->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/SimpleHTR-tensorflow-2.5.2.txt (line 2)) (0.37.1)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth==1.35.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/SimpleHTR-tensorflow-2.5.2.txt (line 11)) (59.6.0)
+Requirement already satisfied: wheel<1.0,>=0.23.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from astunparse==1.6.3->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/SimpleHTR-tensorflow-2.5.2.txt (line 2)) (0.35.0)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from google-auth==1.35.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/SimpleHTR-tensorflow-2.5.2.txt (line 11)) (59.6.0)
 Collecting cached-property
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/48/19/f2090f7dad41e225c7f2326e4cfe6fff49e57dedb5b53636c9551f86b069/cached_property-1.5.2-py2.py3-none-any.whl (7.6 kB)
 INFO: pip is looking at multiple versions of tensorboard-plugin-wit to determine which version is compatible with other requirements. This could take a while.

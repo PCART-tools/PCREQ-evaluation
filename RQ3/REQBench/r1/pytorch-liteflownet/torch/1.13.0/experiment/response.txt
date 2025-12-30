@@ -1,4 +1,4 @@
-cupy==11.3.0
+cupy==11.8.0
 fastrlock==0.8.2
 future==1.0.0
 numpy==1.21.5

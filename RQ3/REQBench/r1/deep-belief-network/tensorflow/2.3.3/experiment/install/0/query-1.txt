@@ -4,16 +4,16 @@
 
             **Input Context**
             - Current requirements.txt: absl-py==1.4.0
-bleach==2.1.0
+bleach==1.5.0
 certifi==2021.5.30
 dataclasses==0.8
 html5lib==0.9999999
 importlib-metadata==4.8.3
 Markdown==3.3.7
-numpy==1.16.4
+numpy==1.19.0
 protobuf==3.19.6
 scikit-learn==0.18.1
-scipy==1.4.1
+scipy==0.18.1
 six==1.16.0
 tensorflow==2.3.3
 tensorflow-tensorboard==1.5.1
@@ -22,11 +22,12 @@ Werkzeug==2.0.3
 zipp==3.6.0
 
             - Python version: 3.6
+            - PyPI metadata (including version constraints): ['absl-py (>=0.7.0)', 'astunparse (==1.6.3)', 'gast (==0.3.3)', 'google-pasta (>=0.1.8)', 'h5py (<2.11.0,>=2.10.0)', 'keras-preprocessing (<1.2,>=1.1.1)', 'numpy (<1.19.0,>=1.16.0)', 'opt-einsum (>=2.3.2)', 'protobuf (>=3.9.2)', 'tensorboard (<3,>=2.3.0)', 'tensorflow-estimator (<2.4.0,>=2.3.0)', 'termcolor (>=1.1.0)', 'wrapt (>=1.11.1)', 'wheel (>=0.26)', 'six (>=1.12.0)', 'grpcio (>=1.8.6)']
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested html5lib==0.9999999
-    bleach 2.1 depends on html5lib!=1.0b1, !=1.0b2, !=1.0b3, !=1.0b4, !=1.0b5, !=1.0b6, !=1.0b7, !=1.0b8 and >=0.99999999pre
+    The user requested numpy==1.19.0
+    tensorflow 2.3.3 depends on numpy<1.19.0 and >=1.16.0
 
 To fix this you could try to:
 1. loosen the range of package versions you've specified

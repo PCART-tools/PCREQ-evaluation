@@ -9,8 +9,11 @@ future==1.0.0
 numpy==1.19.3
 Pillow==9.3.0
 torch==1.7.0
+typing-extensions==3.7.4.3
+dataclasses==0.6
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:

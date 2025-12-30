@@ -1,10 +1,8 @@
-2025-05-30 13:34:07.169867: I tensorflow/core/platform/cpu_feature_guard.cc:137] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA
-[START] Pre-training step:
->> Epoch 1 finished 	RBM Reconstruction error 3.203797
->> Epoch 1 finished 	RBM Reconstruction error 0.806388
-[END] Pre-training step
-[START] Fine tuning step:
->> Epoch 0 finished 	ANN training loss 2.298514
-[END] Fine tuning step
-Done.
-Accuracy: 0.075000
+Traceback (most recent call last):
+  File "example_classification.py", line 5, in <module>
+    from sklearn.model_selection import train_test_split
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/sklearn/model_selection/__init__.py", line 1, in <module>
+    from ._split import BaseCrossValidator
+  File "/home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages/sklearn/model_selection/_split.py", line 25, in <module>
+    from scipy.misc import comb
+ImportError: cannot import name 'comb'

@@ -1,0 +1,276 @@
+
+                        **Debug Mission** 
+                        Resolve runtime crash caused by code-level incompatibilities in dependency chain.
+
+                        **Input Context**
+                        - Current environment: transformers==4.10.0
+torch==1.9.1
+numpy==1.21.2
+tqdm==4.62.3
+pyyaml==5.4.1
+packaging==21.3
+regex==2021.8.3
+requests==2.26.0
+sacremoses==0.0.45
+tokenizers==0.10.1
+dataclasses==0.8
+importlib-metadata==4.8.3
+
+                        - Python version: 3.7
+                        - Project source code: import torch
+import time
+import warnings
+from pathlib import Path
+from argparse import ArgumentParser
+from pybert.train.losses import BCEWithLogLoss
+from pybert.train.trainer import Trainer
+from torch.utils.data import DataLoader
+from pybert.io.utils import collate_fn
+from pybert.io.bert_processor import BertProcessor
+from pybert.common.tools import init_logger, logger
+from pybert.common.tools import seed_everything
+from pybert.configs.basic_config import config
+from pybert.model.bert_for_multi_label import BertForMultiLable
+from pybert.preprocessing.preprocessor import EnglishPreProcessor
+from pybert.callback.modelcheckpoint import ModelCheckpoint
+from pybert.callback.trainingmonitor import TrainingMonitor
+from pybert.train.metrics import AUC, AccuracyThresh, MultiLabelReport
+from pybert.callback.optimizater.adamw import AdamW
+from pybert.callback.lr_schedulers import get_linear_schedule_with_warmup
+from torch.utils.data import RandomSampler, SequentialSampler
+
+warnings.filterwarnings("ignore")
+
+
+def run_train(args):
+    # --------- data
+    processor = BertProcessor(vocab_path=config['bert_vocab_path'], do_lower_case=args.do_lower_case)
+    label_list = processor.get_labels()
+    label2id = {label: i for i, label in enumerate(label_list)}
+    id2label = {i: label for i, label in enumerate(label_list)}
+
+    train_data = processor.get_train(config['data_dir'] / f"{args.data_name}.train.pkl")
+    train_examples = processor.create_examples(lines=train_data,
+                                               example_type='train',
+                                               cached_examples_file=config[
+                                                    'data_dir'] / f"cached_train_examples_{args.arch}")
+    train_features = processor.create_features(examples=train_examples,
+                                               max_seq_len=args.train_max_seq_len,
+                                               cached_features_file=config[
+                                                    'data_dir'] / "cached_train_features_{}_{}".format(
+                                                   args.train_max_seq_len, args.arch
+                                               ))
+    train_dataset = processor.create_dataset(train_features, is_sorted=args.sorted)
+    if args.sorted:
+        train_sampler = SequentialSampler(train_dataset)
+    else:
+        train_sampler = RandomSampler(train_dataset)
+    train_dataloader = DataLoader(train_dataset, sampler=train_sampler, batch_size=args.train_batch_size,
+                                  collate_fn=collate_fn)
+
+    valid_data = processor.get_dev(config['data_dir'] / f"{args.data_name}.valid.pkl")
+    valid_examples = processor.create_examples(lines=valid_data,
+                                               example_type='valid',
+                                               cached_examples_file=config[
+                                                'data_dir'] / f"cached_valid_examples_{args.arch}")
+
+    valid_features = processor.create_features(examples=valid_examples,
+                                               max_seq_len=args.eval_max_seq_len,
+                                               cached_features_file=config[
+                                                'data_dir'] / "cached_valid_features_{}_{}".format(
+                                                   args.eval_max_seq_len, args.arch
+                                               ))
+    valid_dataset = processor.create_dataset(valid_features)
+    valid_sampler = SequentialSampler(valid_dataset)
+    valid_dataloader = DataLoader(valid_dataset, sampler=valid_sampler, batch_size=args.eval_batch_size,
+                                  collate_fn=collate_fn)
+
+    # ------- model
+    logger.info("initializing model")
+    if args.resume_path:
+        args.resume_path = Path(args.resume_path)
+        model = BertForMultiLable.from_pretrained(args.resume_path, num_labels=len(label_list))
+    else:
+        model = BertForMultiLable.from_pretrained(config['bert_model_dir'], num_labels=len(label_list))
+    t_total = int(len(train_dataloader) / args.gradient_accumulation_steps * args.epochs)
+
+    param_optimizer = list(model.named_parameters())
+    no_decay = ['bias', 'LayerNorm.weight']
+    optimizer_grouped_parameters = [
+        {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)],'weight_decay': args.weight_decay},
+        {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
+    ]
+    warmup_steps = int(t_total * args.warmup_proportion)
+    optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
+    scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=warmup_steps,
+                                                num_training_steps=t_total)
+    if args.fp16:
+        try:
+            from apex import amp
+        except ImportError:
+            raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use fp16 training.")
+        model, optimizer = amp.initialize(model, optimizer, opt_level=args.fp16_opt_level)
+    # ---- callbacks
+    logger.info("initializing callbacks")
+    train_monitor = TrainingMonitor(file_dir=config['figure_dir'], arch=args.arch)
+    model_checkpoint = ModelCheckpoint(checkpoint_dir=config['checkpoint_dir'],mode=args.mode,
+                                       monitor=args.monitor,arch=args.arch,
+                                       save_best_only=args.save_best)
+
+    # **************************** training model ***********************
+    logger.info("***** Running training *****")
+    logger.info("  Num examples = %d", len(train_examples))
+    logger.info("  Num Epochs = %d", args.epochs)
+    logger.info("  Total train batch size (w. parallel, distributed & accumulation) = %d",
+                args.train_batch_size * args.gradient_accumulation_steps * (
+                    torch.distributed.get_world_size() if args.local_rank != -1 else 1))
+    logger.info("  Gradient Accumulation steps = %d", args.gradient_accumulation_steps)
+    logger.info("  Total optimization steps = %d", t_total)
+
+    trainer = Trainer(args= args,model=model,logger=logger,criterion=BCEWithLogLoss(),optimizer=optimizer,
+                      scheduler=scheduler,early_stopping=None,training_monitor=train_monitor,
+                      model_checkpoint=model_checkpoint,
+                      batch_metrics=[AccuracyThresh(thresh=0.5)],
+                      epoch_metrics=[AUC(average='micro', task_type='binary'),
+                                     MultiLabelReport(id2label=id2label)])
+    trainer.train(train_data=train_dataloader, valid_data=valid_dataloader)
+
+def run_test(args):
+    from pybert.io.task_data import TaskData
+    from pybert.test.predictor import Predictor
+    data = TaskData()
+    targets, sentences = data.read_data(raw_data_path=config['test_path'],
+                                        preprocessor=EnglishPreProcessor(),
+                                        is_train=False)
+    lines = list(zip(sentences, targets))
+    processor = BertProcessor(vocab_path=config['bert_vocab_path'], do_lower_case=args.do_lower_case)
+    label_list = processor.get_labels()
+    id2label = {i: label for i, label in enumerate(label_list)}
+
+    test_data = processor.get_test(lines=lines)
+    test_examples = processor.create_examples(lines=test_data,
+                                              example_type='test',
+                                              cached_examples_file=config[
+                                            'data_dir'] / f"cached_test_examples_{args.arch}")
+    test_features = processor.create_features(examples=test_examples,
+                                              max_seq_len=args.eval_max_seq_len,
+                                              cached_features_file=config[
+                                            'data_dir'] / "cached_test_features_{}_{}".format(
+                                                  args.eval_max_seq_len, args.arch
+                                              ))
+    test_dataset = processor.create_dataset(test_features)
+    test_sampler = SequentialSampler(test_dataset)
+    test_dataloader = DataLoader(test_dataset, sampler=test_sampler, batch_size=args.train_batch_size,
+                                 collate_fn=collate_fn)
+    model = BertForMultiLable.from_pretrained(config['checkpoint_dir'], num_labels=len(label_list))
+
+    # ----------- predicting
+    logger.info('model predicting....')
+    predictor = Predictor(model=model,
+                          logger=logger,
+                          n_gpu=args.n_gpu)
+    result = predictor.predict(data=test_dataloader)
+    print(result)
+
+
+def main():
+    parser = ArgumentParser()
+    parser.add_argument("--arch", default='bert', type=str)
+    parser.add_argument("--do_data", action='store_true')
+    parser.add_argument("--do_train", action='store_true')
+    parser.add_argument("--do_test", action='store_true')
+    parser.add_argument("--save_best", action='store_true')
+    parser.add_argument("--do_lower_case", action='store_true')
+    parser.add_argument('--data_name', default='kaggle', type=str)
+    parser.add_argument("--mode", default='min', type=str)
+    parser.add_argument("--monitor", default='valid_loss', type=str)
+
+    parser.add_argument("--epochs", default=1, type=int)
+    parser.add_argument("--resume_path", default='', type=str)
+    parser.add_argument("--predict_checkpoints", type=int, default=0)
+    parser.add_argument("--valid_size", default=0.2, type=float)
+    parser.add_argument("--local_rank", type=int, default=-1)
+    parser.add_argument("--sorted", default=1, type=int, help='1 : True  0:False ')
+    parser.add_argument("--n_gpu", type=str, default='2', help='"0,1,.." or "0" or "" ')
+    parser.add_argument('--gradient_accumulation_steps', type=int, default=1)
+    parser.add_argument("--train_batch_size", default=8, type=int)
+    parser.add_argument('--eval_batch_size', default=8, type=int)
+    parser.add_argument("--train_max_seq_len", default=256, type=int)
+    parser.add_argument("--eval_max_seq_len", default=256, type=int)
+    parser.add_argument('--loss_scale', type=float, default=0)
+    parser.add_argument("--warmup_proportion", default=0.1, type=float)
+    parser.add_argument("--weight_decay", default=0.01, type=float)
+    parser.add_argument("--adam_epsilon", default=1e-8, type=float)
+    parser.add_argument("--grad_clip", default=1.0, type=float)
+    parser.add_argument("--learning_rate", default=2e-5, type=float)
+    parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--fp16', action='store_true')
+    parser.add_argument('--fp16_opt_level', type=str, default='O1')
+    args = parser.parse_args()
+
+    init_logger(log_file=config['log_dir'] / f'{args.arch}-{time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime())}.log')
+    config['checkpoint_dir'] = config['checkpoint_dir'] / args.arch
+    config['checkpoint_dir'].mkdir(exist_ok=True)
+    # Good practice: save your training arguments together with the trained model
+    torch.save(args, config['checkpoint_dir'] / 'training_args.bin')
+    seed_everything(args.seed)
+    logger.info("Training/evaluation parameters %s", args)
+    if args.do_data:
+        from pybert.io.task_data import TaskData
+        data = TaskData()
+        targets, sentences = data.read_data(raw_data_path=config['raw_data_path'],
+                                            preprocessor=EnglishPreProcessor(),
+                                            is_train=True)
+        data.train_val_split(X=sentences, y=targets, shuffle=True, stratify=False,
+                             valid_size=args.valid_size, data_dir=config['data_dir'],
+                             data_name=args.data_name)
+    if args.do_train:
+        run_train(args)
+
+    if args.do_test:
+        run_test(args)
+
+
+if __name__ == '__main__':
+    main()
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['filelock', 'huggingface-hub (>=0.0.12)', 'numpy (>=1.17)', 'packaging', 'pyyaml (>=5.1)', 'regex (!=2019.12.17)', 'requests', 'sacremoses', 'tokenizers (<0.11,>=0.10.1)', 'tqdm (>=4.27)', 'dataclasses ; python_version < "3.7"', 'importlib-metadata ; python_version < "3.8"', "tensorflow (>=2.3) ; extra == 'all'", "onnxconverter-common ; extra == 'all'", "keras2onnx ; extra == 'all'", "torch (>=1.0) ; extra == 'all'", "jax (>=0.2.8) ; extra == 'all'", "jaxlib (>=0.1.65) ; extra == 'all'", "flax (>=0.3.4) ; extra == 'all'", "optax (>=0.0.8) ; extra == 'all'", "sentencepiece (==0.1.91) ; extra == 'all'", "protobuf ; extra == 'all'", "tokenizers (<0.11,>=0.10.1) ; extra == 'all'", "torchaudio ; extra == 'all'", "soundfile ; extra == 'all'", "Pillow ; extra == 'all'", "optuna ; extra == 'all'", "ray[tune] ; extra == 'all'", "timm ; extra == 'all'", "codecarbon (==1.2.0) ; extra == 'all'", "soundfile ; extra == 'audio'", "codecarbon (==1.2.0) ; extra == 'codecarbon'", "deepspeed (>=0.5.1) ; extra == 'deepspeed'", "tensorflow (>=2.3) ; extra == 'dev'", "onnxconverter-common ; extra == 'dev'", "keras2onnx ; extra == 'dev'", "torch (>=1.0) ; extra == 'dev'", "jax (>=0.2.8) ; extra == 'dev'", "jaxlib (>=0.1.65) ; extra == 'dev'", "flax (>=0.3.4) ; extra == 'dev'", "optax (>=0.0.8) ; extra == 'dev'", "sentencepiece (==0.1.91) ; extra == 'dev'", "protobuf ; extra == 'dev'", "tokenizers (<0.11,>=0.10.1) ; extra == 'dev'", "torchaudio ; extra == 'dev'", "soundfile ; extra == 'dev'", "Pillow ; extra == 'dev'", "optuna ; extra == 'dev'", "ray[tune] ; extra == 'dev'", "timm ; extra == 'dev'", "codecarbon (==1.2.0) ; extra == 'dev'", "pytest ; extra == 'dev'", "pytest-xdist ; extra == 'dev'", "timeout-decorator ; extra == 'dev'", "parameterized ; extra == 'dev'", "psutil ; extra == 'dev'", "datasets ; extra == 'dev'", "pytest-timeout ; extra == 'dev'", "black (==21.4b0) ; extra == 'dev'", "sacrebleu (<2.0.0,>=1.4.12) ; extra == 'dev'", "rouge-score ; extra == 'dev'", "nltk ; extra == 'dev'", "GitPython (<3.1.19) ; extra == 'dev'", "faiss-cpu ; extra == 'dev'", "cookiecutter (==1.7.2) ; extra == 'dev'", "isort (>=5.5.4) ; extra == 'dev'", "flake8 (>=3.8.3) ; extra == 'dev'", "fugashi (>=1.0) ; extra == 'dev'", "ipadic (<2.0,>=1.0.0) ; extra == 'dev'", "unidic-lite (>=1.0.7) ; extra == 'dev'", "unidic (>=1.0.2) ; extra == 'dev'", "docutils (==0.16.0) ; extra == 'dev'", "recommonmark ; extra == 'dev'", "sphinx (==3.5.4) ; extra == 'dev'", "sphinx-markdown-tables ; extra == 'dev'", "sphinx-rtd-theme (==0.4.3) ; extra == 'dev'", "sphinx-copybutton ; extra == 'dev'", "sphinxext-opengraph (==0.4.1) ; extra == 'dev'", "sphinx-intl ; extra == 'dev'", "scikit-learn ; extra == 'dev'", "tensorflow (>=2.3) ; extra == 'docs'", "onnxconverter-common ; extra == 'docs'", "keras2onnx ; extra == 'docs'", "torch (>=1.0) ; extra == 'docs'", "jax (>=0.2.8) ; extra == 'docs'", "jaxlib (>=0.1.65) ; extra == 'docs'", "flax (>=0.3.4) ; extra == 'docs'", "optax (>=0.0.8) ; extra == 'docs'", "sentencepiece (==0.1.91) ; extra == 'docs'", "protobuf ; extra == 'docs'", "tokenizers (<0.11,>=0.10.1) ; extra == 'docs'", "torchaudio ; extra == 'docs'", "soundfile ; extra == 'docs'", "Pillow ; extra == 'docs'", "optuna ; extra == 'docs'", "ray[tune] ; extra == 'docs'", "timm ; extra == 'docs'", "codecarbon (==1.2.0) ; extra == 'docs'", "docutils (==0.16.0) ; extra == 'docs'", "recommonmark ; extra == 'docs'", "sphinx (==3.5.4) ; extra == 'docs'", "sphinx-markdown-tables ; extra == 'docs'", "sphinx-rtd-theme (==0.4.3) ; extra == 'docs'", "sphinx-copybutton ; extra == 'docs'", "sphinxext-opengraph (==0.4.1) ; extra == 'docs'", "sphinx-intl ; extra == 'docs'", "docutils (==0.16.0) ; extra == 'docs_specific'", "recommonmark ; extra == 'docs_specific'", "sphinx (==3.5.4) ; extra == 'docs_specific'", "sphinx-markdown-tables ; extra == 'docs_specific'", "sphinx-rtd-theme (==0.4.3) ; extra == 'docs_specific'", "sphinx-copybutton ; extra == 'docs_specific'", "sphinxext-opengraph (==0.4.1) ; extra == 'docs_specific'", "sphinx-intl ; extra == 'docs_specific'", "fairscale (>0.3) ; extra == 'fairscale'", "jax (>=0.2.8) ; extra == 'flax'", "jaxlib (>=0.1.65) ; extra == 'flax'", "flax (>=0.3.4) ; extra == 'flax'", "optax (>=0.0.8) ; extra == 'flax'", "soundfile ; extra == 'flax-speech'", "optuna ; extra == 'integrations'", "ray[tune] ; extra == 'integrations'", "fugashi (>=1.0) ; extra == 'ja'", "ipadic (<2.0,>=1.0.0) ; extra == 'ja'", "unidic-lite (>=1.0.7) ; extra == 'ja'", "unidic (>=1.0.2) ; extra == 'ja'", "cookiecutter (==1.7.2) ; extra == 'modelcreation'", "onnxconverter-common ; extra == 'onnx'", "keras2onnx ; extra == 'onnx'", "onnxruntime (>=1.4.0) ; extra == 'onnx'", "onnxruntime-tools (>=1.4.2) ; extra == 'onnx'", "onnxruntime (>=1.4.0) ; extra == 'onnxruntime'", "onnxruntime-tools (>=1.4.2) ; extra == 'onnxruntime'", "optuna ; extra == 'optuna'", "black (==21.4b0) ; extra == 'quality'", "isort (>=5.5.4) ; extra == 'quality'", "flake8 (>=3.8.3) ; extra == 'quality'", "ray[tune] ; extra == 'ray'", "faiss-cpu ; extra == 'retrieval'", "datasets ; extra == 'retrieval'", "sagemaker (>=2.31.0) ; extra == 'sagemaker'", "sentencepiece (==0.1.91) ; extra == 'sentencepiece'", "protobuf ; extra == 'sentencepiece'", "pydantic ; extra == 'serving'", "uvicorn ; extra == 'serving'", "fastapi ; extra == 'serving'", "starlette ; extra == 'serving'", "scikit-learn ; extra == 'sklearn'", "torchaudio ; extra == 'speech'", "soundfile ; extra == 'speech'", "pytest ; extra == 'testing'", "pytest-xdist ; extra == 'testing'", "timeout-decorator ; extra == 'testing'", "parameterized ; extra == 'testing'", "psutil ; extra == 'testing'", "datasets ; extra == 'testing'", "pytest-timeout ; extra == 'testing'", "black (==21.4b0) ; extra == 'testing'", "sacrebleu (<2.0.0,>=1.4.12) ; extra == 'testing'", "rouge-score ; extra == 'testing'", "nltk ; extra == 'testing'", "GitPython (<3.1.19) ; extra == 'testing'", "faiss-cpu ; extra == 'testing'", "cookiecutter (==1.7.2) ; extra == 'testing'", "tensorflow (>=2.3) ; extra == 'tf'", "onnxconverter-common ; extra == 'tf'", "keras2onnx ; extra == 'tf'", "tensorflow-cpu (>=2.3) ; extra == 'tf-cpu'", "onnxconverter-common ; extra == 'tf-cpu'", "keras2onnx ; extra == 'tf-cpu'", "soundfile ; extra == 'tf-speech'", "timm ; extra == 'timm'", "tokenizers (<0.11,>=0.10.1) ; extra == 'tokenizers'", "torch (>=1.0) ; extra == 'torch'", "torchaudio ; extra == 'torch-speech'", "soundfile ; extra == 'torch-speech'", "filelock ; extra == 'torchhub'", "huggingface-hub (>=0.0.12) ; extra == 'torchhub'", "importlib-metadata ; extra == 'torchhub'", "numpy (>=1.17) ; extra == 'torchhub'", "packaging ; extra == 'torchhub'", "protobuf ; extra == 'torchhub'", "regex (!=2019.12.17) ; extra == 'torchhub'", "requests ; extra == 'torchhub'", "sacremoses ; extra == 'torchhub'", "sentencepiece (==0.1.91) ; extra == 'torchhub'", "torch (>=1.0) ; extra == 'torchhub'", "tokenizers (<0.11,>=0.10.1) ; extra == 'torchhub'", "tqdm (>=4.27) ; extra == 'torchhub'", "Pillow ; extra == 'vision'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "run_bert.py", line 1, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+
+                        **Analysis Protocol**
+                        1. Traceback Pattern Matching：
+                        a. Identify error type (ImportError/AttributeError/TypeError)
+                        b. Map to possible API changes in transformers v4.10.0 or its dependencies
+                        2. Compatibility Matrix Check：
+                        a. Verify library-to-library API compatibility through version ranges
+                        b. Confirm project-to-library interface compatibility
+                        3. Breakpoint Isolation：
+                        b. Determine if conflict originates from：
+                            • Direct API changes in transformers
+                            • Transitive dependency API shifts
+
+                        **Resolution Rules**
+                        - PRIMARY CONSTRAINT: Maintain transformers==4.10.0
+                        - SECONDARY ADJUSTMENTS: 
+                        • Modify dependency versions only when API contracts allow
+                        • Prefer backward-compatible minor version changes
+
+                        **Output Mandates**
+                        STRICT FORMAT:
+                        lib1==x.y.z  
+                        lib2==a.b.c
+                        ...
+                        PROHIBITED:
+                        • Any non-version text.
+                        • Library additions/removals
+                        • Version placeholders
+                        MANDATORY:
+                        • Preserve original library names and count
+                        • Pin EXACT versions
+                        • Zero explanations/comments
+                        

@@ -6,34 +6,300 @@
                         - Current environment: absl-py==2.1.0
 coloredlogs==15.0.1
 graphviz==0.8.4
-grpcio==1.30.0
+grpcio==1.62.2
 humanfriendly==10.0
-importlib-metadata==4.8.3
+importlib-metadata==6.7.0
 Markdown==3.4.4
-MarkupSafe==2.1.1
+MarkupSafe==2.1.5
 mpmath==1.2.1
-numpy==1.17.0
+numpy==1.17.4
 Pillow==6.2.2
 protobuf==3.9.2
-six==1.12.0
+six==1.16.0
 sympy==1.10.1
-tensorboard==1.14.0
+tensorboard==1.13.0
 tensorboardX==1.6
 torch==1.2.0
-torchvision==0.4.0
-typing_extensions==3.7.4.3
-Werkzeug==1.0.1
-zipp==1.2.0
+torchvision==0.3.0
+typing_extensions==4.7.1
+Werkzeug==2.2.3
+zipp==3.15.0
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "augment.py", line 177, in <module>
-    main()
-  File "augment.py", line 39, in main
-    config.dataset, config.data_path, config.cutout_length, validation=True)
-  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 31, in get_data
+                        - Project source code: """ Utilities """
+import os
+import logging
+import shutil
+import torch
+import torchvision.datasets as dset
+import numpy as np
+import preproc
+
+
+def get_data(dataset, data_path, cutout_length, validation):
+    """ Get torchvision dataset """
+    dataset = dataset.lower()
+
+    if dataset == 'cifar10':
+        dset_cls = dset.CIFAR10
+        n_classes = 10
+    elif dataset == 'mnist':
+        dset_cls = dset.MNIST
+        n_classes = 10
+    elif dataset == 'fashionmnist':
+        dset_cls = dset.FashionMNIST
+        n_classes = 10
+    else:
+        raise ValueError(dataset)
+
+    trn_transform, val_transform = preproc.data_transforms(dataset, cutout_length)
+    trn_data = dset_cls(root=data_path, train=True, download=True, transform=trn_transform)
+
+    # assuming shape is NHW or NHWC
     shape = trn_data.train_data.shape
-AttributeError: 'CIFAR10' object has no attribute 'train_data'
+    input_channels = 3 if len(shape) == 4 else 1
+    assert shape[1] == shape[2], "not expected shape = {}".format(shape)
+    input_size = shape[1]
+
+    ret = [input_size, input_channels, n_classes, trn_data]
+    if validation: # append validation data
+        ret.append(dset_cls(root=data_path, train=False, download=True, transform=val_transform))
+
+    return ret
+
+
+def get_logger(file_path):
+    """ Make python logger """
+    # [!] Since tensorboardX use default logger (e.g. logging.info()), we should use custom logger
+    logger = logging.getLogger('darts')
+    log_format = '%(asctime)s | %(message)s'
+    formatter = logging.Formatter(log_format, datefmt='%m/%d %I:%M:%S %p')
+    file_handler = logging.FileHandler(file_path)
+    file_handler.setFormatter(formatter)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+    logger.setLevel(logging.INFO)
+
+    return logger
+
+
+def param_size(model):
+    """ Compute parameter size in MB """
+    n_params = sum(
+        np.prod(v.size()) for k, v in model.named_parameters() if not k.startswith('aux_head'))
+    return n_params / 1024. / 1024.
+
+
+class AverageMeter():
+    """ Computes and stores the average and current value """
+    def __init__(self):
+        self.reset()
+
+    def reset(self):
+        """ Reset all statistics """
+        self.val = 0
+        self.avg = 0
+        self.sum = 0
+        self.count = 0
+
+    def update(self, val, n=1):
+        """ Update statistics """
+        self.val = val
+        self.sum += val * n
+        self.count += n
+        self.avg = self.sum / self.count
+
+
+def accuracy(output, target, topk=(1,)):
+    """ Computes the precision@k for the specified values of k """
+    maxk = max(topk)
+    batch_size = target.size(0)
+
+    _, pred = output.topk(maxk, 1, True, True)
+    pred = pred.t()
+    # one-hot case
+    if target.ndimension() > 1:
+        target = target.max(1)[1]
+
+    correct = pred.eq(target.view(1, -1).expand_as(pred))
+
+    res = []
+    for k in topk:
+        correct_k = correct[:k].view(-1).float().sum(0)
+        res.append(correct_k.mul_(1.0 / batch_size))
+
+    return res
+
+
+def save_checkpoint(state, ckpt_dir, is_best=False):
+    filename = os.path.join(ckpt_dir, 'checkpoint.pth.tar')
+    torch.save(state, filename)
+    if is_best:
+        best_filename = os.path.join(ckpt_dir, 'best.pth.tar')
+        shutil.copyfile(filename, best_filename)
+
+                        - library source code: import torch
+from torchvision import _C
+
+
+def nms(boxes, scores, iou_threshold):
+    """
+    Performs non-maximum suppression (NMS) on the boxes according
+    to their intersection-over-union (IoU).
+
+    NMS iteratively removes lower scoring boxes which have an
+    IoU greater than iou_threshold with another (higher scoring)
+    box.
+
+    Arguments:
+        boxes (Tensor[N, 4]): boxes to perform NMS on
+        scores (Tensor[N]): scores for each one of the boxes
+        iou_threshold (float): discards all overlapping
+            boxes with IoU < iou_threshold
+
+    Returns:
+        keep (Tensor): int64 tensor with the indices
+            of the elements that have been kept
+            by NMS, sorted in decreasing order of scores
+    """
+    return _C.nms(boxes, scores, iou_threshold)
+
+
+def batched_nms(boxes, scores, idxs, iou_threshold):
+    """
+    Performs non-maximum suppression in a batched fashion.
+
+    Each index value correspond to a category, and NMS
+    will not be applied between elements of different categories.
+
+    Arguments:
+        boxes (Tensor[N, 4]): boxes where NMS will be performed
+        scores (Tensor[N]): scores for each one of the boxes
+        idxs (Tensor[N]): indices of the categories for each
+            one of the boxes.
+        iou_threshold (float): discards all overlapping boxes
+            with IoU < iou_threshold
+
+    Returns:
+        keep (Tensor): int64 tensor with the indices of
+            the elements that have been kept by NMS, sorted
+            in decreasing order of scores
+    """
+    if boxes.numel() == 0:
+        return torch.empty((0,), dtype=torch.int64, device=boxes.device)
+    # strategy: in order to perform NMS independently per class.
+    # we add an offset to all the boxes. The offset is dependent
+    # only on the class idx, and is large enough so that boxes
+    # from different classes do not overlap
+    max_coordinate = boxes.max()
+    offsets = idxs.to(boxes) * (max_coordinate + 1)
+    boxes_for_nms = boxes + offsets[:, None]
+    keep = nms(boxes_for_nms, scores, iou_threshold)
+    return keep
+
+
+def remove_small_boxes(boxes, min_size):
+    """
+    Remove boxes which contains at least one side smaller than min_size.
+
+    Arguments:
+        boxes (Tensor[N, 4]): boxes in [x0, y0, x1, y1] format
+        min_size (int): minimum size
+
+    Returns:
+        keep (Tensor[K]): indices of the boxes that have both sides
+            larger than min_size
+    """
+    ws, hs = boxes[:, 2] - boxes[:, 0], boxes[:, 3] - boxes[:, 1]
+    keep = (ws >= min_size) & (hs >= min_size)
+    keep = keep.nonzero().squeeze(1)
+    return keep
+
+
+def clip_boxes_to_image(boxes, size):
+    """
+    Clip boxes so that they lie inside an image of size `size`.
+
+    Arguments:
+        boxes (Tensor[N, 4]): boxes in [x0, y0, x1, y1] format
+        size (Tuple[height, width]): size of the image
+
+    Returns:
+        clipped_boxes (Tensor[N, 4])
+    """
+    dim = boxes.dim()
+    boxes_x = boxes[..., 0::2]
+    boxes_y = boxes[..., 1::2]
+    height, width = size
+    boxes_x = boxes_x.clamp(min=0, max=width)
+    boxes_y = boxes_y.clamp(min=0, max=height)
+    clipped_boxes = torch.stack((boxes_x, boxes_y), dim=dim)
+    return clipped_boxes.reshape(boxes.shape)
+
+
+def box_area(boxes):
+    """
+    Computes the area of a set of bounding boxes, which are specified by its
+    (x0, y0, x1, y1) coordinates.
+
+    Arguments:
+        boxes (Tensor[N, 4]): boxes for which the area will be computed. They
+            are expected to be in (x0, y0, x1, y1) format
+
+    Returns:
+        area (Tensor[N]): area for each box
+    """
+    return (boxes[:, 2] - boxes[:, 0]) * (boxes[:, 3] - boxes[:, 1])
+
+
+# implementation from https://github.com/kuangliu/torchcv/blob/master/torchcv/utils/box.py
+# with slight modifications
+def box_iou(boxes1, boxes2):
+    """
+    Return intersection-over-union (Jaccard index) of boxes.
+
+    Arguments:
+        boxes1 (Tensor[N, 4])
+        boxes2 (Tensor[M, 4])
+
+    Returns:
+        iou (Tensor[N, M]): the NxM matrix containing the pairwise
+            IoU values for every element in boxes1 and boxes2
+    """
+    area1 = box_area(boxes1)
+    area2 = box_area(boxes2)
+
+    lt = torch.max(boxes1[:, None, :2], boxes2[:, :2])  # [N,M,2]
+    rb = torch.min(boxes1[:, None, 2:], boxes2[:, 2:])  # [N,M,2]
+
+    wh = (rb - lt).clamp(min=0)  # [N,M,2]
+    inter = wh[:, :, 0] * wh[:, :, 1]  # [N,M]
+
+    iou = inter / (area1[:, None] + area2 - inter)
+    return iou
+
+                        - PyPI metadata (including version constraints): ['numpy', 'six', 'torch (==1.2.0)', 'pillow (>=4.1.1)', "scipy ; extra == 'scipy'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "augment.py", line 8, in <module>
+    import utils
+  File "/home/lei/compatibility_analysis/pytorch/1.0/pt.darts/utils.py", line 6, in <module>
+    import torchvision.datasets as dset
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/__init__.py", line 1, in <module>
+    from torchvision import models
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/__init__.py", line 11, in <module>
+    from . import detection
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/detection/__init__.py", line 1, in <module>
+    from .faster_rcnn import *
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/models/detection/faster_rcnn.py", line 7, in <module>
+    from torchvision.ops import misc as misc_nn_ops
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/ops/__init__.py", line 1, in <module>
+    from .boxes import nms, box_iou
+  File "/home/lei/anaconda3/envs/py37-6/lib/python3.7/site-packages/torchvision/ops/boxes.py", line 2, in <module>
+    from torchvision import _C
+ImportError: libcudart.so.9.0: cannot open shared object file: No such file or directory
 
 
                         **Analysis Protocol**

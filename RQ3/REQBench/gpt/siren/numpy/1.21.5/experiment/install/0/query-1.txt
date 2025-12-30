@@ -39,7 +39,7 @@ gpustat==0.6.0
 gql==0.1.0
 graphql-core==2.2.1
 grpcio==1.26.0
-h5py==3.1.0
+h5py==2.10.0
 humanfriendly==10.0
 idna==2.8
 ignite==1.1.0
@@ -70,7 +70,7 @@ Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
 lazy-object-proxy==1.4.2
 lesscpy==0.13.0
-llvmlite==0.29.0
+llvmlite==0.36.0
 Markdown==3.1.1
 MarkupSafe==1.1.1
 matplotlib==3.0.3
@@ -81,7 +81,7 @@ mpmath==1.2.1
 natsort==6.0.0
 nbconvert==5.6.0
 nbformat==4.4.0
-networkx==2.3
+networkx==2.6.3
 notebook==6.0.1
 numba==0.49.0
 numpy==1.21.5
@@ -89,8 +89,8 @@ nvidia-ml-py3==7.352.0
 oauthlib==3.1.0
 opencv-python==4.1.0.25
 opencv-python-headless==4.1.1.26
-opt-einsum==3.1.0
-pandas==1.3.0
+opt-einsum==3.3.0
+pandas==1.3.5
 pandocfilters==1.4.2
 parso==0.5.1
 pathtools==0.1.2
@@ -102,7 +102,7 @@ ply==3.11
 prometheus-client==0.7.1
 promise==2.2.1
 prompt-toolkit==2.0.9
-protobuf==3.9.1
+protobuf==3.19.6
 psutil==5.6.6
 ptyprocess==0.6.0
 pyasn1==0.4.8
@@ -115,7 +115,7 @@ pyrsistent==0.15.4
 python-dateutil==2.8.0
 pytorch-ignite==0.3.0
 pytz==2019.2
-PyWavelets==1.0.3
+PyWavelets==1.1.1
 PyYAML==5.1.2
 pyzmq==18.1.0
 qtconsole==4.5.4
@@ -124,10 +124,10 @@ requests-oauthlib==1.3.0
 retrying==1.3.3
 rsa==4.0
 Rx==1.6.1
-scikit-image==0.15.0
-scikit-learn==0.24.2
+scikit-image==0.16.2
+scikit-learn==1.0.2
 scipy==1.7.3
-seaborn==0.9.0
+seaborn==0.11.2
 Send2Trash==1.5.0
 sentry-sdk==0.11.1
 Shapely==1.6.4.post2
@@ -165,10 +165,11 @@ wrapt==1.11.2
 zipp==0.6.0
 
             - Python version: 3.7
+            - PyPI metadata (including version constraints): 
             - Conflict error message: conflicting dependencies.
 
 The conflict is caused by:
-    The user requested llvmlite==0.29.0
+    The user requested llvmlite==0.36.0
     numba 0.49.0 depends on llvmlite<=0.33.0.dev0 and >=0.31.0.dev0
 
 To fix this you could try to:

@@ -4,10 +4,10 @@ Colocations handled automatically by placer.
 WARNING:tensorflow:From /home/lei/compatibility_analysis/tensorflow/1.7/cnn_captcha/cnnlib/network.py:67: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
 Instructions for updating:
 Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-2025-05-29 21:20:30.585079: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
-2025-05-29 21:20:30.619243: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
-2025-05-29 21:20:30.628677: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x5653c7a29dc0 executing computations on platform Host. Devices:
-2025-05-29 21:20:30.628741: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
+2025-12-13 22:12:17.811199: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2025-12-13 22:12:17.845982: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2025-12-13 22:12:17.856532: I tensorflow/compiler/xla/service/service.cc:150] XLA service 0x55d447506a10 executing computations on platform Host. Devices:
+2025-12-13 22:12:17.856595: I tensorflow/compiler/xla/service/service.cc:158]   StreamExecutor device (0): <undefined>, <undefined>
 WARNING:tensorflow:From /home/lei/anaconda3/envs/py36-2/lib/python3.6/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
 Instructions for updating:
 Use standard file APIs to check for files with this prefix.
@@ -32,5 +32,5 @@ If you depend on functionality not listed there, please file an issue.
 >>> End model test
 定时保存模型成功
 第10次训练 >>> 
-[训练集] 字符准确率为 1.00000 图片准确率为 1.00000 >>> loss 0.0000028468
-[验证集] 字符准确率为 0.02000 图片准确率为 0.00000 >>> loss 0.0000028468
+[训练集] 字符准确率为 1.00000 图片准确率为 1.00000 >>> loss 0.0000068343
+[验证集] 字符准确率为 0.03500 图片准确率为 0.00000 >>> loss 0.0000068343

@@ -1,0 +1,5 @@
+torch==1.13.1
+numpy==1.21.6
+pystoi==0.3.3
+pesq==0.0.3
+torchaudio==0.13.1

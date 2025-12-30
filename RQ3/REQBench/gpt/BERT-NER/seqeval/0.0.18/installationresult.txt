@@ -29,8 +29,8 @@ Collecting nltk==3.4.5
   Using cached nltk-3.4.5-py3-none-any.whl
 Collecting numpy==1.21.6
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
-Collecting python-dateutil==2.8.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting python-dateutil==2.9.0.post0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
 Collecting pytorch-transformers==1.2.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a3/b7/d3d18008a67e0b968d1ab93ad444fc05699403fa662f634b2f2c318a508b/pytorch_transformers-1.2.0-py3-none-any.whl (176 kB)
 Collecting regex==2024.4.16
@@ -59,8 +59,8 @@ Collecting Werkzeug==2.2.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/f8/9da63c1617ae2a1dec2fbf6412f3a0cfe9d4ce029eccbda6e1e4258ca45f/Werkzeug-2.2.3-py3-none-any.whl (233 kB)
 Collecting zipp==3.15.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/fa/c9e82bbe1af6266adf08afb563905eb87cab83fde00a0a08963510621047/zipp-3.15.0-py3-none-any.whl (6.8 kB)
-Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/BERT-NER-seqeval-0.0.18.txt (line 19)) (2022.12.7)
+Requirement already satisfied: certifi>=2017.4.17 in /home/lei/anaconda3/envs/py37-4/lib/python3.7/site-packages (from requests==2.31.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/BERT-NER-seqeval-0.0.18.txt (line 19)) (2022.12.7)
 Collecting Keras>=2.2.4
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/de/44/bf1b0eef5b13e6201aef076ff34b91bc40aace8591cd273c1c2a94a9cc00/keras-2.11.0-py2.py3-none-any.whl (1.7 MB)
 Installing collected packages: sentencepiece, zipp, urllib3, typing_extensions, tqdm, six, regex, numpy, MarkupSafe, Keras, joblib, jmespath, itsdangerous, idna, charset-normalizer, Werkzeug, torch, seqeval, requests, python-dateutil, nltk, Jinja2, importlib-metadata, click, botocore, sacremoses, s3transfer, Flask, Flask-Cors, boto3, pytorch-transformers
-Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-3.1.4 Keras-2.11.0 MarkupSafe-2.1.5 Werkzeug-2.2.3 boto3-1.33.13 botocore-1.33.13 charset-normalizer-3.3.2 click-8.1.7 idna-3.7 importlib-metadata-6.7.0 itsdangerous-2.1.2 jmespath-1.0.1 joblib-1.3.2 nltk-3.4.5 numpy-1.21.6 python-dateutil-2.8.2 pytorch-transformers-1.2.0 regex-2024.4.16 requests-2.31.0 s3transfer-0.8.2 sacremoses-0.0.53 sentencepiece-0.2.0 seqeval-0.0.18 six-1.16.0 torch-1.2.0 tqdm-4.31.1 typing_extensions-4.7.1 urllib3-1.26.19 zipp-3.15.0
+Successfully installed Flask-1.1.1 Flask-Cors-3.0.8 Jinja2-3.1.4 Keras-2.11.0 MarkupSafe-2.1.5 Werkzeug-2.2.3 boto3-1.33.13 botocore-1.33.13 charset-normalizer-3.3.2 click-8.1.7 idna-3.7 importlib-metadata-6.7.0 itsdangerous-2.1.2 jmespath-1.0.1 joblib-1.3.2 nltk-3.4.5 numpy-1.21.6 python-dateutil-2.9.0.post0 pytorch-transformers-1.2.0 regex-2024.4.16 requests-2.31.0 s3transfer-0.8.2 sacremoses-0.0.53 sentencepiece-0.2.0 seqeval-0.0.18 six-1.16.0 torch-1.2.0 tqdm-4.31.1 typing_extensions-4.7.1 urllib3-1.26.19 zipp-3.15.0

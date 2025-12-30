@@ -6,7 +6,7 @@
                         - Current environment: charset-normalizer==2.1.1
 click==8.1.3
 coverage==6.5.0
-cupy==11.1.0
+cupy-cuda111==9.0.0
 dataclasses==0.6
 decorator==4.4.2
 dill==0.3.7
@@ -30,7 +30,7 @@ Pillow==9.3.0
 proglog==0.1.10
 requests==2.28.1
 scipy==1.7.2
-torch==1.8.0
+torch==1.8.0+cu111
 torchvision==0.9.0
 tqdm==4.64.1
 typing_extensions==4.4.0
@@ -41,28 +41,92 @@ zope.event==4.5.0
 zope.interface==5.5.1
 
                         - Python version: 3.7
+                        - Project source code: #!/usr/bin/env python
+
+import base64
+import cupy
+import cv2
+import flask
+import getopt
+import gevent
+import gevent.pywsgi
+import glob
+import h5py
+import io
+import math
+import moviepy
+import moviepy.editor
+import numpy
+import os
+import random
+import re
+import scipy
+import scipy.io
+import shutil
+import sys
+import tempfile
+import time
+import torch
+import torchvision
+import urllib
+import zipfile
+
+##########################################################
+
+assert(int(str('').join(torch.__version__.split('.')[0:2])) >= 12) # requires at least pytorch version 1.2.0
+
+torch.set_grad_enabled(False) # make sure to not compute gradients for computational performance
+
+torch.backends.cudnn.enabled = True # make sure to use cudnn for computational performance
+
+##########################################################
+
+objCommon = {}
+
+exec(open('./common.py', 'r').read())
+
+exec(open('./models/disparity-estimation.py', 'r').read())
+exec(open('./models/disparity-adjustment.py', 'r').read())
+exec(open('./models/disparity-refinement.py', 'r').read())
+exec(open('./models/pointcloud-inpainting.py', 'r').read())
+
+##########################################################
+
+arguments_strIn = './images/doublestrike.jpg'
+arguments_strOut = './depthestim.npy'
+
+for strOption, strArgument in getopt.getopt(sys.argv[1:], '', [ strParameter[2:] + '=' for strParameter in sys.argv[1::2] ])[0]:
+	if strOption == '--in' and strArgument != '': arguments_strIn = strArgument # path to the input image
+	if strOption == '--out' and strArgument != '': arguments_strOut = strArgument # path to where the output should be stored
+# end
+
+##########################################################
+
+if __name__ == '__main__':
+	npyImage = cv2.imread(filename=arguments_strIn, flags=cv2.IMREAD_COLOR)
+
+	fltFocal = max(npyImage.shape[1], npyImage.shape[0]) / 2.0
+	fltBaseline = 40.0
+
+	tenImage = torch.FloatTensor(numpy.ascontiguousarray(npyImage.transpose(2, 0, 1)[None, :, :, :].astype(numpy.float32) * (1.0 / 255.0))).cuda()
+	tenDisparity = disparity_estimation(tenImage)
+	tenDisparity = disparity_refinement(torch.nn.functional.interpolate(input=tenImage, size=(tenDisparity.shape[2] * 4, tenDisparity.shape[3] * 4), mode='bilinear', align_corners=False), tenDisparity)
+	tenDisparity = torch.nn.functional.interpolate(input=tenDisparity, size=(tenImage.shape[2], tenImage.shape[3]), mode='bilinear', align_corners=False) * (max(tenImage.shape[2], tenImage.shape[3]) / 256.0)
+	tenDepth = (fltFocal * fltBaseline) / (tenDisparity + 0.0000001)
+
+	npyDisparity = tenDisparity[0, 0, :, :].cpu().numpy()
+	npyDepth = tenDepth[0, 0, :, :].cpu().numpy()
+
+	cv2.imwrite(filename=arguments_strOut.replace('.npy', '.png'), img=(npyDisparity / fltBaseline * 255.0).clip(0.0, 255.0).astype(numpy.uint8))
+
+	numpy.save(arguments_strOut, npyDepth)
+# end
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['numpy', 'torch (==1.8.0)', 'pillow (>=4.1.1)', "scipy ; extra == 'scipy'"]
                         - Crash traceback: Traceback (most recent call last):
-  File "depthestim.py", line 69, in <module>
-    tenDisparity = disparity_estimation(tenImage)
-  File "<string>", line 207, in disparity_estimation
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "<string>", line 108, in forward
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
-    input = module(input)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 119, in forward
-    input = module(input)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 399, in forward
-    return self._conv_forward(input, self.weight, self.bias)
-  File "/home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 396, in _conv_forward
-    self.padding, self.dilation, self.groups)
-RuntimeError: cuDNN error: CUDNN_STATUS_NOT_INITIALIZED
+  File "depthestim.py", line 4, in <module>
+    import cupy
+ModuleNotFoundError: No module named 'cupy'
 
 
                         **Analysis Protocol**

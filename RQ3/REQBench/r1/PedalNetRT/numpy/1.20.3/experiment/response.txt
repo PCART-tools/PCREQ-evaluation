@@ -1,3 +1,4 @@
+numpy==1.20.3
 absl-py==2.1.0
 cachetools==5.4.0
 charset-normalizer==3.3.2
@@ -14,7 +15,6 @@ kiwisolver==1.4.5
 Markdown==3.4.4
 MarkupSafe==2.1.5
 matplotlib==3.3.3
-numpy==1.20.3
 oauthlib==3.2.2
 Pillow==9.5.0
 protobuf==3.20.3

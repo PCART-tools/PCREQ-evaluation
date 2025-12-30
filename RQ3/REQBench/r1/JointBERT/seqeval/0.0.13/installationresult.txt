@@ -19,8 +19,8 @@ Collecting importlib-resources==5.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/24/1b/33e489669a94da3ef4562938cd306e8fa915e13939d7b8277cb5569cb405/importlib_resources-5.4.0-py3-none-any.whl (28 kB)
 Collecting joblib==1.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7c/91/d3ba0401e62d7e42816bc7d97b82d19c95c164b3e149a87c0a1c026a735e/joblib-1.1.1-py2.py3-none-any.whl (309 kB)
-Collecting keras==2.10.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/4d/dc255a437c9616b155e5bd55e325e092b7cdcb4652361d733ae051d40853/keras-2.10.0-py2.py3-none-any.whl (1.7 MB)
+Collecting keras==2.9.0
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/ff/ff/f25909606aed26981a8bd6d263f89d64a20ca5e5316e6aafb4c75d9ec8ae/keras-2.9.0-py2.py3-none-any.whl (1.6 MB)
 Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/32/d3fa649ad7ec0b82737b92fefd3c4dd376b0bb23730715124569f38f3a08/numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting packaging==21.3
@@ -56,4 +56,4 @@ Collecting urllib3==1.26.19
 Collecting zipp==3.6.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
 Installing collected packages: zipp, typing-extensions, importlib-resources, importlib-metadata, urllib3, tqdm, six, regex, pyparsing, joblib, idna, click, charset-normalizer, certifi, tokenizers, sentencepiece, sacremoses, requests, packaging, numpy, keras, future, filelock, dataclasses, transformers, torch, seqeval, pytorch-crf
-Successfully installed certifi-2021.5.30 charset-normalizer-2.0.12 click-8.0.4 dataclasses-0.8 filelock-3.4.1 future-1.0.0 idna-3.7 importlib-metadata-4.8.3 importlib-resources-5.4.0 joblib-1.1.1 keras-2.10.0 numpy-1.19.5 packaging-21.3 pyparsing-3.1.2 pytorch-crf-0.7.2 regex-2023.8.8 requests-2.27.1 sacremoses-0.0.53 sentencepiece-0.2.0 seqeval-0.0.13 six-1.16.0 tokenizers-0.8.1rc1 torch-1.6.0 tqdm-4.64.1 transformers-3.0.2 typing-extensions-4.1.1 urllib3-1.26.19 zipp-3.6.0
+Successfully installed certifi-2021.5.30 charset-normalizer-2.0.12 click-8.0.4 dataclasses-0.8 filelock-3.4.1 future-1.0.0 idna-3.7 importlib-metadata-4.8.3 importlib-resources-5.4.0 joblib-1.1.1 keras-2.9.0 numpy-1.19.5 packaging-21.3 pyparsing-3.1.2 pytorch-crf-0.7.2 regex-2023.8.8 requests-2.27.1 sacremoses-0.0.53 sentencepiece-0.2.0 seqeval-0.0.13 six-1.16.0 tokenizers-0.8.1rc1 torch-1.6.0 tqdm-4.64.1 transformers-3.0.2 typing-extensions-4.1.1 urllib3-1.26.19 zipp-3.6.0

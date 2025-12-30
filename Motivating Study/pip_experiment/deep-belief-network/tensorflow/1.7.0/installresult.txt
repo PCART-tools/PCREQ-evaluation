@@ -1,0 +1,32 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting tensorflow==1.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/38/4a/42ba8d00a50a9fafc88dd5935246ecc64ffe1f6a0258ef535ffb9652140b/tensorflow-1.7.0-cp36-cp36m-manylinux1_x86_64.whl (48.0 MB)
+Collecting gast>=0.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1d/33/f1c6a276de27b7d7339a34749cc33fa87f077f921969c47185d34a887ae2/gast-0.7.0-py3-none-any.whl (22 kB)
+Collecting grpcio>=1.8.6
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/68/dc/31397ed1d4594a2b1495bc4e4cdc4fdb80c02a1e2593b45ac56a58e9b431/grpcio-1.48.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.6 MB)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.7.0) (0.37.1)
+Collecting tensorboard<1.8.0,>=1.7.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0b/ec/65d4e8410038ca2a78c09034094403d231228d0ddcae7d470b223456e55d/tensorboard-1.7.0-py3-none-any.whl (3.1 MB)
+Collecting termcolor>=1.1.0
+  Using cached termcolor-1.1.0-py3-none-any.whl
+Requirement already satisfied: protobuf>=3.4.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.7.0) (3.19.6)
+Collecting astor>=0.6.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl (27 kB)
+Requirement already satisfied: six>=1.10.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.7.0) (1.16.0)
+Requirement already satisfied: absl-py>=0.1.6 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.7.0) (1.4.0)
+Requirement already satisfied: numpy>=1.13.3 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorflow==1.7.0) (1.16.4)
+Requirement already satisfied: markdown>=2.6.8 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (3.3.7)
+Requirement already satisfied: werkzeug>=0.11.10 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (2.0.3)
+Requirement already satisfied: html5lib==0.9999999 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (0.9999999)
+Requirement already satisfied: bleach==1.5.0 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (1.5.0)
+Requirement already satisfied: importlib-metadata>=4.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from markdown>=2.6.8->tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (4.8.3)
+Requirement already satisfied: zipp>=0.5 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (3.6.0)
+Requirement already satisfied: typing-extensions>=3.6.4 in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from importlib-metadata>=4.4->markdown>=2.6.8->tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (4.1.1)
+Requirement already satisfied: dataclasses in /home/lei/anaconda3/envs/py36-1/lib/python3.6/site-packages (from werkzeug>=0.11.10->tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0) (0.8)
+Installing collected packages: termcolor, tensorboard, grpcio, gast, astor, tensorflow
+  Attempting uninstall: tensorflow
+    Found existing installation: tensorflow 1.5.0
+    Uninstalling tensorflow-1.5.0:
+      Successfully uninstalled tensorflow-1.5.0
+Successfully installed astor-0.8.1 gast-0.7.0 grpcio-1.48.2 tensorboard-1.7.0 tensorflow-1.7.0 termcolor-1.1.0

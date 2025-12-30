@@ -3,58 +3,111 @@
                         Resolve runtime crash caused by code-level incompatibilities in dependency chain.
 
                         **Input Context**
-                        - Current environment: absl-py==1.4.0
+                        - Current environment: absl-py==2.1.0
 cachetools==5.4.0
-charset-normalizer==2.1.1
+charset-normalizer==3.3.0
 cycler==0.11.0
 dataclasses==0.6
-fsspec==2022.11.0
+fsspec==2023.6.0
 future==1.0.0
-google-auth==2.14.0
+google-auth==2.32.0
 google-auth-oauthlib==0.4.6
-grpcio==1.46.3
+grpcio==1.41.1
 idna==3.7
-importlib-metadata==4.12.0
-kiwisolver==1.3.2
-Markdown==3.3.7
-MarkupSafe==2.1.2
-matplotlib==3.5.0
-numpy==1.21.6
-oauthlib==3.2.0
-Pillow==8.4.0
-protobuf==3.19.6
-pyasn1==0.4.8
-pyasn1-modules==0.2.8
-pyparsing==2.4.7
+importlib-metadata==6.7.0
+kiwisolver==1.4.5
+Markdown==3.4.4
+MarkupSafe==2.1.3
+matplotlib==3.5.3
+numpy==1.22.4
+oauthlib==3.2.2
+Pillow==9.5.0
+protobuf==3.20.1
+pyasn1==0.5.1
+pyasn1-modules==0.3.0
+pyparsing==3.0.9
 python-dateutil==2.8.2
 pytorch-lightning==1.9.0
-PyYAML==5.4.1
-requests==2.28.1
-requests-oauthlib==1.3.1
-rsa==4.7.2
-scipy==1.7.3
+PyYAML==5.4
+requests==2.31.0
+requests-oauthlib==2.0.0
+rsa==4.9
+scipy==1.9.3
 six==1.16.0
 tensorboard==2.9.1
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-torch==1.11.0
-tqdm==4.62.3
-typing_extensions==4.0.1
-urllib3==1.26.13
-Werkzeug==2.0.3
-zipp==3.6.0
+torch==1.10.2
+tqdm==4.63.0
+typing_extensions==4.0.0
+urllib3==2.0.7
+Werkzeug==2.2.3
+zipp==3.15.0
 
                         - Python version: 3.7
-                        - Crash traceback: Traceback (most recent call last):
-  File "train.py", line 56, in <module>
-    main(args)
-  File "train.py", line 21, in main
+                        - Project source code: import pytorch_lightning as pl
+import argparse
+import sys
+
+from model import PedalNet
+from prepare import prepare
+
+
+def main(args):
+    """
+    This trains the PedalNet model to match the output data from the input data.
+
+    When you resume training from an existing model, you can override hparams such as
+        max_epochs, batch_size, or learning_rate. Note that changing num_channels,
+        dilation_depth, num_repeat, or kernel_size will change the shape of the WaveNet
+        model and is not advised.
+
+    """
+
+    prepare(args)
     model = PedalNet(vars(args))
-  File "/home/lei/compatibility_analysis/pytorch/1.7/PedalNetRT/model.py", line 118, in __init__
-    self.hparams = hparams
-  File "/home/lei/anaconda3/envs/py37-5/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1233, in __setattr__
-    object.__setattr__(self, name, value)
-AttributeError: can't set attribute
+    trainer = pl.Trainer(
+        resume_from_checkpoint=args.model if args.resume else None,
+        gpus=None if args.cpu or args.tpu_cores else args.gpus,
+        tpu_cores=args.tpu_cores,
+        log_every_n_steps=100,
+        max_epochs=args.max_epochs,
+    )
+
+    trainer.fit(model)
+    trainer.save_checkpoint(args.model)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("in_file", nargs="?", default="data/in.wav")
+    parser.add_argument("out_file", nargs="?", default="data/out.wav")
+    parser.add_argument("--sample_time", type=float, default=100e-3)
+
+    parser.add_argument("--num_channels", type=int, default=12)
+    parser.add_argument("--dilation_depth", type=int, default=10)
+    parser.add_argument("--num_repeat", type=int, default=1)
+    parser.add_argument("--kernel_size", type=int, default=3)
+
+    parser.add_argument("--batch_size", type=int, default=64)
+    parser.add_argument("--learning_rate", type=float, default=3e-3)
+
+    parser.add_argument("--max_epochs", type=int, default=1)
+    parser.add_argument("--gpus", type=int, default=1)
+    parser.add_argument("--tpu_cores", type=int, default=None)
+    parser.add_argument("--cpu", action="store_true")
+
+    parser.add_argument("--model", type=str, default="models/pedalnet/pedalnet.ckpt")
+    parser.add_argument("--resume", action="store_true")
+    args = parser.parse_args()
+    main(args)
+
+                        - library source code: 
+                        - PyPI metadata (including version constraints): ['numpy (>=1.17.2)', 'torch (>=1.10.0)', 'tqdm (>=4.57.0)', 'PyYAML (>=5.4)', 'fsspec[http] (>2021.06.0)', 'torchmetrics (>=0.7.0)', 'packaging (>=17.1)', 'typing-extensions (>=4.0.0)', 'lightning-utilities (>=0.4.2)', "matplotlib (>3.1) ; extra == 'all'", "omegaconf (>=2.0.5) ; extra == 'all'", "hydra-core (>=1.0.5) ; extra == 'all'", "jsonargparse[signatures] (>=4.18.0) ; extra == 'all'", "rich (!=10.15.0.a,>=10.14.0) ; extra == 'all'", "tensorboardX (>=2.2) ; extra == 'all'", "fairscale (>=0.4.5) ; extra == 'all'", "deepspeed (>=0.6.0) ; extra == 'all'", "horovod (!=0.24.0,>=0.21.2) ; extra == 'all'", "torchvision (>=0.11.1) ; extra == 'all'", "gym[classic_control] (>=0.17.0) ; extra == 'all'", "ipython[all] (<8.7.1) ; extra == 'all'", 'hivemind (==1.1.5) ; (sys_platform == "linux") and extra == \'all\'', "deepspeed (>=0.6.0) ; extra == 'deepspeed'", "matplotlib (>3.1) ; extra == 'dev'", "omegaconf (>=2.0.5) ; extra == 'dev'", "hydra-core (>=1.0.5) ; extra == 'dev'", "jsonargparse[signatures] (>=4.18.0) ; extra == 'dev'", "rich (!=10.15.0.a,>=10.14.0) ; extra == 'dev'", "tensorboardX (>=2.2) ; extra == 'dev'", "fairscale (>=0.4.5) ; extra == 'dev'", "deepspeed (>=0.6.0) ; extra == 'dev'", "horovod (!=0.24.0,>=0.21.2) ; extra == 'dev'", "torchvision (>=0.11.1) ; extra == 'dev'", "gym[classic_control] (>=0.17.0) ; extra == 'dev'", "ipython[all] (<8.7.1) ; extra == 'dev'", "coverage (==6.5.0) ; extra == 'dev'", "codecov (==2.1.12) ; extra == 'dev'", "pytest (==7.2.0) ; extra == 'dev'", "pytest-cov (==4.0.0) ; extra == 'dev'", "pytest-forked (==1.4.0) ; extra == 'dev'", "pytest-rerunfailures (==10.3) ; extra == 'dev'", "pre-commit (==2.20.0) ; extra == 'dev'", "cloudpickle (>=1.3) ; extra == 'dev'", "scikit-learn (>0.22.1) ; extra == 'dev'", "onnxruntime (<1.14.0) ; extra == 'dev'", "psutil (<5.9.5) ; extra == 'dev'", "pandas (>1.0) ; extra == 'dev'", "fastapi (<0.87.0) ; extra == 'dev'", "uvicorn (<0.19.1) ; extra == 'dev'", "tensorboard (>=2.9.1) ; extra == 'dev'", "protobuf (<=3.20.1) ; extra == 'dev'", 'hivemind (==1.1.5) ; (sys_platform == "linux") and extra == \'dev\'', "torchvision (>=0.11.1) ; extra == 'examples'", "gym[classic_control] (>=0.17.0) ; extra == 'examples'", "ipython[all] (<8.7.1) ; extra == 'examples'", "matplotlib (>3.1) ; extra == 'extra'", "omegaconf (>=2.0.5) ; extra == 'extra'", "hydra-core (>=1.0.5) ; extra == 'extra'", "jsonargparse[signatures] (>=4.18.0) ; extra == 'extra'", "rich (!=10.15.0.a,>=10.14.0) ; extra == 'extra'", "tensorboardX (>=2.2) ; extra == 'extra'", "fairscale (>=0.4.5) ; extra == 'fairscale'", 'hivemind (==1.1.5) ; (sys_platform == "linux") and extra == \'hivemind\'', "horovod (!=0.24.0,>=0.21.2) ; extra == 'horovod'", "fairscale (>=0.4.5) ; extra == 'strategies'", "deepspeed (>=0.6.0) ; extra == 'strategies'", "horovod (!=0.24.0,>=0.21.2) ; extra == 'strategies'", 'hivemind (==1.1.5) ; (sys_platform == "linux") and extra == \'strategies\'', "coverage (==6.5.0) ; extra == 'test'", "codecov (==2.1.12) ; extra == 'test'", "pytest (==7.2.0) ; extra == 'test'", "pytest-cov (==4.0.0) ; extra == 'test'", "pytest-forked (==1.4.0) ; extra == 'test'", "pytest-rerunfailures (==10.3) ; extra == 'test'", "pre-commit (==2.20.0) ; extra == 'test'", "cloudpickle (>=1.3) ; extra == 'test'", "scikit-learn (>0.22.1) ; extra == 'test'", "onnxruntime (<1.14.0) ; extra == 'test'", "psutil (<5.9.5) ; extra == 'test'", "pandas (>1.0) ; extra == 'test'", "fastapi (<0.87.0) ; extra == 'test'", "uvicorn (<0.19.1) ; extra == 'test'", "tensorboard (>=2.9.1) ; extra == 'test'", "protobuf (<=3.20.1) ; extra == 'test'"]
+                        - Crash traceback: Traceback (most recent call last):
+  File "train.py", line 1, in <module>
+    import pytorch_lightning as pl
+ModuleNotFoundError: No module named 'pytorch_lightning'
 
 
                         **Analysis Protocol**

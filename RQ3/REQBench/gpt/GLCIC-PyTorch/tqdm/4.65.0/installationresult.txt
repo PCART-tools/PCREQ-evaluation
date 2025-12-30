@@ -19,7 +19,7 @@ Collecting torchvision==0.10.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/25/31f5d3c62b80aff0d95b9306e09487a29531a2a3d05cf767376bdc087c3a/torchvision-0.10.0-cp37-cp37m-manylinux1_x86_64.whl (22.1 MB)
 Collecting tqdm==4.65.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e6/02/a2cff6306177ae6bc73bc0665065de51dfb3b9db7373e122e2735faf0d97/tqdm-4.65.0-py3-none-any.whl (77 kB)
-Collecting typing_extensions==4.7.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Collecting typing_extensions==4.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/75/e1/932e06004039dd670c9d5e1df0cd606bf46e29a28e65d5bb28e894ea29c9/typing_extensions-4.2.0-py3-none-any.whl (24 kB)
 Installing collected packages: mpmath, typing_extensions, tqdm, sympy, Pillow, numpy, humanfriendly, torch, opencv-python, coloredlogs, torchvision
-Successfully installed Pillow-8.2.0 coloredlogs-15.0.1 humanfriendly-10.0 mpmath-1.2.1 numpy-1.19.2 opencv-python-4.5.2.54 sympy-1.10.1 torch-1.9.0 torchvision-0.10.0 tqdm-4.65.0 typing_extensions-4.7.1
+Successfully installed Pillow-8.2.0 coloredlogs-15.0.1 humanfriendly-10.0 mpmath-1.2.1 numpy-1.19.2 opencv-python-4.5.2.54 sympy-1.10.1 torch-1.9.0 torchvision-0.10.0 tqdm-4.65.0 typing_extensions-4.2.0

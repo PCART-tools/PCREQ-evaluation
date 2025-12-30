@@ -47,17 +47,17 @@ Collecting typing_extensions==4.7.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl (33 kB)
 Collecting urllib3==2.0.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl (124 kB)
-Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from imageio-ffmpeg==0.5.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/sepconv-slomo-torch-1.13.0.txt (line 9)) (57.5.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from imageio-ffmpeg==0.5.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/sepconv-slomo-torch-1.13.0.txt (line 9)) (57.5.0)
 Collecting certifi>=2017.4.17
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/7e/3db2bd1b1f9e95f7cddca6d6e75e2f2bd9f51b1246e546d88addca0106bd/certifi-2025.4.26-py3-none-any.whl (159 kB)
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
+Collecting nvidia-cuda-nvrtc-cu11==11.7.99
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/25/922c5996aada6611b79b53985af7999fc629aee1d5d001b6a22431e18fec/nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
+Collecting nvidia-cublas-cu11==11.10.3.66
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
 Collecting nvidia-cudnn-cu11==8.5.0.96
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dc/30/66d4347d6e864334da5bb1c7571305e501dcb11b9155971421bb7bb5315f/nvidia_cudnn_cu11-8.5.0.96-2-py3-none-manylinux1_x86_64.whl (557.1 MB)
 Collecting nvidia-cuda-runtime-cu11==11.7.99
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/36/92/89cf558b514125d2ebd8344dd2f0533404b416486ff681d5434a5832a019/nvidia_cuda_runtime_cu11-11.7.99-py3-none-manylinux1_x86_64.whl (849 kB)
-Collecting nvidia-cublas-cu11==11.10.3.66
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ce/41/fdeb62b5437996e841d83d7d2714ca75b886547ee8017ee2fe6ea409d983/nvidia_cublas_cu11-11.10.3.66-py3-none-manylinux1_x86_64.whl (317.1 MB)
-Collecting nvidia-cuda-nvrtc-cu11==11.7.99
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ef/25/922c5996aada6611b79b53985af7999fc629aee1d5d001b6a22431e18fec/nvidia_cuda_nvrtc_cu11-11.7.99-2-py3-none-manylinux1_x86_64.whl (21.0 MB)
-Requirement already satisfied: wheel in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/v3/sepconv-slomo-torch-1.13.0.txt (line 21)) (0.38.4)
+Requirement already satisfied: wheel in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==1.13.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/v3/sepconv-slomo-torch-1.13.0.txt (line 21)) (0.38.4)
 Installing collected packages: fastrlock, dataclasses, urllib3, typing_extensions, tqdm, Pillow, packaging, nvidia-cuda-runtime-cu11, nvidia-cuda-nvrtc-cu11, nvidia-cublas-cu11, numpy, networkx, imageio-ffmpeg, idna, future, decorator, charset-normalizer, certifi, tifffile, scipy, requests, PyWavelets, proglog, nvidia-cudnn-cu11, imageio, cupy, torch, scikit-image, moviepy
-Successfully installed Pillow-9.3.0 PyWavelets-1.3.0 certifi-2025.4.26 charset-normalizer-3.4.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 fastrlock-0.8.2 future-1.0.0 idna-3.10 imageio-2.31.2 imageio-ffmpeg-0.5.1 moviepy-1.0.3 networkx-2.6.3 numpy-1.21.6 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 packaging-24.0 proglog-0.1.10 requests-2.31.0 scikit-image-0.19.3 scipy-1.7.3 tifffile-2021.11.2 torch-1.13.0 tqdm-4.67.1 typing_extensions-4.7.1 urllib3-2.0.7
+Successfully installed Pillow-9.3.0 PyWavelets-1.3.0 certifi-2025.11.12 charset-normalizer-3.4.0 cupy-11.3.0 dataclasses-0.6 decorator-4.4.2 fastrlock-0.8.2 future-1.0.0 idna-3.10 imageio-2.31.2 imageio-ffmpeg-0.5.1 moviepy-1.0.3 networkx-2.6.3 numpy-1.21.6 nvidia-cublas-cu11-11.10.3.66 nvidia-cuda-nvrtc-cu11-11.7.99 nvidia-cuda-runtime-cu11-11.7.99 nvidia-cudnn-cu11-8.5.0.96 packaging-24.0 proglog-0.1.10 requests-2.31.0 scikit-image-0.19.3 scipy-1.7.3 tifffile-2021.11.2 torch-1.13.0 tqdm-4.67.1 typing_extensions-4.7.1 urllib3-2.0.7

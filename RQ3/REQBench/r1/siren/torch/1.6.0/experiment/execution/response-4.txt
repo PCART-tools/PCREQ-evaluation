@@ -91,7 +91,7 @@ parso==0.5.1
 pathtools==0.1.2
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==6.2.2
+Pillow==8.4.0
 plotly==4.1.0
 ply==3.11
 prometheus-client==0.7.1
@@ -133,7 +133,7 @@ smmap2==2.0.5
 subprocess32==3.5.4
 sympy==1.10.1
 tensorboard==2.0.2
-tensorboardX==2.1
+tensorboardX==1.8
 tensorflow-estimator==2.0.1
 termcolor==1.1.0
 terminado==0.8.2

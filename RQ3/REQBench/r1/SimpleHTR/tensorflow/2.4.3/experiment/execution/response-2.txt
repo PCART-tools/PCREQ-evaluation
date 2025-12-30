@@ -1,4 +1,4 @@
-absl-py==0.15.0
+absl-py==0.10.0
 astunparse==1.6.3
 cachetools==4.2.4
 certifi==2021.5.30
@@ -22,7 +22,7 @@ Markdown==3.3.7
 matplotlib==3.2.1
 numpy==1.19.5
 oauthlib==3.2.2
-opencv-python==4.5.1.48
+opencv-python==4.2.0.32
 opt-einsum==3.3.0
 path==15.0.0
 protobuf==3.19.6
@@ -34,14 +34,14 @@ requests==2.27.1
 requests-oauthlib==2.0.0
 rsa==4.9
 six==1.15.0
-tensorboard==2.4.3
-tensorboard-data-server==0.4.1
+tensorboard==2.10.1
+tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.4.3
-tensorflow-estimator==2.4.0
+tensorflow-estimator==2.4.3
 termcolor==1.1.0
 typing-extensions==3.7.4.3
 urllib3==1.26.19
-Werkzeug==1.0.1
+Werkzeug==2.0.3
 wrapt==1.12.1
 zipp==3.6.0

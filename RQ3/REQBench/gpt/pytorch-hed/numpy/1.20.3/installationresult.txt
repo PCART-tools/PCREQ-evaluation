@@ -11,13 +11,13 @@ Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
 Collecting numpy==1.20.3
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a5/42/560d269f604d3e186a57c21a363e77e199358d054884e61b73e405dd217c/numpy-1.20.3-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.3 MB)
-Collecting Pillow==8.0.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9f/b7/4b3304e5fd986e2ad8a0157adba88c01dcefc111deaf84a37175af5f5e43/Pillow-8.0.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
-Collecting sympy==1.6.2
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e0/1f/8cbbf698e853019ac3dc5d60ca8f6be4ace4542b2f05f7b62949617fc98e/sympy-1.6.2-py3-none-any.whl (5.8 MB)
-Collecting torch==1.8.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/56/74/6fc9dee50f7c93d6b7d9644554bdc9692f3023fa5d1de779666e6bf8ae76/torch-1.8.1-cp37-cp37m-manylinux1_x86_64.whl (804.1 MB)
+Collecting Pillow==8.1.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/eb/8e/d2f7a67cf8da9b83c1e3ee38dbf49448f3c8acb2cb38f76e4301f4a70223/Pillow-8.1.0-cp37-cp37m-manylinux1_x86_64.whl (2.2 MB)
+Collecting sympy==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ff/69/b16fc81b939d3efdd0b552f2e3e54f7fa1423d0c320cced2e69e675dde26/sympy-1.7.1-py3-none-any.whl (5.9 MB)
+Collecting torch==1.7.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/90/5d/095ddddc91c8a769a68c791c019c5793f9c4456a688ddd235d6670924ecb/torch-1.7.1-cp37-cp37m-manylinux1_x86_64.whl (776.8 MB)
 Collecting typing_extensions==4.0.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/e4/baf0031e39cf545f0c9edd5b1a2ea12609b7fcba2d58e118b11753d68cf0/typing_extensions-4.0.1-py3-none-any.whl (22 kB)
 Installing collected packages: mpmath, dataclasses, typing_extensions, sympy, Pillow, numpy, humanfriendly, future, torch, coloredlogs
-Successfully installed Pillow-8.0.0 coloredlogs-15.0.1 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 mpmath-1.2.1 numpy-1.20.3 sympy-1.6.2 torch-1.8.1 typing_extensions-4.0.1
+Successfully installed Pillow-8.1.0 coloredlogs-15.0.1 dataclasses-0.6 future-1.0.0 humanfriendly-10.0 mpmath-1.2.1 numpy-1.20.3 sympy-1.7.1 torch-1.7.1 typing_extensions-4.0.1

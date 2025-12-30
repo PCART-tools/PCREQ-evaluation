@@ -1,0 +1,5 @@
+torch==1.7.1
+pytorch-lightning==1.2.0
+typing-extensions==3.7.4.3
+numpy==1.19.5
+dataclasses==0.6

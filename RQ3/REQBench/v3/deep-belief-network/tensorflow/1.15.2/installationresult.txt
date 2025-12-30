@@ -1,8 +1,8 @@
 Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
 Collecting absl-py==1.4.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/dd/87/de5c32fa1b1c6c3305d576e299801d8655c175ca9557019906247b994331/absl_py-1.4.0-py3-none-any.whl (126 kB)
-Collecting bleach==1.5.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/33/70/86c5fec937ea4964184d4d6c4f0b9551564f821e1c3575907639036d9b90/bleach-1.5.0-py2.py3-none-any.whl (17 kB)
+Collecting bleach==3.3.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c3/ae/9b9f28245f4570bbdd977dc73e024fbb19f781036734fa0502039bfc41b6/bleach-3.3.1-py2.py3-none-any.whl (146 kB)
 Collecting certifi==2021.5.30
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/1b/0a0dece0e8aa492a6ec9e4ad2fe366b511558cdc73fd3abc82ba7348e875/certifi-2021.5.30-py2.py3-none-any.whl (145 kB)
 Collecting dataclasses==0.8

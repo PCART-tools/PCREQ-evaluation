@@ -1,0 +1,23 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting matplotlib==3.3.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/87/a6/8d7d06f6b69236a3c1818157875ceb1259ba0d9df4194f4fe138ffdc0f41/matplotlib-3.3.2-cp37-cp37m-manylinux1_x86_64.whl (11.6 MB)
+Requirement already satisfied: cycler>=0.10 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (0.10.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (1.1.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.3 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (2.4.2)
+Requirement already satisfied: pillow>=6.2.0 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (6.2.2)
+Collecting certifi>=2020.06.20
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/7d/9bc192684cea499815ff478dfcdc13835ddf401365057044fb721ec6bddb/certifi-2025.11.12-py3-none-any.whl (159 kB)
+Requirement already satisfied: numpy>=1.15 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (1.17.1)
+Requirement already satisfied: python-dateutil>=2.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from matplotlib==3.3.2) (2.8.0)
+Requirement already satisfied: six in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from cycler>=0.10->matplotlib==3.3.2) (1.12.0)
+Requirement already satisfied: setuptools in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from kiwisolver>=1.0.1->matplotlib==3.3.2) (59.5.0)
+Installing collected packages: certifi, matplotlib
+  Attempting uninstall: certifi
+    Found existing installation: certifi 2019.6.16
+    Uninstalling certifi-2019.6.16:
+      Successfully uninstalled certifi-2019.6.16
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.0.3
+    Uninstalling matplotlib-3.0.3:
+      Successfully uninstalled matplotlib-3.0.3
+Successfully installed certifi-2025.11.12 matplotlib-3.3.2

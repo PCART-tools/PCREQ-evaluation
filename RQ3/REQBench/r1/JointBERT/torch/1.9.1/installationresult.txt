@@ -13,14 +13,14 @@ Collecting future==1.0.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl (491 kB)
 Collecting idna==3.7
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/e5/3e/741d8c82801c347547f8a2a06aa57dbb1992be9e948df2ea0eda2c8b79e8/idna-3.7-py3-none-any.whl (66 kB)
-Collecting importlib-metadata==4.8.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a0/a1/b153a0a4caf7a7e3f15c2cd56c7702e2cf3d89b1b359d1f1c5e59d68f4ce/importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
-Collecting importlib-resources==5.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/83/57/8456fe5bfc08d52e4001a94931e479dc3b10796ad5f24639ed3e2c6f062c/importlib_resources-5.2.1-py3-none-any.whl (27 kB)
+Collecting importlib-metadata==4.6.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c0/72/4512a88e402d4dc3bab49a845130d95ac48936ef3a9469b55cc79a60d84d/importlib_metadata-4.6.4-py3-none-any.whl (17 kB)
+Collecting importlib-resources==5.2.2
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/6c/2f3b930513bb971172ffceb63cf4e910944e57451724e69b1dec97cfefa6/importlib_resources-5.2.2-py3-none-any.whl (27 kB)
 Collecting joblib==1.1.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/7c/91/d3ba0401e62d7e42816bc7d97b82d19c95c164b3e149a87c0a1c026a735e/joblib-1.1.1-py2.py3-none-any.whl (309 kB)
-Collecting keras==2.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5a/38/04d9b7fb53acdf861df2c4505fa96b06c779817a511e94b8882d284ba360/keras-2.6.0-py2.py3-none-any.whl (1.3 MB)
+Collecting keras==2.3.1
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ad/fd/6bfe87920d7f4fd475acd28500a42482b6b84479832bdc0fe9e589a60ceb/Keras-2.3.1-py2.py3-none-any.whl (377 kB)
 Collecting numpy==1.19.5
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/14/32/d3fa649ad7ec0b82737b92fefd3c4dd376b0bb23730715124569f38f3a08/numpy-1.19.5-cp36-cp36m-manylinux2010_x86_64.whl (14.8 MB)
 Collecting packaging==21.3
@@ -35,27 +35,17 @@ Collecting requests==2.27.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/2d/61/08076519c80041bc0ffa1a8af0cbd3bf3e2b62af10435d269a9d0f40564d/requests-2.27.1-py2.py3-none-any.whl (63 kB)
 Collecting sacremoses==0.0.53
   Using cached sacremoses-0.0.53-py3-none-any.whl
-Collecting sentencepiece==0.1.91
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/a4/d0a884c4300004a78cca907a6ff9a5e9fe4f090f5d95ab341c53d28cbc58/sentencepiece-0.1.91-cp36-cp36m-manylinux1_x86_64.whl (1.1 MB)
+Collecting sentencepiece==0.2.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c8/4d/4503588007eeb53a5a68801d1a4f357c377d9d9eba4547f501078444c29f/sentencepiece-0.2.0-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.3 MB)
 Collecting seqeval==0.0.12
   Using cached seqeval-0.0.12-py3-none-any.whl
 Collecting six==1.16.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl (11 kB)
-Collecting tokenizers==0.10.3
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bf/20/3605db440db4f96d5ffd66b231a043ae451ec7e5e4d1a2fb6f20608006c4/tokenizers-0.10.3-cp36-cp36m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (3.3 MB)
-Collecting tqdm==4.64.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/47/bb/849011636c4da2e44f1253cd927cfb20ada4374d8b3a4e425416e84900cc/tqdm-4.64.1-py2.py3-none-any.whl (78 kB)
+Collecting tokenizers==0.8.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6b/15/1c026f3aeafd26db30cb633d9915aae666a415179afa5943263e5dbd55a6/tokenizers-0.8.0-cp36-cp36m-manylinux1_x86_64.whl (3.0 MB)
 Collecting torch==1.9.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/f1/735e39ed0e3877ff02ffe625989bb421747c3dfd256e37ed92ad32c986be/torch-1.9.1-cp36-cp36m-manylinux1_x86_64.whl (831.4 MB)
-Collecting transformers==4.6.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d5/43/cfe4ee779bbd6a678ac6a97c5a5cdeb03c35f9eaebbb9720b036680f9a2d/transformers-4.6.1-py3-none-any.whl (2.2 MB)
-Collecting typing_extensions==4.1.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/45/6b/44f7f8f1e110027cf88956b59f2fad776cca7e1704396d043f89effd3a0e/typing_extensions-4.1.1-py3-none-any.whl (26 kB)
-Collecting urllib3==1.26.19
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ae/6a/99eaaeae8becaa17a29aeb334a18e5d582d873b6f084c11f02581b8d7f7f/urllib3-1.26.19-py2.py3-none-any.whl (143 kB)
-Collecting zipp==3.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/df/d4a4974a3e3957fd1c1fa3082366d7fff6e428ddb55f074bf64876f8e8ad/zipp-3.6.0-py3-none-any.whl (5.3 kB)
-Collecting huggingface-hub==0.0.8
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a1/88/7b1e45720ecf59c6c6737ff332f41c955963090a18e72acbcbeac6b25e86/huggingface_hub-0.0.8-py3-none-any.whl (34 kB)
-Installing collected packages: zipp, typing-extensions, urllib3, importlib-resources, importlib-metadata, idna, charset-normalizer, certifi, tqdm, six, requests, regex, pyparsing, joblib, filelock, click, tokenizers, sacremoses, packaging, numpy, keras, huggingface-hub, dataclasses, transformers, torch, seqeval, sentencepiece, pytorch-crf, future
-Successfully installed certifi-2021.5.30 charset-normalizer-2.0.12 click-8.0.4 dataclasses-0.8 filelock-3.4.1 future-1.0.0 huggingface-hub-0.0.8 idna-3.7 importlib-metadata-4.8.3 importlib-resources-5.2.1 joblib-1.1.1 keras-2.6.0 numpy-1.19.5 packaging-21.3 pyparsing-3.1.2 pytorch-crf-0.7.2 regex-2023.8.8 requests-2.27.1 sacremoses-0.0.53 sentencepiece-0.1.91 seqeval-0.0.12 six-1.16.0 tokenizers-0.10.3 torch-1.9.1 tqdm-4.64.1 transformers-4.6.1 typing-extensions-4.1.1 urllib3-1.26.19 zipp-3.6.0
+Collecting tqdm==4.50.0
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/0a/0e/ea53a3d6f1eb2cc31162c9ae89555cc26a3986e5559781f0b0df75aea5cf/tqdm-4.50.0-py2.py3-none-any.whl (70 kB)
+ERROR: Could not find a version that satisfies the requirement transformers==3.6.0 (from versions: 0.1, 2.0.0, 2.1.0, 2.1.1, 2.2.0, 2.2.1, 2.2.2, 2.3.0, 2.4.0, 2.4.1, 2.5.0, 2.5.1, 2.6.0, 2.7.0, 2.8.0, 2.9.0, 2.9.1, 2.10.0, 2.11.0, 3.0.0, 3.0.1, 3.0.2, 3.1.0, 3.2.0, 3.3.0, 3.3.1, 3.4.0, 3.5.0, 3.5.1, 4.0.0rc1, 4.0.0, 4.0.1, 4.1.0, 4.1.1, 4.2.0, 4.2.1, 4.2.2, 4.3.0rc1, 4.3.0, 4.3.1, 4.3.2, 4.3.3, 4.4.0, 4.4.1, 4.4.2, 4.5.0, 4.5.1, 4.6.0, 4.6.1, 4.7.0, 4.8.0, 4.8.1, 4.8.2, 4.9.0, 4.9.1, 4.9.2, 4.10.0, 4.10.1, 4.10.2, 4.10.3, 4.11.0, 4.11.1, 4.11.2, 4.11.3, 4.12.0, 4.12.1, 4.12.2, 4.12.3, 4.12.4, 4.12.5, 4.13.0, 4.14.0, 4.14.1, 4.15.0, 4.16.0, 4.16.1, 4.16.2, 4.17.0, 4.18.0)
+ERROR: No matching distribution found for transformers==3.6.0

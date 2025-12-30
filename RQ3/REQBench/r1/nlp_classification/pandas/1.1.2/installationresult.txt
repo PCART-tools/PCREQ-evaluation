@@ -56,7 +56,7 @@ Collecting ipykernel==5.3.0
 Collecting ipython==7.14.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b0/00/afc3968a3cdf5f30c5c9dfb8e6a61e63231d6869a461dc1ff418280c5ea4/ipython-7.14.0-py3-none-any.whl (782 kB)
 Collecting ipython-genutils==0.2.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl (26 kB)
 Collecting ipywidgets==7.5.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/56/a0/dbcf5881bb2f51e8db678211907f16ea0a182b232c591a6d6f276985ca95/ipywidgets-7.5.1-py2.py3-none-any.whl (121 kB)
 Collecting jedi==0.17.0
@@ -112,7 +112,7 @@ Collecting parso==0.7.0
 Collecting pexpect==4.8.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/39/7b/88dbb785881c28a102619d46423cb853b46dbccc70d3ac362d99773a78ce/pexpect-4.8.0-py2.py3-none-any.whl (59 kB)
 Collecting pickleshare==0.7.5
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl (6.9 kB)
 Collecting Pillow==7.1.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ab/f8/d3627cc230270a6a4eedee32974fbc8cb26c5fdb8710dd5ea70133640022/Pillow-7.1.2-cp37-cp37m-manylinux1_x86_64.whl (2.1 MB)
 Collecting prometheus-client==0.8.0
@@ -122,7 +122,7 @@ Collecting prompt-toolkit==3.0.5
 Collecting protobuf==3.12.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f2/fa/32192c80b43c1f974aaaa9b4d75b004843089dc15201685f29c92bc43de6/protobuf-3.12.1-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
 Collecting ptyprocess==0.6.0
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl (39 kB)
 Collecting pyasn1==0.4.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/62/1e/a94a8d635fa3ce4cfc7f506003548d0a2447ae76fd5ca53932970fe3053f/pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
 Collecting pyasn1-modules==0.2.8
@@ -134,7 +134,7 @@ Collecting pyparsing==2.4.7
 Collecting pyrsistent==0.16.0
   Using cached pyrsistent-0.16.0-cp37-cp37m-linux_x86_64.whl
 Collecting PySocks==1.7.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl (16 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/8d/59/b4572118e098ac8e46e399a1dd0f2d85403ce8bbaad9ec79373ed6badaf9/PySocks-1.7.1-py3-none-any.whl (16 kB)
 Collecting python-dateutil==2.8.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
 Collecting pytz==2020.1
@@ -198,7 +198,7 @@ Collecting urllib3==1.25.9
 Collecting wcwidth==0.1.9
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f6/d5/1ecdac957e3ea12c1b319fcdee8b6917ffaff8b4644d673c4d72d2f20b49/wcwidth-0.1.9-py2.py3-none-any.whl (19 kB)
 Collecting webencodings==0.5.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl (11 kB)
 Collecting Werkzeug==1.0.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cc/94/5f7079a0e00bd6863ef8f1da638721e9da21e5bacee597595b318f71d62e/Werkzeug-1.0.1-py2.py3-none-any.whl (298 kB)
 Collecting widgetsnbextension==3.5.1
@@ -207,8 +207,8 @@ Collecting zipp==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/b2/34/bfcb43cc0ba81f527bc4f40ef41ba2ff4080e047acb0586b56b3d017ace4/zipp-3.1.0-py3-none-any.whl (4.9 kB)
 Collecting requests[socks]
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl (62 kB)
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/nlp_classification-pandas-1.1.2.txt (line 20)) (57.5.0)
-Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.2.1->-r /home/lei/compatibility_analysis/compare/LLM/result/deepseek/r1/nlp_classification-pandas-1.1.2.txt (line 85)) (0.38.4)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.15.0->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/nlp_classification-pandas-1.1.2.txt (line 20)) (57.5.0)
+Requirement already satisfied: wheel>=0.26 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from tensorboard==2.2.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/deepseek/r1/nlp_classification-pandas-1.1.2.txt (line 85)) (0.38.4)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/96/80/034ffeca15c0f4e01b7b9c6ad0fb704b44e190cde4e757edbd60be404c41/requests-2.30.0-py3-none-any.whl (62 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cf/e1/2aa539876d9ed0ddc95882451deb57cfd7aa8dbf0b8dbce68e045549ba56/requests-2.29.0-py3-none-any.whl (62 kB)
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d2/f4/274d1dbe96b41cf4e0efb70cbced278ffd61b5c7bb70338b62af94ccb25b/requests-2.28.2-py3-none-any.whl (62 kB)

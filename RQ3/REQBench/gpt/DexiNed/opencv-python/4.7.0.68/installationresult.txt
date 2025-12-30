@@ -33,8 +33,8 @@ Collecting Keras-Applications==1.0.8
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50 kB)
 Collecting Keras-Preprocessing==1.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/28/6a/8c1f62c37212d9fc441a7e26736df51ce6f0e38455816445471f10da4f0a/Keras_Preprocessing-1.1.0-py2.py3-none-any.whl (41 kB)
-Collecting kiwisolver==1.4.4
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/ab/8f/8dbe2d4efc4c0b08ec67d6efb7cc31fbfd688c80afad85f65980633b0d37/kiwisolver-1.4.4-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
+Collecting kiwisolver==1.4.5
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/f9/77/e3046bf19720b22e3e0b7c12e28f6f2c0c18a213fb91a56cea640862270f/kiwisolver-1.4.5-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl (1.1 MB)
 Collecting kornia==0.3.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/bd/64/362a755ab326fe696d2a24d002259b9b5e855785207bb03d1685908a2194/kornia-0.3.2-py2.py3-none-any.whl (195 kB)
 Collecting Markdown==3.1.1
@@ -45,14 +45,15 @@ Collecting mock==4.0.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/cd/74/d72daf8dff5b6566db857cfd088907bb0355f5dd2914c4b3ef065c790735/mock-4.0.2-py3-none-any.whl (28 kB)
 Collecting mpmath==1.2.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/d4/cf/3965bddbb4f1a61c49aacae0e78fd1fe36b5dc36c797b31f30cf07dcbbb7/mpmath-1.2.1-py3-none-any.whl (532 kB)
-Collecting numpy==1.21.6
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/6d/ad/ff3b21ebfe79a4d25b4a4f8e5cf9fd44a204adb6b33c09010f566f51027a/numpy-1.21.6-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
+Collecting numpy==1.21.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/5b/0d/de55834c5ea0dd287cb1cb156c8bc120af2863c36e4d49b4dc28f174e278/numpy-1.21.4-cp37-cp37m-manylinux_2_12_x86_64.manylinux2010_x86_64.whl (15.7 MB)
 Collecting oauthlib==3.1.0
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/05/57/ce2e7a8fa7c0afb54a0581b14a65b56e62b5759dbc98e80627142b8a3704/oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
 Collecting opencv-python==4.7.0.68
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/07/e2/405fd71f433960b0ce6a546536b05a26d85508df7eea98850784e10323e9/opencv_python-4.7.0.68-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (61.8 MB)
 Collecting opt-einsum==3.2.1
-  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/63/a5/e6c07b08b934831ccb8c98ee335e66b7761c5754ee3cabfe4c11d0b1af28/opt_einsum-3.2.1-py3-none-any.whl (63 kB)
+  Downloading https://pypi.tuna.tsinghua.edu.cn/packages/63/a5/e6c07b08b934831ccb8c98ee335e66b7761c5754ee3cabfe4c11d0b1af28/opt_einsum-3.2.1-py3-none-any.whl (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.5/63.5 kB 847.2 kB/s eta 0:00:00
 Collecting protobuf==3.11.2
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/4a/14/f5c294f1e36a031f165128c25feba93b3116f15a74398d0b2747ed75744f/protobuf-3.11.2-cp37-cp37m-manylinux1_x86_64.whl (1.3 MB)
 Collecting pyasn1==0.4.8
@@ -85,8 +86,8 @@ Collecting Werkzeug==0.16.1
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/c2/e4/a859d2fe516f466642fa5c6054fd9646271f9da26b0cac0d2f37fc858c8f/Werkzeug-0.16.1-py2.py3-none-any.whl (327 kB)
 Collecting wrapt==1.11.2
   Using cached wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl
-Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.14.1->-r /home/lei/compatibility_analysis/compare/LLM/result/chatgpt/DexiNed-opencv-python-4.7.0.68.txt (line 9)) (57.5.0)
+Requirement already satisfied: setuptools>=40.3.0 in /home/lei/anaconda3/envs/py37-3/lib/python3.7/site-packages (from google-auth==1.14.1->-r /home/lei/compatibility_analysis/tosem/LLM/result/chatgpt/DexiNed-opencv-python-4.7.0.68.txt (line 9)) (57.5.0)
 WARNING: The candidate selected for download or install is a yanked version: 'opencv-python' candidate (version 4.7.0.68 at https://pypi.tuna.tsinghua.edu.cn/packages/07/e2/405fd71f433960b0ce6a546536b05a26d85508df7eea98850784e10323e9/opencv_python-4.7.0.68-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/) (requires-python:>=3.6))
 Reason for being yanked: <none given>
 Installing collected packages: wrapt, termcolor, pyasn1, mpmath, chardet, certifi, Werkzeug, urllib3, typing_extensions, sympy, six, rsa, pyparsing, pyasn1-modules, oauthlib, numpy, mock, Markdown, idna, humanfriendly, gast, future, cachetools, torch, requests, python-dateutil, protobuf, opt-einsum, opencv-python, kiwisolver, Keras-Preprocessing, h5py, grpcio, google-pasta, google-auth, cycler, coloredlogs, absl-py, requests-oauthlib, matplotlib, kornia, Keras-Applications, google-auth-oauthlib
-Successfully installed Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.1.1 Werkzeug-0.16.1 absl-py-0.9.0 cachetools-4.1.0 certifi-2020.4.5.1 chardet-3.0.4 coloredlogs-15.0.1 cycler-0.10.0 future-1.0.0 gast-0.2.2 google-auth-1.14.1 google-auth-oauthlib-0.4.1 google-pasta-0.1.8 grpcio-1.26.0 h5py-2.10.0 humanfriendly-10.0 idna-2.9 kiwisolver-1.4.4 kornia-0.3.2 matplotlib-3.1.2 mock-4.0.2 mpmath-1.2.1 numpy-1.21.6 oauthlib-3.1.0 opencv-python-4.7.0.68 opt-einsum-3.2.1 protobuf-3.11.2 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.6 python-dateutil-2.8.1 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 six-1.14.0 sympy-1.10.1 termcolor-1.1.0 torch-1.5.0 typing_extensions-4.7.1 urllib3-1.25.11 wrapt-1.11.2
+Successfully installed Keras-Applications-1.0.8 Keras-Preprocessing-1.1.0 Markdown-3.1.1 Werkzeug-0.16.1 absl-py-0.9.0 cachetools-4.1.0 certifi-2020.4.5.1 chardet-3.0.4 coloredlogs-15.0.1 cycler-0.10.0 future-1.0.0 gast-0.2.2 google-auth-1.14.1 google-auth-oauthlib-0.4.1 google-pasta-0.1.8 grpcio-1.26.0 h5py-2.10.0 humanfriendly-10.0 idna-2.9 kiwisolver-1.4.5 kornia-0.3.2 matplotlib-3.1.2 mock-4.0.2 mpmath-1.2.1 numpy-1.21.4 oauthlib-3.1.0 opencv-python-4.7.0.68 opt-einsum-3.2.1 protobuf-3.11.2 pyasn1-0.4.8 pyasn1-modules-0.2.8 pyparsing-2.4.6 python-dateutil-2.8.1 requests-2.23.0 requests-oauthlib-1.3.0 rsa-4.0 six-1.14.0 sympy-1.10.1 termcolor-1.1.0 torch-1.5.0 typing_extensions-4.7.1 urllib3-1.25.11 wrapt-1.11.2

@@ -8,7 +8,6 @@ catalogue==2.0.10
 charset-normalizer==3.3.2
 click==7.1.2
 coloredlogs==15.0.1
-correlation-cuda==0.0.0
 cymem==2.0.8
 filelock==3.12.2
 humanfriendly==10.0
@@ -27,7 +26,6 @@ protobuf==3.20.0
 pydantic==1.7.4
 regex==2024.4.16
 requests==2.31.0
-resample2d-cuda==0.0.0
 sacremoses==0.0.53
 scikit-learn==0.24.0
 scipy==1.7.3
@@ -52,6 +50,7 @@ wasabi==0.10.1
 zipp==3.15.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): None
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies

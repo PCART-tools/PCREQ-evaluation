@@ -19,6 +19,910 @@ torchvision==0.11.1
 tqdm==4.47.0
 
                         - Python version: 3.6
+                        - Project source code: # -*- coding: utf-8 -*-
+# @Author: Wenwen Yu
+# @Created Time: 7/12/2020 9:50 PM
+
+import os
+import shutil
+
+import numpy as np
+from numpy import inf
+import distance
+import torch
+import torch.nn.functional as F
+import torch.distributed as dist
+from torch.nn.parallel import DistributedDataParallel as DDP
+
+from utils.metrics import AverageMetricTracker
+from logger import TensorboardWriter
+from utils.label_util import LabelTransformer
+from utils import decode_util
+
+
+class Trainer:
+    """
+    Trainer class
+    """
+
+    def __init__(self, model, optimizer, config, data_loader,
+                 valid_data_loader=None, lr_scheduler=None, max_len_step=None):
+        '''
+
+        :param model:
+        :param optimizer:
+        :param config:
+        :param data_loader:
+        :param valid_data_loader:
+        :param lr_scheduler:
+        :param max_len_step: controls number of batches(steps) in each epoch.
+        '''
+        self.config = config
+        self.distributed = config['distributed']
+        if self.distributed:
+            self.local_master = (config['local_rank'] == 0)
+            self.global_master = (dist.get_rank() == 0)
+        else:
+            self.local_master = True
+            self.global_master = True
+        self.logger = config.get_logger('trainer', config['trainer']['log_verbosity']) if self.local_master else None
+
+        # setup GPU device if available, move model into configured device
+        self.device, self.device_ids = self._prepare_device(config['local_rank'], config['local_world_size'])
+        self.model = model.to(self.device)
+
+        self.optimizer = optimizer
+
+        cfg_trainer = config['trainer']
+        self.epochs = cfg_trainer['epochs']
+        self.save_period = cfg_trainer['save_period']
+        monitor_open = cfg_trainer['monitor_open']
+        if monitor_open:
+            self.monitor = cfg_trainer.get('monitor', 'off')
+        else:
+            self.monitor = 'off'
+
+        # configuration to monitor model performance and save best
+        if self.monitor == 'off':
+            self.monitor_mode = 'off'
+            self.monitor_best = 0
+        else:
+            self.monitor_mode, self.monitor_metric = self.monitor.split()
+            assert self.monitor_mode in ['min', 'max']
+
+            self.monitor_best = inf if self.monitor_mode == 'min' else -inf
+            self.early_stop = cfg_trainer.get('early_stop', inf)
+            self.early_stop = inf if self.early_stop == -1 else self.early_stop
+
+        self.start_epoch = 1
+
+        if self.local_master:
+            self.checkpoint_dir = config.save_dir
+            # setup visualization writer instance
+            self.writer = TensorboardWriter(config.log_dir, self.logger, cfg_trainer['tensorboard'])
+
+        # load checkpoint for resume training or finetune
+        self.finetune = config['finetune']
+        if config.resume is not None:
+            self._resume_checkpoint(config.resume)
+        else:
+            if self.finetune:
+                self.logger_warning("Finetune mode must set resume args to specific checkpoint path")
+                raise RuntimeError("Finetune mode must set resume args to specific checkpoint path")
+        # load checkpoint then load to multi-gpu, avoid 'module.' prefix
+        if self.config['trainer']['sync_batch_norm'] and self.distributed:
+            # sync_batch_norm only support one gpu per process mode
+            self.model = torch.nn.SyncBatchNorm.convert_sync_batchnorm(self.model)
+
+        if self.distributed:  # move model to distributed gpu
+            self.model = DDP(self.model, device_ids=self.device_ids, output_device=self.device_ids[0],
+                             find_unused_parameters=True)
+
+        # iteration-based training
+        self.len_step = len(data_loader)
+        self.data_loader = data_loader
+        if max_len_step is not None:  # max length of iteration step of every epoch
+            self.len_step = min(max_len_step, self.len_step)
+        self.valid_data_loader = valid_data_loader
+
+        do_validation = self.config['trainer']['do_validation']
+        self.validation_start_epoch = self.config['trainer']['validation_start_epoch']
+        self.do_validation = (self.valid_data_loader is not None and do_validation)
+        self.lr_scheduler = lr_scheduler
+
+        log_step = self.config['trainer']['log_step_interval']
+        self.log_step = log_step if log_step != -1 and 0 < log_step < self.len_step else int(
+            np.sqrt(data_loader.batch_size))
+
+        # do validation interval
+        val_step_interval = self.config['trainer']['val_step_interval']
+        # self.val_step_interval = val_step_interval if val_step_interval!= -1 and 0 < val_step_interval < self.len_step\
+        #                                             else int(np.sqrt(data_loader.batch_size))
+        self.val_step_interval = val_step_interval
+
+        # build metrics tracker and wrapper tensorboard writer.
+        self.train_metrics = AverageMetricTracker('loss',
+                                                  writer=self.writer if self.local_master else None)
+        self.val_metrics = AverageMetricTracker('loss', 'word_acc', 'word_acc_case_insensitive', 'edit_distance_acc',
+                                                writer=self.writer if self.local_master else None)
+
+    def train(self):
+        """
+        Full training logic, including train and validation.
+        """
+
+        if self.distributed:
+            dist.barrier()  # Syncing machines before training
+
+        not_improved_count = 0
+        for epoch in range(self.start_epoch, self.epochs + 1):
+
+            # ensure distribute worker sample different data,
+            # set different random seed by passing epoch to sampler
+            if self.distributed:
+                self.data_loader.sampler.set_epoch(epoch)
+
+            self.valid_data_loader.batch_sampler.set_epoch(
+                epoch) if self.valid_data_loader.batch_sampler is not None else None
+
+            torch.cuda.empty_cache()
+            result_dict = self._train_epoch(epoch)
+            # import pdb;pdb.set_trace()
+
+            # validate after training an epoch
+            if self.do_validation and epoch >= self.validation_start_epoch:
+                val_metric_res_dict = self._valid_epoch(epoch)
+                # import pdb;pdb.set_trace()
+                val_res = f"\nValidation result after {epoch} epoch: " \
+                          f"Word_acc: {val_metric_res_dict['word_acc']:.6f} " \
+                          f"Word_acc_case_ins: {val_metric_res_dict['word_acc_case_insensitive']:.6f} " \
+                          f"Edit_distance_acc: {val_metric_res_dict['edit_distance_acc']:.6f}"
+            else:
+                val_res = ''
+
+            # update lr after training an epoch, epoch-wise
+            if self.lr_scheduler is not None:
+                self.lr_scheduler.step()
+
+            # every epoch log information
+            self.logger_info(
+                '[Epoch End] Epoch:[{}/{}] Loss: {:.6f} LR: {:.8f}'.
+                format(epoch, self.epochs,
+                       result_dict['loss'], self._get_lr()) + val_res
+            )
+
+            # evaluate model performance according to configured metric, check early stop, and
+            # save best checkpoint as model_best
+            best = False
+            if self.monitor_mode != 'off' and self.do_validation and epoch >= self.validation_start_epoch:
+                best, not_improved_count = self._is_best_monitor_metric(best, not_improved_count, val_metric_res_dict)
+                if not_improved_count > self.early_stop:  # epoch level count
+                    self.logger_info("Validation performance didn\'t improve for {} epochs. "
+                                     "Training stops.".format(self.early_stop))
+                    break
+            # epoch-level save period
+            if best or (epoch % self.save_period == 0 and epoch >= self.validation_start_epoch):
+                self._save_checkpoint(epoch, save_best=best)
+
+    def _is_best_monitor_metric(self, best, not_improved_count, val_result_dict, update_not_improved_count=True):
+        '''
+        monitor metric
+        :param best: bool
+        :param not_improved_count: int
+        :param val_result_dict: dict
+        :param update_monitor_best: bool,  true: update monitor_best when epoch-level validation
+        :return:
+        '''
+        val_monitor_metric_res = val_result_dict[self.monitor_metric]
+        try:
+            # check whether model performance improved or not, according to specified metric(monitor_metric)
+            improved = (self.monitor_mode == 'min' and val_monitor_metric_res <= self.monitor_best) or \
+                       (self.monitor_mode == 'max' and val_monitor_metric_res >= self.monitor_best)
+        except KeyError:
+            self.logger_warning("Warning: Metric '{}' is not found. "
+                                "Model performance monitoring is disabled.".format(self.monitor_metric))
+            self.monitor_mode = 'off'
+            improved = False
+        if improved:
+            self.monitor_best = val_monitor_metric_res
+            not_improved_count = 0
+            best = True
+        else:
+            if update_not_improved_count:  # update when do epoch-level validation, step-level not changed count
+                not_improved_count += 1
+        return best, not_improved_count
+
+    def _train_epoch(self, epoch):
+        '''
+        Training logic for an epoch
+        :param epoch: Integer, current training epoch.
+        :return: A log dict that contains average loss and metric in this epoch.
+        '''
+        self.model.train()
+
+        self.train_metrics.reset()
+
+        ## step iteration start ##
+        for step_idx, input_data_item in enumerate(self.data_loader):
+
+            batch_size = input_data_item['batch_size']
+            if batch_size == 0: continue
+
+            images = input_data_item['images']
+            text_label = input_data_item['labels']
+
+            # # step-wise lr scheduler, comment this, using epoch-wise lr_scheduler
+            # if self.lr_scheduler is not None:
+            #     self.lr_scheduler.step()
+
+            # for step_idx in range(self.len_step):
+            step_idx += 1
+            # import pdb;pdb.set_trace()
+            # prepare input data
+            images = images.to(self.device)
+            target = LabelTransformer.encode(text_label)
+            target = target.to(self.device)
+            target = target.permute(1, 0)
+            with torch.autograd.set_detect_anomaly(self.config['trainer']['anomaly_detection']):
+                outputs = self.model(images, target[:, :-1])  # need to remove <EOS> in target
+                loss = F.cross_entropy(outputs.contiguous().view(-1, outputs.shape[-1]),
+                                       target[:, 1:].contiguous().view(-1),  # need to remove <SOS> in target
+                                       ignore_index=LabelTransformer.PAD)
+
+                # backward and update parameters
+                self.optimizer.zero_grad()
+                loss.backward()
+                # self.average_gradients(self.model)
+                self.optimizer.step()
+
+            ## Train batch done. Logging results
+
+            # due to training mode (bn, dropout), we don't calculate acc
+
+            batch_total = images.shape[0]
+            reduced_loss = loss.item()  # mean results of ce
+
+            if self.distributed:
+                # obtain the sum of all train metrics at all processes by all_reduce operation
+                # Must keep track of global batch size,
+                # since not all machines are guaranteed equal batches at the end of an epoch
+                reduced_metrics_tensor = torch.tensor([batch_total, reduced_loss]).float().to(self.device)
+                # Use a barrier() to make sure that all process have finished above code
+                dist.barrier()
+                # averages metric tensor across the whole world
+                # import pdb;pdb.set_trace()
+                # reduced_metrics_tensor = self.mean_reduce_tensor(reduced_metrics_tensor)
+                reduced_metrics_tensor = self.sum_tesnor(reduced_metrics_tensor)
+                batch_total, reduced_loss = reduced_metrics_tensor.cpu().numpy()
+                reduced_loss = reduced_loss / dist.get_world_size()
+            # update metrics and write to tensorboard
+            global_step = (epoch - 1) * self.len_step + step_idx - 1
+            self.writer.set_step(global_step, mode='train') if self.local_master else None
+            # write tag is loss/train (mode =train)
+            self.train_metrics.update('loss', reduced_loss,
+                                      batch_total)  # here, loss is mean results over batch, accumulate values
+
+            # log messages
+            if step_idx % self.log_step == 0 or step_idx == 1:
+                self.logger_info(
+                    'Train Epoch:[{}/{}] Step:[{}/{}] Loss: {:.6f} Loss_avg: {:.6f} LR: {:.8f}'.
+                        format(epoch, self.epochs, step_idx, self.len_step,
+                               self.train_metrics.val('loss'),
+                               self.train_metrics.avg('loss'), self._get_lr()))
+                # self.writer.add_image('input', make_grid(data.cpu(), nrow=8, normalize=True))
+
+            # do validation after val_step_interval iteration
+            if self.do_validation and step_idx % self.val_step_interval == 0 and epoch >= self.validation_start_epoch:
+                val_metric_res_dict = self._valid_epoch(epoch)  # average metric
+                self.logger_info(
+                    '[Step Validation] Epoch:[{}/{}] Step:[{}/{}] Word_acc: {:.6f} Word_acc_case_ins {:.6f}'
+                    'Edit_distance_acc: {:.6f}'.
+                        format(epoch, self.epochs, step_idx, self.len_step,
+                               val_metric_res_dict['word_acc'], val_metric_res_dict['word_acc_case_insensitive'],
+                               val_metric_res_dict['edit_distance_acc']))
+                # check if best metric, if true, then save as model_best checkpoint.
+                best, not_improved_count = self._is_best_monitor_metric(False, 0, val_metric_res_dict,
+                                                                        update_not_improved_count=False)
+                if best:  # step-level valida then save model
+                    self._save_checkpoint(epoch, best, step_idx)
+
+            # decide whether continue iter
+            if step_idx == self.len_step:
+                break
+        ## step iteration end ##
+
+        log_dict = self.train_metrics.result()
+        return log_dict
+
+    def _valid_epoch(self, epoch):
+        '''
+         Validate after training an epoch or regular step, this is a time-consuming procedure if validation data is big.
+        :param epoch: Integer, current training epoch.
+        :return: A dict that contains information about validation
+        '''
+
+        self.model.eval()
+        self.val_metrics.reset()
+
+        for step_idx, input_data_item in enumerate(self.valid_data_loader):
+
+            batch_size = input_data_item['batch_size']
+            images = input_data_item['images']
+            text_label = input_data_item['labels']
+
+            if self.distributed:
+                word_acc, word_acc_case_ins, edit_distance_acc, total_distance_ref, batch_total = \
+                    self._distributed_predict(batch_size, images, text_label)
+            else:  # one cpu or gpu non-distributed mode
+                with torch.no_grad():
+                    images = images.to(self.device)
+                    # target = LabelTransformer.encode(text_label)
+                    # target = target.to(self.device)
+                    # target = target.permute(1, 0)
+
+                    if hasattr(self.model, 'module'):
+                        model = self.model.module
+                    else:
+                        model = self.model
+
+                    # (bs, max_len)
+                    outputs, _ = decode_util.greedy_decode_with_probability(model, images, LabelTransformer.max_length,
+                                                                            LabelTransformer.SOS,
+                                                                            LabelTransformer.EOS,
+                                                                            _padding_symbol_index=LabelTransformer.PAD,
+                                                                            _result_device=images.device,
+                                                                            _is_padding=True)
+                    correct = 0
+                    correct_case_ins = 0
+                    total_distance_ref = 0
+                    total_edit_distance = 0
+                    for index, (pred, text_gold) in enumerate(zip(outputs[:, 1:], text_label)):
+                        predict_text = ""
+                        for i in range(len(pred)):  # decode one sample
+                            if pred[i] == LabelTransformer.EOS: break
+                            if pred[i] == LabelTransformer.UNK: continue
+
+                            decoded_char = LabelTransformer.decode(pred[i])
+                            predict_text += decoded_char
+
+                        # calculate edit distance
+                        ref = len(text_gold)
+                        edit_distance = distance.levenshtein(text_gold, predict_text)
+                        total_distance_ref += ref
+                        total_edit_distance += edit_distance
+
+                        # calculate word accuracy related
+                        # predict_text = predict_text.strip()
+                        # text_gold = text_gold.strip()
+                        if predict_text == text_gold:
+                            correct += 1
+                        if predict_text.lower() == text_gold.lower():
+                            correct_case_ins += 1
+                    batch_total = images.shape[0]  # valid batch size of current steps
+                    # calculate accuracy directly, due to non-distributed
+                    word_acc = correct / batch_total
+                    word_acc_case_ins = correct_case_ins / batch_total
+                    edit_distance_acc = 1 - total_edit_distance / total_distance_ref
+
+            # update valid metric and write to tensorboard,
+            self.writer.set_step((epoch - 1) * len(self.valid_data_loader) + step_idx, 'valid') \
+                if self.local_master else None
+            # self.val_metrics.update('loss', loss, batch_total)  # tag is loss/valid (mode =valid)
+            self.val_metrics.update('word_acc', word_acc, batch_total)
+            self.val_metrics.update('word_acc_case_insensitive', word_acc_case_ins, batch_total)
+            self.val_metrics.update('edit_distance_acc', edit_distance_acc, total_distance_ref)
+
+        val_metric_res_dict = self.val_metrics.result()
+
+        # rollback to train mode
+        self.model.train()
+
+        return val_metric_res_dict
+
+    def _distributed_predict(self, batch_size, images, text_label):
+        # Allows distributed prediction on uneven batches.
+        # Test set isn't always large enough for every GPU to get a batch
+
+        # obtain the sum of all val metrics at all processes by all_reduce operation
+        # dist.barrier()
+        # batch_size = images.size(0)
+        correct = correct_case_ins = valid_batches = total_edit_distance = total_distance_ref = 0
+        if batch_size:  # not empty samples at current gpu validation process
+            with torch.no_grad():
+                images = images.to(self.device)
+                # target = LabelTransformer.encode(text_label)
+                # target = target.to(self.device)
+                # target = target.permute(1, 0)
+
+                if hasattr(self.model, 'module'):
+                    model = self.model.module
+                else:
+                    model = self.model
+                outputs, _ = decode_util.greedy_decode_with_probability(model, images, LabelTransformer.max_length,
+                                                                        LabelTransformer.SOS,
+                                                                        LabelTransformer.EOS,
+                                                                        _padding_symbol_index=LabelTransformer.PAD,
+                                                                        _result_device=images.device,
+                                                                        _is_padding=True)
+
+                for index, (pred, text_gold) in enumerate(zip(outputs[:, 1:], text_label)):
+                    predict_text = ""
+                    for i in range(len(pred)):  # decode one sample
+                        if pred[i] == LabelTransformer.EOS: break
+                        if pred[i] == LabelTransformer.UNK: continue
+
+                        decoded_char = LabelTransformer.decode(pred[i])
+                        predict_text += decoded_char
+
+                    # calculate edit distance
+                    ref = len(text_gold)
+                    edit_distance = distance.levenshtein(text_gold, predict_text)
+                    total_distance_ref += ref
+                    total_edit_distance += edit_distance
+
+                    # calculate word accuracy related
+                    # predict_text = predict_text.strip()
+                    # text_gold = text_gold.strip()
+                    if predict_text == text_gold:
+                        correct += 1
+                    if predict_text.lower() == text_gold.lower():
+                        correct_case_ins += 1
+
+            valid_batches = 1  # can be regard as dist.world_size
+        # sum metrics across all valid process
+        sum_metrics_tensor = torch.tensor([batch_size, valid_batches,
+                                           correct, correct_case_ins, total_edit_distance,
+                                           total_distance_ref]).float().to(self.device)
+        # # Use a barrier() to make sure that all process have finished above code
+        # dist.barrier()
+        sum_metrics_tensor = self.sum_tesnor(sum_metrics_tensor)
+        sum_metrics_tensor = sum_metrics_tensor.cpu().numpy()
+        batch_total, valid_batches = sum_metrics_tensor[0:2]
+        # averages metric across the valid process
+        # loss= sum_metrics_tensor[2] / valid_batches
+        correct, correct_case_ins, total_edit_distance, total_distance_ref = sum_metrics_tensor[2:]
+        word_acc = correct / batch_total
+        word_acc_case_ins = correct_case_ins / batch_total
+        edit_distance_acc = 1 - total_edit_distance / total_distance_ref
+        return word_acc, word_acc_case_ins, edit_distance_acc, total_distance_ref, batch_total
+
+    def _get_lr(self):
+        for group in self.optimizer.param_groups:
+            return group['lr']
+
+    def average_gradients(self, model):
+        '''
+        Gradient averaging
+        :param model:
+        :return:
+        '''
+        size = float(dist.get_world_size())
+        for param in model.parameters():
+            dist.all_reduce(param.grad.data, op=dist.reduce_op.SUM)
+            param.grad.data /= size
+
+    def mean_reduce_tensor(self, tensor: torch.Tensor):
+        ''' averages tensor across the whole world'''
+        sum_tensor = self.sum_tesnor(tensor)
+        return sum_tensor / dist.get_world_size()
+
+    def sum_tesnor(self, tensor: torch.Tensor):
+        '''obtain the sum of tensor at all processes'''
+        rt = tensor.clone()
+        dist.all_reduce(rt, op=dist.ReduceOp.SUM)
+        return rt
+
+    def logger_info(self, msg):
+        self.logger.info(msg) if self.local_master else None
+
+    def logger_warning(self, msg):
+        self.logger.warning(msg) if self.local_master else None
+
+    def _prepare_device(self, local_rank, local_world_size):
+        '''
+         setup GPU device if available, move model into configured device
+        :param local_rank:
+        :param local_world_size:
+        :return:
+        '''
+        if self.distributed:
+            ngpu_per_process = torch.cuda.device_count() // local_world_size
+            device_ids = list(range(local_rank * ngpu_per_process, (local_rank + 1) * ngpu_per_process))
+
+            if torch.cuda.is_available() and local_rank != -1:
+                torch.cuda.set_device(device_ids[0])  # device_ids[0] =local_rank if local_world_size = n_gpu per node
+                device = 'cuda'
+                self.logger_info(
+                    f"[Process {os.getpid()}] world_size = {dist.get_world_size()}, "
+                    + f"rank = {dist.get_rank()}, n_gpu/process = {ngpu_per_process}, device_ids = {device_ids}"
+                )
+            else:
+                self.logger_warning('Training will be using CPU!')
+                device = 'cpu'
+            device = torch.device(device)
+            return device, device_ids
+        else:
+            n_gpu = torch.cuda.device_count()
+            n_gpu_use = local_world_size
+            if n_gpu_use > 0 and n_gpu == 0:
+                self.logger_warning("Warning: There\'s no GPU available on this machine,"
+                                    "training will be performed on CPU.")
+                n_gpu_use = 0
+            if n_gpu_use > n_gpu:
+                self.logger_warning("Warning: The number of GPU\'s configured to use is {}, but only {} are available "
+                                    "on this machine.".format(n_gpu_use, n_gpu))
+                n_gpu_use = n_gpu
+
+            list_ids = list(range(n_gpu_use))
+            if n_gpu_use > 0:
+                torch.cuda.set_device(list_ids[0])  # only use first available gpu as devices
+                self.logger_warning(f'Training is using GPU {list_ids[0]}!')
+                device = 'cuda'
+            else:
+                self.logger_warning('Training is using CPU!')
+                device = 'cpu'
+            device = torch.device(device)
+            return device, list_ids
+
+    def _save_checkpoint(self, epoch, save_best=False, step_idx=None):
+        '''
+        Saving checkpoints
+        :param epoch:  current epoch number
+        :param save_best: if True, rename the saved checkpoint to 'model_best.pth'
+        :return:
+        '''
+        # only both local and global master process do save model
+        if not (self.local_master and self.global_master):
+            return
+
+        if hasattr(self.model, 'module'):
+            arch_name = type(self.model.module).__name__
+            model_state_dict = self.model.module.state_dict()
+        else:
+            arch_name = type(self.model).__name__
+            model_state_dict = self.model.state_dict()
+        state = {
+            'arch': arch_name,
+            'epoch': epoch,
+            'model_state_dict': model_state_dict,
+            'optimizer': self.optimizer.state_dict(),
+            'monitor_best': self.monitor_best,
+            'config': self.config
+        }
+        if step_idx is None:
+            filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
+        else:
+            filename = str(self.checkpoint_dir / 'checkpoint-epoch{}-step{}.pth'.format(epoch, step_idx))
+        torch.save(state, filename)
+        self.logger_info("Saving checkpoint: {} ...".format(filename))
+
+        if save_best:
+            best_path = str(self.checkpoint_dir / 'model_best.pth')
+            shutil.copyfile(filename, best_path)
+            self.logger_info(
+                f"Saving current best (at {epoch} epoch): model_best.pth Best {self.monitor_metric}: {self.monitor_best:.6f}")
+
+        # if save_best:
+        #     best_path = str(self.checkpoint_dir / 'model_best.pth')
+        #     torch.save(state, best_path)
+        #     self.logger_info(
+        #         f"Saving current best: model_best.pth Best {self.monitor_metric}: {self.monitor_best:.6f}.")
+        # else:
+        #     filename = str(self.checkpoint_dir / 'checkpoint-epoch{}.pth'.format(epoch))
+        #     torch.save(state, filename)
+        #     self.logger_info("Saving checkpoint: {} ...".format(filename))
+
+    def _resume_checkpoint(self, resume_path):
+        '''
+        Resume from saved checkpoints
+        :param resume_path: Checkpoint path to be resumed
+        :return:
+        '''
+        resume_path = str(resume_path)
+        self.logger_info("Loading checkpoint: {} ...".format(resume_path))
+        # map_location = {'cuda:%d' % 0: 'cuda:%d' % self.config['local_rank']}
+        checkpoint = torch.load(resume_path, map_location=self.device)
+        self.start_epoch = checkpoint['epoch'] + 1 if not self.finetune else 1
+        self.monitor_best = checkpoint['monitor_best']
+
+        # load architecture params from checkpoint.
+        if checkpoint['config']['model_arch'] != self.config['model_arch']:  # TODO verify adapt and adv arch
+            self.logger_warning("Warning: Architecture configuration given in config file is different from that of "
+                                "checkpoint. This may yield an exception while state_dict is being loaded.")
+        # self.model.load_state_dict(checkpoint['state_dict'])
+        self.model.load_state_dict(checkpoint['model_state_dict'])
+
+        # load optimizer state from checkpoint only when optimizer type is not changed.
+        if not self.finetune:  # resume mode will load optimizer state and continue train
+            if checkpoint['config']['optimizer']['type'] != self.config['optimizer']['type']:
+                self.logger_warning(
+                    "Warning: Optimizer type given in config file is different from that of checkpoint. "
+                    "Optimizer parameters not being resumed.")
+            else:
+                self.optimizer.load_state_dict(checkpoint['optimizer'])
+
+        if self.finetune:
+            self.logger_info("Checkpoint loaded. Finetune training from epoch {}".format(self.start_epoch))
+        else:
+            self.logger_info("Checkpoint loaded. Resume training from epoch {}".format(self.start_epoch))
+
+    # def test_train(self):
+
+                        - library source code: """
+``torch.autograd`` provides classes and functions implementing automatic
+differentiation of arbitrary scalar valued functions. It requires minimal
+changes to the existing code - you only need to declare :class:`Tensor` s
+for which gradients should be computed with the ``requires_grad=True`` keyword.
+As of now, we only support autograd for floating point :class:`Tensor` types (
+half, float, double and bfloat16) and complex :class:`Tensor` types (cfloat, cdouble).
+"""
+import torch
+import warnings
+
+from torch.types import _TensorOrTensors
+from typing import Any, Callable, List, Optional, Sequence, Tuple, Union
+
+from .variable import Variable
+from .function import Function, NestedIOFunction
+from .gradcheck import gradcheck, gradgradcheck
+from .grad_mode import no_grad, enable_grad, set_grad_enabled, inference_mode
+from .anomaly_mode import detect_anomaly, set_detect_anomaly
+from ..overrides import has_torch_function, handle_torch_function
+from . import functional
+from . import forward_ad
+from . import graph
+
+__all__ = ['Variable', 'Function', 'backward', 'grad_mode']
+
+_OptionalTensor = Optional[torch.Tensor]
+
+def _make_grads(outputs: Sequence[torch.Tensor], grads: Sequence[_OptionalTensor]) -> Tuple[_OptionalTensor, ...]:
+    new_grads: List[_OptionalTensor] = []
+    for out, grad in zip(outputs, grads):
+        if isinstance(grad, torch.Tensor):
+            if not out.shape == grad.shape:
+                raise RuntimeError("Mismatch in shape: grad_output["
+                                   + str(grads.index(grad)) + "] has a shape of "
+                                   + str(grad.shape) + " and output["
+                                   + str(outputs.index(out)) + "] has a shape of "
+                                   + str(out.shape) + ".")
+            if out.dtype.is_complex != grad.dtype.is_complex:
+                raise RuntimeError("For complex Tensors, both grad_output and output"
+                                   " are required to have the same dtype."
+                                   " Mismatch in dtype: grad_output["
+                                   + str(grads.index(grad)) + "] has a dtype of "
+                                   + str(grad.dtype) + " and output["
+                                   + str(outputs.index(out)) + "] has a dtype of "
+                                   + str(out.dtype) + ".")
+            new_grads.append(grad)
+        elif grad is None:
+            if out.requires_grad:
+                if out.numel() != 1:
+                    raise RuntimeError("grad can be implicitly created only for scalar outputs")
+                new_grads.append(torch.ones_like(out, memory_format=torch.preserve_format))
+            else:
+                new_grads.append(None)
+        else:
+            raise TypeError("gradients can be either Tensors or None, but got " +
+                            type(grad).__name__)
+    return tuple(new_grads)
+
+
+def _tensor_or_tensors_to_tuple(tensors: Optional[_TensorOrTensors], length: int) -> Tuple[_OptionalTensor, ...]:
+    if tensors is None:
+        return (None, ) * length
+    if isinstance(tensors, torch.Tensor):
+        return (tensors, )
+    return tuple(tensors)
+
+
+def backward(
+    tensors: _TensorOrTensors,
+    grad_tensors: Optional[_TensorOrTensors] = None,
+    retain_graph: Optional[bool] = None,
+    create_graph: bool = False,
+    grad_variables: Optional[_TensorOrTensors] = None,
+    inputs: Optional[_TensorOrTensors] = None,
+) -> None:
+    r"""Computes the sum of gradients of given tensors with respect to graph
+    leaves.
+
+    The graph is differentiated using the chain rule. If any of ``tensors``
+    are non-scalar (i.e. their data has more than one element) and require
+    gradient, then the Jacobian-vector product would be computed, in this
+    case the function additionally requires specifying ``grad_tensors``.
+    It should be a sequence of matching length, that contains the "vector"
+    in the Jacobian-vector product, usually the gradient of the differentiated
+    function w.r.t. corresponding tensors (``None`` is an acceptable value for
+    all tensors that don't need gradient tensors).
+
+    This function accumulates gradients in the leaves - you might need to zero
+    ``.grad`` attributes or set them to ``None`` before calling it.
+    See :ref:`Default gradient layouts<default-grad-layouts>`
+    for details on the memory layout of accumulated gradients.
+
+    .. note::
+        Using this method with ``create_graph=True`` will create a reference cycle
+        between the parameter and its gradient which can cause a memory leak.
+        We recommend using ``autograd.grad`` when creating the graph to avoid this.
+        If you have to use this function, make sure to reset the ``.grad`` fields of your
+        parameters to ``None`` after use to break the cycle and avoid the leak.
+
+    .. note::
+
+        If you run any forward ops, create ``grad_tensors``, and/or call ``backward``
+        in a user-specified CUDA stream context, see
+        :ref:`Stream semantics of backward passes<bwd-cuda-stream-semantics>`.
+
+    .. note::
+
+        When ``inputs`` are provided and a given input is not a leaf,
+        the current implementation will call its grad_fn (even though it is not strictly needed to get this gradients).
+        It is an implementation detail on which the user should not rely.
+        See https://github.com/pytorch/pytorch/pull/60521#issuecomment-867061780 for more details.
+
+    Args:
+        tensors (Sequence[Tensor] or Tensor): Tensors of which the derivative will be
+            computed.
+        grad_tensors (Sequence[Tensor or None] or Tensor, optional): The "vector" in
+            the Jacobian-vector product, usually gradients w.r.t. each element of
+            corresponding tensors. None values can be specified for scalar Tensors or
+            ones that don't require grad. If a None value would be acceptable for all
+            grad_tensors, then this argument is optional.
+        retain_graph (bool, optional): If ``False``, the graph used to compute the grad
+            will be freed. Note that in nearly all cases setting this option to ``True``
+            is not needed and often can be worked around in a much more efficient
+            way. Defaults to the value of ``create_graph``.
+        create_graph (bool, optional): If ``True``, graph of the derivative will
+            be constructed, allowing to compute higher order derivative products.
+            Defaults to ``False``.
+        inputs (Sequence[Tensor] or Tensor, optional): Inputs w.r.t. which the gradient
+            be will accumulated into ``.grad``. All other Tensors will be ignored. If
+            not provided, the gradient is accumulated into all the leaf Tensors that
+            were used to compute the attr::tensors.
+    """
+    if grad_variables is not None:
+        warnings.warn("'grad_variables' is deprecated. Use 'grad_tensors' instead.")
+        if grad_tensors is None:
+            grad_tensors = grad_variables
+        else:
+            raise RuntimeError("'grad_tensors' and 'grad_variables' (deprecated) "
+                               "arguments both passed to backward(). Please only "
+                               "use 'grad_tensors'.")
+    if inputs is not None and len(inputs) == 0:
+        raise RuntimeError("'inputs' argument to backward() cannot be empty.")
+
+    tensors = (tensors,) if isinstance(tensors, torch.Tensor) else tuple(tensors)
+    inputs = (inputs,) if isinstance(inputs, torch.Tensor) else \
+        tuple(inputs) if inputs is not None else tuple()
+
+    grad_tensors_ = _tensor_or_tensors_to_tuple(grad_tensors, len(tensors))
+    grad_tensors_ = _make_grads(tensors, grad_tensors_)
+    if retain_graph is None:
+        retain_graph = create_graph
+
+    Variable._execution_engine.run_backward(
+        tensors, grad_tensors_, retain_graph, create_graph, inputs,
+        allow_unreachable=True, accumulate_grad=True)  # allow_unreachable flag
+
+
+def grad(
+    outputs: _TensorOrTensors,
+    inputs: _TensorOrTensors,
+    grad_outputs: Optional[_TensorOrTensors] = None,
+    retain_graph: Optional[bool] = None,
+    create_graph: bool = False,
+    only_inputs: bool = True,
+    allow_unused: bool = False
+) -> Tuple[torch.Tensor, ...]:
+    r"""Computes and returns the sum of gradients of outputs with respect to
+    the inputs.
+
+    ``grad_outputs`` should be a sequence of length matching ``output``
+    containing the "vector" in Jacobian-vector product, usually the pre-computed
+    gradients w.r.t. each of the outputs. If an output doesn't require_grad,
+    then the gradient can be ``None``).
+
+    .. note::
+
+        If you run any forward ops, create ``grad_outputs``, and/or call ``grad``
+        in a user-specified CUDA stream context, see
+        :ref:`Stream semantics of backward passes<bwd-cuda-stream-semantics>`.
+
+    .. note::
+
+        ``only_inputs`` argument is deprecated and is ignored now (defaults to ``True``).
+        To accumulate gradient for other parts of the graph, please use
+        ``torch.autograd.backward``.
+
+    Args:
+        outputs (sequence of Tensor): outputs of the differentiated function.
+        inputs (sequence of Tensor): Inputs w.r.t. which the gradient will be
+            returned (and not accumulated into ``.grad``).
+        grad_outputs (sequence of Tensor): The "vector" in the Jacobian-vector product.
+            Usually gradients w.r.t. each output. None values can be specified for scalar
+            Tensors or ones that don't require grad. If a None value would be acceptable
+            for all grad_tensors, then this argument is optional. Default: None.
+        retain_graph (bool, optional): If ``False``, the graph used to compute the grad
+            will be freed. Note that in nearly all cases setting this option to ``True``
+            is not needed and often can be worked around in a much more efficient
+            way. Defaults to the value of ``create_graph``.
+        create_graph (bool, optional): If ``True``, graph of the derivative will
+            be constructed, allowing to compute higher order derivative products.
+            Default: ``False``.
+        allow_unused (bool, optional): If ``False``, specifying inputs that were not
+            used when computing outputs (and therefore their grad is always zero)
+            is an error. Defaults to ``False``.
+    """
+    outputs = (outputs,) if isinstance(outputs, torch.Tensor) else tuple(outputs)
+    inputs = (inputs,) if isinstance(inputs, torch.Tensor) else tuple(inputs)
+    overridable_args = outputs + inputs
+    if has_torch_function(overridable_args):
+        return handle_torch_function(
+            grad,
+            overridable_args,
+            outputs,
+            inputs,
+            grad_outputs=grad_outputs,
+            retain_graph=retain_graph,
+            create_graph=create_graph,
+            only_inputs=only_inputs,
+            allow_unused=allow_unused,
+        )
+
+    if not only_inputs:
+        warnings.warn("only_inputs argument is deprecated and is ignored now "
+                      "(defaults to True). To accumulate gradient for other "
+                      "parts of the graph, please use torch.autograd.backward.")
+
+    grad_outputs_ = _tensor_or_tensors_to_tuple(grad_outputs, len(outputs))
+    grad_outputs_ = _make_grads(outputs, grad_outputs_)
+
+    if retain_graph is None:
+        retain_graph = create_graph
+
+    return Variable._execution_engine.run_backward(
+        outputs, grad_outputs_, retain_graph, create_graph,
+        inputs, allow_unused, accumulate_grad=False)
+
+
+# This function applies in case of gradient checkpointing for memory
+# optimization. Currently, gradient checkpointing is supported only if the
+# execution engine is invoked through torch.autograd.backward() and its
+# inputs argument is not passed. It is not supported for torch.autograd.grad().
+# This is because if inputs are specified, the gradient won't be calculated for
+# anything else e.g. model parameters like weights, bias etc.
+#
+# This function returns whether the checkpointing is valid i.e. torch.autograd.backward
+# or not i.e. torch.autograd.grad. The implementation works by maintaining a thread
+# local variable in torch/csrc/autograd/engine.cpp which looks at the NodeTask
+# in the stack and before a NodeTask is executed in evaluate_function, it
+# checks for whether reentrant backwards is imperative or not.
+# See https://github.com/pytorch/pytorch/pull/4594 for more discussion/context
+def _is_checkpoint_valid():
+    return Variable._execution_engine.is_checkpoint_valid()
+
+
+def variable(*args, **kwargs):
+    warnings.warn("torch.autograd.variable(...) is deprecated, use torch.tensor(...) instead")
+    return torch.tensor(*args, **kwargs)
+
+if not torch._C._autograd_init():
+    raise RuntimeError("autograd initialization failed")
+
+# Import all native method/classes
+from torch._C._autograd import (DeviceType, ProfilerActivity, ProfilerState, ProfilerConfig, ProfilerEvent,
+                                _enable_profiler_legacy, _disable_profiler_legacy, _profiler_enabled,
+                                _enable_record_function, _set_empty_test_observer, kineto_available,
+                                _supported_activities, _add_metadata_json, SavedTensor,
+                                _register_saved_tensors_default_hooks, _reset_saved_tensors_default_hooks)
+
+from torch._C._autograd import (_ProfilerResult, _KinetoEvent,
+                                _prepare_profiler, _enable_profiler, _disable_profiler)
+
+from . import profiler
+
+                        - PyPI metadata (including version constraints): ['numpy', 'torch (==1.10.0)', 'pillow (!=8.3.0,>=5.3.0)', "scipy ; extra == 'scipy'"]
                         - Crash traceback: Traceback (most recent call last):
   File "train.py", line 210, in <module>
     entry_point(config)

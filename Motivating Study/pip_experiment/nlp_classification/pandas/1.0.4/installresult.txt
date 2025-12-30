@@ -1,0 +1,13 @@
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting pandas==1.0.4
+  Using cached https://pypi.tuna.tsinghua.edu.cn/packages/a4/5f/1b6e0efab4bfb738478919d40b0e3e1a06e3d9996da45eb62a77e9a090d9/pandas-1.0.4-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+Requirement already satisfied: python-dateutil>=2.6.1 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pandas==1.0.4) (2.8.1)
+Requirement already satisfied: pytz>=2017.2 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pandas==1.0.4) (2020.1)
+Requirement already satisfied: numpy>=1.13.3 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from pandas==1.0.4) (1.18.4)
+Requirement already satisfied: six>=1.5 in /home/lei/anaconda3/envs/py37-1/lib/python3.7/site-packages (from python-dateutil>=2.6.1->pandas==1.0.4) (1.15.0)
+Installing collected packages: pandas
+  Attempting uninstall: pandas
+    Found existing installation: pandas 1.0.3
+    Uninstalling pandas-1.0.3:
+      Successfully uninstalled pandas-1.0.3
+Successfully installed pandas-1.0.4

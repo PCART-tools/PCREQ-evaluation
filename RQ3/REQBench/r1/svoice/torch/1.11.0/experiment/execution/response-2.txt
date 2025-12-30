@@ -14,7 +14,7 @@ librosa==0.7.1
 llvmlite==0.31.0
 mpmath==1.2.1
 numba==0.48.0
-numpy==1.19.5
+numpy==1.21.6
 omegaconf==2.1.2
 pesq==0.0.2
 Pillow==9.5.0
@@ -25,11 +25,11 @@ resampy==0.3.1
 scikit-learn==1.0.2
 scipy==1.7.3
 six==1.16.0
-soundfile==0.10.0
+soundfile==0.12.1
 sympy==1.10.1
 threadpoolctl==3.1.0
 torch==1.11.0
-torchaudio==0.11.0
+torchaudio==0.10.0
 torchvision==0.12.0
 tqdm==4.51.0
 zipp==3.15.0

@@ -11,6 +11,7 @@ Pillow==9.3.0
 torch==1.6.0
 
                 - Python version: 3.7
+                - PyPI metadata (including version constraints): ['typing-extensions', 'dataclasses ; python_version < "3.7"']
 
                 **Resolution Protocol**
                 1. Dependency Tree Analysis: Map all library interdependencies
