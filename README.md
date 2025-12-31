@@ -1,6 +1,6 @@
 # PCREQ Evaluation
 
-This repository contains the evaluation results of [PCREQ](https://github.com/PCREQ/PCREQ), assessing its capability to infer compatible requirements for TPL upgrades in Python projects.
+This repository contains the evaluation results of [PCREQ](https://github.com/PCART-tools/PCREQ), assessing its capability to infer compatible requirements for TPL upgrades in Python projects.
 
 ## :open_file_folder: Directory Overview
 
