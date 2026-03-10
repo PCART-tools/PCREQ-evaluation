@@ -39,7 +39,7 @@ The `experiment-result.xlsx` file summarizes all 2,095 upgrade experiments from 
 The script used to run the project after a dependency upgrade, to detect CCIs through actual execution.
 
 ## Project source code and related virtual environment
-The project source code is available on [Zenodo](https://doi.org/10.5281/zenodo.16100741), and the corresponding virtual environment can be found at link.md.
+The project source code is available on [Zenodo](https://doi.org/10.5281/zenodo.16100741), and the corresponding virtual environment can be found at [link.md](link.md).
 
 ### **Example Directory Layout**
 
