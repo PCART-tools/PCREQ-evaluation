@@ -29,3 +29,6 @@ This repository contains the evaluation results of [PCREQ](https://github.com/PC
 - Each directory contains the corresponding experiment results and analysis.
 - For detailed evaluation metrics and results, please take a look at our paper. 
 
+## License
+
+PCART-evaluation is licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0). See [LICENSE](./LICENSE) for details.
